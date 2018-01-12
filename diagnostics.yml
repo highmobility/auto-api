@@ -1,0 +1,112 @@
+name: diagnostics
+category: diagnostics
+id_msb: '0x00'
+id_lsb: '0x45'
+api_intro: 3
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_diagnostics_state
+  - id: '0x01'
+    name: diagnostics_state
+    
+properties:
+  - id: '0x01'
+    type: integer
+    size: 2
+    name: mileage
+    description: The car mileage (odometer) in km
+  - id: '0x02'
+    type: integer
+    size: 2
+    name: engine_oil_temperature
+    description: Engine oil temperature in Celsius, whereas can be negative
+  - id: '0x03'
+    type: integer
+    size: 2
+    name: speed
+    description: The car speed on km/h, whereas can be negative
+  - id: '0x04'
+    type: integer
+    size: 2
+    name: engine_rpm
+    pretty_name: Engine RPM
+    description: Engine RPM (revolutions per minute)
+  - id: '0x05'
+    type: integer
+    size: 1
+    name: fuel_level
+    description: Fuel level percentage between 0-100
+  - id: '0x06'
+    type: integer
+    size: 2
+    name: estimated_range
+    description: Estimated range (with combustion engine)
+  - id: '0x07'
+    type: float
+    size: 4
+    name: current_fuel_consumption
+    description: Current fuel consumption in liters/100km per IEEE 754 formatting
+  - id: '0x08'
+    type: float
+    size: 4
+    name: average_fuel_consumption
+    pretty_name: Average fuel consumption for current trip
+    description: Average fuel consumption in liters/100km per IEEE 754 formatting
+  - id: '0x09'
+    type: enum
+    size: 1
+    name: washer_fluid_level
+    values:
+      - name: low
+        id: '0x00'
+      - name: filled
+        id: '0x01'
+  - id: '0x0A'
+    name: tire
+    size: 17
+    items:
+      - name: tire_position
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+      - name: tire_pressure
+        size: 4
+        type: float
+        description: Tire pressure in celsius formatted in 4-bytes per IEEE 754        
+      - name: tire_temperature
+        size: 4
+        type: float
+        description: Tire temperature in celsius formatted in 4-bytes per IEEE 754
+      - name: wheel_rpm
+        size: 4
+        type: integer
+        description: The RPM measured at this wheel
+  - id: '0x0B'
+    type: float
+    size: 4
+    name: battery_voltage
+    description: Battery voltage per IEEE 754 formatting
+  - id: '0x0C'
+    type: float
+    size: 4
+    name: adblue_level
+    description: AdBlue level in liters formatted in 4-bytes per IEEE 754 formatting
+  - id: '0x0D'
+    type: integer
+    size: 2
+    name: distance_since_reset
+    description: The distance driven in km since reset
+  - id: '0x0E'
+    type: integer
+    size: 2
+    name: distance_since_start
+    description: The distance driven in km since trip start

@@ -1,0 +1,118 @@
+mileage:
+  - item:
+    - value: '0x0249F0'
+      description: Odometer is 150'000 km
+
+engine_oil_temperature:
+  - item:
+    - value: '0x0063'
+      description: Engine oil temperature is 99 degrees Celsius
+
+speed:
+  - item:
+    - value: '0x003C'
+      description: Car speed is 60km/h
+
+engine_rpm:
+  - item:
+    - value: '0x09C4'
+      description: RPM is 2500
+
+fuel_level:
+  - item:
+    - value: '0x5A'
+      description: 90% fuel level
+
+estimated_range:
+  - item:
+    - value: '0x0109'
+      description: Estimated range 265 km
+
+current_fuel_consumption:
+  - item:
+    - value: '0x410c0000'
+      description: Current fuel consumption 8,75 liters per 100 km
+
+average_fuel_consumption:
+  - item:
+    - value: '0x40c66666'
+      description: Trip fuel consumption 6,2 liters per 100 km
+
+washer_fluid_level:
+  - item:
+    - value: '0x01'
+      description: Washer fluid filled
+
+tire:
+  - item:
+    - name: tire_position
+      value: '0x00'
+      description: Front Left tire
+    - name: tire_pressure
+      value: '0x4013d70a'
+      description: Pressure is 2.31 BAR
+    - name: tire_temperature
+      value: '0x42200000'
+      description: Temperature 40C degrees
+    - name: wheel_rpm
+      value: '0x02EA'
+      description: Wheel RPM 746
+  - item:
+    - name: tire_position
+      value: '0x01'
+      description: Front Right tire
+    - name: tire_pressure
+      value: '0x4013d70a'
+      description: Pressure is 2.31 BAR
+    - name: tire_temperature
+      value: '0x42200000'
+      description: Temperature 40C degrees
+    - name: wheel_rpm
+      value: '0x02EA'
+      description: Wheel RPM 746
+  - item:
+    - name: tire_position
+      value: '0x02'
+      description: Rear Right tire
+    - name: tire_pressure
+      value: '0x4013d70a'
+      description: Pressure is 2.31 BAR
+    - name: tire_temperature
+      value: '0x42200000'
+      description: Temperature 40C degrees
+    - name: wheel_rpm
+      value: '0x02EA'
+      description: Wheel RPM 746
+  - item:
+    - name: tire_position
+      value: '0x03'
+      description: Rear Left tire
+    - name: tire_pressure
+      value: '0x4013d70a'
+      description: Pressure is 2.31 BAR
+    - name: tire_temperature
+      value: '0x42200000'
+      description: Temperature 40C degrees
+    - name: wheel_rpm
+      value: '0x02EA'
+      description: Wheel RPM 746
+
+battery_voltage:
+  - item:
+    - value: '0x41400000'
+      description: Battery voltage 12V
+
+adblue_level:
+  - item:
+    - value: '0x3F000000'
+      description: AdBlue level 0.5 liters
+
+distance_since_reset:
+  - item:
+    - value: '0x05DC'
+      description: 1'500 km driven since reset
+
+distance_since_start:
+  - item:
+    - value: '0x000A'
+      description: 10 km driven since engine start
