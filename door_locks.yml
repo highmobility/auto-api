@@ -1,0 +1,48 @@
+name: door_locks
+category: digital_key
+id_msb: '0x00'
+id_lsb: '0x20'
+api_intro: 1
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_lock_state
+  - id: '0x01'
+    name: lock_state
+  - id: '0x02'
+    name: lock_unlock_doors
+    
+properties:
+  - id: '0x01'
+    type: enum
+    size: 3
+    name: door
+    items:
+      - name: door_location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+      - name: door_position
+        type: enum
+        size: 1
+        values:
+          - name: closed
+            id: '0x00'
+          - name: open
+            id: '0x01'
+      - name: door_lock
+        type: enum
+        size: 1
+        values:
+          - name: unlocked
+            id: '0x00'
+          - name: locked
+            id: '0x01'

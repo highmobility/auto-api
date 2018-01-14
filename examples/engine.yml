@@ -1,0 +1,4 @@
+ignition:
+  - item:
+    - value: '0x01'
+      description: Engine ignition is ON

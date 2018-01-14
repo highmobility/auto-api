@@ -1,0 +1,41 @@
+door:
+  - item:
+    - name: door_location
+      value: '0x00'
+      description: Front Left door
+    - name: door_position
+      value: '0x01'
+      description: Door open
+    - name: door_lock
+      value: '0x00'
+      description: Door unlocked
+  - item:
+    - name: door_location
+      value: '0x01'
+      description: Front Right door
+    - name: door_position
+      value: '0x00'
+      description: Door closed
+    - name: door_lock
+      value: '0x00'
+      description: Door unlocked
+  - item:
+    - name: door_location
+      value: '0x02'
+      description: Rear Right door
+    - name: door_position
+      value: '0x00'
+      description: Door closed
+    - name: door_lock
+      value: '0x01'
+      description: Door locked
+  - item:
+    - name: door_location
+      value: '0x03'
+      description: Rear Left door
+    - name: door_position
+      value: '0x00'
+      description: Door closed
+    - name: door_lock
+      value: '0x01'
+      description: Door locked
