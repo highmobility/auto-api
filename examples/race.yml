@@ -1,0 +1,63 @@
+acceleration:
+  - item:
+    - value: '0x00'
+      description: Longitudinal acceleration
+    - value: '0x3f, 0x5d, 0x2f, 0x1b'
+      description: 0.864 g
+  - item:
+    - value: '0x01'
+      description: Lateral acceleration
+    - value: '0xbf, 0x40, 0xc4, 0x9c'
+      description: -0.753 g
+
+understeering:
+  - item:
+    - value: '0x13'
+      description: 19% understeering
+
+oversteering:
+  - item:
+    - value: '0x00'
+      description: 0% oversteering
+
+gas_pedal_position:
+  - item:
+    - value: '0x62'
+      description: At 98%
+
+yaw_rate:
+  - item:
+    - value: '0x40, 0xd5, 0x1e, 0xb8'
+      description: 6.66 °/s
+
+rear_suspension_steering:
+  - item:
+    - value: '0x03'
+      description: Steering is +3°
+
+electronic_stability_program:
+  - item:
+    - value: '0x01'
+      description: ESP intervention active
+
+brake_torque_vectoring:
+  - item:
+    - value: '0x01'
+      description: Rear axle
+    - value: '0x01'
+      description: Active
+
+gear_mode:
+  - item:
+    - value: '0x04'
+      description: Gear in mode "Drive"
+
+selected_gear:
+  - item:
+    - value: '0x04'
+      description: 4th gear selected
+
+brake_pedal_position:
+  - item:
+    - value: '0x00'
+      description: 0%, no brakes

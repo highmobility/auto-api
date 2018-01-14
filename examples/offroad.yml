@@ -1,0 +1,9 @@
+route_incline:
+  - item:
+    - value: '0x00, 0x0A'
+      description: 10 degrees incline
+
+wheel_suspension:
+  - item:
+    - value: '0x32'
+      description: 50% wheel suspension level

@@ -1,0 +1,126 @@
+name: race
+category: diagnostics
+id_msb: '0x00'
+id_lsb: '0x57'
+api_intro: 5
+message_types:
+  - id: '0x00'
+    name: get_race_state
+  - id: '0x01'
+    name: race_state
+    
+properties:
+  - id: '0x01'
+    size: 5
+    name: acceleration
+    items:
+      - name: type
+        type: enum
+        size: 1
+        values:
+          - name: longitudinal_acceleration
+            id: '0x00'
+          - name: lateral_acceleration
+            id: '0x01'
+          - name: front_lateral_acceleration
+            id: '0x02'
+          - name: rear_lateral_acceleration
+            id: '0x03'
+      - name: g_force
+        size: 4
+        type: float
+        description: The accelaration in g-force per IEEE 754 
+  - id: '0x02'
+    type: integer
+    size: 1
+    name: understeering
+    description: The understeering percentage between 0-100% whereas up to 20% is considered OK, up to 30% marginal, over 30% critical
+  - id: '0x03'
+    type: integer
+    size: 1
+    name: oversteering
+    description: The oversteering percentage between 0-100% whereas up to 20% is considered OK, up to 30% marginal, over 30% critical
+  - id: '0x04'
+    type: integer
+    size: 1
+    name: gas_pedal_position
+    description: The gas pedal position between 0-100%, whereas 100% is full throttle
+  - id: '0x05'
+    type: integer
+    size: 1
+    name: steering_angle
+    description: The steering angle in degrees, whereas 0 degrees is straight ahead, positive number to the left and negative number to the right
+  - id: '0x06'
+    type: float
+    size: 4
+    name: brake_pressure
+    description: Brake pressure in bar, whereas 100bar is max value, full brake
+  - id: '0x07'
+    type: float
+    size: 4
+    name: yaw_rate
+    description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
+  - id: '0x08'
+    type: integer
+    size: 1
+    name: rear_suspension_steering
+    description: Rear suspension steering in degrees
+  - id: '0x09'
+    type: enum
+    size: 1
+    name: electronic_stability_program
+    description: ESP (Electronic Stability Program) intervention
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x0A'
+    size: 2
+    name: brake_torque_vectoring
+    items:
+      - name: axle
+        type: enum
+        size: 1
+        values:
+          - name: front_axle
+            id: '0x00'
+          - name: rear_axle
+            id: '0x01'
+      - name: vectoring
+        type: enum
+        size: 1
+        values:
+          - name: inactive
+            id: '0x00'
+          - name: active
+            id: '0x01'
+  - id: '0x0B'
+    type: enum
+    size: 1
+    name: gear_mode
+    values:
+      - name: manual
+        id: '0x00'
+      - name: park
+        id: '0x01'
+      - name: reverse
+        id: '0x02'
+      - name: neutral
+        id: '0x03'
+      - name: drive
+        id: '0x04'
+      - name: low_gear
+        id: '0x05'
+      - name: sport
+        id: '0x06'
+  - id: '0x0C'
+    type: integer
+    size: 1
+    name: selected_gear
+    description: The selected gear value, if any
+  - id: '0x0D'
+    type: integer
+    size: 1
+    name: brake_pedal_position
+    description: The brake pedal position between 0-100%, wheras 100% is full brakes
