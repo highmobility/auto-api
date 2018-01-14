@@ -1,0 +1,9 @@
+days_to_next_service:
+  - item:
+    - value: '0x01F5'
+      description: 501 days until servicing
+
+kilometers_to_next_service:
+  - item:
+    - value: '0x000E61'
+      description: 3'681 km until servicing

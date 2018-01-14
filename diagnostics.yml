@@ -1,7 +1,7 @@
 name: diagnostics
 category: diagnostics
 id_msb: '0x00'
-id_lsb: '0x45'
+id_lsb: '0x33'
 api_intro: 3
 api_update: 5
 message_types:

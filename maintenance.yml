@@ -1,0 +1,23 @@
+name: maintenance
+category: diagnostics
+id_msb: '0x00'
+id_lsb: '0x34'
+api_intro: 3
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_maintenance_state
+  - id: '0x01'
+    name: maintenance_state
+    
+properties:
+  - id: '0x01'
+    type: integer
+    size: 2
+    name: days_to_next_service
+    description: Number of days until next servicing of the car, whereas negative is overdue
+  - id: '0x02'
+    type: integer
+    size: 3
+    name: kilometers_to_next_service
+    description: The amount of kilometers until next servicing of the car
