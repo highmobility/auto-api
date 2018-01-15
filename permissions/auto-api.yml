@@ -1,0 +1,144 @@
+name: auto-api
+id: '0x10'
+pretty_name: Auto API
+bytes:
+  - idx: 1
+    bits:
+      - name: certificates.read
+        description: Allowed to read list of stored certificates (trusted devices)
+      - name: certificates.write
+        description: Allowed to revoke access certificates
+      - name: reset.write
+        description: Allowed to reset the Car SDK
+  - idx: 2
+    bits:
+      - name: capabilities.read
+        description: Allowed to get car capabilities
+      - name: vehicle-status.read
+        description: Allowed to get vehicle status
+      - name: diagnostics.read
+        description: Allowed to get diagnostics and maintenance state
+      - name: door-locks.read
+        description: Allowed to get the lock state
+      - name: door-locks.write
+        description: Allowed to lock or unlock the car
+      - name: engine.read
+        description: Allowed to get the ignition state
+      - name: engine.write
+        description: Allowed to turn on/off the engine
+      - name: trunk-access.read
+        description: Allowed to get the trunk state
+  - idx: 3
+    bits:
+      - name: trunk-access.write
+        description: Allowed to open/close or lock/unlock the trunk
+      - name: trunk-access.limited
+        description: If the access to the trunk is limited to one time, whereas a 0 means unlimited
+      - name: wake-up.write
+        description: Allowed to wake up the car
+      - name: charge.read
+        description: Allowed to get the charge state
+      - name: charge.write
+        description: Allowed to start/stop charging, set the charge limit, open/close charge port
+      - name: climate.read
+        description: Allowed to get the climate state
+      - name: climate.write
+        description: Allowed to set climate profile and start/stop HVAC
+      - name: lights.read
+        description: Allowed to get the lights state
+  - idx: 4
+    bits:
+      - name: lights.write
+        description: Allowed to control lights
+      - name: windows.write
+        description: Allowed to open/close windows
+      - name: rooftop-control.read
+        description: Allowed to get the rooftop state
+      - name: rooftop-control.write
+        description: Allowed to control the rooftop
+      - name: windscreen.read
+        description: Allowed to get the windscreen state
+      - name: windscreen.write
+        description: Allowed to set the windscreen damage
+      - name: honk-horn-flash-lights.write
+        description: Allowed to honk the horn and flash lights and activate emergency flasher
+      - name: headunit.write
+        description: Allowed to send notifications, messages, videos, URLs, images and text input to the headunit
+  - idx: 5
+    bits:
+      - name: remote-control.read
+        description: Allowed to get the control mode
+      - name: remote-control.write
+        description: Allowed to remote control the car
+      - name: valet-mode.read
+        description: Allowed to get the valet mode
+      - name: valet-mode.write
+        description: Allowed to set the valet mode
+      - name: valet-mode.active
+        description: Only allowed to use the car in valet mode
+      - name: fueling.write
+        description: Allowed to open the car gas flap
+      - name: heart-rate.write
+        description: Allowed to send the heart rate to the car
+      - name: driver-fatigue.read
+        description: Allowed to get driver fatigue warnings
+  - idx: 6
+    bits:
+      - name: vehicle-location.read
+        description: Allowed to get the vehicle location
+      - name: navi-destination.write
+        description: Allowed to set the navigation destination
+      - name: theft-alarm.read
+        description: Allowed to get the theft alarm state
+      - name: theft-alarm.write
+        description: Allowed to set the theft alarm
+      - name: parking-ticket.read
+        description: Allowed to get the parking ticket
+      - name: parking-ticket.write
+        description: Allowed to start/end parking
+      - name: keyfob-position.read
+        description: Allowed to get the keyfob position
+      - name: headunit.read
+        description: Allowed to receive notifications and messages from the headunit
+  - idx: 7
+    bits:
+      - name: vehicle-time.read
+        description: Allowed to get the vehicle local time
+      - name: windows.read
+        description: Allowed to get the windows state
+      - name: honk-horn-flash-lights.read
+        description: Allowed to get the flasher state
+      - name: navi-destination.read
+        description: Allowed to get the navigation destination
+      - name: race.read
+        description: Allowed to get the race state
+      - name: offroad.read
+        description: Allowed to get the offroad state
+      - name: chassis-settings.read
+        description: Allowed to get the chassis settings
+      - name: chassis-settings.write
+        description: Allowed to set the chassis settings
+  - idx: 8
+    bits:
+      - name: seats.read
+        description: Allowed to get the seats state
+      - name: seats.write
+        description: Allowed to control the seats
+      - name: parking-brake.read
+        description: Allowed to get the parking brake state
+      - name: parking-brake.write
+        description: Allowed to set the parking brake
+      - name: environment.read
+        description: Allowed to get light and weather conditions
+      - name: fueling.read
+        description: Allowed to get the gas flap state
+      - name: wi-fi.read
+        description: Allowed to get the Wi-Fi state
+      - name: wi-fi.write
+        description: Allowed to enable/disable Wi-Fi and manage networks
+  - idx: 9
+    bits:
+      - name: home-charger.read
+        description: Allowed to get the home charger state
+      - name: home-charger.write
+        description: Allowed to control the home charger
