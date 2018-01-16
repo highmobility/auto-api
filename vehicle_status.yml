@@ -1,0 +1,82 @@
+name: vehicle_status
+category: api_structure
+id_msb: '0x00'
+id_lsb: '0x11'
+api_intro: 2
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_vehicle_status
+  - id: '0x01'
+    name: vehicle_status
+    
+properties:
+  - id: '0x01'
+    type: string
+    size: 17
+    name: vin
+    pretty_name: VIN
+    description: The unique Vehicle Identification Number
+  - id: '0x02'
+    type: enum
+    size: 1
+    name: powertrain
+    values:
+      - name: unknown
+        id: '0x00'
+      - name: all_electric
+        id: '0x01'
+      - name: combustion_engine
+        id: '0x02'
+      - name: phev
+        pretty_name: Plug-in Hybrid (PHEV)
+        id: '0x03'
+      - name: hydrogen
+        id: '0x04'
+      - name: hydrogen_hybrid
+        id: '0x05'
+  - id: '0x03'
+    type: string
+    name: model_name
+    description: The car model name bytes formatted in UTF-8
+  - id: '0x04'
+    type: string
+    name: name
+    description: The car name (nickname) bytes formatted in UTF-8
+  - id: '0x05'
+    type: string
+    name: license_plate
+    description: The license plate bytes formatted in UTF-8
+  - id: '0x06'
+    type: string
+    name: sales_designation
+    description: The sales designation of the model formatted in UTF-8
+  - id: '0x07'
+    type: integer
+    size: 2
+    name: model_year
+    description: The car model manufacturing year number
+  - id: '0x08'
+    type: string
+    name: color_name
+    description: The color name formatted in UTF-8
+  - id: '0x09'
+    type: integer
+    size: 2
+    name: power_in_kw
+    description: The power of the car measured in kw
+  - id: '0x0A'
+    type: integer
+    size: 1
+    name: number_of_doors
+    description: The number of doors
+  - id: '0x0B'
+    type: integer
+    size: 1
+    name: number_of_seats
+    description: The number of seats
+  - id: '0x99'
+    type: capability_state
+    name: state
+
+    
