@@ -1,0 +1,20 @@
+car_sdk_version:
+  - item:
+    - value: '0x01'
+      description: Major 1
+    - value: '0x0f'
+      description: Minor 15
+    - value: '0x21'
+      description: Patch is 33, giving the complete version "1.15.33"
+
+car_sdk_build_name:
+  - item:
+    - value: '0x6274737461636b2d75617274'
+      size: 12
+      description: "btstack-uart"
+
+application_version:
+  - item:
+    - value: '0x76312e352d70726f64'
+      size: 9
+      description: "v1.5-prod"
