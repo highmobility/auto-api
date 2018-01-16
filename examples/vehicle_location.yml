@@ -1,0 +1,11 @@
+coordinates:
+  - item:
+    - value: '0x4252147d'
+      description: 52.520008 Latitude
+    - value: '0x41567ab1'
+      description: 13.404954 Longitude
+
+heading:
+  - item:
+    - value: '0x4252147d'
+      description: 52.520008 Heading

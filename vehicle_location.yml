@@ -1,0 +1,30 @@
+name: vehicle_location
+category: poi
+id_msb: '0x00'
+id_lsb: '0x30'
+api_intro: 2
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_vehicle_location
+  - id: '0x01'
+    name: vehicle_location
+    
+properties:
+  - id: '0x01'
+    size: 8
+    name: coordinates
+    items:
+      - name: latitude
+        type: float
+        size: 4
+        description: Latitude in 4-bytes per IEEE 754
+      - name: longitude
+        type: float
+        size: 4
+        description: Longitude in 4-bytes per IEEE 754
+  - id: '0x02'
+    type: float
+    size: 4
+    name: heading
+    description: Heding in 4-bytes per IEEE 754
