@@ -1,0 +1,25 @@
+name: capabilities
+category: api_structure
+id_msb: '0x00'
+id_lsb: '0x10'
+api_intro: 2
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_capabilities
+  - id: '0x01'
+    name: capabilities
+  - id: '0x02'
+    name: get_capability
+    
+properties:
+  - id: '0x01'
+    name: capability # size is dynamic depending on supported_message_types length
+    items:
+      - name: capability_identifier
+        type: integer
+        size: 2
+        description: The identifier of the supported capability
+      - name: supported_message_types
+        type: byte_array
+        description: Array of message type identifiers
