@@ -1,0 +1,20 @@
+failed_message_identifier:
+  - item:
+    - value: '0x00, 0x21'
+      description: MSB, LSB Message Identifier for Trunk State
+
+failed_message_type:
+  - item:
+    - value: '0x00'
+      description: Get Trunk State Message Type
+
+failure_reason:
+  - item:
+    - value: '0x01'
+      description: Unauthorised
+
+failure_description:
+  - item:
+    - value: '0x54727920616761696e'
+      size: 9
+      description: "Try again"
