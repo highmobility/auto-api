@@ -1,0 +1,165 @@
+name: climate
+category: chassis
+id_msb: '0x00'
+id_lsb: '0x24'
+api_intro: 2
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_climate_state
+  - id: '0x01'
+    name: climate_state
+  - id: '0x02'
+    name: set_climate_profile
+  - id: '0x03'
+    name: start_stop_hvac
+  - id: '0x04'
+    name: start_stop_defogging
+  - id: '0x05'
+    name: start_stop_defrosting
+  - id: '0x06'
+    name: start_stop_ionising 
+    
+properties:
+  - id: '0x01'
+    type: float
+    size: 4
+    name: inside_temperature
+    description: The inside temperature in celsius per IEEE 754 formatting
+  - id: '0x02'
+    type: float
+    size: 4
+    name: outside_temperature
+    description: The outside temperature in celsius per IEEE 754 formatting
+  - id: '0x03'
+    type: float
+    size: 4
+    name: driver_temperature_setting
+    description: The driver temperature setting in celsius per IEEE 754 formatting
+  - id: '0x04'
+    type: float
+    size: 4
+    name: passenger_temperature_setting
+    description: The passenger temperature setting in celsius per IEEE 754 formatting
+  - id: '0x05'
+    type: enum
+    size: 1
+    name: hvac_state
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x06'
+    type: enum
+    size: 1
+    name: defogging_state
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x07'
+    type: enum
+    size: 1
+    name: defrosting_state
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x08'
+    type: enum
+    size: 1
+    name: ionising_state
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x09'
+    type: float
+    size: 4
+    name: defrosting_temperature
+    description: The defrosting temperature setting in celsius per IEEE 754 formatting
+  - id: '0x0A'
+    type: integer
+    size: 15
+    name: auto_hvac_profile
+    items:
+      - name: auto_hvac_activated
+        type: enum
+        size: 1
+        values:
+          - name: mondays
+            id: 'Bit 0'
+          - name: tuesdays
+            id: 'Bit 1'
+          - name: wednesdays
+            id: 'Bit 2'
+          - name: thursday
+            id: 'Bit 3'
+          - name: fridays
+            id: 'Bit 4'
+          - name: saturdays
+            id: 'Bit 5'
+          - name: sundays
+            id: 'Bit 6'
+          - name: constant
+            id: 'Bit 0'
+      - name: monday_starting_hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: monday_starting_minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: tuesday_starting_hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: tuesday_starting_minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: wednesday_starting_hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: wednesday_starting_minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: thursday_starting_hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: thursday_starting_minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: friday_starting_hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: friday_starting_minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: saturday_starting_hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: saturday_starting_minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: sunday_starting_hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: sunday_starting_minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
