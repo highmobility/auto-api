@@ -1,0 +1,4 @@
+parking_brake:
+  - item:
+    - value: '0x01'
+      description: Parking brake active
