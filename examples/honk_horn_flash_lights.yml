@@ -1,0 +1,4 @@
+flashers:
+  - item:
+    - value: '0x02'
+      description: Left flasher active

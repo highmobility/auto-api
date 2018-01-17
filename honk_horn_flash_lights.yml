@@ -1,0 +1,30 @@
+name: honk_horn_flash_lights
+category: chassis
+id_msb: '0x00'
+id_lsb: '0x26'
+api_intro: 2
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_flashers_state
+  - id: '0x01'
+    name: flashers_state
+  - id: '0x02'
+    name: honk_flash
+  - id: '0x03'
+    name: activate_deactivate_emergency_flashers
+    
+properties:
+  - id: '0x01'
+    type: enum
+    size: 1
+    name: flashers
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: emergency_flasher_active
+        id: '0x01'
+      - name: left_flasher_active
+        id: '0x02'
+      - name: right_flasher_active
+        id: '0x03'
