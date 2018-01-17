@@ -1,0 +1,21 @@
+window:
+  - item:
+    - value: '0x00'
+      description: Front Left window
+    - value: '0x01'
+      description: Window open
+  - item:
+    - value: '0x01'
+      description: Front Right window
+    - value: '0x00'
+      description: Window closed
+  - item:
+    - value: '0x02'
+      description: Rear Right window
+    - value: '0x01'
+      description: Window open
+  - item:
+    - value: '0x03'
+      description: Rear Left window
+    - value: '0x00'
+      description: Window closed
