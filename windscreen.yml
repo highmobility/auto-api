@@ -1,0 +1,128 @@
+name: windscreen
+category: chassis
+id_msb: '0x00'
+id_lsb: '0x42'
+api_intro: 4
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_windscreen_state
+  - id: '0x01'
+    name: windscreen_state
+  - id: '0x02'
+    name: set_windscreen_damage
+    
+properties:
+  - id: '0x01'
+    type: enum
+    size: 1
+    name: wipers
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+      - name: automatic
+        id: '0x02'
+  - id: '0x02'
+    type: enum
+    size: 1
+    name: wipers_intensity
+    values:
+      - name: level_0
+        pretty_name: Level 0, inactive
+        id: '0x00'
+      - name: level_1
+        id: '0x01'
+      - name: level_2
+        id: '0x02'
+      - name: level_3
+        id: '0x03'
+  - id: '0x03'
+    type: enum
+    size: 1
+    name: windscreen_damage
+    values:
+      - name: no_impact_detected
+        id: '0x00'
+      - name: impact_but_no_damage_detected
+        id: '0x01'
+      - name: damage_smaller_than_1_inch
+        id: '0x02'
+      - name: damage_larger_than_1_inch
+        id: '0x03'
+  - id: '0x04'
+    type: enum
+    size: 1
+    name: windscreen_zone_matrix
+    values:
+      - name: unavailable
+        id: '0x00'
+      - name: horizontal_size
+        pretty_name: 4 bits representing the horizontal size of the matrix seen from the inside of the car, starting from index 1
+        id: 'value & 0xF0'
+      - name: vertical_size
+        pretty_name: 4 bits representing the vertical size of the matrix, starting from index 1
+        id: 'value & 0x0F'
+  - id: '0x05'
+    type: enum
+    size: 1
+    name: windscreen_damage_zone
+    values:
+      - name: unknown
+        id: '0x00'
+      - name: horizontal_position
+        pretty_name: 4 bits representing the horizontal position of the zone in a matrix seen from the inside of the car, starting from index 1
+        id: 'value & 0xF0'
+      - name: vertical_position
+        pretty_name: 4 bits representing the vertical position of the zone, starting from index 1
+        id: 'value & 0x0F'
+  - id: '0x06'
+    type: enum
+    size: 1
+    name: windscreen_needs_replacement
+    values:
+      - name: unknown
+        id: '0x00'
+      - name: no_replacement_needed
+        id: '0x01'
+      - name: replacement_needed
+        id: '0x02'
+  - id: '0x07'
+    type: integer
+    size: 1
+    name: windscreen_damage_confidence
+    description: Percentage between 0-100%, confidence of damage detection. Zero if no impact detected.
+  - id: '0x08'
+    type: integer
+    size: 8
+    name: windscreen_damage_detection_time
+    items:
+      - name: year
+        type: integer
+        size: 1
+        description: Value between 0 and 99, which corresponds to 2000-2099
+      - name: month
+        type: integer
+        size: 1
+        description: 	Value between 1 and 12
+      - name: day
+        type: integer
+        size: 1
+        description: Value between 1 and 31
+      - name: hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: second
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: utc_time_offset
+        type: integer
+        size: 2
+        description: UTC time offset in minutes, which can be negative
