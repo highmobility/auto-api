@@ -1,0 +1,23 @@
+front_exterior_light:
+  - item:
+    - value: '0x02'
+      description: Exterior front lights are on full beam
+
+rear_exterior_light:
+  - item:
+    - value: '0x01'
+      description: Exterior rear lights are active
+
+interior_light:
+  - item:
+    - value: '0x01'
+      description: Interior lights are inactive
+
+ambient_light:
+  - item:
+    - value: '0xff'
+      description: Full red ambient light
+    - value: '0x00'
+      description: No green ambient light
+    - value: '0x00'
+      description: No blue ambient light
