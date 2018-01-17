@@ -1,0 +1,4 @@
+rain_intensity:
+  - item:
+    - value: '0x64'
+      description: 100% (maximum rain)

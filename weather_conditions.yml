@@ -1,0 +1,17 @@
+name: weather_conditions
+category: environment
+id_msb: '0x00'
+id_lsb: '0x55'
+api_intro: 5
+message_types:
+  - id: '0x00'
+    name: get_weather_conditions
+  - id: '0x01'
+    name: weather_conditions
+    
+properties:
+  - id: '0x01'
+    type: integer
+    size: 1
+    name: rain_intensity
+    description: Measured raining intensity percentage, whereas 0% is no rain and 100% is maximum rain
