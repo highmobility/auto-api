@@ -1,0 +1,4 @@
+keyfob_position:
+  - item:
+    - value: '0x05'
+      description: Keyfob is positioned inside the car

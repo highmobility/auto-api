@@ -1,0 +1,30 @@
+name: keyfob_position
+category: chassis
+id_msb: '0x00'
+id_lsb: '0x48'
+api_intro: 4
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_keyfob_position
+  - id: '0x01'
+    name: keyfob_position
+    
+properties:
+  - id: '0x01'
+    type: enum
+    size: 1
+    name: keyfob_position
+    values:
+      - name: out_of_range
+        id: '0x00'
+      - name: outside_driver_side
+        id: '0x01'
+      - name: outside_in_front_of_car
+        id: '0x02'
+      - name: outside_passenger_side
+        id: '0x03'
+      - name: outside_behind_car
+        id: '0x04'
+      - name: inside_car
+        id: '0x05'
