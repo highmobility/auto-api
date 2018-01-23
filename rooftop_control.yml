@@ -1,0 +1,25 @@
+name: rooftop_control
+category: chassis
+id_msb: '0x00'
+id_lsb: '0x25'
+api_intro: 3
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_rooftop_state
+  - id: '0x01'
+    name: rooftop_state
+  - id: '0x02'
+    name: control_rooftop
+    
+properties:
+  - id: '0x01'
+    type: integer
+    size: 1
+    name: dimming
+    description: Percentage value between 0-100 whereas 100 is opaque
+  - id: '0x02'
+    type: integer
+    size: 1
+    name: position
+    description: Percentage value between 0-100 whereas 100 is fully open

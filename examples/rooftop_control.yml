@@ -1,0 +1,9 @@
+dimming:
+  - item:
+    - value: '0x64'
+      description: Rooftop is opaque
+
+position:
+  - item:
+    - value: '0x00'
+      description: Rooftop is fully closed
