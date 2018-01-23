@@ -1,0 +1,82 @@
+name: chassis_settings
+category: chassis
+id_msb: '0x00'
+id_lsb: '0x53'
+api_intro: 5
+message_types:
+  - id: '0x00'
+    name: get_chassis_settings
+  - id: '0x01'
+    name: chassis_settings
+  - id: '0x02'
+    name: set_driving_mode
+  - id: '0x03'
+    name: start_stop_sport_chrono
+  - id: '0x04'
+    name: set_spring_rate
+  - id: '0x05'
+    name: set_chassis_position
+    
+properties:
+  - id: '0x01'
+    type: enum
+    size: 1
+    name: driving_mode
+    values:
+      - name: regular
+        id: '0x00'
+      - name: eco
+        id: '0x01'
+      - name: sport
+        id: '0x02'
+      - name: sport+
+        id: '0x03'
+  - id: '0x02'
+    type: enum
+    size: 1
+    name: sport_chrono
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x03'
+    size: 4
+    name: spring_rate
+    items:
+      - name: axle
+        type: enum
+        size: 1
+        values:
+          - name: front_axle
+            id: '0x00'
+          - name: rear_axle
+            id: '0x01'
+      - name: spring_rate
+        type: integer
+        size: 1
+        description: The suspension spring rate in N/mm
+      - name: maximum_value
+        type: integer
+        size: 1
+        description: The maximum possible value for the spring rate
+      - name: minimum_value
+        type: integer
+        size: 1
+        description: The minimum value for the spring rate
+  - id: '0x04'
+    size: 3
+    name: chassis_position
+    items:
+      - name: chassis_position
+        type: integer
+        size: 1
+        description: The chassis position in mm calculated from the lowest point
+      - name: maximum_value
+        type: integer
+        size: 1
+        description: The maximum possible value for the chassis position
+      - name: minimum_value
+        type: integer
+        size: 1
+        description: The minimum value for the chassis position

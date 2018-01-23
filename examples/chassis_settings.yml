@@ -1,0 +1,27 @@
+driving_mode:
+  - item:
+    - value: '0x01'
+      description: ECO driving mode
+
+sport_chrono:
+  - item:
+    - value: '0x01'
+      description: Sport Chrono active
+
+spring_rate:
+  - item:
+    - value: '0x15'
+      description: Spring rate is 21N/mm
+    - value: '0x25'
+      description: Maximum possible rate is 37N/mm
+    - value: '0x15'
+      description: Minimum possible rate is 21N/mm
+
+chassis_position:
+  - item:
+    - value: '0x19'
+      description: Position is +25mm
+    - value: '0x37'
+      description: Maximum possible position is +55mm
+    - value: '0xE4'
+      description: Minimum possible position is -28mm
