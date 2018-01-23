@@ -1,0 +1,79 @@
+charging:
+  - item:
+    - value: '0x02'
+      description: Charging
+
+estimated_range:
+  - item:
+    - value: '0x00FF'
+      description: 255 km estimated range
+
+battery_level:
+  - item:
+    - value: '0x32'
+      description: Battery level 50%
+
+battery_current_ac:
+  - item:
+    - value: '0xbf19999a'
+      description: Battery current (AC) -0.6
+
+battery_current_dc:
+  - item:
+    - value: '0xbf19999a'
+      description: Battery current (DC) -0.6
+
+charger_voltage_ac:
+  - item:
+    - value: '0x43c80000'
+      description: Charger voltage 400V
+
+charger_voltage_dc:
+  - item:
+    - value: '0x43cd0000'
+      description: Charger voltage 410V
+
+charge_limit:
+  - item:
+    - value: '0x5A'
+      description: Charge limit 90%
+
+time_to_complete_charge:
+  - item:
+    - value: '0x3C'
+      description: time to complete charge 60 minutes
+
+charging_rate_kw:
+  - item:
+    - value: '0x00000000'
+      description: No charge rate
+
+charge_port_state:
+  - item:
+    - value: '0x01'
+      description: Charge port open
+
+charge_mode:
+  - item:
+    - value: '0x00'
+      description: Immediate charging
+
+charge_timer:
+  - item:
+    - value: '0x02'
+      description: Departure time
+    - value: '0x12'
+      description: 2018
+    - value: '0x01'
+      description: January
+    - value: '0x0A'
+      description: the 10th
+    - value: '0x10'
+      description: at 16h
+    - value: '0x20'
+      description: 32min
+    - value: '0x05'
+      description: 5 seconds
+    - value: '0x00, 0x00'
+      description: 0 min UTC time offset
+
