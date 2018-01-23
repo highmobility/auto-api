@@ -1,0 +1,14 @@
+name: notifications
+category: headunit
+id_msb: '0x00'
+id_lsb: '0x38'
+api_intro: 4
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: notification
+  - id: '0x01'
+    name: notification_action
+  - id: '0x02'
+    name: clear_notification
+    
