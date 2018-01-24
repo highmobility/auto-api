@@ -1,0 +1,20 @@
+wi_fi_enabled:
+  - item:
+    - value: '0x01'
+      description: Wi-Fi enabled
+
+network_connected:
+  - item:
+    - value: '0x01'
+      description: Network connected
+
+network_ssid:
+  - item:
+    - value: '0x484f4d45'
+      size: 4
+      description: Network name "HOME"
+
+network_security:
+  - item:
+    - value: '0x03'
+      description: WPA2 Personal
