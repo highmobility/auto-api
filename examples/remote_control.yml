@@ -1,0 +1,9 @@
+control_mode:
+  - item:
+    - value: '0x02'
+      description: Control Mode Started
+
+angle:
+  - item:
+    - value: '0x00, 0x32'
+      description: Angle 50 degrees
