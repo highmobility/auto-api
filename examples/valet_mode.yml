@@ -1,0 +1,4 @@
+valet_mode:
+  - item:
+    - value: '0x01'
+      description: Activated

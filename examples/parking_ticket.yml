@@ -1,0 +1,50 @@
+parking_ticket_state:
+  - item:
+    - value: '0x01'
+      description: Parking started
+
+operator_name:
+  - item:
+    - value: '0x42, 0x65, 0x72, 0x6c, 0x69, 0x6e, 0x20, 0x50, 0x61, 0x72, 0x6b, 0x69, 0x6e, 0x67'
+      size: 14
+      description: Berlin Parking
+
+operator_ticket_id:
+  - item:
+    - value: '0x36, 0x34, 0x38, 0x39, 0x34, 0x32, 0x33, 0x33'
+      size: 8
+      description: Ticket number 64894233
+
+ticket_start_time:
+  - item:
+    - value: '0x11'
+      description: Parking started 2017
+    - value: '0x01'
+      description: January
+    - value: '0x0A'
+      description: the 10th
+    - value: '0x11'
+      description: at 17h
+    - value: '0x22'
+      description: 34min
+    - value: '0x00'
+      description: 0sec
+    - value: '0x00, 0x00'
+      description: 0min UTF time offset
+
+ticket_end_time:
+  - item:
+    - value: '0x11'
+      description: Parking ended 2017
+    - value: '0x02'
+      description: February
+    - value: '0x14'
+      description: the 20th
+    - value: '0x16'
+      description: at 22h
+    - value: '0x0B'
+      description: 11min
+    - value: '0x00'
+      description: 0sec
+    - value: '0x00, 0x00'
+      description: 0min UTF time offset

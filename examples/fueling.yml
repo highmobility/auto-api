@@ -1,0 +1,4 @@
+gas_flap:
+  - item:
+    - value: '0x01'
+      description: Gas flap open

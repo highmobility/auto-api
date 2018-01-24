@@ -1,0 +1,26 @@
+name: theft_alarm
+category: parking
+id_msb: '0x00'
+id_lsb: '0x46'
+api_intro: 4
+api_update: 5
+message_types:
+  - id: '0x00'
+    name: get_theft_alarm_state
+  - id: '0x01'
+    name: theft_alarm_state
+  - id: '0x02'
+    name: set_theft_alarm_state
+    
+properties:
+  - id: '0x01'
+    type: enum
+    size: 1
+    name: theft_alarm
+    values:
+      - name: not_armed
+        id: '0x00'
+      - name: armed
+        id: '0x01'
+      - name: triggered
+        id: '0x02'
