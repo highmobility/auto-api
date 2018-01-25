@@ -1,0 +1,16 @@
+vehicle_time:
+  - item:
+    - value: '0x11'
+      description: Damage impact in 2017
+    - value: '0x01'
+      description: January
+    - value: '0x0A'
+      description: the 10th
+    - value: '0x10'
+      description: at 16h
+    - value: '0x20'
+      description: 32min
+    - value: '0x33'
+      description: 51sec
+    - value: '0x00, 0x78'
+      description: +120 min UTC time offset

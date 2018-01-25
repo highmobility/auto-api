@@ -1,0 +1,44 @@
+name: vehicle_time
+category: poi
+id_msb: '0x00'
+id_lsb: '0x50'
+api_intro: 5
+message_types:
+  - id: '0x00'
+    name: get_vehicle_time
+  - id: '0x01'
+    name: vehicle_time
+    
+properties:
+  - id: '0x01'
+    size: 8
+    name: vehicle_time
+    items:
+      - name: year
+        type: integer
+        size: 1
+        description: Value between 0 and 99, which corresponds to 2000-2099
+      - name: month
+        type: integer
+        size: 1
+        description: 	Value between 1 and 12
+      - name: day
+        type: integer
+        size: 1
+        description: Value between 1 and 31
+      - name: hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: second
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: utc_time_offset
+        type: integer
+        size: 2
+        description: UTC time offset in minutes, which can be negative
