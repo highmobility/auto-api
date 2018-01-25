@@ -1,14 +1,16 @@
-name: vehicle_location
+name: navi_destination
 category: poi
 id_msb: '0x00'
-id_lsb: '0x30'
-api_intro: 2
+id_lsb: '0x31'
+api_intro: 4
 api_update: 5
 message_types:
   - id: '0x00'
-    name: get_vehicle_location
+    name: get_navi_destination
   - id: '0x01'
-    name: vehicle_location
+    name: navi_destination
+  - id: '0x02'
+    name: set_navi_destination
     
 properties:
   - id: '0x01'
@@ -24,7 +26,6 @@ properties:
         size: 4
         description: Longitude in 4-bytes per IEEE 754
   - id: '0x02'
-    type: float
-    size: 4
-    name: heading
-    description: Heading in 4-bytes per IEEE 754
+    type: string
+    name: destination_name
+    description: Destination name bytes formatted in UTF-8
