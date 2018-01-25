@@ -1,4 +1,4 @@
-name: car-rental
+name: car_rental
 id: '0x20'
 pretty_name: Car Rental
 bytes:
