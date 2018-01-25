@@ -1,0 +1,159 @@
+name: home_charger
+category: infrastructure
+id_msb: '0x00'
+id_lsb: '0x60'
+api_intro: 6
+message_types:
+  - id: '0x00'
+    name: get_home_charger_state
+  - id: '0x01'
+    name: home_charger_state
+  - id: '0x02'
+    name: set_charge_current
+  - id: '0x03'
+    name: set_price_tariffs
+  - id: '0x04'
+    name: activate_deactivate_solar_charging
+  - id: '0x05'
+    name: enable_disable_wi_fi_hotspot
+    
+properties:
+  - id: '0x01'
+    type: enum
+    size: 1
+    name: charging
+    values:
+      - name: disconnected
+        id: '0x00'
+      - name: plugged_in
+        id: '0x01'
+      - name: charging
+        id: '0x02'
+  - id: '0x02'
+    type: enum
+    size: 1
+    name: authentication_mechanism
+    values:
+      - name: pin
+        pretty_name: PIN
+        id: '0x00'
+      - name: app
+        id: '0x01'
+  - id: '0x03'
+    type: enum
+    size: 1
+    name: plug_type
+    values:
+      - name: type_1
+        id: '0x00'
+      - name: type_2
+        id: '0x01'
+      - name: ccs
+        pretty_name: 	Combined Charging System (CCS)
+        id: '0x02'
+      - name: chademo
+        pretty_name: CHAdeMO
+        id: '0x03'
+  - id: '0x04'
+    type: float
+    size: 4
+    name: charging_power
+    description: Charging power in kW formatted in 4-bytes per IEEE 754
+  - id: '0x05'
+    type: enum
+    size: 1
+    name: solar_charging
+    values:
+      - name: deactivated
+        id: '0x00'
+      - name: activated
+        id: '0x01'
+  - id: '0x06'
+    size: 8
+    name: location
+    items:
+      - name: latitude
+        type: float
+        size: 4
+        description: Latitude in 4-bytes per IEEE 754
+      - name: longitude
+        type: float
+        size: 4
+        description: Longitude in 4-bytes per IEEE 754
+  - id: '0x07'
+    size: 12
+    name: charge_current
+    pretty_name: Charge current (DC)
+    items:
+      - name: charge_current
+        type: float
+        size: 4
+        description: Charge current in 4-bytes per IEEE 754
+      - name: maximum_value
+        type: float
+        size: 4
+        description: The maximum possible value for the charge current
+      - name: minimum_value
+        type: float
+        size: 4
+        description: The minimum possible value for the charge current
+    values: Charge current in 4-bytes per IEEE 754
+  - id: '0x08'
+    type: enum
+    size: 1
+    name: hotspot_enabled
+    values:
+      - name: disabled
+        id: '0x00'
+      - name: enabled
+        id: '0x01'
+  - id: '0x09'
+    type: string
+    name: hotspot_ssid
+    pretty_name: Hotspot SSID
+    description: The Wi-Fi Hotspot SSID formatted in UTF-8
+  - id: '0x0A'
+    type: enum
+    size: 1
+    name: wi_fi_hotspot_security
+    pretty_name: Wi-Fi Hotspot security
+    values:
+      - name: none
+        id: '0x00'
+      - name: wep
+        pretty_name: WEP
+        id: '0x01'
+      - name: wpa
+        pretty_name: WPA/WPA2 Personal
+        id: '0x02'
+      - name: wep
+        pretty_name: WPA2 Personal
+        id: '0x03'
+  - id: '0x0B'
+    type: string
+    name: wi_fi_hotspot_password
+    pretty_name: Wi-Fi Hotspot password
+    description: The Wi-Fi Hotspot password formatted in UTF-8
+  - id: '0x0C'
+    size: 8
+    name: price_tariff
+    items:
+      - name: pricing_type
+        type: enum
+        size: 1
+        values:
+          - name: starting_fee
+            id: '0x00'
+          - name: per_minute
+            id: '0x01'
+          - name: per_kwh
+            pretty_name: Per kWh
+            id: '0x01'
+      - name: currency
+        type: string
+        size: 3
+        description: The currency alphabetic code per ISO 4217
+      - name: price
+        type: float
+        size: 4
+        description: The price in 4-bytes per IEEE 754

@@ -1,0 +1,85 @@
+charging:
+  - item:
+    - value: '0x02'
+      description: Charging
+
+authentication_mechanism:
+  - item:
+    - value: '0x01'
+      description: App
+
+plug_type:
+  - item:
+    - value: '0x01'
+      description: Type 2 plug
+
+charging_power:
+  - item:
+    - value: '0x41380000'
+      description: 11.5 kWh
+
+solar_charging:
+  - item:
+    - value: '0x01'
+      description: Solar powered charging activated
+
+location:
+  - item:
+    - value: '0x4252147d'
+      description: 52.520008 Latitude in IEE 754 format
+    - value: '0x41567ab1'
+      description: 13.404954 Longitude in IEE 754 format
+
+location:
+  - item:
+    - value: '0x4252147d'
+      description: 52.520008 Latitude in IEE 754 format
+    - value: '0x41567ab1'
+      description: 13.404954 Longitude in IEE 754 format
+
+charge_current:
+  - item:
+    - value: '0x3f000000'
+      description: Charger current (DC) 0.5
+    - value: '0x3f800000'
+      description: Maximum possible current is 1.0
+    - value: '0x00000000'
+      description: Minimum possible current is 0
+
+hotspot_enabled:
+  - item:
+    - value: '0x01'
+      description: Wi-Fi Hotspot enabled
+
+hotspot_ssid:
+  - item:
+    - value: '0x436861726765722037363132'
+      size: 12
+      description: Wi-Fi Hotspot name "Charger 7612"
+
+wi_fi_hotspot_security:
+  - item:
+    - value: '0x03'
+      description: WPA2 Personal
+
+wi_fi_hotspot_password:
+  - item:
+    - value: '0x5a57337641524e554265'
+      size: 10
+      description: Network password "ZW3vARNUBe"
+
+price_tariff:
+  - item:
+    - value: '0x00'
+      description: Starting fee
+    - value: '0x455552'
+      description: EUR
+    - value: '0x40900000'
+      description: '4.50'
+  - item:
+    - value: '0x02'
+      description: Per kWh
+    - value: '0x455552'
+      description: EUR
+    - value: '0x3e99999a'
+      description: '0.30'
