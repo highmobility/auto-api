@@ -1,0 +1,9 @@
+name: driver_fatigue
+category: health
+id_msb: '0x00'
+id_lsb: '0x41'
+api_intro: 4
+api_update: 5
+message_types:
+  - id: '0x01'
+    name: driver_fatigue_detected
