@@ -1,7 +1,7 @@
 name: graphics
 category: headunit
 id_msb: '0x00'
-id_lsb: '0x52'
+id_lsb: '0x51'
 api_intro: 4
 api_update: 5
 message_types:
