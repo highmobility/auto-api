@@ -126,7 +126,7 @@ properties:
       - name: month
         type: integer
         size: 1
-        description: 	Value between 1 and 12
+        description: Value between 1 and 12
       - name: day
         type: integer
         size: 1
