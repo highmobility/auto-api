@@ -49,7 +49,7 @@ properties:
       - name: type_2
         id: '0x01'
       - name: ccs
-        pretty_name: 	Combined Charging System (CCS)
+        pretty_name: Combined Charging System (CCS)
         id: '0x02'
       - name: chademo
         pretty_name: CHAdeMO
