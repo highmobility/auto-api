@@ -1,0 +1,63 @@
+---
+definitions:
+  ChargeState:
+    type: object
+    properties:
+      charging:
+        type: string
+        enum:
+        - disconnected
+        - plugged_in
+        - charging
+        - charging_complete
+        example: disconnected
+      estimatedRange:
+        type: number
+        format: integer
+        example: 255
+      batteryLevel:
+        type: number
+        format: integer
+        example: 50
+      batteryCurrentAc:
+        type: number
+        format: float
+        example: -0.6000000238418579
+      batteryCurrentDc:
+        type: number
+        format: float
+        example: -0.6000000238418579
+      chargerVoltageAc:
+        type: number
+        format: float
+        example: 400.0
+      chargerVoltageDc:
+        type: number
+        format: float
+        example: 410.0
+      chargeLimit:
+        type: number
+        format: integer
+        example: 90
+      timeToCompleteCharge:
+        type: number
+        format: integer
+        example: 60
+      chargingRateKw:
+        type: number
+        format: float
+        example: 0.0
+      chargePortState:
+        type: string
+        enum:
+        - closed
+        - open
+        example: closed
+      chargeMode:
+        type: string
+        enum:
+        - immediate
+        - timer_based
+        - inductive
+        example: immediate
+      chargeTimer: {}

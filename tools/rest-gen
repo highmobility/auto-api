@@ -1,0 +1,75 @@
+#!/usr/bin/env ruby
+puts "*** Hey #{ENV['USER']} I'll try to generate Swagger definitions for you.."
+
+require 'yaml'
+
+# Create header
+defs = Hash.new
+defs['definitions'] = Hash.new
+
+# Capability
+spec = YAML.load_file('../charging.yml')
+example = YAML.load_file('../examples/charging.yml')
+
+cap = Hash.new
+cap['type'] = 'object'
+cap['properties'] = Hash.new
+
+# - Get Swagger formatted model name
+cap_name = spec['message_types'].each do |msg|
+  if msg['id'] == '0x01'
+    break msg['name'].split('_').map { |w| w.capitalize }.join
+  end
+  nil
+end
+
+puts "Starting with #{cap_name}.."
+
+# - Capability properties
+spec['properties'].each do |prop_spec|
+  puts "Now property #{prop_spec['name']}.."
+  prop = Hash.new
+
+  case prop_spec['type']
+  when 'integer'
+    prop['type'] = 'number'
+    prop['format'] = 'integer'
+    # -- Handling decimal format
+    example_raw = example[prop_spec['name']].first['item'].first['value']
+    prop['example'] = example_raw.to_i(16)
+  when 'float'
+    prop['type'] = 'number'
+    prop['format'] = 'float'
+    # -- Handling IEE 754 format
+    example_raw = example[prop_spec['name']].first['item'].first['value']
+    prop['example'] = [example_raw.gsub('0x', '')].pack('H16').unpack('g').first
+  when 'enum'
+    prop['type'] = 'string'
+    prop['enum'] = prop_spec['values'].map { |val| val['name'] }
+    prop['example'] = prop_spec['values'].first['name']
+  else
+    if prop_spec['items'] # TODO: Handle Object
+      puts 'object'
+    else
+      puts "Found a property with type #{prop_spec['type']} - skipping that.."
+      next
+    end
+  end
+
+  # -- Add property
+  prop_name = prop_spec['name'].split('_').map.with_index { |w, i| 
+    # TODO: handle naming exceptions - best to just add to auto api spec?
+    i == 0 ? w : w.capitalize
+  }.join
+
+  cap['properties'][prop_name] = prop
+end
+
+# - Push capability
+defs['definitions'][cap_name] = cap
+
+# Store definitions
+open("definitions.yaml", 'w') { |f| f.write(defs.to_yaml) }
+
+# All done
+puts "*** I think I made it.."
