@@ -105,7 +105,6 @@ properties:
       - name: inductive
         id: '0x02'
   - id: '0x0D'
-    type: enum
     size: 9
     name: charge_timer
     items:
