@@ -10,6 +10,8 @@ sport_chrono:
 
 spring_rate:
   - item:
+    - value: '0x00'
+      description: Front axle
     - value: '0x15'
       description: Spring rate is 21N/mm
     - value: '0x25'

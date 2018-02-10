@@ -14,7 +14,6 @@ message_types:
     
 properties:
   - id: '0x01'
-    type: enum
     size: 3
     name: door
     items:
