@@ -1,5 +1,43 @@
 ---
 definitions:
+  ChargeTimer:
+    type: object
+    properties:
+      timerType:
+        type: string
+        enum:
+        - preferred_start_time
+        - preferred_end_time
+        - departure_time
+        example: preferred_start_time
+      year:
+        type: number
+        format: integer
+        example: 18
+      month:
+        type: number
+        format: integer
+        example: 1
+      day:
+        type: number
+        format: integer
+        example: 10
+      hour:
+        type: number
+        format: integer
+        example: 16
+      minute:
+        type: number
+        format: integer
+        example: 32
+      second:
+        type: number
+        format: integer
+        example: 5
+      utcTimeOffset:
+        type: number
+        format: integer
+        example: 0
   ChargeState:
     type: object
     properties:
@@ -60,4 +98,6 @@ definitions:
         - timer_based
         - inductive
         example: immediate
-      chargeTimer: {}
+      chargeTimer:
+        description: ChargeTimer
+        "$ref": "#/definitions/ChargeTimer"

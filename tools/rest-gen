@@ -3,6 +3,27 @@ puts "*** Hey #{ENV['USER']} I'll try to generate Swagger definitions for you.."
 
 require 'yaml'
 
+# Helpers
+
+def decimal(hex_string)
+  hex_string.to_i(16)
+end
+
+def ieee(hex_string)
+  [hex_string.gsub('0x', '')].pack('H16').unpack('g').first
+end
+
+def swagger_name(name)
+  name.split('_').map { |w| w.capitalize }.join
+end
+
+def swagger_prop_name(name)
+  name.split('_').map.with_index { |w, i| 
+    # TODO: handle naming exceptions - best to just add to auto api spec?
+    i == 0 ? w : w.capitalize
+  }.join
+end
+
 # Create header
 defs = Hash.new
 defs['definitions'] = Hash.new
@@ -18,7 +39,7 @@ cap['properties'] = Hash.new
 # - Get Swagger formatted model name
 cap_name = spec['message_types'].each do |msg|
   if msg['id'] == '0x01'
-    break msg['name'].split('_').map { |w| w.capitalize }.join
+    break swagger_name(msg['name'])
   end
   nil
 end
@@ -29,27 +50,66 @@ puts "Starting with #{cap_name}.."
 spec['properties'].each do |prop_spec|
   puts "Now property #{prop_spec['name']}.."
   prop = Hash.new
+  example_val = example[prop_spec['name']].first['item'].first['value']
 
   case prop_spec['type']
   when 'integer'
     prop['type'] = 'number'
     prop['format'] = 'integer'
     # -- Handling decimal format
-    example_raw = example[prop_spec['name']].first['item'].first['value']
-    prop['example'] = example_raw.to_i(16)
+    prop['example'] = decimal(example_val)
   when 'float'
     prop['type'] = 'number'
     prop['format'] = 'float'
     # -- Handling IEE 754 format
-    example_raw = example[prop_spec['name']].first['item'].first['value']
-    prop['example'] = [example_raw.gsub('0x', '')].pack('H16').unpack('g').first
+    prop['example'] = ieee(example_val)
   when 'enum'
     prop['type'] = 'string'
     prop['enum'] = prop_spec['values'].map { |val| val['name'] }
     prop['example'] = prop_spec['values'].first['name']
   else
-    if prop_spec['items'] # TODO: Handle Object
-      puts 'object'
+    # -- Handling object
+    if prop_spec['items']
+      # --- Creating a new model to be referenced
+      prop_model = Hash.new
+      prop_model['type'] = 'object'
+      prop_model['properties'] = Hash.new
+      
+      prop_spec['items'].each_with_index do |prop_item_spec, idx|
+        item = Hash.new
+        item_example = example[prop_spec['name']].first['item']
+
+        case prop_item_spec['type']
+        when 'integer'
+          item['type'] = 'number'
+          item['format'] = 'integer'
+          # -- Handling decimal format
+          item['example'] = decimal(item_example[idx]['value'])
+        when 'float'
+          item['type'] = 'number'
+          item['format'] = 'float'
+          # -- Handling IEE 754 format
+          item['example'] = ieee(item_example[idx]['name'])
+        when 'enum'
+          item['type'] = 'string'
+          item['enum'] = prop_item_spec['values'].map { |val| val['name'] }
+          item['example'] = prop_item_spec['values'].first['name']
+        else
+          puts "Found a property item with type #{prop_item_spec['type']} - skipping that.."
+        end
+
+        # --- Adding item to property
+        prop_model['properties'][swagger_prop_name(prop_item_spec['name'])] = item
+      end
+
+      prop_swagger_name = swagger_name(prop_spec['name'])
+
+      # -- Referencing to model
+      prop['description'] = prop_swagger_name
+      prop['$ref'] = "#/definitions/#{prop_swagger_name}"
+
+      # -- Push model to definitions
+      defs['definitions'][prop_swagger_name] = prop_model
     else
       puts "Found a property with type #{prop_spec['type']} - skipping that.."
       next
@@ -57,12 +117,7 @@ spec['properties'].each do |prop_spec|
   end
 
   # -- Add property
-  prop_name = prop_spec['name'].split('_').map.with_index { |w, i| 
-    # TODO: handle naming exceptions - best to just add to auto api spec?
-    i == 0 ? w : w.capitalize
-  }.join
-
-  cap['properties'][prop_name] = prop
+  cap['properties'][swagger_prop_name(prop_spec['name'])] = prop
 end
 
 # - Push capability
