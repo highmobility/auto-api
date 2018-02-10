@@ -168,14 +168,12 @@ definitions:
         - rear_left
         - hatch
         example: front_left
-        description: 
       windowState:
         type: string
         enum:
         - closed
         - open
         example: closed
-        description: 
   WindowsState:
     type: object
     properties:
@@ -337,7 +335,6 @@ definitions:
         - front_axle
         - rear_axle
         example: front_axle
-        description: 
       springRate:
         type: number
         format: integer
@@ -404,7 +401,6 @@ definitions:
         - preferred_end_time
         - departure_time
         example: preferred_start_time
-        description: 
       year:
         type: number
         format: integer
@@ -553,7 +549,6 @@ definitions:
         - per_minute
         - per_kwh
         example: starting_fee
-        description: 
       currency:
         type: string
         example: EUR
@@ -640,7 +635,6 @@ definitions:
         - rear_right
         - rear_left
         example: front_left
-        description: 
       tirePressure:
         type: number
         format: float
@@ -777,7 +771,6 @@ definitions:
         - front_lateral_acceleration
         - rear_lateral_acceleration
         example: longitudinal_acceleration
-        description: 
       gForce:
         type: number
         format: float
@@ -792,14 +785,12 @@ definitions:
         - front_axle
         - rear_axle
         example: front_axle
-        description: 
       vectoring:
         type: string
         enum:
         - inactive
         - active
         example: inactive
-        description: 
   RaceState:
     type: object
     properties:
@@ -929,21 +920,18 @@ definitions:
         - rear_left
         - rear_center
         example: front_left
-        description: 
       personDetected:
         type: string
         enum:
         - not_detected
         - detected
         example: not_detected
-        description: 
       seatbeltFastened:
         type: string
         enum:
         - not_fastened
         - fastened
         example: not_fastened
-        description: 
   SeatsState:
     type: object
     properties:
@@ -1232,21 +1220,18 @@ definitions:
         - rear_right
         - rear_left
         example: front_left
-        description: 
       doorPosition:
         type: string
         enum:
         - closed
         - open
         example: closed
-        description: 
       doorLock:
         type: string
         enum:
         - unlocked
         - locked
         example: unlocked
-        description: 
   LockState:
     type: object
     properties:

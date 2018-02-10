@@ -124,7 +124,6 @@ Dir.glob('../*.yml') do |yml_file|
             item['type'] = 'string'
             item['enum'] = prop_item_spec['values'].map { |val| val['name'] }
             item['example'] = prop_item_spec['values'].first['name']
-            item['description'] = prop_item_spec['description']  
           else
             puts "Found a property item with type #{prop_item_spec['type']} - skipping that.."
           end
