@@ -1,0 +1,6 @@
+capability:
+  - item:
+    - value: '0x0020'
+      description: 'Door Locks'
+    - value: '0x000102'
+      description: 'Get Lock State, Lock State, Lock/Unlock Doors'
