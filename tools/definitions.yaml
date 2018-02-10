@@ -6,6 +6,7 @@ definitions:
       vin:
         type: string
         example: JF2SHBDC7CH451869
+        description: The unique Vehicle Identification Number
       powertrain:
         type: string
         enum:
@@ -19,34 +20,43 @@ definitions:
       modelName:
         type: string
         example: Type X
+        description: The car model name bytes formatted in UTF-8
       name:
         type: string
         example: My Car
+        description: The car name (nickname) bytes formatted in UTF-8
       licensePlate:
         type: string
         example: ABC123
+        description: The license plate bytes formatted in UTF-8
       salesDesignation:
         type: string
         example: Package+
+        description: The sales designation of the model formatted in UTF-8
       modelYear:
         type: number
         format: integer
         example: 2017
+        description: The car model manufacturing year number
       colorName:
         type: string
         example: Estoril Blau
+        description: The color name formatted in UTF-8
       powerInKw:
         type: number
         format: integer
         example: 220
+        description: The power of the car measured in kw
       numberOfDoors:
         type: number
         format: integer
         example: 5
+        description: The number of doors
       numberOfSeats:
         type: number
         format: integer
         example: 5
+        description: The number of seats
   TicketStartTime:
     type: object
     properties:
@@ -54,30 +64,37 @@ definitions:
         type: number
         format: integer
         example: 17
+        description: Value between 0 and 99, which corresponds to 2000-2099
       month:
         type: number
         format: integer
         example: 1
+        description: Value between 1 and 12
       day:
         type: number
         format: integer
         example: 10
+        description: Value between 1 and 31
       hour:
         type: number
         format: integer
         example: 17
+        description: Value between 0 and 23
       minute:
         type: number
         format: integer
         example: 34
+        description: Value between 0 and 59
       second:
         type: number
         format: integer
         example: 0
+        description: Value between 0 and 59
       utcTimeOffset:
         type: number
         format: integer
         example: 0
+        description: UTC time offset in minutes, which can be negative
   TicketEndTime:
     type: object
     properties:
@@ -85,30 +102,37 @@ definitions:
         type: number
         format: integer
         example: 17
+        description: Value between 0 and 99, which corresponds to 2000-2099
       month:
         type: number
         format: integer
         example: 2
+        description: Value between 1 and 12
       day:
         type: number
         format: integer
         example: 20
+        description: Value between 1 and 31
       hour:
         type: number
         format: integer
         example: 22
+        description: Value between 0 and 23
       minute:
         type: number
         format: integer
         example: 11
+        description: Value between 0 and 59
       second:
         type: number
         format: integer
         example: 0
+        description: Value between 0 and 59
       utcTimeOffset:
         type: number
         format: integer
         example: 0
+        description: UTC time offset in minutes, which can be negative
   ParkingTicket:
     type: object
     properties:
@@ -121,9 +145,11 @@ definitions:
       operatorName:
         type: string
         example: Berlin Parking
+        description: Operator Name bytes formatted in UTF-8
       operatorTicketId:
         type: string
         example: '64894233'
+        description: Operator Ticket ID bytes formatted in UTF-8
       ticketStartTime:
         description: TicketStartTime
         "$ref": "#/definitions/TicketStartTime"
@@ -142,12 +168,14 @@ definitions:
         - rear_left
         - hatch
         example: front_left
+        description: 
       windowState:
         type: string
         enum:
         - closed
         - open
         example: closed
+        description: 
   WindowsState:
     type: object
     properties:
@@ -177,6 +205,7 @@ definitions:
         type: number
         format: integer
         example: 0
+        description: Wheel base angle in degrees
   GasFlapState:
     type: object
     properties:
@@ -193,10 +222,12 @@ definitions:
         type: number
         format: float
         example: 52.5200080871582
+        description: Latitude in 4-bytes per IEEE 754
       longitude:
         type: number
         format: float
         example: 13.404953956604004
+        description: Longitude in 4-bytes per IEEE 754
   NaviDestination:
     type: object
     properties:
@@ -206,6 +237,7 @@ definitions:
       destinationName:
         type: string
         example: Berlin
+        description: Destination name bytes formatted in UTF-8
   LightConditions:
     type: object
     properties:
@@ -213,10 +245,12 @@ definitions:
         type: number
         format: float
         example: 98737.5
+        description: Measured outside illuminance in lux, formatted as IEEE 754 decimal
       insideLight:
         type: number
         format: float
         example: 0.37598228454589844
+        description: Measured inside illuminance in lux, formatted as IEEE 754 decimal
   OffroadState:
     type: object
     properties:
@@ -224,10 +258,14 @@ definitions:
         type: number
         format: integer
         example: 0
+        description: The route elevation incline in degrees, which is a negative number
+          for decline
       wheelSuspension:
         type: number
         format: integer
         example: 50
+        description: The wheel suspension level percentage, whereas 0% is no suspension
+          and 100% maximum suspension
   TrunkState:
     type: object
     properties:
@@ -259,10 +297,12 @@ definitions:
         type: number
         format: integer
         example: 0
+        description: The blue colour of RGB in hex
       rgbGreen:
         type: number
         format: integer
         example: 0
+        description: The green colour of RGB in hex
   LightsState:
     type: object
     properties:
@@ -297,18 +337,22 @@ definitions:
         - front_axle
         - rear_axle
         example: front_axle
+        description: 
       springRate:
         type: number
         format: integer
         example: 21
+        description: The suspension spring rate in N/mm
       maximumValue:
         type: number
         format: integer
         example: 37
+        description: The maximum possible value for the spring rate
       minimumValue:
         type: number
         format: integer
         example: 21
+        description: The minimum value for the spring rate
   ChassisPosition:
     type: object
     properties:
@@ -316,14 +360,17 @@ definitions:
         type: number
         format: integer
         example: 25
+        description: The chassis position in mm calculated from the lowest point
       maximumValue:
         type: number
         format: integer
         example: 55
+        description: The maximum possible value for the chassis position
       minimumValue:
         type: number
         format: integer
         example: 228
+        description: The minimum value for the chassis position
   ChassisSettings:
     type: object
     properties:
@@ -357,34 +404,42 @@ definitions:
         - preferred_end_time
         - departure_time
         example: preferred_start_time
+        description: 
       year:
         type: number
         format: integer
         example: 18
+        description: Value between 0 and 99, which corresponds to 2000-2099
       month:
         type: number
         format: integer
         example: 1
+        description: Value between 1 and 12
       day:
         type: number
         format: integer
         example: 10
+        description: Value between 1 and 31
       hour:
         type: number
         format: integer
         example: 16
+        description: Value between 0 and 23
       minute:
         type: number
         format: integer
         example: 32
+        description: Value between 0 and 59
       second:
         type: number
         format: integer
         example: 5
+        description: Value between 0 and 59
       utcTimeOffset:
         type: number
         format: integer
         example: 0
+        description: UTC time offset in minutes, which can be negative
   ChargeState:
     type: object
     properties:
@@ -400,38 +455,47 @@ definitions:
         type: number
         format: integer
         example: 255
+        description: Estimated range in km
       batteryLevel:
         type: number
         format: integer
         example: 50
+        description: Battery level percentage between 0-100
       batteryCurrentAc:
         type: number
         format: float
         example: -0.6000000238418579
+        description: Battery current in 4-bytes per IEEE 754
       batteryCurrentDc:
         type: number
         format: float
         example: -0.6000000238418579
+        description: Battery current in 4-bytes per IEEE 754
       chargerVoltageAc:
         type: number
         format: float
         example: 400.0
+        description: Charger voltage in 4-bytes per IEEE 754
       chargerVoltageDc:
         type: number
         format: float
         example: 410.0
+        description: Charger voltage in 4-bytes per IEEE 754
       chargeLimit:
         type: number
         format: integer
         example: 90
+        description: Charge limit percentage between 0-100
       timeToCompleteCharge:
         type: number
         format: integer
         example: 60
+        description: Time until charging completed in minutes
       chargingRateKw:
         type: number
         format: float
         example: 0.0
+        description: Charge rate in kW represented as 4-bytes per IEEE 754, when charging
       chargePortState:
         type: string
         enum:
@@ -455,10 +519,12 @@ definitions:
         type: number
         format: float
         example: 52.5200080871582
+        description: Latitude in 4-bytes per IEEE 754
       longitude:
         type: number
         format: float
         example: 13.404953956604004
+        description: Longitude in 4-bytes per IEEE 754
   ChargeCurrent:
     type: object
     properties:
@@ -466,14 +532,17 @@ definitions:
         type: number
         format: float
         example: 0.5
+        description: Charge current in 4-bytes per IEEE 754
       maximumValue:
         type: number
         format: float
         example: 1.0
+        description: The maximum possible value for the charge current
       minimumValue:
         type: number
         format: float
         example: 0.0
+        description: The minimum possible value for the charge current
   PriceTariff:
     type: object
     properties:
@@ -484,13 +553,16 @@ definitions:
         - per_minute
         - per_kwh
         example: starting_fee
+        description: 
       currency:
         type: string
         example: EUR
+        description: The currency alphabetic code per ISO 4217
       price:
         type: number
         format: float
         example: 4.5
+        description: The price in 4-bytes per IEEE 754
   HomeChargerState:
     type: object
     properties:
@@ -519,6 +591,7 @@ definitions:
         type: number
         format: float
         example: 11.5
+        description: Charging power in kW formatted in 4-bytes per IEEE 754
       solarCharging:
         type: string
         enum:
@@ -540,6 +613,7 @@ definitions:
       hotspotSsid:
         type: string
         example: Charger 7612
+        description: The Wi-Fi Hotspot SSID formatted in UTF-8
       wiFiHotspotSecurity:
         type: string
         enum:
@@ -551,6 +625,7 @@ definitions:
       wiFiHotspotPassword:
         type: string
         example: ZW3vARNUBe
+        description: The Wi-Fi Hotspot password formatted in UTF-8
       priceTariff:
         description: PriceTariff
         "$ref": "#/definitions/PriceTariff"
@@ -565,18 +640,22 @@ definitions:
         - rear_right
         - rear_left
         example: front_left
+        description: 
       tirePressure:
         type: number
         format: float
         example: 2.309999942779541
+        description: Tire pressure in celsius formatted in 4-bytes per IEEE 754
       tireTemperature:
         type: number
         format: float
         example: 40.0
+        description: Tire temperature in celsius formatted in 4-bytes per IEEE 754
       wheelRpm:
         type: number
         format: integer
         example: 746
+        description: The RPM measured at this wheel
   DiagnosticsState:
     type: object
     properties:
@@ -584,34 +663,42 @@ definitions:
         type: number
         format: integer
         example: 150000
+        description: The car mileage (odometer) in km
       engineOilTemperature:
         type: number
         format: integer
         example: 99
+        description: Engine oil temperature in Celsius, whereas can be negative
       speed:
         type: number
         format: integer
         example: 60
+        description: The car speed on km/h, whereas can be negative
       engineRpm:
         type: number
         format: integer
         example: 2500
+        description: Engine RPM (revolutions per minute)
       fuelLevel:
         type: number
         format: integer
         example: 90
+        description: Fuel level percentage between 0-100
       estimatedRange:
         type: number
         format: integer
         example: 265
+        description: Estimated range (with combustion engine)
       currentFuelConsumption:
         type: number
         format: float
         example: 8.75
+        description: Current fuel consumption in liters/100km per IEEE 754 formatting
       averageFuelConsumption:
         type: number
         format: float
         example: 6.199999809265137
+        description: Average fuel consumption in liters/100km per IEEE 754 formatting
       washerFluidLevel:
         type: string
         enum:
@@ -625,18 +712,22 @@ definitions:
         type: number
         format: float
         example: 12.0
+        description: Battery voltage per IEEE 754 formatting
       adblueLevel:
         type: number
         format: float
         example: 0.5
+        description: AdBlue level in liters formatted in 4-bytes per IEEE 754 formatting
       distanceSinceReset:
         type: number
         format: integer
         example: 1500
+        description: The distance driven in km since reset
       distanceSinceStart:
         type: number
         format: integer
         example: 10
+        description: The distance driven in km since trip start
   WiFiState:
     type: object
     properties:
@@ -655,6 +746,7 @@ definitions:
       networkSsid:
         type: string
         example: HOME
+        description: The network SSID formatted in UTF-8
       networkSecurity:
         type: string
         enum:
@@ -673,6 +765,7 @@ definitions:
         type: number
         format: float
         example: 52.5200080871582
+        description: Heading in 4-bytes per IEEE 754
   Acceleration:
     type: object
     properties:
@@ -684,10 +777,12 @@ definitions:
         - front_lateral_acceleration
         - rear_lateral_acceleration
         example: longitudinal_acceleration
+        description: 
       gForce:
         type: number
         format: float
         example: 1.5028610229492188
+        description: The accelaration in g-force per IEEE 754
   BrakeTorqueVectoring:
     type: object
     properties:
@@ -697,12 +792,14 @@ definitions:
         - front_axle
         - rear_axle
         example: front_axle
+        description: 
       vectoring:
         type: string
         enum:
         - inactive
         - active
         example: inactive
+        description: 
   RaceState:
     type: object
     properties:
@@ -713,30 +810,40 @@ definitions:
         type: number
         format: integer
         example: 19
+        description: The understeering percentage between 0-100% whereas up to 20%
+          is considered OK, up to 30% marginal, over 30% critical
       oversteering:
         type: number
         format: integer
         example: 0
+        description: The oversteering percentage between 0-100% whereas up to 20%
+          is considered OK, up to 30% marginal, over 30% critical
       gasPedalPosition:
         type: number
         format: integer
         example: 98
+        description: The gas pedal position between 0-100%, whereas 100% is full throttle
       steeringAngle:
         type: number
         format: integer
         example: 0
+        description: The steering angle in degrees, whereas 0 degrees is straight
+          ahead, positive number to the left and negative number to the right
       brakePressure:
         type: number
         format: float
         example: 0.0
+        description: Brake pressure in bar, whereas 100bar is max value, full brake
       yawRate:
         type: number
         format: float
         example: 6.026092529296875
+        description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
       rearSuspensionSteering:
         type: number
         format: integer
         example: 3
+        description: Rear suspension steering in degrees
       electronicStabilityProgram:
         type: string
         enum:
@@ -761,10 +868,13 @@ definitions:
         type: number
         format: integer
         example: 4
+        description: The selected gear value, if any
       brakePedalPosition:
         type: number
         format: integer
         example: 0
+        description: The brake pedal position between 0-100%, wheras 100% is full
+          brakes
   CarSdkVersion:
     type: object
     properties:
@@ -772,14 +882,17 @@ definitions:
         type: number
         format: integer
         example: 1
+        description: Car SDK version major number
       versionMinor:
         type: number
         format: integer
         example: 15
+        description: Car SDK version minor number
       versionPatch:
         type: number
         format: integer
         example: 33
+        description: Car SDK version patch number
   FirmwareVersion:
     type: object
     properties:
@@ -789,9 +902,11 @@ definitions:
       carSdkBuildName:
         type: string
         example: btstack-uart
+        description: Car SDK version build name bytes formatted in UTF-8
       applicationVersion:
         type: string
         example: v1.5-prod
+        description: Application version bytes formatted in UTF-8
   TheftAlarmState:
     type: object
     properties:
@@ -814,18 +929,21 @@ definitions:
         - rear_left
         - rear_center
         example: front_left
+        description: 
       personDetected:
         type: string
         enum:
         - not_detected
         - detected
         example: not_detected
+        description: 
       seatbeltFastened:
         type: string
         enum:
         - not_fastened
         - fastened
         example: not_fastened
+        description: 
   SeatsState:
     type: object
     properties:
@@ -848,6 +966,7 @@ definitions:
         type: number
         format: integer
         example: 32
+        description: The identifier of the supported capability
       supportedMessageTypes: {}
   Capabilities:
     type: object
@@ -862,10 +981,13 @@ definitions:
         type: number
         format: integer
         example: 501
+        description: Number of days until next servicing of the car, whereas negative
+          is overdue
       kilometersToNextService:
         type: number
         format: integer
         example: 3681
+        description: The amount of kilometers until next servicing of the car
   RooftopState:
     type: object
     properties:
@@ -873,10 +995,12 @@ definitions:
         type: number
         format: integer
         example: 100
+        description: Percentage value between 0-100 whereas 100 is opaque
       position:
         type: number
         format: integer
         example: 0
+        description: Percentage value between 0-100 whereas 100 is fully open
   Failure:
     type: object
     properties:
@@ -884,10 +1008,12 @@ definitions:
         type: number
         format: integer
         example: 0
+        description: Capability identifier of the failed message
       failedMessageType:
         type: number
         format: integer
         example: 0
+        description: Message type of the failed message
       failureReason:
         type: string
         enum:
@@ -901,6 +1027,7 @@ definitions:
       failureDescription:
         type: string
         example: Try again
+        description: Failure description bytes formatted in UTF-8
   WindscreenDamageDetectionTime:
     type: object
     properties:
@@ -908,30 +1035,37 @@ definitions:
         type: number
         format: integer
         example: 17
+        description: Value between 0 and 99, which corresponds to 2000-2099
       month:
         type: number
         format: integer
         example: 1
+        description: Value between 1 and 12
       day:
         type: number
         format: integer
         example: 10
+        description: Value between 1 and 31
       hour:
         type: number
         format: integer
         example: 16
+        description: Value between 0 and 23
       minute:
         type: number
         format: integer
         example: 32
+        description: Value between 0 and 59
       second:
         type: number
         format: integer
         example: 5
+        description: Value between 0 and 59
       utcTimeOffset:
         type: number
         format: integer
         example: 0
+        description: UTC time offset in minutes, which can be negative
   WindscreenState:
     type: object
     properties:
@@ -983,6 +1117,8 @@ definitions:
         type: number
         format: integer
         example: 95
+        description: Percentage between 0-100%, confidence of damage detection. Zero
+          if no impact detected.
       windscreenDamageDetectionTime:
         description: WindscreenDamageDetectionTime
         "$ref": "#/definitions/WindscreenDamageDetectionTime"
@@ -1026,6 +1162,8 @@ definitions:
         type: number
         format: integer
         example: 100
+        description: Measured raining intensity percentage, whereas 0% is no rain
+          and 100% is maximum rain
   ClimateState:
     type: object
     properties:
@@ -1033,18 +1171,22 @@ definitions:
         type: number
         format: float
         example: 19.0
+        description: The inside temperature in celsius per IEEE 754 formatting
       outsideTemperature:
         type: number
         format: float
         example: 12.0
+        description: The outside temperature in celsius per IEEE 754 formatting
       driverTemperatureSetting:
         type: number
         format: float
         example: 21.5
+        description: The driver temperature setting in celsius per IEEE 754 formatting
       passengerTemperatureSetting:
         type: number
         format: float
         example: 21.5
+        description: The passenger temperature setting in celsius per IEEE 754 formatting
       hvacState:
         type: string
         enum:
@@ -1073,10 +1215,12 @@ definitions:
         type: number
         format: float
         example: 21.5
+        description: The defrosting temperature setting in celsius per IEEE 754 formatting
       autoHvacProfile:
         type: number
         format: integer
         example: 96
+        description: 
   Door:
     type: object
     properties:
@@ -1088,18 +1232,21 @@ definitions:
         - rear_right
         - rear_left
         example: front_left
+        description: 
       doorPosition:
         type: string
         enum:
         - closed
         - open
         example: closed
+        description: 
       doorLock:
         type: string
         enum:
         - unlocked
         - locked
         example: unlocked
+        description: 
   LockState:
     type: object
     properties:

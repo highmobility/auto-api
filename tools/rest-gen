@@ -73,16 +73,19 @@ Dir.glob('../*.yml') do |yml_file|
       prop['type'] = 'string'
       # -- Handling string format
       prop['example'] = hex_to_s(example_val)
+      prop['description'] = prop_spec['description']
     when 'integer'
       prop['type'] = 'number'
       prop['format'] = 'integer'
       # -- Handling decimal format
       prop['example'] = decimal(example_val)
+      prop['description'] = prop_spec['description']
     when 'float'
       prop['type'] = 'number'
       prop['format'] = 'float'
       # -- Handling IEE 754 format
       prop['example'] = ieee(example_val)
+      prop['description'] = prop_spec['description']
     when 'enum'
       prop['type'] = 'string'
       prop['enum'] = prop_spec['values'].map { |val| val['name'] }
@@ -104,20 +107,24 @@ Dir.glob('../*.yml') do |yml_file|
             item['type'] = 'string'
             # -- Handling string format
             item['example'] = hex_to_s(item_example[idx]['value'])
+            item['description'] = prop_item_spec['description']  
           when 'integer'
             item['type'] = 'number'
             item['format'] = 'integer'
             # -- Handling decimal format
             item['example'] = decimal(item_example[idx]['value'])
+            item['description'] = prop_item_spec['description']  
           when 'float'
             item['type'] = 'number'
             item['format'] = 'float'
             # -- Handling IEE 754 format
             item['example'] = ieee(item_example[idx]['value'])
+            item['description'] = prop_item_spec['description']  
           when 'enum'
             item['type'] = 'string'
             item['enum'] = prop_item_spec['values'].map { |val| val['name'] }
             item['example'] = prop_item_spec['values'].first['name']
+            item['description'] = prop_item_spec['description']  
           else
             puts "Found a property item with type #{prop_item_spec['type']} - skipping that.."
           end
