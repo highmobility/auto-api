@@ -30,6 +30,7 @@ properties:
     type: integer
     size: 2
     name: engine_rpm
+    title_case_name: engineRPM
     pretty_name: Engine RPM
     description: Engine RPM (revolutions per minute)
   - id: '0x05'
@@ -87,6 +88,7 @@ properties:
         type: float
         description: Tire temperature in celsius formatted in 4-bytes per IEEE 754
       - name: wheel_rpm
+        title_case_name: wheelRPM
         size: 4
         type: integer
         description: The RPM measured at this wheel

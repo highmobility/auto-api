@@ -48,24 +48,28 @@ properties:
     type: float
     size: 4
     name: battery_current_ac
+    title_case_name: batteryCurrentAC
     pretty_name: Battery current (AC)
     description: Battery current in 4-bytes per IEEE 754
   - id: '0x05'
     type: float
     size: 4
     name: battery_current_dc
+    title_case_name: batteryCurrentDC
     pretty_name: Battery current (DC)
     description: Battery current in 4-bytes per IEEE 754
   - id: '0x06'
     type: float
     size: 4
     name: charger_voltage_ac
+    title_case_name: batteryVoltageAC
     pretty_name: Charger voltage (AC)
     description: Charger voltage in 4-bytes per IEEE 754
   - id: '0x07'
     type: float
     size: 4
     name: charger_voltage_dc
+    title_case_name: batteryVoltageDC
     pretty_name: Charger voltage (DC)
     description: Charger voltage in 4-bytes per IEEE 754
   - id: '0x08'
@@ -82,6 +86,7 @@ properties:
     type: float
     size: 4
     name: charging_rate_kw
+    title_case_name: chargingRateKW
     pretty_name: Charging rate (kW)
     description: Charge rate in kW represented as 4-bytes per IEEE 754, when charging
   - id: '0x0B'

@@ -457,22 +457,22 @@ definitions:
         format: integer
         example: 50
         description: Battery level percentage between 0-100
-      batteryCurrentAc:
+      batteryCurrentAC:
         type: number
         format: float
         example: -0.6000000238418579
         description: Battery current in 4-bytes per IEEE 754
-      batteryCurrentDc:
+      batteryCurrentDC:
         type: number
         format: float
         example: -0.6000000238418579
         description: Battery current in 4-bytes per IEEE 754
-      chargerVoltageAc:
+      batteryVoltageAC:
         type: number
         format: float
         example: 400.0
         description: Charger voltage in 4-bytes per IEEE 754
-      chargerVoltageDc:
+      batteryVoltageDC:
         type: number
         format: float
         example: 410.0
@@ -487,7 +487,7 @@ definitions:
         format: integer
         example: 60
         description: Time until charging completed in minutes
-      chargingRateKw:
+      chargingRateKW:
         type: number
         format: float
         example: 0.0
@@ -645,7 +645,7 @@ definitions:
         format: float
         example: 40.0
         description: Tire temperature in celsius formatted in 4-bytes per IEEE 754
-      wheelRpm:
+      wheelRPM:
         type: number
         format: integer
         example: 746
@@ -668,7 +668,7 @@ definitions:
         format: integer
         example: 60
         description: The car speed on km/h, whereas can be negative
-      engineRpm:
+      engineRPM:
         type: number
         format: integer
         example: 2500
@@ -1152,6 +1152,91 @@ definitions:
         example: 100
         description: Measured raining intensity percentage, whereas 0% is no rain
           and 100% is maximum rain
+  AutoHvacProfile:
+    type: object
+    properties:
+      autoHvacActivated:
+        type: string
+        enum:
+        - mondays
+        - tuesdays
+        - wednesdays
+        - thursday
+        - fridays
+        - saturdays
+        - sundays
+        - constant
+        example: mondays
+      mondayStartingHour:
+        type: number
+        format: integer
+        example: 0
+        description: Value between 0 and 23
+      mondayStartingMinute:
+        type: number
+        format: integer
+        example: 0
+        description: Value between 0 and 59
+      tuesdayStartingHour:
+        type: number
+        format: integer
+        example: 0
+        description: Value between 0 and 23
+      tuesdayStartingMinute:
+        type: number
+        format: integer
+        example: 0
+        description: Value between 0 and 59
+      wednesdayStartingHour:
+        type: number
+        format: integer
+        example: 0
+        description: Value between 0 and 23
+      wednesdayStartingMinute:
+        type: number
+        format: integer
+        example: 0
+        description: Value between 0 and 59
+      thursdayStartingHour:
+        type: number
+        format: integer
+        example: 0
+        description: Value between 0 and 23
+      thursdayStartingMinute:
+        type: number
+        format: integer
+        example: 0
+        description: Value between 0 and 59
+      fridayStartingHour:
+        type: number
+        format: integer
+        example: 0
+        description: Value between 0 and 23
+      fridayStartingMinute:
+        type: number
+        format: integer
+        example: 0
+        description: Value between 0 and 59
+      saturdayStartingHour:
+        type: number
+        format: integer
+        example: 7
+        description: Value between 0 and 23
+      saturdayStartingMinute:
+        type: number
+        format: integer
+        example: 30
+        description: Value between 0 and 59
+      sundayStartingHour:
+        type: number
+        format: integer
+        example: 7
+        description: Value between 0 and 23
+      sundayStartingMinute:
+        type: number
+        format: integer
+        example: 30
+        description: Value between 0 and 59
   ClimateState:
     type: object
     properties:
@@ -1205,10 +1290,8 @@ definitions:
         example: 21.5
         description: The defrosting temperature setting in celsius per IEEE 754 formatting
       autoHvacProfile:
-        type: number
-        format: integer
-        example: 96
-        description: 
+        description: AutoHvacProfile
+        "$ref": "#/definitions/AutoHvacProfile"
   Door:
     type: object
     properties:

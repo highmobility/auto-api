@@ -83,7 +83,6 @@ properties:
     name: defrosting_temperature
     description: The defrosting temperature setting in celsius per IEEE 754 formatting
   - id: '0x0A'
-    type: integer
     size: 15
     name: auto_hvac_profile
     items:

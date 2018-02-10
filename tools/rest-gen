@@ -21,8 +21,10 @@ def swagger_name(name)
   name.split('_').map { |w| w.capitalize }.join
 end
 
-def swagger_prop_name(name)
-  name.split('_').map.with_index { |w, i| 
+def swagger_prop_name(spec)
+  return spec['title_case_name'] if spec['title_case_name']
+
+  spec['name'].split('_').map.with_index { |w, i| 
     # TODO: handle naming exceptions - best to just add to auto api spec?
     i == 0 ? w : w.capitalize
   }.join
@@ -129,7 +131,7 @@ Dir.glob('../*.yml') do |yml_file|
           end
 
           # --- Adding item to property
-          prop_model['properties'][swagger_prop_name(prop_item_spec['name'])] = item
+          prop_model['properties'][swagger_prop_name(prop_item_spec)] = item
         end
 
         prop_swagger_name = swagger_name(prop_spec['name'])
@@ -147,7 +149,7 @@ Dir.glob('../*.yml') do |yml_file|
     end
 
     # -- Add property
-    cap['properties'][swagger_prop_name(prop_spec['name'])] = prop
+    cap['properties'][swagger_prop_name(prop_spec)] = prop
   end
 
   # - Push capability

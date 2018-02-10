@@ -47,17 +47,31 @@ auto_hvac_profile:
   - item:
     - value: '0x60'
       description: Auto-HVAC activated for Saturdays and Sundays
-    - value: '0x00, 0x00'
-      description: Monday not set 00:00
-    - value: '0x00, 0x00'
-      description: Tuesday not set 00:00
-    - value: '0x00, 0x00'
-      description: Wednesday not set 00:00
-    - value: '0x00, 0x00'
-      description: Thursday not set 00:00
-    - value: '0x00, 0x00'
-      description: Friday not set 00:00
-    - value: '0x07, 0x1E'
-      description: Saturday not set 07:30
-    - value: '0x07, 0x1E'
-      description: Sunday not set 07:30
+    - value: '0x00'
+      description: Monday not set
+    - value: '0x00'
+      description: 00:00
+    - value: '0x00'
+      description: Tuesday not set
+    - value: '0x00'
+      description: 00:00
+    - value: '0x00'
+      description: Wednesday not set
+    - value: '0x00'
+      description: 00:00
+    - value: '0x00'
+      description: Thursday not set
+    - value: '0x00'
+      description: 00:00
+    - value: '0x00'
+      description: Friday not set
+    - value: '0x00'
+      description: 00:00
+    - value: '0x07'
+      description: Saturday set
+    - value: '0x1E'
+      description: 07:30
+    - value: '0x07'
+      description: Sunday set
+    - value: '0x1E'
+      description: 07:30
