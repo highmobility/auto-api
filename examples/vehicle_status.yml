@@ -1,0 +1,54 @@
+vin:
+  - item:
+    - value: '0x4a46325348424443374348343531383639'
+      description: VIN is JF2SHBDC7CH451869
+
+powertrain:
+  - item:
+    - value: '0x01'
+      description: All-electric powertrain
+
+model_name:
+  - item:
+    - value: '0x547970652058'
+      description: Type X
+
+name:
+  - item:
+    - value: '0x4d7920436172'
+      description: My Car
+
+license_plate:
+  - item:
+    - value: '0x414243313233'
+      description: ABC123
+
+sales_designation:
+  - item:
+    - value: '0x5061636B6167652B'
+      description: Package+
+
+model_year:
+  - item:
+    - value: '0x07E1'
+      description: '2017'
+
+color_name:
+  - item:
+    - value: '0x4573746f72696c20426c6175'
+      description: 'Estoril Blau'
+
+power_in_kw:
+  - item:
+    - value: '0x00DC'
+      description: '220 kW'
+
+number_of_doors:
+  - item:
+    - value: '0x05'
+      description: '5 doors'
+
+number_of_seats:
+  - item:
+    - value: '0x05'
+      description: '5 seats'
