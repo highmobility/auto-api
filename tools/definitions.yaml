@@ -747,7 +747,7 @@ definitions:
         - none
         - wep
         - wpa
-        - wep
+        - wep_personal
         example: none
   VehicleLocation:
     type: object
