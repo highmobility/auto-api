@@ -56,7 +56,7 @@ properties:
         type: integer
         size: 1
         description: The green colour of RGB in hex
-      - name: rgb_red
+      - name: rgb_blue
         type: integer
         size: 1
         description: The blue colour of RGB in hex
