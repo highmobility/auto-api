@@ -161,7 +161,7 @@ Dir.glob('../*.yml') do |yml_file|
                   msg['name'] unless msg['id'] == '0x01' # ignore states for clarity
                 end.compact
               end
-              item['example'] = 'get_charge_state'
+              item['items']['example'] = 'get_charge_state'
             else
               puts "Found a property item with type #{prop_item_spec['type']} - skipping that.."
             end
