@@ -2,12 +2,12 @@ acceleration:
   - item:
     - value: '0x00'
       description: Longitudinal acceleration
-    - value: '0x3f, 0x5d, 0x2f, 0x1b'
+    - value: '0x3f5d2f1b'
       description: 0.864 g
   - item:
     - value: '0x01'
       description: Lateral acceleration
-    - value: '0xbf, 0x40, 0xc4, 0x9c'
+    - value: '0xbf40c49c'
       description: -0.753 g
 
 understeering:
@@ -27,7 +27,7 @@ gas_pedal_position:
 
 yaw_rate:
   - item:
-    - value: '0x40, 0xd5, 0x1e, 0xb8'
+    - value: '0x40d51eb8'
       description: 6.66 °/s
 
 rear_suspension_steering:

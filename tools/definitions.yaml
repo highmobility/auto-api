@@ -255,7 +255,7 @@ definitions:
       routeIncline:
         type: number
         format: integer
-        example: 0
+        example: 10
         description: The route elevation incline in degrees, which is a negative number
           for decline
       wheelSuspension:
@@ -721,7 +721,7 @@ definitions:
       gForce:
         type: number
         format: float
-        example: 1.5028610229492188
+        example: 0.8640000224113464
         description: The accelaration in g-force per IEEE 754
   BrakeTorqueVectoring:
     type: object
@@ -741,9 +741,11 @@ definitions:
   RaceState:
     type: object
     properties:
-      acceleration:
-        description: Acceleration
-        "$ref": "#/definitions/Acceleration"
+      accelerations:
+        type: array
+        items:
+          description: Acceleration
+          "$ref": "#/definitions/Acceleration"
       understeering:
         type: number
         format: integer
@@ -775,7 +777,7 @@ definitions:
       yawRate:
         type: number
         format: float
-        example: 6.026092529296875
+        example: 6.659999847412109
         description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
       rearSuspensionSteering:
         type: number
@@ -788,9 +790,11 @@ definitions:
         - inactive
         - active
         example: inactive
-      brakeTorqueVectoring:
-        description: BrakeTorqueVectoring
-        "$ref": "#/definitions/BrakeTorqueVectoring"
+      brakeTorqueVectorings:
+        type: array
+        items:
+          description: BrakeTorqueVectoring
+          "$ref": "#/definitions/BrakeTorqueVectoring"
       gearMode:
         type: string
         enum:
