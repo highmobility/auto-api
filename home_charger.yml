@@ -126,7 +126,7 @@ properties:
       - name: wpa
         pretty_name: WPA/WPA2 Personal
         id: '0x02'
-      - name: wep
+      - name: wep_personal
         pretty_name: WPA2 Personal
         id: '0x03'
   - id: '0x0B'
