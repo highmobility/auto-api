@@ -57,6 +57,11 @@ definitions:
         format: integer
         example: 5
         description: The number of seats
+      state:
+        type: array
+        items:
+          description: A state of the vehicle
+          type: object
   TicketStartTime:
     type: object
     properties:

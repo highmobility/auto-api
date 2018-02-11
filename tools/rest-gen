@@ -100,6 +100,12 @@ Dir.glob('../*.yml') do |yml_file|
         prop['type'] = 'string'
         prop['enum'] = prop_spec['values'].map { |val| val['name'] }
         prop['example'] = prop_spec['values'].first['name']
+      when 'capability_state'
+        prop['type'] = 'array'
+        prop['items'] = {
+          'description' => 'A state of the vehicle',
+          'type' => "object"
+        }
       else
         # -- Handling object
         if prop_spec['items']
