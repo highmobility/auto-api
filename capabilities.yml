@@ -17,9 +17,9 @@ properties:
     name: capability # size is dynamic depending on supported_message_types length
     items:
       - name: capability_identifier
-        type: integer
+        type: capability_enum
         size: 2
         description: The identifier of the supported capability
       - name: supported_message_types
-        type: byte_array
+        type: message_types_enum
         description: Array of message type identifiers

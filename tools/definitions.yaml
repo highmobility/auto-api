@@ -907,10 +907,52 @@ definitions:
     type: object
     properties:
       capabilityIdentifier:
-        type: number
-        format: integer
-        example: 32
-        description: The identifier of the supported capability
+        type: string
+        enum:
+        - vehicle_status
+        - parking_ticket
+        - browser
+        - windows
+        - vehicle_time
+        - driver_fatigue
+        - remote_control
+        - fueling
+        - navi_destination
+        - light_conditions
+        - offroad
+        - trunk
+        - valet_mode
+        - text_input
+        - lights
+        - chassis_settings
+        - notifications
+        - charging
+        - home_charger
+        - diagnostics
+        - wake_up
+        - video_handover
+        - wi_fi
+        - vehicle_location
+        - heart_rate
+        - graphics
+        - race
+        - firmware_version
+        - theft_alarm
+        - seats
+        - parking_brake
+        - capabilities
+        - maintenance
+        - rooftop_control
+        - failure_message
+        - windscreen
+        - keyfob_position
+        - honk_horn_flash_lights
+        - engine
+        - weather_conditions
+        - messaging
+        - climate
+        - door_locks
+        example: charging
       supportedMessageTypes: {}
   Capabilities:
     type: object
