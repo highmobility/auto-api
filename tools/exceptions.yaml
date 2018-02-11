@@ -11,6 +11,21 @@ definitions:
         type: string
         example: 'Keep your eyes on the road at all times.'
         description: 'The text content in UTF-8'
+  ChargeTimer:
+    type: object
+    properties:
+      timerType:
+        type: string
+        enum:
+        - preferred_start_time
+        - preferred_end_time
+        - departure_time
+        example: preferred_start_time
+      time:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:20:50.52Z'
+        description: The time for this timer
 
 # Exceptions from Auto API to Swagger translation
 exceptions:
@@ -18,3 +33,6 @@ exceptions:
     type: string
     example: '#ccff88'
     description: 'The ambient light hex string'
+  charge_timer:
+    description: ChargeTimer
+    "$ref": "#/definitions/ChargeTimer"

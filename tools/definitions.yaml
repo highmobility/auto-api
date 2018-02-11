@@ -379,51 +379,6 @@ definitions:
       chassisPosition:
         description: ChassisPosition
         "$ref": "#/definitions/ChassisPosition"
-  ChargeTimer:
-    type: object
-    properties:
-      timerType:
-        type: string
-        enum:
-        - preferred_start_time
-        - preferred_end_time
-        - departure_time
-        example: preferred_start_time
-      year:
-        type: number
-        format: integer
-        example: 18
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      month:
-        type: number
-        format: integer
-        example: 1
-        description: Value between 1 and 12
-      day:
-        type: number
-        format: integer
-        example: 10
-        description: Value between 1 and 31
-      hour:
-        type: number
-        format: integer
-        example: 16
-        description: Value between 0 and 23
-      minute:
-        type: number
-        format: integer
-        example: 32
-        description: Value between 0 and 59
-      second:
-        type: number
-        format: integer
-        example: 5
-        description: Value between 0 and 59
-      utcTimeOffset:
-        type: number
-        format: integer
-        example: 0
-        description: UTC time offset in minutes, which can be negative
   ChargeState:
     type: object
     properties:
@@ -494,8 +449,8 @@ definitions:
         - inductive
         example: immediate
       chargeTimer:
-        description: ChargeTimer
         "$ref": "#/definitions/ChargeTimer"
+        description: ChargeTimer
   Location:
     type: object
     properties:
@@ -1320,3 +1275,18 @@ definitions:
         type: string
         example: Keep your eyes on the road at all times.
         description: The text content in UTF-8
+  ChargeTimer:
+    type: object
+    properties:
+      timerType:
+        type: string
+        enum:
+        - preferred_start_time
+        - preferred_end_time
+        - departure_time
+        example: preferred_start_time
+      time:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:20:50.52Z'
+        description: The time for this timer

@@ -72,8 +72,13 @@ Dir.glob('../*.yml') do |yml_file|
     # --- Check for swagger exception
     if ex_item = exceptions['exceptions'][prop_spec['name']]
       puts "Found an exception for exception #{ex_item}.."
-      prop['type'] = ex_item['type']
-      prop['example'] = ex_item['example']
+
+      if ex_item['$ref']
+        prop['$ref'] = ex_item['$ref']
+      else
+        prop['type'] = ex_item['type']
+        prop['example'] = ex_item['example']
+      end
       prop['description'] = ex_item['description']
     else
       example_val = example[prop_spec['name']] ?
