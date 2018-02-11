@@ -26,6 +26,58 @@ definitions:
         format: date-time
         example: '2018-04-12T23:20:50.52Z'
         description: The time for this timer
+  ControlWindow:
+    type: object
+    properties:
+      frontLeft:
+        type: string
+        enum:
+        - open
+        - close
+        example: open
+      frontRight:
+        type: string
+        enum:
+        - open
+        - close
+        example: open
+      rearRight:
+        type: string
+        enum:
+        - open
+        - close
+        example: open
+      rearLeft:
+        type: string
+        enum:
+        - open
+        - close
+        example: open
+  SetDrivingMode:
+    type: object
+    properties:
+      drivingMode:
+        type: string
+        enum:
+        - regular
+        - eco
+        - sport
+        - sport+
+        example: sport
+  SetSpringRate:
+    type: object
+    properties:
+      axle:
+        type: string
+        enum:
+        - front_axle
+        - rear_axle
+        example: rear_axle
+      springRate:
+        type: number
+        format: integer
+        example: 25
+        description: The suspension spring rate in N/mm
 
 # Exceptions from Auto API to Swagger translation
 exceptions:
@@ -39,3 +91,4 @@ exceptions:
 
 arrays:
   tire: tires
+  spring_rate: spring_rates
