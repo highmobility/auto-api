@@ -97,3 +97,4 @@ arrays:
   spring_rate: spring_rates
   acceleration: accelerations
   brake_torque_vectoring: brake_torque_vectorings
+  state: states

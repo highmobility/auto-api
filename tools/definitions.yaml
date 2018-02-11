@@ -57,7 +57,7 @@ definitions:
         format: integer
         example: 5
         description: The number of seats
-      state:
+      states:
         type: array
         items:
           description: A state of the vehicle
