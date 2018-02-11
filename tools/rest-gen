@@ -34,6 +34,9 @@ end
 defs = Hash.new
 defs['definitions'] = Hash.new
 
+# Load exceptions spec
+exceptions = YAML.load_file('exceptions.yaml')
+
 # All capabilities
 Dir.glob('../*.yml') do |yml_file|
   # Capability
@@ -154,6 +157,12 @@ Dir.glob('../*.yml') do |yml_file|
 
   # - Push capability
   defs['definitions'][cap_name] = cap
+end
+
+# Add additional models from exceptions conf
+exceptions['definitions'].each do |model|
+  # key, object
+  defs['definitions'][model.first] = model.last
 end
 
 # Store definitions

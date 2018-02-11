@@ -615,7 +615,7 @@ definitions:
         - none
         - wep
         - wpa
-        - wep
+        - wep_personal
         example: none
       wiFiHotspotPassword:
         type: string
@@ -1321,3 +1321,14 @@ definitions:
       door:
         description: Door
         "$ref": "#/definitions/Door"
+  TextMessage:
+    type: object
+    properties:
+      handle:
+        type: string
+        example: "@twitter"
+        description: The sender handle like username or phone number
+      text:
+        type: string
+        example: Keep your eyes on the road at all times.
+        description: The text content in UTF-8

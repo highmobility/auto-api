@@ -1,0 +1,17 @@
+# Further model definitions
+definitions:
+  TextMessage:
+    type: object
+    properties:
+      handle:
+        type: string
+        example: '@twitter'
+        description: 'The sender handle like username or phone number'
+      text:
+        type: string
+        example: 'Keep your eyes on the road at all times.'
+        description: 'The text content in UTF-8'
+
+# Exceptions from Auto API to Swagger translation
+exceptions:
+  
