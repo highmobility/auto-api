@@ -36,3 +36,6 @@ exceptions:
   charge_timer:
     description: ChargeTimer
     "$ref": "#/definitions/ChargeTimer"
+
+arrays:
+  tire: tires

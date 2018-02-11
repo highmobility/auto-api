@@ -449,8 +449,8 @@ definitions:
         - inductive
         example: immediate
       chargeTimer:
-        "$ref": "#/definitions/ChargeTimer"
         description: ChargeTimer
+        "$ref": "#/definitions/ChargeTimer"
   Location:
     type: object
     properties:
@@ -642,9 +642,11 @@ definitions:
         - low
         - filled
         example: low
-      tire:
-        description: Tire
-        "$ref": "#/definitions/Tire"
+      tires:
+        type: array
+        items:
+          description: Tire
+          "$ref": "#/definitions/Tire"
       batteryVoltage:
         type: number
         format: float

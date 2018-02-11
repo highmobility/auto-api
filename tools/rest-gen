@@ -21,10 +21,11 @@ def swagger_name(name)
   name.split('_').map { |w| w.capitalize }.join
 end
 
-def swagger_prop_name(spec)
+def swagger_prop_name(spec, ex_array = [])
   return spec['title_case_name'] if spec['title_case_name']
+  name = ex_array.include?(spec['name']) ? ex_array[spec['name']] : spec['name']
 
-  spec['name'].split('_').map.with_index { |w, i| 
+  name.split('_').map.with_index { |w, i| 
     # TODO: handle naming exceptions - best to just add to auto api spec?
     i == 0 ? w : w.capitalize
   }.join
@@ -72,14 +73,7 @@ Dir.glob('../*.yml') do |yml_file|
     # --- Check for swagger exception
     if ex_item = exceptions['exceptions'][prop_spec['name']]
       puts "Found an exception for exception #{ex_item}.."
-
-      if ex_item['$ref']
-        prop['$ref'] = ex_item['$ref']
-      else
-        prop['type'] = ex_item['type']
-        prop['example'] = ex_item['example']
-      end
-      prop['description'] = ex_item['description']
+      prop = ex_item.dup
     else
       example_val = example[prop_spec['name']] ?
         example[prop_spec['name']].first['item'].first['value'] : String.new
@@ -151,8 +145,16 @@ Dir.glob('../*.yml') do |yml_file|
           prop_swagger_name = swagger_name(prop_spec['name'])
 
           # -- Referencing to model
-          prop['description'] = prop_swagger_name
-          prop['$ref'] = "#/definitions/#{prop_swagger_name}"
+          if exceptions['arrays'].keys.include?(prop_spec['name'])
+            prop['type'] = 'array'
+            prop['items'] = {
+              'description' => prop_swagger_name,
+              '$ref' => "#/definitions/#{prop_swagger_name}"
+            }
+          else
+            prop['description'] = prop_swagger_name
+            prop['$ref'] = "#/definitions/#{prop_swagger_name}"
+          end
 
           # -- Push model to definitions
           defs['definitions'][prop_swagger_name] = prop_model
@@ -164,7 +166,7 @@ Dir.glob('../*.yml') do |yml_file|
     end
 
     # -- Add property
-    cap['properties'][swagger_prop_name(prop_spec)] = prop
+    cap['properties'][swagger_prop_name(prop_spec, exceptions['arrays'])] = prop
   end
 
   # - Push capability
