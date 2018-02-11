@@ -288,19 +288,6 @@ definitions:
         - deactivated
         - activated
         example: deactivated
-  AmbientLight:
-    type: object
-    properties:
-      rgbRed:
-        type: number
-        format: integer
-        example: 0
-        description: The blue colour of RGB in hex
-      rgbGreen:
-        type: number
-        format: integer
-        example: 0
-        description: The green colour of RGB in hex
   LightsState:
     type: object
     properties:
@@ -324,8 +311,9 @@ definitions:
         - active
         example: inactive
       ambientLight:
-        description: AmbientLight
-        "$ref": "#/definitions/AmbientLight"
+        type: string
+        example: "#ccff88"
+        description: The ambient light hex string
   SpringRate:
     type: object
     properties:

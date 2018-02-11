@@ -69,85 +69,92 @@ Dir.glob('../*.yml') do |yml_file|
     puts "Now property #{prop_spec['name']}.."
     prop = Hash.new
 
-    example_val = example[prop_spec['name']] ?
-      example[prop_spec['name']].first['item'].first['value'] : String.new
-
-    # TODO: Should handle dateTime somehow
-    case prop_spec['type']
-    when 'string'
-      prop['type'] = 'string'
-      # -- Handling string format
-      prop['example'] = hex_to_s(example_val)
-      prop['description'] = prop_spec['description']
-    when 'integer'
-      prop['type'] = 'number'
-      prop['format'] = 'integer'
-      # -- Handling decimal format
-      prop['example'] = decimal(example_val)
-      prop['description'] = prop_spec['description']
-    when 'float'
-      prop['type'] = 'number'
-      prop['format'] = 'float'
-      # -- Handling IEE 754 format
-      prop['example'] = ieee(example_val)
-      prop['description'] = prop_spec['description']
-    when 'enum'
-      prop['type'] = 'string'
-      prop['enum'] = prop_spec['values'].map { |val| val['name'] }
-      prop['example'] = prop_spec['values'].first['name']
+    # --- Check for swagger exception
+    if ex_item = exceptions['exceptions'][prop_spec['name']]
+      puts "Found an exception for exception #{ex_item}.."
+      prop['type'] = ex_item['type']
+      prop['example'] = ex_item['example']
+      prop['description'] = ex_item['description']
     else
-      # -- Handling object
-      if prop_spec['items']
-        # --- Creating a new model to be referenced
-        prop_model = Hash.new
-        prop_model['type'] = 'object'
-        prop_model['properties'] = Hash.new
-      
-        prop_spec['items'].each_with_index do |prop_item_spec, idx|
-          item = Hash.new
-          item_example = example[prop_spec['name']].first['item']
+      example_val = example[prop_spec['name']] ?
+        example[prop_spec['name']].first['item'].first['value'] : String.new
 
-          case prop_item_spec['type']
-          when 'string'
-            item['type'] = 'string'
-            # -- Handling string format
-            item['example'] = hex_to_s(item_example[idx]['value'])
-            item['description'] = prop_item_spec['description']  
-          when 'integer'
-            item['type'] = 'number'
-            item['format'] = 'integer'
-            # -- Handling decimal format
-            item['example'] = decimal(item_example[idx]['value'])
-            item['description'] = prop_item_spec['description']  
-          when 'float'
-            item['type'] = 'number'
-            item['format'] = 'float'
-            # -- Handling IEE 754 format
-            item['example'] = ieee(item_example[idx]['value'])
-            item['description'] = prop_item_spec['description']  
-          when 'enum'
-            item['type'] = 'string'
-            item['enum'] = prop_item_spec['values'].map { |val| val['name'] }
-            item['example'] = prop_item_spec['values'].first['name']
-          else
-            puts "Found a property item with type #{prop_item_spec['type']} - skipping that.."
+      case prop_spec['type']
+      when 'string'
+        prop['type'] = 'string'
+        # -- Handling string format
+        prop['example'] = hex_to_s(example_val)
+        prop['description'] = prop_spec['description']
+      when 'integer'
+        prop['type'] = 'number'
+        prop['format'] = 'integer'
+        # -- Handling decimal format
+        prop['example'] = decimal(example_val)
+        prop['description'] = prop_spec['description']
+      when 'float'
+        prop['type'] = 'number'
+        prop['format'] = 'float'
+        # -- Handling IEE 754 format
+        prop['example'] = ieee(example_val)
+        prop['description'] = prop_spec['description']
+      when 'enum'
+        prop['type'] = 'string'
+        prop['enum'] = prop_spec['values'].map { |val| val['name'] }
+        prop['example'] = prop_spec['values'].first['name']
+      else
+        # -- Handling object
+        if prop_spec['items']
+          # --- Creating a new model to be referenced
+          prop_model = Hash.new
+          prop_model['type'] = 'object'
+          prop_model['properties'] = Hash.new
+      
+          prop_spec['items'].each_with_index do |prop_item_spec, idx|
+            item = Hash.new
+            item_example = example[prop_spec['name']].first['item']
+
+            case prop_item_spec['type']
+            when 'string'
+              item['type'] = 'string'
+              # -- Handling string format
+              item['example'] = hex_to_s(item_example[idx]['value'])
+              item['description'] = prop_item_spec['description']
+            when 'integer'
+              item['type'] = 'number'
+              item['format'] = 'integer'
+              # -- Handling decimal format
+              item['example'] = decimal(item_example[idx]['value'])
+              item['description'] = prop_item_spec['description']
+            when 'float'
+              item['type'] = 'number'
+              item['format'] = 'float'
+              # -- Handling IEE 754 format
+              item['example'] = ieee(item_example[idx]['value'])
+              item['description'] = prop_item_spec['description']
+            when 'enum'
+              item['type'] = 'string'
+              item['enum'] = prop_item_spec['values'].map { |val| val['name'] }
+              item['example'] = prop_item_spec['values'].first['name']
+            else
+              puts "Found a property item with type #{prop_item_spec['type']} - skipping that.."
+            end
+
+            # --- Adding item to property
+            prop_model['properties'][swagger_prop_name(prop_item_spec)] = item
           end
 
-          # --- Adding item to property
-          prop_model['properties'][swagger_prop_name(prop_item_spec)] = item
+          prop_swagger_name = swagger_name(prop_spec['name'])
+
+          # -- Referencing to model
+          prop['description'] = prop_swagger_name
+          prop['$ref'] = "#/definitions/#{prop_swagger_name}"
+
+          # -- Push model to definitions
+          defs['definitions'][prop_swagger_name] = prop_model
+        else
+          puts "Found a property with type #{prop_spec['type']} - skipping that.."
+          next
         end
-
-        prop_swagger_name = swagger_name(prop_spec['name'])
-
-        # -- Referencing to model
-        prop['description'] = prop_swagger_name
-        prop['$ref'] = "#/definitions/#{prop_swagger_name}"
-
-        # -- Push model to definitions
-        defs['definitions'][prop_swagger_name] = prop_model
-      else
-        puts "Found a property with type #{prop_spec['type']} - skipping that.."
-        next
       end
     end
 

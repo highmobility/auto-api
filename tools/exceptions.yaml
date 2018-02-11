@@ -14,4 +14,7 @@ definitions:
 
 # Exceptions from Auto API to Swagger translation
 exceptions:
-  
+  ambient_light:
+    type: string
+    example: '#ccff88'
+    description: 'The ambient light hex string'
