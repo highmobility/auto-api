@@ -121,19 +121,19 @@ Dir.glob('../*.yml') do |yml_file|
             case prop_item_spec['type']
             when 'string'
               item['type'] = 'string'
-              # -- Handling string format
+              # --- Handling string format
               item['example'] = hex_to_s(item_example[idx]['value'])
               item['description'] = prop_item_spec['description']
             when 'integer'
               item['type'] = 'number'
               item['format'] = 'integer'
-              # -- Handling decimal format
+              # --- Handling decimal format
               item['example'] = decimal(item_example[idx]['value'])
               item['description'] = prop_item_spec['description']
             when 'float'
               item['type'] = 'number'
               item['format'] = 'float'
-              # -- Handling IEE 754 format
+              # --- Handling IEE 754 format
               item['example'] = ieee(item_example[idx]['value'])
               item['description'] = prop_item_spec['description']
             when 'enum'
@@ -142,9 +142,26 @@ Dir.glob('../*.yml') do |yml_file|
               item['example'] = prop_item_spec['values'].first['name']
             when 'capability_enum'
               item['type'] = 'string'
-              # -- Handling enum of all capabilities
+              # --- Handling enum of all capabilities
               item['enum'] = Dir.glob('../*.yml').map { |val| File.basename(val, '.yml') }
               item['example'] = 'charging'
+            when 'message_types_enum'
+              item['type'] = 'array'
+              item['items'] = {
+                'description' => prop_item_spec['description'],
+                'type' => 'enum',
+                'enum' => []
+              }
+
+              # --- Handling enum of all message types
+              item['items']['enum'] = []
+              Dir.glob('../*.yml').map do |val|
+                meta_cap = YAML.load_file(val)
+                item['items']['enum'] = item['items']['enum'] + meta_cap['message_types'].map do |msg|
+                  msg['name'] unless msg['id'] == '0x01' # ignore states for clarity
+                end.compact
+              end
+              item['example'] = 'get_charge_state'
             else
               puts "Found a property item with type #{prop_item_spec['type']} - skipping that.."
             end
