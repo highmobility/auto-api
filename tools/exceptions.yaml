@@ -1,5 +1,23 @@
 # Further model definitions
 definitions:
+  VideoHandover:
+    type: object
+    properties:
+      videoURL:
+        type: string
+        example: 'https://www.youtube.com/watch?v=yWVB7U6mX2Y'
+        description: 'The URL of the video stream, formatted in UTF-8'
+      startingSecond:
+        type: number
+        format: integer
+        example: 90
+        description: 	The second from where the video should be started from
+      screen:
+        type: string
+        enum:
+        - front
+        - rear
+        example: rear
   TextMessage:
     type: object
     properties:
@@ -11,6 +29,13 @@ definitions:
         type: string
         example: 'Keep your eyes on the road at all times.'
         description: 'The text content in UTF-8'
+  Notification:
+    type: object
+    properties:
+      text:
+        type: string
+        example: 'Your plans for the evening: free'
+        description: 'The text to be displayed or read to the driver'
   ChargeTimer:
     type: object
     properties:
