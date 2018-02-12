@@ -189,8 +189,10 @@ definitions:
     type: object
     properties:
       vehicleTime:
-        description: VehicleTime
-        "$ref": "#/definitions/VehicleTime"
+        type: string
+        format: date-time
+        example: '2018-04-12T23:20:50.52Z'
+        description: The vehicle local time
   ControlMode:
     type: object
     properties:

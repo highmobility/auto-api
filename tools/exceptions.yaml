@@ -88,9 +88,11 @@ exceptions:
   charge_timer:
     description: ChargeTimer
     "$ref": "#/definitions/ChargeTimer"
-#  capability:
-#    description: An array of Capabilities
-#    "$ref": "#/definitions/Capability"
+  vehicle_time:
+    type: string
+    format: date-time
+    example: '2018-04-12T23:20:50.52Z'
+    description: The vehicle local time
 
 arrays:
   tire: tires
