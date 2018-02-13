@@ -111,6 +111,7 @@ properties:
     type: string
     name: hotspot_ssid
     pretty_name: Hotspot SSID
+    title_case_name: hotspotSSID
     description: The Wi-Fi Hotspot SSID formatted in UTF-8
   - id: '0x0A'
     type: enum
@@ -126,7 +127,7 @@ properties:
       - name: wpa
         pretty_name: WPA/WPA2 Personal
         id: '0x02'
-      - name: wep_personal
+      - name: wpa2_personal
         pretty_name: WPA2 Personal
         id: '0x03'
   - id: '0x0B'

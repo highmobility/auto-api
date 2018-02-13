@@ -149,6 +149,26 @@ definitions:
         format: date-time
         example: '2018-04-12T23:20:50.52Z'
         description: The start time of the ticket
+  ConnectNetwork:
+    type: object
+    properties:
+      networkSSID:
+        type: string
+        example: 'HOME'
+        description: The network SSID
+      networkSecurity:
+        type: string
+        enum:
+        - none
+        - wep
+        - wpa
+        - wpa2_personal
+        example: wpa
+        description: The network security being used
+      networkPassword:
+        type: string
+        example: '********'
+        description: The network password
 
 # Property exceptions from Auto API to Swagger translation
 exceptions:
@@ -193,6 +213,7 @@ arrays:
   acceleration: accelerations
   brake_torque_vectoring: brake_torque_vectorings
   state: states
+  price_tariff: price_tariffs
 
 # These capabilities should be rejected, not part of Telematics
 rejections:

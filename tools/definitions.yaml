@@ -467,7 +467,7 @@ definitions:
         - disabled
         - enabled
         example: disabled
-      hotspotSsid:
+      hotspotSSID:
         type: string
         example: Charger 7612
         description: The Wi-Fi Hotspot SSID formatted in UTF-8
@@ -477,15 +477,17 @@ definitions:
         - none
         - wep
         - wpa
-        - wep_personal
+        - wpa2_personal
         example: none
       wiFiHotspotPassword:
         type: string
         example: ZW3vARNUBe
         description: The Wi-Fi Hotspot password formatted in UTF-8
-      priceTariff:
-        description: PriceTariff
-        "$ref": "#/definitions/PriceTariff"
+      priceTariffs:
+        type: array
+        items:
+          description: PriceTariff
+          "$ref": "#/definitions/PriceTariff"
   Tire:
     type: object
     properties:
@@ -601,7 +603,7 @@ definitions:
         - disconnected
         - connected
         example: disconnected
-      networkSsid:
+      networkSSID:
         type: string
         example: HOME
         description: The network SSID formatted in UTF-8
@@ -611,7 +613,7 @@ definitions:
         - none
         - wep
         - wpa
-        - wep_personal
+        - wpa2_personal
         example: none
   VehicleLocation:
     type: object
@@ -1398,3 +1400,23 @@ definitions:
         format: date-time
         example: '2018-04-12T23:20:50.52Z'
         description: The start time of the ticket
+  ConnectNetwork:
+    type: object
+    properties:
+      networkSSID:
+        type: string
+        example: HOME
+        description: The network SSID
+      networkSecurity:
+        type: string
+        enum:
+        - none
+        - wep
+        - wpa
+        - wpa2_personal
+        example: wpa
+        description: The network security being used
+      networkPassword:
+        type: string
+        example: "********"
+        description: The network password

@@ -39,6 +39,7 @@ properties:
     type: string
     name: network_ssid
     pretty_name: Network SSID
+    title_case_name: networkSSID
     description: The network SSID formatted in UTF-8
   - id: '0x04'
     type: enum
@@ -53,7 +54,7 @@ properties:
       - name: wpa
         pretty_name: WPA/WPA2 Personal
         id: '0x02'
-      - name: wep_personal
+      - name: wpa2_personal
         pretty_name: WPA2 Personal
         id: '0x03'
     
