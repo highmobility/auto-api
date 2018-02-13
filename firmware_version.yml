@@ -14,6 +14,7 @@ properties:
   - id: '0x01'
     size: 3
     name: car_sdk_version
+    title_case_name: carSDKVersion
     items:
       - name: version_major
         type: integer
@@ -30,6 +31,7 @@ properties:
   - id: '0x02'
     type: 'string'
     name: car_sdk_build_name
+    title_case_name: carSDKBuildName
     description: Car SDK version build name bytes formatted in UTF-8
   - id: '0x03'
     type: 'string'

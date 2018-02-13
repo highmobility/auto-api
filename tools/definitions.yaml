@@ -757,10 +757,10 @@ definitions:
   FirmwareVersion:
     type: object
     properties:
-      carSdkVersion:
+      carSDKVersion:
         description: CarSdkVersion
         "$ref": "#/definitions/CarSdkVersion"
-      carSdkBuildName:
+      carSDKBuildName:
         type: string
         example: btstack-uart
         description: Car SDK version build name bytes formatted in UTF-8
@@ -983,25 +983,13 @@ definitions:
   Failure:
     type: object
     properties:
-      failedMessageIdentifier:
-        type: number
-        format: integer
-        example: 0
-        description: Capability identifier of the failed message
-      failedMessageType:
-        type: number
-        format: integer
-        example: 0
-        description: Message type of the failed message
       failureReason:
         type: string
         enum:
         - unsupported_capability
-        - unauthorised
         - incorrect_state
-        - execution_timeout
-        - vehicle_asleep
         - invalid_command
+        - other
         example: unsupported_capability
       failureDescription:
         type: string
@@ -1420,3 +1408,41 @@ definitions:
         type: string
         example: "********"
         description: The network password
+  LoadURL:
+    type: object
+    properties:
+      url:
+        type: string
+        example: https://google.com
+        description: The URL to be loaded, formatted in UTF-8
+  DisplayImage:
+    type: object
+    properties:
+      imageURL:
+        type: string
+        example: https://goo.gl/VyU1ip
+        description: The image URL to be displayed, formatted in UTF-8
+  SetChargeCurrent:
+    type: object
+    properties:
+      chargeCurrent:
+        type: number
+        format: float
+        example: 0.5
+        description: The charger current
+  SetChassisPosition:
+    type: object
+    properties:
+      chassisPosition:
+        type: number
+        format: integer
+        example: 25
+        description: The chassis position in mm calculated from the lowest point
+  SetChargeLimit:
+    type: object
+    properties:
+      chargeLimit:
+        type: number
+        format: integer
+        example: 90
+        description: The charge limit as percentage between 0-100%
