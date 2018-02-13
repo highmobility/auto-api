@@ -103,8 +103,34 @@ definitions:
         format: integer
         example: 25
         description: The suspension spring rate in N/mm
+  WindscreenSizeMatrix:
+    type: object
+    properties:
+      rows:
+        type: number
+        format: integer
+        example: 4
+        description: The row number
+      columns:
+        type: number
+        format: integer
+        example: 3
+        description: The column number
+  WindscreenPositionMatrix:
+    type: object
+    properties:
+      row:
+        type: number
+        format: integer
+        example: 4
+        description: The row number
+      column:
+        type: number
+        format: integer
+        example: 3
+        description: The column number
 
-# Exceptions from Auto API to Swagger translation
+# Property exceptions from Auto API to Swagger translation
 exceptions:
   ambient_light:
     type: string
@@ -123,6 +149,12 @@ exceptions:
     format: date-time
     example: '2018-04-12T23:20:50.52Z'
     description: The time that the damage was detected
+  windscreen_zone_matrix:
+    description: WindscreenSizeMatrix
+    "$ref": "#/definitions/WindscreenSizeMatrix"
+  windscreen_damage_zone:
+    description: WindscreenPositionMatrix
+    "$ref": "#/definitions/WindscreenPositionMatrix"
 
 # These properties should be treated as arrays
 arrays:

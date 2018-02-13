@@ -1104,19 +1104,11 @@ definitions:
         - damage_larger_than_1_inch
         example: no_impact_detected
       windscreenZoneMatrix:
-        type: string
-        enum:
-        - unavailable
-        - horizontal_size
-        - vertical_size
-        example: unavailable
+        description: WindscreenSizeMatrix
+        "$ref": "#/definitions/WindscreenSizeMatrix"
       windscreenDamageZone:
-        type: string
-        enum:
-        - unknown
-        - horizontal_position
-        - vertical_position
-        example: unknown
+        description: WindscreenPositionMatrix
+        "$ref": "#/definitions/WindscreenPositionMatrix"
       windscreenNeedsReplacement:
         type: string
         enum:
@@ -1436,3 +1428,29 @@ definitions:
         format: integer
         example: 25
         description: The suspension spring rate in N/mm
+  WindscreenSizeMatrix:
+    type: object
+    properties:
+      rows:
+        type: number
+        format: integer
+        example: 4
+        description: The row number
+      columns:
+        type: number
+        format: integer
+        example: 3
+        description: The column number
+  WindscreenPositionMatrix:
+    type: object
+    properties:
+      row:
+        type: number
+        format: integer
+        example: 4
+        description: The row number
+      column:
+        type: number
+        format: integer
+        example: 3
+        description: The column number
