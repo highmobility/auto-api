@@ -129,6 +129,26 @@ definitions:
         format: integer
         example: 3
         description: The column number
+  StartParking:
+    type: object
+    properties:
+      operatorName:
+        type: string
+        example: 'Berlin Parking'
+        description: 'The parking operator name, formatted in UTF-8'
+      operatorTicketID:
+        type: string
+        example: '64894233'
+        description: 'The parking operator ticket ID, formatted in UTF-8'
+      operatorTicketID:
+        type: string
+        example: '64894233'
+        description: 'The parking operator ticket ID, formatted in UTF-8'
+      ticketStartTime:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:20:50.52Z'
+        description: The start time of the ticket
 
 # Property exceptions from Auto API to Swagger translation
 exceptions:
@@ -155,6 +175,16 @@ exceptions:
   windscreen_damage_zone:
     description: WindscreenPositionMatrix
     "$ref": "#/definitions/WindscreenPositionMatrix"
+  ticket_start_time:
+    type: string
+    format: date-time
+    example: '2018-04-12T23:20:50.52Z'
+    description: The time that parking was started
+  ticket_end_time:
+    type: string
+    format: date-time
+    example: '2018-04-12T23:21:50.52Z'
+    description: The time that parking was ended
 
 # These properties should be treated as arrays
 arrays:

@@ -20,5 +20,5 @@ properties:
     values:
       - name: closed
         id: '0x00'
-      - name: opened
+      - name: open
         id: '0x01'

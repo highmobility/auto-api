@@ -32,6 +32,7 @@ properties:
     type: string
     name: operator_ticket_id
     pretty_name: Operator ticket ID
+    title_case_name: operatorTicketID
     description: Operator Ticket ID bytes formatted in UTF-8
   - id: '0x04'
     size: 8

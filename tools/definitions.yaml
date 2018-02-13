@@ -62,82 +62,6 @@ definitions:
         items:
           description: A state of the vehicle
           type: object
-  TicketStartTime:
-    type: object
-    properties:
-      year:
-        type: number
-        format: integer
-        example: 17
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      month:
-        type: number
-        format: integer
-        example: 1
-        description: Value between 1 and 12
-      day:
-        type: number
-        format: integer
-        example: 10
-        description: Value between 1 and 31
-      hour:
-        type: number
-        format: integer
-        example: 17
-        description: Value between 0 and 23
-      minute:
-        type: number
-        format: integer
-        example: 34
-        description: Value between 0 and 59
-      second:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 59
-      utcTimeOffset:
-        type: number
-        format: integer
-        example: 0
-        description: UTC time offset in minutes, which can be negative
-  TicketEndTime:
-    type: object
-    properties:
-      year:
-        type: number
-        format: integer
-        example: 17
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      month:
-        type: number
-        format: integer
-        example: 2
-        description: Value between 1 and 12
-      day:
-        type: number
-        format: integer
-        example: 20
-        description: Value between 1 and 31
-      hour:
-        type: number
-        format: integer
-        example: 22
-        description: Value between 0 and 23
-      minute:
-        type: number
-        format: integer
-        example: 11
-        description: Value between 0 and 59
-      second:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 59
-      utcTimeOffset:
-        type: number
-        format: integer
-        example: 0
-        description: UTC time offset in minutes, which can be negative
   ParkingTicket:
     type: object
     properties:
@@ -151,16 +75,20 @@ definitions:
         type: string
         example: Berlin Parking
         description: Operator Name bytes formatted in UTF-8
-      operatorTicketId:
+      operatorTicketID:
         type: string
         example: '64894233'
         description: Operator Ticket ID bytes formatted in UTF-8
       ticketStartTime:
-        description: TicketStartTime
-        "$ref": "#/definitions/TicketStartTime"
+        type: string
+        format: date-time
+        example: '2018-04-12T23:20:50.52Z'
+        description: The time that parking was started
       ticketEndTime:
-        description: TicketEndTime
-        "$ref": "#/definitions/TicketEndTime"
+        type: string
+        format: date-time
+        example: '2018-04-12T23:21:50.52Z'
+        description: The time that parking was ended
   Window:
     type: object
     properties:
@@ -200,7 +128,7 @@ definitions:
         type: string
         enum:
         - closed
-        - opened
+        - open
         example: closed
   Coordinates:
     type: object
@@ -1454,3 +1382,19 @@ definitions:
         format: integer
         example: 3
         description: The column number
+  StartParking:
+    type: object
+    properties:
+      operatorName:
+        type: string
+        example: Berlin Parking
+        description: The parking operator name, formatted in UTF-8
+      operatorTicketID:
+        type: string
+        example: '64894233'
+        description: The parking operator ticket ID, formatted in UTF-8
+      ticketStartTime:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:20:50.52Z'
+        description: The start time of the ticket
