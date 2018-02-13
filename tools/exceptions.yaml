@@ -119,9 +119,18 @@ exceptions:
     example: '2018-04-12T23:20:50.52Z'
     description: The vehicle local time
 
+# These properties should be treated as arrays
 arrays:
   tire: tires
   spring_rate: spring_rates
   acceleration: accelerations
   brake_torque_vectoring: brake_torque_vectorings
   state: states
+
+# These capabilities should be rejected, not part of Telematics
+rejections:
+  - keyfob_position
+  - remote_control
+  - heart_rate
+  - driver_fatigue
+  - driver_fatigue

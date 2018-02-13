@@ -193,24 +193,6 @@ definitions:
         format: date-time
         example: '2018-04-12T23:20:50.52Z'
         description: The vehicle local time
-  ControlMode:
-    type: object
-    properties:
-      controlMode:
-        type: string
-        enum:
-        - control_mode_unavailable
-        - control_mode_available
-        - control_started
-        - control_failed_to_start
-        - control_aborted
-        - control_ended
-        example: control_mode_unavailable
-      angle:
-        type: number
-        format: integer
-        example: 0
-        description: Wheel base angle in degrees
   GasFlapState:
     type: object
     properties:
@@ -916,8 +898,6 @@ definitions:
         - browser
         - windows
         - vehicle_time
-        - driver_fatigue
-        - remote_control
         - fueling
         - navi_destination
         - light_conditions
@@ -935,7 +915,6 @@ definitions:
         - video_handover
         - wi_fi
         - vehicle_location
-        - heart_rate
         - graphics
         - race
         - firmware_version
@@ -947,7 +926,6 @@ definitions:
         - rooftop_control
         - failure_message
         - windscreen
-        - keyfob_position
         - honk_horn_flash_lights
         - engine
         - weather_conditions
@@ -969,10 +947,6 @@ definitions:
           - get_windows_state
           - open_close_windows
           - get_vehicle_time
-          - get_control_mode
-          - start_control_mode
-          - stop_control_mode
-          - control_command
           - get_gas_flap_state
           - open_gas_flap
           - get_navi_destination
@@ -1012,7 +986,6 @@ definitions:
           - forget_network
           - enable_disable_wi_fi
           - get_vehicle_location
-          - send_heart_rate
           - display_image
           - get_race_state
           - get_firmware_version
@@ -1028,7 +1001,6 @@ definitions:
           - control_rooftop
           - get_windscreen_state
           - set_windscreen_damage
-          - get_keyfob_position
           - get_flashers_state
           - honk_flash
           - activate_deactivate_emergency_flashers
@@ -1199,19 +1171,6 @@ definitions:
       windscreenDamageDetectionTime:
         description: WindscreenDamageDetectionTime
         "$ref": "#/definitions/WindscreenDamageDetectionTime"
-  KeyfobPosition:
-    type: object
-    properties:
-      keyfobPosition:
-        type: string
-        enum:
-        - out_of_range
-        - outside_driver_side
-        - outside_in_front_of_car
-        - outside_passenger_side
-        - outside_behind_car
-        - inside_car
-        example: out_of_range
   FlashersState:
     type: object
     properties:

@@ -26,7 +26,6 @@ def swagger_prop_name(spec, ex_array = [])
   name = ex_array.include?(spec['name']) ? ex_array[spec['name']] : spec['name']
 
   name.split('_').map.with_index { |w, i| 
-    # TODO: handle naming exceptions - best to just add to auto api spec?
     i == 0 ? w : w.capitalize
   }.join
 end
@@ -43,7 +42,10 @@ Dir.glob('../*.yml') do |yml_file|
   # Capability
   spec = YAML.load_file(yml_file)
   
-  unless spec['properties']
+  if exceptions['rejections'].include?(spec['name'])
+    puts "Skipping #{spec['name']} as it should be rejected.."
+    next  
+  elsif not spec['properties']
     puts "Skipping #{spec['name']} as there's no properties.."
     next
   end
@@ -143,7 +145,11 @@ Dir.glob('../*.yml') do |yml_file|
             when 'capability_enum'
               item['type'] = 'string'
               # --- Handling enum of all capabilities
-              item['enum'] = Dir.glob('../*.yml').map { |val| File.basename(val, '.yml') }
+              item['enum'] = Dir.glob('../*.yml').map do |val|
+                base_name = File.basename(val, '.yml')
+                base_name unless exceptions['rejections'].include?(base_name)
+              end.compact
+
               item['example'] = 'charging'
             when 'message_types_enum'
               item['type'] = 'array'
@@ -157,9 +163,13 @@ Dir.glob('../*.yml') do |yml_file|
               item['items']['enum'] = []
               Dir.glob('../*.yml').map do |val|
                 meta_cap = YAML.load_file(val)
-                item['items']['enum'] = item['items']['enum'] + meta_cap['message_types'].map do |msg|
-                  msg['name'] unless msg['id'] == '0x01' # ignore states for clarity
-                end.compact
+
+                unless exceptions['rejections'].include?(meta_cap['name'])
+                  item['items']['enum'] = item['items']['enum'] + meta_cap['message_types'].map do |msg|
+                    # Ignore state resonses for clarity
+                    msg['name'] unless msg['id'] == '0x01'
+                  end.compact
+                end
               end
               item['items']['example'] = 'get_charge_state'
             else
