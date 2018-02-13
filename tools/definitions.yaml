@@ -1077,44 +1077,6 @@ definitions:
         type: string
         example: Try again
         description: Failure description bytes formatted in UTF-8
-  WindscreenDamageDetectionTime:
-    type: object
-    properties:
-      year:
-        type: number
-        format: integer
-        example: 17
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      month:
-        type: number
-        format: integer
-        example: 1
-        description: Value between 1 and 12
-      day:
-        type: number
-        format: integer
-        example: 10
-        description: Value between 1 and 31
-      hour:
-        type: number
-        format: integer
-        example: 16
-        description: Value between 0 and 23
-      minute:
-        type: number
-        format: integer
-        example: 32
-        description: Value between 0 and 59
-      second:
-        type: number
-        format: integer
-        example: 5
-        description: Value between 0 and 59
-      utcTimeOffset:
-        type: number
-        format: integer
-        example: 0
-        description: UTC time offset in minutes, which can be negative
   WindscreenState:
     type: object
     properties:
@@ -1169,8 +1131,10 @@ definitions:
         description: Percentage between 0-100%, confidence of damage detection. Zero
           if no impact detected.
       windscreenDamageDetectionTime:
-        description: WindscreenDamageDetectionTime
-        "$ref": "#/definitions/WindscreenDamageDetectionTime"
+        type: string
+        format: date-time
+        example: '2018-04-12T23:20:50.52Z'
+        description: The time that the damage was detected
   FlashersState:
     type: object
     properties:

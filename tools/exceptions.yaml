@@ -118,6 +118,11 @@ exceptions:
     format: date-time
     example: '2018-04-12T23:20:50.52Z'
     description: The vehicle local time
+  windscreen_damage_detection_time:
+    type: string
+    format: date-time
+    example: '2018-04-12T23:20:50.52Z'
+    description: The time that the damage was detected
 
 # These properties should be treated as arrays
 arrays:
