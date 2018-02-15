@@ -207,20 +207,25 @@ definitions:
         format: integer
         example: 90
         description: The charge limit as percentage between 0-100%
-  Failure:
+  Error:
     type: object
     properties:
-      failureReason:
+      errorCode:
+        type: number
+        format: integer
+        example: 408
+      failureType:
         type: string
         enum:
           - unsupported_capability
           - incorrect_state
           - invalid_command
+          - target_asleep
           - other
-        example: unsupported_capability
+        example: target_asleep
       failureDescription:
         type: string
-        example: Try again
+        example: Vehicle Asleep
         description: Failure description bytes formatted in UTF-8
 
 # Property exceptions from Auto API to Swagger translation
@@ -270,6 +275,7 @@ arrays:
 
 # These capabilities should be rejected, not part of Telematics
 rejections:
+  - failure_message
   - keyfob_position
   - remote_control
   - heart_rate

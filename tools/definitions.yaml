@@ -854,7 +854,6 @@ definitions:
         - capabilities
         - maintenance
         - rooftop_control
-        - failure_message
         - windscreen
         - honk_horn_flash_lights
         - engine
@@ -980,21 +979,6 @@ definitions:
         format: integer
         example: 0
         description: Percentage value between 0-100 whereas 100 is fully open
-  Failure:
-    type: object
-    properties:
-      failureReason:
-        type: string
-        enum:
-        - unsupported_capability
-        - incorrect_state
-        - invalid_command
-        - other
-        example: unsupported_capability
-      failureDescription:
-        type: string
-        example: Try again
-        description: Failure description bytes formatted in UTF-8
   WindscreenState:
     type: object
     properties:
@@ -1446,3 +1430,23 @@ definitions:
         format: integer
         example: 90
         description: The charge limit as percentage between 0-100%
+  Error:
+    type: object
+    properties:
+      errorCode:
+        type: number
+        format: integer
+        example: 408
+      failureType:
+        type: string
+        enum:
+        - unsupported_capability
+        - incorrect_state
+        - invalid_command
+        - target_asleep
+        - other
+        example: target_asleep
+      failureDescription:
+        type: string
+        example: Vehicle Asleep
+        description: Failure description bytes formatted in UTF-8
