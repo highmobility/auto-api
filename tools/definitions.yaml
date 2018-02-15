@@ -1403,7 +1403,60 @@ definitions:
         format: integer
         example: 90
         description: The charge limit as percentage between 0-100%
-  Error:
+  Error400:
+    type: object
+    properties:
+      errorCode:
+        type: number
+        format: integer
+        example: 400
+      failureType:
+        type: string
+        enum:
+        - unsupported_capability
+        - incorrect_state
+        - invalid_command
+        - other
+        example: unsupported_capability
+      failureDescription:
+        type: string
+        example: Capability not supported by this vehicle
+        description: Failure description formatted in UTF-8
+  Error401:
+    type: object
+    properties:
+      errorCode:
+        type: number
+        format: integer
+        example: 401
+      failureType:
+        type: string
+        enum:
+        - auth_header_missing
+        - other
+        example: auth_header_missing
+      failureDescription:
+        type: string
+        example: Missing authentication header
+        description: Failure description formatted in UTF-8
+  Error403:
+    type: object
+    properties:
+      errorCode:
+        type: number
+        format: integer
+        example: 403
+      failureType:
+        type: string
+        enum:
+        - auth_header_invalid
+        - other
+        example: auth_header_invalid
+      failureDescription:
+        type: string
+        example: Invalid authentication header
+        description: Failure description formatted in UTF-8
+  Error408:
     type: object
     properties:
       errorCode:
@@ -1413,13 +1466,12 @@ definitions:
       failureType:
         type: string
         enum:
-        - unsupported_capability
-        - incorrect_state
-        - invalid_command
-        - target_asleep
+        - request_timeout
+        - vehicle_asleep
+        - charger_asleep
         - other
-        example: target_asleep
+        example: vehicle_asleep
       failureDescription:
         type: string
         example: Vehicle Asleep
-        description: Failure description bytes formatted in UTF-8
+        description: Failure description formatted in UTF-8
