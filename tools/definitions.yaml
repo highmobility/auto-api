@@ -1278,33 +1278,6 @@ definitions:
         format: date-time
         example: '2018-04-12T23:20:50.52Z'
         description: The time for this timer
-  ControlWindow:
-    type: object
-    properties:
-      frontLeft:
-        type: string
-        enum:
-        - open
-        - close
-        example: open
-      frontRight:
-        type: string
-        enum:
-        - open
-        - close
-        example: open
-      rearRight:
-        type: string
-        enum:
-        - open
-        - close
-        example: open
-      rearLeft:
-        type: string
-        enum:
-        - open
-        - close
-        example: open
   SetDrivingMode:
     type: object
     properties:
