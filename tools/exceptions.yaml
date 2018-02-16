@@ -180,6 +180,48 @@ definitions:
         format: integer
         example: 90
         description: The charge limit as percentage between 0-100%
+  AutoHVACActive:
+    type: object
+    properties:
+      hour:
+        type: number
+        format: integer
+        example: 7
+        description: Starting hour
+      minute:
+        type: number
+        format: integer
+        example: 30
+        description: Starting minute
+      state:
+        type: string
+        enum:
+          - active
+          - inactive
+  AutoHVACProfile:
+    type: object
+    properties:
+      mondays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      tuesdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      wednesdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      thursdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      fridays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      saturdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      sundays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
   Error400:
     type: object
     properties:
@@ -288,6 +330,9 @@ exceptions:
     format: date-time
     example: '2018-04-12T23:21:50.52Z'
     description: The time that parking was ended
+  auto_hvac_profile:
+    description: AutoHVACProfile
+    "$ref": "#/definitions/AutoHVACProfile"
 
 # These properties should be treated as arrays
 arrays:

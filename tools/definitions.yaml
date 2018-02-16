@@ -1058,91 +1058,6 @@ definitions:
         example: 100
         description: Measured raining intensity percentage, whereas 0% is no rain
           and 100% is maximum rain
-  AutoHvacProfile:
-    type: object
-    properties:
-      autoHvacActivated:
-        type: string
-        enum:
-        - mondays
-        - tuesdays
-        - wednesdays
-        - thursday
-        - fridays
-        - saturdays
-        - sundays
-        - constant
-        example: mondays
-      mondayStartingHour:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 23
-      mondayStartingMinute:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 59
-      tuesdayStartingHour:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 23
-      tuesdayStartingMinute:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 59
-      wednesdayStartingHour:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 23
-      wednesdayStartingMinute:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 59
-      thursdayStartingHour:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 23
-      thursdayStartingMinute:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 59
-      fridayStartingHour:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 23
-      fridayStartingMinute:
-        type: number
-        format: integer
-        example: 0
-        description: Value between 0 and 59
-      saturdayStartingHour:
-        type: number
-        format: integer
-        example: 7
-        description: Value between 0 and 23
-      saturdayStartingMinute:
-        type: number
-        format: integer
-        example: 30
-        description: Value between 0 and 59
-      sundayStartingHour:
-        type: number
-        format: integer
-        example: 7
-        description: Value between 0 and 23
-      sundayStartingMinute:
-        type: number
-        format: integer
-        example: 30
-        description: Value between 0 and 59
   ClimateState:
     type: object
     properties:
@@ -1196,8 +1111,8 @@ definitions:
         example: 21.5
         description: The defrosting temperature setting in celsius per IEEE 754 formatting
       autoHvacProfile:
-        description: AutoHvacProfile
-        "$ref": "#/definitions/AutoHvacProfile"
+        description: AutoHVACProfile
+        "$ref": "#/definitions/AutoHVACProfile"
   Door:
     type: object
     properties:
@@ -1403,6 +1318,48 @@ definitions:
         format: integer
         example: 90
         description: The charge limit as percentage between 0-100%
+  AutoHVACActive:
+    type: object
+    properties:
+      hour:
+        type: number
+        format: integer
+        example: 7
+        description: Starting hour
+      minute:
+        type: number
+        format: integer
+        example: 30
+        description: Starting minute
+      state:
+        type: string
+        enum:
+        - active
+        - inactive
+  AutoHVACProfile:
+    type: object
+    properties:
+      mondays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      tuesdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      wednesdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      thursdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      fridays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      saturdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      sundays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
   Error400:
     type: object
     properties:
