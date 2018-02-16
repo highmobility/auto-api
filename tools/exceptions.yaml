@@ -60,17 +60,11 @@ definitions:
         - regular
         - eco
         - sport
-        - sport+
+        - sport_plus
         example: sport
   SetSpringRate:
     type: object
     properties:
-      axle:
-        type: string
-        enum:
-        - front_axle
-        - rear_axle
-        example: rear_axle
       springRate:
         type: number
         format: integer

@@ -29,7 +29,7 @@ properties:
         id: '0x01'
       - name: sport
         id: '0x02'
-      - name: sport+
+      - name: sport_plus
         id: '0x03'
   - id: '0x02'
     type: enum
