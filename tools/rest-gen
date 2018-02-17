@@ -217,6 +217,29 @@ exceptions['definitions'].each do |model|
   defs['definitions'][model.first] = model.last
 end
 
+# Add permission scopes
+owner_auth = Hash.new
+owner_auth['type'] = 'oauth2'
+# -- TODO: the URL should be added in the UI, as it's unique 
+owner_auth['authorizationUrl'] = 'https://developers.high-mobility.com/hm_cloud/o/{org_oem}/oauth'
+owner_auth['flow'] = 'implicit'
+scopes = Hash.new
+
+permissions_spec = YAML.load_file('../permissions/auto_api.yml')
+permissions_spec['bytes'].each do |byte|
+  # Skip certificate permissions (idx 1)
+  if byte['idx'] != 1
+    byte['bits'].each do |bit|
+      scopes[bit['name']] = bit['description']
+    end
+  end
+end
+
+owner_auth['scopes'] = scopes
+
+defs['securityDefinitions'] = Hash.new
+defs['securityDefinitions']['owner_auth'] = owner_auth
+
 # Store definitions
 open("definitions.yaml", 'w') { |f| f.write(defs.to_yaml) }
 

@@ -1458,3 +1458,71 @@ definitions:
         type: string
         example: Vehicle Asleep
         description: Failure description formatted in UTF-8
+securityDefinitions:
+  owner_auth:
+    type: oauth2
+    authorizationUrl: https://developers.high-mobility.com/hm_cloud/o/{org_oem}/oauth
+    flow: implicit
+    scopes:
+      capabilities.read: Allowed to get car capabilities
+      vehicle-status.read: Allowed to get vehicle status
+      diagnostics.read: Allowed to get diagnostics and maintenance state
+      door-locks.read: Allowed to get the lock state
+      door-locks.write: Allowed to lock or unlock the car
+      engine.read: Allowed to get the ignition state
+      engine.write: Allowed to turn on/off the engine
+      trunk-access.read: Allowed to get the trunk state
+      trunk-access.write: Allowed to open/close or lock/unlock the trunk
+      trunk-access.limited: If the access to the trunk is limited to one time, whereas
+        a 0 means unlimited
+      wake-up.write: Allowed to wake up the car
+      charge.read: Allowed to get the charge state
+      charge.write: Allowed to start/stop charging, set the charge limit, open/close
+        charge port
+      climate.read: Allowed to get the climate state
+      climate.write: Allowed to set climate profile and start/stop HVAC
+      lights.read: Allowed to get the lights state
+      lights.write: Allowed to control lights
+      windows.write: Allowed to open/close windows
+      rooftop-control.read: Allowed to get the rooftop state
+      rooftop-control.write: Allowed to control the rooftop
+      windscreen.read: Allowed to get the windscreen state
+      windscreen.write: Allowed to set the windscreen damage
+      honk-horn-flash-lights.write: Allowed to honk the horn and flash lights and
+        activate emergency flasher
+      headunit.write: Allowed to send notifications, messages, videos, URLs, images
+        and text input to the headunit
+      remote-control.read: Allowed to get the control mode
+      remote-control.write: Allowed to remote control the car
+      valet-mode.read: Allowed to get the valet mode
+      valet-mode.write: Allowed to set the valet mode
+      valet-mode.active: Only allowed to use the car in valet mode
+      fueling.write: Allowed to open the car gas flap
+      heart-rate.write: Allowed to send the heart rate to the car
+      driver-fatigue.read: Allowed to get driver fatigue warnings
+      vehicle-location.read: Allowed to get the vehicle location
+      navi-destination.write: Allowed to set the navigation destination
+      theft-alarm.read: Allowed to get the theft alarm state
+      theft-alarm.write: Allowed to set the theft alarm
+      parking-ticket.read: Allowed to get the parking ticket
+      parking-ticket.write: Allowed to start/end parking
+      keyfob-position.read: Allowed to get the keyfob position
+      headunit.read: Allowed to receive notifications and messages from the headunit
+      vehicle-time.read: Allowed to get the vehicle local time
+      windows.read: Allowed to get the windows state
+      honk-horn-flash-lights.read: Allowed to get the flasher state
+      navi-destination.read: Allowed to get the navigation destination
+      race.read: Allowed to get the race state
+      offroad.read: Allowed to get the offroad state
+      chassis-settings.read: Allowed to get the chassis settings
+      chassis-settings.write: Allowed to set the chassis settings
+      seats.read: Allowed to get the seats state
+      seats.write: Allowed to control the seats
+      parking-brake.read: Allowed to get the parking brake state
+      parking-brake.write: Allowed to set the parking brake
+      environment.read: Allowed to get light and weather conditions
+      fueling.read: Allowed to get the gas flap state
+      wi-fi.read: Allowed to get the Wi-Fi state
+      wi-fi.write: Allowed to enable/disable Wi-Fi and manage networks
+      home-charger.read: Allowed to get the home charger state
+      home-charger.write: Allowed to control the home charger
