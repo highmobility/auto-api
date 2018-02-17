@@ -216,6 +216,38 @@ definitions:
       sundays:
         description: AutoHVACActive
         "$ref": "#/definitions/AutoHVACActive"
+  SetAutoHVACProfile:
+    type: object
+    properties:
+      mondays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      tuesdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      wednesdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      thursdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      fridays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      saturdays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      sundays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      driverTemperatureSetting:
+        type: number
+        format: float
+        example: 20.5
+      passengerTemperatureSetting:
+        type: number
+        format: float
+        example: 20.5
   Error400:
     type: object
     properties:
