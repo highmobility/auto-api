@@ -216,6 +216,9 @@ definitions:
       sundays:
         description: AutoHVACActive
         "$ref": "#/definitions/AutoHVACActive"
+      constant:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
   SetAutoHVACProfile:
     type: object
     properties:
@@ -238,6 +241,9 @@ definitions:
         description: AutoHVACActive
         "$ref": "#/definitions/AutoHVACActive"
       sundays:
+        description: AutoHVACActive
+        "$ref": "#/definitions/AutoHVACActive"
+      constant:
         description: AutoHVACActive
         "$ref": "#/definitions/AutoHVACActive"
       driverTemperatureSetting:
