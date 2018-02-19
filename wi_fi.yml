@@ -21,6 +21,7 @@ properties:
     size: 1
     name: wi_fi_enabled
     pretty_name: Wi-Fi Enabled
+    title_case_name: wifiEnabled
     values:
       - name: disabled
         id: '0x00'

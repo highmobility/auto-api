@@ -136,6 +136,13 @@ definitions:
         type: string
         example: '********'
         description: The network password
+  ForgetNetwork:
+    type: object
+    properties:
+      networkSSID:
+        type: string
+        example: 'HOME'
+        description: The network SSID
   LoadURL:
     type: object
     properties:
