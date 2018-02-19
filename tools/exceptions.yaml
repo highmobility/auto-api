@@ -224,8 +224,10 @@ definitions:
         description: AutoHVACActive
         "$ref": "#/definitions/AutoHVACActive"
       constant:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
+        type: string
+        enum:
+          - active
+          - inactive
   SetAutoHVACProfile:
     type: object
     properties:
@@ -251,8 +253,10 @@ definitions:
         description: AutoHVACActive
         "$ref": "#/definitions/AutoHVACActive"
       constant:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
+        type: string
+        enum:
+          - active
+          - inactive
       driverTemperatureSetting:
         type: number
         format: float
