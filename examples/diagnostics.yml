@@ -116,3 +116,8 @@ distance_since_start:
   - item:
     - value: '0x000A'
       description: 10 km driven since engine start
+      
+fuel_volume:
+  - item:
+    - value: '0x420e0000'
+      description: 35,5 liters of fuel left

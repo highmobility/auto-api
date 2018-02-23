@@ -112,3 +112,8 @@ properties:
     size: 2
     name: distance_since_start
     description: The distance driven in km since trip start
+  - id: '0x0F'
+    type: float
+    size: 4
+    name: fuel_volume
+    description: The fuel volume measured in liters
