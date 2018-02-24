@@ -60,8 +60,8 @@ definitions:
       states:
         type: array
         items:
-          description: A state of the vehicle
-          type: object
+          description: State
+          "$ref": "#/definitions/State"
   ParkingTicket:
     type: object
     properties:
@@ -588,6 +588,11 @@ definitions:
         format: integer
         example: 10
         description: The distance driven in km since trip start
+      fuelVolume:
+        type: number
+        format: float
+        example: 35.5
+        description: The fuel volume measured in liters
   WiFiState:
     type: object
     properties:
@@ -1403,6 +1408,15 @@ definitions:
         type: number
         format: float
         example: 20.5
+  State:
+    type: object
+    properties:
+      capabilityIdentifier:
+        type: string
+        example: charging
+      state:
+        type: object
+        description: The state of the capability
   Error400:
     type: object
     properties:

@@ -265,6 +265,15 @@ definitions:
         type: number
         format: float
         example: 20.5
+  State:
+    type: object
+    properties:
+      capabilityIdentifier:
+        type: string
+        example: charging
+      state:
+        type: object
+        description: The state of the capability
   Error400:
     type: object
     properties:
@@ -376,6 +385,11 @@ exceptions:
   auto_hvac_profile:
     description: AutoHVACProfile
     "$ref": "#/definitions/AutoHVACProfile"
+  state:
+    type: array
+    items:
+      description: State
+      "$ref": "#/definitions/State"
 
 # These properties should be treated as arrays
 arrays:
