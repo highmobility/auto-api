@@ -82,7 +82,7 @@ properties:
       - name: tire_pressure
         size: 4
         type: float
-        description: Tire pressure in celsius formatted in 4-bytes per IEEE 754        
+        description: Tire pressure in BAR formatted in 4-bytes per IEEE 754        
       - name: tire_temperature
         size: 4
         type: float
