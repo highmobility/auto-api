@@ -142,3 +142,5 @@ bytes:
         description: Allowed to get the home charger state
       - name: home-charger.write
         description: Allowed to control the home charger
+      - name: dashboard-lights.read
+        description: Allowed to get the dashboard lights
