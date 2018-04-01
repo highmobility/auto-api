@@ -1,0 +1,21 @@
+dashboard_light:
+  - item:
+    - value: '0x00'
+      description: High beam, main beam
+    - value: '0x00'
+      description: Inactive
+  - item:
+    - value: '0x03'
+      description: Hazard warning
+    - value: '0x01'
+      description: Info
+  - item:
+    - value: '0x0F'
+      description: Transmission fluid temperature 
+    - value: '0x03'
+      description: Red
+  - item:
+    - value: '0x15'
+      description: 	Engine oil level
+    - value: '0x00'
+      description: Inactive
