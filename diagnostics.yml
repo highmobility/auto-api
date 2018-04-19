@@ -116,4 +116,4 @@ properties:
     type: float
     size: 4
     name: fuel_volume
-    description: The fuel volume measured in liters
+    description: The fuel volume measured in liters formatted in 4-bytes per IEEE 754 formatting
