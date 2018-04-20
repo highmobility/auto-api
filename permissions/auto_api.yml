@@ -144,3 +144,11 @@ bytes:
         description: Allowed to control the home charger
       - name: dashboard-lights.read
         description: Allowed to get the dashboard lights
+      - name: cruise-control.read
+        description: Allowed to get the cruise control state
+      - name: cruise-control.write
+        description: Allowed to set the cruise control
+      - name: start-stop.read
+        description: Allowed to get the start-stop state
+      - name: start-stop.write
+        description: Allowed to set the start-stop state

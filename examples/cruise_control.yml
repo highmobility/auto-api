@@ -1,0 +1,9 @@
+cruise_control:
+  - item:
+    - value: '0x01'
+      description: Higher speed requested by the driver
+
+target_speed:
+  - item:
+    - value: '0x003C'
+      description: The target speed is set to 60km/h
