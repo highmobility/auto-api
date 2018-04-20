@@ -12,7 +12,7 @@ message_types:
 properties:
   - id: '0x01'
     type: enum
-    size: 3
+    size: 2
     name: dashboard_light
     multiple: true
     items:
@@ -125,7 +125,7 @@ properties:
           - name: lane_departure_warning_off
             pretty_name: Lane departure warning switched off (info only)
             id: '0x22'
-      - name: type
+      - name: state
         type: enum
         size: 1
         values:
