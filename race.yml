@@ -70,7 +70,7 @@ properties:
     type: enum
     size: 1
     name: electronic_stability_program
-    description: ESP (Electronic Stability Program) intervention
+    pretty_name: ESP (Electronic Stability Program) intervention
     values:
       - name: inactive
         id: '0x00'

@@ -117,3 +117,28 @@ properties:
     size: 4
     name: fuel_volume
     description: The fuel volume measured in liters
+  - id: '0x10'
+    type: enum
+    size: 1
+    name: anti_lock_braking
+    pretty_name: Anti-lock braking system (ABS)
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x11'
+    type: integer
+    size: 2
+    name: engine_coolant_temperature
+    description: Engine coolant temperature in Celsius, whereas can be negative
+  - id: '0x12'
+    type: float
+    size: 4
+    name: engine_total_operating_hours
+    description: The accumulated time of engine operation per IEEE 754 formatting
+  - id: '0x13'
+    type: float
+    size: 4
+    name: engine_total_fuel_consumption
+    description: The accumulated lifespan fuel consumption in liters per IEEE 754 formatting
