@@ -141,3 +141,8 @@ engine_total_fuel_consumption:
   - item:
     - value: '0x46d78600'
       description: The engine total fuel consumption over its lifespan is 27587.0 liters
+
+brake_fluid_level:
+  - item:
+    - value: '0x00'
+      description: Brake fluid low

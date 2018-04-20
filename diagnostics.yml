@@ -142,3 +142,12 @@ properties:
     size: 4
     name: engine_total_fuel_consumption
     description: The accumulated lifespan fuel consumption in liters per IEEE 754 formatting
+  - id: '0x14'
+    type: enum
+    size: 1
+    name: brake_fluid_level
+    values:
+      - name: low
+        id: '0x00'
+      - name: filled
+        id: '0x01'
