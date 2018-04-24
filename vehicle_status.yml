@@ -75,6 +75,16 @@ properties:
     size: 1
     name: number_of_seats
     description: The number of seats
+  - id: '0x0C'
+    type: float
+    size: 4
+    name: engine_volume
+    description: The engine volume displacement in liters per IEEE 754 formatting
+  - id: '0x0D'
+    type: integer
+    size: 2
+    name: engine_max_torque
+    description: The maximum engine torque in Nm
   - id: '0x99'
     type: capability_state
     name: state

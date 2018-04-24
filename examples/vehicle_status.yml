@@ -52,3 +52,13 @@ number_of_seats:
   - item:
     - value: '0x05'
       description: '5 seats'
+
+engine_volume:
+  - item:
+    - value: '0x40200000'
+      description: 'Engine volume is 2.5 liters'
+
+engine_max_torque:
+  - item:
+    - value: '0x00F5'
+      description: 'Engine torque is 245 Nm'
