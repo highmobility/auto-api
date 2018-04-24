@@ -19,13 +19,22 @@ properties:
     values:
       - name: inactive
         id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x02'
+    type: enum
+    size: 1
+    name: limiter
+    values:
+      - name: not_set
+        id: '0x00'
       - name: higher_speed_requested
         id: '0x01'
       - name: lower_speed_requested
         id: '0x02'
       - name: speed_fixed
         id: '0x03'
-  - id: '0x02'
+  - id: '0x03'
     type: integer
     size: 2
     name: target_speed

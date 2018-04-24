@@ -1,7 +1,12 @@
 cruise_control:
   - item:
     - value: '0x01'
-      description: Higher speed requested by the driver
+      description: Cruise control is active
+
+limiter:
+  - item:
+    - value: '0x01'
+      description: Higher speed requested by the limiter
 
 target_speed:
   - item:
