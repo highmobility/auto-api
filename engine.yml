@@ -22,3 +22,12 @@ properties:
         id: '0x00'
       - name: engine_on
         id: '0x01'
+  - id: '0x02'
+    type: enum
+    size: 1
+    name: accessories_ignition
+    values:
+      - name: powered_off
+        id: '0x00'
+      - name: powered_on
+        id: '0x01'
