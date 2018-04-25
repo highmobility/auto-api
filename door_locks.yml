@@ -45,3 +45,51 @@ properties:
             id: '0x00'
           - name: locked
             id: '0x01'
+  - id: '0x02'
+    size: 3
+    name: inside_door_lock
+    items:
+      - name: door_location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+      - name: inside_door_lock
+        type: enum
+        size: 1
+        values:
+          - name: unlocked
+            id: '0x00'
+          - name: locked
+            id: '0x01'
+  - id: '0x03'
+    size: 3
+    name: outside_door_lock
+    items:
+      - name: door_location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+      - name: outside_door_lock
+        type: enum
+        size: 1
+        values:
+          - name: unlocked
+            id: '0x00'
+          - name: locked
+            id: '0x01'
