@@ -46,7 +46,7 @@ properties:
           - name: locked
             id: '0x01'
   - id: '0x02'
-    size: 3
+    size: 2
     name: inside_door_lock
     items:
       - name: door_location
@@ -70,7 +70,7 @@ properties:
           - name: locked
             id: '0x01'
   - id: '0x03'
-    size: 3
+    size: 2
     name: outside_door_lock
     items:
       - name: door_location
