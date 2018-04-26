@@ -62,3 +62,8 @@ engine_max_torque:
   - item:
     - value: '0x00F5'
       description: 'Engine torque is 245 Nm'
+
+gearbox:
+  - item:
+    - value: '0x01'
+      description: 'Automatic gearbox'

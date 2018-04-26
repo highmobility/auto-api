@@ -85,6 +85,17 @@ properties:
     size: 2
     name: engine_max_torque
     description: The maximum engine torque in Nm
+  - id: '0x0E'
+    type: enum
+    size: 1
+    name: gearbox
+    values:
+      - name: manual
+        id: '0x00'
+      - name: automatic
+        id: '0x01'
+      - name: semi_automatic
+        id: '0x02'
   - id: '0x99'
     type: capability_state
     name: state
