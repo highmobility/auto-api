@@ -39,3 +39,19 @@ properties:
     size: 2
     name: target_speed
     description: The target speed in km/h
+  - id: '0x04'
+    type: enum
+    size: 1
+    name: acc
+    pretty_name: Adaptive Cruise Control
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x05'
+    type: integer
+    size: 2
+    name: acc_target_speed
+    pretty_name: Adaptive Cruise Control target speed
+    description: The target speed in km/h of the Adaptive Cruise Control

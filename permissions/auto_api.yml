@@ -152,3 +152,11 @@ bytes:
         description: Allowed to get the start-stop state
       - name: start-stop.write
         description: Allowed to set the start-stop state
+      - name: tachometer.read
+        description: Allowed to get the tachometer state
+  - idx: 10
+    bits:
+      - name: power-takeoff.read
+        description: Allowed to get the power take-off state
+      - name: power-takeoff.write
+        description: Allowed to set the power take-off

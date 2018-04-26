@@ -1,0 +1,9 @@
+power_takeoff:
+  - item:
+    - value: '0x01'
+      description: Power Take-Off system is active
+
+power_takeoff_engaged:
+  - item:
+    - value: '0x01'
+      description: At least one Power Take-Off drive is engaged
