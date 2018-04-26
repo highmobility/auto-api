@@ -11,7 +11,7 @@ rear_exterior_light:
 interior_light:
   - item:
     - value: '0x01'
-      description: Interior lights are inactive
+      description: Interior lights are active
 
 ambient_light:
   - item:
@@ -21,3 +21,18 @@ ambient_light:
       description: No green ambient light
     - value: '0x00'
       description: No blue ambient light
+
+reverse_light:
+  - item:
+    - value: '0x00'
+      description: Reverse lights are inactive
+
+reverse_light:
+  - item:
+    - value: '0x00'
+      description: Reverse lights are inactive
+
+emergency_brake_light:
+  - item:
+    - value: '0x00'
+      description: Emergency brake lights are inactive
