@@ -11,7 +11,7 @@ engine_oil_temperature:
 speed:
   - item:
     - value: '0x003C'
-      description: Car speed is 60km/h
+      description: Car vehicle speed is 60km/h
 
 engine_rpm:
   - item:
@@ -146,3 +146,18 @@ brake_fluid_level:
   - item:
     - value: '0x00'
       description: Brake fluid low
+
+engine_torque:
+  - item:
+    - value: '0x14'
+      description: Current engine torque is at 20% of full torque
+
+engine_load:
+  - item:
+    - value: '0x0A'
+      description: Current engine load is at 10% of full capacity
+
+wheel_based_speed:
+  - item:
+    - value: '0x0041'
+      description: The wheel base speed is 65km/h

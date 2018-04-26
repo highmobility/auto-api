@@ -25,7 +25,7 @@ properties:
     type: integer
     size: 2
     name: speed
-    description: The car speed on km/h, whereas can be negative
+    description: The vehicle speed in km/h, whereas can be negative
   - id: '0x04'
     type: integer
     size: 2
@@ -151,3 +151,18 @@ properties:
         id: '0x00'
       - name: filled
         id: '0x01'
+  - id: '0x15'
+    type: integer
+    size: 1
+    name: engine_torque
+    description: Current engine torque percentage between 0-100
+  - id: '0x16'
+    type: integer
+    size: 1
+    name: engine_load
+    description: Current engine load percentage between 0-100
+  - id: '0x17'
+    type: integer
+    size: 2
+    name: wheel_based_speed
+    description: The vehicle speed in km/h measured at the wheel base, whereas can be negative
