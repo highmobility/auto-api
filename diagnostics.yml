@@ -66,6 +66,7 @@ properties:
   - id: '0x0A'
     name: tire
     size: 11
+    multiple: true
     items:
       - name: tire_position
         type: enum

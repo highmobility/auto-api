@@ -13,6 +13,7 @@ properties:
   - id: '0x01'
     size: 3
     name: seat
+    multiple: true
     items:
       - name: seat_position
         type: enum

@@ -15,6 +15,7 @@ message_types:
 properties:
   - id: '0x01'
     name: capability # size is dynamic depending on supported_message_types length
+    multiple: true
     items:
       - name: capability_identifier
         type: capability_enum

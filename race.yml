@@ -14,6 +14,7 @@ properties:
   - id: '0x01'
     size: 5
     name: acceleration
+    multiple: true
     items:
       - name: type
         type: enum

@@ -16,6 +16,7 @@ properties:
   - id: '0x01'
     size: 2
     name: window
+    multiple: true
     items:
       - name: window_position
         type: enum

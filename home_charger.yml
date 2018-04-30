@@ -138,6 +138,7 @@ properties:
   - id: '0x0C'
     size: 8
     name: price_tariff
+    multiple: true
     items:
       - name: pricing_type
         type: enum
