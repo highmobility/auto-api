@@ -28,3 +28,8 @@ properties:
     size: 4
     name: heading
     description: Heading in 4-bytes per IEEE 754
+  - id: '0x03'
+    type: float
+    size: 4
+    name: altitude
+    description: Altitude in meters above the WGS 84 reference ellipsoid per IEEE 754 formatting
