@@ -3,7 +3,7 @@ category: api_structure
 id_msb: '0x00'
 id_lsb: '0x11'
 api_intro: 2
-api_update: 5
+api_update: 7
 message_types:
   - id: '0x00'
     name: get_vehicle_status
