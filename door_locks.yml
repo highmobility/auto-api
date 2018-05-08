@@ -73,7 +73,7 @@ properties:
             id: '0x01'
   - id: '0x03'
     size: 2
-    name: outside_lock
+    name: outside_door_lock
     multiple: true
     items:
       - name: door_location
@@ -88,7 +88,7 @@ properties:
             id: '0x02'
           - name: rear_left
             id: '0x03'
-      - name: outside_door_lock
+      - name: outside_lock
         type: enum
         size: 1
         values:
