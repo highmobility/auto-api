@@ -14,8 +14,9 @@ target_speed:
       description: The target speed is set to 60km/h
 
 acc:
-  - value: '0x00'
-    description: Adaptive Cruise Control is inactive
+  - item:
+    - value: '0x00'
+      description: Adaptive Cruise Control is inactive
 
 acc_target_speed:
   - item:
