@@ -14,7 +14,7 @@ driver_time_state:
   - item:
     - value: '0x01'
       description: Driver 1
-    - value: '0x01'
+    - value: '0x02'
       description: 4½ hours of driving reached
   - item:
     - value: '0x02'
