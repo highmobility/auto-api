@@ -3,6 +3,7 @@ category: diagnostics
 id_msb: '0x00'
 id_lsb: '0x57'
 api_intro: 5
+api_update: 7
 message_types:
   - id: '0x00'
     name: get_race_state
@@ -13,6 +14,7 @@ properties:
   - id: '0x01'
     size: 5
     name: acceleration
+    multiple: true
     items:
       - name: type
         type: enum
@@ -69,7 +71,7 @@ properties:
     type: enum
     size: 1
     name: electronic_stability_program
-    description: ESP (Electronic Stability Program) intervention
+    pretty_name: ESP (Electronic Stability Program) intervention
     values:
       - name: inactive
         id: '0x00'
@@ -124,3 +126,39 @@ properties:
     size: 1
     name: brake_pedal_position
     description: The brake pedal position between 0-100%, wheras 100% is full brakes
+  - id: '0x0E'
+    type: enum
+    size: 1
+    name: brake_pedal_switch
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x0F'
+    type: enum
+    size: 1
+    name: clutch_pedal_switch
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x10'
+    type: enum
+    size: 1
+    name: accelerator_pedal_idle_switch
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x11'
+    type: enum
+    size: 1
+    name: accelerator_pedal_kickdown_switch
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'

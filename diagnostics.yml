@@ -3,7 +3,7 @@ category: diagnostics
 id_msb: '0x00'
 id_lsb: '0x33'
 api_intro: 3
-api_update: 5
+api_update: 7
 message_types:
   - id: '0x00'
     name: get_diagnostics_state
@@ -25,7 +25,7 @@ properties:
     type: integer
     size: 2
     name: speed
-    description: The car speed on km/h, whereas can be negative
+    description: The vehicle speed in km/h, whereas can be negative
   - id: '0x04'
     type: integer
     size: 2
@@ -66,6 +66,7 @@ properties:
   - id: '0x0A'
     name: tire
     size: 11
+    multiple: true
     items:
       - name: tire_position
         type: enum
@@ -117,3 +118,52 @@ properties:
     size: 4
     name: fuel_volume
     description: The fuel volume measured in liters formatted in 4-bytes per IEEE 754 formatting
+  - id: '0x10'
+    type: enum
+    size: 1
+    name: anti_lock_braking
+    pretty_name: Anti-lock braking system (ABS)
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x11'
+    type: integer
+    size: 2
+    name: engine_coolant_temperature
+    description: Engine coolant temperature in Celsius, whereas can be negative
+  - id: '0x12'
+    type: float
+    size: 4
+    name: engine_total_operating_hours
+    description: The accumulated time of engine operation per IEEE 754 formatting
+  - id: '0x13'
+    type: float
+    size: 4
+    name: engine_total_fuel_consumption
+    description: The accumulated lifespan fuel consumption in liters per IEEE 754 formatting
+  - id: '0x14'
+    type: enum
+    size: 1
+    name: brake_fluid_level
+    values:
+      - name: low
+        id: '0x00'
+      - name: filled
+        id: '0x01'
+  - id: '0x15'
+    type: integer
+    size: 1
+    name: engine_torque
+    description: Current engine torque percentage between 0-100
+  - id: '0x16'
+    type: integer
+    size: 1
+    name: engine_load
+    description: Current engine load percentage between 0-100
+  - id: '0x17'
+    type: integer
+    size: 2
+    name: wheel_based_speed
+    description: The vehicle speed in km/h measured at the wheel base, whereas can be negative

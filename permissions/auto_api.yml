@@ -142,3 +142,21 @@ bytes:
         description: Allowed to get the home charger state
       - name: home-charger.write
         description: Allowed to control the home charger
+      - name: dashboard-lights.read
+        description: Allowed to get the dashboard lights
+      - name: cruise-control.read
+        description: Allowed to get the cruise control state
+      - name: cruise-control.write
+        description: Allowed to set the cruise control
+      - name: start-stop.read
+        description: Allowed to get the start-stop state
+      - name: start-stop.write
+        description: Allowed to set the start-stop state
+      - name: tachograph.read
+        description: Allowed to get the tachograph state
+  - idx: 10
+    bits:
+      - name: power-takeoff.read
+        description: Allowed to get the power take-off state
+      - name: power-takeoff.write
+        description: Allowed to set the power take-off

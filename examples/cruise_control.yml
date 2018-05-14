@@ -1,0 +1,24 @@
+cruise_control:
+  - item:
+    - value: '0x01'
+      description: Cruise control is active
+
+limiter:
+  - item:
+    - value: '0x01'
+      description: Higher speed requested by the limiter
+
+target_speed:
+  - item:
+    - value: '0x003C'
+      description: The target speed is set to 60km/h
+
+acc:
+  - item:
+    - value: '0x00'
+      description: Adaptive Cruise Control is inactive
+
+acc_target_speed:
+  - item:
+    - value: '0x003C'
+      description: The Adaptive Cruise Control target speed is set to 60km/h

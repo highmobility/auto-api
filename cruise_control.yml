@@ -1,0 +1,57 @@
+name: cruise_control
+category: chassis
+id_msb: '0x00'
+id_lsb: '0x62'
+api_intro: 7
+message_types:
+  - id: '0x00'
+    name: get_cruise_control_state
+  - id: '0x01'
+    name: cruise_control_state
+  - id: '0x02'
+    name: activate_deactivate_cruise_control
+    
+properties:
+  - id: '0x01'
+    type: enum
+    size: 1
+    name: cruise_control
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x02'
+    type: enum
+    size: 1
+    name: limiter
+    values:
+      - name: not_set
+        id: '0x00'
+      - name: higher_speed_requested
+        id: '0x01'
+      - name: lower_speed_requested
+        id: '0x02'
+      - name: speed_fixed
+        id: '0x03'
+  - id: '0x03'
+    type: integer
+    size: 2
+    name: target_speed
+    description: The target speed in km/h
+  - id: '0x04'
+    type: enum
+    size: 1
+    name: acc
+    pretty_name: Adaptive Cruise Control
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x05'
+    type: integer
+    size: 2
+    name: acc_target_speed
+    pretty_name: Adaptive Cruise Control target speed
+    description: The target speed in km/h of the Adaptive Cruise Control

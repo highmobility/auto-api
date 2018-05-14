@@ -112,6 +112,7 @@ properties:
   - id: '0x0D'
     size: 9
     name: charge_timer
+    multiple: true
     items:
       - name: timer_type
         type: enum

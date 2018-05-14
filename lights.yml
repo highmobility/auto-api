@@ -3,7 +3,7 @@ category: chassis
 id_msb: '0x00'
 id_lsb: '0x36'
 api_intro: 3
-api_update: 5
+api_update: 7
 message_types:
   - id: '0x00'
     name: get_lights_state
@@ -33,7 +33,6 @@ properties:
         id: '0x00'
       - name: active
         id: '0x01'
-
   - id: '0x03'
     type: enum
     size: 1
@@ -43,7 +42,6 @@ properties:
         id: '0x00'
       - name: active
         id: '0x01'
-
   - id: '0x04'
     size: 3
     name: ambient_light
@@ -60,3 +58,21 @@ properties:
         type: integer
         size: 1
         description: The blue colour of RGB in hex
+  - id: '0x05'
+    type: enum
+    size: 1
+    name: reverse_light
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'
+  - id: '0x06'
+    type: enum
+    size: 1
+    name: emergency_brake_light
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: active
+        id: '0x01'

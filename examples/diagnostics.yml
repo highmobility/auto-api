@@ -11,7 +11,7 @@ engine_oil_temperature:
 speed:
   - item:
     - value: '0x003C'
-      description: Car speed is 60km/h
+      description: Car vehicle speed is 60km/h
 
 engine_rpm:
   - item:
@@ -121,3 +121,43 @@ fuel_volume:
   - item:
     - value: '0x420e0000'
       description: 35,5 liters of fuel left
+
+anti_lock_braking:
+  - item:
+    - value: '0x01'
+      description: ABS active
+
+engine_coolant_temperature:
+  - item:
+    - value: '0x0014'
+      description: Engine coolant temperature is 20 degrees Celsius
+
+engine_total_operating_hours:
+  - item:
+    - value: '0x44bb94cd'
+      description: The engine has been operating in a total of 1500.65 hours
+
+engine_total_fuel_consumption:
+  - item:
+    - value: '0x46d78600'
+      description: The engine total fuel consumption over its lifespan is 27587.0 liters
+
+brake_fluid_level:
+  - item:
+    - value: '0x00'
+      description: Brake fluid low
+
+engine_torque:
+  - item:
+    - value: '0x14'
+      description: Current engine torque is at 20% of full torque
+
+engine_load:
+  - item:
+    - value: '0x0A'
+      description: Current engine load is at 10% of full capacity
+
+wheel_based_speed:
+  - item:
+    - value: '0x0041'
+      description: The wheel base speed is 65km/h
