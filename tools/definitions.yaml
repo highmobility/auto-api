@@ -57,6 +57,23 @@ definitions:
         format: integer
         example: 5
         description: The number of seats
+      engineVolume:
+        type: number
+        format: float
+        example: 2.5
+        description: The engine volume displacement in liters per IEEE 754 formatting
+      engineMaxTorque:
+        type: number
+        format: integer
+        example: 245
+        description: The maximum engine torque in Nm
+      gearbox:
+        type: string
+        enum:
+        - manual
+        - automatic
+        - semi_automatic
+        example: manual
       states:
         type: array
         items:
@@ -121,6 +138,15 @@ definitions:
         format: date-time
         example: '2018-04-12T23:20:50.52Z'
         description: The vehicle local time
+  StartStopState:
+    type: object
+    properties:
+      startStop:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
   GasFlapState:
     type: object
     properties:
@@ -205,6 +231,62 @@ definitions:
         - deactivated
         - activated
         example: deactivated
+  DashboardLight:
+    type: object
+    properties:
+      lightName:
+        type: string
+        enum:
+        - high_beam
+        - low_beam
+        - hazard_warning
+        - brake_failure
+        - hatch_open
+        - fuel_level
+        - engine_coolant_temperature
+        - battery_charging_condition
+        - engine_oil
+        - position_lights
+        - front_fog_light
+        - rear_fog_light
+        - park_heating
+        - engine_indicator
+        - service_call
+        - transmission_fluid_temperature
+        - transmission_failure
+        - anti_lock_brake_failure
+        - worn_brake_linings
+        - windscreen_washer_fluid
+        - tire_failure
+        - engine_oil_level
+        - engine_coolant_level
+        - steering_failure
+        - esc_indication
+        - brake_lights
+        - adblue_level
+        - fuel_filter_diff_pressure
+        - seat_belt
+        - advanced_braking
+        - acc
+        - trailer_connected
+        - airbag
+        - esc_switched_off
+        - lane_departure_warning_off
+        example: high_beam
+      state:
+        type: string
+        enum:
+        - inactive
+        - info
+        - yellow
+        - red
+        example: inactive
+  DashboardLights:
+    type: object
+    properties:
+      dashboardLight:
+        description: DashboardLight
+        "$ref": "#/definitions/DashboardLight"
   LightsState:
     type: object
     properties:
@@ -231,6 +313,18 @@ definitions:
         type: string
         example: "#ccff88"
         description: The ambient light hex string
+      reverseLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      emergencyBrakeLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
   SpringRate:
     type: object
     properties:
@@ -503,7 +597,7 @@ definitions:
         type: number
         format: float
         example: 2.309999942779541
-        description: Tire pressure in celsius formatted in 4-bytes per IEEE 754
+        description: Tire pressure in BAR formatted in 4-bytes per IEEE 754
       tireTemperature:
         type: number
         format: float
@@ -531,7 +625,7 @@ definitions:
         type: number
         format: integer
         example: 60
-        description: The car speed on km/h, whereas can be negative
+        description: The vehicle speed in km/h, whereas can be negative
       engineRPM:
         type: number
         format: integer
@@ -592,7 +686,67 @@ definitions:
         type: number
         format: float
         example: 35.5
-        description: The fuel volume measured in liters
+        description: The fuel volume measured in liters formatted in 4-bytes per IEEE
+          754 formatting
+      antiLockBraking:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      engineCoolantTemperature:
+        type: number
+        format: integer
+        example: 20
+        description: Engine coolant temperature in Celsius, whereas can be negative
+      engineTotalOperatingHours:
+        type: number
+        format: float
+        example: 1500.6500244140625
+        description: The accumulated time of engine operation per IEEE 754 formatting
+      engineTotalFuelConsumption:
+        type: number
+        format: float
+        example: 27587.0
+        description: The accumulated lifespan fuel consumption in liters per IEEE
+          754 formatting
+      brakeFluidLevel:
+        type: string
+        enum:
+        - low
+        - filled
+        example: low
+      engineTorque:
+        type: number
+        format: integer
+        example: 20
+        description: Current engine torque percentage between 0-100
+      engineLoad:
+        type: number
+        format: integer
+        example: 10
+        description: Current engine load percentage between 0-100
+      wheelBasedSpeed:
+        type: number
+        format: integer
+        example: 65
+        description: The vehicle speed in km/h measured at the wheel base, whereas
+          can be negative
+  PowerTakeoffState:
+    type: object
+    properties:
+      powerTakeoff:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      powerTakeoffEngaged:
+        type: string
+        enum:
+        - not_engaged
+        - engaged
+        example: not_engaged
   WiFiState:
     type: object
     properties:
@@ -631,6 +785,12 @@ definitions:
         format: float
         example: 52.5200080871582
         description: Heading in 4-bytes per IEEE 754
+      altitude:
+        type: number
+        format: float
+        example: 133.5
+        description: Altitude in meters above the WGS 84 reference ellipsoid per IEEE
+          754 formatting
   Acceleration:
     type: object
     properties:
@@ -741,6 +901,30 @@ definitions:
         example: 0
         description: The brake pedal position between 0-100%, wheras 100% is full
           brakes
+      brakePedalSwitch:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      clutchPedalSwitch:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      acceleratorPedalIdleSwitch:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      acceleratorPedalKickdownSwitch:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
   CarSdkVersion:
     type: object
     properties:
@@ -813,6 +997,90 @@ definitions:
       seat:
         description: Seat
         "$ref": "#/definitions/Seat"
+  DriverWorkingState:
+    type: object
+    properties:
+      driverNumber:
+        type: number
+        format: integer
+        example: 1
+        description: The driver number
+      workingState:
+        type: string
+        enum:
+        - resting
+        - driver_available
+        - working
+        - driving
+        example: resting
+  DriverTimeState:
+    type: object
+    properties:
+      driverNumber:
+        type: number
+        format: integer
+        example: 1
+        description: The driver number
+      timeState:
+        type: string
+        enum:
+        - normal
+        - 15_min_before_4
+        - 4_reached
+        - 15_min_before_9
+        - 9_reached
+        - 15_min_before_16
+        - 16_reached
+        example: normal
+  DriverCard:
+    type: object
+    properties:
+      driverNumber:
+        type: number
+        format: integer
+        example: 1
+        description: The driver number
+      card:
+        type: string
+        enum:
+        - not_present
+        - present
+        example: not_present
+  TachographState:
+    type: object
+    properties:
+      driverWorkingState:
+        description: DriverWorkingState
+        "$ref": "#/definitions/DriverWorkingState"
+      driverTimeState:
+        description: DriverTimeState
+        "$ref": "#/definitions/DriverTimeState"
+      driverCard:
+        description: DriverCard
+        "$ref": "#/definitions/DriverCard"
+      vehicleMotion:
+        type: string
+        enum:
+        - not_detected
+        - detected
+        example: not_detected
+      vehicleOverspeed:
+        type: string
+        enum:
+        - no_overspeed
+        - overspeed
+        example: no_overspeed
+      vehicleDirection:
+        type: string
+        enum:
+        - forward
+        - reverse
+        example: forward
+      vehicleSpeed:
+        type: number
+        format: integer
+        example: 80
+        description: The tachograph vehicle speed in km/h
   ParkingBrakeState:
     type: object
     properties:
@@ -833,12 +1101,14 @@ definitions:
         - browser
         - windows
         - vehicle_time
+        - start_stop
         - fueling
         - navi_destination
         - light_conditions
         - offroad
         - trunk
         - valet_mode
+        - dashboard_lights
         - text_input
         - lights
         - chassis_settings
@@ -846,6 +1116,7 @@ definitions:
         - charging
         - home_charger
         - diagnostics
+        - power_takeoff
         - wake_up
         - video_handover
         - wi_fi
@@ -855,11 +1126,13 @@ definitions:
         - firmware_version
         - theft_alarm
         - seats
+        - tachograph
         - parking_brake
         - capabilities
         - maintenance
         - rooftop_control
         - windscreen
+        - cruise_control
         - honk_horn_flash_lights
         - engine
         - weather_conditions
@@ -881,6 +1154,8 @@ definitions:
           - get_windows_state
           - open_close_windows
           - get_vehicle_time
+          - get_start_stop_state
+          - activate_deactivate_start_stop
           - get_gas_flap_state
           - open_gas_flap
           - get_navi_destination
@@ -891,6 +1166,7 @@ definitions:
           - open_close_trunk
           - get_valet_mode
           - activate_deactivate_valet_mode
+          - get_dashboard_lights
           - text_input
           - get_lights_state
           - control_lights
@@ -913,6 +1189,8 @@ definitions:
           - activate_deactivate_solar_charging
           - enable_disable_wi_fi_hotspot
           - get_diagnostics_state
+          - get_power_takeoff_state
+          - activate_deactivate_power_takeoff
           - wake_up
           - video_handover
           - get_wi_fi_state
@@ -926,6 +1204,7 @@ definitions:
           - get_theft_alarm_state
           - set_theft_alarm_state
           - get_seats_state
+          - get_tachograph_state
           - get_parking_brake_state
           - set_parking_brake
           - get_capabilities
@@ -935,6 +1214,8 @@ definitions:
           - control_rooftop
           - get_windscreen_state
           - set_windscreen_damage
+          - get_cruise_control_state
+          - activate_deactivate_cruise_control
           - get_flashers_state
           - honk_flash
           - activate_deactivate_emergency_flashers
@@ -1034,6 +1315,39 @@ definitions:
         format: date-time
         example: '2018-04-12T23:20:50.52Z'
         description: The time that the damage was detected
+  CruiseControlState:
+    type: object
+    properties:
+      cruiseControl:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      limiter:
+        type: string
+        enum:
+        - not_set
+        - higher_speed_requested
+        - lower_speed_requested
+        - speed_fixed
+        example: not_set
+      targetSpeed:
+        type: number
+        format: integer
+        example: 60
+        description: The target speed in km/h
+      acc:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      accTargetSpeed:
+        type: number
+        format: integer
+        example: 60
+        description: The target speed in km/h of the Adaptive Cruise Control
   FlashersState:
     type: object
     properties:
@@ -1054,6 +1368,12 @@ definitions:
         - engine_off
         - engine_on
         example: engine_off
+      accessoriesIgnition:
+        type: string
+        enum:
+        - powered_off
+        - powered_on
+        example: powered_off
   WeatherConditions:
     type: object
     properties:
@@ -1141,12 +1461,52 @@ definitions:
         - unlocked
         - locked
         example: unlocked
+  InsideDoorLock:
+    type: object
+    properties:
+      doorLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        example: front_left
+      insideLock:
+        type: string
+        enum:
+        - unlocked
+        - locked
+        example: unlocked
+  OutsideDoorLock:
+    type: object
+    properties:
+      doorLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        example: front_left
+      outsideLock:
+        type: string
+        enum:
+        - unlocked
+        - locked
+        example: unlocked
   LockState:
     type: object
     properties:
       door:
         description: Door
         "$ref": "#/definitions/Door"
+      insideDoorLock:
+        description: InsideDoorLock
+        "$ref": "#/definitions/InsideDoorLock"
+      outsideDoorLock:
+        description: OutsideDoorLock
+        "$ref": "#/definitions/OutsideDoorLock"
   VideoHandover:
     type: object
     properties:
@@ -1557,3 +1917,11 @@ securityDefinitions:
       wi-fi.write: Allowed to enable/disable Wi-Fi and manage networks
       home-charger.read: Allowed to get the home charger state
       home-charger.write: Allowed to control the home charger
+      dashboard-lights.read: Allowed to get the dashboard lights
+      cruise-control.read: Allowed to get the cruise control state
+      cruise-control.write: Allowed to set the cruise control
+      start-stop.read: Allowed to get the start-stop state
+      start-stop.write: Allowed to set the start-stop state
+      tachograph.read: Allowed to get the tachograph state
+      power-takeoff.read: Allowed to get the power take-off state
+      power-takeoff.write: Allowed to set the power take-off

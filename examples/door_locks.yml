@@ -39,3 +39,35 @@ door:
     - name: door_lock
       value: '0x01'
       description: Door locked
+
+inside_door_lock:
+  - item:
+    - name: door_location
+      value: '0x00'
+      description: Front Left door
+    - name: inside_lock
+      value: '0x00'
+      description: Inside unlocked
+  - item:
+    - name: door_location
+      value: '0x01'
+      description: Front Right door
+    - name: inside_lock
+      value: '0x00'
+      description: Inside unlocked
+
+outside_door_lock:
+  - item:
+    - name: door_location
+      value: '0x00'
+      description: Front Left door
+    - name: outside_lock
+      value: '0x01'
+      description: Outside locked
+  - item:
+    - name: door_location
+      value: '0x01'
+      description: Front Right door
+    - name: outside_lock
+      value: '0x01'
+      description: Outside locked
