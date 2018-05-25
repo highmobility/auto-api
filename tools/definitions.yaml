@@ -284,9 +284,11 @@ definitions:
   DashboardLights:
     type: object
     properties:
-      dashboardLight:
-        description: DashboardLight
-        "$ref": "#/definitions/DashboardLight"
+      dashboardLights:
+        type: array
+        items:
+          description: DashboardLight
+          "$ref": "#/definitions/DashboardLight"
   LightsState:
     type: object
     properties:
@@ -1049,15 +1051,21 @@ definitions:
   TachographState:
     type: object
     properties:
-      driverWorkingState:
-        description: DriverWorkingState
-        "$ref": "#/definitions/DriverWorkingState"
-      driverTimeState:
-        description: DriverTimeState
-        "$ref": "#/definitions/DriverTimeState"
-      driverCard:
-        description: DriverCard
-        "$ref": "#/definitions/DriverCard"
+      driverWorkingStates:
+        type: array
+        items:
+          description: DriverWorkingState
+          "$ref": "#/definitions/DriverWorkingState"
+      driverTimeStates:
+        type: array
+        items:
+          description: DriverTimeState
+          "$ref": "#/definitions/DriverTimeState"
+      driverCards:
+        type: array
+        items:
+          description: DriverCard
+          "$ref": "#/definitions/DriverCard"
       vehicleMotion:
         type: string
         enum:
@@ -1498,15 +1506,21 @@ definitions:
   LockState:
     type: object
     properties:
-      door:
-        description: Door
-        "$ref": "#/definitions/Door"
-      insideDoorLock:
-        description: InsideDoorLock
-        "$ref": "#/definitions/InsideDoorLock"
-      outsideDoorLock:
-        description: OutsideDoorLock
-        "$ref": "#/definitions/OutsideDoorLock"
+      doors:
+        type: array
+        items:
+          description: Door
+          "$ref": "#/definitions/Door"
+      insideDoorLocks:
+        type: array
+        items:
+          description: InsideDoorLock
+          "$ref": "#/definitions/InsideDoorLock"
+      outsideDoorLocks:
+        type: array
+        items:
+          description: OutsideDoorLock
+          "$ref": "#/definitions/OutsideDoorLock"
   VideoHandover:
     type: object
     properties:
@@ -1768,6 +1782,14 @@ definitions:
         type: number
         format: float
         example: 20.5
+  SetCruiseControlSpeed:
+    type: object
+    properties:
+      targetSpeed:
+        type: number
+        format: integer
+        example: 60
+        description: The target speed in km/h
   State:
     type: object
     properties:

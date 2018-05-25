@@ -265,6 +265,14 @@ definitions:
         type: number
         format: float
         example: 20.5
+  SetCruiseControlSpeed:
+    type: object
+    properties:
+      targetSpeed:
+        type: number
+        format: integer
+        example: 60
+        description: The target speed in km/h
   State:
     type: object
     properties:
@@ -399,6 +407,13 @@ arrays:
   brake_torque_vectoring: brake_torque_vectorings
   state: states
   price_tariff: price_tariffs
+  dashboard_light: dashboard_lights
+  driver_working_state: driver_working_states
+  driver_time_state: driver_time_states
+  driver_card: driver_cards
+  door: doors
+  inside_door_lock: inside_door_locks
+  outside_door_lock: outside_door_locks
 
 # These capabilities should be rejected, not part of Telematics
 rejections:
