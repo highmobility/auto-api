@@ -1,7 +1,12 @@
-charging:
+state:
   - item:
-    - value: '0x02'
-      description: Charging
+    - value: '0x01'
+      description: The vehicle is charging
+
+plugged_in:
+  - item:
+    - value: '0x01'
+      description: The charger is plugged in
 
 estimated_range:
   - item:
@@ -58,7 +63,7 @@ charge_mode:
     - value: '0x00'
       description: Immediate charging
 
-charge_timer:
+timers:
   - item:
     - value: '0x02'
       description: Departure time
@@ -77,3 +82,44 @@ charge_timer:
     - value: '0x00, 0x00'
       description: 0 min UTC time offset
 
+max_charging_current:
+  - item:
+    - value: '0x41c80000'
+      description: Maximum charging current is 25 A
+
+plug_type:
+  - item:
+    - value: '0x01'
+      description: The socket is Type 2
+
+charging_window_chosen:
+  - item:
+    - value: '0x00'
+      description: No charging windows has been chosen
+
+departure_times:
+  - item:
+    - value: '0x01'
+      description: Departure time is active
+    - value: '0x10'
+      description: at 16h
+    - value: '0x20'
+      description: 32min
+
+climatisation:
+  - item:
+    - value: '0x00'
+      description: Vehicle should not climatise during charging
+
+reduction_times:
+  - item:
+    - value: '0x00'
+      description: at 00h
+    - value: '0x00'
+      description: 00min
+
+battery_temperature:
+  - item:
+    - value: '0x4219999a'
+      description: The battery temperature is 38.4 degrees Celsius
+  
