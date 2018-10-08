@@ -17,9 +17,9 @@ message_types:
         type: enum
         size: 1
         values:
-          - name: inactive
+          - name: stop_charging
             id: '0x00'
-          - name: active
+          - name: start_charging
             id: '0x01'
   - id: '0x13'
     name: set_charge_limit
@@ -104,7 +104,7 @@ properties:
   - id: '0x17'
     type: enum
     size: 1
-    name: state
+    name: active_state
     values:
       - name: not_charging
         id: '0x00'

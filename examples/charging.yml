@@ -1,4 +1,4 @@
-state:
+active_state:
   - item:
     - value: '0x01'
       description: The vehicle is charging
