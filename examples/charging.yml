@@ -106,11 +106,6 @@ departure_times:
     - value: '0x20'
       description: 32min
 
-climatisation:
-  - item:
-    - value: '0x00'
-      description: Vehicle should not climatise during charging
-
 reduction_times:
   - item:
     - value: '0x00'

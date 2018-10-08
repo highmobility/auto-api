@@ -296,16 +296,6 @@ properties:
         type: integer
         size: 1
         description: Value between 0 and 59
-  - id: '0x12'
-    type: enum
-    size: 1
-    name: climatisation
-    description: If the climatisation should be activated during charging
-    values:
-      - name: inactive
-        id: '0x00'
-      - name: active
-        id: '0x01'
   - id: '0x13'
     size: 2
     name: reduction_times
