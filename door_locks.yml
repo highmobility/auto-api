@@ -3,19 +3,29 @@ category: digital_key
 id_msb: '0x00'
 id_lsb: '0x20'
 api_intro: 1
-api_update: 7
+api_update: 8
 message_types:
   - id: '0x00'
     name: get_lock_state
   - id: '0x01'
     name: lock_state
-  - id: '0x02'
+  - id: '0x12'
     name: lock_unlock_doors
+    properties:
+      - id: '0x01'
+        name: lock_state
+        type: enum
+        size: 1
+        values:
+          - name: unlock
+            id: '0x00'
+          - name: lock
+            id: '0x01'
     
 properties:
-  - id: '0x01'
-    size: 3
-    name: door
+  - id: '0x03'
+    size: 2
+    name: outside_locks
     multiple: true
     items:
       - name: door_location
@@ -30,69 +40,67 @@ properties:
             id: '0x02'
           - name: rear_left
             id: '0x03'
-      - name: door_position
+          - name: hatch
+            id: '0x04'
+      - name: lock_state
+        type: enum
+        size: 1
+        values:
+          - name: unlocked
+            id: '0x00'
+          - name: locked
+            id: '0x01'
+  - id: '0x02'
+    size: 2
+    name: inside_locks
+    multiple: true
+    items:
+      - name: door_location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+          - name: hatch
+            id: '0x04'
+      - name: lock_state
+        type: enum
+        size: 1
+        values:
+          - name: unlocked
+            id: '0x00'
+          - name: locked
+            id: '0x01'
+  - id: '0x04'
+    size: 2
+    name: positions
+    multiple: true
+    items:
+      - name: door_location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+          - name: hatch
+            id: '0x04'
+      - name: position
         type: enum
         size: 1
         values:
           - name: closed
             id: '0x00'
           - name: open
-            id: '0x01'
-      - name: door_lock
-        type: enum
-        size: 1
-        values:
-          - name: unlocked
-            id: '0x00'
-          - name: locked
-            id: '0x01'
-  - id: '0x02'
-    size: 2
-    name: inside_door_lock
-    multiple: true
-    items:
-      - name: door_location
-        type: enum
-        size: 1
-        values:
-          - name: front_left
-            id: '0x00'
-          - name: front_right
-            id: '0x01'
-          - name: rear_right
-            id: '0x02'
-          - name: rear_left
-            id: '0x03'
-      - name: inside_lock
-        type: enum
-        size: 1
-        values:
-          - name: unlocked
-            id: '0x00'
-          - name: locked
-            id: '0x01'
-  - id: '0x03'
-    size: 2
-    name: outside_door_lock
-    multiple: true
-    items:
-      - name: door_location
-        type: enum
-        size: 1
-        values:
-          - name: front_left
-            id: '0x00'
-          - name: front_right
-            id: '0x01'
-          - name: rear_right
-            id: '0x02'
-          - name: rear_left
-            id: '0x03'
-      - name: outside_lock
-        type: enum
-        size: 1
-        values:
-          - name: unlocked
-            id: '0x00'
-          - name: locked
             id: '0x01'
