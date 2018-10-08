@@ -25,7 +25,7 @@ message_types:
 properties:
   - id: '0x03'
     size: 2
-    name: outside_locks
+    name: locks
     multiple: true
     items:
       - name: door_location
