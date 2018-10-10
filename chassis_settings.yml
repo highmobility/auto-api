@@ -40,9 +40,9 @@ properties:
         id: '0x00'
       - name: active
         id: '0x01'
-  - id: '0x03'
-    size: 4
-    name: spring_rate
+  - id: '0x05'
+    size: 2
+    name: current_spring_rate
     items:
       - name: axle
         type: enum
@@ -52,31 +52,54 @@ properties:
             id: '0x00'
           - name: rear_axle
             id: '0x01'
-      - name: spring_rate
+      - name: value
         type: integer
         size: 1
         description: The suspension spring rate in N/mm
-      - name: maximum_value
+  - id: '0x06'
+    size: 2
+    name: maximum_spring_rate
+    items:
+      - name: axle
+        type: enum
+        size: 1
+        values:
+          - name: front_axle
+            id: '0x00'
+          - name: rear_axle
+            id: '0x01'
+      - name: value
         type: integer
         size: 1
         description: The maximum possible value for the spring rate
-      - name: minimum_value
-        type: integer
-        size: 1
-        description: The minimum value for the spring rate
-  - id: '0x04'
-    size: 3
-    name: chassis_position
+  - id: '0x07'
+    size: 2
+    name: minimum_spring_rate
     items:
-      - name: chassis_position
+      - name: axle
+        type: enum
+        size: 1
+        values:
+          - name: front_axle
+            id: '0x00'
+          - name: rear_axle
+            id: '0x01'
+      - name: value
         type: integer
         size: 1
-        description: The chassis position in mm calculated from the lowest point
-      - name: maximum_value
-        type: integer
-        size: 1
-        description: The maximum possible value for the chassis position
-      - name: minimum_value
-        type: integer
-        size: 1
-        description: The minimum value for the chassis position
+        description: The minimum possible value for the spring rate
+  - id: '0x08'
+    type: integer
+    size: 1
+    name: current_chassis_position
+    description: The chassis position in mm calculated from the lowest point
+  - id: '0x09'
+    type: integer
+    size: 1
+    name: maximum_chassis_position
+    descrition: The maximum possible value for the chassis position
+  - id: '0x0A'
+    type: integer
+    size: 1
+    name: minimum_chassis_position
+    description: The minimum possible value for the chassis position
