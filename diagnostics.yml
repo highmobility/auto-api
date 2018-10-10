@@ -43,17 +43,6 @@ properties:
     size: 2
     name: estimated_range
     description: Estimated range (with combustion engine)
-  - id: '0x07'
-    type: float
-    size: 4
-    name: current_fuel_consumption
-    description: Current fuel consumption in liters/100km per IEEE 754 formatting
-  - id: '0x08'
-    type: float
-    size: 4
-    name: average_fuel_consumption
-    pretty_name: Average fuel consumption for current trip
-    description: Average fuel consumption in liters/100km per IEEE 754 formatting
   - id: '0x09'
     type: enum
     size: 1
@@ -63,36 +52,6 @@ properties:
         id: '0x00'
       - name: filled
         id: '0x01'
-  - id: '0x0A'
-    name: tire
-    size: 11
-    multiple: true
-    items:
-      - name: tire_position
-        type: enum
-        size: 1
-        values:
-          - name: front_left
-            id: '0x00'
-          - name: front_right
-            id: '0x01'
-          - name: rear_right
-            id: '0x02'
-          - name: rear_left
-            id: '0x03'
-      - name: tire_pressure
-        size: 4
-        type: float
-        description: Tire pressure in BAR formatted in 4-bytes per IEEE 754        
-      - name: tire_temperature
-        size: 4
-        type: float
-        description: Tire temperature in celsius formatted in 4-bytes per IEEE 754
-      - name: wheel_rpm
-        title_case_name: wheelRPM
-        size: 2
-        type: integer
-        description: The RPM measured at this wheel
   - id: '0x0B'
     type: float
     size: 4
@@ -167,3 +126,99 @@ properties:
     size: 2
     name: wheel_based_speed
     description: The vehicle speed in km/h measured at the wheel base, whereas can be negative
+  - id: '0x18'
+    type: integer
+    size: 1
+    name: battery_level
+    description: Battery level in %, value between 0 and 100
+  - id: '0x19'
+    name: check_control_message
+    multiple: true
+    items:
+      - name: id
+        type: integer
+        size: 2
+        description: Check Control Message identifier
+      - name: remaining_length
+        type: float
+        size: 4
+        description: Remaining time of the message
+      - name: text_size
+        type: integer
+        size: 2
+        description: Size of the text
+      - name: text
+        type: string
+        description: CCM text bytes formatted in UTF-8
+      - name: status
+        type: string
+        description: CCM status bytes formatted in UTF-8
+  - id: '0x1A'
+    name: tire_pressure
+    size: 5
+    multiple: true
+    items:
+      - name: location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+          - name: hatch
+            id: '0x04'
+      - name: pressure
+        size: 4
+        type: float
+        description: Tire pressure in BAR formatted in 4-bytes per IEEE 754
+  - id: '0x1B'
+    name: tire_temperature
+    size: 5
+    multiple: true
+    items:
+      - name: location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+          - name: hatch
+            id: '0x04'
+      - name: temperature
+        size: 4
+        type: float
+        description: Tire temperature in BAR formatted in 4-bytes per IEEE 754
+  - id: '0x1C'
+    name: wheel_rpm
+    size: 3
+    multiple: true
+    items:
+      - name: location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+          - name: hatch
+            id: '0x04'
+      - name: rpm
+        size: 2
+        type: integer
+        description: The RPM measured at this wheel
