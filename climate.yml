@@ -82,9 +82,9 @@ properties:
     size: 4
     name: defrosting_temperature
     description: The defrosting temperature setting in celsius per IEEE 754 formatting
-  - id: '0x0A'
-    size: 15
-    name: auto_hvac_profile
+  - id: '0x0B'
+    size: 3
+    name: weekday_starting_time
     items:
       - name: auto_hvac_activated
         type: enum
@@ -104,61 +104,16 @@ properties:
             id: 'Bit 5'
           - name: sundays
             id: 'Bit 6'
-          - name: constant
+          - name: automatic
             id: 'Bit 0'
-      - name: monday_starting_hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: monday_starting_minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: tuesday_starting_hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: tuesday_starting_minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: wednesday_starting_hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: wednesday_starting_minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: thursday_starting_hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: thursday_starting_minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: friday_starting_hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: friday_starting_minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: saturday_starting_hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: saturday_starting_minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: sunday_starting_hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: sunday_starting_minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
+      - name: time
+        size: 2
+        items:
+          - name: hour
+            type: intger
+            size: 1
+            description: Value between 0 and 23
+          - name: minute
+            type: integer
+            size: 1
+            description: Value between 0 and 59
