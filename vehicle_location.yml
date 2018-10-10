@@ -16,20 +16,20 @@ properties:
     name: coordinates
     items:
       - name: latitude
-        type: float
+        type: double
         size: 8
-        description: Latitude in 4-bytes per IEEE 754
+        description: Latitude in 8-bytes per IEEE 754
       - name: longitude
-        type: float
+        type: double
         size: 8
-        description: Longitude in 4-bytes per IEEE 754
+        description: Longitude in 8-bytes per IEEE 754
   - id: '0x05'
     type: double
     size: 8
     name: heading
-    description: Heading in 4-bytes per IEEE 754
+    description: Heading in 8-bytes per IEEE 754
   - id: '0x06'
     type: double
     size: 8
     name: altitude
-    description: Altitude in meters above the WGS 84 reference ellipsoid per IEEE 754 formatting
+    description: Altitude in meters above the WGS 84 reference ellipsoid per double precision IEEE 754 formatting
