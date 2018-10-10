@@ -13,12 +13,12 @@ message_types:
     name: open_close_windows
     
 properties:
-  - id: '0x01'
+  - id: '0x02'
     size: 2
-    name: window
+    name: window_open_percentage
     multiple: true
     items:
-      - name: window_position
+      - name: window_location
         type: enum
         size: 1
         values:
@@ -32,11 +32,36 @@ properties:
             id: '0x03'
           - name: hatch
             id: '0x04'
-      - name: window_state
+      - name: open_percentage
+        type: integer
+        size: 1
+	    description: Value between 0 and 100
+  - id: '0x03'
+    size: 2
+    name: window_position
+    multiple: true
+    items:
+      - name: window_location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+          - name: hatch
+            id: '0x04'
+      - name: window_position
         type: enum
         size: 1
         values:
           - name: closed
             id: '0x00'
-          - name: open
+          - name: opened
             id: '0x01'
+          - name: intermediate
+            id: '0x02'
