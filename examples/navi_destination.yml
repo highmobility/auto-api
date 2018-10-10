@@ -1,8 +1,8 @@
 coordinates:
   - item:
-    - value: '0x4252147d'
+    - value: '0x404A428F9F44D445'
       description: 52.520008 Latitude in IEE 754 format
-    - value: '0x41567ab1'
+    - value: '0x402ACF562174C4CE'
       description: 13.404954 Longitude in IEE 754 format
 
 destination_name:
