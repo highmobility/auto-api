@@ -85,6 +85,7 @@ properties:
   - id: '0x0B'
     size: 3
     name: weekday_starting_time
+    multiple: true
     items:
       - name: auto_hvac_activated
         type: enum

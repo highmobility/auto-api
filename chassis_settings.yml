@@ -43,6 +43,7 @@ properties:
   - id: '0x05'
     size: 2
     name: current_spring_rate
+    multiple: true
     items:
       - name: axle
         type: enum
@@ -59,6 +60,7 @@ properties:
   - id: '0x06'
     size: 2
     name: maximum_spring_rate
+    multiple: true
     items:
       - name: axle
         type: enum
@@ -75,6 +77,7 @@ properties:
   - id: '0x07'
     size: 2
     name: minimum_spring_rate
+    multiple: true
     items:
       - name: axle
         type: enum

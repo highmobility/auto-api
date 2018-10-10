@@ -101,32 +101,6 @@ message_types:
             description: UTC time offset in minutes, which can be negative
     
 properties:
-  - id: '0x17'
-    type: enum
-    size: 1
-    name: active_state
-    values:
-      - name: not_charging
-        id: '0x00'
-      - name: charging
-        id: '0x01'
-      - name: charging_complete
-        id: '0x02'
-      - name: initialising
-        id: '0x03'
-      - name: charging_paused
-        id: '0x04'
-      - name: charging_error
-        id: '0x05'
-  - id: '0x16'
-    type: enum
-    size: 1
-    name: plugged_in
-    values:
-      - name: disconnected
-        id: '0x00'
-      - name: plugged_in
-        id: '0x01'
   - id: '0x02'
     type: integer
     size: 2
@@ -202,49 +176,6 @@ properties:
         id: '0x01'
       - name: inductive
         id: '0x02'
-  - id: '0x15'
-    size: 9
-    name: timers
-    multiple: true
-    items:
-      - name: timer_type
-        type: enum
-        size: 1
-        values:
-          - name: preferred_start_time
-            id: '0x00'
-          - name: preferred_end_time
-            id: '0x01'
-          - name: departure_date
-            id: '0x02'
-      - name: year
-        type: integer
-        size: 1
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      - name: month
-        type: integer
-        size: 1
-        description: Value between 1 and 12
-      - name: day
-        type: integer
-        size: 1
-        description: Value between 1 and 31
-      - name: hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: second
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: utc_time_offset
-        type: integer
-        size: 2
-        description: UTC time offset in minutes, which can be negative
   - id: '0x0E'
     type: float
     size: 4
@@ -315,3 +246,72 @@ properties:
     size: 4
     name: battery_temperature
     description: Battery temperature in Celsius in 4-bytes per IEEE 754
+  - id: '0x15'
+    size: 9
+    name: timers
+    multiple: true
+    items:
+      - name: timer_type
+        type: enum
+        size: 1
+        values:
+          - name: preferred_start_time
+            id: '0x00'
+          - name: preferred_end_time
+            id: '0x01'
+          - name: departure_date
+            id: '0x02'
+      - name: year
+        type: integer
+        size: 1
+        description: Value between 0 and 99, which corresponds to 2000-2099
+      - name: month
+        type: integer
+        size: 1
+        description: Value between 1 and 12
+      - name: day
+        type: integer
+        size: 1
+        description: Value between 1 and 31
+      - name: hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: second
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: utc_time_offset
+        type: integer
+        size: 2
+        description: UTC time offset in minutes, which can be negative
+  - id: '0x16'
+    type: enum
+    size: 1
+    name: plugged_in
+    values:
+      - name: disconnected
+        id: '0x00'
+      - name: plugged_in
+        id: '0x01'
+  - id: '0x17'
+    type: enum
+    size: 1
+    name: active_state
+    values:
+      - name: not_charging
+        id: '0x00'
+      - name: charging
+        id: '0x01'
+      - name: charging_complete
+        id: '0x02'
+      - name: initialising
+        id: '0x03'
+      - name: charging_paused
+        id: '0x04'
+      - name: charging_error
+        id: '0x05'
