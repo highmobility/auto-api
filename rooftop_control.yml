@@ -23,3 +23,37 @@ properties:
     size: 1
     name: position
     description: Percentage value between 0-100 whereas 100 is fully open
+  - id: '0x03'
+    type: enum
+    size: 1
+    name: convertible_roof_state
+    values:
+      - name: closed
+        id: '0x00'
+      - name: open
+        id: '0x01'
+      - name: emergencyLocked
+        id: '0x02'
+      - name: closedSecured
+        id: '0x03'
+      - name: openSecured
+        id: '0x04'
+      - name: hardTopMounted
+        id: '0x05'
+      - name: intermediatePosition
+        id: '0x06'
+      - name: loadingPosition
+        id: '0x07'
+      - name: loadingPositionImmediate
+        id: '0x08'
+  - id: '0x04'
+    type: enum
+    size: 1
+    name: sunroof_tilt_state
+    values:
+      - name: closed
+        id: '0x00'
+      - name: opened
+        id: '0x01'
+      - name: intermediate
+        id: '0x02'
