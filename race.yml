@@ -162,3 +162,12 @@ properties:
         id: '0x00'
       - name: active
         id: '0x01'
+  - id: '0x12'
+    type: enum
+    size: 1
+    name: vehicle_moving
+    values:
+      - name: not_moving
+        id: '0x00'
+      - name: moving
+        id: '0x01'
