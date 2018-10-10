@@ -10,12 +10,12 @@ message_types:
     name: seats_state
     
 properties:
-  - id: '0x01'
-    size: 3
-    name: seat
+  - id: '0x02'
+    size: 2
+    name: person_detected
     multiple: true
     items:
-      - name: seat_position
+      - name: seat_location
         type: enum
         size: 1
         values:
@@ -23,9 +23,9 @@ properties:
             id: '0x00'
           - name: front_right
             id: '0x01'
-          - name: rear_right
-            id: '0x02'
           - name: rear_left
+            id: '0x02'
+          - name: rear_right
             id: '0x03'
           - name: rear_center
             id: '0x04'
@@ -37,6 +37,25 @@ properties:
             id: '0x00'
           - name: detected
             id: '0x01'
+  - id: '0x03'
+    size: 2
+    name: seatbelt_fastened
+    multiple: true
+    items:
+      - name: seat_location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_left
+            id: '0x02'
+          - name: rear_right
+            id: '0x03'
+          - name: rear_center
+            id: '0x04'
       - name: seatbelt_fastened
         type: enum
         size: 1
