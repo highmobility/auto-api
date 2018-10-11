@@ -10,7 +10,7 @@ message_types:
   - id: '0x01'
     name: theft_alarm_state
   - id: '0x12'
-    name: activate_deactivate_alarm_state
+    name: set_theft_alarm_state
     properties:
       - id: '0x01'
         name: theft_alarm
@@ -21,6 +21,8 @@ message_types:
             id: '0x00'
           - name: arm
             id: '0x01'
+          - name: trigger
+            id: '0x02'
 
 properties:
   - id: '0x01'
