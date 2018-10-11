@@ -1,0 +1,23 @@
+name: hood
+category: digital_key
+id_msb: '0x00'
+id_lsb: '0x67'
+api_intro: 8
+message_types:
+  - id: '0x00'
+    name: get_hood_state
+  - id: '0x01'
+    name: hood_state
+
+properties:
+  - id: '0x01'
+    type: enum
+    size: 1
+    name: position
+    values:
+      - name: closed
+        id: '0x00'
+      - name: open
+        id: '0x01'
+      - name: intermediate
+        id: '0x02'
