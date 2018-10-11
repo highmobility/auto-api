@@ -68,36 +68,6 @@ properties:
         id: '0x00'
       - name: activated
         id: '0x01'
-  - id: '0x06'
-    size: 8
-    name: location
-    items:
-      - name: latitude
-        type: float
-        size: 4
-        description: Latitude in 4-bytes per IEEE 754
-      - name: longitude
-        type: float
-        size: 4
-        description: Longitude in 4-bytes per IEEE 754
-  - id: '0x07'
-    size: 12
-    name: charge_current
-    pretty_name: Charge current (DC)
-    items:
-      - name: charge_current
-        type: float
-        size: 4
-        description: Charge current in 4-bytes per IEEE 754
-      - name: maximum_value
-        type: float
-        size: 4
-        description: The maximum possible value for the charge current
-      - name: minimum_value
-        type: float
-        size: 4
-        description: The minimum possible value for the charge current
-    values: Charge current in 4-bytes per IEEE 754
   - id: '0x08'
     type: enum
     size: 1
@@ -159,3 +129,36 @@ properties:
         type: float
         size: 4
         description: The price in 4-bytes per IEEE 754
+  - id: '0x0D'
+    type: enum
+    size: 1
+    name: authentication_state
+    values:
+      - name: unauthenticated
+        id: '0x00'
+      - name: authenticated
+        id: '0x01'
+  - id: '0x0E'
+    type: float
+    size: 4
+    name: charge_current_dc
+  - id: '0x0F'
+    type: float
+    size: 4
+    name: maximum_charge_current
+  - id: '0x10'
+    type: float
+    size: 4
+    name: minimum_charge_current
+  - id: '0x11'
+    size: 16
+    name: coordinates
+    items:
+      - name: latitude
+        type: double
+        size: 8
+        description: Latitude in 8-bytes per IEEE 754
+      - name: longitude
+        type: double
+        size: 8
+        description: Longitude in 8-bytes per IEEE 754
