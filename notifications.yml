@@ -3,7 +3,7 @@ category: headunit
 id_msb: '0x00'
 id_lsb: '0x38'
 api_intro: 4
-api_update: 5
+api_update: 8
 message_types:
   - id: '0x00'
     name: notification
@@ -12,3 +12,22 @@ message_types:
   - id: '0x02'
     name: clear_notification
     
+properties:
+  - id: '0x01'
+    type: string
+    name: text
+    description: Text for the notification, bytes in UTF8.
+  - id: '0x02'
+    name: action_item
+    multiple: true
+    items:
+      - name: identifier
+        type: integer
+        size: 1
+      - name: name
+        type: string
+        description: Name of the action, bytes in UTF8.
+  - id: '0x10'
+    type: integer
+    size: 1
+    name: received_action
