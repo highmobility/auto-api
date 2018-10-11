@@ -23,9 +23,9 @@ message_types:
             id: '0x01'
     
 properties:
-  - id: '0x03'
+  - id: '0x02'
     size: 2
-    name: locks
+    name: inside_locks
     multiple: true
     items:
       - name: door_location
@@ -50,9 +50,9 @@ properties:
             id: '0x00'
           - name: locked
             id: '0x01'
-  - id: '0x02'
+  - id: '0x03'
     size: 2
-    name: inside_locks
+    name: locks
     multiple: true
     items:
       - name: door_location

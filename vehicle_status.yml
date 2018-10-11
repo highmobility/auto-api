@@ -96,6 +96,31 @@ properties:
         id: '0x01'
       - name: semi_automatic
         id: '0x02'
+  - id: '0x0F'
+    type: enum
+    size: 1
+    name: display_unit
+    values:
+      - name: km
+        id: '0x00'
+      - name: miles
+        id: '0x01'
+  - id: '0x10'
+    type: enum
+    size: 1
+    name: driver_seat_location
+    values:
+      - name: left
+        id: '0x00'
+      - name: right
+        id: '0x01'
+      - name: center
+        id: '0x02'
+  - id: '0x11'
+    type: string
+    name: equipment
+    multiple: true
+    description: Array of different equipment in the vehicle
   - id: '0x99'
     type: capability_state
     name: state
