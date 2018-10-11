@@ -28,74 +28,10 @@ estimated_range:
     - value: '0x0109'
       description: Estimated range 265 km
 
-current_fuel_consumption:
-  - item:
-    - value: '0x410c0000'
-      description: Current fuel consumption 8,75 liters per 100 km
-
-average_fuel_consumption:
-  - item:
-    - value: '0x40c66666'
-      description: Trip fuel consumption 6,2 liters per 100 km
-
 washer_fluid_level:
   - item:
     - value: '0x01'
       description: Washer fluid filled
-
-tire:
-  - item:
-    - name: tire_position
-      value: '0x00'
-      description: Front Left tire
-    - name: tire_pressure
-      value: '0x4013d70a'
-      description: Pressure is 2.31 BAR
-    - name: tire_temperature
-      value: '0x42200000'
-      description: Temperature 40C degrees
-    - name: wheel_rpm
-      value: '0x02EA'
-      description: Wheel RPM 746
-  - item:
-    - name: tire_position
-      value: '0x01'
-      description: Front Right tire
-    - name: tire_pressure
-      value: '0x4013d70a'
-      description: Pressure is 2.31 BAR
-    - name: tire_temperature
-      value: '0x42200000'
-      description: Temperature 40C degrees
-    - name: wheel_rpm
-      value: '0x02EA'
-      description: Wheel RPM 746
-  - item:
-    - name: tire_position
-      value: '0x02'
-      description: Rear Right tire
-    - name: tire_pressure
-      value: '0x4013d70a'
-      description: Pressure is 2.31 BAR
-    - name: tire_temperature
-      value: '0x42200000'
-      description: Temperature 40C degrees
-    - name: wheel_rpm
-      value: '0x02EA'
-      description: Wheel RPM 746
-  - item:
-    - name: tire_position
-      value: '0x03'
-      description: Rear Left tire
-    - name: tire_pressure
-      value: '0x4013d70a'
-      description: Pressure is 2.31 BAR
-    - name: tire_temperature
-      value: '0x42200000'
-      description: Temperature 40C degrees
-    - name: wheel_rpm
-      value: '0x02EA'
-      description: Wheel RPM 746
 
 battery_voltage:
   - item:
@@ -161,3 +97,117 @@ wheel_based_speed:
   - item:
     - value: '0x0041'
       description: The wheel base speed is 65km/h
+
+battery_level:
+  - item:
+    - value: '0x38'
+      description: 'The 12V battery level is 56%'
+
+check_control_messages:
+  - item:
+    - name: id
+      value: '0x0001'
+      description: The id is 1
+    - name: remaining_length
+      value: '0x42660000'
+      description: The remaining time is 57.5 minutes
+    - name: text_size
+      value: '0x000C'
+      description: The following text size is 12 bytes
+    - name: text
+      value: '0x436865636b20656e67696e65'
+      description: "Check engine"
+    - name: status
+      value: '0x416c657274'
+      description: "Alert"
+
+tire_pressures:
+  - item:
+    - name: location
+      value: '0x00'
+      description: Front Left tire
+    - name: pressure
+      value: '0x4013d70a'
+      description: Pressure is 2.31 BAR
+  - item:
+    - name: location
+      value: '0x01'
+      description: Front Right tire
+    - name: pressure
+      value: '0x4013d70a'
+      description: Pressure is 2.31 BAR
+  - item:
+    - name: location
+      value: '0x02'
+      description: Rear Right tire
+    - name: pressure
+      value: '0x4013d70a'
+      description: Pressure is 2.31 BAR
+  - item:
+    - name: location
+      value: '0x03'
+      description: Rear Left tire
+    - name: pressure
+      value: '0x4013d70a'
+      description: Pressure is 2.31 BAR
+
+tire_temperatures:
+  - item:
+    - name: location
+      value: '0x00'
+      description: Front Left tire
+    - name: temperature
+      value: '0x42200000'
+      description: Temperature 40C degrees
+  - item:
+    - name: location
+      value: '0x01'
+      description: Front Right tire
+    - name: temperature
+      value: '0x42200000'
+      description: Temperature 40C degrees
+  - item:
+    - name: location
+      value: '0x02'
+      description: Rear Right tire
+    - name: temperature
+      value: '0x42200000'
+      description: Temperature 40C degrees
+  - item:
+    - name: location
+      value: '0x03'
+      description: Rear Left tire
+    - name: temperature
+      value: '0x42200000'
+      description: Temperature 40C degrees
+
+
+wheel_rpms:
+  - item:
+    - name: location
+      value: '0x00'
+      description: Front Left tire
+    - name: rpm
+      value: '0x02EA'
+      description: Wheel RPM 746
+  - item:
+    - name: location
+      value: '0x01'
+      description: Front Right tire
+    - name: rpm
+      value: '0x02EA'
+      description: Wheel RPM 746
+  - item:
+    - name: location
+      value: '0x02'
+      description: Rear Right tire
+    - name: rpm
+      value: '0x02EA'
+      description: Wheel RPM 746
+  - item:
+    - name: location
+      value: '0x03'
+      description: Rear Left tire
+    - name: rpm
+      value: '0x02EA'
+      description: Wheel RPM 746
