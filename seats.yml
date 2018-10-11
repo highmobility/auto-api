@@ -3,6 +3,7 @@ category: chassis
 id_msb: '0x00'
 id_lsb: '0x56'
 api_intro: 5
+api_update: 8
 message_types:
   - id: '0x00'
     name: get_seats_state

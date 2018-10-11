@@ -3,6 +3,7 @@ category: infrastructure
 id_msb: '0x00'
 id_lsb: '0x60'
 api_intro: 6
+api_update: 8
 message_types:
   - id: '0x00'
     name: get_home_charger_state
