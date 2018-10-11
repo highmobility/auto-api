@@ -3,7 +3,7 @@ category: diagnostics
 id_msb: '0x00'
 id_lsb: '0x33'
 api_intro: 3
-api_update: 7
+api_update: 8
 message_types:
   - id: '0x00'
     name: get_diagnostics_state
@@ -132,7 +132,7 @@ properties:
     name: battery_level
     description: Battery level in %, value between 0 and 100
   - id: '0x19'
-    name: check_control_message
+    name: check_control_messages
     multiple: true
     items:
       - name: id
@@ -154,7 +154,7 @@ properties:
         type: string
         description: CCM status bytes formatted in UTF-8
   - id: '0x1A'
-    name: tire_pressure
+    name: tire_pressures
     size: 5
     multiple: true
     items:
@@ -170,14 +170,12 @@ properties:
             id: '0x02'
           - name: rear_left
             id: '0x03'
-          - name: hatch
-            id: '0x04'
       - name: pressure
         size: 4
         type: float
         description: Tire pressure in BAR formatted in 4-bytes per IEEE 754
   - id: '0x1B'
-    name: tire_temperature
+    name: tire_temperatures
     size: 5
     multiple: true
     items:
@@ -193,14 +191,13 @@ properties:
             id: '0x02'
           - name: rear_left
             id: '0x03'
-          - name: hatch
-            id: '0x04'
       - name: temperature
         size: 4
         type: float
         description: Tire temperature in BAR formatted in 4-bytes per IEEE 754
   - id: '0x1C'
-    name: wheel_rpm
+    name: wheel_rpms
+    pretty_name: Wheel RPMs
     size: 3
     multiple: true
     items:
@@ -216,9 +213,8 @@ properties:
             id: '0x02'
           - name: rear_left
             id: '0x03'
-          - name: hatch
-            id: '0x04'
       - name: rpm
+        pretty_name: RPM
         size: 2
         type: integer
         description: The RPM measured at this wheel
