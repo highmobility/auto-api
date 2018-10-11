@@ -3,7 +3,7 @@ category: poi
 id_msb: '0x00'
 id_lsb: '0x31'
 api_intro: 4
-api_update: 5
+api_update: 8
 message_types:
   - id: '0x00'
     name: get_navi_destination
@@ -11,20 +11,37 @@ message_types:
     name: navi_destination
   - id: '0x02'
     name: set_navi_destination
+    properties:
+      - id: '0x07'
+        size: 16
+        name: coordinates
+        items:
+          - name: latitude
+            type: double
+            size: 8
+            description: Latitude in 8-bytes per IEEE 754
+          - name: longitude
+            type: double
+            size: 8
+            description: Longitude in 8-bytes per IEEE 754
+      - id: '0x02'
+        type: string
+        name: destination_name
+        description: Destination name bytes formatted in UTF-8
     
 properties:
-  - id: '0x01'
-    size: 8
+  - id: '0x07'
+    size: 16
     name: coordinates
     items:
       - name: latitude
-        type: float
-        size: 4
-        description: Latitude in 4-bytes per IEEE 754
+        type: double
+        size: 8
+        description: Latitude in 8-bytes per IEEE 754
       - name: longitude
-        type: float
-        size: 4
-        description: Longitude in 4-bytes per IEEE 754
+        type: double
+        size: 8
+        description: Longitude in 8-bytes per IEEE 754
   - id: '0x02'
     type: string
     name: destination_name

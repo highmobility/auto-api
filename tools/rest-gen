@@ -92,7 +92,7 @@ Dir.glob('../*.yml') do |yml_file|
         # -- Handling decimal format
         prop['example'] = decimal(example_val)
         prop['description'] = prop_spec['description']
-      when 'float'
+      when 'float', 'double' # TODO: test double handling
         prop['type'] = 'number'
         prop['format'] = 'float'
         # -- Handling IEE 754 format
