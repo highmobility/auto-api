@@ -13,26 +13,26 @@ message_types:
 properties:
   - id: '0x01'
     size: 3
-    name: car_sdk_version
-    title_case_name: carSDKVersion
+    name: hmkit_version
+    title_case_name: HMKitVersion
     items:
       - name: version_major
         type: integer
         size: 1
-        description: Car SDK version major number
+        description: HMKit version major number
       - name: version_minor
         type: integer
         size: 1
-        description: Car SDK version minor number
+        description: HMKit version minor number
       - name: version_patch
         type: integer
         size: 1
-        description: Car SDK version patch number
+        description: HMKit version patch number
   - id: '0x02'
     type: 'string'
-    name: car_sdk_build_name
-    title_case_name: carSDKBuildName
-    description: Car SDK version build name bytes formatted in UTF-8
+    name: hmkit_build_name
+    title_case_name: HMKitBuildName
+    description: HMKit version build name bytes formatted in UTF-8
   - id: '0x03'
     type: 'string'
     name: application_version
