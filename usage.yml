@@ -49,7 +49,7 @@ properties:
       - name: period
         type: integer
         size: 1
-        description: % value of the period used for the driving mode
+        description: "% value of the period used for the driving mode"
   - id: '0x06'
     size: 2
     multiple: true

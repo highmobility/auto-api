@@ -35,7 +35,7 @@ properties:
       - name: open_percentage
         type: integer
         size: 1
-	    description: Value between 0 and 100
+        description: Value between 0 and 100
   - id: '0x03'
     size: 2
     name: window_position
