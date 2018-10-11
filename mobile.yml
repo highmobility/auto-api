@@ -1,0 +1,17 @@
+name: mobile
+pretty_state_name: Mobile
+category: headunit
+id_msb: '0x00'
+id_lsb: '0x66'
+api_intro: 8
+    
+properties:
+  - id: '0x01'
+    type: enum
+    size: 1
+    name: connected
+    values:
+      - name: disconnected
+        id: '0x00'
+      - name: connected
+        id: '0x01'
