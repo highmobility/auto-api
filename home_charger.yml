@@ -106,30 +106,6 @@ properties:
     name: wi_fi_hotspot_password
     pretty_name: Wi-Fi Hotspot password
     description: The Wi-Fi Hotspot password formatted in UTF-8
-  - id: '0x0C'
-    size: 8
-    name: price_tariff
-    multiple: true
-    items:
-      - name: pricing_type
-        type: enum
-        size: 1
-        values:
-          - name: starting_fee
-            id: '0x00'
-          - name: per_minute
-            id: '0x01'
-          - name: per_kwh
-            pretty_name: Per kWh
-            id: '0x01'
-      - name: currency
-        type: string
-        size: 3
-        description: The currency alphabetic code per ISO 4217
-      - name: price
-        type: float
-        size: 4
-        description: The price in 4-bytes per IEEE 754
   - id: '0x0D'
     type: enum
     size: 1
@@ -163,3 +139,25 @@ properties:
         type: double
         size: 8
         description: Longitude in 8-bytes per IEEE 754
+  - id: '0x12'
+    name: price_tariffs
+    multiple: true
+    items:
+      - name: pricing_type
+        type: enum
+        size: 1
+        values:
+          - name: starting_fee
+            id: '0x00'
+          - name: per_minute
+            id: '0x01'
+          - name: per_kwh
+            pretty_name: Per kWh
+            id: '0x01'
+      - name: price
+        type: float
+        size: 4
+        description: The price in 4-bytes per IEEE 754
+      - name: currency
+        type: string
+        description: The currency alphabetic code per ISO 4217
