@@ -3,14 +3,60 @@ category: chassis
 id_msb: '0x00'
 id_lsb: '0x36'
 api_intro: 3
-api_update: 7
+api_update: 8
 message_types:
   - id: '0x00'
     name: get_lights_state
   - id: '0x01'
     name: lights_state
-  - id: '0x02'
+  - id: '0x12'
     name: control_lights
+    properties:
+      - id: '0x01'
+        name: front_exterior_light
+        type: enum
+        size: 1
+        values:
+          - name: inactive
+            id: '0x00'
+          - name: active
+            id: '0x01'
+          - name: active_full_beam
+            id: '0x02'
+      - id: '0x02'
+        name: rear_exterior_light
+        type: enum
+        size: 1
+        values:
+          - name: deactivate
+            id: '0x00'
+          - name: activate
+            id: '0x01'
+      - id: '0x03'
+        name: interior_light
+        type: enum
+        size: 1
+        values:
+          - name: deactivate
+            id: '0x00'
+          - name: activate
+            id: '0x01'
+      - id: '0x04'
+        name: ambient_light
+        size: 3
+        items:
+          - name: rgb_red
+            type: integer
+            size: 1
+            description: The red colour of RGB in hex
+          - name: rgb_green
+            type: integer
+            size: 1
+            description: The green colour of RGB in hex
+          - name: rgb_blue
+            type: integer
+            size: 1
+            description: The blue colour of RGB in hex
     
 properties:
   - id: '0x01'
