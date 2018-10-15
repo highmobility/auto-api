@@ -9,8 +9,53 @@ message_types:
     name: get_rooftop_state
   - id: '0x01'
     name: rooftop_state
-  - id: '0x02'
+  - id: '0x12'
     name: control_rooftop
+    properties:
+      - id: '0x01'
+        name: dimming
+        type: integer
+        size: 1
+        description: Percentage value between 0-100 whereas 100 is opaque
+      - id: '0x02'
+        name: position
+        type: integer
+        size: 1
+        description: Percentage value between 0-100 whereas 100 is fully open
+      - id: '0x03'
+        name: convertible_roof_state
+        type: enum
+        size: 1
+        values:
+          - name: closed
+            id: '0x00'
+          - name: open
+            id: '0x01'
+          - name: emergency_locked
+            id: '0x02'
+          - name: closed_secured
+            id: '0x03'
+          - name: open_secured
+            id: '0x04'
+          - name: hard_top_mounted
+            id: '0x05'
+          - name: intermediate_position
+            id: '0x06'
+          - name: loading_position
+            id: '0x07'
+          - name: loading_position_immediate
+            id: '0x08'
+      - id: '0x04'
+        type: enum
+        size: 1
+        name: sunroof_tilt_state
+        values:
+          - name: closed
+            id: '0x00'
+          - name: tilted
+            id: '0x01'
+          - name: half_tilted
+            id: '0x02'
     
 properties:
   - id: '0x01'
@@ -32,19 +77,19 @@ properties:
         id: '0x00'
       - name: open
         id: '0x01'
-      - name: emergencyLocked
+      - name: emergency_locked
         id: '0x02'
-      - name: closedSecured
+      - name: closed_secured
         id: '0x03'
-      - name: openSecured
+      - name: open_secured
         id: '0x04'
-      - name: hardTopMounted
+      - name: hard_top_mounted
         id: '0x05'
-      - name: intermediatePosition
+      - name: intermediate_position
         id: '0x06'
-      - name: loadingPosition
+      - name: loading_position
         id: '0x07'
-      - name: loadingPositionImmediate
+      - name: loading_position_immediate
         id: '0x08'
   - id: '0x04'
     type: enum
@@ -53,7 +98,7 @@ properties:
     values:
       - name: closed
         id: '0x00'
-      - name: opened
+      - name: tilted
         id: '0x01'
-      - name: intermediate
+      - name: half_tilted
         id: '0x02'

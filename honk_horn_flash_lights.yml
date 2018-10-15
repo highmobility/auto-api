@@ -16,12 +16,12 @@ message_types:
         name: seconds
         type: integer
         size: 1
-        description: Number of seconds to honk the horn.
+        description: Number of seconds to honk the horn
       - id: '0x02'
         name: flash
         type: integer
         size: 1
-        description: Number of times to flash the lights.
+        description: Number of times to flash the lights
   - id: '0x13'
     name: activate_deactivate_emergency_flashers
     properties:
