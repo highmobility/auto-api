@@ -47,7 +47,7 @@ message_types:
     name: set_spring_rates
     properties:
       - id: '0x01'
-        name: spring_rate
+        name: spring_rates
         size: 2
         multiple: true
         mandatory: true
@@ -98,7 +98,7 @@ properties:
         id: '0x01'
   - id: '0x05'
     size: 2
-    name: current_spring_rate
+    name: current_spring_rates
     multiple: true
     items:
       - name: axle
@@ -115,7 +115,7 @@ properties:
         description: The suspension spring rate in N/mm
   - id: '0x06'
     size: 2
-    name: maximum_spring_rate
+    name: maximum_spring_rates
     multiple: true
     items:
       - name: axle
@@ -132,7 +132,7 @@ properties:
         description: The maximum possible value for the spring rate
   - id: '0x07'
     size: 2
-    name: minimum_spring_rate
+    name: minimum_spring_rates
     multiple: true
     items:
       - name: axle

@@ -9,16 +9,115 @@ message_types:
     name: get_climate_state
   - id: '0x01'
     name: climate_state
-  - id: '0x02'
-    name: set_climate_profile
-  - id: '0x03'
+  - id: '0x12'
+    name: change_starting_times
+    properties:
+      - id: '0x01'
+        name: weekday_times
+        size: 3
+        multiple: true
+        mandatory: true
+        items:
+          - name: weekday
+            type: enum
+            size: 1
+            values:
+              - name: monday
+                id: '0x00'
+              - name: tuesday
+                id: '0x01'
+              - name: wednesday
+                id: '0x02'
+              - name: thursday
+                id: '0x03'
+              - name: friday
+                id: '0x04'
+              - name: satuday
+                id: '0x05'
+              - name: sunday
+                id: '0x06'
+              - name: automatic
+                id: '0x07'
+          - name: time
+            size: 2
+            description: Time of day. Use 0xFF to remove the set time.
+            items:
+              - name: hours
+                type: integer
+                size: 1
+              - name: minutes
+                type: integer
+                size: 1
+  - id: '0x13'
     name: start_stop_hvac
-  - id: '0x04'
+    properties:
+      - id: '0x01'
+        name: active_state
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: stop_hvac
+            id: '0x00'
+          - name: start_hvac
+            id: '0x01'
+  - id: '0x14'
     name: start_stop_defogging
-  - id: '0x05'
+    properties:
+      - id: '0x01'
+        name: active_state
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: stop_defogging
+            id: '0x00'
+          - name: start_defogging
+            id: '0x01'
+  - id: '0x15'
     name: start_stop_defrosting
-  - id: '0x06'
-    name: start_stop_ionising 
+    properties:
+      - id: '0x01'
+        name: active_state
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: stop_defrosting
+            id: '0x00'
+          - name: start_defrosting
+            id: '0x01'
+  - id: '0x16'
+    name: start_stop_ionising
+    properties:
+      - id: '0x01'
+        name: active_state
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: stop_ionising
+            id: '0x00'
+          - name: start_ionising
+            id: '0x01'
+  - id: '0x17'
+    name: change_temperatures
+    properties:
+      - id: '0x01'
+        name: driver
+        type: float
+        size: 4
+        description: Driver temperature in Celsius.
+      - id: '0x02'
+        name: passenger
+        type: float
+        size: 4
+        description: Passenger temperature in Celsius.
+      - id: '0x03'
+        name: rear
+        type: float
+        size: 4
+        description: Rear temperature in Celsius.
     
 properties:
   - id: '0x01'
