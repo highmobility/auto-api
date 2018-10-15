@@ -8,8 +8,23 @@ message_types:
     name: get_cruise_control_state
   - id: '0x01'
     name: cruise_control_state
-  - id: '0x02'
+  - id: '0x12'
     name: activate_deactivate_cruise_control
+    properties:
+      - id: '0x01'
+        name: active_state
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: deactivate
+            id: '0x00'
+          - name: activate
+            id: '0x01'
+      - id: '0x02'
+        name: target_speed
+        type: integer
+        size: 2
     
 properties:
   - id: '0x01'
