@@ -16,6 +16,7 @@ message_types:
         name: active_state
         type: enum
         size: 1
+        mandatory: true
         values:
           - name: stop_charging
             id: '0x00'
@@ -28,6 +29,7 @@ message_types:
         name: charge_limit
         type: integer
         size: 1
+        mandatory: true
         description: Charge limit percentage between 0-100
   - id: '0x14'
     name: open_close_charging_port
@@ -36,6 +38,7 @@ message_types:
         name: charge_port_state
         type: enum
         size: 1
+        mandatory: true
         values:
           - name: closed
             id: '0x00'
@@ -48,6 +51,7 @@ message_types:
         name: charge_mode
         type: enum
         size: 1
+        mandatory: true
         values:
           - name: timer_based
             id: '0x01'
@@ -60,6 +64,7 @@ message_types:
         name: timers
         size: 9
         multiple: true
+        mandatory: true
         items:
           - name: timer_type
             type: enum
