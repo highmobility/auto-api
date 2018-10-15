@@ -3,16 +3,38 @@ category: chassis
 id_msb: '0x00'
 id_lsb: '0x26'
 api_intro: 2
-api_update: 5
+api_update: 8
 message_types:
   - id: '0x00'
     name: get_flashers_state
   - id: '0x01'
     name: flashers_state
-  - id: '0x02'
+  - id: '0x12'
     name: honk_flash
-  - id: '0x03'
+    properties:
+      - id: '0x01'
+        name: seconds
+        type: integer
+        size: 1
+        description: Number of seconds to honk the horn.
+      - id: '0x02'
+        name: flash
+        type: integer
+        size: 1
+        description: Number of times to flash the lights.
+  - id: '0x13'
     name: activate_deactivate_emergency_flashers
+    properties:
+      - id: '0x01'
+        name: active_state
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: deactivate
+            id: '0x00'
+          - name: activate
+            id: '0x01'
     
 properties:
   - id: '0x01'
