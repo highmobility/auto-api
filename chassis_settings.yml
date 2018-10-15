@@ -9,15 +9,70 @@ message_types:
     name: get_chassis_settings
   - id: '0x01'
     name: chassis_settings
-  - id: '0x02'
+  - id: '0x12'
     name: set_driving_mode
-  - id: '0x03'
-    name: start_stop_sport_chrono
-  - id: '0x04'
-    name: set_spring_rate
-  - id: '0x05'
+    properties:
+      - id: '0x01'
+        name: driving_mode
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: regular
+            id: '0x00'
+          - name: eco
+            id: '0x01'
+          - name: sport
+            id: '0x02'
+          - name: sportPlus
+            id: '0x03'
+          - name: ecoPlus
+            id: '0x04'
+  - id: '0x13'
+    name: start_stop_sports_chrono
+    properties:
+      - id: '0x01'
+        name: start_stop
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: start
+            id: '0x00'
+          - name: stop
+            id: '0x01'
+          - name: reset
+            id: '0x02'
+  - id: '0x14'
+    name: set_spring_rates
+    properties:
+      - id: '0x01'
+        name: spring_rate
+        size: 2
+        multiple: true
+        mandatory: true
+        items:
+          - name: axle
+            type: enum
+            size: 1
+            values:
+              - name: front
+                id: '0x00'
+              - name: rear
+                id: '0x01'
+          - name: value
+            type: integer
+            size: 1
+            description: The suspension spring rate in N/mm
+  - id: '0x15'
     name: set_chassis_position
-    
+    properties:
+      - id: '0x01'
+        name: chassis_position
+        type: integer
+        size: 1
+        description: The chassis position in mm calculated from the lowest point
+
 properties:
   - id: '0x01'
     type: enum
