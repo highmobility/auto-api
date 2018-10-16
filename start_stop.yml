@@ -9,8 +9,20 @@ message_types:
     name: get_start_stop_state
   - id: '0x01'
     name: start_stop_state
-  - id: '0x02'
+  - id: '0x12'
     name: activate_deactivate_start_stop
+    properties:
+      - id: '0x01'
+        name: start_stop
+        pretty_name: Start-Stop
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: inactive
+            id: '0x00'
+          - name: active
+            id: '0x01'
     
 properties:
   - id: '0x01'
