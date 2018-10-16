@@ -10,10 +10,59 @@ message_types:
     name: wi_fi_state
   - id: '0x02'
     name: connect_to_network
+    properties:
+      - id: '0x03'
+        name: network_ssid
+        pretty_name: Network SSID
+        type: string
+        mandatory: true
+        title_case_name: networkSSID
+        description: The network SSID formatted in UTF-8
+      - id: '0x04'
+        name: network_security
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: none
+            id: '0x00'
+          - name: wep
+            pretty_name: WEP
+            id: '0x01'
+          - name: wpa
+            pretty_name: WPA/WPA2 Personal
+            id: '0x02'
+          - name: wpa2_personal
+            pretty_name: WPA2 Personal
+            id: '0x03'
+      - id: '0x05'
+        name: password
+        type: string
+        description: The network password formatted in UTF-8
   - id: '0x03'
     name: forget_network
+    properties:
+      - id: '0x03'
+        name: network_ssid
+        pretty_name: Network SSID
+        type: string
+        mandatory: true
+        title_case_name: networkSSID
+        description: The network SSID formatted in UTF-8
   - id: '0x04'
     name: enable_disable_wi_fi
+    properties:
+      - id: '0x04'
+        type: enum
+        size: 1
+        name: wi_fi_enabled
+        pretty_name: Wi-Fi Enabled
+        title_case_name: wifiEnabled
+        values:
+          - name: disabled
+            id: '0x00'
+          - name: enabled
+            id: '0x01'
     
 properties:
   - id: '0x01'
