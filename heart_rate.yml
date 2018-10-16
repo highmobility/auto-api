@@ -7,3 +7,9 @@ api_update: 5
 message_types:
   - id: '0x02'
     name: send_heart_rate
+    properties:
+      - id: '0x01'
+        name: heart_rate
+        type: integer
+        size: 1
+        mandatory: true
