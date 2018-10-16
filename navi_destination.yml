@@ -9,12 +9,13 @@ message_types:
     name: get_navi_destination
   - id: '0x01'
     name: navi_destination
-  - id: '0x02'
+  - id: '0x12'
     name: set_navi_destination
     properties:
-      - id: '0x07'
-        size: 16
+      - id: '0x01'
         name: coordinates
+        size: 16
+        mandatory: true
         items:
           - name: latitude
             type: double
@@ -25,14 +26,14 @@ message_types:
             size: 8
             description: Longitude in 8-bytes per IEEE 754
       - id: '0x02'
-        type: string
         name: destination_name
+        type: string
         description: Destination name bytes formatted in UTF-8
     
 properties:
   - id: '0x07'
-    size: 16
     name: coordinates
+    size: 16
     items:
       - name: latitude
         type: double
@@ -43,6 +44,6 @@ properties:
         size: 8
         description: Longitude in 8-bytes per IEEE 754
   - id: '0x02'
-    type: string
     name: destination_name
+    type: string
     description: Destination name bytes formatted in UTF-8

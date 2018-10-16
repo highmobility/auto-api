@@ -13,9 +13,10 @@ message_types:
     name: activate_deactivate_valet_mode
     properties:
       - id: '0x01'
+        name: valet_mode
         type: enum
         size: 1
-        name: valet_mode
+        mandatory: true
         values:
           - name: deactivate
             id: '0x00'
