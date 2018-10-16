@@ -9,12 +9,32 @@ message_types:
     name: get_control_mode
   - id: '0x01'
     name: control_mode
-  - id: '0x02'
-    name: start_control_mode
-  - id: '0x03'
-    name: stop_control_mode
   - id: '0x04'
     name: control_command
+    properties:
+      - id: '0x01'
+        name: speed
+        type: integer
+        size: 1
+        description: Speed in km/h
+      - id: '0x02'
+        name: angle
+        type: integer
+        size: 2
+        description: Angle of the steering
+  - id: '0x12'
+    name: start_stop_control
+    properties:
+      - id: '0x01'
+        name: start_stop
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: start
+            id: '0x00'
+          - name: stop
+            id: '0x01'
     
 properties:
   - id: '0x01'
