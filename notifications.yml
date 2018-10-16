@@ -7,10 +7,16 @@ api_update: 8
 message_types:
   - id: '0x00'
     name: notification
-  - id: '0x01'
-    name: notification_action
   - id: '0x02'
     name: clear_notification
+  - id: '0x11'
+    name: notification_action
+    properties:
+      - id: '0x01'
+        name: action_id
+        type: integer
+        size: 1
+        mandatory: true
     
 properties:
   - id: '0x01'
