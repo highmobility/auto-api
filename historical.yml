@@ -12,6 +12,7 @@ message_types:
         name: capability_identifier
         size: 2
         type: integer
+        mandatory: true
       - id: '0x02'
         name: start_date
         size: 8
