@@ -7,3 +7,9 @@ api_update: 5
 message_types:
   - id: '0x00'
     name: display_image
+    properties:
+      - id: '0x01'
+        name: image_url
+        type: string
+        mandatory: true
+        description: The UTF8 bytes of the image URL string
