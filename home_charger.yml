@@ -9,15 +9,68 @@ message_types:
     name: get_home_charger_state
   - id: '0x01'
     name: home_charger_state
-  - id: '0x02'
+  - id: '0x12'
     name: set_charge_current
-  - id: '0x03'
+    properties:
+      - id: '0x01'
+        name: charging_current
+        type: float
+        size: 4
+        mandatory: true
+        description: The current in 4-bytes per IEEE 754
+  - id: '0x13'
     name: set_price_tariffs
-  - id: '0x04'
+    properties:
+      - id: '0x12'
+        name: price_tariffs
+        multiple: true
+        mandatory: true
+        items:
+          - name: pricing_type
+            type: enum
+            size: 1
+            values:
+              - name: starting_fee
+                id: '0x00'
+              - name: per_minute
+                id: '0x01'
+              - name: per_kwh
+                pretty_name: Per kWh
+                id: '0x02'
+          - name: price
+            type: float
+            size: 4
+            description: The price in 4-bytes per IEEE 754
+          - name: currency
+            type: string
+            description: The currency alphabetic code per ISO 4217
+  - id: '0x14'
     name: activate_deactivate_solar_charging
-  - id: '0x05'
+    properties:
+      - id: '0x01'
+        name: solar_charging
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: deactivated
+            id: '0x00'
+          - name: activated
+            id: '0x01'
+  - id: '0x15'
     name: enable_disable_wi_fi_hotspot
-    
+    properties:
+      - id: '0x01'
+        name: hotspot_enabled
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: disabled
+            id: '0x00'
+          - name: enabled
+            id: '0x01'
+
 properties:
   - id: '0x01'
     type: enum
@@ -153,7 +206,7 @@ properties:
             id: '0x01'
           - name: per_kwh
             pretty_name: Per kWh
-            id: '0x01'
+            id: '0x02'
       - name: price
         type: float
         size: 4
