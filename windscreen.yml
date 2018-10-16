@@ -3,15 +3,88 @@ category: chassis
 id_msb: '0x00'
 id_lsb: '0x42'
 api_intro: 4
-api_update: 5
+api_update: 8
 message_types:
   - id: '0x00'
     name: get_windscreen_state
   - id: '0x01'
     name: windscreen_state
-  - id: '0x02'
+  - id: '0x12'
     name: set_windscreen_damage
-    
+    properties:
+      - id: '0x01'
+        name: windscreen_damage
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: no_impact_detected
+            id: '0x00'
+          - name: impact_but_no_damage_detected
+            id: '0x01'
+          - name: damage_smaller_than_1_inch
+            id: '0x02'
+          - name: damage_larger_than_1_inch
+            id: '0x03'
+      - id: '0x02'
+        name: windscreen_zone_matrix
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: unavailable
+            id: '0x00'
+          - name: horizontal_size
+            pretty_name: 4 bits representing the horizontal size of the matrix seen from the inside of the car, starting from index 1
+            id: 'value & 0xF0'
+          - name: vertical_size
+            pretty_name: 4 bits representing the vertical size of the matrix, starting from index 1
+            id: 'value & 0x0F'
+  - id: '0x13'
+    name: set_windscreen_needs_replacement
+    properties:
+      - id: '0x01'
+        name: windscreen_needs_replacement
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: unknown
+            id: '0x00'
+          - name: no_replacement_needed
+            id: '0x01'
+          - name: replacement_needed
+            id: '0x02'
+  - id: '0x14'
+    name: activate_wipers
+    properties:
+      - id: '0x01'
+        name: wipers_state
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: inactive
+            id: '0x00'
+          - name: active
+            id: '0x01'
+          - name: automatic
+            id: '0x02'
+      - id: '0x02'
+        name: wipers_intensity
+        type: enum
+        size: 1
+        values:
+          - name: level_0
+            pretty_name: Level 0, inactive
+            id: '0x00'
+          - name: level_1
+            id: '0x01'
+          - name: level_2
+            id: '0x02'
+          - name: level_3
+            id: '0x03'
+
 properties:
   - id: '0x01'
     type: enum
