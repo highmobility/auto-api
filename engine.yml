@@ -3,14 +3,25 @@ category: digital_key
 id_msb: '0x00'
 id_lsb: '0x35'
 api_intro: 3
-api_update: 7
+api_update: 8
 message_types:
   - id: '0x00'
     name: get_ignition_state
   - id: '0x01'
     name: ignition_state
-  - id: '0x02'
+  - id: '0x12'
     name: turn_engine_on_off
+    properties:
+      - id: '0x01'
+        name: ignition
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: engine_off
+            id: '0x00'
+          - name: engine_on
+            id: '0x01'
     
 properties:
   - id: '0x01'

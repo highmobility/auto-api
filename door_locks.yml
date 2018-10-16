@@ -16,6 +16,7 @@ message_types:
         name: lock_state
         type: enum
         size: 1
+        mandatory: true
         values:
           - name: unlock
             id: '0x00'
