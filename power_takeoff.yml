@@ -11,6 +11,18 @@ message_types:
     name: power_takeoff_state
   - id: '0x02'
     name: activate_deactivate_power_takeoff
+    properties:
+      - id: '0x01'
+        name: activate
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: inactive
+            id: '0x00'
+          - name: active
+            id: '0x01'
+
     
 properties:
   - id: '0x01'
