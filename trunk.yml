@@ -3,14 +3,33 @@ category: digital_key
 id_msb: '0x00'
 id_lsb: '0x21'
 api_intro: 1
-api_update: 5
+api_update: 8
 message_types:
   - id: '0x00'
     name: get_trunk_state
   - id: '0x01'
     name: trunk_state
-  - id: '0x02'
+  - id: '0x12'
     name: open_close_trunk
+    properties:
+      - id: '0x01'
+        name: trunk_lock
+        type: enum
+        size: 1
+        values:
+          - name: unlocked
+            id: '0x00'
+          - name: locked
+            id: '0x01'
+      - id: '0x02'
+        name: trunk_position
+        type: enum
+        size: 1
+        values:
+          - name: closed
+            id: '0x00'
+          - name: open
+            id: '0x01'
     
 properties:
   - id: '0x01'
