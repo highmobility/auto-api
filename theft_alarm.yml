@@ -16,6 +16,7 @@ message_types:
         name: theft_alarm
         type: enum
         size: 1
+        mandatory: true
         values:
           - name: unarm
             id: '0x00'
