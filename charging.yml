@@ -151,7 +151,7 @@ properties:
     description: Charge limit percentage between 0-100
   - id: '0x09'
     type: integer
-    size: 2
+    size: 1
     name: time_to_complete_charge
     description: Time until charging completed in minutes
   - id: '0x0A'
