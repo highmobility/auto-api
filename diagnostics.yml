@@ -218,3 +218,28 @@ properties:
         size: 2
         type: integer
         description: The RPM measured at this wheel
+  - id: '0x1D'
+    name: trouble_codes
+    multiple: true
+    items:
+      - name: occurences
+        type: integer
+        size: 1
+        description: Number of occurences
+      - name: id_size
+        type: integer
+        size: 1
+        description: Size of the ID string
+      - name: ecu_id_size
+        type: integer
+        size: 1
+        description: Size of the ECU ID string
+      - name: id
+        type: string
+        description: ID bytes formatted in UTF-8
+      - name: ecu_id
+        type: string
+        description: ECU ID bytes formatted in UTF-8
+      - name: status
+        type: string
+        description: Status bytes formatted in UTF-8
