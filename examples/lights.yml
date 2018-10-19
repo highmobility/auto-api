@@ -15,17 +15,12 @@ interior_light:
 
 ambient_light:
   - item:
-    - value: '0xff'
+    - value: '0xFF'
       description: Full red ambient light
     - value: '0x00'
       description: No green ambient light
     - value: '0x00'
       description: No blue ambient light
-
-reverse_light:
-  - item:
-    - value: '0x00'
-      description: Reverse lights are inactive
 
 reverse_light:
   - item:
