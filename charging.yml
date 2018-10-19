@@ -104,6 +104,32 @@ message_types:
             type: integer
             size: 2
             description: UTC time offset in minutes, which can be negative
+  - id: '0x17'
+    name: set_reduction_of_charging_current_times
+    properties:
+      - id: '0x01'
+        name: reduction_times
+        pretty_name: Reduction of charging-current times
+        size: 3
+        multiple: true
+        mandatory: true
+        items:
+          - name: start_stop
+            type: enum
+            size: 1
+            values:
+              - name: start
+                id: '0x00'
+              - name: stop
+                id: '0x01'
+          - name: hour
+            type: integer
+            size: 1
+            description: Value between 0 and 23
+          - name: minute
+            type: integer
+            size: 1
+            description: Value between 0 and 59
     
 properties:
   - id: '0x02'
@@ -233,11 +259,19 @@ properties:
         size: 1
         description: Value between 0 and 59
   - id: '0x13'
-    size: 2
+    size: 3
     name: reduction_times
     pretty_name: Reduction of charging-current times
     multiple: true
     items:
+      - name: start_stop
+        type: enum
+        size: 1
+        values:
+          - name: start
+            id: '0x00'
+          - name: stop
+            id: '0x01'
       - name: hour
         type: integer
         size: 1

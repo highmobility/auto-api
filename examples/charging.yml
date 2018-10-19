@@ -1,42 +1,32 @@
-active_state:
-  - item:
-    - value: '0x01'
-      description: The vehicle is charging
-
-plugged_in:
-  - item:
-    - value: '0x01'
-      description: The charger is plugged in
-
 estimated_range:
   - item:
-    - value: '0x00FF'
-      description: 255 km estimated range
+    - value: '0x01, 0xB0'
+      description: 400 km estimated range
 
 battery_level:
   - item:
-    - value: '0x32'
+    - value: '0x53'
       description: Battery level 50%
 
 battery_current_ac:
   - item:
-    - value: '0xbf19999a'
+    - value: '0xBF, 0x19, 0x99, 0x9A'
       description: Battery current (AC) -0.6
 
 battery_current_dc:
   - item:
-    - value: '0xbf19999a'
+    - value: '0xBF, 0x19, 0x99, 0x9A'
       description: Battery current (DC) -0.6
 
 charger_voltage_ac:
   - item:
-    - value: '0x43c80000'
+    - value: '0x43, 0xC8, 0x00, 0x00'
       description: Charger voltage 400V
 
 charger_voltage_dc:
   - item:
-    - value: '0x43cd0000'
-      description: Charger voltage 410V
+    - value: '0xBF, 0x19, 0x99, 0x9A'
+      description: Battery current (DC) -0.6
 
 charge_limit:
   - item:
@@ -46,12 +36,12 @@ charge_limit:
 time_to_complete_charge:
   - item:
     - value: '0x3C'
-      description: time to complete charge 60 minutes
+      description: Time to complete charge 60 minutes
 
 charging_rate_kw:
   - item:
-    - value: '0x00000000'
-      description: No charge rate
+    - value: '0x40, 0x60, 0x00, 0x00'
+      description: 3.5 kW charge rate
 
 charge_port_state:
   - item:
@@ -60,32 +50,13 @@ charge_port_state:
 
 charge_mode:
   - item:
-    - value: '0x00'
-      description: Immediate charging
-
-timers:
-  - item:
-    - value: '0x02'
-      description: Departure time
-    - value: '0x12'
-      description: 2018
     - value: '0x01'
-      description: January
-    - value: '0x0A'
-      description: the 10th
-    - value: '0x10'
-      description: at 16h
-    - value: '0x20'
-      description: 32min
-    - value: '0x05'
-      description: 5 seconds
-    - value: '0x00, 0x00'
-      description: 0 min UTC time offset
+      description: Timer based charging
 
 max_charging_current:
   - item:
-    - value: '0x41c80000'
-      description: Maximum charging current is 25 A
+    - value: '0x41, 0xC8, 0x00, 0x00'
+      description: Maximum charging current is 25.0 A
 
 plug_type:
   - item:
@@ -99,22 +70,111 @@ charging_window_chosen:
 
 departure_times:
   - item:
-    - value: '0x01'
+    - name: active_state
+      value: '0x01'
       description: Departure time is active
-    - value: '0x10'
+    - name: hour
+      value: '0x10'
       description: at 16h
-    - value: '0x20'
+    - name: minute
+      value: '0x20'
       description: 32min
+  - item:
+    - name: active_state
+      value: '0x00'
+      description: Departure time is inactive
+    - name: hour
+      value: '0x0B'
+      description: at 11h
+    - name: minute
+      value: '0x33'
+      description: 51min
 
 reduction_times:
   - item:
-    - value: '0x00'
-      description: at 00h
-    - value: '0x00'
-      description: 00min
+    - name: start_stop
+      value: '0x00'
+      description: Start reduction of charging current
+    - name: hour
+      value: '0x11'
+      description: at 17h
+    - name: minute
+      value: '0x21'
+      description: 33min
+  - item:
+    - name: start_stop
+      value: '0x01'
+      description: Stop reduction of charging current
+    - name: hour
+      value: '0x0C'
+      description: at 12h
+    - name: minute
+      value: '0x34'
+      description: 52min
 
 battery_temperature:
   - item:
-    - value: '0x4219999a'
+    - value: '0x42, 0x19, 0x99, 0x9A'
       description: The battery temperature is 38.4 degrees Celsius
-  
+
+timers:
+  - item:
+    - name: timer_type
+      value: '0x00'
+      description: Preferred start time
+    - name: year
+      value: '0x12'
+      description: 2018
+    - name: month
+      value: '0x01'
+      description: January
+    - name: day
+      value: '0x0A'
+      description: the 10th
+    - name: hour
+      value: '0x10'
+      description: at 16h
+    - name: minute
+      value: '0x20'
+      description: 32min
+    - name: second
+      value: '0x05'
+      description: 5 seconds
+    - name: utc_time_offset
+      value: '0x00, 0x00'
+      description: 0 min UTC time offset
+  - item:
+    - name: timer_type
+      value: '0x01'
+      description: Preferred end time
+    - name: year
+      value: '0x12'
+      description: 2018
+    - name: month
+      value: '0x01'
+      description: January
+    - name: day
+      value: '0x0A'
+      description: the 10th
+    - name: hour
+      value: '0x12'
+      description: at 18h
+    - name: minute
+      value: '0x1E'
+      description: 30min
+    - name: second
+      value: '0x00'
+      description: 0 seconds
+    - name: utc_time_offset
+      value: '0x00, 0x00'
+      description: 0 min UTC time offset
+
+plugged_in:
+  - item:
+    - value: '0x01'
+      description: The charger is plugged in
+
+active_state:
+  - item:
+    - value: '0x01'
+      description: The vehicle is charging
