@@ -12,7 +12,7 @@ message_types:
 properties:
   - id: '0x01'
     size: 2
-    name: dashboard_light
+    name: dashboard_lights
     multiple: true
     items:
       - name: light_name
