@@ -1,13 +1,17 @@
 acceleration:
   - item:
-    - value: '0x00'
+    - name: type
+      value: '0x00'
       description: Longitudinal acceleration
-    - value: '0x3f5d2f1b'
+    - name: g_force
+      value: '0x3F, 0x5D, 0x2F, 0x1B'
       description: 0.864 g
   - item:
-    - value: '0x01'
+    - name: type
+      value: '0x01'
       description: Lateral acceleration
-    - value: '0xbf40c49c'
+    - name: g_force
+      value: '0xBF, 0x40, 0xC4, 0x9C'
       description: -0.753 g
 
 understeering:
@@ -25,9 +29,19 @@ gas_pedal_position:
     - value: '0x62'
       description: At 98%
 
+steering_angle:
+  - item:
+    - value: '0x0A'
+      description: Steering is 10° right
+
+brake_pressure:
+  - item:
+    - value: '0x41, 0xA0, 0x00, 0x00'
+      description: 20.0 bar
+
 yaw_rate:
   - item:
-    - value: '0x40d51eb8'
+    - value: '0x40, 0xD5, 0x1E, 0xB8'
       description: 6.66 °/s
 
 rear_suspension_steering:
@@ -40,12 +54,21 @@ electronic_stability_program:
     - value: '0x01'
       description: ESP intervention active
 
-brake_torque_vectoring:
+brake_torque_vectorings:
   - item:
-    - value: '0x01'
+    - name: axle
+      value: '0x01'
       description: Rear axle
-    - value: '0x01'
+    - name: vectoring
+      value: '0x01'
       description: Active
+  - item:
+    - name: axle
+      value: '0x00'
+      description: Front axle
+    - name: vectoring
+      value: '0x00'
+      description: Inactive
 
 gear_mode:
   - item:
@@ -81,3 +104,8 @@ accelerator_pedal_kickdown_switch:
   - item:
     - value: '0x01'
       description: Accelerator pedal switch active, pedal fully depressed
+
+vehicle_moving:
+  - item:
+    - value: '0x01'
+      description: Vehicle is moving

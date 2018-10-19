@@ -51,7 +51,7 @@ properties:
     type: integer
     size: 1
     name: steering_angle
-    description: The steering angle in degrees, whereas 0 degrees is straight ahead, positive number to the left and negative number to the right
+    description: The steering angle in degrees, whereas 0 degrees is straight ahead, positive number to the right and negative number to the left
   - id: '0x06'
     type: float
     size: 4
@@ -79,7 +79,8 @@ properties:
         id: '0x01'
   - id: '0x0A'
     size: 2
-    name: brake_torque_vectoring
+    name: brake_torque_vectorings
+    multiple: true
     items:
       - name: axle
         type: enum
