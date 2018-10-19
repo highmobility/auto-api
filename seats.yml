@@ -13,7 +13,7 @@ message_types:
 properties:
   - id: '0x02'
     size: 2
-    name: person_detected
+    name: persons_detected
     multiple: true
     items:
       - name: seat_location
@@ -40,7 +40,7 @@ properties:
             id: '0x01'
   - id: '0x03'
     size: 2
-    name: seatbelt_fastened
+    name: seatbelts_fastened
     multiple: true
     items:
       - name: seat_location

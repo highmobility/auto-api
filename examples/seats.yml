@@ -1,15 +1,31 @@
-seat:
+persons_detected:
   - item:
-    - value: '0x00'
-      description: Front Left seat
-    - value: '0x01'
+    - name: seat_location
+      value: '0x02'
+      description: Rear right seat
+    - name: person_detected
+      value: '0x01'
       description: Person detected
-    - value: '0x01'
+  - item:
+    - name: seat_location
+      value: '0x03'
+      description: Rear left seat
+    - name: person_detected
+      value: '0x00'
+      description: Person not detected
+
+seatbelts_fastened:
+  - item:
+    - name: seat_location
+      value: '0x02'
+      description: Rear right seat
+    - name: seatbelt_fastened
+      value: '0x01'
       description: Seatbelt fastened
   - item:
-    - value: '0x01'
-      description: Front Right seat
-    - value: '0x00'
-      description: No person detected
-    - value: '0x00'
+    - name: seat_location
+      value: '0x03'
+      description: Rear left seat
+    - name: seatbelt_fastened
+      value: '0x00'
       description: Seatbelt not fastened
