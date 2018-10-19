@@ -11,7 +11,6 @@ message_types:
     name: usage
     
 properties:
-
   - id: '0x01'
     type: integer
     size: 2
@@ -35,7 +34,7 @@ properties:
   - id: '0x05'
     size: 2
     multiple: true
-    name: driving_mode_activation_period
+    name: driving_modes_activation_periods
     items:
       - name: driving_mode
         type: enum
@@ -54,7 +53,7 @@ properties:
       - name: period
         type: integer
         size: 1
-        description: "% value of the period used for the driving mode"
+        description: % value of the period used for the driving mode
   - id: '0x06'
     size: 2
     multiple: true
@@ -74,7 +73,7 @@ properties:
             id: '0x03'
           - name: ecoPlus
             id: '0x04'
-      - name: period
+      - name: consumption
         type: float
         size: 4
         description: Energy consumption in the driving mode in kWh
@@ -99,8 +98,8 @@ properties:
     name: last_trip_electric_portion
     description: Portion of the last trip used in electric mode
   - id: '0x0B'
-    type: integer
-    size: 1
+    type: float
+    size: 4
     name: last_trip_average_energy_recuperation
     description: Energy recuperation rate for last trip, in kWh / 100 km
   - id: '0x0C'

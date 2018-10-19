@@ -1,0 +1,115 @@
+average_weekly_distance:
+  - item:
+    - value: '0x02, 0x9A'
+      description: Avg. weekly distance is 666km
+
+average_weekly_distance_long_run:
+  - item:
+    - value: '0x02, 0x9A'
+      description: Avg. weekly distance, long term, is 666km
+
+acceleration_evaluation:
+  - item:
+    - value: '0x46'
+      description: Acceleration evaluation is 70%
+
+driving_style_evaluation:
+  - item:
+    - value: '0x46'
+      description: Driving style evaluation is 70%
+
+driving_modes_activation_periods:
+  - item:
+    - name: driving_mode
+      value: '0x01'
+      description: ECO driving mode
+    - name: period
+      value: '0x3C'
+      description: 60% of the time
+  - item:
+    - name: driving_mode
+      value: '0x00'
+      description: Regular driving mode
+    - name: period
+      value: '0x28'
+      description: 40% of the time
+
+driving_mode_energy_consumption:
+  - item:
+    - name: driving_mode
+      value: '0x01'
+      description: ECO driving mode
+    - name: consumption
+      value: '0x42, 0x04, 0xCC, 0xCD'
+      description: Consumed 33.2 kWh
+  - item:
+    - name: driving_mode
+      value: '0x00'
+      description: Regular driving mode
+    - name: consumption
+      value: '0x42, 0x5D, 0x99, 0x9A'
+      description: Consumed 55.4 kWh
+
+last_trip_energy_consumption:
+  - item:
+    - value: '0x42, 0xCA, 0x99, 0x9A'
+      description: 101.3 kWh
+
+last_trip_fuel_consumption:
+  - item:
+    - value: '0x41, 0xB4, 0x00, 0x00'
+      description: Consumed 22.5 l
+
+mileage_after_last_trip:
+  - item:
+    - value: '0x47, 0xBA, 0xC8, 0x5A'
+      description: Mileage is 95 632.7 km
+
+last_trip_electric_portion:
+  - item:
+    - value: '0x46'
+      description: Electric portion was 70%
+
+last_trip_average_energy_recuperation:
+  - item:
+    - value: '0x40, 0xB5, 0xC2 0x8F'
+      description: Recuperated 5.68 kWh / 100km
+
+last_trip_battery_remaining:
+  - item:
+    - value: '0x32'
+      description: Battery was 50% after last trip
+
+last_trip_date:
+  - item:
+    - name: year
+      value: '0x12'
+      description: 2018
+    - name: month
+      value: '0x0A'
+      description: October
+    - name: day
+      value: '0x11'
+      description: 17th
+    - name: hour
+      value: '0x0A'
+      description: 10h
+    - name: minute
+      value: '0x21'
+      description: 33min
+    - name: second
+      value: '0x32'
+      description: 50s
+    - name: utc_time_offset
+      value: '0x00, 0x3C'
+      description: Offset is 60min
+
+average_fuel_consumption:
+  - item:
+    - value: '0x40, 0xD0, 0x00, 0x00'
+      description: Avg. fuel consumption is 6.5l / 100km
+
+current_fuel_consumption:
+  - item:
+    - value: '0x40, 0xF0, 0x00, 0x00'
+      description: Current fuel consumption is 7.5l / 100km
