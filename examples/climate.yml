@@ -1,21 +1,21 @@
 inside_temperature:
   - item:
-    - value: '0x41980000'
+    - value: '0x41, 0x98, 0x00, 0x00'
       description: Inside temperature 19C
 
 outside_temperature:
   - item:
-    - value: '0x41400000'
+    - value: '0x41, 0x40, 0x00, 0x00'
       description: Outside temperature 12C
 
 driver_temperature_setting:
   - item:
-    - value: '0x41ac0000'
+    - value: '0x41, 0xAC, 0x00, 0x00'
       description: Driver temperature setting 21.5C
 
 passenger_temperature_setting:
   - item:
-    - value: '0x41ac0000'
+    - value: '0x41, 0xAC, 0x00, 0x00'
       description: Passenger temperature setting 21.5C
 
 hvac_state:
@@ -40,38 +40,21 @@ ionising_state:
 
 defrosting_temperature:
   - item:
-    - value: '0x41ac0000'
+    - value: '0x41, 0xAC, 0x00, 0x00'
       description: Defrosting temperature at 21.5C
 
-auto_hvac_profile:
+weekdays_starting_times:
   - item:
-    - value: '0x60'
-      description: Auto-HVAC activated for Saturdays and Sundays
-    - value: '0x00'
-      description: Monday not set
-    - value: '0x00'
-      description: 00:00
-    - value: '0x00'
-      description: Tuesday not set
-    - value: '0x00'
-      description: 00:00
-    - value: '0x00'
-      description: Wednesday not set
-    - value: '0x00'
-      description: 00:00
-    - value: '0x00'
-      description: Thursday not set
-    - value: '0x00'
-      description: 00:00
-    - value: '0x00'
-      description: Friday not set
-    - value: '0x00'
-      description: 00:00
-    - value: '0x07'
-      description: Saturday set
-    - value: '0x1E'
-      description: 07:30
-    - value: '0x07'
-      description: Sunday set
-    - value: '0x1E'
-      description: 07:30
+    - name: weekday
+      value: '0x05'
+      description: Auto-HVAC activated for Saturdays
+    - name: time
+      value: '0x10, 0x20'
+      description: Starting time is 16h 32min
+  - item:
+    - name: weekday
+      value: '0x06'
+      description: Auto-HVAC activated for Sundays
+    - name: time
+      value: '0x0A, 0x30'
+      description: Starting time is 10h 48min

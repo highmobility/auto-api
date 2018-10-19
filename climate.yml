@@ -13,7 +13,7 @@ message_types:
     name: change_starting_times
     properties:
       - id: '0x01'
-        name: weekday_times
+        name: weekdays_starting_times
         size: 3
         multiple: true
         mandatory: true
@@ -183,29 +183,29 @@ properties:
     description: The defrosting temperature setting in celsius per IEEE 754 formatting
   - id: '0x0B'
     size: 3
-    name: weekday_starting_time
+    name: weekdays_starting_times
     multiple: true
     items:
-      - name: auto_hvac_activated
+      - name: weekday
         type: enum
         size: 1
         values:
-          - name: mondays
-            id: 'Bit 0'
-          - name: tuesdays
-            id: 'Bit 1'
-          - name: wednesdays
-            id: 'Bit 2'
+          - name: monday
+            id: '0x00'
+          - name: tuesday
+            id: '0x01'
+          - name: wednesday
+            id: '0x02'
           - name: thursday
-            id: 'Bit 3'
-          - name: fridays
-            id: 'Bit 4'
-          - name: saturdays
-            id: 'Bit 5'
-          - name: sundays
-            id: 'Bit 6'
+            id: '0x03'
+          - name: friday
+            id: '0x04'
+          - name: satuday
+            id: '0x05'
+          - name: sunday
+            id: '0x06'
           - name: automatic
-            id: 'Bit 0'
+            id: '0x07'
       - name: time
         size: 2
         items:
