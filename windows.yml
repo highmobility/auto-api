@@ -13,7 +13,7 @@ message_types:
     name: control_windows
     properties:
       - id: '0x01'
-        name: window_open_percentages
+        name: windows_open_percentages
         size: 2
         multiple: true
         items:
@@ -36,7 +36,7 @@ message_types:
             size: 1
             description: Value between 0 and 100
       - id: '0x02'
-        name: window_positions
+        name: windows_positions
         size: 2
         multiple: true
         items:
@@ -68,7 +68,7 @@ message_types:
 properties:
   - id: '0x02'
     size: 2
-    name: window_open_percentages
+    name: windows_open_percentages
     multiple: true
     items:
       - name: window_location
@@ -91,7 +91,7 @@ properties:
         description: Value between 0 and 100
   - id: '0x03'
     size: 2
-    name: window_positions
+    name: windows_positions
     multiple: true
     items:
       - name: window_location
