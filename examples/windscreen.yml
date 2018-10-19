@@ -21,7 +21,7 @@ windscreen_zone_matrix:
 windscreen_damage_zone:
   - item:
     - value: '0x12'
-      description: Damage position in leftmost horizontal zone, vertically in the center
+      description: Damage position in horizontally leftmost zone, vertically in the center
 
 windscreen_needs_replacement:
   - item:
@@ -30,7 +30,7 @@ windscreen_needs_replacement:
 
 windscreen_damage_confidence:
   - item:
-    - value: '0x5f'
+    - value: '0x5F'
       description: Damage detected with 95% confidence
 
 windscreen_damage_detection_time:
