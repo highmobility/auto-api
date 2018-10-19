@@ -151,7 +151,7 @@ properties:
         size: 2
         description: UTC time offset in minutes, which can be negative
   - id: '0x0B'
-    name: condition_based_service
+    name: condition_based_services
     multiple: true
     items:
       - name: year
