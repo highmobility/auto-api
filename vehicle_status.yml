@@ -118,9 +118,9 @@ properties:
         id: '0x02'
   - id: '0x11'
     type: string
-    name: equipment
+    name: equipments
     multiple: true
-    description: Array of different equipment in the vehicle
+    description: Equipment that the vehicle is equipped with
   - id: '0x99'
     type: capability_state
     name: state
