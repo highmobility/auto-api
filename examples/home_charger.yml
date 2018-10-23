@@ -15,36 +15,13 @@ plug_type:
 
 charging_power:
   - item:
-    - value: '0x41380000'
+    - value: '0x41, 0x38, 0x00, 0x00'
       description: 11.5 kWh
 
 solar_charging:
   - item:
     - value: '0x01'
       description: Solar powered charging activated
-
-location:
-  - item:
-    - value: '0x4252147d'
-      description: 52.520008 Latitude in IEE 754 format
-    - value: '0x41567ab1'
-      description: 13.404954 Longitude in IEE 754 format
-
-location:
-  - item:
-    - value: '0x4252147d'
-      description: 52.520008 Latitude in IEE 754 format
-    - value: '0x41567ab1'
-      description: 13.404954 Longitude in IEE 754 format
-
-charge_current:
-  - item:
-    - value: '0x3f000000'
-      description: Charger current (DC) 0.5
-    - value: '0x3f800000'
-      description: Maximum possible current is 1.0
-    - value: '0x00000000'
-      description: Minimum possible current is 0
 
 hotspot_enabled:
   - item:
@@ -53,7 +30,7 @@ hotspot_enabled:
 
 hotspot_ssid:
   - item:
-    - value: '0x436861726765722037363132'
+    - value: '0x43, 0x68, 0x61, 0x72, 0x67, 0x65, 0x72, 0x20, 0x37, 0x36, 0x31, 0x32'
       size: 12
       description: Wi-Fi Hotspot name "Charger 7612"
 
@@ -64,22 +41,57 @@ wi_fi_hotspot_security:
 
 wi_fi_hotspot_password:
   - item:
-    - value: '0x5a57337641524e554265'
+    - value: '0x5A, 0x57, 0x33, 0x76, 0x41, 0x52, 0x4E, 0x55, 0x42, 0x65'
       size: 10
       description: Network password "ZW3vARNUBe"
 
-price_tariff:
+authentication_state:
   - item:
-    - value: '0x00'
+    - value: '0x01'
+      description: Authenticated
+
+charge_current_dc:
+  - item:
+    - value: '0x3F, 0x00, 0x00, 0x00'
+      description: Charger current (DC) is 0.5
+
+maximum_charge_current:
+  - item:
+    - value: '0x3F, 0x80, 0x00, 0x00'
+      description: Maximum possible current is 1.0
+
+minimum_charge_current:
+  - item:
+    - value: '0x00, 0x00, 0x00, 0x00'
+      description: Minimum possible current is 0
+
+coordinates:
+  - item:
+    - name: latitude
+      value: '0x40, 0x4A, 0x42, 0x8F, 0x9F, 0x44, 0xD4, 0x45'
+      description: 52.520008 Latitude in IEE 754 format
+    - name: longitude
+      value: '0x40, 0x2A, 0xCF, 0x56, 0x21, 0x74, 0xC4, 0xCE'
+      description: 13.404954 Longitude in IEE 754 format
+
+price_tariffs:
+  - item:
+    - name: pricing_type
+      value: '0x00'
       description: Starting fee
-    - value: '0x455552'
+    - name: price
+      value: '0x40, 0x90, 0x00, 0x00'
+      description: Price is 4.50
+    - name: currency
+      value: '0x45, 0x55, 0x52'
       description: EUR
-    - value: '0x40900000'
-      description: '4.50'
   - item:
-    - value: '0x02'
+    - name: pricing_type
+      value: '0x02'
       description: Per kWh
-    - value: '0x455552'
-      description: EUR
-    - value: '0x3e99999a'
-      description: '0.30'
+    - name: price
+      value: '0x3E, 0x99, 0x99, 0x9A'
+      description: Price is 0.30
+    - name: currency
+      value: '0x52, 0x69, 0x70, 0x70, 0x6C, 0x65'
+      description: Ripple
