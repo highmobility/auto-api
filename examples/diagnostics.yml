@@ -108,8 +108,8 @@ check_control_messages:
     - name: id
       value: '0x00, 0x01'
       description: The id is 1
-    - name: remaining_length
-      value: '0x42, 0x66, 0x00, 0x00'
+    - name: remaining_minutes
+      value: '0x00, 0x01, 0x9C, 0x78'
       description: The remaining time is 57.5 minutes
     - name: text_size
       value: '0x00, 0x0C'
