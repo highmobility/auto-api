@@ -24,7 +24,7 @@ properties:
     name: text
     description: Text for the notification, bytes in UTF8.
   - id: '0x02'
-    name: action_item
+    name: action_items
     multiple: true
     items:
       - name: identifier
