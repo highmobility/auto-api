@@ -1,6 +1,7 @@
 text:
   - item:
     - value: '0x4F, 0x70, 0x65, 0x6E, 0x20, 0x47, 0x61, 0x72, 0x61, 0x67, 0x65'
+      size: 11
       description: 'Open Garage'
 
 action_items:
@@ -9,6 +10,7 @@ action_items:
       value: '0x1B'
       description: Notification action ID is 27
     - name: name
+      size: 4
       value: '0x4F, 0x70, 0x65, 0x6E'
       description: Action name is 'Open'
   - item:
@@ -16,6 +18,7 @@ action_items:
       value: '0x1C'
       description: Notification action ID is 28
     - name: name
+      size: 6
       value: '0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C'
       description: Action name is 'Cancel'
 
