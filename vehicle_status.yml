@@ -118,7 +118,7 @@ properties:
         id: '0x02'
   - id: '0x11'
     type: string
-    name: equipment
+    name: equipments
     multiple: true
     description: Array of different equipment in the vehicle
   - id: '0x99'
