@@ -110,7 +110,7 @@ check_control_messages:
       description: The id is 1
     - name: remaining_minutes
       value: '0x00, 0x01, 0x9C, 0x78'
-      description: The remaining time is 57.5 minutes
+      description: The remaining time is 105 592 minutes
     - name: text_size
       value: '0x00, 0x0C'
       description: The following text size is 12 bytes
