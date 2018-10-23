@@ -5,15 +5,15 @@ parking_ticket_state:
 
 operator_name:
   - item:
-    - value: '0x4265726c696e205061726b696e67'
+    - value: '0x42, 0x65, 0x72, 0x6C, 0x69, 0x6E, 0x20, 0x50, 0x61, 0x72, 0x6B, 0x69, 0x6E, 0x67'
       size: 14
-      description: Berlin Parking
+      description: Operator name is 'Berlin Parking'
 
 operator_ticket_id:
   - item:
-    - value: '0x3634383934323333'
+    - value: '0x36, 0x34, 0x38, 0x39, 0x34, 0x32, 0x33, 0x33'
       size: 8
-      description: Ticket number 64894233
+      description: Ticket number '64894233'
 
 ticket_start_time:
   - item:
