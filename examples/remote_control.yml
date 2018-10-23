@@ -6,4 +6,4 @@ control_mode:
 angle:
   - item:
     - value: '0x00, 0x32'
-      description: Angle 50 degrees
+      description: Angle is 50 degrees
