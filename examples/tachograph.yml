@@ -19,14 +19,14 @@ drivers_time_states:
     - name: driver_number
       value: '0x01'
       description: Driver 1
-    - time_state
+    - name: time_state
       value: '0x02'
       description: 4½ hours of driving reached
   - item:
     - name: driver_number
       value: '0x02'
       description: Driver 2
-    - time_state
+    - name: time_state
       value: '0x06'
       description: 16 hours of driving reached
 
