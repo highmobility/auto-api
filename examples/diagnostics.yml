@@ -244,7 +244,7 @@ trouble_codes:
       value: '0x07'
       description: ID size is 7 bytes
     - name: ecu_id_size
-      value: '0x09'
+      value: '0x06'
       description: ECU ID size is 6 bytes
     - name: id
       size: 7
