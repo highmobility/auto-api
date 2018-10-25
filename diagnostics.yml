@@ -139,10 +139,10 @@ properties:
         type: integer
         size: 2
         description: Check Control Message identifier
-      - name: remaining_length
-        type: float
+      - name: remaining_minutes
+        type: integer
         size: 4
-        description: Remaining time of the message
+        description: Remaining time of the message in minutes
       - name: text_size
         type: integer
         size: 2

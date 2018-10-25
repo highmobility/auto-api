@@ -12,7 +12,7 @@ message_types:
 properties:
   - id: '0x01'
     size: 2
-    name: driver_working_state
+    name: drivers_working_states
     multiple: true
     items:
       - name: driver_number
@@ -33,7 +33,7 @@ properties:
             id: '0x03'
   - id: '0x02'
     size: 2
-    name: driver_time_state
+    name: drivers_time_states
     multiple: true
     items:
       - name: driver_number
@@ -66,7 +66,7 @@ properties:
             id: '0x06'
   - id: '0x03'
     size: 2
-    name: driver_card
+    name: drivers_cards
     multiple: true
     items:
       - name: driver_number

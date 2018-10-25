@@ -1,6 +1,15 @@
 capability:
   - item:
-    - value: '0x0020'
+    - name: capability_identifier
+      value: '0x00, 0x20'
       description: 'Door Locks'
-    - value: '0x000102'
+    - name: supported_message_types
+      value: '0x00, 0x01, 0x12'
       description: 'Get Lock State, Lock State, Lock/Unlock Doors'
+  - item:
+    - name: capability_identifier
+      value: '0x00, 0x24'
+      description: 'Climate'
+    - name: supported_message_types
+      value: '0x00, 0x01, 0x13, 0x14'
+      description: 'Get Climate State, Climate State, Start-Stop HVAC, Start-Stop Defogging'

@@ -10,7 +10,7 @@ network_connected:
 
 network_ssid:
   - item:
-    - value: '0x484f4d45'
+    - value: '0x48, 0x4F, 0x4D, 0x45'
       size: 4
       description: Network name "HOME"
 

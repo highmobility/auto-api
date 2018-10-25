@@ -1,37 +1,49 @@
-driver_working_state:
+drivers_working_states:
   - item:
-    - value: '0x01'
+    - name: driver_number
+      value: '0x01'
       description: Driver 1
-    - value: '0x02'
+    - name: working_state
+      value: '0x02'
       description: Driver is working
   - item:
-    - value: '0x02'
+    - name: driver_number
+      value: '0x02'
       description: Driver 2
-    - value: '0x00'
+    - name: working_state
+      value: '0x00'
       description: Driver is resting
 
-driver_time_state:
+drivers_time_states:
   - item:
-    - value: '0x01'
+    - name: driver_number
+      value: '0x01'
       description: Driver 1
-    - value: '0x02'
+    - name: time_state
+      value: '0x02'
       description: 4½ hours of driving reached
   - item:
-    - value: '0x02'
+    - name: driver_number
+      value: '0x02'
       description: Driver 2
-    - value: '0x06'
+    - name: time_state
+      value: '0x06'
       description: 16 hours of driving reached
 
-driver_card:
+drivers_cards:
   - item:
-    - value: '0x01'
+    - name: driver_number
+      value: '0x01'
       description: Driver 1
-    - value: '0x01'
+    - name: card
+      value: '0x01'
       description: Driver card present
   - item:
-    - value: '0x02'
+    - name: driver_number
+      value: '0x02'
       description: Driver 2
-    - value: '0x01'
+    - name: card
+      value: '0x01'
       description: Driver card present
 
 vehicle_motion:
@@ -51,5 +63,5 @@ vehicle_direction:
 
 vehicle_speed:
   - item:
-    - value: '0x0050'
+    - value: '0x00, 0x50'
       description: Vehicle speed is 80 km/h

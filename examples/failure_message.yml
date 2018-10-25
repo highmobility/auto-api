@@ -15,6 +15,6 @@ failure_reason:
 
 failure_description:
   - item:
-    - value: '0x54727920616761696e'
+    - value: '0x54, 0x72, 0x79, 0x20, 0x61, 0x67, 0x61, 0x69, 0x6E'
       size: 9
       description: "Try again"

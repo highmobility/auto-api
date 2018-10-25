@@ -108,16 +108,18 @@ check_control_messages:
     - name: id
       value: '0x00, 0x01'
       description: The id is 1
-    - name: remaining_length
-      value: '0x42, 0x66, 0x00, 0x00'
-      description: The remaining time is 57.5 minutes
+    - name: remaining_minutes
+      value: '0x00, 0x01, 0x9C, 0x78'
+      description: The remaining time is 105 592 minutes
     - name: text_size
       value: '0x00, 0x0C'
       description: The following text size is 12 bytes
     - name: text
+      size: 12
       value: '0x43, 0x68, 0x65, 0x63, 0x6B, 0x20, 0x65, 0x6E, 0x67, 0x69, 0x6E, 0x65'
       description: "Check engine"
     - name: status
+      size: 5
       value: '0x41, 0x6C, 0x65, 0x72, 0x74'
       description: "Alert"
 
@@ -223,12 +225,15 @@ trouble_codes:
       value: '0x09'
       description: ECU ID size is 9 bytes
     - name: id
+      size: 7
       value: '0x43, 0x31, 0x31, 0x31, 0x36, 0x46, 0x41'
       description: ID is "C1116FA"
     - name: ecu_id
+      size: 9
       value: '0x52, 0x44, 0x55, 0x5F, 0x32, 0x31, 0x32, 0x46, 0x52'
       description: ECU ID is "RDU_212FR"
     - name: status
+      size: 7
       value: '0x50, 0x45, 0x4E, 0x44, 0x49, 0x4E, 0x47'
       description: Status is "PENDING"
   - item:
@@ -239,14 +244,17 @@ trouble_codes:
       value: '0x07'
       description: ID size is 7 bytes
     - name: ecu_id_size
-      value: '0x09'
+      value: '0x06'
       description: ECU ID size is 6 bytes
     - name: id
+      size: 7
       value: '0x43, 0x31, 0x36, 0x33, 0x41, 0x46, 0x41'
       description: ID is "C163AFA"
     - name: ecu_id
+      size: 6
       value: '0x44, 0x54, 0x52, 0x32, 0x31, 0x32'
       description: ECU ID is "DTR212"
     - name: status
+      size: 7
       value: '0x50, 0x45, 0x4E, 0x44, 0x49, 0x4E, 0x47'
       description: Status is "PENDING"

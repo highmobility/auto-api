@@ -10,7 +10,7 @@ message_types:
   - id: '0x01'
     name: ignition_state
   - id: '0x12'
-    name: turn_engine_on_off
+    name: turn_ignition_on_off
     properties:
       - id: '0x01'
         name: ignition

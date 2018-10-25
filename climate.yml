@@ -217,3 +217,8 @@ properties:
             type: integer
             size: 1
             description: Value between 0 and 59
+  - id: '0x0C'
+    type: float
+    size: 4
+    name: rear_temperature_setting
+    description: The rear temperature in celsius per IEEE 754 formatting

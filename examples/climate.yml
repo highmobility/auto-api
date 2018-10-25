@@ -58,3 +58,8 @@ weekdays_starting_times:
     - name: time
       value: '0x0A, 0x30'
       description: Starting time is 10h 48min
+
+rear_temperature_setting:
+  - item:
+    - value: '0x41, 0xAC, 0x00, 0x00'
+      description: Rear temperature setting 21.5C

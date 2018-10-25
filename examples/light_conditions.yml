@@ -1,9 +1,9 @@
 outside_light:
   - item:
-    - value: '0x47d8cc00'
+    - value: '0x47, 0xD8, 0xCC, 0x00'
       description: 111_000 lux
 
 inside_light:
   - item:
-    - value: '0x3e800000'
+    - value: '0x3E, 0xE8, 0x00, 0x00'
       description: 0.25 lux
