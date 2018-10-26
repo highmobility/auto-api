@@ -13,7 +13,7 @@ message_types:
 properties:
   - id: '0x01'
     size: 5
-    name: acceleration
+    name: accelerations
     multiple: true
     items:
       - name: type
