@@ -5,7 +5,7 @@ definitions:
     properties:
       vin:
         type: string
-        example: TODO
+        example: JF2SHBDC7CH451869
         description: The unique Vehicle Identification Number
       powertrain:
         type: string
@@ -19,19 +19,19 @@ definitions:
         example: unknown
       modelName:
         type: string
-        example: TODO
+        example: Type X
         description: The car model name bytes formatted in UTF-8
       name:
         type: string
-        example: TODO
+        example: My Car
         description: The car name (nickname) bytes formatted in UTF-8
       licensePlate:
         type: string
-        example: TODO
+        example: ABC123
         description: The license plate bytes formatted in UTF-8
       salesDesignation:
         type: string
-        example: TODO
+        example: Package+
         description: The sales designation of the model formatted in UTF-8
       modelYear:
         type: number
@@ -40,7 +40,7 @@ definitions:
         description: The car model manufacturing year number
       colorName:
         type: string
-        example: TODO
+        example: Estoril Blau
         description: The color name formatted in UTF-8
       powerInKw:
         type: number
@@ -89,7 +89,7 @@ definitions:
         example: left
       equipments:
         type: string
-        example: TODO
+        example: Parking sensors
         description: Equipment that the vehicle is equipped with
       state:
         type: array
@@ -107,11 +107,11 @@ definitions:
         example: ended
       operatorName:
         type: string
-        example: TODO
+        example: Berlin Parking
         description: Operator Name bytes formatted in UTF-8
       operatorTicketID:
         type: string
-        example: TODO
+        example: '64894233'
         description: Operator Ticket ID bytes formatted in UTF-8
       ticketStartTime:
         type: string
@@ -211,7 +211,7 @@ definitions:
         "$ref": "#/definitions/Coordinates"
       destinationName:
         type: string
-        example: TODO
+        example: Berlin
         description: Destination name bytes formatted in UTF-8
   LightConditions:
     type: object
@@ -410,14 +410,14 @@ definitions:
         description: 
       name:
         type: string
-        example: TODO
+        example: Open
         description: Name of the action, bytes in UTF8.
   ! '':
     type: object
     properties:
       text:
         type: string
-        example: TODO
+        example: Open Garage
         description: Text for the notification, bytes in UTF8.
       actionItems:
         description: ActionItems
@@ -662,7 +662,7 @@ definitions:
         description: The price in 4-bytes per IEEE 754
       currency:
         type: string
-        example: TODO
+        example: EUR
         description: The currency alphabetic code per ISO 4217
   HomeChargerState:
     type: object
@@ -707,7 +707,7 @@ definitions:
         example: disabled
       hotspotSSID:
         type: string
-        example: TODO
+        example: Charger 7612
         description: The Wi-Fi Hotspot SSID formatted in UTF-8
       wiFiHotspotSecurity:
         type: string
@@ -719,7 +719,7 @@ definitions:
         example: none
       wiFiHotspotPassword:
         type: string
-        example: TODO
+        example: ZW3vARNUBe
         description: The Wi-Fi Hotspot password formatted in UTF-8
       authenticationState:
         type: string
@@ -770,11 +770,11 @@ definitions:
         description: Size of the text
       text:
         type: string
-        example: TODO
+        example: Check engine
         description: CCM text bytes formatted in UTF-8
       status:
         type: string
-        example: TODO
+        example: Alert
         description: CCM status bytes formatted in UTF-8
   TirePressures:
     type: object
@@ -844,15 +844,15 @@ definitions:
         description: Size of the ECU ID string
       id:
         type: string
-        example: TODO
+        example: C1116FA
         description: ID bytes formatted in UTF-8
       ecuId:
         type: string
-        example: TODO
+        example: RDU_212FR
         description: ECU ID bytes formatted in UTF-8
       status:
         type: string
-        example: TODO
+        example: PENDING
         description: Status bytes formatted in UTF-8
   DiagnosticsState:
     type: object
@@ -1177,7 +1177,7 @@ definitions:
         example: disconnected
       networkSSID:
         type: string
-        example: TODO
+        example: HOME
         description: The network SSID formatted in UTF-8
       networkSecurity:
         type: string
@@ -1370,11 +1370,11 @@ definitions:
         "$ref": "#/definitions/HmkitVersion"
       HMKitBuildName:
         type: string
-        example: TODO
+        example: btstack-uart
         description: HMKit version build name bytes formatted in UTF-8
       applicationVersion:
         type: string
-        example: TODO
+        example: v1.5-prod
         description: Application version bytes formatted in UTF-8
   TheftAlarmState:
     type: object
@@ -1727,7 +1727,7 @@ definitions:
         description: Size of the CBS text
       text:
         type: string
-        example: TODO
+        example: Brake fluid
         description: CBS text bytes formatted in UTF-8
   MaintenanceState:
     type: object

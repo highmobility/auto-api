@@ -14,7 +14,7 @@ def ieee(hex_string)
 end
 
 def hex_to_s(hex_string)
-  [hex_string.gsub('0x', '')].pack('H*')
+  [hex_string.gsub('0x', '').gsub(', ', '')].pack('H*')
 end
 
 def swagger_name(name)
@@ -83,7 +83,7 @@ Dir.glob('../*.yml') do |yml_file|
       when 'string'
         prop['type'] = 'string'
         # -- Handling string format
-        prop['example'] = 'TODO' # TODO: hex_to_s(example_val)
+        prop['example'] = hex_to_s(example_val)
         prop['description'] = prop_spec['description']
       when 'integer'
         prop['type'] = 'number'
@@ -123,7 +123,7 @@ Dir.glob('../*.yml') do |yml_file|
             when 'string'
               item['type'] = 'string'
               # --- Handling string format
-              item['example'] = 'TODO' # TODO: hex_to_s(item_example[idx]['value'])
+              item['example'] = hex_to_s(item_example[idx]['value'])
               item['description'] = prop_item_spec['description']
             when 'integer'
               item['type'] = 'number'
