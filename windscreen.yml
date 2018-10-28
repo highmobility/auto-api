@@ -27,21 +27,20 @@ message_types:
           - name: damage_larger_than_1_inch
             id: '0x03'
       - id: '0x02'
-        name: windscreen_zone_matrix
         type: enum
         size: 1
-        mandatory: true
+        name: windscreen_damage_zone
         values:
-          - name: unavailable
+          - name: unknown
             id: '0x00'
-          - name: horizontal_size
-            pretty_name: 4 bits representing the horizontal size of the matrix seen from the inside of the car, starting from index 1
+          - name: horizontal_position
+            pretty_name: 4 bits representing the horizontal position of the zone in a matrix seen from the inside of the car, starting from index 1
             id: 'value & 0xF0'
-          - name: vertical_size
-            pretty_name: 4 bits representing the vertical size of the matrix, starting from index 1
+          - name: vertical_position
+            pretty_name: 4 bits representing the vertical position of the zone, starting from index 1
             id: 'value & 0x0F'
   - id: '0x13'
-    name: set_windscreen_needs_replacement
+    name: set_windscreen_replacement_needed
     properties:
       - id: '0x01'
         name: windscreen_needs_replacement
@@ -56,7 +55,7 @@ message_types:
           - name: replacement_needed
             id: '0x02'
   - id: '0x14'
-    name: activate_wipers
+    name: control_wipers
     properties:
       - id: '0x01'
         name: wipers_state
