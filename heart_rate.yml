@@ -3,9 +3,9 @@ category: health
 id_msb: '0x00'
 id_lsb: '0x29'
 api_intro: 4
-api_update: 5
+api_update: 8
 message_types:
-  - id: '0x02'
+  - id: '0x12'
     name: send_heart_rate
     properties:
       - id: '0x01'
