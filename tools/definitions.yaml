@@ -639,7 +639,7 @@ definitions:
   MobileState:
     type: object
     properties:
-      connected:
+      connection:
         type: string
         enum:
         - disconnected
@@ -663,7 +663,8 @@ definitions:
       currency:
         type: string
         example: EUR
-        description: The currency alphabetic code per ISO 4217
+        description: The currency alphabetic code per ISO 4217 or crypto currency
+          symbol
   HomeChargerState:
     type: object
     properties:
@@ -731,17 +732,17 @@ definitions:
         type: number
         format: float
         example: 1.5000228881835938
-        description: 
+        description: The charge current (DC) per IEEE 754
       maximumChargeCurrent:
         type: number
         format: float
         example: 1.5039291381835938
-        description: 
+        description: The maximum possible charge current per IEEE 754
       minimumChargeCurrent:
         type: number
         format: float
         example: 1.7632684311639463e-38
-        description: 
+        description: The minimal possible charge current per IEEE 754
       coordinates:
         description: Coordinates
         "$ref": "#/definitions/Coordinates"
@@ -1605,13 +1606,13 @@ definitions:
           - get_start_stop_state
           - activate_deactivate_start_stop
           - get_gas_flap_state
-          - open_gas_flap
+          - open_close_gas_flap
           - get_navi_destination
           - set_navi_destination
           - get_light_conditions
           - get_offroad_state
           - get_trunk_state
-          - open_close_trunk
+          - control_trunk
           - get_valet_mode
           - activate_deactivate_valet_mode
           - get_dashboard_lights
@@ -1640,6 +1641,7 @@ definitions:
           - set_price_tariffs
           - activate_deactivate_solar_charging
           - enable_disable_wi_fi_hotspot
+          - authenticate_expire
           - get_diagnostics_state
           - get_usage
           - get_power_takeoff_state
@@ -1668,8 +1670,8 @@ definitions:
           - control_rooftop
           - get_windscreen_state
           - set_windscreen_damage
-          - set_windscreen_needs_replacement
-          - activate_wipers
+          - set_windscreen_replacement_needed
+          - control_wipers
           - get_cruise_control_state
           - activate_deactivate_cruise_control
           - get_flashers_state
@@ -1685,7 +1687,7 @@ definitions:
           - start_stop_defogging
           - start_stop_defrosting
           - start_stop_ionising
-          - change_temperatures
+          - set_temperature_settings
           - get_lock_state
           - lock_unlock_doors
           example: get_charge_state
@@ -1923,9 +1925,9 @@ definitions:
       ignition:
         type: string
         enum:
-        - engine_off
-        - engine_on
-        example: engine_off
+        - ignition_off
+        - ignition_on
+        example: ignition_off
       accessoriesIgnition:
         type: string
         enum:
@@ -1941,7 +1943,7 @@ definitions:
         example: 100
         description: Measured raining intensity percentage, whereas 0% is no rain
           and 100% is maximum rain
-  WeekdaysStartingTimes:
+  HvacWeekdayStartingTimes:
     type: object
     properties:
       weekday:
@@ -1956,7 +1958,16 @@ definitions:
         - sunday
         - automatic
         example: monday
-      time: {}
+      hour:
+        type: number
+        format: integer
+        example: 18
+        description: Value between 0 and 23
+      minute:
+        type: number
+        format: integer
+        example: 30
+        description: Value between 0 and 59
   ClimateState:
     type: object
     properties:
@@ -2009,9 +2020,11 @@ definitions:
         format: float
         example: 24.0843505859375
         description: The defrosting temperature setting in celsius per IEEE 754 formatting
-      weekdaysStartingTimes:
-        description: WeekdaysStartingTimes
-        "$ref": "#/definitions/WeekdaysStartingTimes"
+      hvacWeekdayStartingTimes:
+        type: array
+        items:
+          description: HvacWeekdayStartingTimes
+          "$ref": "#/definitions/HvacWeekdayStartingTimes"
       rearTemperatureSetting:
         type: number
         format: float

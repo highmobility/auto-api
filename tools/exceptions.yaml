@@ -446,6 +446,7 @@ arrays:
   - drivers_working_states
   - drivers_time_states
   - drivers_cards
+  - hvac_weekday_starting_times
 
 # These capabilities should be rejected, not part of Telematics
 rejections:
