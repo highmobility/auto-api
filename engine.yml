@@ -18,9 +18,9 @@ message_types:
         size: 1
         mandatory: true
         values:
-          - name: engine_off
+          - name: ignition_off
             id: '0x00'
-          - name: engine_on
+          - name: ignition_on
             id: '0x01'
     
 properties:
@@ -29,9 +29,9 @@ properties:
     size: 1
     name: ignition
     values:
-      - name: engine_off
+      - name: ignition_off
         id: '0x00'
-      - name: engine_on
+      - name: ignition_on
         id: '0x01'
   - id: '0x02'
     type: enum
