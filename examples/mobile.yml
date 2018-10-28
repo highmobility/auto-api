@@ -1,4 +1,4 @@
-connected:
+connection:
   - item:
     - value: '0x01'
-      description: Mobile is connected
+      description: A mobile phone is connected
