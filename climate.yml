@@ -32,7 +32,7 @@ message_types:
                 id: '0x03'
               - name: friday
                 id: '0x04'
-              - name: satuday
+              - name: saturday
                 id: '0x05'
               - name: sunday
                 id: '0x06'
@@ -201,7 +201,7 @@ properties:
             id: '0x03'
           - name: friday
             id: '0x04'
-          - name: satuday
+          - name: saturday
             id: '0x05'
           - name: sunday
             id: '0x06'

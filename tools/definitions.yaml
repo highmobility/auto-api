@@ -1954,7 +1954,7 @@ definitions:
         - wednesday
         - thursday
         - friday
-        - satuday
+        - saturday
         - sunday
         - automatic
         example: monday

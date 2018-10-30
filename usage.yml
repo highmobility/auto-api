@@ -87,7 +87,7 @@ properties:
     size: 4
     name: last_trip_fuel_consumption
     description: Fuel consumption in the last trip in L
-  - id: '0x97'
+  - id: '0x09'
     type: integer
     size: 4
     name: mileage_after_last_trip
