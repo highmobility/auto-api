@@ -174,7 +174,7 @@ plugged_in:
     - value: '0x01'
       description: The charger is plugged in
 
-active_state:
+charging_state:
   - item:
     - value: '0x01'
       description: The vehicle is charging

@@ -340,7 +340,7 @@ properties:
   - id: '0x17'
     type: enum
     size: 1
-    name: active_state
+    name: charging_state
     values:
       - name: not_charging
         id: '0x00'
