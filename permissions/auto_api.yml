@@ -160,3 +160,9 @@ bytes:
         description: Allowed to get the power take-off state
       - name: power-takeoff.write
         description: Allowed to set the power take-off
+      - name: usage.read
+        description: Allowed to get the usage state
+      - name: mobile.read
+        description: Allowed to get the mobile state
+      - name: hood.read
+        description: Allowed to get the hood state
