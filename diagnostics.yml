@@ -230,13 +230,13 @@ properties:
         type: integer
         size: 1
         description: Size of the ID string
+      - name: id
+        type: string
+        description: ID bytes formatted in UTF-8
       - name: ecu_id_size
         type: integer
         size: 1
         description: Size of the ECU ID string
-      - name: id
-        type: string
-        description: ID bytes formatted in UTF-8
       - name: ecu_id
         type: string
         description: ECU ID bytes formatted in UTF-8
