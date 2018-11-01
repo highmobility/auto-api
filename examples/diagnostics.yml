@@ -221,13 +221,13 @@ trouble_codes:
     - name: id_size
       value: '0x07'
       description: ID size is 7 bytes
-    - name: ecu_id_size
-      value: '0x09'
-      description: ECU ID size is 9 bytes
     - name: id
       size: 7
       value: '0x43, 0x31, 0x31, 0x31, 0x36, 0x46, 0x41'
       description: ID is "C1116FA"
+    - name: ecu_id_size
+      value: '0x09'
+      description: ECU ID size is 9 bytes
     - name: ecu_id
       size: 9
       value: '0x52, 0x44, 0x55, 0x5F, 0x32, 0x31, 0x32, 0x46, 0x52'
@@ -243,13 +243,13 @@ trouble_codes:
     - name: id_size
       value: '0x07'
       description: ID size is 7 bytes
-    - name: ecu_id_size
-      value: '0x09'
-      description: ECU ID size is 6 bytes
     - name: id
       size: 7
       value: '0x43, 0x31, 0x36, 0x33, 0x41, 0x46, 0x41'
       description: ID is "C163AFA"
+    - name: ecu_id_size
+      value: '0x09'
+      description: ECU ID size is 6 bytes
     - name: ecu_id
       size: 6
       value: '0x44, 0x54, 0x52, 0x32, 0x31, 0x32'
