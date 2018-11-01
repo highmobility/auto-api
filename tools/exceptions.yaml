@@ -398,22 +398,55 @@ exceptions:
     items:
       description: State
       "$ref": "#/definitions/State"
+  automatic_teleservice_call_date:
+    type: string
+    format: date-time
+    example: '2018-04-12T23:21:50.52Z'
+  teleservice_battery_call_date:
+    type: string
+    format: date-time
+    example: '2018-04-12T23:21:50.52Z'
+  next_inspection_date:
+    type: string
+    format: date-time
+    example: '2018-04-12T23:21:50.52Z'
+  brake_fluid_change_date:
+    type: string
+    format: date-time
+    example: '2018-04-12T23:21:50.52Z'
 
 # These properties should be treated as arrays
 arrays:
-  tire: tires
-  spring_rate: spring_rates
-  acceleration: accelerations
-  brake_torque_vectoring: brake_torque_vectorings
-  state: states
-  price_tariff: price_tariffs
-  dashboard_light: dashboard_lights
-  driver_working_state: driver_working_states
-  driver_time_state: driver_time_states
-  driver_card: driver_cards
-  door: doors
-  inside_door_lock: inside_door_locks
-  outside_door_lock: outside_door_locks
+  - tire_pressures
+  - tire_temperatures
+  - wheel_rpms
+  - check_control_messages
+  - trouble_codes
+  - current_spring_rates
+  - maximum_spring_rates
+  - minimum_spring_rates
+  - accelerations
+  - brake_torque_vectorings
+  - states
+  - price_tariffs
+  - dashboard_lights
+  - driver_working_states
+  - driver_time_states
+  - driver_cards
+  - locks
+  - inside_locks
+  - positions
+  - departure_times
+  - reduction_times
+  - timers
+  - windows_open_percentages
+  - windows_positions
+  - persons_detected
+  - seatbelts_fastened
+  - drivers_working_states
+  - drivers_time_states
+  - drivers_cards
+  - hvac_weekday_starting_times
 
 # These capabilities should be rejected, not part of Telematics
 rejections:

@@ -43,7 +43,7 @@ message_types:
             description: The price in 4-bytes per IEEE 754
           - name: currency
             type: string
-            description: The currency alphabetic code per ISO 4217
+            description: The currency alphabetic code per ISO 4217 or crypto currency symbol
   - id: '0x14'
     name: activate_deactivate_solar_charging
     properties:
@@ -69,6 +69,19 @@ message_types:
           - name: disabled
             id: '0x00'
           - name: enabled
+            id: '0x01'
+  - id: '0x16'
+    name: authenticate_expire
+    properties:
+      - id: '0x01'
+        name: authentication
+        type: enum
+        size: 1
+        mandatory: true
+        values:
+          - name: expire_authentication
+            id: '0x00'
+          - name: authenticate
             id: '0x01'
 
 properties:
@@ -172,14 +185,20 @@ properties:
     type: float
     size: 4
     name: charge_current_dc
+    pretty_name: Charge current (DC)
+    description: The charge current (DC) per IEEE 754
   - id: '0x0F'
     type: float
     size: 4
     name: maximum_charge_current
+    pretty_name: Maximum charge current
+    description: The maximum possible charge current per IEEE 754
   - id: '0x10'
     type: float
     size: 4
     name: minimum_charge_current
+    pretty_name: Minimum charge current
+    description: The minimal possible charge current per IEEE 754
   - id: '0x11'
     size: 16
     name: coordinates
@@ -213,4 +232,4 @@ properties:
         description: The price in 4-bytes per IEEE 754
       - name: currency
         type: string
-        description: The currency alphabetic code per ISO 4217
+        description: The currency alphabetic code per ISO 4217 or crypto currency symbol

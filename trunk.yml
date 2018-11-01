@@ -10,7 +10,7 @@ message_types:
   - id: '0x01'
     name: trunk_state
   - id: '0x12'
-    name: open_close_trunk
+    name: control_trunk
     properties:
       - id: '0x01'
         name: trunk_lock

@@ -27,34 +27,20 @@ message_types:
         type: enum
         size: 1
         values:
-          - name: closed
+          - name: close
             id: '0x00'
           - name: open
             id: '0x01'
-          - name: emergency_locked
-            id: '0x02'
-          - name: closed_secured
-            id: '0x03'
-          - name: open_secured
-            id: '0x04'
-          - name: hard_top_mounted
-            id: '0x05'
-          - name: intermediate_position
-            id: '0x06'
-          - name: loading_position
-            id: '0x07'
-          - name: loading_position_immediate
-            id: '0x08'
       - id: '0x04'
         type: enum
         size: 1
         name: sunroof_tilt_state
         values:
-          - name: closed
+          - name: close
             id: '0x00'
-          - name: tilted
+          - name: tilt
             id: '0x01'
-          - name: half_tilted
+          - name: half_tilt
             id: '0x02'
     
 properties:

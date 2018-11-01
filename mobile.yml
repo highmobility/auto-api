@@ -14,7 +14,7 @@ properties:
   - id: '0x01'
     type: enum
     size: 1
-    name: connected
+    name: connection
     values:
       - name: disconnected
         id: '0x00'

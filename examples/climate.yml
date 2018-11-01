@@ -43,21 +43,27 @@ defrosting_temperature:
     - value: '0x41, 0xAC, 0x00, 0x00'
       description: Defrosting temperature at 21.5C
 
-weekdays_starting_times:
+hvac_weekday_starting_times:
   - item:
     - name: weekday
       value: '0x05'
       description: Auto-HVAC activated for Saturdays
-    - name: time
-      value: '0x10, 0x20'
-      description: Starting time is 16h 32min
+    - name: hour
+      value: '0x12'
+      description: at 18h
+    - name: minute
+      value: '0x1E'
+      description: 30min
   - item:
     - name: weekday
       value: '0x06'
       description: Auto-HVAC activated for Sundays
-    - name: time
-      value: '0x0A, 0x30'
-      description: Starting time is 10h 48min
+    - name: hour
+      value: '0x12'
+      description: at 18h
+    - name: minute
+      value: '0x1E'
+      description: 30min
 
 rear_temperature_setting:
   - item:

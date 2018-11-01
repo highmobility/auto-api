@@ -14,18 +14,17 @@ def ieee(hex_string)
 end
 
 def hex_to_s(hex_string)
-  [hex_string.gsub('0x', '')].pack('H*')
+  [hex_string.gsub('0x', '').gsub(', ', '')].pack('H*')
 end
 
 def swagger_name(name)
   name.split('_').map { |w| w.capitalize }.join
 end
 
-def swagger_prop_name(spec, ex_array = [])
+def swagger_prop_name(spec)
   return spec['title_case_name'] if spec['title_case_name']
-  name = ex_array.include?(spec['name']) ? ex_array[spec['name']] : spec['name']
 
-  name.split('_').map.with_index { |w, i| 
+  spec['name'].split('_').map.with_index { |w, i| 
     i == 0 ? w : w.capitalize
   }.join
 end
@@ -183,7 +182,7 @@ Dir.glob('../*.yml') do |yml_file|
           prop_swagger_name = swagger_name(prop_spec['name'])
 
           # -- Referencing to model
-          if exceptions['arrays'].keys.include?(prop_spec['name'])
+          if exceptions['arrays'].include?(prop_spec['name'])
             prop['type'] = 'array'
             prop['items'] = {
               'description' => prop_swagger_name,
@@ -204,7 +203,7 @@ Dir.glob('../*.yml') do |yml_file|
     end
 
     # -- Add property
-    cap['properties'][swagger_prop_name(prop_spec, exceptions['arrays'])] = prop
+    cap['properties'][swagger_prop_name(prop_spec)] = prop
   end
 
   # - Push capability

@@ -36,7 +36,7 @@ definitions:
       modelYear:
         type: number
         format: integer
-        example: 2017
+        example: 7
         description: The car model manufacturing year number
       colorName:
         type: string
@@ -45,7 +45,7 @@ definitions:
       powerInKw:
         type: number
         format: integer
-        example: 220
+        example: 0
         description: The power of the car measured in kw
       numberOfDoors:
         type: number
@@ -60,12 +60,12 @@ definitions:
       engineVolume:
         type: number
         format: float
-        example: 2.5
+        example: 6.003997802734375
         description: The engine volume displacement in liters per IEEE 754 formatting
       engineMaxTorque:
         type: number
         format: integer
-        example: 245
+        example: 0
         description: The maximum engine torque in Nm
       gearbox:
         type: string
@@ -74,7 +74,24 @@ definitions:
         - automatic
         - semi_automatic
         example: manual
-      states:
+      displayUnit:
+        type: string
+        enum:
+        - km
+        - miles
+        example: km
+      driverSeatLocation:
+        type: string
+        enum:
+        - left
+        - right
+        - center
+        example: left
+      equipments:
+        type: string
+        example: Parking sensors
+        description: Equipment that the vehicle is equipped with
+      state:
         type: array
         items:
           description: State
@@ -106,10 +123,10 @@ definitions:
         format: date-time
         example: '2018-04-12T23:21:50.52Z'
         description: The time that parking was ended
-  Window:
+  WindowsOpenPercentages:
     type: object
     properties:
-      windowPosition:
+      windowLocation:
         type: string
         enum:
         - front_left
@@ -118,18 +135,43 @@ definitions:
         - rear_left
         - hatch
         example: front_left
-      windowState:
+      openPercentage:
+        type: number
+        format: integer
+        example: 56
+        description: Value between 0 and 100
+  WindowsPositions:
+    type: object
+    properties:
+      windowLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        - hatch
+        example: front_left
+      windowPosition:
         type: string
         enum:
         - closed
-        - open
+        - opened
+        - intermediate
         example: closed
   WindowsState:
     type: object
     properties:
-      window:
-        description: Window
-        "$ref": "#/definitions/Window"
+      windowsOpenPercentages:
+        type: array
+        items:
+          description: WindowsOpenPercentages
+          "$ref": "#/definitions/WindowsOpenPercentages"
+      windowsPositions:
+        type: array
+        items:
+          description: WindowsPositions
+          "$ref": "#/definitions/WindowsPositions"
   VehicleTime:
     type: object
     properties:
@@ -159,16 +201,8 @@ definitions:
   Coordinates:
     type: object
     properties:
-      latitude:
-        type: number
-        format: float
-        example: 52.5200080871582
-        description: Latitude in 4-bytes per IEEE 754
-      longitude:
-        type: number
-        format: float
-        example: 13.404953956604004
-        description: Longitude in 4-bytes per IEEE 754
+      latitude: {}
+      longitude: {}
   NaviDestination:
     type: object
     properties:
@@ -185,12 +219,12 @@ definitions:
       outsideLight:
         type: number
         format: float
-        example: 111000.0
+        example: 98737.5
         description: Measured outside illuminance in lux, formatted as IEEE 754 decimal
       insideLight:
         type: number
         format: float
-        example: 0.25
+        example: 0.37677574157714844
         description: Measured inside illuminance in lux, formatted as IEEE 754 decimal
   OffroadState:
     type: object
@@ -198,7 +232,7 @@ definitions:
       routeIncline:
         type: number
         format: integer
-        example: 10
+        example: 0
         description: The route elevation incline in degrees, which is a negative number
           for decline
       wheelSuspension:
@@ -231,64 +265,14 @@ definitions:
         - deactivated
         - activated
         example: deactivated
-  DashboardLight:
-    type: object
-    properties:
-      lightName:
-        type: string
-        enum:
-        - high_beam
-        - low_beam
-        - hazard_warning
-        - brake_failure
-        - hatch_open
-        - fuel_level
-        - engine_coolant_temperature
-        - battery_charging_condition
-        - engine_oil
-        - position_lights
-        - front_fog_light
-        - rear_fog_light
-        - park_heating
-        - engine_indicator
-        - service_call
-        - transmission_fluid_temperature
-        - transmission_failure
-        - anti_lock_brake_failure
-        - worn_brake_linings
-        - windscreen_washer_fluid
-        - tire_failure
-        - engine_oil_level
-        - engine_coolant_level
-        - steering_failure
-        - esc_indication
-        - brake_lights
-        - adblue_level
-        - fuel_filter_diff_pressure
-        - seat_belt
-        - advanced_braking
-        - acc
-        - trailer_connected
-        - airbag
-        - esc_switched_off
-        - lane_departure_warning_off
-        example: high_beam
-      state:
-        type: string
-        enum:
-        - inactive
-        - info
-        - yellow
-        - red
-        example: inactive
   DashboardLights:
     type: object
     properties:
       dashboardLights:
         type: array
         items:
-          description: DashboardLight
-          "$ref": "#/definitions/DashboardLight"
+          description: DashboardLights
+          "$ref": "#/definitions/DashboardLights"
   LightsState:
     type: object
     properties:
@@ -327,7 +311,7 @@ definitions:
         - inactive
         - active
         example: inactive
-  SpringRate:
+  CurrentSpringRates:
     type: object
     properties:
       axle:
@@ -336,39 +320,39 @@ definitions:
         - front_axle
         - rear_axle
         example: front_axle
-      springRate:
+      value:
         type: number
         format: integer
         example: 21
         description: The suspension spring rate in N/mm
-      maximumValue:
+  MaximumSpringRates:
+    type: object
+    properties:
+      axle:
+        type: string
+        enum:
+        - front_axle
+        - rear_axle
+        example: front_axle
+      value:
         type: number
         format: integer
         example: 37
         description: The maximum possible value for the spring rate
-      minimumValue:
-        type: number
-        format: integer
-        example: 21
-        description: The minimum value for the spring rate
-  ChassisPosition:
+  MinimumSpringRates:
     type: object
     properties:
-      chassisPosition:
+      axle:
+        type: string
+        enum:
+        - front_axle
+        - rear_axle
+        example: front_axle
+      value:
         type: number
         format: integer
-        example: 25
-        description: The chassis position in mm calculated from the lowest point
-      maximumValue:
-        type: number
-        format: integer
-        example: 55
-        description: The maximum possible value for the chassis position
-      minimumValue:
-        type: number
-        format: integer
-        example: 228
-        description: The minimum value for the chassis position
+        example: 16
+        description: The minimum possible value for the spring rate
   ChassisSettings:
     type: object
     properties:
@@ -386,54 +370,188 @@ definitions:
         - inactive
         - active
         example: inactive
-      springRates:
+      currentSpringRates:
         type: array
         items:
-          description: SpringRate
-          "$ref": "#/definitions/SpringRate"
-      chassisPosition:
-        description: ChassisPosition
-        "$ref": "#/definitions/ChassisPosition"
+          description: CurrentSpringRates
+          "$ref": "#/definitions/CurrentSpringRates"
+      maximumSpringRates:
+        type: array
+        items:
+          description: MaximumSpringRates
+          "$ref": "#/definitions/MaximumSpringRates"
+      minimumSpringRates:
+        type: array
+        items:
+          description: MinimumSpringRates
+          "$ref": "#/definitions/MinimumSpringRates"
+      currentChassisPosition:
+        type: number
+        format: integer
+        example: 25
+        description: The chassis position in mm calculated from the lowest point
+      maximumChassisPosition:
+        type: number
+        format: integer
+        example: 55
+        description: 
+      minimumChassisPosition:
+        type: number
+        format: integer
+        example: 228
+        description: The minimum possible value for the chassis position
+  ActionItems:
+    type: object
+    properties:
+      identifier:
+        type: number
+        format: integer
+        example: 27
+        description: 
+      name:
+        type: string
+        example: Open
+        description: Name of the action, bytes in UTF8.
+  ! '':
+    type: object
+    properties:
+      text:
+        type: string
+        example: Open Garage
+        description: Text for the notification, bytes in UTF8.
+      actionItems:
+        description: ActionItems
+        "$ref": "#/definitions/ActionItems"
+      receivedAction:
+        type: number
+        format: integer
+        example: 42
+        description: 
+  HoodState:
+    type: object
+    properties:
+      position:
+        type: string
+        enum:
+        - closed
+        - open
+        - intermediate
+        example: closed
+  DepartureTimes:
+    type: object
+    properties:
+      activeState:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      hour:
+        type: number
+        format: integer
+        example: 16
+        description: Value between 0 and 23
+      minute:
+        type: number
+        format: integer
+        example: 32
+        description: Value between 0 and 59
+  ReductionTimes:
+    type: object
+    properties:
+      startStop:
+        type: string
+        enum:
+        - start
+        - stop
+        example: start
+      hour:
+        type: number
+        format: integer
+        example: 17
+        description: Value between 0 and 23
+      minute:
+        type: number
+        format: integer
+        example: 33
+        description: Value between 0 and 59
+  Timers:
+    type: object
+    properties:
+      timerType:
+        type: string
+        enum:
+        - preferred_start_time
+        - preferred_end_time
+        - departure_date
+        example: preferred_start_time
+      year:
+        type: number
+        format: integer
+        example: 18
+        description: Value between 0 and 99, which corresponds to 2000-2099
+      month:
+        type: number
+        format: integer
+        example: 1
+        description: Value between 1 and 12
+      day:
+        type: number
+        format: integer
+        example: 10
+        description: Value between 1 and 31
+      hour:
+        type: number
+        format: integer
+        example: 16
+        description: Value between 0 and 23
+      minute:
+        type: number
+        format: integer
+        example: 32
+        description: Value between 0 and 59
+      second:
+        type: number
+        format: integer
+        example: 5
+        description: Value between 0 and 59
+      utcTimeOffset:
+        type: number
+        format: integer
+        example: 0
+        description: UTC time offset in minutes, which can be negative
   ChargeState:
     type: object
     properties:
-      charging:
-        type: string
-        enum:
-        - disconnected
-        - plugged_in
-        - charging
-        - charging_complete
-        example: disconnected
       estimatedRange:
         type: number
         format: integer
-        example: 255
+        example: 1
         description: Estimated range in km
       batteryLevel:
         type: number
         format: integer
-        example: 50
+        example: 83
         description: Battery level percentage between 0-100
       batteryCurrentAC:
         type: number
         format: float
-        example: -0.6000000238418579
+        example: -1.5007858276367188
         description: Battery current in 4-bytes per IEEE 754
       batteryCurrentDC:
         type: number
         format: float
-        example: -0.6000000238418579
+        example: -1.5007858276367188
         description: Battery current in 4-bytes per IEEE 754
       batteryVoltageAC:
         type: number
         format: float
-        example: 400.0
+        example: 385.568359375
         description: Charger voltage in 4-bytes per IEEE 754
       batteryVoltageDC:
         type: number
         format: float
-        example: 410.0
+        example: -1.5007858276367188
         description: Charger voltage in 4-bytes per IEEE 754
       chargeLimit:
         type: number
@@ -448,7 +566,7 @@ definitions:
       chargingRateKW:
         type: number
         format: float
-        example: 0.0
+        example: 6.011810302734375
         description: Charge rate in kW represented as 4-bytes per IEEE 754, when charging
       chargePortState:
         type: string
@@ -463,41 +581,71 @@ definitions:
         - timer_based
         - inductive
         example: immediate
-      chargeTimer:
-        description: ChargeTimer
-        "$ref": "#/definitions/ChargeTimer"
-  Location:
+      maxChargingCurrent:
+        type: number
+        format: float
+        example: 24.0980224609375
+        description: Maximum charging current in 4-bytes per IEEE 754
+      plugType:
+        type: string
+        enum:
+        - type_1
+        - type_2
+        - ccs
+        - chademo
+        example: type_1
+      chargingWindowChosen:
+        type: string
+        enum:
+        - not_chosen
+        - chosen
+        example: not_chosen
+      departureTimes:
+        type: array
+        items:
+          description: DepartureTimes
+          "$ref": "#/definitions/DepartureTimes"
+      reductionTimes:
+        type: array
+        items:
+          description: ReductionTimes
+          "$ref": "#/definitions/ReductionTimes"
+      batteryTemperature:
+        type: number
+        format: float
+        example: 96.05029296875
+        description: Battery temperature in Celsius in 4-bytes per IEEE 754
+      timers:
+        type: array
+        items:
+          description: Timers
+          "$ref": "#/definitions/Timers"
+      pluggedIn:
+        type: string
+        enum:
+        - disconnected
+        - plugged_in
+        example: disconnected
+      activeState:
+        type: string
+        enum:
+        - not_charging
+        - charging
+        - charging_complete
+        - initialising
+        - charging_paused
+        - charging_error
+        example: not_charging
+  MobileState:
     type: object
     properties:
-      latitude:
-        type: number
-        format: float
-        example: 52.5200080871582
-        description: Latitude in 4-bytes per IEEE 754
-      longitude:
-        type: number
-        format: float
-        example: 13.404953956604004
-        description: Longitude in 4-bytes per IEEE 754
-  ChargeCurrent:
-    type: object
-    properties:
-      chargeCurrent:
-        type: number
-        format: float
-        example: 0.5
-        description: Charge current in 4-bytes per IEEE 754
-      maximumValue:
-        type: number
-        format: float
-        example: 1.0
-        description: The maximum possible value for the charge current
-      minimumValue:
-        type: number
-        format: float
-        example: 0.0
-        description: The minimum possible value for the charge current
-  PriceTariff:
+      connection:
+        type: string
+        enum:
+        - disconnected
+        - connected
+        example: disconnected
+  PriceTariffs:
     type: object
     properties:
       pricingType:
@@ -507,15 +655,16 @@ definitions:
         - per_minute
         - per_kwh
         example: starting_fee
-      currency:
-        type: string
-        example: EUR
-        description: The currency alphabetic code per ISO 4217
       price:
         type: number
         format: float
-        example: 4.5
+        example: 6.017669677734375
         description: The price in 4-bytes per IEEE 754
+      currency:
+        type: string
+        example: EUR
+        description: The currency alphabetic code per ISO 4217 or crypto currency
+          symbol
   HomeChargerState:
     type: object
     properties:
@@ -543,7 +692,7 @@ definitions:
       chargingPower:
         type: number
         format: float
-        example: 11.5
+        example: 24.0277099609375
         description: Charging power in kW formatted in 4-bytes per IEEE 754
       solarCharging:
         type: string
@@ -551,12 +700,6 @@ definitions:
         - deactivated
         - activated
         example: deactivated
-      location:
-        description: Location
-        "$ref": "#/definitions/Location"
-      chargeCurrent:
-        description: ChargeCurrent
-        "$ref": "#/definitions/ChargeCurrent"
       hotspotEnabled:
         type: string
         enum:
@@ -579,15 +722,65 @@ definitions:
         type: string
         example: ZW3vARNUBe
         description: The Wi-Fi Hotspot password formatted in UTF-8
+      authenticationState:
+        type: string
+        enum:
+        - unauthenticated
+        - authenticated
+        example: unauthenticated
+      chargeCurrentDc:
+        type: number
+        format: float
+        example: 1.5000228881835938
+        description: The charge current (DC) per IEEE 754
+      maximumChargeCurrent:
+        type: number
+        format: float
+        example: 1.5039291381835938
+        description: The maximum possible charge current per IEEE 754
+      minimumChargeCurrent:
+        type: number
+        format: float
+        example: 1.7632684311639463e-38
+        description: The minimal possible charge current per IEEE 754
+      coordinates:
+        description: Coordinates
+        "$ref": "#/definitions/Coordinates"
       priceTariffs:
         type: array
         items:
-          description: PriceTariff
-          "$ref": "#/definitions/PriceTariff"
-  Tire:
+          description: PriceTariffs
+          "$ref": "#/definitions/PriceTariffs"
+  CheckControlMessages:
     type: object
     properties:
-      tirePosition:
+      id:
+        type: number
+        format: integer
+        example: 0
+        description: Check Control Message identifier
+      remainingMinutes:
+        type: number
+        format: integer
+        example: 0
+        description: Remaining time of the message in minutes
+      textSize:
+        type: number
+        format: integer
+        example: 0
+        description: Size of the text
+      text:
+        type: string
+        example: Check engine
+        description: CCM text bytes formatted in UTF-8
+      status:
+        type: string
+        example: Alert
+        description: CCM status bytes formatted in UTF-8
+  TirePressures:
+    type: object
+    properties:
+      location:
         type: string
         enum:
         - front_left
@@ -595,43 +788,95 @@ definitions:
         - rear_right
         - rear_left
         example: front_left
-      tirePressure:
+      pressure:
         type: number
         format: float
-        example: 2.309999942779541
+        example: 6.002410888671875
         description: Tire pressure in BAR formatted in 4-bytes per IEEE 754
-      tireTemperature:
+  TireTemperatures:
+    type: object
+    properties:
+      location:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        example: front_left
+      temperature:
         type: number
         format: float
-        example: 40.0
-        description: Tire temperature in celsius formatted in 4-bytes per IEEE 754
-      wheelRPM:
+        example: 96.06396484375
+        description: Tire temperature in BAR formatted in 4-bytes per IEEE 754
+  WheelRpms:
+    type: object
+    properties:
+      location:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        example: front_left
+      rpm:
         type: number
         format: integer
-        example: 746
+        example: 2
         description: The RPM measured at this wheel
+  TroubleCodes:
+    type: object
+    properties:
+      occurences:
+        type: number
+        format: integer
+        example: 2
+        description: Number of occurences
+      idSize:
+        type: number
+        format: integer
+        example: 7
+        description: Size of the ID string
+      ecuIdSize:
+        type: number
+        format: integer
+        example: 9
+        description: Size of the ECU ID string
+      id:
+        type: string
+        example: C1116FA
+        description: ID bytes formatted in UTF-8
+      ecuId:
+        type: string
+        example: RDU_212FR
+        description: ECU ID bytes formatted in UTF-8
+      status:
+        type: string
+        example: PENDING
+        description: Status bytes formatted in UTF-8
   DiagnosticsState:
     type: object
     properties:
       mileage:
         type: number
         format: integer
-        example: 150000
+        example: 2
         description: The car mileage (odometer) in km
       engineOilTemperature:
         type: number
         format: integer
-        example: 99
+        example: 0
         description: Engine oil temperature in Celsius, whereas can be negative
       speed:
         type: number
         format: integer
-        example: 60
+        example: 0
         description: The vehicle speed in km/h, whereas can be negative
       engineRPM:
         type: number
         format: integer
-        example: 2500
+        example: 9
         description: Engine RPM (revolutions per minute)
       fuelLevel:
         type: number
@@ -641,53 +886,38 @@ definitions:
       estimatedRange:
         type: number
         format: integer
-        example: 265
+        example: 1
         description: Estimated range (with combustion engine)
-      currentFuelConsumption:
-        type: number
-        format: float
-        example: 8.75
-        description: Current fuel consumption in liters/100km per IEEE 754 formatting
-      averageFuelConsumption:
-        type: number
-        format: float
-        example: 6.199999809265137
-        description: Average fuel consumption in liters/100km per IEEE 754 formatting
       washerFluidLevel:
         type: string
         enum:
         - low
         - filled
         example: low
-      tires:
-        type: array
-        items:
-          description: Tire
-          "$ref": "#/definitions/Tire"
       batteryVoltage:
         type: number
         format: float
-        example: 12.0
+        example: 24.0316162109375
         description: Battery voltage per IEEE 754 formatting
       adblueLevel:
         type: number
         format: float
-        example: 0.5
+        example: 1.5000228881835938
         description: AdBlue level in liters formatted in 4-bytes per IEEE 754 formatting
       distanceSinceReset:
         type: number
         format: integer
-        example: 1500
+        example: 5
         description: The distance driven in km since reset
       distanceSinceStart:
         type: number
         format: integer
-        example: 10
+        example: 0
         description: The distance driven in km since trip start
       fuelVolume:
         type: number
         format: float
-        example: 35.5
+        example: 96.02880859375
         description: The fuel volume measured in liters formatted in 4-bytes per IEEE
           754 formatting
       antiLockBraking:
@@ -699,17 +929,17 @@ definitions:
       engineCoolantTemperature:
         type: number
         format: integer
-        example: 20
+        example: 0
         description: Engine coolant temperature in Celsius, whereas can be negative
       engineTotalOperatingHours:
         type: number
         format: float
-        example: 1500.6500244140625
+        example: 1541.8671875
         description: The accumulated time of engine operation per IEEE 754 formatting
       engineTotalFuelConsumption:
         type: number
         format: float
-        example: 27587.0
+        example: 24683.875
         description: The accumulated lifespan fuel consumption in liters per IEEE
           754 formatting
       brakeFluidLevel:
@@ -731,9 +961,183 @@ definitions:
       wheelBasedSpeed:
         type: number
         format: integer
-        example: 65
+        example: 0
         description: The vehicle speed in km/h measured at the wheel base, whereas
           can be negative
+      batteryLevel:
+        type: number
+        format: integer
+        example: 56
+        description: Battery level in %, value between 0 and 100
+      checkControlMessages:
+        type: array
+        items:
+          description: CheckControlMessages
+          "$ref": "#/definitions/CheckControlMessages"
+      tirePressures:
+        type: array
+        items:
+          description: TirePressures
+          "$ref": "#/definitions/TirePressures"
+      tireTemperatures:
+        type: array
+        items:
+          description: TireTemperatures
+          "$ref": "#/definitions/TireTemperatures"
+      wheelRpms:
+        type: array
+        items:
+          description: WheelRpms
+          "$ref": "#/definitions/WheelRpms"
+      troubleCodes:
+        type: array
+        items:
+          description: TroubleCodes
+          "$ref": "#/definitions/TroubleCodes"
+  DrivingModesActivationPeriods:
+    type: object
+    properties:
+      drivingMode:
+        type: string
+        enum:
+        - regular
+        - eco
+        - sport
+        - sportPlus
+        - ecoPlus
+        example: regular
+      period:
+        type: number
+        format: integer
+        example: 60
+        description: "% value of the period used for the driving mode"
+  DrivingModeEnergyConsumption:
+    type: object
+    properties:
+      drivingMode:
+        type: string
+        enum:
+        - regular
+        - eco
+        - sport
+        - sportPlus
+        - ecoPlus
+        example: regular
+      consumption:
+        type: number
+        format: float
+        example: 96.00927734375
+        description: Energy consumption in the driving mode in kWh
+  LastTripDate:
+    type: object
+    properties:
+      year:
+        type: number
+        format: integer
+        example: 18
+        description: Value between 0 and 99, which corresponds to 2000-2099
+      month:
+        type: number
+        format: integer
+        example: 10
+        description: Value between 1 and 12
+      day:
+        type: number
+        format: integer
+        example: 17
+        description: Value between 1 and 31
+      hour:
+        type: number
+        format: integer
+        example: 10
+        description: Value between 0 and 23
+      minute:
+        type: number
+        format: integer
+        example: 33
+        description: Value between 0 and 59
+      second:
+        type: number
+        format: integer
+        example: 50
+        description: Value between 0 and 59
+      utcTimeOffset:
+        type: number
+        format: integer
+        example: 0
+        description: UTC time offset in minutes, which can be negative
+  Usage:
+    type: object
+    properties:
+      averageWeeklyDistance:
+        type: number
+        format: integer
+        example: 2
+        description: Average weekly distance in km
+      averageWeeklyDistanceLongRun:
+        type: number
+        format: integer
+        example: 2
+        description: Average weekyl distance, over long term, in km
+      accelerationEvaluation:
+        type: number
+        format: integer
+        example: 70
+        description: Acceleration evaluation in %
+      drivingStyleEvaluation:
+        type: number
+        format: integer
+        example: 70
+        description: Driving style's evaluation in %
+      drivingModesActivationPeriods:
+        description: DrivingModesActivationPeriods
+        "$ref": "#/definitions/DrivingModesActivationPeriods"
+      drivingModeEnergyConsumption:
+        description: DrivingModeEnergyConsumption
+        "$ref": "#/definitions/DrivingModeEnergyConsumption"
+      lastTripEnergyConsumption:
+        type: number
+        format: float
+        example: 96.39599609375
+        description: Energy consumption in the last trip in kWh
+      lastTripFuelConsumption:
+        type: number
+        format: float
+        example: 24.0882568359375
+        description: Fuel consumption in the last trip in L
+      mileageAfterLastTrip:
+        type: number
+        format: integer
+        example: 71
+        description: Mileage after the last trip in km
+      lastTripElectricPortion:
+        type: number
+        format: integer
+        example: 70
+        description: Portion of the last trip used in electric mode
+      lastTripAverageEnergyRecuperation:
+        type: number
+        format: float
+        example: 6.022186279296875
+        description: Energy recuperation rate for last trip, in kWh / 100 km
+      lastTripBatteryRemaining:
+        type: number
+        format: integer
+        example: 50
+        description: Battery % remaining after last trip
+      lastTripDate:
+        description: LastTripDate
+        "$ref": "#/definitions/LastTripDate"
+      averageFuelConsumption:
+        type: number
+        format: float
+        example: 6.025482177734375
+        description: Average fuel consumption in liters/100km per IEEE 754 formatting
+      currentFuelConsumption:
+        type: number
+        format: float
+        example: 6.029388427734375
+        description: Current fuel consumption in liters/100km per IEEE 754 formatting
   PowerTakeoffState:
     type: object
     properties:
@@ -749,6 +1153,14 @@ definitions:
         - not_engaged
         - engaged
         example: not_engaged
+  States:
+    type: object
+    properties:
+      states:
+        type: array
+        items:
+          description: A state of the vehicle
+          type: object
   WiFiState:
     type: object
     properties:
@@ -785,15 +1197,15 @@ definitions:
       heading:
         type: number
         format: float
-        example: 52.5200080871582
-        description: Heading in 4-bytes per IEEE 754
+        example: 6.005218505859375
+        description: Heading in 8-bytes per IEEE 754
       altitude:
         type: number
         format: float
-        example: 133.5
-        description: Altitude in meters above the WGS 84 reference ellipsoid per IEEE
-          754 formatting
-  Acceleration:
+        example: 6.011810302734375
+        description: Altitude in meters above the WGS 84 reference ellipsoid per double
+          precision IEEE 754 formatting
+  Accelerations:
     type: object
     properties:
       type:
@@ -807,9 +1219,9 @@ definitions:
       gForce:
         type: number
         format: float
-        example: 0.8640000224113464
+        example: 1.5028610229492188
         description: The accelaration in g-force per IEEE 754
-  BrakeTorqueVectoring:
+  BrakeTorqueVectorings:
     type: object
     properties:
       axle:
@@ -830,8 +1242,8 @@ definitions:
       accelerations:
         type: array
         items:
-          description: Acceleration
-          "$ref": "#/definitions/Acceleration"
+          description: Accelerations
+          "$ref": "#/definitions/Accelerations"
       understeering:
         type: number
         format: integer
@@ -852,18 +1264,18 @@ definitions:
       steeringAngle:
         type: number
         format: integer
-        example: 0
+        example: 10
         description: The steering angle in degrees, whereas 0 degrees is straight
-          ahead, positive number to the left and negative number to the right
+          ahead, positive number to the right and negative number to the left
       brakePressure:
         type: number
         format: float
-        example: 0.0
+        example: 24.0784912109375
         description: Brake pressure in bar, whereas 100bar is max value, full brake
       yawRate:
         type: number
         format: float
-        example: 6.659999847412109
+        example: 6.026092529296875
         description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
       rearSuspensionSteering:
         type: number
@@ -879,8 +1291,8 @@ definitions:
       brakeTorqueVectorings:
         type: array
         items:
-          description: BrakeTorqueVectoring
-          "$ref": "#/definitions/BrakeTorqueVectoring"
+          description: BrakeTorqueVectorings
+          "$ref": "#/definitions/BrakeTorqueVectorings"
       gearMode:
         type: string
         enum:
@@ -927,34 +1339,40 @@ definitions:
         - inactive
         - active
         example: inactive
-  CarSdkVersion:
+      vehicleMoving:
+        type: string
+        enum:
+        - not_moving
+        - moving
+        example: not_moving
+  HmkitVersion:
     type: object
     properties:
       versionMajor:
         type: number
         format: integer
         example: 1
-        description: Car SDK version major number
+        description: HMKit version major number
       versionMinor:
         type: number
         format: integer
         example: 15
-        description: Car SDK version minor number
+        description: HMKit version minor number
       versionPatch:
         type: number
         format: integer
         example: 33
-        description: Car SDK version patch number
+        description: HMKit version patch number
   FirmwareVersion:
     type: object
     properties:
-      carSDKVersion:
-        description: CarSdkVersion
-        "$ref": "#/definitions/CarSdkVersion"
-      carSDKBuildName:
+      HMKitVersion:
+        description: HmkitVersion
+        "$ref": "#/definitions/HmkitVersion"
+      HMKitBuildName:
         type: string
         example: btstack-uart
-        description: Car SDK version build name bytes formatted in UTF-8
+        description: HMKit version build name bytes formatted in UTF-8
       applicationVersion:
         type: string
         example: v1.5-prod
@@ -969,10 +1387,10 @@ definitions:
         - armed
         - triggered
         example: not_armed
-  Seat:
+  PersonsDetected:
     type: object
     properties:
-      seatPosition:
+      seatLocation:
         type: string
         enum:
         - front_left
@@ -987,6 +1405,18 @@ definitions:
         - not_detected
         - detected
         example: not_detected
+  SeatbeltsFastened:
+    type: object
+    properties:
+      seatLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        - rear_center
+        example: front_left
       seatbeltFastened:
         type: string
         enum:
@@ -996,10 +1426,17 @@ definitions:
   SeatsState:
     type: object
     properties:
-      seat:
-        description: Seat
-        "$ref": "#/definitions/Seat"
-  DriverWorkingState:
+      personsDetected:
+        type: array
+        items:
+          description: PersonsDetected
+          "$ref": "#/definitions/PersonsDetected"
+      seatbeltsFastened:
+        type: array
+        items:
+          description: SeatbeltsFastened
+          "$ref": "#/definitions/SeatbeltsFastened"
+  DriversWorkingStates:
     type: object
     properties:
       driverNumber:
@@ -1015,7 +1452,7 @@ definitions:
         - working
         - driving
         example: resting
-  DriverTimeState:
+  DriversTimeStates:
     type: object
     properties:
       driverNumber:
@@ -1034,7 +1471,7 @@ definitions:
         - 15_min_before_16
         - 16_reached
         example: normal
-  DriverCard:
+  DriversCards:
     type: object
     properties:
       driverNumber:
@@ -1051,21 +1488,21 @@ definitions:
   TachographState:
     type: object
     properties:
-      driverWorkingStates:
+      driversWorkingStates:
         type: array
         items:
-          description: DriverWorkingState
-          "$ref": "#/definitions/DriverWorkingState"
-      driverTimeStates:
+          description: DriversWorkingStates
+          "$ref": "#/definitions/DriversWorkingStates"
+      driversTimeStates:
         type: array
         items:
-          description: DriverTimeState
-          "$ref": "#/definitions/DriverTimeState"
-      driverCards:
+          description: DriversTimeStates
+          "$ref": "#/definitions/DriversTimeStates"
+      driversCards:
         type: array
         items:
-          description: DriverCard
-          "$ref": "#/definitions/DriverCard"
+          description: DriversCards
+          "$ref": "#/definitions/DriversCards"
       vehicleMotion:
         type: string
         enum:
@@ -1087,7 +1524,7 @@ definitions:
       vehicleSpeed:
         type: number
         format: integer
-        example: 80
+        example: 0
         description: The tachograph vehicle speed in km/h
   ParkingBrakeState:
     type: object
@@ -1121,12 +1558,16 @@ definitions:
         - lights
         - chassis_settings
         - notifications
+        - hood
         - charging
+        - mobile
         - home_charger
         - diagnostics
+        - usage
         - power_takeoff
         - wake_up
         - video_handover
+        - historical
         - wi_fi
         - vehicle_location
         - graphics
@@ -1160,18 +1601,18 @@ definitions:
           - end_parking
           - load_url
           - get_windows_state
-          - open_close_windows
+          - control_windows
           - get_vehicle_time
           - get_start_stop_state
           - activate_deactivate_start_stop
           - get_gas_flap_state
-          - open_gas_flap
+          - open_close_gas_flap
           - get_navi_destination
           - set_navi_destination
           - get_light_conditions
           - get_offroad_state
           - get_trunk_state
-          - open_close_trunk
+          - control_trunk
           - get_valet_mode
           - activate_deactivate_valet_mode
           - get_dashboard_lights
@@ -1180,27 +1621,34 @@ definitions:
           - control_lights
           - get_chassis_settings
           - set_driving_mode
-          - start_stop_sport_chrono
-          - set_spring_rate
+          - start_stop_sports_chrono
+          - set_spring_rates
           - set_chassis_position
           - notification
           - clear_notification
+          - notification_action
+          - get_hood_state
           - get_charge_state
           - start_stop_charging
           - set_charge_limit
-          - open_close_charge_port
+          - open_close_charging_port
           - set_charge_mode
-          - set_charge_timer
+          - set_charging_timers
+          - set_reduction_of_charging_current_times
+          - get_mobile_state
           - get_home_charger_state
           - set_charge_current
           - set_price_tariffs
           - activate_deactivate_solar_charging
           - enable_disable_wi_fi_hotspot
+          - authenticate_expire
           - get_diagnostics_state
+          - get_usage
           - get_power_takeoff_state
           - activate_deactivate_power_takeoff
           - wake_up
           - video_handover
+          - get_states
           - get_wi_fi_state
           - connect_to_network
           - forget_network
@@ -1222,21 +1670,24 @@ definitions:
           - control_rooftop
           - get_windscreen_state
           - set_windscreen_damage
+          - set_windscreen_replacement_needed
+          - control_wipers
           - get_cruise_control_state
           - activate_deactivate_cruise_control
           - get_flashers_state
           - honk_flash
           - activate_deactivate_emergency_flashers
           - get_ignition_state
-          - turn_engine_on_off
+          - turn_ignition_on_off
           - get_weather_conditions
           - message_received
           - get_climate_state
-          - set_climate_profile
+          - change_starting_times
           - start_stop_hvac
           - start_stop_defogging
           - start_stop_defrosting
           - start_stop_ionising
+          - set_temperature_settings
           - get_lock_state
           - lock_unlock_doors
           example: get_charge_state
@@ -1246,20 +1697,101 @@ definitions:
       capability:
         description: Capability
         "$ref": "#/definitions/Capability"
+  ConditionBasedServices:
+    type: object
+    properties:
+      year:
+        type: number
+        format: integer
+        example: 19
+        description: Value between 0 and 99, which corresponds to 2000-2099
+      month:
+        type: number
+        format: integer
+        example: 5
+        description: Value between 1 and 12
+      identifier:
+        type: number
+        format: integer
+        example: 0
+        description: CBS identifier
+      dueStatus:
+        type: string
+        enum:
+        - ok
+        - pending
+        - overdue
+        example: ok
+      textSize:
+        type: number
+        format: integer
+        example: 0
+        description: Size of the CBS text
+      text:
+        type: string
+        example: Brake fluid
+        description: CBS text bytes formatted in UTF-8
   MaintenanceState:
     type: object
     properties:
       daysToNextService:
         type: number
         format: integer
-        example: 501
+        example: 1
         description: Number of days until next servicing of the car, whereas negative
           is overdue
       kilometersToNextService:
         type: number
         format: integer
-        example: 3681
+        example: 0
         description: The amount of kilometers until next servicing of the car
+      cbsReportsCount:
+        type: number
+        format: integer
+        example: 3
+        description: The number of CBS reports
+      monthsToExhaustInpection:
+        type: number
+        format: integer
+        example: 5
+        description: Number of months until exhaust inspection
+      teleserviceAvailability:
+        type: string
+        enum:
+        - pending
+        - idle
+        - succesful
+        - error
+        example: pending
+      serviceDistanceThreshold:
+        type: number
+        format: integer
+        example: 1
+        description: Distance threshold for Service
+      serviceTimeThreshold:
+        type: number
+        format: integer
+        example: 4
+        description: Time threshold, in weeks, for Service
+      automaticTeleserviceCallDate:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:21:50.52Z'
+      teleserviceBatteryCallDate:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:21:50.52Z'
+      nextInspectionDate:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:21:50.52Z'
+      conditionBasedServices:
+        description: ConditionBasedServices
+        "$ref": "#/definitions/ConditionBasedServices"
+      brakeFluidChangeDate:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:21:50.52Z'
   RooftopState:
     type: object
     properties:
@@ -1273,6 +1805,26 @@ definitions:
         format: integer
         example: 0
         description: Percentage value between 0-100 whereas 100 is fully open
+      convertibleRoofState:
+        type: string
+        enum:
+        - closed
+        - open
+        - emergency_locked
+        - closed_secured
+        - open_secured
+        - hard_top_mounted
+        - intermediate_position
+        - loading_position
+        - loading_position_immediate
+        example: closed
+      sunroofTiltState:
+        type: string
+        enum:
+        - closed
+        - tilted
+        - half_tilted
+        example: closed
   WindscreenState:
     type: object
     properties:
@@ -1343,7 +1895,7 @@ definitions:
       targetSpeed:
         type: number
         format: integer
-        example: 60
+        example: 0
         description: The target speed in km/h
       acc:
         type: string
@@ -1354,7 +1906,7 @@ definitions:
       accTargetSpeed:
         type: number
         format: integer
-        example: 60
+        example: 0
         description: The target speed in km/h of the Adaptive Cruise Control
   FlashersState:
     type: object
@@ -1373,9 +1925,9 @@ definitions:
       ignition:
         type: string
         enum:
-        - engine_off
-        - engine_on
-        example: engine_off
+        - ignition_off
+        - ignition_on
+        example: ignition_off
       accessoriesIgnition:
         type: string
         enum:
@@ -1391,28 +1943,53 @@ definitions:
         example: 100
         description: Measured raining intensity percentage, whereas 0% is no rain
           and 100% is maximum rain
+  HvacWeekdayStartingTimes:
+    type: object
+    properties:
+      weekday:
+        type: string
+        enum:
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+        - sunday
+        - automatic
+        example: monday
+      hour:
+        type: number
+        format: integer
+        example: 18
+        description: Value between 0 and 23
+      minute:
+        type: number
+        format: integer
+        example: 30
+        description: Value between 0 and 59
   ClimateState:
     type: object
     properties:
       insideTemperature:
         type: number
         format: float
-        example: 19.0
+        example: 24.0745849609375
         description: The inside temperature in celsius per IEEE 754 formatting
       outsideTemperature:
         type: number
         format: float
-        example: 12.0
+        example: 24.0316162109375
         description: The outside temperature in celsius per IEEE 754 formatting
       driverTemperatureSetting:
         type: number
         format: float
-        example: 21.5
+        example: 24.0843505859375
         description: The driver temperature setting in celsius per IEEE 754 formatting
       passengerTemperatureSetting:
         type: number
         format: float
-        example: 21.5
+        example: 24.0843505859375
         description: The passenger temperature setting in celsius per IEEE 754 formatting
       hvacState:
         type: string
@@ -1441,12 +2018,19 @@ definitions:
       defrostingTemperature:
         type: number
         format: float
-        example: 21.5
+        example: 24.0843505859375
         description: The defrosting temperature setting in celsius per IEEE 754 formatting
-      autoHvacProfile:
-        description: AutoHVACProfile
-        "$ref": "#/definitions/AutoHVACProfile"
-  Door:
+      hvacWeekdayStartingTimes:
+        type: array
+        items:
+          description: HvacWeekdayStartingTimes
+          "$ref": "#/definitions/HvacWeekdayStartingTimes"
+      rearTemperatureSetting:
+        type: number
+        format: float
+        example: 24.0843505859375
+        description: The rear temperature in celsius per IEEE 754 formatting
+  InsideLocks:
     type: object
     properties:
       doorLocation:
@@ -1456,71 +2040,68 @@ definitions:
         - front_right
         - rear_right
         - rear_left
+        - hatch
         example: front_left
-      doorPosition:
+      lockState:
+        type: string
+        enum:
+        - unlocked
+        - locked
+        example: unlocked
+  Locks:
+    type: object
+    properties:
+      doorLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        - hatch
+        example: front_left
+      lockState:
+        type: string
+        enum:
+        - unlocked
+        - locked
+        example: unlocked
+  Positions:
+    type: object
+    properties:
+      doorLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        - hatch
+        example: front_left
+      position:
         type: string
         enum:
         - closed
         - open
         example: closed
-      doorLock:
-        type: string
-        enum:
-        - unlocked
-        - locked
-        example: unlocked
-  InsideDoorLock:
-    type: object
-    properties:
-      doorLocation:
-        type: string
-        enum:
-        - front_left
-        - front_right
-        - rear_right
-        - rear_left
-        example: front_left
-      insideLock:
-        type: string
-        enum:
-        - unlocked
-        - locked
-        example: unlocked
-  OutsideDoorLock:
-    type: object
-    properties:
-      doorLocation:
-        type: string
-        enum:
-        - front_left
-        - front_right
-        - rear_right
-        - rear_left
-        example: front_left
-      outsideLock:
-        type: string
-        enum:
-        - unlocked
-        - locked
-        example: unlocked
   LockState:
     type: object
     properties:
-      doors:
+      insideLocks:
         type: array
         items:
-          description: Door
-          "$ref": "#/definitions/Door"
-      insideDoorLocks:
+          description: InsideLocks
+          "$ref": "#/definitions/InsideLocks"
+      locks:
         type: array
         items:
-          description: InsideDoorLock
-          "$ref": "#/definitions/InsideDoorLock"
-      outsideDoorLocks:
+          description: Locks
+          "$ref": "#/definitions/Locks"
+      positions:
         type: array
         items:
-          description: OutsideDoorLock
-          "$ref": "#/definitions/OutsideDoorLock"
+          description: Positions
+          "$ref": "#/definitions/Positions"
   VideoHandover:
     type: object
     properties:
