@@ -150,6 +150,10 @@ properties:
       - name: text
         type: string
         description: CCM text bytes formatted in UTF-8
+      - name: status_size
+        type: integer
+        size: 1
+        description: Size of the status
       - name: status
         type: string
         description: CCM status bytes formatted in UTF-8
@@ -240,6 +244,10 @@ properties:
       - name: ecu_id
         type: string
         description: ECU ID bytes formatted in UTF-8
+      - name: status_size
+        type: integer
+        size: 1
+        description: Size of the status string
       - name: status
         type: string
         description: Status bytes formatted in UTF-8

@@ -41,6 +41,10 @@ message_types:
             type: float
             size: 4
             description: The price in 4-bytes per IEEE 754
+          - name: currency_size
+            type: integer
+            size: 1
+            description: Size of the currency string
           - name: currency
             type: string
             description: The currency alphabetic code per ISO 4217 or crypto currency symbol
@@ -230,6 +234,10 @@ properties:
         type: float
         size: 4
         description: The price in 4-bytes per IEEE 754
+      - name: currency_size
+        type: integer
+        size: 1
+        description: Size of the currency string
       - name: currency
         type: string
         description: The currency alphabetic code per ISO 4217 or crypto currency symbol

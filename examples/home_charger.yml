@@ -82,6 +82,10 @@ price_tariffs:
     - name: price
       value: '0x40, 0x90, 0x00, 0x00'
       description: Price is 4.50
+    - name: currency_size
+      size: 1
+      value: '0x03'
+      description: Currency string is 3 bytes
     - name: currency
       size: 3
       value: '0x45, 0x55, 0x52'
@@ -93,6 +97,10 @@ price_tariffs:
     - name: price
       value: '0x3E, 0x99, 0x99, 0x9A'
       description: Price is 0.30
+    - name: currency_size
+      size: 1
+      value: '0x06'
+      description: Currency string is 6 bytes
     - name: currency
       size: 6
       value: '0x52, 0x69, 0x70, 0x70, 0x6C, 0x65'
