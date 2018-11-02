@@ -626,7 +626,7 @@ definitions:
         - disconnected
         - plugged_in
         example: disconnected
-      activeState:
+      chargingState:
         type: string
         enum:
         - not_charging
@@ -660,6 +660,11 @@ definitions:
         format: float
         example: 6.017669677734375
         description: The price in 4-bytes per IEEE 754
+      currencySize:
+        type: number
+        format: integer
+        example: 3
+        description: Size of the currency string
       currency:
         type: string
         example: EUR
@@ -773,6 +778,11 @@ definitions:
         type: string
         example: Check engine
         description: CCM text bytes formatted in UTF-8
+      statusSize:
+        type: number
+        format: integer
+        example: 5
+        description: Size of the status
       status:
         type: string
         example: Alert
@@ -838,19 +848,24 @@ definitions:
         format: integer
         example: 7
         description: Size of the ID string
+      id:
+        type: string
+        example: C1116FA
+        description: ID bytes formatted in UTF-8
       ecuIdSize:
         type: number
         format: integer
         example: 9
         description: Size of the ECU ID string
-      id:
-        type: string
-        example: C1116FA
-        description: ID bytes formatted in UTF-8
       ecuId:
         type: string
         example: RDU_212FR
         description: ECU ID bytes formatted in UTF-8
+      statusSize:
+        type: number
+        format: integer
+        example: 7
+        description: Size of the status string
       status:
         type: string
         example: PENDING
@@ -1731,6 +1746,15 @@ definitions:
         type: string
         example: Brake fluid
         description: CBS text bytes formatted in UTF-8
+      descriptionSize:
+        type: number
+        format: integer
+        example: 0
+        description: Size of the description string
+      description:
+        type: string
+        example: Next change at specified date at the latest.
+        description: Description bytes formatted in UTF-8
   MaintenanceState:
     type: object
     properties:
@@ -2528,3 +2552,6 @@ securityDefinitions:
       tachograph.read: Allowed to get the tachograph state
       power-takeoff.read: Allowed to get the power take-off state
       power-takeoff.write: Allowed to set the power take-off
+      usage.read: Allowed to get the usage state
+      mobile.read: Allowed to get the mobile state
+      hood.read: Allowed to get the hood state
