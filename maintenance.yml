@@ -183,6 +183,13 @@ properties:
       - name: text
         type: string
         description: CBS text bytes formatted in UTF-8
+      - name: description_size
+        type: integer
+        size: 2
+        description: Size of the description string
+      - name: description
+        type: string
+        description: Description bytes formatted in UTF-8
   - id: '0x0C'
     size: 8
     name: brake_fluid_change_date
