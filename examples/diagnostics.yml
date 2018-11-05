@@ -256,7 +256,7 @@ trouble_codes:
       value: '0x43, 0x31, 0x36, 0x33, 0x41, 0x46, 0x41'
       description: ID is "C163AFA"
     - name: ecu_id_size
-      value: '0x09'
+      value: '0x06'
       description: ECU ID size is 6 bytes
     - name: ecu_id
       size: 6
