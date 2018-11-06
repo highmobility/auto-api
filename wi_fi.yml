@@ -55,6 +55,7 @@ message_types:
       - id: '0x04'
         type: enum
         size: 1
+        mandatory: true
         name: wi_fi_enabled
         pretty_name: Wi-Fi Enabled
         title_case_name: wifiEnabled

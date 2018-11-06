@@ -16,7 +16,6 @@ message_types:
         name: weekdays_starting_times
         size: 3
         multiple: true
-        mandatory: true
         items:
           - name: weekday
             type: enum

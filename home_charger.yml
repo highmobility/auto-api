@@ -24,7 +24,6 @@ message_types:
       - id: '0x12'
         name: price_tariffs
         multiple: true
-        mandatory: true
         items:
           - name: pricing_type
             type: enum
