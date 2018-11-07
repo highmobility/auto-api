@@ -2387,15 +2387,146 @@ definitions:
         format: integer
         example: 60
         description: The target speed in km/h
+  SetWindscreenReplacement:
+    type: object
+    properties:
+      windscreenReplacement:
+        type: string
+        enum:
+        - unknown
+        - no_replacement_needed
+        - replacement_needed
+        example: unknown
+  SetWindscreenDamage:
+    type: object
+    properties:
+      damage:
+        type: string
+        enum:
+        - no_impact_detected
+        - impact_but_no_damage_detected
+        - damage_smaller_than_1_inch
+        - damage_larger_than_1_inch
+        example: no_impact_detected
+      damageZoneRow:
+        type: number
+        format: integer
+        example: 4
+        description: The row number
+      damageZoneColumn:
+        type: number
+        format: integer
+        example: 3
+        description: The column number
+  SetPriceTariffs:
+    type: object
+    properties:
+      priceTariffs:
+        type: array
+        items:
+          "$ref": "#/definitions/PriceTariff"
+  PriceTariff:
+    type: object
+    properties:
+      pricingType:
+        type: string
+        enum:
+        - starting_fee
+        - per_minute
+        - per_kwh
+        example: starting_fee
+      price:
+        type: number
+        format: float
+        example: 5
+        description: The price in 4-bytes per IEEE 754
+      currency:
+        type: string
+        example: EUR
+        description: The currency alphabetic code per ISO 4217 or crypto currency
+          symbol
   State:
     type: object
     properties:
       capabilityIdentifier:
-        type: string
-        example: charging
+        "$ref": "#/definitions/CapabilityIdentifier"
       state:
         type: object
         description: The state of the capability
+  HistoricalStates:
+    type: object
+    properties:
+      states:
+        type: array
+        items:
+          description: State
+          "$ref": "#/definitions/State"
+  GetHistoricalStates:
+    type: object
+    properties:
+      capabilityIdentifier:
+        "$ref": "#/definitions/CapabilityIdentifier"
+      startDate:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:10:50.52Z'
+        description: States starting time
+      endDate:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:20:50.52Z'
+        description: States end time
+  CapabilityIdentifier:
+    type: string
+    enum:
+    - browser
+    - capabilities
+    - charging
+    - chassis_settings
+    - climate
+    - cruise_control
+    - dashboard_lights
+    - diagnostics
+    - door_locks
+    - engine
+    - firmware_version
+    - fueling
+    - graphics
+    - historical
+    - home_charger
+    - honk_horn_flash_lights
+    - hood
+    - light_conditions
+    - lights
+    - maintenance
+    - messaging
+    - mobile
+    - navi_destination
+    - notifications
+    - offroad
+    - parking_brake
+    - parking_ticket
+    - power_takeoff
+    - race
+    - rooftop_control
+    - seats
+    - start_stop
+    - tachograph
+    - text_input
+    - theft_alarm
+    - trunk
+    - usage
+    - valet_mode
+    - vehicle_location
+    - vehicle_status
+    - vehicle_time
+    - video_handover
+    - wake_up
+    - weather_conditions
+    - wi_fi
+    - windows
+    - windscreen
+    example: charging
   Error400:
     type: object
     properties:
