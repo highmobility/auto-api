@@ -13,6 +13,10 @@ def ieee(hex_string)
   [hex_string.gsub('0x', '')].pack('H16').unpack('g').first
 end
 
+def ieeeDouble(hex_string)
+  [hex_string.gsub('0x', '').gsub(', ', '')].pack('H16').unpack('G').first
+end
+
 def hex_to_s(hex_string)
   [hex_string.gsub('0x', '').gsub(', ', '')].pack('H*')
 end
@@ -91,11 +95,17 @@ Dir.glob('../*.yml') do |yml_file|
         # -- Handling decimal format
         prop['example'] = decimal(example_val)
         prop['description'] = prop_spec['description']
-      when 'float', 'double' # TODO: test double handling
+      when 'float'
         prop['type'] = 'number'
         prop['format'] = 'float'
         # -- Handling IEE 754 format
         prop['example'] = ieee(example_val)
+        prop['description'] = prop_spec['description']
+      when 'double'
+        prop['type'] = 'number'
+        prop['format'] = 'double'
+        # -- Handling IEE 754 double format
+        prop['example'] = ieeeDouble(example_val)
         prop['description'] = prop_spec['description']
       when 'enum'
         prop['type'] = 'string'
@@ -136,6 +146,12 @@ Dir.glob('../*.yml') do |yml_file|
               item['format'] = 'float'
               # --- Handling IEE 754 format
               item['example'] = ieee(item_example[idx]['value'])
+              item['description'] = prop_item_spec['description']
+            when 'double'
+              item['type'] = 'number'
+              item['format'] = 'double'
+              # --- Handling IEE 754 double format
+              item['example'] = ieeeDouble(item_example[idx]['value'])
               item['description'] = prop_item_spec['description']
             when 'enum'
               item['type'] = 'string'

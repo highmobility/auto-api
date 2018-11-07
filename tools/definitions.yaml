@@ -970,8 +970,16 @@ definitions:
   Coordinates:
     type: object
     properties:
-      latitude: {}
-      longitude: {}
+      latitude:
+        type: number
+        format: double
+        example: 52.520008
+        description: Latitude in 8-bytes per IEEE 754
+      longitude:
+        type: number
+        format: double
+        example: 13.404954
+        description: Longitude in 8-bytes per IEEE 754
   PriceTariffs:
     type: object
     properties:
@@ -1878,13 +1886,13 @@ definitions:
         "$ref": "#/definitions/Coordinates"
       heading:
         type: number
-        format: float
-        example: 6.005218505859375
+        format: double
+        example: 13.370123
         description: Heading in 8-bytes per IEEE 754
       altitude:
         type: number
-        format: float
-        example: 6.011810302734375
+        format: double
+        example: 133.5
         description: Altitude in meters above the WGS 84 reference ellipsoid per double
           precision IEEE 754 formatting
   VehicleStatus:
