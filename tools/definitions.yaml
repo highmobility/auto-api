@@ -1,442 +1,167 @@
 ---
 definitions:
-  VehicleStatus:
+  Capability:
     type: object
     properties:
-      vin:
-        type: string
-        example: JF2SHBDC7CH451869
-        description: The unique Vehicle Identification Number
-      powertrain:
+      capabilityIdentifier:
         type: string
         enum:
-        - unknown
-        - all_electric
-        - combustion_engine
-        - phev
-        - hydrogen
-        - hydrogen_hybrid
-        example: unknown
-      modelName:
-        type: string
-        example: Type X
-        description: The car model name bytes formatted in UTF-8
-      name:
-        type: string
-        example: My Car
-        description: The car name (nickname) bytes formatted in UTF-8
-      licensePlate:
-        type: string
-        example: ABC123
-        description: The license plate bytes formatted in UTF-8
-      salesDesignation:
-        type: string
-        example: Package+
-        description: The sales designation of the model formatted in UTF-8
-      modelYear:
-        type: number
-        format: integer
-        example: 7
-        description: The car model manufacturing year number
-      colorName:
-        type: string
-        example: Estoril Blau
-        description: The color name formatted in UTF-8
-      powerInKw:
-        type: number
-        format: integer
-        example: 0
-        description: The power of the car measured in kw
-      numberOfDoors:
-        type: number
-        format: integer
-        example: 5
-        description: The number of doors
-      numberOfSeats:
-        type: number
-        format: integer
-        example: 5
-        description: The number of seats
-      engineVolume:
-        type: number
-        format: float
-        example: 6.003997802734375
-        description: The engine volume displacement in liters per IEEE 754 formatting
-      engineMaxTorque:
-        type: number
-        format: integer
-        example: 0
-        description: The maximum engine torque in Nm
-      gearbox:
-        type: string
-        enum:
-        - manual
-        - automatic
-        - semi_automatic
-        example: manual
-      displayUnit:
-        type: string
-        enum:
-        - km
-        - miles
-        example: km
-      driverSeatLocation:
-        type: string
-        enum:
-        - left
-        - right
-        - center
-        example: left
-      equipments:
-        type: string
-        example: Parking sensors
-        description: Equipment that the vehicle is equipped with
-      state:
+        - browser
+        - capabilities
+        - charging
+        - chassis_settings
+        - climate
+        - cruise_control
+        - dashboard_lights
+        - diagnostics
+        - door_locks
+        - engine
+        - firmware_version
+        - fueling
+        - graphics
+        - historical
+        - home_charger
+        - honk_horn_flash_lights
+        - hood
+        - light_conditions
+        - lights
+        - maintenance
+        - messaging
+        - mobile
+        - navi_destination
+        - notifications
+        - offroad
+        - parking_brake
+        - parking_ticket
+        - power_takeoff
+        - race
+        - rooftop_control
+        - seats
+        - start_stop
+        - tachograph
+        - text_input
+        - theft_alarm
+        - trunk
+        - usage
+        - valet_mode
+        - vehicle_location
+        - vehicle_status
+        - vehicle_time
+        - video_handover
+        - wake_up
+        - weather_conditions
+        - wi_fi
+        - windows
+        - windscreen
+        example: charging
+      supportedMessageTypes:
         type: array
         items:
-          description: State
-          "$ref": "#/definitions/State"
-  ParkingTicket:
+          description: Array of message type identifiers
+          type: enum
+          enum:
+          - load_url
+          - get_capabilities
+          - get_capability
+          - get_charge_state
+          - start_stop_charging
+          - set_charge_limit
+          - open_close_charging_port
+          - set_charge_mode
+          - set_charging_timers
+          - set_reduction_of_charging_current_times
+          - get_chassis_settings
+          - set_driving_mode
+          - start_stop_sports_chrono
+          - set_spring_rates
+          - set_chassis_position
+          - get_climate_state
+          - change_starting_times
+          - start_stop_hvac
+          - start_stop_defogging
+          - start_stop_defrosting
+          - start_stop_ionising
+          - set_temperature_settings
+          - get_cruise_control_state
+          - activate_deactivate_cruise_control
+          - get_dashboard_lights
+          - get_diagnostics_state
+          - get_lock_state
+          - lock_unlock_doors
+          - get_ignition_state
+          - turn_ignition_on_off
+          - get_firmware_version
+          - get_gas_flap_state
+          - open_close_gas_flap
+          - display_image
+          - get_states
+          - get_home_charger_state
+          - set_charge_current
+          - set_price_tariffs
+          - activate_deactivate_solar_charging
+          - enable_disable_wi_fi_hotspot
+          - authenticate_expire
+          - get_flashers_state
+          - honk_flash
+          - activate_deactivate_emergency_flashers
+          - get_hood_state
+          - get_light_conditions
+          - get_lights_state
+          - control_lights
+          - get_maintenance_state
+          - message_received
+          - get_mobile_state
+          - get_navi_destination
+          - set_navi_destination
+          - notification
+          - clear_notification
+          - notification_action
+          - get_offroad_state
+          - get_parking_brake_state
+          - set_parking_brake
+          - get_parking_ticket
+          - start_parking
+          - end_parking
+          - get_power_takeoff_state
+          - activate_deactivate_power_takeoff
+          - get_race_state
+          - get_rooftop_state
+          - control_rooftop
+          - get_seats_state
+          - get_start_stop_state
+          - activate_deactivate_start_stop
+          - get_tachograph_state
+          - text_input
+          - get_theft_alarm_state
+          - set_theft_alarm_state
+          - get_trunk_state
+          - control_trunk
+          - get_usage
+          - get_valet_mode
+          - activate_deactivate_valet_mode
+          - get_vehicle_location
+          - get_vehicle_status
+          - get_vehicle_time
+          - video_handover
+          - wake_up
+          - get_weather_conditions
+          - get_wi_fi_state
+          - connect_to_network
+          - forget_network
+          - enable_disable_wi_fi
+          - get_windows_state
+          - control_windows
+          - get_windscreen_state
+          - set_windscreen_damage
+          - set_windscreen_replacement_needed
+          - control_wipers
+          example: get_charge_state
+  Capabilities:
     type: object
     properties:
-      parkingTicketState:
-        type: string
-        enum:
-        - ended
-        - started
-        example: ended
-      operatorName:
-        type: string
-        example: Berlin Parking
-        description: Operator Name bytes formatted in UTF-8
-      operatorTicketID:
-        type: string
-        example: '64894233'
-        description: Operator Ticket ID bytes formatted in UTF-8
-      ticketStartTime:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:20:50.52Z'
-        description: The time that parking was started
-      ticketEndTime:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:21:50.52Z'
-        description: The time that parking was ended
-  WindowsOpenPercentages:
-    type: object
-    properties:
-      windowLocation:
-        type: string
-        enum:
-        - front_left
-        - front_right
-        - rear_right
-        - rear_left
-        - hatch
-        example: front_left
-      openPercentage:
-        type: number
-        format: integer
-        example: 56
-        description: Value between 0 and 100
-  WindowsPositions:
-    type: object
-    properties:
-      windowLocation:
-        type: string
-        enum:
-        - front_left
-        - front_right
-        - rear_right
-        - rear_left
-        - hatch
-        example: front_left
-      windowPosition:
-        type: string
-        enum:
-        - closed
-        - opened
-        - intermediate
-        example: closed
-  WindowsState:
-    type: object
-    properties:
-      windowsOpenPercentages:
-        type: array
-        items:
-          description: WindowsOpenPercentages
-          "$ref": "#/definitions/WindowsOpenPercentages"
-      windowsPositions:
-        type: array
-        items:
-          description: WindowsPositions
-          "$ref": "#/definitions/WindowsPositions"
-  VehicleTime:
-    type: object
-    properties:
-      vehicleTime:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:20:50.52Z'
-        description: The vehicle local time
-  StartStopState:
-    type: object
-    properties:
-      startStop:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-  GasFlapState:
-    type: object
-    properties:
-      gasFlap:
-        type: string
-        enum:
-        - closed
-        - open
-        example: closed
-  Coordinates:
-    type: object
-    properties:
-      latitude: {}
-      longitude: {}
-  NaviDestination:
-    type: object
-    properties:
-      coordinates:
-        description: Coordinates
-        "$ref": "#/definitions/Coordinates"
-      destinationName:
-        type: string
-        example: Berlin
-        description: Destination name bytes formatted in UTF-8
-  LightConditions:
-    type: object
-    properties:
-      outsideLight:
-        type: number
-        format: float
-        example: 98737.5
-        description: Measured outside illuminance in lux, formatted as IEEE 754 decimal
-      insideLight:
-        type: number
-        format: float
-        example: 0.37677574157714844
-        description: Measured inside illuminance in lux, formatted as IEEE 754 decimal
-  OffroadState:
-    type: object
-    properties:
-      routeIncline:
-        type: number
-        format: integer
-        example: 0
-        description: The route elevation incline in degrees, which is a negative number
-          for decline
-      wheelSuspension:
-        type: number
-        format: integer
-        example: 50
-        description: The wheel suspension level percentage, whereas 0% is no suspension
-          and 100% maximum suspension
-  TrunkState:
-    type: object
-    properties:
-      trunkLock:
-        type: string
-        enum:
-        - unlocked
-        - locked
-        example: unlocked
-      trunkPosition:
-        type: string
-        enum:
-        - closed
-        - open
-        example: closed
-  ValetMode:
-    type: object
-    properties:
-      valetMode:
-        type: string
-        enum:
-        - deactivated
-        - activated
-        example: deactivated
-  DashboardLights:
-    type: object
-    properties:
-      dashboardLights:
-        type: array
-        items:
-          description: DashboardLights
-          "$ref": "#/definitions/DashboardLights"
-  LightsState:
-    type: object
-    properties:
-      frontExteriorLight:
-        type: string
-        enum:
-        - inactive
-        - active
-        - active_with_full_beam
-        example: inactive
-      rearExteriorLight:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      interiorLight:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      ambientLight:
-        type: string
-        example: "#ccff88"
-        description: The ambient light hex string
-      reverseLight:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      emergencyBrakeLight:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-  CurrentSpringRates:
-    type: object
-    properties:
-      axle:
-        type: string
-        enum:
-        - front_axle
-        - rear_axle
-        example: front_axle
-      value:
-        type: number
-        format: integer
-        example: 21
-        description: The suspension spring rate in N/mm
-  MaximumSpringRates:
-    type: object
-    properties:
-      axle:
-        type: string
-        enum:
-        - front_axle
-        - rear_axle
-        example: front_axle
-      value:
-        type: number
-        format: integer
-        example: 37
-        description: The maximum possible value for the spring rate
-  MinimumSpringRates:
-    type: object
-    properties:
-      axle:
-        type: string
-        enum:
-        - front_axle
-        - rear_axle
-        example: front_axle
-      value:
-        type: number
-        format: integer
-        example: 16
-        description: The minimum possible value for the spring rate
-  ChassisSettings:
-    type: object
-    properties:
-      drivingMode:
-        type: string
-        enum:
-        - regular
-        - eco
-        - sport
-        - sport_plus
-        example: regular
-      sportChrono:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      currentSpringRates:
-        type: array
-        items:
-          description: CurrentSpringRates
-          "$ref": "#/definitions/CurrentSpringRates"
-      maximumSpringRates:
-        type: array
-        items:
-          description: MaximumSpringRates
-          "$ref": "#/definitions/MaximumSpringRates"
-      minimumSpringRates:
-        type: array
-        items:
-          description: MinimumSpringRates
-          "$ref": "#/definitions/MinimumSpringRates"
-      currentChassisPosition:
-        type: number
-        format: integer
-        example: 25
-        description: The chassis position in mm calculated from the lowest point
-      maximumChassisPosition:
-        type: number
-        format: integer
-        example: 55
-        description: 
-      minimumChassisPosition:
-        type: number
-        format: integer
-        example: 228
-        description: The minimum possible value for the chassis position
-  ActionItems:
-    type: object
-    properties:
-      identifier:
-        type: number
-        format: integer
-        example: 27
-        description: 
-      name:
-        type: string
-        example: Open
-        description: Name of the action, bytes in UTF8.
-  ! '':
-    type: object
-    properties:
-      text:
-        type: string
-        example: Open Garage
-        description: Text for the notification, bytes in UTF8.
-      actionItems:
-        description: ActionItems
-        "$ref": "#/definitions/ActionItems"
-      receivedAction:
-        type: number
-        format: integer
-        example: 42
-        description: 
-  HoodState:
-    type: object
-    properties:
-      position:
-        type: string
-        enum:
-        - closed
-        - open
-        - intermediate
-        example: closed
+      capability:
+        description: Capability
+        "$ref": "#/definitions/Capability"
   DepartureTimes:
     type: object
     properties:
@@ -636,126 +361,223 @@ definitions:
         - charging_paused
         - charging_error
         example: not_charging
-  MobileState:
+  CurrentSpringRates:
     type: object
     properties:
-      connection:
+      axle:
         type: string
         enum:
-        - disconnected
-        - connected
-        example: disconnected
-  PriceTariffs:
-    type: object
-    properties:
-      pricingType:
-        type: string
-        enum:
-        - starting_fee
-        - per_minute
-        - per_kwh
-        example: starting_fee
-      price:
-        type: number
-        format: float
-        example: 6.017669677734375
-        description: The price in 4-bytes per IEEE 754
-      currencySize:
+        - front_axle
+        - rear_axle
+        example: front_axle
+      value:
         type: number
         format: integer
-        example: 3
-        description: Size of the currency string
-      currency:
-        type: string
-        example: EUR
-        description: The currency alphabetic code per ISO 4217 or crypto currency
-          symbol
-  HomeChargerState:
+        example: 21
+        description: The suspension spring rate in N/mm
+  MaximumSpringRates:
     type: object
     properties:
-      charging:
+      axle:
         type: string
         enum:
-        - disconnected
-        - plugged_in
-        - charging
-        example: disconnected
-      authenticationMechanism:
-        type: string
-        enum:
-        - pin
-        - app
-        example: pin
-      plugType:
-        type: string
-        enum:
-        - type_1
-        - type_2
-        - ccs
-        - chademo
-        example: type_1
-      chargingPower:
+        - front_axle
+        - rear_axle
+        example: front_axle
+      value:
         type: number
-        format: float
-        example: 24.0277099609375
-        description: Charging power in kW formatted in 4-bytes per IEEE 754
-      solarCharging:
+        format: integer
+        example: 37
+        description: The maximum possible value for the spring rate
+  MinimumSpringRates:
+    type: object
+    properties:
+      axle:
         type: string
         enum:
-        - deactivated
-        - activated
-        example: deactivated
-      hotspotEnabled:
-        type: string
-        enum:
-        - disabled
-        - enabled
-        example: disabled
-      hotspotSSID:
-        type: string
-        example: Charger 7612
-        description: The Wi-Fi Hotspot SSID formatted in UTF-8
-      wiFiHotspotSecurity:
-        type: string
-        enum:
-        - none
-        - wep
-        - wpa
-        - wpa2_personal
-        example: none
-      wiFiHotspotPassword:
-        type: string
-        example: ZW3vARNUBe
-        description: The Wi-Fi Hotspot password formatted in UTF-8
-      authenticationState:
-        type: string
-        enum:
-        - unauthenticated
-        - authenticated
-        example: unauthenticated
-      chargeCurrentDc:
+        - front_axle
+        - rear_axle
+        example: front_axle
+      value:
         type: number
-        format: float
-        example: 1.5000228881835938
-        description: The charge current (DC) per IEEE 754
-      maximumChargeCurrent:
-        type: number
-        format: float
-        example: 1.5039291381835938
-        description: The maximum possible charge current per IEEE 754
-      minimumChargeCurrent:
-        type: number
-        format: float
-        example: 1.7632684311639463e-38
-        description: The minimal possible charge current per IEEE 754
-      coordinates:
-        description: Coordinates
-        "$ref": "#/definitions/Coordinates"
-      priceTariffs:
+        format: integer
+        example: 16
+        description: The minimum possible value for the spring rate
+  ChassisSettings:
+    type: object
+    properties:
+      drivingMode:
+        type: string
+        enum:
+        - regular
+        - eco
+        - sport
+        - sport_plus
+        example: regular
+      sportChrono:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      currentSpringRates:
         type: array
         items:
-          description: PriceTariffs
-          "$ref": "#/definitions/PriceTariffs"
+          description: CurrentSpringRates
+          "$ref": "#/definitions/CurrentSpringRates"
+      maximumSpringRates:
+        type: array
+        items:
+          description: MaximumSpringRates
+          "$ref": "#/definitions/MaximumSpringRates"
+      minimumSpringRates:
+        type: array
+        items:
+          description: MinimumSpringRates
+          "$ref": "#/definitions/MinimumSpringRates"
+      currentChassisPosition:
+        type: number
+        format: integer
+        example: 25
+        description: The chassis position in mm calculated from the lowest point
+      maximumChassisPosition:
+        type: number
+        format: integer
+        example: 55
+        description: 
+      minimumChassisPosition:
+        type: number
+        format: integer
+        example: 228
+        description: The minimum possible value for the chassis position
+  HvacWeekdayStartingTimes:
+    type: object
+    properties:
+      weekday:
+        type: string
+        enum:
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+        - sunday
+        - automatic
+        example: monday
+      hour:
+        type: number
+        format: integer
+        example: 18
+        description: Value between 0 and 23
+      minute:
+        type: number
+        format: integer
+        example: 30
+        description: Value between 0 and 59
+  ClimateState:
+    type: object
+    properties:
+      insideTemperature:
+        type: number
+        format: float
+        example: 24.0745849609375
+        description: The inside temperature in celsius per IEEE 754 formatting
+      outsideTemperature:
+        type: number
+        format: float
+        example: 24.0316162109375
+        description: The outside temperature in celsius per IEEE 754 formatting
+      driverTemperatureSetting:
+        type: number
+        format: float
+        example: 24.0843505859375
+        description: The driver temperature setting in celsius per IEEE 754 formatting
+      passengerTemperatureSetting:
+        type: number
+        format: float
+        example: 24.0843505859375
+        description: The passenger temperature setting in celsius per IEEE 754 formatting
+      hvacState:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      defoggingState:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      defrostingState:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      ionisingState:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      defrostingTemperature:
+        type: number
+        format: float
+        example: 24.0843505859375
+        description: The defrosting temperature setting in celsius per IEEE 754 formatting
+      hvacWeekdayStartingTimes:
+        type: array
+        items:
+          description: HvacWeekdayStartingTimes
+          "$ref": "#/definitions/HvacWeekdayStartingTimes"
+      rearTemperatureSetting:
+        type: number
+        format: float
+        example: 24.0843505859375
+        description: The rear temperature in celsius per IEEE 754 formatting
+  CruiseControlState:
+    type: object
+    properties:
+      cruiseControl:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      limiter:
+        type: string
+        enum:
+        - not_set
+        - higher_speed_requested
+        - lower_speed_requested
+        - speed_fixed
+        example: not_set
+      targetSpeed:
+        type: number
+        format: integer
+        example: 0
+        description: The target speed in km/h
+      acc:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      accTargetSpeed:
+        type: number
+        format: integer
+        example: 0
+        description: The target speed in km/h of the Adaptive Cruise Control
+  DashboardLights:
+    type: object
+    properties:
+      dashboardLights:
+        type: array
+        items:
+          description: DashboardLights
+          "$ref": "#/definitions/DashboardLights"
   CheckControlMessages:
     type: object
     properties:
@@ -1009,6 +831,892 @@ definitions:
         items:
           description: TroubleCodes
           "$ref": "#/definitions/TroubleCodes"
+  InsideLocks:
+    type: object
+    properties:
+      doorLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        - hatch
+        example: front_left
+      lockState:
+        type: string
+        enum:
+        - unlocked
+        - locked
+        example: unlocked
+  Locks:
+    type: object
+    properties:
+      doorLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        - hatch
+        example: front_left
+      lockState:
+        type: string
+        enum:
+        - unlocked
+        - locked
+        example: unlocked
+  Positions:
+    type: object
+    properties:
+      doorLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        - hatch
+        example: front_left
+      position:
+        type: string
+        enum:
+        - closed
+        - open
+        example: closed
+  LockState:
+    type: object
+    properties:
+      insideLocks:
+        type: array
+        items:
+          description: InsideLocks
+          "$ref": "#/definitions/InsideLocks"
+      locks:
+        type: array
+        items:
+          description: Locks
+          "$ref": "#/definitions/Locks"
+      positions:
+        type: array
+        items:
+          description: Positions
+          "$ref": "#/definitions/Positions"
+  IgnitionState:
+    type: object
+    properties:
+      ignition:
+        type: string
+        enum:
+        - ignition_off
+        - ignition_on
+        example: ignition_off
+      accessoriesIgnition:
+        type: string
+        enum:
+        - powered_off
+        - powered_on
+        example: powered_off
+  HmkitVersion:
+    type: object
+    properties:
+      versionMajor:
+        type: number
+        format: integer
+        example: 1
+        description: HMKit version major number
+      versionMinor:
+        type: number
+        format: integer
+        example: 15
+        description: HMKit version minor number
+      versionPatch:
+        type: number
+        format: integer
+        example: 33
+        description: HMKit version patch number
+  FirmwareVersion:
+    type: object
+    properties:
+      HMKitVersion:
+        description: HmkitVersion
+        "$ref": "#/definitions/HmkitVersion"
+      HMKitBuildName:
+        type: string
+        example: btstack-uart
+        description: HMKit version build name bytes formatted in UTF-8
+      applicationVersion:
+        type: string
+        example: v1.5-prod
+        description: Application version bytes formatted in UTF-8
+  GasFlapState:
+    type: object
+    properties:
+      gasFlap:
+        type: string
+        enum:
+        - closed
+        - open
+        example: closed
+  States:
+    type: object
+    properties:
+      states:
+        type: array
+        items:
+          description: A state of the vehicle
+          type: object
+  Coordinates:
+    type: object
+    properties:
+      latitude: {}
+      longitude: {}
+  PriceTariffs:
+    type: object
+    properties:
+      pricingType:
+        type: string
+        enum:
+        - starting_fee
+        - per_minute
+        - per_kwh
+        example: starting_fee
+      price:
+        type: number
+        format: float
+        example: 6.017669677734375
+        description: The price in 4-bytes per IEEE 754
+      currencySize:
+        type: number
+        format: integer
+        example: 3
+        description: Size of the currency string
+      currency:
+        type: string
+        example: EUR
+        description: The currency alphabetic code per ISO 4217 or crypto currency
+          symbol
+  HomeChargerState:
+    type: object
+    properties:
+      charging:
+        type: string
+        enum:
+        - disconnected
+        - plugged_in
+        - charging
+        example: disconnected
+      authenticationMechanism:
+        type: string
+        enum:
+        - pin
+        - app
+        example: pin
+      plugType:
+        type: string
+        enum:
+        - type_1
+        - type_2
+        - ccs
+        - chademo
+        example: type_1
+      chargingPower:
+        type: number
+        format: float
+        example: 24.0277099609375
+        description: Charging power in kW formatted in 4-bytes per IEEE 754
+      solarCharging:
+        type: string
+        enum:
+        - deactivated
+        - activated
+        example: deactivated
+      hotspotEnabled:
+        type: string
+        enum:
+        - disabled
+        - enabled
+        example: disabled
+      hotspotSSID:
+        type: string
+        example: Charger 7612
+        description: The Wi-Fi Hotspot SSID formatted in UTF-8
+      wiFiHotspotSecurity:
+        type: string
+        enum:
+        - none
+        - wep
+        - wpa
+        - wpa2_personal
+        example: none
+      wiFiHotspotPassword:
+        type: string
+        example: ZW3vARNUBe
+        description: The Wi-Fi Hotspot password formatted in UTF-8
+      authenticationState:
+        type: string
+        enum:
+        - unauthenticated
+        - authenticated
+        example: unauthenticated
+      chargeCurrentDc:
+        type: number
+        format: float
+        example: 1.5000228881835938
+        description: The charge current (DC) per IEEE 754
+      maximumChargeCurrent:
+        type: number
+        format: float
+        example: 1.5039291381835938
+        description: The maximum possible charge current per IEEE 754
+      minimumChargeCurrent:
+        type: number
+        format: float
+        example: 1.7632684311639463e-38
+        description: The minimal possible charge current per IEEE 754
+      coordinates:
+        description: Coordinates
+        "$ref": "#/definitions/Coordinates"
+      priceTariffs:
+        type: array
+        items:
+          description: PriceTariffs
+          "$ref": "#/definitions/PriceTariffs"
+  FlashersState:
+    type: object
+    properties:
+      flashers:
+        type: string
+        enum:
+        - inactive
+        - emergency_flasher_active
+        - left_flasher_active
+        - right_flasher_active
+        example: inactive
+  HoodState:
+    type: object
+    properties:
+      position:
+        type: string
+        enum:
+        - closed
+        - open
+        - intermediate
+        example: closed
+  LightConditions:
+    type: object
+    properties:
+      outsideLight:
+        type: number
+        format: float
+        example: 98737.5
+        description: Measured outside illuminance in lux, formatted as IEEE 754 decimal
+      insideLight:
+        type: number
+        format: float
+        example: 0.37677574157714844
+        description: Measured inside illuminance in lux, formatted as IEEE 754 decimal
+  LightsState:
+    type: object
+    properties:
+      frontExteriorLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        - active_with_full_beam
+        example: inactive
+      rearExteriorLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      interiorLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      ambientLight:
+        type: string
+        example: "#ccff88"
+        description: The ambient light hex string
+      reverseLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      emergencyBrakeLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+  ConditionBasedServices:
+    type: object
+    properties:
+      year:
+        type: number
+        format: integer
+        example: 19
+        description: Value between 0 and 99, which corresponds to 2000-2099
+      month:
+        type: number
+        format: integer
+        example: 5
+        description: Value between 1 and 12
+      identifier:
+        type: number
+        format: integer
+        example: 0
+        description: CBS identifier
+      dueStatus:
+        type: string
+        enum:
+        - ok
+        - pending
+        - overdue
+        example: ok
+      textSize:
+        type: number
+        format: integer
+        example: 0
+        description: Size of the CBS text
+      text:
+        type: string
+        example: Brake fluid
+        description: CBS text bytes formatted in UTF-8
+      descriptionSize:
+        type: number
+        format: integer
+        example: 0
+        description: Size of the description string
+      description:
+        type: string
+        example: Next change at specified date at the latest.
+        description: Description bytes formatted in UTF-8
+  MaintenanceState:
+    type: object
+    properties:
+      daysToNextService:
+        type: number
+        format: integer
+        example: 1
+        description: Number of days until next servicing of the car, whereas negative
+          is overdue
+      kilometersToNextService:
+        type: number
+        format: integer
+        example: 0
+        description: The amount of kilometers until next servicing of the car
+      cbsReportsCount:
+        type: number
+        format: integer
+        example: 3
+        description: The number of CBS reports
+      monthsToExhaustInpection:
+        type: number
+        format: integer
+        example: 5
+        description: Number of months until exhaust inspection
+      teleserviceAvailability:
+        type: string
+        enum:
+        - pending
+        - idle
+        - succesful
+        - error
+        example: pending
+      serviceDistanceThreshold:
+        type: number
+        format: integer
+        example: 1
+        description: Distance threshold for Service
+      serviceTimeThreshold:
+        type: number
+        format: integer
+        example: 4
+        description: Time threshold, in weeks, for Service
+      automaticTeleserviceCallDate:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:21:50.52Z'
+      teleserviceBatteryCallDate:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:21:50.52Z'
+      nextInspectionDate:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:21:50.52Z'
+      conditionBasedServices:
+        description: ConditionBasedServices
+        "$ref": "#/definitions/ConditionBasedServices"
+      brakeFluidChangeDate:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:21:50.52Z'
+  MobileState:
+    type: object
+    properties:
+      connection:
+        type: string
+        enum:
+        - disconnected
+        - connected
+        example: disconnected
+  NaviDestination:
+    type: object
+    properties:
+      coordinates:
+        description: Coordinates
+        "$ref": "#/definitions/Coordinates"
+      destinationName:
+        type: string
+        example: Berlin
+        description: Destination name bytes formatted in UTF-8
+  ActionItems:
+    type: object
+    properties:
+      identifier:
+        type: number
+        format: integer
+        example: 27
+        description: 
+      name:
+        type: string
+        example: Open
+        description: Name of the action, bytes in UTF8.
+  ! '':
+    type: object
+    properties:
+      text:
+        type: string
+        example: Open Garage
+        description: Text for the notification, bytes in UTF8.
+      actionItems:
+        description: ActionItems
+        "$ref": "#/definitions/ActionItems"
+      receivedAction:
+        type: number
+        format: integer
+        example: 42
+        description: 
+  OffroadState:
+    type: object
+    properties:
+      routeIncline:
+        type: number
+        format: integer
+        example: 0
+        description: The route elevation incline in degrees, which is a negative number
+          for decline
+      wheelSuspension:
+        type: number
+        format: integer
+        example: 50
+        description: The wheel suspension level percentage, whereas 0% is no suspension
+          and 100% maximum suspension
+  ParkingBrakeState:
+    type: object
+    properties:
+      parkingBrake:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+  ParkingTicket:
+    type: object
+    properties:
+      parkingTicketState:
+        type: string
+        enum:
+        - ended
+        - started
+        example: ended
+      operatorName:
+        type: string
+        example: Berlin Parking
+        description: Operator Name bytes formatted in UTF-8
+      operatorTicketID:
+        type: string
+        example: '64894233'
+        description: Operator Ticket ID bytes formatted in UTF-8
+      ticketStartTime:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:20:50.52Z'
+        description: The time that parking was started
+      ticketEndTime:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:21:50.52Z'
+        description: The time that parking was ended
+  PowerTakeoffState:
+    type: object
+    properties:
+      powerTakeoff:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      powerTakeoffEngaged:
+        type: string
+        enum:
+        - not_engaged
+        - engaged
+        example: not_engaged
+  Accelerations:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - longitudinal_acceleration
+        - lateral_acceleration
+        - front_lateral_acceleration
+        - rear_lateral_acceleration
+        example: longitudinal_acceleration
+      gForce:
+        type: number
+        format: float
+        example: 1.5028610229492188
+        description: The accelaration in g-force per IEEE 754
+  BrakeTorqueVectorings:
+    type: object
+    properties:
+      axle:
+        type: string
+        enum:
+        - front_axle
+        - rear_axle
+        example: front_axle
+      vectoring:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+  RaceState:
+    type: object
+    properties:
+      accelerations:
+        type: array
+        items:
+          description: Accelerations
+          "$ref": "#/definitions/Accelerations"
+      understeering:
+        type: number
+        format: integer
+        example: 19
+        description: The understeering percentage between 0-100% whereas up to 20%
+          is considered OK, up to 30% marginal, over 30% critical
+      oversteering:
+        type: number
+        format: integer
+        example: 0
+        description: The oversteering percentage between 0-100% whereas up to 20%
+          is considered OK, up to 30% marginal, over 30% critical
+      gasPedalPosition:
+        type: number
+        format: integer
+        example: 98
+        description: The gas pedal position between 0-100%, whereas 100% is full throttle
+      steeringAngle:
+        type: number
+        format: integer
+        example: 10
+        description: The steering angle in degrees, whereas 0 degrees is straight
+          ahead, positive number to the right and negative number to the left
+      brakePressure:
+        type: number
+        format: float
+        example: 24.0784912109375
+        description: Brake pressure in bar, whereas 100bar is max value, full brake
+      yawRate:
+        type: number
+        format: float
+        example: 6.026092529296875
+        description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
+      rearSuspensionSteering:
+        type: number
+        format: integer
+        example: 3
+        description: Rear suspension steering in degrees
+      electronicStabilityProgram:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      brakeTorqueVectorings:
+        type: array
+        items:
+          description: BrakeTorqueVectorings
+          "$ref": "#/definitions/BrakeTorqueVectorings"
+      gearMode:
+        type: string
+        enum:
+        - manual
+        - park
+        - reverse
+        - neutral
+        - drive
+        - low_gear
+        - sport
+        example: manual
+      selectedGear:
+        type: number
+        format: integer
+        example: 4
+        description: The selected gear value, if any
+      brakePedalPosition:
+        type: number
+        format: integer
+        example: 0
+        description: The brake pedal position between 0-100%, wheras 100% is full
+          brakes
+      brakePedalSwitch:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      clutchPedalSwitch:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      acceleratorPedalIdleSwitch:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      acceleratorPedalKickdownSwitch:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      vehicleMoving:
+        type: string
+        enum:
+        - not_moving
+        - moving
+        example: not_moving
+  RooftopState:
+    type: object
+    properties:
+      dimming:
+        type: number
+        format: integer
+        example: 100
+        description: Percentage value between 0-100 whereas 100 is opaque
+      position:
+        type: number
+        format: integer
+        example: 0
+        description: Percentage value between 0-100 whereas 100 is fully open
+      convertibleRoofState:
+        type: string
+        enum:
+        - closed
+        - open
+        - emergency_locked
+        - closed_secured
+        - open_secured
+        - hard_top_mounted
+        - intermediate_position
+        - loading_position
+        - loading_position_immediate
+        example: closed
+      sunroofTiltState:
+        type: string
+        enum:
+        - closed
+        - tilted
+        - half_tilted
+        example: closed
+  PersonsDetected:
+    type: object
+    properties:
+      seatLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        - rear_center
+        example: front_left
+      personDetected:
+        type: string
+        enum:
+        - not_detected
+        - detected
+        example: not_detected
+  SeatbeltsFastened:
+    type: object
+    properties:
+      seatLocation:
+        type: string
+        enum:
+        - front_left
+        - front_right
+        - rear_right
+        - rear_left
+        - rear_center
+        example: front_left
+      seatbeltFastened:
+        type: string
+        enum:
+        - not_fastened
+        - fastened
+        example: not_fastened
+  SeatsState:
+    type: object
+    properties:
+      personsDetected:
+        type: array
+        items:
+          description: PersonsDetected
+          "$ref": "#/definitions/PersonsDetected"
+      seatbeltsFastened:
+        type: array
+        items:
+          description: SeatbeltsFastened
+          "$ref": "#/definitions/SeatbeltsFastened"
+  StartStopState:
+    type: object
+    properties:
+      startStop:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+  DriversWorkingStates:
+    type: object
+    properties:
+      driverNumber:
+        type: number
+        format: integer
+        example: 1
+        description: The driver number
+      workingState:
+        type: string
+        enum:
+        - resting
+        - driver_available
+        - working
+        - driving
+        example: resting
+  DriversTimeStates:
+    type: object
+    properties:
+      driverNumber:
+        type: number
+        format: integer
+        example: 1
+        description: The driver number
+      timeState:
+        type: string
+        enum:
+        - normal
+        - 15_min_before_4
+        - 4_reached
+        - 15_min_before_9
+        - 9_reached
+        - 15_min_before_16
+        - 16_reached
+        example: normal
+  DriversCards:
+    type: object
+    properties:
+      driverNumber:
+        type: number
+        format: integer
+        example: 1
+        description: The driver number
+      card:
+        type: string
+        enum:
+        - not_present
+        - present
+        example: not_present
+  TachographState:
+    type: object
+    properties:
+      driversWorkingStates:
+        type: array
+        items:
+          description: DriversWorkingStates
+          "$ref": "#/definitions/DriversWorkingStates"
+      driversTimeStates:
+        type: array
+        items:
+          description: DriversTimeStates
+          "$ref": "#/definitions/DriversTimeStates"
+      driversCards:
+        type: array
+        items:
+          description: DriversCards
+          "$ref": "#/definitions/DriversCards"
+      vehicleMotion:
+        type: string
+        enum:
+        - not_detected
+        - detected
+        example: not_detected
+      vehicleOverspeed:
+        type: string
+        enum:
+        - no_overspeed
+        - overspeed
+        example: no_overspeed
+      vehicleDirection:
+        type: string
+        enum:
+        - forward
+        - reverse
+        example: forward
+      vehicleSpeed:
+        type: number
+        format: integer
+        example: 0
+        description: The tachograph vehicle speed in km/h
+  TheftAlarmState:
+    type: object
+    properties:
+      theftAlarm:
+        type: string
+        enum:
+        - not_armed
+        - armed
+        - triggered
+        example: not_armed
+  TrunkState:
+    type: object
+    properties:
+      trunkLock:
+        type: string
+        enum:
+        - unlocked
+        - locked
+        example: unlocked
+      trunkPosition:
+        type: string
+        enum:
+        - closed
+        - open
+        example: closed
   DrivingModesActivationPeriods:
     type: object
     properties:
@@ -1153,29 +1861,145 @@ definitions:
         format: float
         example: 6.029388427734375
         description: Current fuel consumption in liters/100km per IEEE 754 formatting
-  PowerTakeoffState:
+  ValetMode:
     type: object
     properties:
-      powerTakeoff:
+      valetMode:
         type: string
         enum:
-        - inactive
-        - active
-        example: inactive
-      powerTakeoffEngaged:
-        type: string
-        enum:
-        - not_engaged
-        - engaged
-        example: not_engaged
-  States:
+        - deactivated
+        - activated
+        example: deactivated
+  VehicleLocation:
     type: object
     properties:
-      states:
+      coordinates:
+        description: Coordinates
+        "$ref": "#/definitions/Coordinates"
+      heading:
+        type: number
+        format: float
+        example: 6.005218505859375
+        description: Heading in 8-bytes per IEEE 754
+      altitude:
+        type: number
+        format: float
+        example: 6.011810302734375
+        description: Altitude in meters above the WGS 84 reference ellipsoid per double
+          precision IEEE 754 formatting
+  VehicleStatus:
+    type: object
+    properties:
+      vin:
+        type: string
+        example: JF2SHBDC7CH451869
+        description: The unique Vehicle Identification Number
+      powertrain:
+        type: string
+        enum:
+        - unknown
+        - all_electric
+        - combustion_engine
+        - phev
+        - hydrogen
+        - hydrogen_hybrid
+        example: unknown
+      modelName:
+        type: string
+        example: Type X
+        description: The car model name bytes formatted in UTF-8
+      name:
+        type: string
+        example: My Car
+        description: The car name (nickname) bytes formatted in UTF-8
+      licensePlate:
+        type: string
+        example: ABC123
+        description: The license plate bytes formatted in UTF-8
+      salesDesignation:
+        type: string
+        example: Package+
+        description: The sales designation of the model formatted in UTF-8
+      modelYear:
+        type: number
+        format: integer
+        example: 7
+        description: The car model manufacturing year number
+      colorName:
+        type: string
+        example: Estoril Blau
+        description: The color name formatted in UTF-8
+      powerInKw:
+        type: number
+        format: integer
+        example: 0
+        description: The power of the car measured in kw
+      numberOfDoors:
+        type: number
+        format: integer
+        example: 5
+        description: The number of doors
+      numberOfSeats:
+        type: number
+        format: integer
+        example: 5
+        description: The number of seats
+      engineVolume:
+        type: number
+        format: float
+        example: 6.003997802734375
+        description: The engine volume displacement in liters per IEEE 754 formatting
+      engineMaxTorque:
+        type: number
+        format: integer
+        example: 0
+        description: The maximum engine torque in Nm
+      gearbox:
+        type: string
+        enum:
+        - manual
+        - automatic
+        - semi_automatic
+        example: manual
+      displayUnit:
+        type: string
+        enum:
+        - km
+        - miles
+        example: km
+      driverSeatLocation:
+        type: string
+        enum:
+        - left
+        - right
+        - center
+        example: left
+      equipments:
+        type: string
+        example: Parking sensors
+        description: Equipment that the vehicle is equipped with
+      state:
         type: array
         items:
-          description: A state of the vehicle
-          type: object
+          description: State
+          "$ref": "#/definitions/State"
+  VehicleTime:
+    type: object
+    properties:
+      vehicleTime:
+        type: string
+        format: date-time
+        example: '2018-04-12T23:20:50.52Z'
+        description: The vehicle local time
+  WeatherConditions:
+    type: object
+    properties:
+      rainIntensity:
+        type: number
+        format: integer
+        example: 100
+        description: Measured raining intensity percentage, whereas 0% is no rain
+          and 100% is maximum rain
   WiFiState:
     type: object
     properties:
@@ -1203,652 +2027,55 @@ definitions:
         - wpa
         - wpa2_personal
         example: none
-  VehicleLocation:
+  WindowsOpenPercentages:
     type: object
     properties:
-      coordinates:
-        description: Coordinates
-        "$ref": "#/definitions/Coordinates"
-      heading:
-        type: number
-        format: float
-        example: 6.005218505859375
-        description: Heading in 8-bytes per IEEE 754
-      altitude:
-        type: number
-        format: float
-        example: 6.011810302734375
-        description: Altitude in meters above the WGS 84 reference ellipsoid per double
-          precision IEEE 754 formatting
-  Accelerations:
-    type: object
-    properties:
-      type:
-        type: string
-        enum:
-        - longitudinal_acceleration
-        - lateral_acceleration
-        - front_lateral_acceleration
-        - rear_lateral_acceleration
-        example: longitudinal_acceleration
-      gForce:
-        type: number
-        format: float
-        example: 1.5028610229492188
-        description: The accelaration in g-force per IEEE 754
-  BrakeTorqueVectorings:
-    type: object
-    properties:
-      axle:
-        type: string
-        enum:
-        - front_axle
-        - rear_axle
-        example: front_axle
-      vectoring:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-  RaceState:
-    type: object
-    properties:
-      accelerations:
-        type: array
-        items:
-          description: Accelerations
-          "$ref": "#/definitions/Accelerations"
-      understeering:
-        type: number
-        format: integer
-        example: 19
-        description: The understeering percentage between 0-100% whereas up to 20%
-          is considered OK, up to 30% marginal, over 30% critical
-      oversteering:
-        type: number
-        format: integer
-        example: 0
-        description: The oversteering percentage between 0-100% whereas up to 20%
-          is considered OK, up to 30% marginal, over 30% critical
-      gasPedalPosition:
-        type: number
-        format: integer
-        example: 98
-        description: The gas pedal position between 0-100%, whereas 100% is full throttle
-      steeringAngle:
-        type: number
-        format: integer
-        example: 10
-        description: The steering angle in degrees, whereas 0 degrees is straight
-          ahead, positive number to the right and negative number to the left
-      brakePressure:
-        type: number
-        format: float
-        example: 24.0784912109375
-        description: Brake pressure in bar, whereas 100bar is max value, full brake
-      yawRate:
-        type: number
-        format: float
-        example: 6.026092529296875
-        description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
-      rearSuspensionSteering:
-        type: number
-        format: integer
-        example: 3
-        description: Rear suspension steering in degrees
-      electronicStabilityProgram:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      brakeTorqueVectorings:
-        type: array
-        items:
-          description: BrakeTorqueVectorings
-          "$ref": "#/definitions/BrakeTorqueVectorings"
-      gearMode:
-        type: string
-        enum:
-        - manual
-        - park
-        - reverse
-        - neutral
-        - drive
-        - low_gear
-        - sport
-        example: manual
-      selectedGear:
-        type: number
-        format: integer
-        example: 4
-        description: The selected gear value, if any
-      brakePedalPosition:
-        type: number
-        format: integer
-        example: 0
-        description: The brake pedal position between 0-100%, wheras 100% is full
-          brakes
-      brakePedalSwitch:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      clutchPedalSwitch:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      acceleratorPedalIdleSwitch:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      acceleratorPedalKickdownSwitch:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      vehicleMoving:
-        type: string
-        enum:
-        - not_moving
-        - moving
-        example: not_moving
-  HmkitVersion:
-    type: object
-    properties:
-      versionMajor:
-        type: number
-        format: integer
-        example: 1
-        description: HMKit version major number
-      versionMinor:
-        type: number
-        format: integer
-        example: 15
-        description: HMKit version minor number
-      versionPatch:
-        type: number
-        format: integer
-        example: 33
-        description: HMKit version patch number
-  FirmwareVersion:
-    type: object
-    properties:
-      HMKitVersion:
-        description: HmkitVersion
-        "$ref": "#/definitions/HmkitVersion"
-      HMKitBuildName:
-        type: string
-        example: btstack-uart
-        description: HMKit version build name bytes formatted in UTF-8
-      applicationVersion:
-        type: string
-        example: v1.5-prod
-        description: Application version bytes formatted in UTF-8
-  TheftAlarmState:
-    type: object
-    properties:
-      theftAlarm:
-        type: string
-        enum:
-        - not_armed
-        - armed
-        - triggered
-        example: not_armed
-  PersonsDetected:
-    type: object
-    properties:
-      seatLocation:
+      windowLocation:
         type: string
         enum:
         - front_left
         - front_right
         - rear_right
         - rear_left
-        - rear_center
+        - hatch
         example: front_left
-      personDetected:
-        type: string
-        enum:
-        - not_detected
-        - detected
-        example: not_detected
-  SeatbeltsFastened:
+      openPercentage:
+        type: number
+        format: integer
+        example: 56
+        description: Value between 0 and 100
+  WindowsPositions:
     type: object
     properties:
-      seatLocation:
+      windowLocation:
         type: string
         enum:
         - front_left
         - front_right
         - rear_right
         - rear_left
-        - rear_center
+        - hatch
         example: front_left
-      seatbeltFastened:
-        type: string
-        enum:
-        - not_fastened
-        - fastened
-        example: not_fastened
-  SeatsState:
-    type: object
-    properties:
-      personsDetected:
-        type: array
-        items:
-          description: PersonsDetected
-          "$ref": "#/definitions/PersonsDetected"
-      seatbeltsFastened:
-        type: array
-        items:
-          description: SeatbeltsFastened
-          "$ref": "#/definitions/SeatbeltsFastened"
-  DriversWorkingStates:
-    type: object
-    properties:
-      driverNumber:
-        type: number
-        format: integer
-        example: 1
-        description: The driver number
-      workingState:
-        type: string
-        enum:
-        - resting
-        - driver_available
-        - working
-        - driving
-        example: resting
-  DriversTimeStates:
-    type: object
-    properties:
-      driverNumber:
-        type: number
-        format: integer
-        example: 1
-        description: The driver number
-      timeState:
-        type: string
-        enum:
-        - normal
-        - 15_min_before_4
-        - 4_reached
-        - 15_min_before_9
-        - 9_reached
-        - 15_min_before_16
-        - 16_reached
-        example: normal
-  DriversCards:
-    type: object
-    properties:
-      driverNumber:
-        type: number
-        format: integer
-        example: 1
-        description: The driver number
-      card:
-        type: string
-        enum:
-        - not_present
-        - present
-        example: not_present
-  TachographState:
-    type: object
-    properties:
-      driversWorkingStates:
-        type: array
-        items:
-          description: DriversWorkingStates
-          "$ref": "#/definitions/DriversWorkingStates"
-      driversTimeStates:
-        type: array
-        items:
-          description: DriversTimeStates
-          "$ref": "#/definitions/DriversTimeStates"
-      driversCards:
-        type: array
-        items:
-          description: DriversCards
-          "$ref": "#/definitions/DriversCards"
-      vehicleMotion:
-        type: string
-        enum:
-        - not_detected
-        - detected
-        example: not_detected
-      vehicleOverspeed:
-        type: string
-        enum:
-        - no_overspeed
-        - overspeed
-        example: no_overspeed
-      vehicleDirection:
-        type: string
-        enum:
-        - forward
-        - reverse
-        example: forward
-      vehicleSpeed:
-        type: number
-        format: integer
-        example: 0
-        description: The tachograph vehicle speed in km/h
-  ParkingBrakeState:
-    type: object
-    properties:
-      parkingBrake:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-  Capability:
-    type: object
-    properties:
-      capabilityIdentifier:
-        type: string
-        enum:
-        - vehicle_status
-        - parking_ticket
-        - browser
-        - windows
-        - vehicle_time
-        - start_stop
-        - fueling
-        - navi_destination
-        - light_conditions
-        - offroad
-        - trunk
-        - valet_mode
-        - dashboard_lights
-        - text_input
-        - lights
-        - chassis_settings
-        - notifications
-        - hood
-        - charging
-        - mobile
-        - home_charger
-        - diagnostics
-        - usage
-        - power_takeoff
-        - wake_up
-        - video_handover
-        - historical
-        - wi_fi
-        - vehicle_location
-        - graphics
-        - race
-        - firmware_version
-        - theft_alarm
-        - seats
-        - tachograph
-        - parking_brake
-        - capabilities
-        - maintenance
-        - rooftop_control
-        - windscreen
-        - cruise_control
-        - honk_horn_flash_lights
-        - engine
-        - weather_conditions
-        - messaging
-        - climate
-        - door_locks
-        example: charging
-      supportedMessageTypes:
-        type: array
-        items:
-          description: Array of message type identifiers
-          type: enum
-          enum:
-          - get_vehicle_status
-          - get_parking_ticket
-          - start_parking
-          - end_parking
-          - load_url
-          - get_windows_state
-          - control_windows
-          - get_vehicle_time
-          - get_start_stop_state
-          - activate_deactivate_start_stop
-          - get_gas_flap_state
-          - open_close_gas_flap
-          - get_navi_destination
-          - set_navi_destination
-          - get_light_conditions
-          - get_offroad_state
-          - get_trunk_state
-          - control_trunk
-          - get_valet_mode
-          - activate_deactivate_valet_mode
-          - get_dashboard_lights
-          - text_input
-          - get_lights_state
-          - control_lights
-          - get_chassis_settings
-          - set_driving_mode
-          - start_stop_sports_chrono
-          - set_spring_rates
-          - set_chassis_position
-          - notification
-          - clear_notification
-          - notification_action
-          - get_hood_state
-          - get_charge_state
-          - start_stop_charging
-          - set_charge_limit
-          - open_close_charging_port
-          - set_charge_mode
-          - set_charging_timers
-          - set_reduction_of_charging_current_times
-          - get_mobile_state
-          - get_home_charger_state
-          - set_charge_current
-          - set_price_tariffs
-          - activate_deactivate_solar_charging
-          - enable_disable_wi_fi_hotspot
-          - authenticate_expire
-          - get_diagnostics_state
-          - get_usage
-          - get_power_takeoff_state
-          - activate_deactivate_power_takeoff
-          - wake_up
-          - video_handover
-          - get_states
-          - get_wi_fi_state
-          - connect_to_network
-          - forget_network
-          - enable_disable_wi_fi
-          - get_vehicle_location
-          - display_image
-          - get_race_state
-          - get_firmware_version
-          - get_theft_alarm_state
-          - set_theft_alarm_state
-          - get_seats_state
-          - get_tachograph_state
-          - get_parking_brake_state
-          - set_parking_brake
-          - get_capabilities
-          - get_capability
-          - get_maintenance_state
-          - get_rooftop_state
-          - control_rooftop
-          - get_windscreen_state
-          - set_windscreen_damage
-          - set_windscreen_replacement_needed
-          - control_wipers
-          - get_cruise_control_state
-          - activate_deactivate_cruise_control
-          - get_flashers_state
-          - honk_flash
-          - activate_deactivate_emergency_flashers
-          - get_ignition_state
-          - turn_ignition_on_off
-          - get_weather_conditions
-          - message_received
-          - get_climate_state
-          - change_starting_times
-          - start_stop_hvac
-          - start_stop_defogging
-          - start_stop_defrosting
-          - start_stop_ionising
-          - set_temperature_settings
-          - get_lock_state
-          - lock_unlock_doors
-          example: get_charge_state
-  Capabilities:
-    type: object
-    properties:
-      capability:
-        description: Capability
-        "$ref": "#/definitions/Capability"
-  ConditionBasedServices:
-    type: object
-    properties:
-      year:
-        type: number
-        format: integer
-        example: 19
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      month:
-        type: number
-        format: integer
-        example: 5
-        description: Value between 1 and 12
-      identifier:
-        type: number
-        format: integer
-        example: 0
-        description: CBS identifier
-      dueStatus:
-        type: string
-        enum:
-        - ok
-        - pending
-        - overdue
-        example: ok
-      textSize:
-        type: number
-        format: integer
-        example: 0
-        description: Size of the CBS text
-      text:
-        type: string
-        example: Brake fluid
-        description: CBS text bytes formatted in UTF-8
-      descriptionSize:
-        type: number
-        format: integer
-        example: 0
-        description: Size of the description string
-      description:
-        type: string
-        example: Next change at specified date at the latest.
-        description: Description bytes formatted in UTF-8
-  MaintenanceState:
-    type: object
-    properties:
-      daysToNextService:
-        type: number
-        format: integer
-        example: 1
-        description: Number of days until next servicing of the car, whereas negative
-          is overdue
-      kilometersToNextService:
-        type: number
-        format: integer
-        example: 0
-        description: The amount of kilometers until next servicing of the car
-      cbsReportsCount:
-        type: number
-        format: integer
-        example: 3
-        description: The number of CBS reports
-      monthsToExhaustInpection:
-        type: number
-        format: integer
-        example: 5
-        description: Number of months until exhaust inspection
-      teleserviceAvailability:
-        type: string
-        enum:
-        - pending
-        - idle
-        - succesful
-        - error
-        example: pending
-      serviceDistanceThreshold:
-        type: number
-        format: integer
-        example: 1
-        description: Distance threshold for Service
-      serviceTimeThreshold:
-        type: number
-        format: integer
-        example: 4
-        description: Time threshold, in weeks, for Service
-      automaticTeleserviceCallDate:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:21:50.52Z'
-      teleserviceBatteryCallDate:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:21:50.52Z'
-      nextInspectionDate:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:21:50.52Z'
-      conditionBasedServices:
-        description: ConditionBasedServices
-        "$ref": "#/definitions/ConditionBasedServices"
-      brakeFluidChangeDate:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:21:50.52Z'
-  RooftopState:
-    type: object
-    properties:
-      dimming:
-        type: number
-        format: integer
-        example: 100
-        description: Percentage value between 0-100 whereas 100 is opaque
-      position:
-        type: number
-        format: integer
-        example: 0
-        description: Percentage value between 0-100 whereas 100 is fully open
-      convertibleRoofState:
+      windowPosition:
         type: string
         enum:
         - closed
-        - open
-        - emergency_locked
-        - closed_secured
-        - open_secured
-        - hard_top_mounted
-        - intermediate_position
-        - loading_position
-        - loading_position_immediate
+        - opened
+        - intermediate
         example: closed
-      sunroofTiltState:
-        type: string
-        enum:
-        - closed
-        - tilted
-        - half_tilted
-        example: closed
+  WindowsState:
+    type: object
+    properties:
+      windowsOpenPercentages:
+        type: array
+        items:
+          description: WindowsOpenPercentages
+          "$ref": "#/definitions/WindowsOpenPercentages"
+      windowsPositions:
+        type: array
+        items:
+          description: WindowsPositions
+          "$ref": "#/definitions/WindowsPositions"
   WindscreenState:
     type: object
     properties:
@@ -1899,233 +2126,6 @@ definitions:
         format: date-time
         example: '2018-04-12T23:20:50.52Z'
         description: The time that the damage was detected
-  CruiseControlState:
-    type: object
-    properties:
-      cruiseControl:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      limiter:
-        type: string
-        enum:
-        - not_set
-        - higher_speed_requested
-        - lower_speed_requested
-        - speed_fixed
-        example: not_set
-      targetSpeed:
-        type: number
-        format: integer
-        example: 0
-        description: The target speed in km/h
-      acc:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      accTargetSpeed:
-        type: number
-        format: integer
-        example: 0
-        description: The target speed in km/h of the Adaptive Cruise Control
-  FlashersState:
-    type: object
-    properties:
-      flashers:
-        type: string
-        enum:
-        - inactive
-        - emergency_flasher_active
-        - left_flasher_active
-        - right_flasher_active
-        example: inactive
-  IgnitionState:
-    type: object
-    properties:
-      ignition:
-        type: string
-        enum:
-        - ignition_off
-        - ignition_on
-        example: ignition_off
-      accessoriesIgnition:
-        type: string
-        enum:
-        - powered_off
-        - powered_on
-        example: powered_off
-  WeatherConditions:
-    type: object
-    properties:
-      rainIntensity:
-        type: number
-        format: integer
-        example: 100
-        description: Measured raining intensity percentage, whereas 0% is no rain
-          and 100% is maximum rain
-  HvacWeekdayStartingTimes:
-    type: object
-    properties:
-      weekday:
-        type: string
-        enum:
-        - monday
-        - tuesday
-        - wednesday
-        - thursday
-        - friday
-        - saturday
-        - sunday
-        - automatic
-        example: monday
-      hour:
-        type: number
-        format: integer
-        example: 18
-        description: Value between 0 and 23
-      minute:
-        type: number
-        format: integer
-        example: 30
-        description: Value between 0 and 59
-  ClimateState:
-    type: object
-    properties:
-      insideTemperature:
-        type: number
-        format: float
-        example: 24.0745849609375
-        description: The inside temperature in celsius per IEEE 754 formatting
-      outsideTemperature:
-        type: number
-        format: float
-        example: 24.0316162109375
-        description: The outside temperature in celsius per IEEE 754 formatting
-      driverTemperatureSetting:
-        type: number
-        format: float
-        example: 24.0843505859375
-        description: The driver temperature setting in celsius per IEEE 754 formatting
-      passengerTemperatureSetting:
-        type: number
-        format: float
-        example: 24.0843505859375
-        description: The passenger temperature setting in celsius per IEEE 754 formatting
-      hvacState:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      defoggingState:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      defrostingState:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      ionisingState:
-        type: string
-        enum:
-        - inactive
-        - active
-        example: inactive
-      defrostingTemperature:
-        type: number
-        format: float
-        example: 24.0843505859375
-        description: The defrosting temperature setting in celsius per IEEE 754 formatting
-      hvacWeekdayStartingTimes:
-        type: array
-        items:
-          description: HvacWeekdayStartingTimes
-          "$ref": "#/definitions/HvacWeekdayStartingTimes"
-      rearTemperatureSetting:
-        type: number
-        format: float
-        example: 24.0843505859375
-        description: The rear temperature in celsius per IEEE 754 formatting
-  InsideLocks:
-    type: object
-    properties:
-      doorLocation:
-        type: string
-        enum:
-        - front_left
-        - front_right
-        - rear_right
-        - rear_left
-        - hatch
-        example: front_left
-      lockState:
-        type: string
-        enum:
-        - unlocked
-        - locked
-        example: unlocked
-  Locks:
-    type: object
-    properties:
-      doorLocation:
-        type: string
-        enum:
-        - front_left
-        - front_right
-        - rear_right
-        - rear_left
-        - hatch
-        example: front_left
-      lockState:
-        type: string
-        enum:
-        - unlocked
-        - locked
-        example: unlocked
-  Positions:
-    type: object
-    properties:
-      doorLocation:
-        type: string
-        enum:
-        - front_left
-        - front_right
-        - rear_right
-        - rear_left
-        - hatch
-        example: front_left
-      position:
-        type: string
-        enum:
-        - closed
-        - open
-        example: closed
-  LockState:
-    type: object
-    properties:
-      insideLocks:
-        type: array
-        items:
-          description: InsideLocks
-          "$ref": "#/definitions/InsideLocks"
-      locks:
-        type: array
-        items:
-          description: Locks
-          "$ref": "#/definitions/Locks"
-      positions:
-        type: array
-        items:
-          description: Positions
-          "$ref": "#/definitions/Positions"
   VideoHandover:
     type: object
     properties:
@@ -2196,6 +2196,24 @@ definitions:
         format: integer
         example: 25
         description: The suspension spring rate in N/mm
+  SetWindscreenWipers:
+    type: object
+    properties:
+      wipersState:
+        type: string
+        enum:
+        - inactive
+        - active
+        - automatic
+        example: inactive
+      wipersIntensity:
+        type: string
+        enum:
+        - level_0
+        - level_1
+        - level_2
+        - level_3
+        example: level_0
   WindscreenSizeMatrix:
     type: object
     properties:
@@ -2303,6 +2321,16 @@ definitions:
         format: integer
         example: 90
         description: The charge limit as percentage between 0-100%
+  SetChargeMode:
+    type: object
+    properties:
+      chargeMode:
+        type: string
+        example: 90
+        description: The charge limit as percentage between 0-100%
+        enum:
+        - immediate
+        - timer_based
   AutoHVACActive:
     type: object
     properties:
@@ -2321,69 +2349,25 @@ definitions:
         enum:
         - active
         - inactive
-  AutoHVACProfile:
+  SetHvacWeekdayStartingTimes:
     type: object
     properties:
-      mondays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      tuesdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      wednesdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      thursdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      fridays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      saturdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      sundays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      constant:
-        type: string
-        enum:
-        - active
-        - inactive
-  SetAutoHVACProfile:
+      weekdayStartingTimes:
+        type: array
+        items:
+          "$ref": "#/definitions/HvacWeekdayStartingTimes"
+  SetTemperatureSettings:
     type: object
     properties:
-      mondays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      tuesdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      wednesdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      thursdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      fridays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      saturdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      sundays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      constant:
-        type: string
-        enum:
-        - active
-        - inactive
       driverTemperatureSetting:
         type: number
         format: float
         example: 20.5
       passengerTemperatureSetting:
+        type: number
+        format: float
+        example: 20.5
+      rearTemperatureSetting:
         type: number
         format: float
         example: 20.5

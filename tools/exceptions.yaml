@@ -70,6 +70,24 @@ definitions:
         format: integer
         example: 25
         description: The suspension spring rate in N/mm
+  SetWindscreenWipers:
+    type: object
+    properties:
+      wipersState:
+        type: string
+        enum:
+        - inactive
+        - active
+        - automatic
+        example: inactive
+      wipersIntensity:
+        type: string
+        enum:
+        - level_0
+        - level_1
+        - level_2
+        - level_3
+        example: level_0
   WindscreenSizeMatrix:
     type: object
     properties:
@@ -181,6 +199,16 @@ definitions:
         format: integer
         example: 90
         description: The charge limit as percentage between 0-100%
+  SetChargeMode:
+    type: object
+    properties:
+      chargeMode:
+        type: string
+        example: 90
+        description: The charge limit as percentage between 0-100%  
+        enum:
+          - immediate
+          - timer_based
   AutoHVACActive:
     type: object
     properties:
@@ -199,69 +227,25 @@ definitions:
         enum:
           - active
           - inactive
-  AutoHVACProfile:
+  SetHvacWeekdayStartingTimes:
     type: object
     properties:
-      mondays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      tuesdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      wednesdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      thursdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      fridays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      saturdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      sundays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      constant:
-        type: string
-        enum:
-          - active
-          - inactive
-  SetAutoHVACProfile:
+      weekdayStartingTimes:
+        type: array
+        items:
+          "$ref": "#/definitions/HvacWeekdayStartingTimes"
+  SetTemperatureSettings:
     type: object
     properties:
-      mondays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      tuesdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      wednesdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      thursdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      fridays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      saturdays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      sundays:
-        description: AutoHVACActive
-        "$ref": "#/definitions/AutoHVACActive"
-      constant:
-        type: string
-        enum:
-          - active
-          - inactive
       driverTemperatureSetting:
         type: number
         format: float
         example: 20.5
       passengerTemperatureSetting:
+        type: number
+        format: float
+        example: 20.5
+      rearTemperatureSetting:
         type: number
         format: float
         example: 20.5
@@ -390,9 +374,6 @@ exceptions:
     format: date-time
     example: '2018-04-12T23:21:50.52Z'
     description: The time that parking was ended
-  auto_hvac_profile:
-    description: AutoHVACProfile
-    "$ref": "#/definitions/AutoHVACProfile"
   state:
     type: array
     items:
