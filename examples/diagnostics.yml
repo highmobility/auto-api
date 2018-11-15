@@ -270,3 +270,8 @@ trouble_codes:
       size: 7
       value: '0x50, 0x45, 0x4E, 0x44, 0x49, 0x4E, 0x47'
       description: Status is "PENDING"
+
+mileage_meters:
+  - item:
+    - value: '0x02, 0x49, 0xF0'
+      description: Odometer is 150'000 meters

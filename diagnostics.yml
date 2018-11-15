@@ -251,3 +251,8 @@ properties:
       - name: status
         type: string
         description: Status bytes formatted in UTF-8
+  - id: '0x1E'
+    type: integer
+    size: 4
+    name: mileage_meters
+    description: The car mileage (odometer) in meters
