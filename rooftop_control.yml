@@ -27,7 +27,7 @@ message_types:
         type: enum
         size: 1
         values:
-          - name: close
+          - name: closed
             id: '0x00'
           - name: open
             id: '0x01'
@@ -36,11 +36,22 @@ message_types:
         size: 1
         name: sunroof_tilt_state
         values:
-          - name: close
+          - name: closed
             id: '0x00'
           - name: tilt
             id: '0x01'
           - name: half_tilt
+            id: '0x02'
+      - id: '0x05'
+        type: enum
+        size: 1
+        name: sunroof_state
+        values:
+          - name: closed
+            id: '0x00'
+          - name: open
+            id: '0x01'
+          - name: intermediate
             id: '0x02'
     
 properties:
@@ -87,4 +98,15 @@ properties:
       - name: tilted
         id: '0x01'
       - name: half_tilted
+        id: '0x02'
+  - id: '0x05'
+    type: enum
+    size: 1
+    name: sunroof_state
+    values:
+      - name: closed
+        id: '0x00'
+      - name: open
+        id: '0x01'
+      - name: intermediate
         id: '0x02'
