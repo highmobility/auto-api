@@ -330,21 +330,6 @@ definitions:
         items:
           description: State
           "$ref": "#/definitions/State"
-  GetHistoricalStates:
-    type: object
-    properties:
-      capabilityIdentifier:
-        "$ref": "#/definitions/CapabilityIdentifier"
-      startDate:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:10:50.52Z'
-        description: States starting time
-      endDate:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:20:50.52Z'
-        description: States end time
   CapabilityIdentifier:
     type: string
     enum:

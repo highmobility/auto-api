@@ -261,22 +261,22 @@ definitions:
       batteryCurrentAC:
         type: number
         format: float
-        example: -1.5007858276367188
+        example: -0.6000000238418579
         description: Battery current in 4-bytes per IEEE 754
       batteryCurrentDC:
         type: number
         format: float
-        example: -1.5007858276367188
+        example: -0.6000000238418579
         description: Battery current in 4-bytes per IEEE 754
       batteryVoltageAC:
         type: number
         format: float
-        example: 385.568359375
+        example: 400.0
         description: Charger voltage in 4-bytes per IEEE 754
       batteryVoltageDC:
         type: number
         format: float
-        example: -1.5007858276367188
+        example: -0.6000000238418579
         description: Charger voltage in 4-bytes per IEEE 754
       chargeLimit:
         type: number
@@ -291,7 +291,7 @@ definitions:
       chargingRateKW:
         type: number
         format: float
-        example: 6.011810302734375
+        example: 3.5
         description: Charge rate in kW represented as 4-bytes per IEEE 754, when charging
       chargePortState:
         type: string
@@ -309,7 +309,7 @@ definitions:
       maxChargingCurrent:
         type: number
         format: float
-        example: 24.0980224609375
+        example: 25.0
         description: Maximum charging current in 4-bytes per IEEE 754
       plugType:
         type: string
@@ -338,7 +338,7 @@ definitions:
       batteryTemperature:
         type: number
         format: float
-        example: 96.05029296875
+        example: 38.400001525878906
         description: Battery temperature in Celsius in 4-bytes per IEEE 754
       timers:
         type: array
@@ -481,22 +481,22 @@ definitions:
       insideTemperature:
         type: number
         format: float
-        example: 24.0745849609375
+        example: 19.0
         description: The inside temperature in celsius per IEEE 754 formatting
       outsideTemperature:
         type: number
         format: float
-        example: 24.0316162109375
+        example: 12.0
         description: The outside temperature in celsius per IEEE 754 formatting
       driverTemperatureSetting:
         type: number
         format: float
-        example: 24.0843505859375
+        example: 21.5
         description: The driver temperature setting in celsius per IEEE 754 formatting
       passengerTemperatureSetting:
         type: number
         format: float
-        example: 24.0843505859375
+        example: 21.5
         description: The passenger temperature setting in celsius per IEEE 754 formatting
       hvacState:
         type: string
@@ -525,7 +525,7 @@ definitions:
       defrostingTemperature:
         type: number
         format: float
-        example: 24.0843505859375
+        example: 21.5
         description: The defrosting temperature setting in celsius per IEEE 754 formatting
       hvacWeekdayStartingTimes:
         type: array
@@ -535,7 +535,7 @@ definitions:
       rearTemperatureSetting:
         type: number
         format: float
-        example: 24.0843505859375
+        example: 21.5
         description: The rear temperature in celsius per IEEE 754 formatting
   CruiseControlState:
     type: object
@@ -623,7 +623,7 @@ definitions:
       pressure:
         type: number
         format: float
-        example: 6.002410888671875
+        example: 2.309999942779541
         description: Tire pressure in BAR formatted in 4-bytes per IEEE 754
   TireTemperatures:
     type: object
@@ -639,7 +639,7 @@ definitions:
       temperature:
         type: number
         format: float
-        example: 96.06396484375
+        example: 40.0
         description: Tire temperature in BAR formatted in 4-bytes per IEEE 754
   WheelRpms:
     type: object
@@ -734,12 +734,12 @@ definitions:
       batteryVoltage:
         type: number
         format: float
-        example: 24.0316162109375
+        example: 12.0
         description: Battery voltage per IEEE 754 formatting
       adblueLevel:
         type: number
         format: float
-        example: 1.5000228881835938
+        example: 0.5
         description: AdBlue level in liters formatted in 4-bytes per IEEE 754 formatting
       distanceSinceReset:
         type: number
@@ -754,7 +754,7 @@ definitions:
       fuelVolume:
         type: number
         format: float
-        example: 96.02880859375
+        example: 35.5
         description: The fuel volume measured in liters formatted in 4-bytes per IEEE
           754 formatting
       antiLockBraking:
@@ -771,12 +771,12 @@ definitions:
       engineTotalOperatingHours:
         type: number
         format: float
-        example: 1541.8671875
+        example: 1500.6500244140625
         description: The accumulated time of engine operation per IEEE 754 formatting
       engineTotalFuelConsumption:
         type: number
         format: float
-        example: 24683.875
+        example: 27587.0
         description: The accumulated lifespan fuel consumption in liters per IEEE
           754 formatting
       brakeFluidLevel:
@@ -831,6 +831,11 @@ definitions:
         items:
           description: TroubleCodes
           "$ref": "#/definitions/TroubleCodes"
+      mileageMeters:
+        type: number
+        format: integer
+        example: 2
+        description: The car mileage (odometer) in meters
   InsideLocks:
     type: object
     properties:
@@ -993,7 +998,7 @@ definitions:
       price:
         type: number
         format: float
-        example: 6.017669677734375
+        example: 4.5
         description: The price in 4-bytes per IEEE 754
       currencySize:
         type: number
@@ -1032,7 +1037,7 @@ definitions:
       chargingPower:
         type: number
         format: float
-        example: 24.0277099609375
+        example: 11.5
         description: Charging power in kW formatted in 4-bytes per IEEE 754
       solarCharging:
         type: string
@@ -1071,17 +1076,17 @@ definitions:
       chargeCurrentDc:
         type: number
         format: float
-        example: 1.5000228881835938
+        example: 0.5
         description: The charge current (DC) per IEEE 754
       maximumChargeCurrent:
         type: number
         format: float
-        example: 1.5039291381835938
+        example: 1.0
         description: The maximum possible charge current per IEEE 754
       minimumChargeCurrent:
         type: number
         format: float
-        example: 1.7632684311639463e-38
+        example: 0.0
         description: The minimal possible charge current per IEEE 754
       coordinates:
         description: Coordinates
@@ -1118,12 +1123,12 @@ definitions:
       outsideLight:
         type: number
         format: float
-        example: 98737.5
+        example: 111000.0
         description: Measured outside illuminance in lux, formatted as IEEE 754 decimal
       insideLight:
         type: number
         format: float
-        example: 0.37677574157714844
+        example: 0.453125
         description: Measured inside illuminance in lux, formatted as IEEE 754 decimal
   LightsState:
     type: object
@@ -1393,7 +1398,7 @@ definitions:
       gForce:
         type: number
         format: float
-        example: 1.5028610229492188
+        example: 0.8640000224113464
         description: The accelaration in g-force per IEEE 754
   BrakeTorqueVectorings:
     type: object
@@ -1444,12 +1449,12 @@ definitions:
       brakePressure:
         type: number
         format: float
-        example: 24.0784912109375
+        example: 20.0
         description: Brake pressure in bar, whereas 100bar is max value, full brake
       yawRate:
         type: number
         format: float
-        example: 6.026092529296875
+        example: 6.659999847412109
         description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
       rearSuspensionSteering:
         type: number
@@ -1551,6 +1556,13 @@ definitions:
         - closed
         - tilted
         - half_tilted
+        example: closed
+      sunroofState:
+        type: string
+        enum:
+        - closed
+        - open
+        - intermediate
         example: closed
   PersonsDetected:
     type: object
@@ -1757,7 +1769,7 @@ definitions:
       consumption:
         type: number
         format: float
-        example: 96.00927734375
+        example: 33.20000076293945
         description: Energy consumption in the driving mode in kWh
   LastTripDate:
     type: object
@@ -1829,12 +1841,12 @@ definitions:
       lastTripEnergyConsumption:
         type: number
         format: float
-        example: 96.39599609375
+        example: 101.30000305175781
         description: Energy consumption in the last trip in kWh
       lastTripFuelConsumption:
         type: number
         format: float
-        example: 24.0882568359375
+        example: 22.5
         description: Fuel consumption in the last trip in L
       mileageAfterLastTrip:
         type: number
@@ -1849,7 +1861,7 @@ definitions:
       lastTripAverageEnergyRecuperation:
         type: number
         format: float
-        example: 6.022186279296875
+        example: 5.679935455322266
         description: Energy recuperation rate for last trip, in kWh / 100 km
       lastTripBatteryRemaining:
         type: number
@@ -1862,12 +1874,12 @@ definitions:
       averageFuelConsumption:
         type: number
         format: float
-        example: 6.025482177734375
+        example: 6.5
         description: Average fuel consumption in liters/100km per IEEE 754 formatting
       currentFuelConsumption:
         type: number
         format: float
-        example: 6.029388427734375
+        example: 7.5
         description: Current fuel consumption in liters/100km per IEEE 754 formatting
   ValetMode:
     type: object
@@ -1955,7 +1967,7 @@ definitions:
       engineVolume:
         type: number
         format: float
-        example: 6.003997802734375
+        example: 2.5
         description: The engine volume displacement in liters per IEEE 754 formatting
       engineMaxTorque:
         type: number
@@ -2461,21 +2473,6 @@ definitions:
         items:
           description: State
           "$ref": "#/definitions/State"
-  GetHistoricalStates:
-    type: object
-    properties:
-      capabilityIdentifier:
-        "$ref": "#/definitions/CapabilityIdentifier"
-      startDate:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:10:50.52Z'
-        description: States starting time
-      endDate:
-        type: string
-        format: date-time
-        example: '2018-04-12T23:20:50.52Z'
-        description: States end time
   CapabilityIdentifier:
     type: string
     enum:

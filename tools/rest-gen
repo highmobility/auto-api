@@ -10,7 +10,7 @@ def decimal(hex_string)
 end
 
 def ieee(hex_string)
-  [hex_string.gsub('0x', '')].pack('H16').unpack('g').first
+  [hex_string.gsub('0x', '').gsub(', ', '')].pack('H16').unpack('g').first
 end
 
 def ieeeDouble(hex_string)
