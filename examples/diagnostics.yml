@@ -273,5 +273,5 @@ trouble_codes:
 
 mileage_meters:
   - item:
-    - value: '0x02, 0x49, 0xF0'
+    - value: '0x00, 0x02, 0x49, 0xF0'
       description: Odometer is 150'000 meters
