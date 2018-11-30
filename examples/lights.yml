@@ -31,3 +31,8 @@ emergency_brake_light:
   - item:
     - value: '0x00'
       description: Emergency brake lights are inactive
+
+fog_lights:
+  - item:
+    - value: '0x01'
+      description: Front fog light is active

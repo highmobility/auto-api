@@ -23,6 +23,8 @@ message_types:
             id: '0x01'
           - name: active_full_beam
             id: '0x02'
+          - name: daylight_running_lamps
+            id: '0x03'
       - id: '0x02'
         name: rear_exterior_light
         type: enum
@@ -57,6 +59,19 @@ message_types:
             type: integer
             size: 1
             description: The blue colour of RGB in hex
+      - id: '0x07'
+        type: enum
+        size: 1
+        name: fog_lights
+        values:
+          - name: inactive
+            id: '0x00'
+          - name: front_active
+            id: '0x01'
+          - name: rear_active
+            id: '0x02'
+          - name: both_active
+            id: '0x03'
     
 properties:
   - id: '0x01'
@@ -70,6 +85,8 @@ properties:
         id: '0x01'
       - name: active_with_full_beam
         id: '0x02'
+      - name: daylight_running_lamps
+        id: '0x03'
   - id: '0x02'
     type: enum
     size: 1
@@ -122,3 +139,16 @@ properties:
         id: '0x00'
       - name: active
         id: '0x01'
+  - id: '0x07'
+    type: enum
+    size: 1
+    name: fog_lights
+    values:
+      - name: inactive
+        id: '0x00'
+      - name: front_active
+        id: '0x01'
+      - name: rear_active
+        id: '0x02'
+      - name: both_active
+        id: '0x03'
