@@ -8,11 +8,6 @@ rear_exterior_light:
     - value: '0x01'
       description: Exterior rear lights are active
 
-interior_light:
-  - item:
-    - value: '0x01'
-      description: Interior lights are active
-
 ambient_light:
   - item:
     - value: '0xFF'
@@ -52,3 +47,8 @@ reading_lamps:
     - name: reading_lamp_state
       value: '0x01'
       description: Lamp is active
+
+interior_lights:
+  - item:
+    - value: '0x01'
+      description: Front interior light is active
