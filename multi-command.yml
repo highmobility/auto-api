@@ -1,0 +1,12 @@
+name: multi_command
+pretty_state_name: Multi Command
+category: api_structure
+id_msb: '0x00'
+id_lsb: '0x13'
+api_intro: 8
+message_types:
+  - id: '0x02'
+    name: multi_command
+    properties:
+      - id: '0x01'
+        name: command
