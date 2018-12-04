@@ -4,9 +4,12 @@ category: api_structure
 id_msb: '0x00'
 id_lsb: '0x13'
 api_intro: 8
+
 message_types:
   - id: '0x02'
     name: multi_command
-    properties:
+    properties: 
       - id: '0x01'
-        name: command
+        name: commands
+        multiple: true
+        description: The bytes of another outgoing command
