@@ -36,3 +36,19 @@ fog_lights:
   - item:
     - value: '0x01'
       description: Front fog light is active
+
+reading_lamps:
+  - item:
+    - name: reading_lamp_location
+      value: '0x00'
+      description: Front left reading lamp
+    - name: reading_lamp_state
+      value: '0x00'
+      description: Lamp is inactive
+  - item:
+    - name: reading_lamp_location
+      value: '0x01'
+      description: Front right reading lamp
+    - name: reading_lamp_state
+      value: '0x01'
+      description: Lamp is active

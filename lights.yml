@@ -3,7 +3,7 @@ category: chassis
 id_msb: '0x00'
 id_lsb: '0x36'
 api_intro: 3
-api_update: 8
+api_update: 9
 message_types:
   - id: '0x00'
     name: get_lights_state
@@ -17,13 +17,14 @@ message_types:
         type: enum
         size: 1
         values:
-          - name: inactive
+          - name: deactivate
             id: '0x00'
-          - name: active
+          - name: activate
             id: '0x01'
-          - name: active_full_beam
+          - name: activate_full_beam
             id: '0x02'
-          - name: daylight_running_lamps
+          - name: activate_dlr
+            pretty_name: Activate Daylight Running Lamps
             id: '0x03'
       - id: '0x02'
         name: rear_exterior_light
@@ -72,6 +73,31 @@ message_types:
             id: '0x02'
           - name: both_active
             id: '0x03'
+      - id: '0x08'
+        name: reading_lamps
+        size: 2
+        multiple: true
+        items:
+          - name: reading_lamp_location
+            type: enum
+            size: 1
+            values:
+              - name: front_left
+                id: '0x00'
+              - name: front_right
+                id: '0x01'
+              - name: rear_right
+                id: '0x02'
+              - name: rear_left
+                id: '0x03'
+          - name: reading_lamp_state
+            type: enum
+            size: 1
+            values:
+              - name: inactive
+                id: '0x00'
+              - name: active
+                id: '0x01'
     
 properties:
   - id: '0x01'
@@ -85,7 +111,8 @@ properties:
         id: '0x01'
       - name: active_with_full_beam
         id: '0x02'
-      - name: daylight_running_lamps
+      - name: dlr
+        pretty_name: Daylight Running Lamps
         id: '0x03'
   - id: '0x02'
     type: enum
@@ -152,3 +179,28 @@ properties:
         id: '0x02'
       - name: both_active
         id: '0x03'
+  - id: '0x08'
+    size: 2
+    name: reading_lamps
+    multiple: true
+    items:
+      - name: reading_lamp_location
+        type: enum
+        size: 1
+        values:
+          - name: front_left
+            id: '0x00'
+          - name: front_right
+            id: '0x01'
+          - name: rear_right
+            id: '0x02'
+          - name: rear_left
+            id: '0x03'
+      - name: reading_lamp_state
+        type: enum
+        size: 1
+        values:
+          - name: inactive
+            id: '0x00'
+          - name: active
+            id: '0x01'
