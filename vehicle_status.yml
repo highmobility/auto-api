@@ -3,7 +3,7 @@ category: api_structure
 id_msb: '0x00'
 id_lsb: '0x11'
 api_intro: 2
-api_update: 8
+api_update: 9
 message_types:
   - id: '0x00'
     name: get_vehicle_status
@@ -121,6 +121,10 @@ properties:
     name: equipments
     multiple: true
     description: Equipment that the vehicle is equipped with
+  - id: '0x12'
+    type: string
+    name: brand
+    description: The car brand bytes formatted in UTF-8
   - id: '0x99'
     type: capability_state
     name: state
