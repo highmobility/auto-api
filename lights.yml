@@ -61,18 +61,26 @@ message_types:
             size: 1
             description: The blue colour of RGB in hex
       - id: '0x07'
-        type: enum
-        size: 1
+        size: 2
         name: fog_lights
-        values:
-          - name: inactive
-            id: '0x00'
-          - name: front_active
-            id: '0x01'
-          - name: rear_active
-            id: '0x02'
-          - name: both_active
-            id: '0x03'
+        multiple: true
+        items:
+          - name: fog_light_location
+            type: enum
+            size: 1
+            values:
+              - name: front
+                id: '0x00'
+              - name: rear
+                id: '0x01'
+          - name: fog_light_state
+            type: enum
+            size: 1
+            values:
+              - name: inactive
+                id: '0x00'
+              - name: active
+                id: '0x01'
       - id: '0x08'
         name: reading_lamps
         size: 2
@@ -99,18 +107,26 @@ message_types:
               - name: active
                 id: '0x01'
       - id: '0x09'
-          type: enum
-          size: 1
-          name: interior_lights
-          values:
-          - name: inactive
-              id: '0x00'
-          - name: front_active
-              id: '0x01'
-          - name: rear_active
-              id: '0x02'
-          - name: both_active
-              id: '0x03'
+        size: 2
+        name: interior_lights
+        multiple: true
+        items:
+          - name: interior_light_location
+            type: enum
+            size: 1
+            values:
+              - name: front
+                id: '0x00'
+              - name: rear
+                id: '0x01'
+          - name: interior_light_state
+            type: enum
+            size: 1
+            values:
+              - name: inactive
+                id: '0x00'
+              - name: active
+                id: '0x01'
     
 properties:
   - id: '0x01'
@@ -171,18 +187,26 @@ properties:
       - name: active
         id: '0x01'
   - id: '0x07'
-    type: enum
-    size: 1
+    size: 2
     name: fog_lights
-    values:
-      - name: inactive
-        id: '0x00'
-      - name: front_active
-        id: '0x01'
-      - name: rear_active
-        id: '0x02'
-      - name: both_active
-        id: '0x03'
+    multiple: true
+    items:
+      - name: fog_light_location
+        type: enum
+        size: 1
+        values:
+          - name: front
+            id: '0x00'
+          - name: rear
+            id: '0x01'
+      - name: fog_light_state
+        type: enum
+        size: 1
+        values:
+          - name: inactive
+            id: '0x00'
+          - name: active
+            id: '0x01'
   - id: '0x08'
     size: 2
     name: reading_lamps
@@ -209,15 +233,23 @@ properties:
           - name: active
             id: '0x01'
   - id: '0x09'
-    type: enum
-    size: 1
+    size: 2
     name: interior_lights
-    values:
-      - name: inactive
-        id: '0x00'
-      - name: front_active
-        id: '0x01'
-      - name: rear_active
-        id: '0x02'
-      - name: both_active
-        id: '0x03'
+    multiple: true
+    items:
+      - name: interior_light_location
+        type: enum
+        size: 1
+        values:
+          - name: front
+            id: '0x00'
+          - name: rear
+            id: '0x01'
+      - name: interior_light_state
+        type: enum
+        size: 1
+        values:
+          - name: inactive
+            id: '0x00'
+          - name: active
+            id: '0x01'
