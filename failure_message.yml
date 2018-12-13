@@ -45,6 +45,9 @@ properties:
       - name: pending
         pretty_name: Pending - Capability is being refreshed
         id: '0x06'
+      - name: rate_limit
+        pretty_name: Rate Limit - Capability rate limit has been exceeded
+        id: '0x07'
   - id: '0x04'
     type: string
     name: failure_description
