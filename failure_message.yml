@@ -3,7 +3,7 @@ category: api_structure
 id_msb: '0x00'
 id_lsb: '0x02'
 api_intro: 2
-api_update: 5
+api_update: 9
 message_types:
   - id: '0x01'
     name: failure
@@ -42,6 +42,9 @@ properties:
       - name: invalid_command
         pretty_name: Invalid Command - Not recognised
         id: '0x05'
+      - name: pending
+        pretty_name: Pending - Capability is being refreshed
+        id: '0x06'
   - id: '0x04'
     type: string
     name: failure_description
