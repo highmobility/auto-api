@@ -1,0 +1,137 @@
+name: universal_properties
+category: universal
+api_intro: 7
+api_update: 9
+
+properties:
+  - id: '0xA0'
+    type: integer
+    size: 9
+    name: nonce
+  - id: '0xA1'
+    type: integer
+    size: 64
+    name: car_signature
+  - id: '0xA2'
+    size: 8
+    name: timestamp
+    items:
+      - name: year
+        type: integer
+        size: 1
+        description: Value between 0 and 99, which corresponds to 2000-2099
+      - name: month
+        type: integer
+        size: 1
+        description: Value between 1 and 12
+      - name: day
+        type: integer
+        size: 1
+        description: Value between 1 and 31
+      - name: hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: second
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+      - name: utc_time_offset
+        type: integer
+        size: 2
+        description: UTC time offset in minutes, which can be negative
+  - id: '0xA3'
+    type: double
+    size: 8
+    name: milliseconds
+  - id: '0xA4'
+    multiple: true
+    name: properties_timestamps
+    items:
+      - name: timestamp
+        size: 8
+        values:
+          - name: year
+            type: integer
+            size: 1
+            description: Value between 0 and 99, which corresponds to 2000-2099
+          - name: month
+            type: integer
+            size: 1
+            description: Value between 1 and 12
+          - name: day
+            type: integer
+            size: 1
+            description: Value between 1 and 31
+          - name: hour
+            type: integer
+            size: 1
+            description: Value between 0 and 23
+          - name: minute
+            type: integer
+            size: 1
+            description: Value between 0 and 59
+          - name: second
+            type: integer
+            size: 1
+            description: Value between 0 and 59
+          - name: utc_time_offset
+            type: integer
+            size: 2
+            description: UTC time offset in minutes, which can be negative
+      - name: property_id
+        type: integer
+        size: 1
+        description: ID of the property with a timestamp
+      - name: property_full_value
+        description: Property value bytes, used with multiple same-ID properties to differentiate
+  - id: '0xA5'
+    multiple: true
+    name: properties_failures
+    items:
+      - name: property_id
+        type: integer
+        size: 1
+        description: ID of the failed property
+      - name: property_failure_reason
+        type: enum
+        size: 1
+        values:
+          - name: rate_limit
+            id: '0x00'
+            description: Property rate limit has been exceeded
+          - name: execution_timeout
+            id: '0x01'
+            description: Failed to retrieve property in time
+          - name: format_error
+            id: '0x02'
+            description: Could not interpret property
+          - name: unauthorised
+            id: '0x03'
+            description: Insufficient permissions to get the property
+          - name: unknown
+            id: '0x04'
+            description: Property missing for unknown reason
+          - name: pending
+            id: '0x05'
+            description: Property is being refreshed
+      - name: description_size
+        type: integer
+        size: 1
+        description: Size of the description string
+      - name: description
+        type: string
+        description: Failure description bytes formatted in UTF-8
+
+ 
+
+
+
+
+
+
+
