@@ -26,17 +26,10 @@ message_types:
           - name: activate_dlr
             pretty_name: Activate Daylight Running Lamps
             id: '0x03'
+          - name: automatic
+            id: '0x04'
       - id: '0x02'
         name: rear_exterior_light
-        type: enum
-        size: 1
-        values:
-          - name: deactivate
-            id: '0x00'
-          - name: activate
-            id: '0x01'
-      - id: '0x03'
-        name: interior_light
         type: enum
         size: 1
         values:
@@ -143,6 +136,8 @@ properties:
       - name: dlr
         pretty_name: Daylight Running Lamps
         id: '0x03'
+      - name: automatic
+        id: '0x04'
   - id: '0x02'
     type: enum
     size: 1
