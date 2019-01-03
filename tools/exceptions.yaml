@@ -567,3 +567,5 @@ rejections:
   - remote_control
   - heart_rate
   - driver_fatigue
+  - capabilities
+  - universal_properties

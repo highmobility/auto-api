@@ -3,31 +3,48 @@ category: parking
 id_msb: '0x00'
 id_lsb: '0x40'
 api_intro: 4
-api_update: 8
+api_update: 9
 message_types:
   - id: '0x00'
     name: get_gas_flap_state
   - id: '0x01'
     name: gas_flap_state
   - id: '0x12'
-    name: open_close_gas_flap
+    name: control_gas_flap
     properties:
-      - id: '0x01'
-        name: gas_flap
+      - id: '0x02'
+        name: gas_flap_lock
         type: enum
         size: 1
-        mandatory: true
         values:
-          - name: close
+          - name: unlocked
+            id: '0x00'
+          - name: locked
+            id: '0x01'
+      - id: '0x03'
+        name: gas_flap_position
+        type: enum
+        size: 1
+        values:
+          - name: closed
             id: '0x00'
           - name: open
             id: '0x01'
 
 properties:
-  - id: '0x01'
+  - id: '0x02'
     type: enum
     size: 1
-    name: gas_flap
+    name: gas_flap_lock
+    values:
+      - name: unlocked
+        id: '0x00'
+      - name: locked
+        id: '0x01'
+  - id: '0x03'
+    type: enum
+    size: 1
+    name: gas_flap_position
     values:
       - name: closed
         id: '0x00'

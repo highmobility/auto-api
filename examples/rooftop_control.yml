@@ -17,3 +17,8 @@ sunroof_tilt_state:
   - item:
     - value: '0x02'
       description: Sunroof is half-tilted
+
+sunroof_state:
+  - item:
+    - value: '0x01'
+      description: Sunroof is open

@@ -8,11 +8,6 @@ rear_exterior_light:
     - value: '0x01'
       description: Exterior rear lights are active
 
-interior_light:
-  - item:
-    - value: '0x01'
-      description: Interior lights are active
-
 ambient_light:
   - item:
     - value: '0xFF'
@@ -31,3 +26,51 @@ emergency_brake_light:
   - item:
     - value: '0x00'
       description: Emergency brake lights are inactive
+
+fog_lights:
+  - item:
+    - name: fog_light_location
+      value: '0x00'
+      description: Front fog light
+    - name: fog_light_state
+      value: '0x00'
+      description: Light is inactive
+  - item:
+    - name: fog_light_location
+      value: '0x01'
+      description: Rear fog light
+    - name: fog_light_state
+      value: '0x01'
+      description: Light is active
+
+reading_lamps:
+  - item:
+    - name: reading_lamp_location
+      value: '0x00'
+      description: Front left reading lamp
+    - name: reading_lamp_state
+      value: '0x00'
+      description: Lamp is inactive
+  - item:
+    - name: reading_lamp_location
+      value: '0x01'
+      description: Front right reading lamp
+    - name: reading_lamp_state
+      value: '0x01'
+      description: Lamp is active
+
+interior_lights:
+  - item:
+    - name: interior_light_location
+      value: '0x00'
+      description: Front interior light
+    - name: interior_light_state
+      value: '0x00'
+      description: Light is inactive
+  - item:
+    - name: interior_light_location
+      value: '0x01'
+      description: Rear interior light
+    - name: interior_light_state
+      value: '0x00'
+      description: Light is inactive
