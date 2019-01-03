@@ -1985,6 +1985,7 @@ definitions:
         - rear_right
         - rear_left
         - hatch
+        - all
         example: front_left
       lockState:
         type: string
@@ -2003,6 +2004,7 @@ definitions:
         - rear_right
         - rear_left
         - hatch
+        - all
         example: front_left
       lockState:
         type: string
@@ -2021,6 +2023,7 @@ definitions:
         - rear_right
         - rear_left
         - hatch
+        - all
         example: front_left
       position:
         type: string
