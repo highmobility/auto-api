@@ -1,112 +1,112 @@
 name: rooftop_control
 category: chassis
-id_msb: '0x00'
-id_lsb: '0x25'
+id_msb: 0x00
+id_lsb: 0x25
 api_intro: 3
 api_update: 9
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_rooftop_state
-  - id: '0x01'
+  - id: 0x01
     name: rooftop_state
-  - id: '0x12'
+  - id: 0x12
     name: control_rooftop
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: dimming
         type: integer
         size: 1
         description: Percentage value between 0-100 whereas 100 is opaque
-      - id: '0x02'
+      - id: 0x02
         name: position
         type: integer
         size: 1
         description: Percentage value between 0-100 whereas 100 is fully open
-      - id: '0x03'
+      - id: 0x03
         name: convertible_roof_state
         type: enum
         size: 1
         values:
           - name: closed
-            id: '0x00'
+            id: 0x00
           - name: open
-            id: '0x01'
-      - id: '0x04'
+            id: 0x01
+      - id: 0x04
         type: enum
         size: 1
         name: sunroof_tilt_state
         values:
           - name: closed
-            id: '0x00'
+            id: 0x00
           - name: tilt
-            id: '0x01'
+            id: 0x01
           - name: half_tilt
-            id: '0x02'
-      - id: '0x05'
+            id: 0x02
+      - id: 0x05
         type: enum
         size: 1
         name: sunroof_state
         values:
           - name: closed
-            id: '0x00'
+            id: 0x00
           - name: open
-            id: '0x01'
+            id: 0x01
           - name: intermediate
-            id: '0x02'
+            id: 0x02
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: integer
     size: 1
     name: dimming
     description: Percentage value between 0-100 whereas 100 is opaque
-  - id: '0x02'
+  - id: 0x02
     type: integer
     size: 1
     name: position
     description: Percentage value between 0-100 whereas 100 is fully open
-  - id: '0x03'
+  - id: 0x03
     type: enum
     size: 1
     name: convertible_roof_state
     values:
       - name: closed
-        id: '0x00'
+        id: 0x00
       - name: open
-        id: '0x01'
+        id: 0x01
       - name: emergency_locked
-        id: '0x02'
+        id: 0x02
       - name: closed_secured
-        id: '0x03'
+        id: 0x03
       - name: open_secured
-        id: '0x04'
+        id: 0x04
       - name: hard_top_mounted
-        id: '0x05'
+        id: 0x05
       - name: intermediate_position
-        id: '0x06'
+        id: 0x06
       - name: loading_position
-        id: '0x07'
+        id: 0x07
       - name: loading_position_immediate
-        id: '0x08'
-  - id: '0x04'
+        id: 0x08
+  - id: 0x04
     type: enum
     size: 1
     name: sunroof_tilt_state
     values:
       - name: closed
-        id: '0x00'
+        id: 0x00
       - name: tilted
-        id: '0x01'
+        id: 0x01
       - name: half_tilted
-        id: '0x02'
-  - id: '0x05'
+        id: 0x02
+  - id: 0x05
     type: enum
     size: 1
     name: sunroof_state
     values:
       - name: closed
-        id: '0x00'
+        id: 0x00
       - name: open
-        id: '0x01'
+        id: 0x01
       - name: intermediate
-        id: '0x02'
+        id: 0x02

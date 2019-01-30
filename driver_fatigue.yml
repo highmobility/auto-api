@@ -1,24 +1,24 @@
 name: driver_fatigue
 category: health
-id_msb: '0x00'
-id_lsb: '0x41'
+id_msb: 0x00
+id_lsb: 0x41
 api_intro: 4
 api_update: 5
 message_types:
-  - id: '0x01'
+  - id: 0x01
     name: driver_fatigue_detected
 
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: enum
     size: 1
     name: fatigue_level
     values:
       - name: light
-        id: '0x00'
+        id: 0x00
       - name: pause_recommended
-        id: '0x01'
+        id: 0x01
       - name: action_needed
-        id: '0x02'
+        id: 0x02
       - name: car_ready_to_take_over
-        id: '0x03'
+        id: 0x03

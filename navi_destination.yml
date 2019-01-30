@@ -1,18 +1,18 @@
 name: navi_destination
 category: poi
-id_msb: '0x00'
-id_lsb: '0x31'
+id_msb: 0x00
+id_lsb: 0x31
 api_intro: 4
 api_update: 8
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_navi_destination
-  - id: '0x01'
+  - id: 0x01
     name: navi_destination
-  - id: '0x12'
+  - id: 0x12
     name: set_navi_destination
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: coordinates
         size: 16
         mandatory: true
@@ -25,13 +25,13 @@ message_types:
             type: double
             size: 8
             description: Longitude in 8-bytes per IEEE 754
-      - id: '0x02'
+      - id: 0x02
         name: destination_name
         type: string
         description: Destination name bytes formatted in UTF-8
     
 properties:
-  - id: '0x07'
+  - id: 0x07
     name: coordinates
     size: 16
     items:
@@ -43,7 +43,7 @@ properties:
         type: double
         size: 8
         description: Longitude in 8-bytes per IEEE 754
-  - id: '0x02'
+  - id: 0x02
     name: destination_name
     type: string
     description: Destination name bytes formatted in UTF-8

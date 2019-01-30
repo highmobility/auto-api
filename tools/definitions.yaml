@@ -1082,7 +1082,7 @@ definitions:
       mileageMeters:
         type: number
         format: integer
-        example: 2
+        example: 0
         description: The car mileage (odometer) in meters
   DrivingModesActivationPeriods:
     type: object

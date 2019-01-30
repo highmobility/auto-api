@@ -1,18 +1,18 @@
 name: climate
 category: chassis
-id_msb: '0x00'
-id_lsb: '0x24'
+id_msb: 0x00
+id_lsb: 0x24
 api_intro: 2
 api_update: 8
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_climate_state
-  - id: '0x01'
+  - id: 0x01
     name: climate_state
-  - id: '0x12'
+  - id: 0x12
     name: change_starting_times
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: weekdays_starting_times
         size: 3
         multiple: true
@@ -22,21 +22,21 @@ message_types:
             size: 1
             values:
               - name: monday
-                id: '0x00'
+                id: 0x00
               - name: tuesday
-                id: '0x01'
+                id: 0x01
               - name: wednesday
-                id: '0x02'
+                id: 0x02
               - name: thursday
-                id: '0x03'
+                id: 0x03
               - name: friday
-                id: '0x04'
+                id: 0x04
               - name: saturday
-                id: '0x05'
+                id: 0x05
               - name: sunday
-                id: '0x06'
+                id: 0x06
               - name: automatic
-                id: '0x07'
+                id: 0x07
           - name: time
             size: 2
             description: Time of day. Use 0xFF to remove the set time.
@@ -47,140 +47,140 @@ message_types:
               - name: minutes
                 type: integer
                 size: 1
-  - id: '0x13'
+  - id: 0x13
     name: start_stop_hvac
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: active_state
         type: enum
         size: 1
         mandatory: true
         values:
           - name: stop_hvac
-            id: '0x00'
+            id: 0x00
           - name: start_hvac
-            id: '0x01'
-  - id: '0x14'
+            id: 0x01
+  - id: 0x14
     name: start_stop_defogging
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: active_state
         type: enum
         size: 1
         mandatory: true
         values:
           - name: stop_defogging
-            id: '0x00'
+            id: 0x00
           - name: start_defogging
-            id: '0x01'
-  - id: '0x15'
+            id: 0x01
+  - id: 0x15
     name: start_stop_defrosting
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: active_state
         type: enum
         size: 1
         mandatory: true
         values:
           - name: stop_defrosting
-            id: '0x00'
+            id: 0x00
           - name: start_defrosting
-            id: '0x01'
-  - id: '0x16'
+            id: 0x01
+  - id: 0x16
     name: start_stop_ionising
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: active_state
         type: enum
         size: 1
         mandatory: true
         values:
           - name: stop_ionising
-            id: '0x00'
+            id: 0x00
           - name: start_ionising
-            id: '0x01'
-  - id: '0x17'
+            id: 0x01
+  - id: 0x17
     name: set_temperature_settings
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: driver
         type: float
         size: 4
         description: Driver temperature in Celsius
-      - id: '0x02'
+      - id: 0x02
         name: passenger
         type: float
         size: 4
         description: Passenger temperature in Celsius
-      - id: '0x03'
+      - id: 0x03
         name: rear
         type: float
         size: 4
         description: Rear temperature in Celsius
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: float
     size: 4
     name: inside_temperature
     description: The inside temperature in celsius per IEEE 754 formatting
-  - id: '0x02'
+  - id: 0x02
     type: float
     size: 4
     name: outside_temperature
     description: The outside temperature in celsius per IEEE 754 formatting
-  - id: '0x03'
+  - id: 0x03
     type: float
     size: 4
     name: driver_temperature_setting
     description: The driver temperature setting in celsius per IEEE 754 formatting
-  - id: '0x04'
+  - id: 0x04
     type: float
     size: 4
     name: passenger_temperature_setting
     description: The passenger temperature setting in celsius per IEEE 754 formatting
-  - id: '0x05'
+  - id: 0x05
     type: enum
     size: 1
     name: hvac_state
     values:
       - name: inactive
-        id: '0x00'
+        id: 0x00
       - name: active
-        id: '0x01'
-  - id: '0x06'
+        id: 0x01
+  - id: 0x06
     type: enum
     size: 1
     name: defogging_state
     values:
       - name: inactive
-        id: '0x00'
+        id: 0x00
       - name: active
-        id: '0x01'
-  - id: '0x07'
+        id: 0x01
+  - id: 0x07
     type: enum
     size: 1
     name: defrosting_state
     values:
       - name: inactive
-        id: '0x00'
+        id: 0x00
       - name: active
-        id: '0x01'
-  - id: '0x08'
+        id: 0x01
+  - id: 0x08
     type: enum
     size: 1
     name: ionising_state
     values:
       - name: inactive
-        id: '0x00'
+        id: 0x00
       - name: active
-        id: '0x01'
-  - id: '0x09'
+        id: 0x01
+  - id: 0x09
     type: float
     size: 4
     name: defrosting_temperature
     description: The defrosting temperature setting in celsius per IEEE 754 formatting
-  - id: '0x0B'
+  - id: 0x0B
     size: 3
     name: hvac_weekday_starting_times
     pretty_name: HVAC weekday starting times
@@ -191,21 +191,21 @@ properties:
         size: 1
         values:
           - name: monday
-            id: '0x00'
+            id: 0x00
           - name: tuesday
-            id: '0x01'
+            id: 0x01
           - name: wednesday
-            id: '0x02'
+            id: 0x02
           - name: thursday
-            id: '0x03'
+            id: 0x03
           - name: friday
-            id: '0x04'
+            id: 0x04
           - name: saturday
-            id: '0x05'
+            id: 0x05
           - name: sunday
-            id: '0x06'
+            id: 0x06
           - name: automatic
-            id: '0x07'
+            id: 0x07
       - name: hour
         type: integer
         size: 1
@@ -214,7 +214,7 @@ properties:
         type: integer
         size: 1
         description: Value between 0 and 59
-  - id: '0x0C'
+  - id: 0x0C
     type: float
     size: 4
     name: rear_temperature_setting

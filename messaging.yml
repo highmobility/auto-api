@@ -1,22 +1,22 @@
 name: messaging
 category: headunit
-id_msb: '0x00'
-id_lsb: '0x37'
+id_msb: 0x00
+id_lsb: 0x37
 api_intro: 4
 api_update: 5
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: message_received
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: text
         type: string
         mandatory: true
         description: The text bytes of UTF8
-      - id: '0x02'
+      - id: 0x02
         name: handle
         type: string
         description: The optional handle of message, bytes of UTF8
-  - id: '0x01'
+  - id: 0x01
     name: send_message
     

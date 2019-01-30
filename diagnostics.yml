@@ -1,137 +1,137 @@
 name: diagnostics
 category: diagnostics
-id_msb: '0x00'
-id_lsb: '0x33'
+id_msb: 0x00
+id_lsb: 0x33
 api_intro: 3
 api_update: 9
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_diagnostics_state
-  - id: '0x01'
+  - id: 0x01
     name: diagnostics_state
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: integer
     size: 3
     name: mileage
     description: The car mileage (odometer) in km
-  - id: '0x02'
+  - id: 0x02
     type: integer
     size: 2
     name: engine_oil_temperature
     description: Engine oil temperature in Celsius, whereas can be negative
-  - id: '0x03'
+  - id: 0x03
     type: integer
     size: 2
     name: speed
     description: The vehicle speed in km/h, whereas can be negative
-  - id: '0x04'
+  - id: 0x04
     type: integer
     size: 2
     name: engine_rpm
     title_case_name: engineRPM
     pretty_name: Engine RPM
     description: Engine RPM (revolutions per minute)
-  - id: '0x05'
+  - id: 0x05
     type: integer
     size: 1
     name: fuel_level
     description: Fuel level percentage between 0-100
-  - id: '0x06'
+  - id: 0x06
     type: integer
     size: 2
     name: estimated_range
     description: Estimated range (with combustion engine)
-  - id: '0x09'
+  - id: 0x09
     type: enum
     size: 1
     name: washer_fluid_level
     values:
       - name: low
-        id: '0x00'
+        id: 0x00
       - name: filled
-        id: '0x01'
-  - id: '0x0B'
+        id: 0x01
+  - id: 0x0B
     type: float
     size: 4
     name: battery_voltage
     description: Battery voltage per IEEE 754 formatting
-  - id: '0x0C'
+  - id: 0x0C
     type: float
     size: 4
     name: adblue_level
     description: AdBlue level in liters formatted in 4-bytes per IEEE 754 formatting
-  - id: '0x0D'
+  - id: 0x0D
     type: integer
     size: 2
     name: distance_since_reset
     description: The distance driven in km since reset
-  - id: '0x0E'
+  - id: 0x0E
     type: integer
     size: 2
     name: distance_since_start
     description: The distance driven in km since trip start
-  - id: '0x0F'
+  - id: 0x0F
     type: float
     size: 4
     name: fuel_volume
     description: The fuel volume measured in liters formatted in 4-bytes per IEEE 754 formatting
-  - id: '0x10'
+  - id: 0x10
     type: enum
     size: 1
     name: anti_lock_braking
     pretty_name: Anti-lock braking system (ABS)
     values:
       - name: inactive
-        id: '0x00'
+        id: 0x00
       - name: active
-        id: '0x01'
-  - id: '0x11'
+        id: 0x01
+  - id: 0x11
     type: integer
     size: 2
     name: engine_coolant_temperature
     description: Engine coolant temperature in Celsius, whereas can be negative
-  - id: '0x12'
+  - id: 0x12
     type: float
     size: 4
     name: engine_total_operating_hours
     description: The accumulated time of engine operation per IEEE 754 formatting
-  - id: '0x13'
+  - id: 0x13
     type: float
     size: 4
     name: engine_total_fuel_consumption
     description: The accumulated lifespan fuel consumption in liters per IEEE 754 formatting
-  - id: '0x14'
+  - id: 0x14
     type: enum
     size: 1
     name: brake_fluid_level
     values:
       - name: low
-        id: '0x00'
+        id: 0x00
       - name: filled
-        id: '0x01'
-  - id: '0x15'
+        id: 0x01
+  - id: 0x15
     type: integer
     size: 1
     name: engine_torque
     description: Current engine torque percentage between 0-100
-  - id: '0x16'
+  - id: 0x16
     type: integer
     size: 1
     name: engine_load
     description: Current engine load percentage between 0-100
-  - id: '0x17'
+  - id: 0x17
     type: integer
     size: 2
     name: wheel_based_speed
     description: The vehicle speed in km/h measured at the wheel base, whereas can be negative
-  - id: '0x18'
+  - id: 0x18
     type: integer
     size: 1
     name: battery_level
     description: Battery level in %, value between 0 and 100
-  - id: '0x19'
+  - id: 0x19
     name: check_control_messages
     multiple: true
     items:
@@ -157,7 +157,7 @@ properties:
       - name: status
         type: string
         description: CCM status bytes formatted in UTF-8
-  - id: '0x1A'
+  - id: 0x1A
     name: tire_pressures
     size: 5
     multiple: true
@@ -167,18 +167,18 @@ properties:
         size: 1
         values:
           - name: front_left
-            id: '0x00'
+            id: 0x00
           - name: front_right
-            id: '0x01'
+            id: 0x01
           - name: rear_right
-            id: '0x02'
+            id: 0x02
           - name: rear_left
-            id: '0x03'
+            id: 0x03
       - name: pressure
         size: 4
         type: float
         description: Tire pressure in BAR formatted in 4-bytes per IEEE 754
-  - id: '0x1B'
+  - id: 0x1B
     name: tire_temperatures
     size: 5
     multiple: true
@@ -188,18 +188,18 @@ properties:
         size: 1
         values:
           - name: front_left
-            id: '0x00'
+            id: 0x00
           - name: front_right
-            id: '0x01'
+            id: 0x01
           - name: rear_right
-            id: '0x02'
+            id: 0x02
           - name: rear_left
-            id: '0x03'
+            id: 0x03
       - name: temperature
         size: 4
         type: float
         description: Tire temperature in BAR formatted in 4-bytes per IEEE 754
-  - id: '0x1C'
+  - id: 0x1C
     name: wheel_rpms
     pretty_name: Wheel RPMs
     size: 3
@@ -210,19 +210,19 @@ properties:
         size: 1
         values:
           - name: front_left
-            id: '0x00'
+            id: 0x00
           - name: front_right
-            id: '0x01'
+            id: 0x01
           - name: rear_right
-            id: '0x02'
+            id: 0x02
           - name: rear_left
-            id: '0x03'
+            id: 0x03
       - name: rpm
         pretty_name: RPM
         size: 2
         type: integer
         description: The RPM measured at this wheel
-  - id: '0x1D'
+  - id: 0x1D
     name: trouble_codes
     multiple: true
     items:
@@ -251,7 +251,7 @@ properties:
       - name: status
         type: string
         description: Status bytes formatted in UTF-8
-  - id: '0x1E'
+  - id: 0x1E
     type: integer
     size: 4
     name: mileage_meters

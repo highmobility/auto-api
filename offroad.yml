@@ -1,21 +1,21 @@
 name: offroad
 category: diagnostics
-id_msb: '0x00'
-id_lsb: '0x52'
+id_msb: 0x00
+id_lsb: 0x52
 api_intro: 5
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_offroad_state
-  - id: '0x01'
+  - id: 0x01
     name: offroad_state
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: integer
     size: 2
     name: route_incline
     description: The route elevation incline in degrees, which is a negative number for decline
-  - id: '0x02'
+  - id: 0x02
     type: integer
     size: 1
     name: wheel_suspension

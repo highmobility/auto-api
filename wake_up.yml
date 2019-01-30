@@ -1,9 +1,9 @@
 name: wake_up
 category: digital_key
-id_msb: '0x00'
-id_lsb: '0x22'
+id_msb: 0x00
+id_lsb: 0x22
 api_intro: 2
 api_update: 5
 message_types:
-  - id: '0x02'
+  - id: 0x02
     name: wake_up

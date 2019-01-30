@@ -1,43 +1,43 @@
 name: lights
 category: chassis
-id_msb: '0x00'
-id_lsb: '0x36'
+id_msb: 0x00
+id_lsb: 0x36
 api_intro: 3
 api_update: 9
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_lights_state
-  - id: '0x01'
+  - id: 0x01
     name: lights_state
-  - id: '0x12'
+  - id: 0x12
     name: control_lights
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: front_exterior_light
         type: enum
         size: 1
         values:
           - name: deactivate
-            id: '0x00'
+            id: 0x00
           - name: activate
-            id: '0x01'
+            id: 0x01
           - name: activate_full_beam
-            id: '0x02'
+            id: 0x02
           - name: activate_dlr
             pretty_name: Activate Daylight Running Lamps
-            id: '0x03'
+            id: 0x03
           - name: automatic
-            id: '0x04'
-      - id: '0x02'
+            id: 0x04
+      - id: 0x02
         name: rear_exterior_light
         type: enum
         size: 1
         values:
           - name: deactivate
-            id: '0x00'
+            id: 0x00
           - name: activate
-            id: '0x01'
-      - id: '0x04'
+            id: 0x01
+      - id: 0x04
         name: ambient_light
         size: 3
         items:
@@ -53,7 +53,7 @@ message_types:
             type: integer
             size: 1
             description: The blue colour of RGB in hex
-      - id: '0x07'
+      - id: 0x07
         size: 2
         name: fog_lights
         multiple: true
@@ -63,18 +63,18 @@ message_types:
             size: 1
             values:
               - name: front
-                id: '0x00'
+                id: 0x00
               - name: rear
-                id: '0x01'
+                id: 0x01
           - name: fog_light_state
             type: enum
             size: 1
             values:
               - name: inactive
-                id: '0x00'
+                id: 0x00
               - name: active
-                id: '0x01'
-      - id: '0x08'
+                id: 0x01
+      - id: 0x08
         name: reading_lamps
         size: 2
         multiple: true
@@ -84,22 +84,22 @@ message_types:
             size: 1
             values:
               - name: front_left
-                id: '0x00'
+                id: 0x00
               - name: front_right
-                id: '0x01'
+                id: 0x01
               - name: rear_right
-                id: '0x02'
+                id: 0x02
               - name: rear_left
-                id: '0x03'
+                id: 0x03
           - name: reading_lamp_state
             type: enum
             size: 1
             values:
               - name: inactive
-                id: '0x00'
+                id: 0x00
               - name: active
-                id: '0x01'
-      - id: '0x09'
+                id: 0x01
+      - id: 0x09
         size: 2
         name: interior_lights
         multiple: true
@@ -109,45 +109,45 @@ message_types:
             size: 1
             values:
               - name: front
-                id: '0x00'
+                id: 0x00
               - name: rear
-                id: '0x01'
+                id: 0x01
           - name: interior_light_state
             type: enum
             size: 1
             values:
               - name: inactive
-                id: '0x00'
+                id: 0x00
               - name: active
-                id: '0x01'
+                id: 0x01
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: enum
     size: 1
     name: front_exterior_light
     values:
       - name: inactive
-        id: '0x00'
+        id: 0x00
       - name: active
-        id: '0x01'
+        id: 0x01
       - name: active_with_full_beam
-        id: '0x02'
+        id: 0x02
       - name: dlr
         pretty_name: Daylight Running Lamps
-        id: '0x03'
+        id: 0x03
       - name: automatic
-        id: '0x04'
-  - id: '0x02'
+        id: 0x04
+  - id: 0x02
     type: enum
     size: 1
     name: rear_exterior_light
     values:
       - name: inactive
-        id: '0x00'
+        id: 0x00
       - name: active
-        id: '0x01'
-  - id: '0x04'
+        id: 0x01
+  - id: 0x04
     size: 3
     name: ambient_light
     items:
@@ -163,25 +163,25 @@ properties:
         type: integer
         size: 1
         description: The blue colour of RGB in hex
-  - id: '0x05'
+  - id: 0x05
     type: enum
     size: 1
     name: reverse_light
     values:
       - name: inactive
-        id: '0x00'
+        id: 0x00
       - name: active
-        id: '0x01'
-  - id: '0x06'
+        id: 0x01
+  - id: 0x06
     type: enum
     size: 1
     name: emergency_brake_light
     values:
       - name: inactive
-        id: '0x00'
+        id: 0x00
       - name: active
-        id: '0x01'
-  - id: '0x07'
+        id: 0x01
+  - id: 0x07
     size: 2
     name: fog_lights
     multiple: true
@@ -191,18 +191,18 @@ properties:
         size: 1
         values:
           - name: front
-            id: '0x00'
+            id: 0x00
           - name: rear
-            id: '0x01'
+            id: 0x01
       - name: fog_light_state
         type: enum
         size: 1
         values:
           - name: inactive
-            id: '0x00'
+            id: 0x00
           - name: active
-            id: '0x01'
-  - id: '0x08'
+            id: 0x01
+  - id: 0x08
     size: 2
     name: reading_lamps
     multiple: true
@@ -212,22 +212,22 @@ properties:
         size: 1
         values:
           - name: front_left
-            id: '0x00'
+            id: 0x00
           - name: front_right
-            id: '0x01'
+            id: 0x01
           - name: rear_right
-            id: '0x02'
+            id: 0x02
           - name: rear_left
-            id: '0x03'
+            id: 0x03
       - name: reading_lamp_state
         type: enum
         size: 1
         values:
           - name: inactive
-            id: '0x00'
+            id: 0x00
           - name: active
-            id: '0x01'
-  - id: '0x09'
+            id: 0x01
+  - id: 0x09
     size: 2
     name: interior_lights
     multiple: true
@@ -237,14 +237,14 @@ properties:
         size: 1
         values:
           - name: front
-            id: '0x00'
+            id: 0x00
           - name: rear
-            id: '0x01'
+            id: 0x01
       - name: interior_light_state
         type: enum
         size: 1
         values:
           - name: inactive
-            id: '0x00'
+            id: 0x00
           - name: active
-            id: '0x01'
+            id: 0x01

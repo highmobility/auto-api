@@ -1,16 +1,16 @@
 name: vehicle_time
 category: poi
-id_msb: '0x00'
-id_lsb: '0x50'
+id_msb: 0x00
+id_lsb: 0x50
 api_intro: 5
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_vehicle_time
-  - id: '0x01'
+  - id: 0x01
     name: vehicle_time
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     size: 8
     name: vehicle_time
     items:

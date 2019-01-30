@@ -1,22 +1,22 @@
 name: mobile
 pretty_state_name: Mobile
 category: headunit
-id_msb: '0x00'
-id_lsb: '0x66'
+id_msb: 0x00
+id_lsb: 0x66
 api_intro: 8
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_mobile_state
-  - id: '0x01'
+  - id: 0x01
     name: mobile_state
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: enum
     size: 1
     name: connection
     values:
       - name: disconnected
-        id: '0x00'
+        id: 0x00
       - name: connected
-        id: '0x01'
+        id: 0x01

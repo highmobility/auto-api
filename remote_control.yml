@@ -1,60 +1,60 @@
 name: remote_control
 category: parking
-id_msb: '0x00'
-id_lsb: '0x27'
+id_msb: 0x00
+id_lsb: 0x27
 api_intro: 2
 api_update: 8
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_control_mode
-  - id: '0x01'
+  - id: 0x01
     name: control_mode
-  - id: '0x04'
+  - id: 0x04
     name: control_command
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: speed
         type: integer
         size: 1
         description: Speed in km/h
-      - id: '0x02'
+      - id: 0x02
         name: angle
         type: integer
         size: 2
         description: Angle of the steering
-  - id: '0x12'
+  - id: 0x12
     name: start_stop_control
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: start_stop
         type: enum
         size: 1
         mandatory: true
         values:
           - name: start
-            id: '0x00'
+            id: 0x00
           - name: stop
-            id: '0x01'
+            id: 0x01
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: enum
     size: 1
     name: control_mode
     values:
       - name: control_mode_unavailable
-        id: '0x00'
+        id: 0x00
       - name: control_mode_available
-        id: '0x01'
+        id: 0x01
       - name: control_started
-        id: '0x02'
+        id: 0x02
       - name: control_failed_to_start
-        id: '0x03'
+        id: 0x03
       - name: control_aborted
-        id: '0x04'
+        id: 0x04
       - name: control_ended
-        id: '0x05'
-  - id: '0x02'
+        id: 0x05
+  - id: 0x02
     type: integer
     size: 2
     name: angle

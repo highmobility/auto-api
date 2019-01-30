@@ -1,14 +1,14 @@
 name: text_input
 category: headunit
-id_msb: '0x00'
-id_lsb: '0x44'
+id_msb: 0x00
+id_lsb: 0x44
 api_intro: 4
 api_update: 5
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: text_input
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: text
         type: string
         mandatory: true

@@ -1,16 +1,16 @@
 name: tachograph
 category: heavy_duty
-id_msb: '0x00'
-id_lsb: '0x64'
+id_msb: 0x00
+id_lsb: 0x64
 api_intro: 7
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_tachograph_state
-  - id: '0x01'
+  - id: 0x01
     name: tachograph_state
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     size: 2
     name: drivers_working_states
     multiple: true
@@ -24,14 +24,14 @@ properties:
         size: 1
         values:
           - name: resting
-            id: '0x00'
+            id: 0x00
           - name: driver_available
-            id: '0x01'
+            id: 0x01
           - name: working
-            id: '0x02'
+            id: 0x02
           - name: driving
-            id: '0x03'
-  - id: '0x02'
+            id: 0x03
+  - id: 0x02
     size: 2
     name: drivers_time_states
     multiple: true
@@ -45,26 +45,26 @@ properties:
         size: 1
         values:
           - name: normal
-            id: '0x00'
+            id: 0x00
           - name: 15_min_before_4
             pretty_name: '15 minutes before 4½ hours'
-            id: '0x01'
+            id: 0x01
           - name: 4_reached
             pretty_name: '4½ hours reached'
-            id: '0x02'
+            id: 0x02
           - name: 15_min_before_9
             pretty_name: '15 minutes before 9 hours'
-            id: '0x03'
+            id: 0x03
           - name: 9_reached
             pretty_name: '9 hours reached'
-            id: '0x04'
+            id: 0x04
           - name: 15_min_before_16
             pretty_name: '15 minutes before 16 hours'
-            id: '0x05'
+            id: 0x05
           - name: 16_reached
             pretty_name: '16 hours reached'
-            id: '0x06'
-  - id: '0x03'
+            id: 0x06
+  - id: 0x03
     size: 2
     name: drivers_cards
     multiple: true
@@ -78,37 +78,37 @@ properties:
         size: 1
         values:
           - name: not_present
-            id: '0x00'
+            id: 0x00
           - name: present
-            id: '0x01'
-  - id: '0x04'
+            id: 0x01
+  - id: 0x04
     type: enum
     size: 1
     name: vehicle_motion
     values:
       - name: not_detected
-        id: '0x00'
+        id: 0x00
       - name: detected
-        id: '0x01'
-  - id: '0x05'
+        id: 0x01
+  - id: 0x05
     type: enum
     size: 1
     name: vehicle_overspeed
     values:
       - name: no_overspeed
-        id: '0x00'
+        id: 0x00
       - name: overspeed
-        id: '0x01'
-  - id: '0x06'
+        id: 0x01
+  - id: 0x06
     type: enum
     size: 1
     name: vehicle_direction
     values:
       - name: forward
-        id: '0x00'
+        id: 0x00
       - name: reverse
-        id: '0x01'
-  - id: '0x07'
+        id: 0x01
+  - id: 0x07
     type: integer
     size: 2
     name: vehicle_speed

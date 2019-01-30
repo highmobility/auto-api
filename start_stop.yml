@@ -1,19 +1,19 @@
 name: start_stop
 pretty_state_name: Start-Stop
 category: digital_key
-id_msb: '0x00'
-id_lsb: '0x63'
+id_msb: 0x00
+id_lsb: 0x63
 api_intro: 7
 api_update: 8
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_start_stop_state
-  - id: '0x01'
+  - id: 0x01
     name: start_stop_state
-  - id: '0x12'
+  - id: 0x12
     name: activate_deactivate_start_stop
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: start_stop
         pretty_name: Start-Stop
         type: enum
@@ -21,18 +21,18 @@ message_types:
         mandatory: true
         values:
           - name: inactive
-            id: '0x00'
+            id: 0x00
           - name: active
-            id: '0x01'
+            id: 0x01
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: enum
     size: 1
     name: start_stop
     pretty_name: Start-Stop
     values:
       - name: inactive
-        id: '0x00'
+        id: 0x00
       - name: active
-        id: '0x01'
+        id: 0x01

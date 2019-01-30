@@ -1,30 +1,30 @@
 name: door_locks
 category: digital_key
-id_msb: '0x00'
-id_lsb: '0x20'
+id_msb: 0x00
+id_lsb: 0x20
 api_intro: 1
 api_update: 9
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_lock_state
-  - id: '0x01'
+  - id: 0x01
     name: lock_state
-  - id: '0x12'
+  - id: 0x12
     name: lock_unlock_doors
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: lock_state
         type: enum
         size: 1
         mandatory: true
         values:
           - name: unlock
-            id: '0x00'
+            id: 0x00
           - name: lock
-            id: '0x01'
+            id: 0x01
 
 properties:
-  - id: '0x02'
+  - id: 0x02
     size: 2
     name: inside_locks
     multiple: true
@@ -34,26 +34,26 @@ properties:
         size: 1
         values:
           - name: front_left
-            id: '0x00'
+            id: 0x00
           - name: front_right
-            id: '0x01'
+            id: 0x01
           - name: rear_right
-            id: '0x02'
+            id: 0x02
           - name: rear_left
-            id: '0x03'
+            id: 0x03
           - name: hatch
-            id: '0x04'
+            id: 0x04
           - name: all
-            id: '0x05'
+            id: 0x05
       - name: lock_state
         type: enum
         size: 1
         values:
           - name: unlocked
-            id: '0x00'
+            id: 0x00
           - name: locked
-            id: '0x01'
-  - id: '0x03'
+            id: 0x01
+  - id: 0x03
     size: 2
     name: locks
     multiple: true
@@ -63,26 +63,26 @@ properties:
         size: 1
         values:
           - name: front_left
-            id: '0x00'
+            id: 0x00
           - name: front_right
-            id: '0x01'
+            id: 0x01
           - name: rear_right
-            id: '0x02'
+            id: 0x02
           - name: rear_left
-            id: '0x03'
+            id: 0x03
           - name: hatch
-            id: '0x04'
+            id: 0x04
           - name: all
-            id: '0x05'
+            id: 0x05
       - name: lock_state
         type: enum
         size: 1
         values:
           - name: unlocked
-            id: '0x00'
+            id: 0x00
           - name: locked
-            id: '0x01'
-  - id: '0x04'
+            id: 0x01
+  - id: 0x04
     size: 2
     name: positions
     multiple: true
@@ -92,22 +92,22 @@ properties:
         size: 1
         values:
           - name: front_left
-            id: '0x00'
+            id: 0x00
           - name: front_right
-            id: '0x01'
+            id: 0x01
           - name: rear_right
-            id: '0x02'
+            id: 0x02
           - name: rear_left
-            id: '0x03'
+            id: 0x03
           - name: hatch
-            id: '0x04'
+            id: 0x04
           - name: all
-            id: '0x05'
+            id: 0x05
       - name: position
         type: enum
         size: 1
         values:
           - name: closed
-            id: '0x00'
+            id: 0x00
           - name: open
-            id: '0x01'
+            id: 0x01

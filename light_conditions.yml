@@ -1,21 +1,21 @@
 name: light_conditions
 category: environment
-id_msb: '0x00'
-id_lsb: '0x54'
+id_msb: 0x00
+id_lsb: 0x54
 api_intro: 5
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_light_conditions
-  - id: '0x01'
+  - id: 0x01
     name: light_conditions
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: float
     size: 4
     name: outside_light
     description: Measured outside illuminance in lux, formatted as IEEE 754 decimal
-  - id: '0x02'
+  - id: 0x02
     type: float
     size: 4
     name: inside_light

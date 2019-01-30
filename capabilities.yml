@@ -1,19 +1,19 @@
 name: capabilities
 category: api_structure
-id_msb: '0x00'
-id_lsb: '0x10'
+id_msb: 0x00
+id_lsb: 0x10
 api_intro: 2
 api_update: 5
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_capabilities
-  - id: '0x01'
+  - id: 0x01
     name: capabilities
-  - id: '0x02'
+  - id: 0x02
     name: get_capability
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     name: capability # size is dynamic depending on supported_message_types length
     multiple: true
     items:

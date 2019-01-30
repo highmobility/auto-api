@@ -62,7 +62,7 @@ Dir.glob('../*.yml') do |yml_file|
 
   # - Get Swagger formatted model name
   spec['message_types'].each do |msg|
-    if msg['id'] == '0x01'
+    if msg['id'] == 0x01
       cap_name = swagger_name(msg['name'])
       break
     end
@@ -182,7 +182,7 @@ Dir.glob('../*.yml') do |yml_file|
                 unless exceptions['rejections'].include?(meta_cap['name'])
                   item['items']['enum'] = item['items']['enum'] + meta_cap['message_types'].map do |msg|
                     # Ignore state resonses for clarity
-                    msg['name'] unless msg['id'] == '0x01'
+                    msg['name'] unless msg['id'] == 0x01
                   end.compact
                 end
               end

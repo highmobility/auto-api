@@ -1,19 +1,19 @@
 name: historical
 pretty_state_name: Historical States
 category: api_structure
-id_msb: '0x00'
-id_lsb: '0x12'
+id_msb: 0x00
+id_lsb: 0x12
 api_intro: 8
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_states
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: capability_identifier
         size: 2
         type: integer
         mandatory: true
-      - id: '0x02'
+      - id: 0x02
         name: start_date
         size: 8
         items:
@@ -45,7 +45,7 @@ message_types:
             type: integer
             size: 2
             description: UTC time offset in minutes, which can be negative
-      - id: '0x03'
+      - id: 0x03
         name: end_date
         size: 8
         items:
@@ -77,11 +77,11 @@ message_types:
             type: integer
             size: 2
             description: UTC time offset in minutes, which can be negative
-  - id: '0x01'
+  - id: 0x01
     name: states
 
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: capability_state
     name: states
     multiple: true

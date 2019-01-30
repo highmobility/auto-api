@@ -1,44 +1,44 @@
 name: engine
 category: digital_key
-id_msb: '0x00'
-id_lsb: '0x35'
+id_msb: 0x00
+id_lsb: 0x35
 api_intro: 3
 api_update: 8
 message_types:
-  - id: '0x00'
+  - id: 0x00
     name: get_ignition_state
-  - id: '0x01'
+  - id: 0x01
     name: ignition_state
-  - id: '0x12'
+  - id: 0x12
     name: turn_ignition_on_off
     properties:
-      - id: '0x01'
+      - id: 0x01
         name: ignition
         type: enum
         size: 1
         mandatory: true
         values:
           - name: ignition_off
-            id: '0x00'
+            id: 0x00
           - name: ignition_on
-            id: '0x01'
+            id: 0x01
     
 properties:
-  - id: '0x01'
+  - id: 0x01
     type: enum
     size: 1
     name: ignition
     values:
       - name: ignition_off
-        id: '0x00'
+        id: 0x00
       - name: ignition_on
-        id: '0x01'
-  - id: '0x02'
+        id: 0x01
+  - id: 0x02
     type: enum
     size: 1
     name: accessories_ignition
     values:
       - name: powered_off
-        id: '0x00'
+        id: 0x00
       - name: powered_on
-        id: '0x01'
+        id: 0x01
