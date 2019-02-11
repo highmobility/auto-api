@@ -3,7 +3,7 @@ category: chassis
 id_msb: 0x00
 id_lsb: 0x25
 api_intro: 3
-api_update: 9
+api_update: 10
 message_types:
   - id: 0x00
     name: get_rooftop_state
@@ -14,14 +14,14 @@ message_types:
     properties:
       - id: 0x01
         name: dimming
-        type: integer
-        size: 1
-        description: Percentage value between 0-100 whereas 100 is opaque
+        type: double
+        size: 8
+        description: Percentage value between 0.0-1.0 whereas 1.0 is opaque
       - id: 0x02
         name: position
-        type: integer
-        size: 1
-        description: Percentage value between 0-100 whereas 100 is fully open
+        type: double
+        size: 8
+        description: Percentage value between 0.0-1.0 whereas 1.0 is fully open
       - id: 0x03
         name: convertible_roof_state
         type: enum
@@ -56,15 +56,15 @@ message_types:
     
 properties:
   - id: 0x01
-    type: integer
-    size: 1
-    name: dimming
-    description: Percentage value between 0-100 whereas 100 is opaque
+    type: double
+    size: 8
+    name: charge_limit
+    description: Percentage value between 0.0-1.0 whereas 1.0 is opaque
   - id: 0x02
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: position
-    description: Percentage value between 0-100 whereas 100 is fully open
+    description: Percentage value between 0.0-1.0 whereas 1.0 is fully open
   - id: 0x03
     type: enum
     size: 1

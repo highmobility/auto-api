@@ -5,7 +5,7 @@ estimated_range:
 
 battery_level:
   - item:
-    - value: '0x53'
+    - value: '0x3F, 0xE0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00'
       description: Battery level 50%
 
 battery_current_ac:
@@ -30,7 +30,7 @@ charger_voltage_dc:
 
 charge_limit:
   - item:
-    - value: '0x5A'
+    - value: '0x3F, 0xEC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCD'
       description: Charge limit 90%
 
 time_to_complete_charge:
@@ -122,52 +122,16 @@ timers:
     - name: timer_type
       value: '0x00'
       description: Preferred start time
-    - name: year
-      value: '0x12'
-      description: 2018
-    - name: month
-      value: '0x01'
-      description: January
-    - name: day
-      value: '0x0A'
-      description: the 10th
-    - name: hour
-      value: '0x10'
-      description: at 16h
-    - name: minute
-      value: '0x20'
-      description: 32min
-    - name: second
-      value: '0x05'
-      description: 5 seconds
-    - name: utc_time_offset
-      value: '0x00, 0x00'
-      description: 0 min UTC time offset
+    - name: date
+      value: '0x41, 0xD6, 0x95, 0x88, 0xF9, 0x40, 0x00, 0x00'
+      description: 10 January 2018 at 16:32:05
   - item:
     - name: timer_type
       value: '0x01'
       description: Preferred end time
-    - name: year
-      value: '0x12'
-      description: 2018
-    - name: month
-      value: '0x01'
-      description: January
-    - name: day
-      value: '0x0A'
-      description: the 10th
-    - name: hour
-      value: '0x12'
-      description: at 18h
-    - name: minute
-      value: '0x1E'
-      description: 30min
-    - name: second
-      value: '0x00'
-      description: 0 seconds
-    - name: utc_time_offset
-      value: '0x00, 0x00'
-      description: 0 min UTC time offset
+    - name: date
+      value: '0x41, 0xD6, 0x95, 0x8F, 0xE2, 0x00, 0x00, 0x00'
+      description: 10 January 2018 at 18:30:00 UTC
 
 plugged_in:
   - item:

@@ -3,7 +3,7 @@ category: chassis
 id_msb: 0x00
 id_lsb: 0x45
 api_intro: 2
-api_update: 8
+api_update: 10
 message_types:
   - id: 0x00
     name: get_windows_state
@@ -14,7 +14,7 @@ message_types:
     properties:
       - id: 0x01
         name: windows_open_percentages
-        size: 2
+        size: 9
         multiple: true
         items:
           - name: window_location
@@ -32,9 +32,9 @@ message_types:
               - name: hatch
                 id: 0x04
           - name: open_percentage
-            type: integer
-            size: 1
-            description: Value between 0 and 100
+            type: double
+            size: 8
+            description: Value between 0.0 and 1.0
       - id: 0x02
         name: windows_positions
         size: 2
@@ -65,7 +65,7 @@ message_types:
 
 properties:
   - id: 0x02
-    size: 2
+    size: 9
     name: windows_open_percentages
     multiple: true
     items:
@@ -84,9 +84,9 @@ properties:
           - name: hatch
             id: 0x04
       - name: open_percentage
-        type: integer
-        size: 1
-        description: Value between 0 and 100
+        type: double
+        size: 8
+        description: Value between 0.0 and 1.0
   - id: 0x03
     size: 2
     name: windows_positions
@@ -110,9 +110,9 @@ properties:
         type: enum
         size: 1
         values:
-          - name: closed
+          - name: close
             id: 0x00
-          - name: opened
+          - name: open
             id: 0x01
           - name: intermediate
             id: 0x02

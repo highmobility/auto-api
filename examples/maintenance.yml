@@ -35,75 +35,18 @@ service_time_threshold:
 
 automatic_teleservice_call_date:
   - item:
-    - name: year
-      value: '0x12'
-      description: 2018
-    - name: month
-      value: '0x0B'
-      description: November
-    - name: day
-      value: '0x17'
-      description: 23rd
-    - name: hour
-      value: '0x0A'
-      description: 10h
-    - name: minute
-      value: '0x21'
-      description: 33min
-    - name: second
-      value: '0x32'
-      description: 50s
-    - name: utc_time_offset
-      value: '0x00, 0x3C'
-      description: Offset is 60min
+      value: '0x41, 0xD6, 0xFD, 0xF2, 0x5F, 0x80, 0x00, 0x00'
+      description: 23 November 2018 at 11:33:50
 
 teleservice_battery_call_date:
   - item:
-    - name: year
-      value: '0x12'
-      description: 2018
-    - name: month
-      value: '0x0B'
-      description: November
-    - name: day
-      value: '0x17'
-      description: 23rd
-    - name: hour
-      value: '0x0A'
-      description: 10h
-    - name: minute
-      value: '0x21'
-      description: 33min
-    - name: second
-      value: '0x32'
-      description: 50s
-    - name: utc_time_offset
-      value: '0x00, 0x3C'
-      description: Offset is 60min
+      value: '0x41, 0xD6, 0xFD, 0xF2, 0x5F, 0x80, 0x00, 0x00'
+      description: 23 November 2018 at 11:33:50
 
 next_inspection_date:
   - item:
-    - name: year
-      value: '0x12'
-      description: 2018
-    - name: month
-      value: '0x0B'
-      description: November
-    - name: day
-      value: '0x17'
-      description: 23rd
-    - name: hour
-      value: '0x0A'
-      description: 10h
-    - name: minute
-      value: '0x21'
-      description: 33min
-    - name: second
-      value: '0x32'
-      description: 50s
-    - name: utc_time_offset
-      value: '0x00, 0x3C'
-      description: Offset is 60min
+      value: '0x41, 0xD6, 0xFD, 0xF2, 0x5F, 0x80, 0x00, 0x00'
+      description: 23 November 2018 at 11:33:50
 
 condition_based_services:
   - item:
@@ -163,24 +106,5 @@ condition_based_services:
 
 brake_fluid_change_date:
   - item:
-    - name: year
-      value: '0x12'
-      description: 2018
-    - name: month
-      value: '0x0B'
-      description: November
-    - name: day
-      value: '0x17'
-      description: 23rd
-    - name: hour
-      value: '0x0A'
-      description: 10h
-    - name: minute
-      value: '0x21'
-      description: 33min
-    - name: second
-      value: '0x32'
-      description: 50s
-    - name: utc_time_offset
-      value: '0x00, 0x3C'
-      description: Offset is 60min
+      value: '0x41, 0xD6, 0xFD, 0xF2, 0x5F, 0x80, 0x00, 0x00'
+      description: 23 November 2018 at 11:33:50

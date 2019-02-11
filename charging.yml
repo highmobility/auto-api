@@ -3,7 +3,7 @@ category: chassis
 id_msb: 0x00
 id_lsb: 0x23
 api_intro: 2
-api_update: 8
+api_update: 10
 message_types:
   - id: 0x00
     name: get_charge_state
@@ -27,10 +27,10 @@ message_types:
     properties:
       - id: 0x01
         name: charge_limit
-        type: integer
-        size: 1
+        type: double
+        size: 8
         mandatory: true
-        description: Charge limit percentage between 0-100
+        description: Charge limit percentage between 0.0-1.0
   - id: 0x14
     name: open_close_charging_port
     properties:
@@ -62,7 +62,7 @@ message_types:
     properties:
       - id: 0x0D
         name: timers
-        size: 9
+        size: 16
         multiple: true
         mandatory: true
         items:
@@ -76,34 +76,10 @@ message_types:
                 id: 0x01
               - name: departure_date
                 id: 0x02
-          - name: year
-            type: integer
-            size: 1
-            description: Value between 0 and 99, which corresponds to 2000-2099
-          - name: month
-            type: integer
-            size: 1
-            description: Value between 1 and 12
-          - name: day
-            type: integer
-            size: 1
-            description: Value between 1 and 31
-          - name: hour
-            type: integer
-            size: 1
-            description: Value between 0 and 23
-          - name: minute
-            type: integer
-            size: 1
-            description: Value between 0 and 59
-          - name: second
-            type: integer
-            size: 1
-            description: Value between 0 and 59
-          - name: utc_time_offset
-            type: integer
-            size: 2
-            description: UTC time offset in minutes, which can be negative
+          - name: date
+            type: double
+            size: 8
+            description: Milliseconds since UNIX Epoch time
   - id: 0x17
     name: set_reduction_of_charging_current_times
     properties:
@@ -138,10 +114,10 @@ properties:
     name: estimated_range
     description: Estimated range in km
   - id: 0x03
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: battery_level
-    description: Battery level percentage between 0-100
+    description: Battery level percentage between 0.0-1.0
   - id: 0x04
     type: float
     size: 4
@@ -171,10 +147,10 @@ properties:
     pretty_name: Charger voltage (DC)
     description: Charger voltage in 4-bytes per IEEE 754
   - id: 0x08
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: charge_limit
-    description: Charge limit percentage between 0-100
+    description: Charge limit percentage between 0.0-1.0
   - id: 0x09
     type: integer
     size: 1
@@ -286,7 +262,7 @@ properties:
     name: battery_temperature
     description: Battery temperature in Celsius in 4-bytes per IEEE 754
   - id: 0x15
-    size: 9
+    size: 16
     name: timers
     multiple: true
     items:
@@ -300,34 +276,10 @@ properties:
             id: 0x01
           - name: departure_date
             id: 0x02
-      - name: year
-        type: integer
-        size: 1
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      - name: month
-        type: integer
-        size: 1
-        description: Value between 1 and 12
-      - name: day
-        type: integer
-        size: 1
-        description: Value between 1 and 31
-      - name: hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: second
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: utc_time_offset
-        type: integer
-        size: 2
-        description: UTC time offset in minutes, which can be negative
+      - name: date
+        type: double
+        size: 8
+        description: Milliseconds since UNIX Epoch time
   - id: 0x16
     type: enum
     size: 1

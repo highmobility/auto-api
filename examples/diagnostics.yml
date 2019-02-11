@@ -20,7 +20,7 @@ engine_rpm:
 
 fuel_level:
   - item:
-    - value: '0x5A'
+    - value: '0x3F, 0xEC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCD'
       description: 90% fuel level
 
 estimated_range:
@@ -85,12 +85,12 @@ brake_fluid_level:
 
 engine_torque:
   - item:
-    - value: '0x14'
+    - value: '0x3F, 0xC9, 0x99, 0x99, 0x99, 0x99, 0x99, 0x9A'
       description: Current engine torque is at 20% of full torque
 
 engine_load:
   - item:
-    - value: '0x0A'
+    - value: '0x3F, 0xB9, 0x99, 0x99, 0x99, 0x99, 0x99, 0x9A'
       description: Current engine load is at 10% of full capacity
 
 wheel_based_speed:
@@ -100,7 +100,7 @@ wheel_based_speed:
 
 battery_level:
   - item:
-    - value: '0x38'
+    - value: '0x3F, 0xE1, 0xEB, 0x85, 0x1E, 0xB8, 0x51, 0xEC'
       description: 'The 12V battery level is 56%'
 
 check_control_messages:

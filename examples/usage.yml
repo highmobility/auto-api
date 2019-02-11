@@ -10,12 +10,12 @@ average_weekly_distance_long_run:
 
 acceleration_evaluation:
   - item:
-    - value: '0x46'
+    - value: '0x3F, 0xE6, 0x66, 0x66, 0x66, 0x66, 0x66, 0x66'
       description: Acceleration evaluation is 70%
 
 driving_style_evaluation:
   - item:
-    - value: '0x46'
+    - value: '0x3F, 0xE6, 0x66, 0x66, 0x66, 0x66, 0x66, 0x66'
       description: Driving style evaluation is 70%
 
 driving_modes_activation_periods:
@@ -24,14 +24,14 @@ driving_modes_activation_periods:
       value: '0x01'
       description: ECO driving mode
     - name: period
-      value: '0x3C'
+      value: '0x3F, 0xE3, 0x33, 0x33, 0x33, 0x33, 0x33, 0x33'
       description: 60% of the time
   - item:
     - name: driving_mode
       value: '0x00'
       description: Regular driving mode
     - name: period
-      value: '0x28'
+      value: '0x3F, 0xD9, 0x99, 0x99, 0x99, 0x99, 0x99, 0x9A'
       description: 40% of the time
 
 driving_mode_energy_consumption:
@@ -67,7 +67,7 @@ mileage_after_last_trip:
 
 last_trip_electric_portion:
   - item:
-    - value: '0x46'
+    - value: '0x3F, 0xE6, 0x66, 0x66, 0x66, 0x66, 0x66, 0x66'
       description: Electric portion was 70%
 
 last_trip_average_energy_recuperation:
@@ -77,32 +77,13 @@ last_trip_average_energy_recuperation:
 
 last_trip_battery_remaining:
   - item:
-    - value: '0x32'
+    - value: '0x3F, 0xE0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00'
       description: Battery was 50% after last trip
 
 last_trip_date:
   - item:
-    - name: year
-      value: '0x12'
-      description: 2018
-    - name: month
-      value: '0x0A'
-      description: October
-    - name: day
-      value: '0x11'
-      description: 17th
-    - name: hour
-      value: '0x0A'
-      description: 10h
-    - name: minute
-      value: '0x21'
-      description: 33min
-    - name: second
-      value: '0x32'
-      description: 50s
-    - name: utc_time_offset
-      value: '0x00, 0x3C'
-      description: Offset is 60min
+      value: '0x41, 0xD6, 0xF1, 0xC0, 0x7F, 0x80, 0x00, 0x00'
+      description: 17 October 2018 at 12:33:50
 
 average_fuel_consumption:
   - item:

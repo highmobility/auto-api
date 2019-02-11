@@ -3,7 +3,7 @@ category: diagnostics
 id_msb: 0x00
 id_lsb: 0x57
 api_intro: 5
-api_update: 8
+api_update: 10
 message_types:
   - id: 0x00
     name: get_race_state
@@ -33,20 +33,20 @@ properties:
         type: float
         description: The accelaration in g-force per IEEE 754 
   - id: 0x02
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: understeering
-    description: The understeering percentage between 0-100% whereas up to 20% is considered OK, up to 30% marginal, over 30% critical
+    description: The understeering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 0.3 (30%) marginal, over 30% critical
   - id: 0x03
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: oversteering
-    description: The oversteering percentage between 0-100% whereas up to 20% is considered OK, up to 30% marginal, over 30% critical
+    description: The oversteering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 30% marginal, over 30% critical
   - id: 0x04
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: gas_pedal_position
-    description: The gas pedal position between 0-100%, whereas 100% is full throttle
+    description: The gas pedal position between 0.0-1.0, whereas 1.0 (100%) is full throttle
   - id: 0x05
     type: integer
     size: 1
@@ -123,10 +123,10 @@ properties:
     name: selected_gear
     description: The selected gear value, if any
   - id: 0x0D
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: brake_pedal_position
-    description: The brake pedal position between 0-100%, wheras 100% is full brakes
+    description: The brake pedal position between 0.0-1.0, wheras 1.0 (100%) is full brakes
   - id: 0x0E
     type: enum
     size: 1

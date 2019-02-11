@@ -30,22 +30,10 @@ windscreen_needs_replacement:
 
 windscreen_damage_confidence:
   - item:
-    - value: '0x5F'
+    - value: '0x3F, 0xEE, 0x66, 0x66, 0x66, 0x66, 0x66, 0x66'
       description: Damage detected with 95% confidence
 
 windscreen_damage_detection_time:
   - item:
-    - value: '0x11'
-      description: Damage impact in 2017
-    - value: '0x01'
-      description: January
-    - value: '0x0A'
-      description: the 10th
-    - value: '0x10'
-      description: at 16h
-    - value: '0x20'
-      description: 32min
-    - value: '0x05'
-      description: 5 seconds
-    - value: '0x00, 0x00'
-      description: 0 min UTC time offset
+    - value: '0x41, 0xD6, 0x1D, 0x3C, 0x19, 0x40, 0x00, 0x00'
+      description: 10 January 2017 at 16:32:05

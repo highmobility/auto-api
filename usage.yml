@@ -3,7 +3,7 @@ category: diagnostics
 id_msb: 0x00
 id_lsb: 0x68
 api_intro: 8
-api_update: 8
+api_update: 10
 message_types:
   - id: 0x00
     name: get_usage
@@ -22,17 +22,17 @@ properties:
     name: average_weekly_distance_long_run
     description: Average weekyl distance, over long term, in km
   - id: 0x03
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: acceleration_evaluation
-    description: Acceleration evaluation in %
+    description: Acceleration evaluation in % from 0.0 to 1.0
   - id: 0x04
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: driving_style_evaluation
-    description: Driving style's evaluation in %
+    description: Driving style's evaluation in % from 0.0 to 1.0
   - id: 0x05
-    size: 2
+    size: 9
     multiple: true
     name: driving_modes_activation_periods
     items:
@@ -51,9 +51,9 @@ properties:
           - name: ecoPlus
             id: 0x04
       - name: period
-        type: integer
-        size: 1
-        description: '% value of the period used for the driving mode'
+        type: double
+        size: 8
+        description: '% value from 0.0 to 1.0 of the period used for the driving mode'
   - id: 0x06
     size: 2
     multiple: true
@@ -93,52 +93,25 @@ properties:
     name: mileage_after_last_trip
     description: Mileage after the last trip in km
   - id: 0x0A
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: last_trip_electric_portion
-    description: Portion of the last trip used in electric mode
+    description: Portion of the last trip used in electric mode between 0.0-1.0
   - id: 0x0B
     type: float
     size: 4
     name: last_trip_average_energy_recuperation
     description: Energy recuperation rate for last trip, in kWh / 100 km
   - id: 0x0C
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: last_trip_battery_remaining
-    description: Battery % remaining after last trip
+    description: Battery % remaining after last trip between 0.0-1.0
   - id: 0x0D
+    type: double
     size: 8
     name: last_trip_date
-    items:
-      - name: year
-        type: integer
-        size: 1
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      - name: month
-        type: integer
-        size: 1
-        description: Value between 1 and 12
-      - name: day
-        type: integer
-        size: 1
-        description: Value between 1 and 31
-      - name: hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: second
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-      - name: utc_time_offset
-        type: integer
-        size: 2
-        description: UTC time offset in minutes, which can be negative
+    description: Milliseconds since UNIX Epoch time
   - id: 0x0E
     type: float
     size: 4

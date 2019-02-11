@@ -3,6 +3,7 @@ category: diagnostics
 id_msb: 0x00
 id_lsb: 0x52
 api_intro: 5
+api_update: 10
 message_types:
   - id: 0x00
     name: get_offroad_state
@@ -16,7 +17,7 @@ properties:
     name: route_incline
     description: The route elevation incline in degrees, which is a negative number for decline
   - id: 0x02
-    type: integer
-    size: 1
+    type: double
+    size: 8
     name: wheel_suspension
-    description: The wheel suspension level percentage, whereas 0% is no suspension and 100% maximum suspension
+    description: The wheel suspension level percentage, whereas 0.0 is no suspension and 1.0 maximum suspension
