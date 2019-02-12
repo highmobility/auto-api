@@ -17,10 +17,6 @@ properties:
     size: 8
     name: timestamp
     description: Milliseconds since UNIX Epoch time
-  - id: 0xA3
-    type: double
-    size: 8
-    name: milliseconds
   - id: 0xA4
     multiple: true
     name: properties_timestamps
