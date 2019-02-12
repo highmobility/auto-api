@@ -141,9 +141,9 @@ definitions:
         example: front_left
       openPercentage:
         type: number
-        format: integer
-        example: 56
-        description: Value between 0 and 100
+        format: double
+        example: 0.56
+        description: Value between 0.0 and 1.0
   WindowsPositions:
     type: object
     properties:
@@ -159,10 +159,10 @@ definitions:
       windowPosition:
         type: string
         enum:
-        - closed
-        - opened
+        - close
+        - open
         - intermediate
-        example: closed
+        example: close
   WindowsState:
     type: object
     properties:
@@ -255,10 +255,10 @@ definitions:
           for decline
       wheelSuspension:
         type: number
-        format: integer
-        example: 50
-        description: The wheel suspension level percentage, whereas 0% is no suspension
-          and 100% maximum suspension
+        format: double
+        example: 0.5
+        description: The wheel suspension level percentage, whereas 0.0 is no suspension
+          and 1.0 maximum suspension
   TrunkState:
     type: object
     properties:
@@ -555,41 +555,11 @@ definitions:
         - preferred_end_time
         - departure_date
         example: preferred_start_time
-      year:
+      date:
         type: number
-        format: integer
-        example: 18
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      month:
-        type: number
-        format: integer
-        example: 1
-        description: Value between 1 and 12
-      day:
-        type: number
-        format: integer
-        example: 10
-        description: Value between 1 and 31
-      hour:
-        type: number
-        format: integer
-        example: 16
-        description: Value between 0 and 23
-      minute:
-        type: number
-        format: integer
-        example: 32
-        description: Value between 0 and 59
-      second:
-        type: number
-        format: integer
-        example: 5
-        description: Value between 0 and 59
-      utcTimeOffset:
-        type: number
-        format: integer
-        example: 0
-        description: UTC time offset in minutes, which can be negative
+        format: double
+        example: 1515594725.0
+        description: Milliseconds since UNIX Epoch time
   ChargeState:
     type: object
     properties:
@@ -600,9 +570,9 @@ definitions:
         description: Estimated range in km
       batteryLevel:
         type: number
-        format: integer
-        example: 83
-        description: Battery level percentage between 0-100
+        format: double
+        example: 0.5
+        description: Battery level percentage between 0.0-1.0
       batteryCurrentAC:
         type: number
         format: float
@@ -625,9 +595,9 @@ definitions:
         description: Charger voltage in 4-bytes per IEEE 754
       chargeLimit:
         type: number
-        format: integer
-        example: 90
-        description: Charge limit percentage between 0-100
+        format: double
+        example: 0.9
+        description: Charge limit percentage between 0.0-1.0
       timeToCompleteCharge:
         type: number
         format: integer
@@ -965,9 +935,9 @@ definitions:
         description: Engine RPM (revolutions per minute)
       fuelLevel:
         type: number
-        format: integer
-        example: 90
-        description: Fuel level percentage between 0-100
+        format: double
+        example: 0.9
+        description: Fuel level percentage between 0.0-1.0
       estimatedRange:
         type: number
         format: integer
@@ -1035,14 +1005,14 @@ definitions:
         example: low
       engineTorque:
         type: number
-        format: integer
-        example: 20
-        description: Current engine torque percentage between 0-100
+        format: double
+        example: 0.2
+        description: Current engine torque percentage between 0.0-1.0
       engineLoad:
         type: number
-        format: integer
-        example: 10
-        description: Current engine load percentage between 0-100
+        format: double
+        example: 0.1
+        description: Current engine load percentage between 0.0-1.0
       wheelBasedSpeed:
         type: number
         format: integer
@@ -1051,9 +1021,9 @@ definitions:
           can be negative
       batteryLevel:
         type: number
-        format: integer
-        example: 56
-        description: Battery level in %, value between 0 and 100
+        format: double
+        example: 0.56
+        description: Battery level in %, value between 0.0 and 1.0
       checkControlMessages:
         type: array
         items:
@@ -1098,9 +1068,9 @@ definitions:
         example: regular
       period:
         type: number
-        format: integer
-        example: 60
-        description: "% value of the period used for the driving mode"
+        format: double
+        example: 0.6
+        description: "% value from 0.0 to 1.0 of the period used for the driving mode"
   DrivingModeEnergyConsumption:
     type: object
     properties:
@@ -1118,44 +1088,6 @@ definitions:
         format: float
         example: 96.00927734375
         description: Energy consumption in the driving mode in kWh
-  LastTripDate:
-    type: object
-    properties:
-      year:
-        type: number
-        format: integer
-        example: 18
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      month:
-        type: number
-        format: integer
-        example: 10
-        description: Value between 1 and 12
-      day:
-        type: number
-        format: integer
-        example: 17
-        description: Value between 1 and 31
-      hour:
-        type: number
-        format: integer
-        example: 10
-        description: Value between 0 and 23
-      minute:
-        type: number
-        format: integer
-        example: 33
-        description: Value between 0 and 59
-      second:
-        type: number
-        format: integer
-        example: 50
-        description: Value between 0 and 59
-      utcTimeOffset:
-        type: number
-        format: integer
-        example: 0
-        description: UTC time offset in minutes, which can be negative
   Usage:
     type: object
     properties:
@@ -1171,14 +1103,14 @@ definitions:
         description: Average weekyl distance, over long term, in km
       accelerationEvaluation:
         type: number
-        format: integer
-        example: 70
-        description: Acceleration evaluation in %
+        format: double
+        example: 0.7
+        description: Acceleration evaluation in % from 0.0 to 1.0
       drivingStyleEvaluation:
         type: number
-        format: integer
-        example: 70
-        description: Driving style's evaluation in %
+        format: double
+        example: 0.7
+        description: Driving style's evaluation in % from 0.0 to 1.0
       drivingModesActivationPeriods:
         description: DrivingModesActivationPeriods
         "$ref": "#/definitions/DrivingModesActivationPeriods"
@@ -1202,9 +1134,9 @@ definitions:
         description: Mileage after the last trip in km
       lastTripElectricPortion:
         type: number
-        format: integer
-        example: 70
-        description: Portion of the last trip used in electric mode
+        format: double
+        example: 0.7
+        description: Portion of the last trip used in electric mode between 0.0-1.0
       lastTripAverageEnergyRecuperation:
         type: number
         format: float
@@ -1212,12 +1144,14 @@ definitions:
         description: Energy recuperation rate for last trip, in kWh / 100 km
       lastTripBatteryRemaining:
         type: number
-        format: integer
-        example: 50
-        description: Battery % remaining after last trip
+        format: double
+        example: 0.5
+        description: Battery % remaining after last trip between 0.0-1.0
       lastTripDate:
-        description: LastTripDate
-        "$ref": "#/definitions/LastTripDate"
+        type: number
+        format: double
+        example: 1539768830.0
+        description: Milliseconds since UNIX Epoch time
       averageFuelConsumption:
         type: number
         format: float
@@ -1336,21 +1270,22 @@ definitions:
           "$ref": "#/definitions/Accelerations"
       understeering:
         type: number
-        format: integer
-        example: 19
-        description: The understeering percentage between 0-100% whereas up to 20%
-          is considered OK, up to 30% marginal, over 30% critical
+        format: double
+        example: 0.19
+        description: The understeering percentage between 0.0-1.0 whereas up to 0.2
+          (20%) is considered OK, up to 0.3 (30%) marginal, over 30% critical
       oversteering:
         type: number
-        format: integer
-        example: 0
-        description: The oversteering percentage between 0-100% whereas up to 20%
-          is considered OK, up to 30% marginal, over 30% critical
+        format: double
+        example: 0.0
+        description: The oversteering percentage between 0.0-1.0 whereas up to 0.2
+          (20%) is considered OK, up to 30% marginal, over 30% critical
       gasPedalPosition:
         type: number
-        format: integer
-        example: 98
-        description: The gas pedal position between 0-100%, whereas 100% is full throttle
+        format: double
+        example: 0.98
+        description: The gas pedal position between 0.0-1.0, whereas 1.0 (100%) is
+          full throttle
       steeringAngle:
         type: number
         format: integer
@@ -1401,10 +1336,10 @@ definitions:
         description: The selected gear value, if any
       brakePedalPosition:
         type: number
-        format: integer
-        example: 0
-        description: The brake pedal position between 0-100%, wheras 100% is full
-          brakes
+        format: double
+        example: 0.0
+        description: The brake pedal position between 0.0-1.0, wheras 1.0 (100%) is
+          full brakes
       brakePedalSwitch:
         type: string
         enum:
@@ -1734,14 +1669,14 @@ definitions:
     properties:
       dimming:
         type: number
-        format: integer
-        example: 100
-        description: Percentage value between 0-100 whereas 100 is opaque
+        format: double
+        example: 1.0
+        description: Percentage value between 0.0-1.0 whereas 1.0 is opaque
       position:
         type: number
-        format: integer
-        example: 0
-        description: Percentage value between 0-100 whereas 100 is fully open
+        format: double
+        example: 0.0
+        description: Percentage value between 0.0-1.0 whereas 1.0 is fully open
       convertibleRoofState:
         type: string
         enum:
@@ -1810,9 +1745,9 @@ definitions:
         example: unknown
       windscreenDamageConfidence:
         type: number
-        format: integer
-        example: 95
-        description: Percentage between 0-100%, confidence of damage detection. Zero
+        format: double
+        example: 0.95
+        description: Percentage between 0.0-1.0, confidence of damage detection. Zero
           if no impact detected.
       windscreenDamageDetectionTime:
         type: string
@@ -1883,10 +1818,10 @@ definitions:
     properties:
       rainIntensity:
         type: number
-        format: integer
-        example: 100
-        description: Measured raining intensity percentage, whereas 0% is no rain
-          and 100% is maximum rain
+        format: double
+        example: 1.0
+        description: Measured raining intensity percentage, whereas 0.0 is no rain
+          and 1.0 (100%) is maximum rain
   HvacWeekdayStartingTimes:
     type: object
     properties:
