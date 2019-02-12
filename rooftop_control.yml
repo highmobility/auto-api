@@ -58,7 +58,7 @@ properties:
   - id: 0x01
     type: double
     size: 8
-    name: charge_limit
+    name: dimming
     description: Percentage value between 0.0-1.0 whereas 1.0 is opaque
   - id: 0x02
     type: double
