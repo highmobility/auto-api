@@ -3,7 +3,7 @@ category: digital_key
 id_msb: 0x00
 id_lsb: 0x20
 api_intro: 1
-api_update: 9
+api_update: 10
 message_types:
   - id: 0x00
     name: get_lock_state
@@ -41,8 +41,6 @@ properties:
             id: 0x02
           - name: rear_left
             id: 0x03
-          - name: hatch
-            id: 0x04
           - name: all
             id: 0x05
       - name: lock_state
@@ -70,8 +68,6 @@ properties:
             id: 0x02
           - name: rear_left
             id: 0x03
-          - name: hatch
-            id: 0x04
           - name: all
             id: 0x05
       - name: lock_state
@@ -99,8 +95,6 @@ properties:
             id: 0x02
           - name: rear_left
             id: 0x03
-          - name: hatch
-            id: 0x04
           - name: all
             id: 0x05
       - name: position
