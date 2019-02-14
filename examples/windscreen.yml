@@ -35,5 +35,5 @@ windscreen_damage_confidence:
 
 windscreen_damage_detection_time:
   - item:
-    - value: '0x41, 0xD6, 0x1D, 0x3C, 0x19, 0x40, 0x00, 0x00'
-      description: 10 January 2017 at 16:32:05
+    - value: '0x42, 0x75, 0x98, 0x93, 0x8E, 0x78, 0x80, 0x00'
+      description: 10 January 2017 at 16:32:05 UTC

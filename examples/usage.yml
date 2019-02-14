@@ -82,8 +82,8 @@ last_trip_battery_remaining:
 
 last_trip_date:
   - item:
-    - value: '0x41, 0xD6, 0xF1, 0xC0, 0x7F, 0x80, 0x00, 0x00'
-      description: 17 October 2018 at 12:33:50
+    - value: '0x42, 0x76, 0x68, 0x20, 0x59, 0xD5, 0x00, 0x00'
+      description: 17 October 2018 at 12:34:58 UTC
 
 average_fuel_consumption:
   - item:

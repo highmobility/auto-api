@@ -25,12 +25,12 @@ message_types:
         description: Operator Ticket ID bytes formatted in UTF-8
       - id: 0x03
         name: ticket_start_time
-        type: double
+        type: integer
         size: 8
         mandatory: true
         description: Milliseconds since UNIX Epoch time
       - id: 0x04
-        type: double
+        type: integer
         size: 8
         name: ticket_end_time
         description: Milliseconds since UNIX Epoch time
@@ -58,12 +58,12 @@ properties:
     title_case_name: operatorTicketID
     description: Operator Ticket ID bytes formatted in UTF-8
   - id: 0x04
-    type: double
+    type: integer
     size: 8
     name: ticket_start_time
     description: Milliseconds since UNIX Epoch time
   - id: 0x05
-    type: double
+    type: integer
     size: 8
     name: ticket_end_time
     description: Milliseconds since UNIX Epoch time

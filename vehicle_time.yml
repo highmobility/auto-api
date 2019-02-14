@@ -12,7 +12,7 @@ message_types:
     
 properties:
   - id: 0x01
-    type: double
+    type: integer
     size: 8
     name: vehicle_time
     description: Milliseconds since UNIX Epoch time
