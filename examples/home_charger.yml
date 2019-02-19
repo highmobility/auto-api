@@ -76,6 +76,7 @@ coordinates:
 
 price_tariffs:
   - item:
+      size: 9
     - name: pricing_type
       value: '0x00'
       description: Starting fee
@@ -91,6 +92,7 @@ price_tariffs:
       value: '0x45, 0x55, 0x52'
       description: EUR
   - item:
+      size: 12
     - name: pricing_type
       value: '0x02'
       description: Per kWh

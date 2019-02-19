@@ -105,6 +105,7 @@ battery_level:
 
 check_control_messages:
   - item:
+      size: 26
     - name: id
       value: '0x00, 0x01'
       description: The id is 1
@@ -219,6 +220,7 @@ wheel_rpms:
 
 trouble_codes:
   - item:
+      size: 27
     - name: occurences
       value: '0x02'
       description: Occured twice
@@ -245,6 +247,7 @@ trouble_codes:
       value: '0x50, 0x45, 0x4E, 0x44, 0x49, 0x4E, 0x47'
       description: Status is "PENDING"
   - item:
+      size: 24
     - name: occurences
       value: '0x02'
       description: Occured twice
