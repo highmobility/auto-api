@@ -7,6 +7,7 @@ text:
 action_items:
   - item:
     - name: identifier
+      size: 1
       value: '0x1B'
       description: Notification action ID is 27
     - name: name
@@ -15,6 +16,7 @@ action_items:
       description: Action name is 'Open'
   - item:
     - name: identifier
+      size: 1
       value: '0x1C'
       description: Notification action ID is 28
     - name: name

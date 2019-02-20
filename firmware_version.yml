@@ -29,11 +29,11 @@ properties:
         size: 1
         description: HMKit version patch number
   - id: 0x02
-    type: 'string'
+    type: string
     name: hmkit_build_name
     title_case_name: HMKitBuildName
     description: HMKit version build name bytes formatted in UTF-8
   - id: 0x03
-    type: 'string'
+    type: string
     name: application_version
     description: Application version bytes formatted in UTF-8

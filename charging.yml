@@ -62,7 +62,7 @@ message_types:
     properties:
       - id: 0x0D
         name: timers
-        size: 16
+        size: 9
         multiple: true
         mandatory: true
         items:
@@ -262,7 +262,7 @@ properties:
     name: battery_temperature
     description: Battery temperature in Celsius in 4-bytes per IEEE 754
   - id: 0x15
-    size: 16
+    size: 9
     name: timers
     multiple: true
     items:

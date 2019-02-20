@@ -1,6 +1,6 @@
 mileage:
   - item:
-    - value: '0x02, 0x49, 0xF0'
+    - value: '0x00, 0x02, 0x49, 0xF0'
       description: Odometer is 150'000 km
 
 engine_oil_temperature:
@@ -105,14 +105,16 @@ battery_level:
 
 check_control_messages:
   - item:
-      size: 26
     - name: id
+      size: 2
       value: '0x00, 0x01'
       description: The id is 1
     - name: remaining_minutes
+      size: 4
       value: '0x00, 0x01, 0x9C, 0x78'
       description: The remaining time is 105 592 minutes
     - name: text_size
+      size: 2
       value: '0x00, 0x0C'
       description: The following text size is 12 bytes
     - name: text
@@ -220,11 +222,12 @@ wheel_rpms:
 
 trouble_codes:
   - item:
-      size: 27
     - name: occurences
+      size: 1
       value: '0x02'
       description: Occured twice
     - name: id_size
+      size: 1
       value: '0x07'
       description: ID size is 7 bytes
     - name: id
@@ -232,6 +235,7 @@ trouble_codes:
       value: '0x43, 0x31, 0x31, 0x31, 0x36, 0x46, 0x41'
       description: ID is "C1116FA"
     - name: ecu_id_size
+      size: 1
       value: '0x09'
       description: ECU ID size is 9 bytes
     - name: ecu_id
@@ -247,11 +251,12 @@ trouble_codes:
       value: '0x50, 0x45, 0x4E, 0x44, 0x49, 0x4E, 0x47'
       description: Status is "PENDING"
   - item:
-      size: 24
     - name: occurences
+      size: 1
       value: '0x02'
       description: Occured twice
     - name: id_size
+      size: 1
       value: '0x07'
       description: ID size is 7 bytes
     - name: id
@@ -259,6 +264,7 @@ trouble_codes:
       value: '0x43, 0x31, 0x36, 0x33, 0x41, 0x46, 0x41'
       description: ID is "C163AFA"
     - name: ecu_id_size
+      size: 1
       value: '0x06'
       description: ECU ID size is 6 bytes
     - name: ecu_id
