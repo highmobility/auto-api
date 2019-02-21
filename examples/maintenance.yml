@@ -5,7 +5,7 @@ days_to_next_service:
 
 kilometers_to_next_service:
   - item:
-    - value: '0x00, 0x0E, 0x61'
+    - value: '0x00, 0x00, 0x0E, 0x61'
       description: 3'681 km until servicing
 
 cbs_reports_count:
@@ -35,34 +35,39 @@ service_time_threshold:
 
 automatic_teleservice_call_date:
   - item:
-      value: '0x42, 0x76, 0x74, 0x05, 0x8F, 0x13, 0x00, 0x00'
+      value: '0x00, 0x00, 0x01, 0x67, 0x40, 0x58, 0xF1, 0x30'
       description: 23 November 2018 at 11:33:50 UTC
 
 teleservice_battery_call_date:
   - item:
-      value: '0x42, 0x76, 0x74, 0x05, 0x8F, 0x13, 0x00, 0x00'
-      description: 23 November 2018 at 11:33:50 UTC
+      value: '0x00, 0x00, 0x01, 0x67, 0x40, 0x24, 0xC1, 0xD0'
+      description: 23 November 2018 at 10:36:50 GMT
 
 next_inspection_date:
   - item:
-      value: '0x42, 0x76, 0x74, 0x05, 0x8F, 0x13, 0x00, 0x00'
-      description: 23 November 2018 at 11:33:50 UTC
+      value: '0x00, 0x00, 0x01, 0x66, 0xA1, 0x5D, 0x20, 0xD8'
+      description: 23 October 2018 at 14:38:47 GMT
 
 condition_based_services:
   - item:
     - name: year
+      size: 1
       value: '0x13'
       description: 2019
     - name: month
+      size: 1
       value: '0x05'
       description: May
     - name: identifier
+      size: 2
       value: '0x00, 0x03'
       description: Identifier is 3
     - name: due_status
+      size: 1
       value: '0x00'
       description: Status is OK
     - name: text_size
+      size: 2
       value: '0x00, 0x0B'
       description: Text size is 11 bytes
     - name: text
@@ -70,6 +75,7 @@ condition_based_services:
       value: '0x42, 0x72, 0x61, 0x6B, 0x65, 0x20, 0x66, 0x6C, 0x75, 0x69, 0x64'
       description: Text is "Brake fluid"
     - name: description_size
+      size: 2
       value: '0x00, 0x2C'
       description: Description size is 44 bytes
     - name: description
@@ -78,18 +84,23 @@ condition_based_services:
       description: Description is "Next change at specified date at the latest."
   - item:
     - name: year
+      size: 1
       value: '0x13'
       description: 2019
     - name: month
+      size: 1
       value: '0x03'
       description: March
     - name: identifier
+      size: 2
       value: '0x00, 0x20'
       description: Identifier is 32
     - name: due_status
+      size: 1
       value: '0x01'
       description: Status is pending
     - name: text_size
+      size: 2
       value: '0x00, 0x12'
       description: Text size is 18 bytes
     - name: text
@@ -97,6 +108,7 @@ condition_based_services:
       value: '0x56, 0x65, 0x68, 0x69, 0x63, 0x6C, 0x65, 0x20, 0x69, 0x6E, 0x73, 0x70, 0x65, 0x63, 0x74, 0x69, 0x6F, 0x6E'
       description: Text is "Vehicle inspection"
     - name: description_size
+      size: 2
       value: '0x00, 0x34'
       description: Description size is 52 bytes
     - name: description
@@ -106,5 +118,5 @@ condition_based_services:
 
 brake_fluid_change_date:
   - item:
-      value: '0x42, 0x76, 0x74, 0x05, 0x8F, 0x13, 0x00, 0x00'
-      description: 23 November 2018 at 11:33:50 UTC
+      value: '0x00, 0x00, 0x01, 0x67, 0x7C, 0x63, 0xD2, 0x80'
+      description: 5 December 2018 at 03:22:56 GMT
