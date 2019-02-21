@@ -1,7 +1,7 @@
 estimated_range:
   - item:
     - value: '0x01, 0xB0'
-      description: 400 km estimated range
+      description: 432 km estimated range
 
 battery_level:
   - item:
