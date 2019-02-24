@@ -242,7 +242,7 @@ definitions:
       insideLight:
         type: number
         format: float
-        example: 0.37677574157714844
+        example: 0.37598228454589844
         description: Measured inside illuminance in lux, formatted as IEEE 754 decimal
   OffroadState:
     type: object
@@ -557,8 +557,8 @@ definitions:
         example: preferred_start_time
       date:
         type: number
-        format: double
-        example: 1515594725.0
+        format: integer
+        example: 0
         description: Milliseconds since UNIX Epoch time
   ChargeState:
     type: object
@@ -916,7 +916,7 @@ definitions:
       mileage:
         type: number
         format: integer
-        example: 2
+        example: 0
         description: The car mileage (odometer) in km
       engineOilTemperature:
         type: number
@@ -1149,8 +1149,8 @@ definitions:
         description: Battery % remaining after last trip between 0.0-1.0
       lastTripDate:
         type: number
-        format: double
-        example: 1539768830.0
+        format: integer
+        example: 0
         description: Milliseconds since UNIX Epoch time
       averageFuelConsumption:
         type: number
@@ -1919,7 +1919,6 @@ definitions:
         - front_right
         - rear_right
         - rear_left
-        - hatch
         - all
         example: front_left
       lockState:
@@ -1938,7 +1937,6 @@ definitions:
         - front_right
         - rear_right
         - rear_left
-        - hatch
         - all
         example: front_left
       lockState:
@@ -1957,7 +1955,6 @@ definitions:
         - front_right
         - rear_right
         - rear_left
-        - hatch
         - all
         example: front_left
       position:
