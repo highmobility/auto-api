@@ -29,6 +29,27 @@ definitions:
         type: string
         example: 'Keep your eyes on the road at all times.'
         description: 'The text content in UTF-8'
+  SetNaviDestination:
+    type: object
+    properties:
+      coordinates:
+        description: Coordinates
+        type: object
+        properties:
+          latitude:
+            type: number
+            format: double
+            example: 52.520008
+            description: Latitude in 8-bytes per IEEE 754
+          longitude:
+            type: number
+            format: double
+            example: 13.404954
+            description: Longitude in 8-bytes per IEEE 754
+      destinationName:
+        type: string
+        example: Berlin
+        description: Destination name bytes formatted in UTF-8
   Notification:
     type: object
     properties:
@@ -36,7 +57,7 @@ definitions:
         type: string
         example: 'Your plans for the evening: free'
         description: 'The text to be displayed or read to the driver'
-  ChargeTimer:
+  SetChargeTimer:
     type: object
     properties:
       timerType:
@@ -51,6 +72,25 @@ definitions:
         format: date-time
         example: '2018-04-12T23:20:50.52Z'
         description: The time for this timer
+  SetReductionTime:
+      type: object
+      properties:
+        startStop:
+          type: string
+          enum:
+            - start
+            - stop
+          example: start
+        hour:
+          type: number
+          format: integer
+          example: 17
+          description: Value between 0 and 23
+        minute:
+          type: number
+          format: integer
+          example: 33
+          description: Value between 0 and 59
   SetDrivingMode:
     type: object
     properties:
@@ -134,6 +174,46 @@ definitions:
         format: date-time
         example: '2018-04-12T23:20:50.52Z'
         description: The start time of the ticket
+  SetRooftopState:
+    type: object
+    properties:
+      dimming:
+        type: number
+        format: double
+        example: 1.0
+        description: Percentage value between 0.0-1.0 whereas 1.0 is opaque
+      position:
+        type: number
+        format: double
+        example: 0.0
+        description: Percentage value between 0.0-1.0 whereas 1.0 is fully open
+      convertibleRoofState:
+        type: string
+        enum:
+        - closed
+        - open
+        - emergency_locked
+        - closed_secured
+        - open_secured
+        - hard_top_mounted
+        - intermediate_position
+        - loading_position
+        - loading_position_immediate
+        example: closed
+      sunroofTiltState:
+        type: string
+        enum:
+        - closed
+        - tilted
+        - half_tilted
+        example: closed
+      sunroofState:
+        type: string
+        enum:
+        - closed
+        - open
+        - intermediate
+        example: closed
   ConnectNetwork:
     type: object
     properties:
@@ -161,6 +241,49 @@ definitions:
         type: string
         example: 'HOME'
         description: The network SSID
+  ControlWindows:
+    type: object
+    properties:
+      windowsOpenPercentages:
+        type: array
+        items:
+          type: object
+          properties:
+            windowLocation:
+              type: string
+              enum:
+              - front_left
+              - front_right
+              - rear_right
+              - rear_left
+              - hatch
+              example: front_left
+            openPercentage:
+              type: number
+              format: double
+              example: 0.56
+              description: Value between 0.0 and 1.0
+      windowsPositions:
+        type: array
+        items:
+          type: object
+          properties:
+            windowLocation:
+              type: string
+              enum:
+              - front_left
+              - front_right
+              - rear_right
+              - rear_left
+              - hatch
+              example: front_left
+            windowPosition:
+              type: string
+              enum:
+              - close
+              - open
+              - intermediate
+              example: close
   LoadURL:
     type: object
     properties:
@@ -233,7 +356,30 @@ definitions:
       weekdayStartingTimes:
         type: array
         items:
-          "$ref": "#/definitions/HvacWeekdayStartingTimes"
+          type: object
+          properties:
+            weekday:
+              type: string
+              enum:
+              - monday
+              - tuesday
+              - wednesday
+              - thursday
+              - friday
+              - saturday
+              - sunday
+              - automatic
+              example: monday
+            hour:
+              type: number
+              format: integer
+              example: 18
+              description: Value between 0 and 23
+            minute:
+              type: number
+              format: integer
+              example: 30
+              description: Value between 0 and 59
   SetTemperatureSettings:
     type: object
     properties:
@@ -257,6 +403,21 @@ definitions:
         format: integer
         example: 60
         description: The target speed in km/h
+  SetGasFlapState:
+    type: object
+    properties:
+      gasFlapLock:
+        type: string
+        enum:
+        - unlocked
+        - locked
+        example: unlocked
+      gasFlapPosition:
+        type: string
+        enum:
+        - closed
+        - open
+        example: closed
   SetWindscreenReplacement:
     type: object
     properties:
@@ -314,6 +475,90 @@ definitions:
         type: string
         example: EUR
         description: The currency alphabetic code per ISO 4217 or crypto currency symbol
+  LightsState:
+    type: object
+    properties:
+      frontExteriorLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        - active_with_full_beam
+        - dlr
+        - automatic
+        example: inactive
+      rearExteriorLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      ambientLight:
+        type: string
+        example: "#ccff88"
+        description: The ambient light hex string
+      reverseLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      emergencyBrakeLight:
+        type: string
+        enum:
+        - inactive
+        - active
+        example: inactive
+      fogLights:
+        description: FogLights
+        type: object
+        properties:
+          fogLightLocation:
+            type: string
+            enum:
+            - front
+            - rear
+            example: front
+          fogLightState:
+            type: string
+            enum:
+            - inactive
+            - active
+            example: inactive
+      readingLamps:
+        description: ReadingLamps
+        type: object
+        properties:
+          readingLampLocation:
+            type: string
+            enum:
+            - front_left
+            - front_right
+            - rear_right
+            - rear_left
+            example: front_left
+          readingLampState:
+            type: string
+            enum:
+            - inactive
+            - active
+            example: inactive
+      interiorLights:
+        description: InteriorLights
+        type: object
+        properties:
+          interiorLightLocation:
+            type: string
+            enum:
+            - front
+            - rear
+            example: front
+          interiorLightState:
+            type: string
+            enum:
+            - inactive
+            - active
+            example: inactive
   State:
     type: object
     properties:
@@ -469,16 +714,12 @@ definitions:
         type: string
         example: "Vehicle Asleep"
         description: Failure description formatted in UTF-8
-
 # Property exceptions from Auto API to Swagger translation
 exceptions:
   ambient_light:
     type: string
     example: '#ccff88'
     description: 'The ambient light hex string'
-  charge_timer:
-    description: ChargeTimer
-    "$ref": "#/definitions/ChargeTimer"
   vehicle_time:
     type: string
     format: date-time
@@ -526,6 +767,56 @@ exceptions:
     type: string
     format: date-time
     example: '2018-04-12T23:21:50.52Z'
+  dashboard_lights:
+    type: object
+    properties:
+      lightName:
+        type: string
+        enum:
+        - high_beam
+        - low_beam
+        - hazard_warning
+        - brake_failure
+        - hatch_open
+        - fuel_level
+        - engine_coolant_temperature
+        - battery_charging_condition
+        - engine_oil
+        - position_lights
+        - front_fog_light
+        - rear_fog_light
+        - park_heating
+        - engine_indicator
+        - service_call
+        - transmission_fluid_temperature
+        - transmission_failure
+        - anti_lock_brake_failure
+        - worn_brake_linings
+        - windscreen_washer_fluid
+        - tire_failure
+        - engine_oil_level
+        - engine_coolant_level
+        - steering_failure
+        - esc_indication
+        - brake_lights
+        - adblue_level
+        - fuel_filter_diff_pressure
+        - seat_belt
+        - advanced_braking
+        - acc
+        - trailer_connected
+        - airbag
+        - esc_switched_off
+        - lane_departure_warning_off
+        example: high_beam
+      state:
+        type: string
+        enum:
+        - inactive
+        - info
+        - yellow
+        - red
+        example: inactive
 
 # These properties should be treated as arrays
 arrays:
@@ -567,5 +858,8 @@ rejections:
   - remote_control
   - heart_rate
   - driver_fatigue
-  - capabilities
+  # - capabilities
   - universal_properties
+
+skipComponents:
+  - Capability
