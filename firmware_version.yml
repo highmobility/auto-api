@@ -14,6 +14,7 @@ properties:
   - id: 0x01
     size: 3
     name: hmkit_version
+    pretty_name: HMKit Version
     title_case_name: HMKitVersion
     items:
       - name: version_major
@@ -31,6 +32,7 @@ properties:
   - id: 0x02
     type: string
     name: hmkit_build_name
+    pretty_name: HMKit Build Name
     title_case_name: HMKitBuildName
     description: HMKit version build name bytes formatted in UTF-8
   - id: 0x03

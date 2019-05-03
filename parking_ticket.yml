@@ -18,7 +18,7 @@ message_types:
         description: Operator Name bytes formatted in UTF-8
       - id: 0x02
         name: operator_ticket_id
-        pretty_name: Operator ticket ID
+        pretty_name: Operator Ticket ID
         type: string
         mandatory: true
         title_case_name: operatorTicketID
@@ -54,7 +54,7 @@ properties:
   - id: 0x03
     type: string
     name: operator_ticket_id
-    pretty_name: Operator ticket ID
+    pretty_name: Operator Ticket ID
     title_case_name: operatorTicketID
     description: Operator Ticket ID bytes formatted in UTF-8
   - id: 0x04

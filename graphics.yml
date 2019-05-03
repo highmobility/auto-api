@@ -10,6 +10,7 @@ message_types:
     properties:
       - id: 0x01
         name: image_url
+        pretty_name: Image URL
         type: string
         mandatory: true
         description: The UTF8 bytes of the image URL string

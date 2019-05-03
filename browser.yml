@@ -10,6 +10,7 @@ message_types:
     properties:
       - id: 0x01
         name: url
+        pretty_name: URL
         type: string
         mandatory: true
         description: The UTF8 bytes of the URL string

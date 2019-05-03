@@ -173,7 +173,7 @@ properties:
   - id: 0x0B
     type: string
     name: wi_fi_hotspot_password
-    pretty_name: Wi-Fi Hotspot password
+    pretty_name: Wi-Fi Hotspot Password
     description: The Wi-Fi Hotspot password formatted in UTF-8
   - id: 0x0D
     type: enum

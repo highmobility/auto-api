@@ -136,6 +136,7 @@ properties:
     multiple: true
     items:
       - name: id
+        pretty_name: ID
         type: integer
         size: 2
         description: Check Control Message identifier
@@ -231,17 +232,21 @@ properties:
         size: 1
         description: Number of occurences
       - name: id_size
+        pretty_name: ID Size
         type: integer
         size: 1
         description: Size of the ID string
       - name: id
+        pretty_name: ID
         type: string
         description: ID bytes formatted in UTF-8
       - name: ecu_id_size
+        pretty_name: ECU ID Size
         type: integer
         size: 1
         description: Size of the ECU ID string
       - name: ecu_id
+        pretty_name: ECU ID
         type: string
         description: ECU ID bytes formatted in UTF-8
       - name: status_size
