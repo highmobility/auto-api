@@ -62,8 +62,8 @@ last_trip_fuel_consumption:
 
 mileage_after_last_trip:
   - item:
-    - value: '0x47, 0xBA, 0xC8, 0x5A'
-      description: Mileage is 95 632.7 km
+    - value: '0x00, 0x01, 0x75, 0x90'
+      description: Mileage is 95 632 km
 
 last_trip_electric_portion:
   - item:
