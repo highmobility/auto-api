@@ -57,17 +57,17 @@ properties:
   - id: 0x08
     size: 8
     name: automatic_teleservice_call_date
-    type: integer
+    type: timestamp
     description: Milliseconds since UNIX Epoch time
   - id: 0x09
     size: 8
     name: teleservice_battery_call_date
-    type: integer
+    type: timestamp
     description: Milliseconds since UNIX Epoch time
   - id: 0x0A
     size: 8
     name: next_inspection_date
-    type: integer
+    type: timestamp
     description: Milliseconds since UNIX Epoch time
   - id: 0x0B
     name: condition_based_services
@@ -112,5 +112,5 @@ properties:
   - id: 0x0C
     size: 8
     name: brake_fluid_change_date
-    type: integer
+    type: timestamp
     description: Milliseconds since UNIX Epoch time

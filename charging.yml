@@ -77,7 +77,7 @@ message_types:
               - name: departure_date
                 id: 0x02
           - name: date
-            type: integer
+            type: timestamp
             size: 8
             description: Milliseconds since UNIX Epoch time
   - id: 0x17
@@ -277,7 +277,7 @@ properties:
           - name: departure_date
             id: 0x02
       - name: date
-        type: integer
+        type: timestamp
         size: 8
         description: Milliseconds since UNIX Epoch time
   - id: 0x16

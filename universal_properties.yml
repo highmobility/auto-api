@@ -13,7 +13,7 @@ properties:
     size: 64
     name: car_signature
   - id: 0xA2
-    type: integer
+    type: timestamp
     size: 8
     name: timestamp
     description: Milliseconds since UNIX Epoch timedifferentiate

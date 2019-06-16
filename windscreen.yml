@@ -166,7 +166,7 @@ properties:
     name: windscreen_damage_confidence
     description: Percentage between 0.0-1.0, confidence of damage detection. Zero if no impact detected.
   - id: 0x08
-    type: integer
+    type: timestamp
     size: 8
     name: windscreen_damage_detection_time
     description: Milliseconds since UNIX Epoch time

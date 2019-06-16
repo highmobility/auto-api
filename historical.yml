@@ -17,12 +17,12 @@ message_types:
       - id: 0x02
         name: start_date
         size: 8
-        type: integer
+        type: timestamp
         description: Milliseconds since UNIX Epoch time
       - id: 0x03
         name: end_date
         size: 8
-        type: integer
+        type: timestamp
         description: Milliseconds since UNIX Epoch time
   - id: 0x01
     name: states

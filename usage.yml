@@ -108,7 +108,7 @@ properties:
     name: last_trip_battery_remaining
     description: Battery % remaining after last trip between 0.0-1.0
   - id: 0x0D
-    type: integer
+    type: timestamp
     size: 8
     name: last_trip_date
     description: Milliseconds since UNIX Epoch time
