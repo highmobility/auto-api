@@ -1,4 +1,4 @@
-name: engine
+name: ignition
 category: digital_key
 id_msb: 0x00
 id_lsb: 0x35
