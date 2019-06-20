@@ -1,46 +1,31 @@
 name: honk_horn_flash_lights
 category: chassis
-id_msb: 0x00
-id_lsb: 0x26
-api_intro: 2
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_flashers_state
-  - id: 0x01
-    name: flashers_state
-  - id: 0x12
-    name: honk_flash
-    properties:
-      - id: 0x01
-        name: seconds
-        type: integer
-        size: 1
-        description: Number of seconds to honk the horn
-      - id: 0x02
-        name: flash
-        type: integer
-        size: 1
-        description: Number of times to flash the lights
-  - id: 0x13
-    name: activate_deactivate_emergency_flashers
-    properties:
-      - id: 0x01
-        name: active_state
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: deactivate
-            id: 0x00
-          - name: activate
-            id: 0x01
+
+identifier:
+    msb: 0x00
+    lsb: 0x26
+
+api:
+    intro: 2
+    update: 11
+
+getters:
+  - name: get_flashers_state
+    properties: [0x01]
+
+commands:
+  - name: honk_flash
+    optional: [0x02, 0x03]
+  - name: activate_deactivate_emergency_flasher
+    mandatory: [0x04]
+
+state: [0x01]
     
 properties:
   - id: 0x01
+    name: flashers
     type: enum
     size: 1
-    name: flashers
     values:
       - name: inactive
         id: 0x00
@@ -50,3 +35,24 @@ properties:
         id: 0x02
       - name: right_flasher_active
         id: 0x03
+  - id: 0x02
+    name: honk_seconds
+    type: integer
+    size: 1
+    description: Number of seconds to honk the horn
+  - id: 0x03
+    name: flash_times
+    type: integer
+    size: 1
+    description: Number of times to flash the lights
+  - id: 0x04
+    name: emergency_flashers_active_state
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: deactive
+        verb: deactivate
+      - id: 0x01
+        name: active
+        verb: activate

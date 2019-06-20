@@ -1,22 +1,27 @@
 name: messaging
 category: headunit
-id_msb: 0x00
-id_lsb: 0x37
-api_intro: 4
-api_update: 5
-message_types:
-  - id: 0x00
-    name: message_received
-    properties:
-      - id: 0x01
-        name: text
-        type: string
-        mandatory: true
-        description: The text bytes of UTF8
-      - id: 0x02
-        name: handle
-        type: string
-        description: The optional handle of message, bytes of UTF8
+
+identifier:
+    msb: 0x00
+    lsb: 0x37
+
+api:
+    intro: 4
+    update: 11
+
+commands:
+  - name: message_recieved
+    mandatory: [0x01]
+    optional: [0x02]
+
+state: all
+
+properties:
   - id: 0x01
-    name: send_message
-    
+    name: text
+    type: string
+    description: The text bytes of UTF8
+  - id: 0x02
+    name: handle
+    type: string
+    description: The optional handle of message, bytes of UTF8

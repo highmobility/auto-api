@@ -1,69 +1,58 @@
 name: parking_ticket
 category: parking
-id_msb: 0x00
-id_lsb: 0x47
-api_intro: 4
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_parking_ticket
-  - id: 0x01
-    name: parking_ticket
-  - id: 0x02
-    name: start_parking
-    properties:
-      - id: 0x01
-        name: operator_name
-        type: string
-        description: Operator Name bytes formatted in UTF-8
-      - id: 0x02
-        name: operator_ticket_id
-        pretty_name: Operator Ticket ID
-        type: string
-        mandatory: true
-        title_case_name: operatorTicketID
-        description: Operator Ticket ID bytes formatted in UTF-8
-      - id: 0x03
-        name: ticket_start_time
-        type: timestamp
-        size: 8
-        mandatory: true
-        description: Milliseconds since UNIX Epoch time
-      - id: 0x04
-        type: timestamp
-        size: 8
-        name: ticket_end_time
-        description: Milliseconds since UNIX Epoch time
-  - id: 0x03
-    name: end_parking
+
+identifier:
+    msb: 0x00
+    lsb: 0x47
+
+api:
+    intro: 4
+    update: 11
+
+getters:
+    default:
+        omit_state_text: true
+
+commands:
+  - name: start_parking
+    mandatory: [0x03, 0x04]
+    optional: [0x02, 0x05]
+  - name: end_parking
+    constants:
+      - property_id: 0x01
+        value: [0x00]
+
+state: all
 
 properties:
   - id: 0x01
+    name: parking_ticket_state
     type: enum
     size: 1
-    name: parking_ticket_state
     values:
-      - name: ended
-        id: 0x00
-      - name: started
-        id: 0x01
+      - id: 0x00
+        name: ended
+        verb: end
+      - id: 0x01
+        name: started
+        verb: start
   - id: 0x02
-    type: string
     name: operator_name
+    type: string
     description: Operator Name bytes formatted in UTF-8
   - id: 0x03
-    type: string
     name: operator_ticket_id
+    type: string
     pretty_name: Operator Ticket ID
     title_case_name: operatorTicketID
     description: Operator Ticket ID bytes formatted in UTF-8
   - id: 0x04
+    name: ticket_start_time
     type: timestamp
     size: 8
-    name: ticket_start_time
     description: Milliseconds since UNIX Epoch time
   - id: 0x05
+    name: ticket_end_time
     type: timestamp
     size: 8
-    name: ticket_end_time
     description: Milliseconds since UNIX Epoch time

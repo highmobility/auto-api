@@ -1,27 +1,23 @@
 name: door_locks
 category: digital_key
-id_msb: 0x00
-id_lsb: 0x20
-api_intro: 1
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_lock_state
-  - id: 0x01
-    name: lock_state
-  - id: 0x12
-    name: lock_unlock_doors
-    properties:
-      - id: 0x01
-        name: lock_state
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: unlock
-            id: 0x00
-          - name: lock
-            id: 0x01
+
+identifier:
+    msb: 0x00
+    lsb: 0x20
+
+api:
+    intro: 1
+    update: 11
+
+getters:
+    default:
+        name_override: locks
+
+commands:
+  - name: lock_unlock_doors
+    mandatory: [0x05]
+
+state: [0x02, 0x03, 0x04]
 
 properties:
   - id: 0x02
@@ -105,3 +101,12 @@ properties:
             id: 0x00
           - name: open
             id: 0x01
+  - id: 0x05
+    name: lock_unlock
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: unlock
+      - id: 0x01
+        name: lock

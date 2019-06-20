@@ -1,38 +1,29 @@
 name: navi_destination
 category: poi
-id_msb: 0x00
-id_lsb: 0x31
-api_intro: 4
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_navi_destination
-  - id: 0x01
-    name: navi_destination
-  - id: 0x12
-    name: set_navi_destination
-    properties:
-      - id: 0x01
-        name: coordinates
-        size: 16
-        mandatory: true
-        items:
-          - name: latitude
-            type: double
-            size: 8
-            description: Latitude in 8-bytes per IEEE 754
-          - name: longitude
-            type: double
-            size: 8
-            description: Longitude in 8-bytes per IEEE 754
-      - id: 0x02
-        name: destination_name
-        type: string
-        description: Destination name bytes formatted in UTF-8
+
+identifier:
+    msb: 0x00
+    lsb: 0x31
+
+api:
+    intro: 4
+    update: 11
+
+getters:
+    default:
+        omit_state_text: true
+
+commands:
+  - name: set_navi_destination
+    mandatory: [0x01]
+    optional: [0x02]
+
+state: all
     
 properties:
-  - id: 0x07
+  - id: 0x01
     name: coordinates
+    type: custom
     size: 16
     items:
       - name: latitude

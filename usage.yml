@@ -1,125 +1,136 @@
 name: usage
 category: diagnostics
-id_msb: 0x00
-id_lsb: 0x68
-api_intro: 8
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_usage
-  - id: 0x01
-    name: usage
+
+identifier:
+    msb: 0x00
+    lsb: 0x68
+
+api:
+    intro: 8
+    update: 11
+
+getters:
+    default:
+        omit_state_text: true
+
+state: all
     
 properties:
   - id: 0x01
+    name: average_weekly_distance
     type: integer
     size: 2
-    name: average_weekly_distance
     description: Average weekly distance in km
   - id: 0x02
+    name: average_weekly_distance_long_run
     type: integer
     size: 2
-    name: average_weekly_distance_long_run
     description: Average weekyl distance, over long term, in km
   - id: 0x03
+    name: acceleration_evaluation
     type: double
     size: 8
-    name: acceleration_evaluation
     description: Acceleration evaluation in % from 0.0 to 1.0
   - id: 0x04
+    name: driving_style_evaluation
     type: double
     size: 8
-    name: driving_style_evaluation
     description: Driving style's evaluation in % from 0.0 to 1.0
   - id: 0x05
+    name: driving_modes_activation_periods
+    type: custom
     size: 9
     multiple: true
-    name: driving_modes_activation_periods
     items:
       - name: driving_mode
         type: enum
         size: 1
         values:
-          - name: regular
-            id: 0x00
-          - name: eco
-            id: 0x01
-          - name: sport
-            id: 0x02
-          - name: sportPlus
-            id: 0x03
-          - name: ecoPlus
-            id: 0x04
+          - id: 0x00
+            name: regular
+          - id: 0x01
+            name: eco
+          - id: 0x02
+            name: sport
+          - id: 0x03
+            name: sportPlus
+          - id: 0x04
+            name: ecoPlus
+          - id: 0x05
+            name: comfort
       - name: period
         type: double
         size: 8
         description: '% value from 0.0 to 1.0 of the period used for the driving mode'
   - id: 0x06
+    name: driving_mode_energy_consumption
+    type: custom
     size: 2
     multiple: true
-    name: driving_mode_energy_consumption
     items:
       - name: driving_mode
         type: enum
         size: 1
         values:
-          - name: regular
-            id: 0x00
-          - name: eco
-            id: 0x01
-          - name: sport
-            id: 0x02
-          - name: sportPlus
-            id: 0x03
-          - name: ecoPlus
-            id: 0x04
+          - id: 0x00
+            name: regular
+          - id: 0x01
+            name: eco
+          - id: 0x02
+            name: sport
+          - id: 0x03
+            name: sportPlus
+          - id: 0x04
+            name: ecoPlus
+          - id: 0x05
+            name: comfort
       - name: consumption
         type: float
         size: 4
         description: Energy consumption in the driving mode in kWh
   - id: 0x07
+    name: last_trip_energy_consumption
     type: float
     size: 4
-    name: last_trip_energy_consumption
     description: Energy consumption in the last trip in kWh
   - id: 0x08
+    name: last_trip_fuel_consumption
     type: float
     size: 4
-    name: last_trip_fuel_consumption
     description: Fuel consumption in the last trip in L
   - id: 0x09
+    name: mileage_after_last_trip
     type: integer
     size: 4
-    name: mileage_after_last_trip
     description: Mileage after the last trip in km
-  - id: 0x0A
+  - id: 0x0a
+    name: last_trip_electric_portion
     type: double
     size: 8
-    name: last_trip_electric_portion
     description: Portion of the last trip used in electric mode between 0.0-1.0
-  - id: 0x0B
+  - id: 0x0b
+    name: last_trip_average_energy_recuperation
     type: float
     size: 4
-    name: last_trip_average_energy_recuperation
     description: Energy recuperation rate for last trip, in kWh / 100 km
-  - id: 0x0C
+  - id: 0x0c
+    name: last_trip_battery_remaining
     type: double
     size: 8
-    name: last_trip_battery_remaining
     description: Battery % remaining after last trip between 0.0-1.0
-  - id: 0x0D
+  - id: 0x0d
+    name: last_trip_date
     type: timestamp
     size: 8
-    name: last_trip_date
     description: Milliseconds since UNIX Epoch time
-  - id: 0x0E
+  - id: 0x0e
+    name: average_fuel_consumption
     type: float
     size: 4
-    name: average_fuel_consumption
     pretty_name: Average fuel consumption for current trip
     description: Average fuel consumption in liters/100km per IEEE 754 formatting
-  - id: 0x0F
+  - id: 0x0f
+    name: current_fuel_consumption
     type: float
     size: 4
-    name: current_fuel_consumption
     description: Current fuel consumption in liters/100km per IEEE 754 formatting

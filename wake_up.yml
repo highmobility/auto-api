@@ -1,9 +1,21 @@
 name: wake_up
 category: digital_key
-id_msb: 0x00
-id_lsb: 0x22
-api_intro: 2
-api_update: 5
-message_types:
-  - id: 0x02
+
+identifier:
+    msb: 0x00
+    lsb: 0x22
+
+api:
+    intro: 2
+    update: 11
+
+commands:
+  - name: wake_up
+    constants:
+      - property_id: 0x01
+
+properties:
+  - id: 0x01
     name: wake_up
+    type: signal
+    size: 0

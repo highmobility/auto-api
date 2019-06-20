@@ -1,174 +1,179 @@
 name: race
 category: diagnostics
-id_msb: 0x00
-id_lsb: 0x57
-api_intro: 5
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_race_state
-  - id: 0x01
-    name: race_state
+
+identifier:
+    msb: 0x00
+    lsb: 0x57
+
+api:
+    intro: 5
+    update: 11
+
+getters: default
+
+state: all
     
 properties:
   - id: 0x01
-    size: 5
     name: accelerations
+    type: custom
+    size: 5
     multiple: true
     items:
       - name: type
         type: enum
         size: 1
         values:
-          - name: longitudinal_acceleration
-            id: 0x00
-          - name: lateral_acceleration
-            id: 0x01
-          - name: front_lateral_acceleration
-            id: 0x02
-          - name: rear_lateral_acceleration
-            id: 0x03
+          - id: 0x00
+            name: longitudinal_acceleration
+          - id: 0x01
+            name: lateral_acceleration
+          - id: 0x02
+            name: front_lateral_acceleration
+          - id: 0x03
+            name: rear_lateral_acceleration
       - name: g_force
-        size: 4
         type: float
+        size: 4
         description: The accelaration in g-force per IEEE 754 
   - id: 0x02
+    name: understeering
     type: double
     size: 8
-    name: understeering
     description: The understeering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 0.3 (30%) marginal, over 30% critical
   - id: 0x03
+    name: oversteering
     type: double
     size: 8
-    name: oversteering
     description: The oversteering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 30% marginal, over 30% critical
   - id: 0x04
+    name: gas_pedal_position
     type: double
     size: 8
-    name: gas_pedal_position
     description: The gas pedal position between 0.0-1.0, whereas 1.0 (100%) is full throttle
   - id: 0x05
+    name: steering_angle
     type: integer
     size: 1
-    name: steering_angle
     description: The steering angle in degrees, whereas 0 degrees is straight ahead, positive number to the right and negative number to the left
   - id: 0x06
+    name: brake_pressure
     type: float
     size: 4
-    name: brake_pressure
     description: Brake pressure in bar, whereas 100bar is max value, full brake
   - id: 0x07
+    name: yaw_rate
     type: float
     size: 4
-    name: yaw_rate
     description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
   - id: 0x08
+    name: rear_suspension_steering
     type: integer
     size: 1
-    name: rear_suspension_steering
     description: Rear suspension steering in degrees
   - id: 0x09
+    name: electronic_stability_program
     type: enum
     size: 1
-    name: electronic_stability_program
     pretty_name: ESP (Electronic Stability Program) intervention
     values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+      - id: 0x00
+        name: inactive
+      - id: 0x01
+        name: active
   - id: 0x0A
-    size: 2
     name: brake_torque_vectorings
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: axle
         type: enum
         size: 1
         values:
-          - name: front_axle
-            id: 0x00
-          - name: rear_axle
-            id: 0x01
+          - id: 0x00
+            name: front_axle
+          - id: 0x01
+            name: rear_axle
       - name: vectoring
         type: enum
         size: 1
         values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
+          - id: 0x00
+            name: inactive
+          - id: 0x01
+            name: active
   - id: 0x0B
+    name: gear_mode
     type: enum
     size: 1
-    name: gear_mode
     values:
-      - name: manual
-        id: 0x00
-      - name: park
-        id: 0x01
-      - name: reverse
-        id: 0x02
-      - name: neutral
-        id: 0x03
-      - name: drive
-        id: 0x04
-      - name: low_gear
-        id: 0x05
-      - name: sport
-        id: 0x06
+      - id: 0x00
+        name: manual
+      - id: 0x01
+        name: park
+      - id: 0x02
+        name: reverse
+      - id: 0x03
+        name: neutral
+      - id: 0x04
+        name: drive
+      - id: 0x05
+        name: low_gear
+      - id: 0x06
+        name: sport
   - id: 0x0C
+    name: selected_gear
     type: integer
     size: 1
-    name: selected_gear
     description: The selected gear value, if any
   - id: 0x0D
+    name: brake_pedal_position
     type: double
     size: 8
-    name: brake_pedal_position
     description: The brake pedal position between 0.0-1.0, wheras 1.0 (100%) is full brakes
   - id: 0x0E
-    type: enum
-    size: 1
     name: brake_pedal_switch
+    type: enum
+    size: 1
     values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+      - id: 0x00
+        name: inactive
+      - id: 0x01
+        name: active
   - id: 0x0F
-    type: enum
-    size: 1
     name: clutch_pedal_switch
+    type: enum
+    size: 1
     values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+      - id: 0x00
+        name: inactive
+      - id: 0x01
+        name: active
   - id: 0x10
-    type: enum
-    size: 1
     name: accelerator_pedal_idle_switch
+    type: enum
+    size: 1
     values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+      - id: 0x00
+        name: inactive
+      - id: 0x01
+        name: active
   - id: 0x11
-    type: enum
-    size: 1
     name: accelerator_pedal_kickdown_switch
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
-  - id: 0x12
     type: enum
     size: 1
-    name: vehicle_moving
     values:
-      - name: not_moving
-        id: 0x00
-      - name: moving
-        id: 0x01
+      - id: 0x00
+        name: inactive
+      - id: 0x01
+        name: active
+  - id: 0x12
+    name: vehicle_moving
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: not_moving
+      - id: 0x01
+        name: moving

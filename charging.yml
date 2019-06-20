@@ -1,231 +1,154 @@
 name: charging
 category: chassis
-id_msb: 0x00
-id_lsb: 0x23
-api_intro: 2
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_charge_state
-  - id: 0x01
-    name: charge_state
-  - id: 0x12
-    name: start_stop_charging
-    properties:
-      - id: 0x01
-        name: active_state
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: stop_charging
-            id: 0x00
-          - name: start_charging
-            id: 0x01
-  - id: 0x13
-    name: set_charge_limit
-    properties:
-      - id: 0x01
-        name: charge_limit
-        type: double
-        size: 8
-        mandatory: true
-        description: Charge limit percentage between 0.0-1.0
-  - id: 0x14
-    name: open_close_charging_port
-    properties:
-      - id: 0x01
-        name: charge_port_state
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: closed
-            id: 0x00
-          - name: open
-            id: 0x01
-  - id: 0x15
-    name: set_charge_mode
-    properties:
-      - id: 0x01
-        name: charge_mode
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: timer_based
-            id: 0x01
-          - name: inductive
-            id: 0x02
-  - id: 0x16
-    name: set_charging_timers
-    properties:
-      - id: 0x0D
-        name: timers
-        size: 9
-        multiple: true
-        mandatory: true
-        items:
-          - name: timer_type
-            type: enum
-            size: 1
-            values:
-              - name: preferred_start_time
-                id: 0x00
-              - name: preferred_end_time
-                id: 0x01
-              - name: departure_date
-                id: 0x02
-          - name: date
-            type: timestamp
-            size: 8
-            description: Milliseconds since UNIX Epoch time
-  - id: 0x17
-    name: set_reduction_of_charging_current_times
-    properties:
-      - id: 0x01
-        name: reduction_times
-        pretty_name: Reduction of charging-current times
-        size: 3
-        multiple: true
-        mandatory: true
-        items:
-          - name: start_stop
-            type: enum
-            size: 1
-            values:
-              - name: start
-                id: 0x00
-              - name: stop
-                id: 0x01
-          - name: hour
-            type: integer
-            size: 1
-            description: Value between 0 and 23
-          - name: minute
-            type: integer
-            size: 1
-            description: Value between 0 and 59
+
+identifier:
+    msb: 0x00
+    lsb: 0x23
+
+api:
+    intro: 2
+    update: 11
+
+getters: default
+
+commands:
+  - name: start_stop_charging
+    mandatory: [0x17]
+  - name: set_charge_limit
+    mandatory: [0x08]
+  - name: open_close_charging_port
+    mandatory: [0x0b]
+  - name: set_charge_mode
+    mandatory: [0x0c]
+  - name: set_charging_timers
+    mandatory: [0x15]
+  - name: set_reduction_of_charging_current_times
+    mandatory: [0x13]
+
+state: all
     
 properties:
   - id: 0x02
+    name: estimated_range
     type: integer
     size: 2
-    name: estimated_range
     description: Estimated range in km
   - id: 0x03
+    name: battery_level
     type: double
     size: 8
-    name: battery_level
     description: Battery level percentage between 0.0-1.0
   - id: 0x04
+    name: battery_current_ac
     type: float
     size: 4
-    name: battery_current_ac
     title_case_name: batteryCurrentAC
     pretty_name: Battery current (AC)
     description: Battery current in 4-bytes per IEEE 754
   - id: 0x05
+    name: battery_current_dc
     type: float
     size: 4
-    name: battery_current_dc
     title_case_name: batteryCurrentDC
     pretty_name: Battery current (DC)
     description: Battery current in 4-bytes per IEEE 754
   - id: 0x06
+    name: charger_voltage_ac
     type: float
     size: 4
-    name: charger_voltage_ac
     title_case_name: batteryVoltageAC
     pretty_name: Charger voltage (AC)
     description: Charger voltage in 4-bytes per IEEE 754
   - id: 0x07
+    name: charger_voltage_dc
     type: float
     size: 4
-    name: charger_voltage_dc
     title_case_name: batteryVoltageDC
     pretty_name: Charger voltage (DC)
     description: Charger voltage in 4-bytes per IEEE 754
   - id: 0x08
+    name: charge_limit
     type: double
     size: 8
-    name: charge_limit
     description: Charge limit percentage between 0.0-1.0
   - id: 0x09
+    name: time_to_complete_charge
     type: integer
     size: 1
-    name: time_to_complete_charge
     description: Time until charging completed in minutes
-  - id: 0x0A
+  - id: 0x0a
+    name: charging_rate_kw
     type: float
     size: 4
-    name: charging_rate_kw
     title_case_name: chargingRateKW
     pretty_name: Charging rate (kW)
     description: Charge rate in kW represented as 4-bytes per IEEE 754, when charging
-  - id: 0x0B
-    type: enum
-    size: 1
+  - id: 0x0b
     name: charge_port_state
-    values:
-      - name: closed
-        id: 0x00
-      - name: open
-        id: 0x01
-  - id: 0x0C
     type: enum
     size: 1
-    name: charge_mode
     values:
-      - name: immediate
-        id: 0x00
-      - name: timer_based
-        id: 0x01
-      - name: inductive
-        id: 0x02
-  - id: 0x0E
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: open
+  - id: 0x0c
+    name: charge_mode
+    type: enum
+    size: 1
+    command_allowed_values: [0x01, 0x02]
+    values:
+      - id: 0x00
+        name: immediate
+      - id: 0x01
+        name: timer_based
+      - id: 0x02
+        name: inductive
+  - id: 0x0e
+    name: max_charging_current
     type: float
     size: 4
-    name: max_charging_current
     pretty_name: Maximum charging current
     description: Maximum charging current in 4-bytes per IEEE 754
-  - id: 0x0F
-    type: enum
-    size: 1
+  - id: 0x0f
     name: plug_type
-    values:
-      - name: type_1
-        id: 0x00
-      - name: type_2
-        id: 0x01
-      - name: ccs
-        pretty_name: Combined Charging System (CCS)
-        id: 0x02
-      - name: chademo
-        pretty_name: CHAdeMO
-        id: 0x03
-  - id: 0x10
     type: enum
     size: 1
-    name: charging_window_chosen
     values:
-      - name: not_chosen
-        id: 0x00
-      - name: chosen
-        id: 0x01
+      - id: 0x00
+        name: type_1
+      - id: 0x01
+        name: type_2
+      - id: 0x02
+        name: ccs
+        pretty_name: Combined Charging System (CCS)
+      - id: 0x03
+        name: chademo
+        pretty_name: CHAdeMO
+  - id: 0x10
+    name: charging_window_chosen
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: not_chosen
+      - id: 0x01
+        name: chosen
   - id: 0x11
-    size: 3
     name: departure_times
+    type: custom
+    size: 3
     multiple: true
     items:
       - name: active_state
         type: enum
         size: 1
         values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
+          - id: 0x00
+            name: inactive
+          - id: 0x01
+            name: active
       - name: hour
         type: integer
         size: 1
@@ -235,19 +158,20 @@ properties:
         size: 1
         description: Value between 0 and 59
   - id: 0x13
-    size: 3
     name: reduction_times
-    pretty_name: Reduction of charging-current times
+    type: custom
+    size: 3
     multiple: true
+    pretty_name: Reduction of charging-current times
     items:
       - name: start_stop
         type: enum
         size: 1
         values:
-          - name: start
-            id: 0x00
-          - name: stop
-            id: 0x01
+          - id: 0x00
+            name: start
+          - id: 0x01
+            name: stop
       - name: hour
         type: integer
         size: 1
@@ -257,52 +181,55 @@ properties:
         size: 1
         description: Value between 0 and 59
   - id: 0x14
+    name: battery_temperature
     type: float
     size: 4
-    name: battery_temperature
     description: Battery temperature in Celsius in 4-bytes per IEEE 754
   - id: 0x15
-    size: 9
     name: timers
+    type: custom
+    size: 9
     multiple: true
     items:
       - name: timer_type
         type: enum
         size: 1
         values:
-          - name: preferred_start_time
-            id: 0x00
-          - name: preferred_end_time
-            id: 0x01
-          - name: departure_date
-            id: 0x02
+          - id: 0x00
+            name: preferred_start_time
+          - id: 0x01
+            name: preferred_end_time
+          - id: 0x02
+            name: departure_date
       - name: date
         type: timestamp
         size: 8
         description: Milliseconds since UNIX Epoch time
   - id: 0x16
-    type: enum
-    size: 1
     name: plugged_in
-    values:
-      - name: disconnected
-        id: 0x00
-      - name: plugged_in
-        id: 0x01
-  - id: 0x17
     type: enum
     size: 1
-    name: charging_state
     values:
-      - name: not_charging
-        id: 0x00
-      - name: charging
-        id: 0x01
-      - name: charging_complete
-        id: 0x02
-      - name: initialising
-        id: 0x03
-      - name: charging_paused
-        id: 0x04
-      - name: charging_error
-        id: 0x05
+      - id: 0x00
+        name: disconnected
+      - id: 0x01
+        name: plugged_in
+  - id: 0x17
+    name: charging_state
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: not_charging
+        verb: stop_charging
+      - id: 0x01
+        name: charging
+        verb: start_charging
+      - id: 0x02
+        name: charging_complete
+      - id: 0x03
+        name: initialising
+      - id: 0x04
+        name: charging_paused
+      - id: 0x05
+        name: charging_error

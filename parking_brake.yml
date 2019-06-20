@@ -1,35 +1,31 @@
 name: parking_brake
 category: parking
-id_msb: 0x00
-id_lsb: 0x58
-api_intro: 5
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_parking_brake_state
-  - id: 0x01
-    name: parking_brake_state
-  - id: 0x12
-    name: set_parking_brake
-    properties:
-      - id: 0x01
-        name: parking_brake
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
+
+identifier:
+    msb: 0x00
+    lsb: 0x58
+
+api:
+    intro: 5
+    update: 11
+
+getters: default
+
+commands:
+  - name: set_parling_brake
+    mandatory: [0x01]
+
+state: all
     
 properties:
   - id: 0x01
+    name: parking_brake
     type: enum
     size: 1
-    name: parking_brake
     values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+      - id: 0x00
+        name: inactive
+        verb: deacticate
+      - id: 0x01
+        name: active
+        verb: activate

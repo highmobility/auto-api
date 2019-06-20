@@ -1,61 +1,61 @@
 name: remote_control
 category: parking
-id_msb: 0x00
-id_lsb: 0x27
-api_intro: 2
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_control_mode
-  - id: 0x01
-    name: control_mode
-  - id: 0x04
-    name: control_command
-    properties:
-      - id: 0x01
-        name: speed
-        type: integer
-        size: 1
-        description: Speed in km/h
-      - id: 0x02
-        name: angle
-        type: integer
-        size: 2
-        description: Angle of the steering
-  - id: 0x12
-    name: start_stop_control
-    properties:
-      - id: 0x01
-        name: start_stop
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: start
-            id: 0x00
-          - name: stop
-            id: 0x01
-    
+
+identifier:
+    msb: 0x00
+    lsb: 0x27
+
+api:
+    intro: 2
+    update: 11
+
+getters:
+  static:
+    - name: get_control_mode
+      properties: [0x01]
+
+commands:
+  - name: control_command
+    optional: [0x02, 0x03]
+  - name: start_control
+    constants:
+      - property_id: 0x01
+        value: [0x02]
+  - name: stop_control
+    constants:
+      - property_id: 0x01
+        value: [0x05]
+
+state: [0x01, 0x02]
+
 properties:
   - id: 0x01
+    name: control_mode
     type: enum
     size: 1
-    name: control_mode
     values:
-      - name: control_mode_unavailable
-        id: 0x00
-      - name: control_mode_available
-        id: 0x01
-      - name: control_started
-        id: 0x02
-      - name: control_failed_to_start
-        id: 0x03
-      - name: control_aborted
-        id: 0x04
-      - name: control_ended
-        id: 0x05
+      - id: 0x00
+        name: unavailable
+      - id: 0x01
+        name: available
+      - id: 0x02
+        name: started
+        verb: start
+      - id: 0x03
+        name: failed_to_start
+      - id: 0x04
+        name: aborted
+        verb: abort
+      - id: 0x05
+        name: ended
+        verb: stop
   - id: 0x02
+    name: angle
     type: integer
     size: 2
-    name: angle
     description: Wheel base angle in degrees
+  - id: 0x03
+    name: speed
+    type: integer
+    size: 1
+    description: Speed in km/h

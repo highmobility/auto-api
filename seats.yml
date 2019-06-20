@@ -1,67 +1,72 @@
 name: seats
 category: chassis
-id_msb: 0x00
-id_lsb: 0x56
-api_intro: 5
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_seats_state
-  - id: 0x01
-    name: seats_state
+
+identifier:
+    msb: 0x00
+    lsb: 0x56
+
+api:
+    intro: 5
+    update: 11
+
+getters: default
+
+state: all
     
 properties:
   - id: 0x02
-    size: 2
     name: persons_detected
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: seat_location
         type: enum
         size: 1
         values:
-          - name: front_left
-            id: 0x00
-          - name: front_right
-            id: 0x01
-          - name: rear_right
-            id: 0x02
-          - name: rear_left
-            id: 0x03
-          - name: rear_center
-            id: 0x04
+          - id: 0x00
+            name: front_left
+          - id: 0x01
+            name: front_right
+          - id: 0x02
+            name: rear_right
+          - id: 0x03
+            name: rear_left
+          - id: 0x04
+            name: rear_center
       - name: person_detected
         type: enum
         size: 1
         values:
-          - name: not_detected
-            id: 0x00
-          - name: detected
-            id: 0x01
+          - id: 0x00
+            name: not_detected
+          - id: 0x01
+            name: detected
   - id: 0x03
-    size: 2
     name: seatbelts_fastened
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: seat_location
         type: enum
         size: 1
         values:
-          - name: front_left
-            id: 0x00
-          - name: front_right
-            id: 0x01
-          - name: rear_right
-            id: 0x02
-          - name: rear_left
-            id: 0x03
-          - name: rear_center
-            id: 0x04
+          - id: 0x00
+            name: front_left
+          - id: 0x01
+            name: front_right
+          - id: 0x02
+            name: rear_right
+          - id: 0x03
+            name: rear_left
+          - id: 0x04
+            name: rear_center
       - name: seatbelt_fastened
         type: enum
         size: 1
         values:
-          - name: not_fastened
-            id: 0x00
-          - name: fastened
-            id: 0x01
+          - id: 0x00
+            name: not_fastened
+          - id: 0x01
+            name: fastened

@@ -1,155 +1,59 @@
 name: lights
 category: chassis
-id_msb: 0x00
-id_lsb: 0x36
-api_intro: 3
-api_update: 9
-message_types:
-  - id: 0x00
-    name: get_lights_state
-  - id: 0x01
-    name: lights_state
-  - id: 0x12
-    name: control_lights
-    properties:
-      - id: 0x01
-        name: front_exterior_light
-        type: enum
-        size: 1
-        values:
-          - name: deactivate
-            id: 0x00
-          - name: activate
-            id: 0x01
-          - name: activate_full_beam
-            id: 0x02
-          - name: activate_dlr
-            pretty_name: Activate Daylight Running Lamps
-            id: 0x03
-          - name: automatic
-            id: 0x04
-      - id: 0x02
-        name: rear_exterior_light
-        type: enum
-        size: 1
-        values:
-          - name: deactivate
-            id: 0x00
-          - name: activate
-            id: 0x01
-      - id: 0x04
-        name: ambient_light
-        size: 3
-        items:
-          - name: rgb_red
-            type: integer
-            size: 1
-            description: The red colour of RGB in hex
-          - name: rgb_green
-            type: integer
-            size: 1
-            description: The green colour of RGB in hex
-          - name: rgb_blue
-            type: integer
-            size: 1
-            description: The blue colour of RGB in hex
-      - id: 0x07
-        size: 2
-        name: fog_lights
-        multiple: true
-        items:
-          - name: fog_light_location
-            type: enum
-            size: 1
-            values:
-              - name: front
-                id: 0x00
-              - name: rear
-                id: 0x01
-          - name: fog_light_state
-            type: enum
-            size: 1
-            values:
-              - name: inactive
-                id: 0x00
-              - name: active
-                id: 0x01
-      - id: 0x08
-        name: reading_lamps
-        size: 2
-        multiple: true
-        items:
-          - name: reading_lamp_location
-            type: enum
-            size: 1
-            values:
-              - name: front_left
-                id: 0x00
-              - name: front_right
-                id: 0x01
-              - name: rear_right
-                id: 0x02
-              - name: rear_left
-                id: 0x03
-          - name: reading_lamp_state
-            type: enum
-            size: 1
-            values:
-              - name: inactive
-                id: 0x00
-              - name: active
-                id: 0x01
-      - id: 0x09
-        size: 2
-        name: interior_lights
-        multiple: true
-        items:
-          - name: interior_light_location
-            type: enum
-            size: 1
-            values:
-              - name: front
-                id: 0x00
-              - name: rear
-                id: 0x01
-          - name: interior_light_state
-            type: enum
-            size: 1
-            values:
-              - name: inactive
-                id: 0x00
-              - name: active
-                id: 0x01
+
+identifier:
+    msb: 0x00
+    lsb: 0x36
+
+api:
+    intro: 3
+    update: 11
+
+getters: default
+
+commands:
+  - name: control_lights
+    optional: [0x01, 0x02, 0x04, 0x07, 0x08, 0x09]
+
+state: all
     
 properties:
   - id: 0x01
-    type: enum
-    size: 1
     name: front_exterior_light
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
-      - name: active_with_full_beam
-        id: 0x02
-      - name: dlr
-        pretty_name: Daylight Running Lamps
-        id: 0x03
-      - name: automatic
-        id: 0x04
-  - id: 0x02
     type: enum
     size: 1
-    name: rear_exterior_light
     values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+      - id: 0x00
+        name: inactive
+        verb: deactivate
+      - id: 0x01
+        name: active
+        verb: activate
+      - id: 0x02
+        name: active_with_full_beam
+        verb: activate_with_full_beam
+      - id: 0x03
+        name: dlr
+        verb: activate_dlr
+        pretty_name: Daylight Running Lamps
+        verb_pretty_name: Activate Daylight Running Lamps
+      - id: 0x04
+        name: automatic
+  - id: 0x02
+    name: rear_exterior_light
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: inactive
+        verb: deactivate
+      - id: 0x01
+        name: active
+        verb: activate
   - id: 0x04
-    size: 3
     name: ambient_light
+    type: custom
+    size: 3
     items:
       - name: rgb_red
         type: integer
@@ -164,87 +68,96 @@ properties:
         size: 1
         description: The blue colour of RGB in hex
   - id: 0x05
-    type: enum
-    size: 1
     name: reverse_light
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
-  - id: 0x06
     type: enum
     size: 1
-    name: emergency_brake_light
     values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+      - id: 0x00
+        name: inactive
+      - id: 0x01
+        name: active
+  - id: 0x06
+    name: emergency_brake_light
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: inactive
+      - id: 0x01
+        name: active
   - id: 0x07
-    size: 2
     name: fog_lights
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: fog_light_location
         type: enum
         size: 1
         values:
-          - name: front
-            id: 0x00
-          - name: rear
-            id: 0x01
+          - id: 0x00
+            name: front
+          - id: 0x01
+            name: rear
       - name: fog_light_state
         type: enum
         size: 1
         values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
+          - id: 0x00
+            name: inactive
+            verb: deactivate
+          - id: 0x01
+            name: active
+            verb: activate
   - id: 0x08
-    size: 2
     name: reading_lamps
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: reading_lamp_location
         type: enum
         size: 1
         values:
-          - name: front_left
-            id: 0x00
-          - name: front_right
-            id: 0x01
-          - name: rear_right
-            id: 0x02
-          - name: rear_left
-            id: 0x03
+          - id: 0x00
+            name: front_left
+          - id: 0x01
+            name: front_right
+          - id: 0x02
+            name: rear_right
+          - id: 0x03
+            name: rear_left
       - name: reading_lamp_state
         type: enum
         size: 1
         values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
+          - id: 0x00
+            name: inactive
+            verb: deactivate
+          - id: 0x01
+            name: active
+            verb: activate
   - id: 0x09
-    size: 2
     name: interior_lights
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: interior_light_location
         type: enum
         size: 1
         values:
-          - name: front
-            id: 0x00
-          - name: rear
-            id: 0x01
+          - id: 0x00
+            name: front
+          - id: 0x01
+            name: rear
       - name: interior_light_state
         type: enum
         size: 1
         values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
+          - id: 0x00
+            name: inactive
+            verb: deactivate
+          - id: 0x01
+            name: active
+            verb: activate

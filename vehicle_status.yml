@@ -1,133 +1,136 @@
 name: vehicle_status
 category: api_structure
-id_msb: 0x00
-id_lsb: 0x11
-api_intro: 2
-api_update: 9
-message_types:
-  - id: 0x00
-    name: get_vehicle_status
-  - id: 0x01
-    name: vehicle_status
+
+identifier:
+    msb: 0x00
+    lsb: 0x11
+
+api:
+    intro: 2
+    update: 11
+
+getters:
+    default:
+        omit_state_text: true
+
+state: all
     
 properties:
   - id: 0x01
+    name: vin
     type: string
     size: 17
-    name: vin
     pretty_name: VIN
     description: The unique Vehicle Identification Number
   - id: 0x02
+    name: powertrain
     type: enum
     size: 1
-    name: powertrain
     values:
-      - name: unknown
-        id: 0x00
-      - name: all_electric
-        id: 0x01
-      - name: combustion_engine
-        id: 0x02
-      - name: phev
+      - id: 0x00
+        name: unknown
+      - id: 0x01
+        name: all_electric
+      - id: 0x02
+        name: combustion_engine
+      - id: 0x03
+        name: phev
         pretty_name: Plug-in Hybrid (PHEV)
-        id: 0x03
-      - name: hydrogen
-        id: 0x04
-      - name: hydrogen_hybrid
-        id: 0x05
+      - id: 0x04
+        name: hydrogen
+      - id: 0x05
+        name: hydrogen_hybrid
   - id: 0x03
-    type: string
     name: model_name
+    type: string
     description: The car model name bytes formatted in UTF-8
   - id: 0x04
-    type: string
     name: name
+    type: string
     description: The car name (nickname) bytes formatted in UTF-8
   - id: 0x05
-    type: string
     name: license_plate
+    type: string
     description: The license plate bytes formatted in UTF-8
   - id: 0x06
-    type: string
     name: sales_designation
+    type: string
     description: The sales designation of the model formatted in UTF-8
   - id: 0x07
+    name: model_year
     type: integer
     size: 2
-    name: model_year
     description: The car model manufacturing year number
   - id: 0x08
-    type: string
     name: color_name
+    type: string
     description: The color name formatted in UTF-8
   - id: 0x09
+    name: power_in_kw
     type: integer
     size: 2
-    name: power_in_kw
     description: The power of the car measured in kw
-  - id: 0x0A
-    type: integer
-    size: 1
+  - id: 0x0a
     name: number_of_doors
-    description: The number of doors
-  - id: 0x0B
     type: integer
     size: 1
+    description: The number of doors
+  - id: 0x0b
     name: number_of_seats
+    type: integer
+    size: 1
     description: The number of seats
-  - id: 0x0C
+  - id: 0x0c
+    name: engine_volume
     type: float
     size: 4
-    name: engine_volume
     description: The engine volume displacement in liters per IEEE 754 formatting
-  - id: 0x0D
+  - id: 0x0d
+    name: engine_max_torque
     type: integer
     size: 2
-    name: engine_max_torque
     description: The maximum engine torque in Nm
-  - id: 0x0E
-    type: enum
-    size: 1
+  - id: 0x0e
     name: gearbox
-    values:
-      - name: manual
-        id: 0x00
-      - name: automatic
-        id: 0x01
-      - name: semi_automatic
-        id: 0x02
-  - id: 0x0F
     type: enum
     size: 1
+    values:
+      - id: 0x00
+        name: manual
+      - id: 0x01
+        name: automatic
+      - id: 0x02
+        name: semi_automatic
+  - id: 0x0f
     name: display_unit
-    values:
-      - name: km
-        id: 0x00
-      - name: miles
-        id: 0x01
-  - id: 0x10
     type: enum
     size: 1
-    name: driver_seat_location
     values:
-      - name: left
-        id: 0x00
-      - name: right
-        id: 0x01
-      - name: center
-        id: 0x02
+      - id: 0x00
+        name: km
+      - id: 0x01
+        name: miles
+  - id: 0x10
+    name: driver_seat_location
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: left
+      - id: 0x01
+        name: right
+      - id: 0x02
+        name: center
   - id: 0x11
-    type: string
     name: equipments
+    type: string
     multiple: true
     description: Equipment that the vehicle is equipped with
   - id: 0x12
-    type: string
     name: brand
+    type: string
     description: The car brand bytes formatted in UTF-8
   - id: 0x99
-    type: capability_state
     name: state
+    type: capability_state
     multiple: true
-
-    

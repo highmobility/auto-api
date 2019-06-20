@@ -1,138 +1,145 @@
 name: dashboard_lights
 category: diagnostics
-id_msb: 0x00
-id_lsb: 0x61
-api_intro: 7
-message_types:
-  - id: 0x00
-    name: get_dashboard_lights
-  - id: 0x01
-    name: dashboard_lights
+
+identifier:
+    msb: 0x00
+    lsb: 0x61
+
+api:
+    intro: 7
+    update: 11
+
+getters:
+    default:
+        omit_state_text: true
+
+state: all
     
 properties:
   - id: 0x01
-    size: 2
     name: dashboard_lights
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: light_name
         type: enum
         size: 1
         values:
-          - name: high_beam
+          - id: 0x00
+            name: high_beam
             pretty_name: High beam, main beam (info only)
-            id: 0x00
-          - name: low_beam
+          - id: 0x01
+            name: low_beam
             pretty_name: Low beam, dipped beam (info only)
-            id: 0x01
-          - name: hazard_warning
+          - id: 0x02
+            name: hazard_warning
             pretty_name: Hazard warning (info only)
-            id: 0x02
-          - name: brake_failure
+          - id: 0x03
+            name: brake_failure
             pretty_name: Brake failure/brake system malfunction (red only)
-            id: 0x03
-          - name: hatch_open
+          - id: 0x04
+            name: hatch_open
             pretty_name: Hatch open (info only)
-            id: 0x04
-          - name: fuel_level
+          - id: 0x05
+            name: fuel_level
             pretty_name: Fuel level (yellow only)
-            id: 0x05
-          - name: engine_coolant_temperature
+          - id: 0x06
+            name: engine_coolant_temperature
             pretty_name: Engine coolant temperature (red only)
-            id: 0x06
-          - name: battery_charging_condition
+          - id: 0x07
+            name: battery_charging_condition
             pretty_name: Battery charging condition (yellow or red)
-            id: 0x07
-          - name: engine_oil
+          - id: 0x08
+            name: engine_oil
             pretty_name: Engine oil (yellow only)
-            id: 0x08
-          - name: position_lights
+          - id: 0x09
+            name: position_lights
             pretty_name: Position lights, side lights (info only)
-            id: 0x09
-          - name: front_fog_light
+          - id: 0x0a
+            name: front_fog_light
             pretty_name: Front fog light (info only)
-            id: 0x0A
-          - name: rear_fog_light
+          - id: 0x0b
+            name: rear_fog_light
             pretty_name: Rear fog light (info only)
-            id: 0x0B
-          - name: park_heating
+          - id: 0x0c
+            name: park_heating
             pretty_name: Park Heating (info only)
-            id: 0x0C
-          - name: engine_indicator
+          - id: 0x0d
+            name: engine_indicator
             pretty_name: Engine indicator (yellow only)
-            id: 0x0D
-          - name: service_call
+          - id: 0x0e
+            name: service_call
             pretty_name: Service, call for maintenance (yellow only)
-            id: 0x0E
-          - name: transmission_fluid_temperature
+          - id: 0x0f
+            name: transmission_fluid_temperature
             pretty_name: Transmission fluid temperature (yellow or red)
-            id: 0x0F
-          - name: transmission_failure
+          - id: 0x10
+            name: transmission_failure
             pretty_name: Transmission failure/malfunction (red only)
-            id: 0x10
-          - name: anti_lock_brake_failure
+          - id: 0x11
+            name: anti_lock_brake_failure
             pretty_name: Anti-lock brake system failure (yellow only)
-            id: 0x11
-          - name: worn_brake_linings
+          - id: 0x12
+            name: worn_brake_linings
             pretty_name: Worn brake linings (yellow only)
-            id: 0x12
-          - name: windscreen_washer_fluid
+          - id: 0x13
+            name: windscreen_washer_fluid
             pretty_name: Windscreen washer fluid/windshield washer fluid (yellow only)
-            id: 0x13
-          - name: tire_failure
+          - id: 0x14
+            name: tire_failure
             pretty_name: Tire failure/malfunction (yellow only)
-            id: 0x14
-          - name: engine_oil_level
+          - id: 0x15
+            name: engine_oil_level
             pretty_name: Engine oil level (yellow only)
-            id: 0x15
-          - name: engine_coolant_level
+          - id: 0x16
+            name: engine_coolant_level
             pretty_name: Engine coolant level (yellow only)
-            id: 0x16
-          - name: steering_failure
+          - id: 0x17
+            name: steering_failure
             pretty_name: Steering failure (yellow or red)
-            id: 0x17
-          - name: esc_indication
+          - id: 0x18
+            name: esc_indication
             pretty_name: Electronic Speed Controller indiction (info only)
-            id: 0x18
-          - name: brake_lights
+          - id: 0x19
+            name: brake_lights
             pretty_name: Brake lights (info only)
-            id: 0x19
-          - name: adblue_level
+          - id: 0x1a
+            name: adblue_level
             pretty_name: AdBlue level (yellow or red)
-            id: 0x1A
-          - name: fuel_filter_diff_pressure
+          - id: 0x1b
+            name: fuel_filter_diff_pressure
             pretty_name: Fuel filter differential pressure (yellow only)
-            id: 0x1B
-          - name: seat_belt
+          - id: 0x1c
+            name: seat_belt
             pretty_name: Seat belt (red only)
-            id: 0x1C
-          - name: advanced_braking
+          - id: 0x1d
+            name: advanced_braking
             pretty_name: Advanced emergency braking system (yellow only)
-            id: 0x1D
-          - name: acc
+          - id: 0x1e
+            name: acc
             pretty_name: Autonomous Cruise Control (yellow only)
-            id: 0x1E
-          - name: trailer_connected
+          - id: 0x1f
+            name: trailer_connected
             pretty_name: Trailer connected (info only)
-            id: 0x1F
-          - name: airbag
+          - id: 0x20
+            name: airbag
             pretty_name: Airbag (yellow only)
-            id: 0x20
-          - name: esc_switched_off
+          - id: 0x21
+            name: esc_switched_off
             pretty_name: ESC switched off (info only)
-            id: 0x21
-          - name: lane_departure_warning_off
+          - id: 0x22
+            name: lane_departure_warning_off
             pretty_name: Lane departure warning switched off (info only)
-            id: 0x22
       - name: state
         type: enum
         size: 1
         values:
-          - name: inactive
-            id: 0x00
-          - name: info
-            id: 0x01
-          - name: yellow
-            id: 0x02
-          - name: red
-            id: 0x03
+          - id: 0x00
+            name: inactive
+          - id: 0x01
+            name: info
+          - id: 0x02
+            name: yellow
+          - id: 0x03
+            name: red

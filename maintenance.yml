@@ -1,76 +1,80 @@
 name: maintenance
 category: diagnostics
-id_msb: 0x00
-id_lsb: 0x34
-api_intro: 3
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_maintenance_state
-  - id: 0x01
-    name: maintenance_state
+
+identifier:
+    msb: 0x00
+    lsb: 0x34
+
+api:
+    intro: 3
+    update: 11
+
+getters: default
+
+state: all
     
 properties:
   - id: 0x01
+    name: days_to_next_service
     type: integer
     size: 2
-    name: days_to_next_service
     description: Number of days until next servicing of the car, whereas negative is overdue
   - id: 0x02
+    name: kilometers_to_next_service
     type: integer
     size: 4
-    name: kilometers_to_next_service
     description: The amount of kilometers until next servicing of the car
   - id: 0x03
+    name: cbs_reports_count
     type: integer
     size: 1
-    name: cbs_reports_count
     description: The number of CBS reports
   - id: 0x04
+    name: months_to_exhaust_inpection
     type: integer
     size: 1
-    name: months_to_exhaust_inpection
     description: Number of months until exhaust inspection
   - id: 0x05
+    name: teleservice_availability
     type: enum
     size: 1
-    name: teleservice_availability
     values:
-      - name: pending
-        id: 0x00
-      - name: idle
-        id: 0x01
-      - name: succesful
-        id: 0x02
-      - name: error
-        id: 0x03
+      - id: 0x00
+        name: pending
+      - id: 0x01
+        name: idle
+      - id: 0x02
+        name: succesful
+      - id: 0x03
+        name: error
   - id: 0x06
+    name: service_distance_threshold
     type: integer
     size: 2
-    name: service_distance_threshold
     description: Distance threshold for Service
   - id: 0x07
+    name: service_time_threshold
     type: integer
     size: 1
-    name: service_time_threshold
     description: Time threshold, in weeks, for Service
   - id: 0x08
-    size: 8
     name: automatic_teleservice_call_date
     type: timestamp
+    size: 8
     description: Milliseconds since UNIX Epoch time
   - id: 0x09
-    size: 8
     name: teleservice_battery_call_date
     type: timestamp
+    size: 8
     description: Milliseconds since UNIX Epoch time
   - id: 0x0A
-    size: 8
     name: next_inspection_date
     type: timestamp
+    size: 8
     description: Milliseconds since UNIX Epoch time
   - id: 0x0B
     name: condition_based_services
+    type: custom
     multiple: true
     items:
       - name: year
@@ -89,12 +93,12 @@ properties:
         type: enum
         size: 1
         values:
-          - name: ok
-            id: 0x00
-          - name: pending
-            id: 0x01
-          - name: overdue
-            id: 0x02
+          - id: 0x00
+            name: ok
+          - id: 0x01
+            name: pending
+          - id: 0x02
+            name: overdue
       - name: text_size
         type: integer
         size: 2
@@ -110,7 +114,7 @@ properties:
         type: string
         description: Description bytes formatted in UTF-8
   - id: 0x0C
-    size: 8
     name: brake_fluid_change_date
     type: timestamp
+    size: 8
     description: Milliseconds since UNIX Epoch time

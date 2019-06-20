@@ -1,19 +1,25 @@
 name: firmware_version
 category: api_structure
-id_msb: 0x00
-id_lsb: 0x03
-api_intro: 4
-api_update: 5
-message_types:
-  - id: 0x00
-    name: get_firmware_version
-  - id: 0x01
-    name: firmware_version
+
+identifier:
+    msb: 0x00
+    lsb: 0x03
+
+api:
+    intro: 4
+    update: 11
+
+getters:
+    default:
+        omit_state_text: true
+
+state: all
 
 properties:
   - id: 0x01
-    size: 3
     name: hmkit_version
+    type: custom
+    size: 3
     pretty_name: HMKit Version
     title_case_name: HMKitVersion
     items:
@@ -30,12 +36,12 @@ properties:
         size: 1
         description: HMKit version patch number
   - id: 0x02
-    type: string
     name: hmkit_build_name
+    type: string
     pretty_name: HMKit Build Name
     title_case_name: HMKitBuildName
     description: HMKit version build name bytes formatted in UTF-8
   - id: 0x03
-    type: string
     name: application_version
+    type: string
     description: Application version bytes formatted in UTF-8

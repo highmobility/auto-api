@@ -1,26 +1,30 @@
 name: capabilities
 category: api_structure
-id_msb: 0x00
-id_lsb: 0x10
-api_intro: 2
-api_update: 5
-message_types:
-  - id: 0x00
-    name: get_capabilities
-  - id: 0x01
-    name: capabilities
-  - id: 0x02
-    name: get_capability
+
+identifier:
+    msb: 0x00
+    lsb: 0x10
+
+api:
+    intro: 2
+    update: 11
+
+getters:
+    default:
+        omit_state_text: true
+
+state: all
     
 properties:
   - id: 0x01
-    name: capability # size is dynamic depending on supported_message_types length
+    name: capabilities
+    type: custom
     multiple: true
     items:
       - name: capability_identifier
-        type: capability_enum
+        type: integer
         size: 2
         description: The identifier of the supported capability
-      - name: supported_message_types
-        type: message_types_enum
-        description: Array of message type identifiers
+      - name: supported_properties
+        type: integer_list
+        description: Array of supported property identifiers

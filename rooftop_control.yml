@@ -1,112 +1,81 @@
 name: rooftop_control
 category: chassis
-id_msb: 0x00
-id_lsb: 0x25
-api_intro: 3
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_rooftop_state
-  - id: 0x01
-    name: rooftop_state
-  - id: 0x12
-    name: control_rooftop
-    properties:
-      - id: 0x01
-        name: dimming
-        type: double
-        size: 8
-        description: Percentage value between 0.0-1.0 whereas 1.0 is opaque
-      - id: 0x02
-        name: position
-        type: double
-        size: 8
-        description: Percentage value between 0.0-1.0 whereas 1.0 is fully open
-      - id: 0x03
-        name: convertible_roof_state
-        type: enum
-        size: 1
-        values:
-          - name: closed
-            id: 0x00
-          - name: open
-            id: 0x01
-      - id: 0x04
-        type: enum
-        size: 1
-        name: sunroof_tilt_state
-        values:
-          - name: closed
-            id: 0x00
-          - name: tilt
-            id: 0x01
-          - name: half_tilt
-            id: 0x02
-      - id: 0x05
-        type: enum
-        size: 1
-        name: sunroof_state
-        values:
-          - name: closed
-            id: 0x00
-          - name: open
-            id: 0x01
-          - name: intermediate
-            id: 0x02
+
+identifier:
+    msb: 0x00
+    lsb: 0x25
+
+api:
+    intro: 3
+    update: 11
+
+getters:
+    default:
+        name_override: rooftop
+
+commands:
+  - name: control_rooftop
+    optional: [0x01, 0x02, 0x03, 0x04, 0x05]
+
+state: all
     
 properties:
   - id: 0x01
+    name: dimming
     type: double
     size: 8
-    name: dimming
     description: Percentage value between 0.0-1.0 whereas 1.0 is opaque
   - id: 0x02
+    name: position
     type: double
     size: 8
-    name: position
     description: Percentage value between 0.0-1.0 whereas 1.0 is fully open
   - id: 0x03
-    type: enum
-    size: 1
     name: convertible_roof_state
+    type: enum
+    size: 1
+    command_allowed_values: [0x00, 0x01]
     values:
-      - name: closed
-        id: 0x00
-      - name: open
-        id: 0x01
-      - name: emergency_locked
-        id: 0x02
-      - name: closed_secured
-        id: 0x03
-      - name: open_secured
-        id: 0x04
-      - name: hard_top_mounted
-        id: 0x05
-      - name: intermediate_position
-        id: 0x06
-      - name: loading_position
-        id: 0x07
-      - name: loading_position_immediate
-        id: 0x08
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: open
+      - id: 0x02
+        name: emergency_locked
+      - id: 0x03
+        name: closed_secured
+      - id: 0x04
+        name: open_secured
+      - id: 0x05
+        name: hard_top_mounted
+      - id: 0x06
+        name: intermediate_position
+      - id: 0x07
+        name: loading_position
+      - id: 0x08
+        name: loading_position_immediate
   - id: 0x04
-    type: enum
-    size: 1
     name: sunroof_tilt_state
-    values:
-      - name: closed
-        id: 0x00
-      - name: tilted
-        id: 0x01
-      - name: half_tilted
-        id: 0x02
-  - id: 0x05
     type: enum
     size: 1
-    name: sunroof_state
     values:
-      - name: closed
-        id: 0x00
-      - name: open
-        id: 0x01
-      - name: intermediate
-        id: 0x02
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: tilted
+      - id: 0x02
+        name: half_tilted
+  - id: 0x05
+    name: sunroof_state
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: open
+      - id: 0x02
+        name: intermediate

@@ -1,15 +1,20 @@
 name: text_input
 category: headunit
-id_msb: 0x00
-id_lsb: 0x44
-api_intro: 4
-api_update: 5
-message_types:
-  - id: 0x00
-    name: text_input
-    properties:
-      - id: 0x01
-        name: text
-        type: string
-        mandatory: true
-        description: The UTF8 bytes of the string
+
+identifier:
+    msb: 0x00
+    lsb: 0x44
+
+api:
+    intro: 4
+    update: 11
+
+commands:
+  - name: text_input
+    mandatory: [0x01]
+
+properties:
+  - id: 0x01
+    name: text
+    type: string
+    description: The UTF8 bytes of the string

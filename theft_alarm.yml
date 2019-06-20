@@ -1,39 +1,34 @@
 name: theft_alarm
 category: parking
-id_msb: 0x00
-id_lsb: 0x46
-api_intro: 4
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_theft_alarm_state
-  - id: 0x01
-    name: theft_alarm_state
-  - id: 0x12
-    name: set_theft_alarm_state
-    properties:
-      - id: 0x01
-        name: theft_alarm
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: unarm
-            id: 0x00
-          - name: arm
-            id: 0x01
-          - name: trigger
-            id: 0x02
+
+identifier:
+    msb: 0x00
+    lsb: 0x46
+
+api:
+    intro: 4
+    update: 11
+
+getters: default
+
+commands:
+  - name: set_theft_alarm
+    mandatory: [0x01]
+
+state: all
 
 properties:
   - id: 0x01
+    name: theft_alarm
     type: enum
     size: 1
-    name: theft_alarm
     values:
-      - name: not_armed
-        id: 0x00
-      - name: armed
-        id: 0x01
-      - name: triggered
-        id: 0x02
+      - id: 0x00
+        name: not_armed
+        verb: unarm
+      - id: 0x01
+        name: armed
+        verb: arm
+      - id: 0x02
+        name: triggered
+        verb: trigger

@@ -1,52 +1,41 @@
 name: trunk
 category: digital_key
-id_msb: 0x00
-id_lsb: 0x21
-api_intro: 1
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_trunk_state
-  - id: 0x01
-    name: trunk_state
-  - id: 0x12
-    name: control_trunk
-    properties:
-      - id: 0x01
-        name: trunk_lock
-        type: enum
-        size: 1
-        values:
-          - name: unlocked
-            id: 0x00
-          - name: locked
-            id: 0x01
-      - id: 0x02
-        name: trunk_position
-        type: enum
-        size: 1
-        values:
-          - name: closed
-            id: 0x00
-          - name: open
-            id: 0x01
-    
+
+identifier:
+    msb: 0x00
+    lsb: 0x21
+
+api:
+    intro: 1
+    update: 11
+
+getters: default
+
+commands:
+  - name: control_trunk
+    optional: [0x01, 0x02]
+
+state: all
+
 properties:
   - id: 0x01
-    type: enum
-    size: 1
     name: trunk_lock
-    values:
-      - name: unlocked
-        id: 0x00
-      - name: locked
-        id: 0x01
-  - id: 0x02
     type: enum
     size: 1
-    name: trunk_position
     values:
-      - name: closed
-        id: 0x00
-      - name: open
-        id: 0x01
+      - id: 0x00
+        name: unlocked
+        verb: unlock
+      - id: 0x01
+        name: locked
+        verb: lock
+  - id: 0x02
+    name: trunk_position
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: open

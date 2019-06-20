@@ -1,30 +1,34 @@
 name: notifications
 category: headunit
-id_msb: 0x00
-id_lsb: 0x38
-api_intro: 4
-api_update: 8
-message_types:
-  - id: 0x00
-    name: notification
-  - id: 0x02
-    name: clear_notification
-  - id: 0x11
-    name: notification_action
-    properties:
-      - id: 0x01
-        name: action_id
-        type: integer
-        size: 1
-        mandatory: true
+
+identifier:
+    msb: 0x00
+    lsb: 0x38
+
+api:
+    intro: 4
+    update: 11
+
+commands:
+  - name: notification
+    mandatory: [0x01]
+    optional: [0x02]
+  - name: action
+    mandatory: [0x03]
+  - name: clear_notification
+    constants:
+      - property_id: [0x04]
+
+state: all
     
 properties:
   - id: 0x01
-    type: string
     name: text
+    type: string
     description: Text for the notification, bytes in UTF8.
   - id: 0x02
     name: action_items
+    type: custom
     multiple: true
     items:
       - name: identifier
@@ -33,7 +37,11 @@ properties:
       - name: name
         type: string
         description: Name of the action, bytes in UTF8.
-  - id: 0x10
+  - id: 0x03
+    name: activated_action
     type: integer
     size: 1
-    name: received_action
+  - id: 0x04
+    name: clear
+    type: signal
+    size: 0

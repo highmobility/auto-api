@@ -1,118 +1,77 @@
 name: windows
 category: chassis
-id_msb: 0x00
-id_lsb: 0x45
-api_intro: 2
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_windows_state
-  - id: 0x01
-    name: windows_state
-  - id: 0x12
-    name: control_windows
-    properties:
-      - id: 0x01
-        name: windows_open_percentages
-        size: 9
-        multiple: true
-        items:
-          - name: window_location
-            type: enum
-            size: 1
-            values:
-              - name: front_left
-                id: 0x00
-              - name: front_right
-                id: 0x01
-              - name: rear_right
-                id: 0x02
-              - name: rear_left
-                id: 0x03
-              - name: hatch
-                id: 0x04
-          - name: open_percentage
-            type: double
-            size: 8
-            description: Value between 0.0 and 1.0
-      - id: 0x02
-        name: windows_positions
-        size: 2
-        multiple: true
-        items:
-          - name: window_location
-            type: enum
-            size: 1
-            values:
-              - name: front_left
-                id: 0x00
-              - name: front_right
-                id: 0x01
-              - name: rear_right
-                id: 0x02
-              - name: rear_left
-                id: 0x03
-              - name: hatch
-                id: 0x04
-          - name: window_position
-            type: enum
-            size: 1
-            values:
-              - name: closed
-                id: 0x00
-              - name: open
-                id: 0x01
+
+identifier:
+    msb: 0x00
+    lsb: 0x45
+
+api:
+    intro: 2
+    update: 11
+
+getters:
+    default:
+        name_override: windows
+
+commands:
+  - name: control_windows
+    optional: [0x02, 0x03]
+
+state: all
 
 properties:
   - id: 0x02
-    size: 9
     name: windows_open_percentages
+    type: custom
+    size: 9
     multiple: true
     items:
       - name: window_location
         type: enum
         size: 1
         values:
-          - name: front_left
-            id: 0x00
-          - name: front_right
-            id: 0x01
-          - name: rear_right
-            id: 0x02
-          - name: rear_left
-            id: 0x03
-          - name: hatch
-            id: 0x04
+          - id: 0x00
+            name: front_left
+          - id: 0x01
+            name: front_right
+          - id: 0x02
+            name: rear_right
+          - id: 0x03
+            name: rear_left
+          - id: 0x04
+            name: hatch
       - name: open_percentage
         type: double
         size: 8
         description: Value between 0.0 and 1.0
   - id: 0x03
-    size: 2
     name: windows_positions
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: window_location
         type: enum
         size: 1
         values:
-          - name: front_left
-            id: 0x00
-          - name: front_right
-            id: 0x01
-          - name: rear_right
-            id: 0x02
-          - name: rear_left
-            id: 0x03
-          - name: hatch
-            id: 0x04
+          - id: 0x00
+            name: front_left
+          - id: 0x01
+            name: front_right
+          - id: 0x02
+            name: rear_right
+          - id: 0x03
+            name: rear_left
+          - id: 0x04
+            name: hatch
       - name: window_position
         type: enum
         size: 1
+        command_allowed_values: [0x00. 0x01]
         values:
-          - name: closed
-            id: 0x00
-          - name: open
-            id: 0x01
-          - name: intermediate
-            id: 0x02
+          - id: 0x00
+            name: closed
+          - id: 0x01
+            name: open
+          - id: 0x02
+            name: intermediate

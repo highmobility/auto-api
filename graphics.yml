@@ -1,16 +1,21 @@
 name: graphics
 category: headunit
-id_msb: 0x00
-id_lsb: 0x51
-api_intro: 4
-api_update: 5
-message_types:
-  - id: 0x00
-    name: display_image
-    properties:
-      - id: 0x01
-        name: image_url
-        pretty_name: Image URL
-        type: string
-        mandatory: true
-        description: The UTF8 bytes of the image URL string
+
+identifier:
+    msb: 0x00
+    lsb: 0x51
+
+api:
+    intro: 4
+    update: 11
+
+commands:
+  - name: display_image
+    mandatory: [0x01]
+
+properties:
+  - id: 0x01
+    name: image_url
+    type: string
+    pretty_name: Image URL
+    description: The UTF8 bytes of the image URL string

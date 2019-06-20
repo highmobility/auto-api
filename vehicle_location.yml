@@ -1,19 +1,24 @@
 name: vehicle_location
 category: poi
-id_msb: 0x00
-id_lsb: 0x30
-api_intro: 2
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_vehicle_location
-  - id: 0x01
-    name: vehicle_location
+
+identifier:
+    msb: 0x00
+    lsb: 0x30
+
+api:
+    intro: 2
+    update: 11
+
+getters:
+    default:
+        omit_state_text: true
+
+state: all
     
 properties:
   - id: 0x04
-    size: 16
     name: coordinates
+    size: 16
     items:
       - name: latitude
         type: double
@@ -24,12 +29,12 @@ properties:
         size: 8
         description: Longitude in 8-bytes per IEEE 754
   - id: 0x05
+    name: heading
     type: double
     size: 8
-    name: heading
     description: Heading in 8-bytes per IEEE 754
   - id: 0x06
+    name: altitude
     type: double
     size: 8
-    name: altitude
     description: Altitude in meters above the WGS 84 reference ellipsoid per double precision IEEE 754 formatting

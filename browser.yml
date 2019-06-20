@@ -1,16 +1,21 @@
 name: browser
 category: headunit
-id_msb: 0x00
-id_lsb: 0x49
-api_intro: 4
-api_update: 5
-message_types:
-  - id: 0x00
-    name: load_url
-    properties:
-      - id: 0x01
-        name: url
-        pretty_name: URL
-        type: string
-        mandatory: true
-        description: The UTF8 bytes of the URL string
+
+identifier:
+    msb: 0x00
+    lsb: 0x49
+
+api:
+    intro: 4
+    update: 11
+
+commands:
+  - name: load_url
+    mandatory: [0x01]
+
+properties:
+  - id: 0x01
+    name: url
+    type: string
+    pretty_name: URL
+    description: The UTF8 bytes of the URL string

@@ -1,18 +1,23 @@
 name: tachograph
 category: heavy_duty
-id_msb: 0x00
-id_lsb: 0x64
-api_intro: 7
-message_types:
-  - id: 0x00
-    name: get_tachograph_state
-  - id: 0x01
-    name: tachograph_state
+
+identifier:
+    msb: 0x00
+    lsb: 0x64
+
+api:
+    intro: 7
+    update: 11
+
+getters: default
+
+state: all
     
 properties:
   - id: 0x01
-    size: 2
     name: drivers_working_states
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: driver_number
@@ -23,17 +28,18 @@ properties:
         type: enum
         size: 1
         values:
-          - name: resting
-            id: 0x00
-          - name: driver_available
-            id: 0x01
-          - name: working
-            id: 0x02
-          - name: driving
-            id: 0x03
+          - id: 0x00
+            name: resting
+          - id: 0x01
+            name: driver_available
+          - id: 0x02
+            name: working
+          - id: 0x03
+            name: driving
   - id: 0x02
-    size: 2
     name: drivers_time_states
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: driver_number
@@ -44,29 +50,30 @@ properties:
         type: enum
         size: 1
         values:
-          - name: normal
-            id: 0x00
-          - name: 15_min_before_4
+          - id: 0x00
+            name: normal
+          - id: 0x01
+            name: 15_min_before_4
             pretty_name: '15 minutes before 4½ hours'
-            id: 0x01
-          - name: 4_reached
+          - id: 0x02
+            name: 4_reached
             pretty_name: '4½ hours reached'
-            id: 0x02
-          - name: 15_min_before_9
+          - id: 0x03
+            name: 15_min_before_9
             pretty_name: '15 minutes before 9 hours'
-            id: 0x03
-          - name: 9_reached
+          - id: 0x04
+            name: 9_reached
             pretty_name: '9 hours reached'
-            id: 0x04
-          - name: 15_min_before_16
+          - id: 0x05
+            name: 15_min_before_16
             pretty_name: '15 minutes before 16 hours'
-            id: 0x05
-          - name: 16_reached
+          - id: 0x06
+            name: 16_reached
             pretty_name: '16 hours reached'
-            id: 0x06
   - id: 0x03
-    size: 2
     name: drivers_cards
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: driver_number
@@ -77,39 +84,39 @@ properties:
         type: enum
         size: 1
         values:
-          - name: not_present
-            id: 0x00
-          - name: present
-            id: 0x01
+          - id: 0x00
+            name: not_present
+          - id: 0x01
+            name: present
   - id: 0x04
-    type: enum
-    size: 1
     name: vehicle_motion
+    type: enum
+    size: 1
     values:
-      - name: not_detected
-        id: 0x00
-      - name: detected
-        id: 0x01
+      - id: 0x00
+        name: not_detected
+      - id: 0x01
+        name: detected
   - id: 0x05
-    type: enum
-    size: 1
     name: vehicle_overspeed
-    values:
-      - name: no_overspeed
-        id: 0x00
-      - name: overspeed
-        id: 0x01
-  - id: 0x06
     type: enum
     size: 1
-    name: vehicle_direction
     values:
-      - name: forward
-        id: 0x00
-      - name: reverse
-        id: 0x01
+      - id: 0x00
+        name: no_overspeed
+      - id: 0x01
+        name: overspeed
+  - id: 0x06
+    name: vehicle_direction
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: forward
+      - id: 0x01
+        name: reverse
   - id: 0x07
+    name: vehicle_speed
     type: integer
     size: 2
-    name: vehicle_speed
     description: The tachograph vehicle speed in km/h

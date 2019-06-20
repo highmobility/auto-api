@@ -1,18 +1,23 @@
 name: vehicle_time
 category: poi
-id_msb: 0x00
-id_lsb: 0x50
-api_intro: 5
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_vehicle_time
-  - id: 0x01
-    name: vehicle_time
+
+identifier:
+    msb: 0x00
+    lsb: 0x50
+
+api:
+    intro: 5
+    update: 11
+
+getters:
+    default:
+        omit_state_text: true
+
+state: all
     
 properties:
   - id: 0x01
+    name: vehicle_time
     type: timestamp
     size: 8
-    name: vehicle_time
     description: Milliseconds since UNIX Epoch time
