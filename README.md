@@ -14,7 +14,7 @@ It should be thought of as one device setting the data in the other one. What th
 The `.yml` spec files defines the following *values* and *syntax* for each capability.  
 
 
-### `getters`
+## getters
 
 If not defined in a capability – there are *no getters* for that capability.  
 Otherwise, it's a dictionary (hash) with 2 possible keys.
@@ -22,7 +22,7 @@ Otherwise, it's a dictionary (hash) with 2 possible keys.
 * `default` marks the capability having *default getters*
 * `static` defines a getter that requests *specific properties*
 
-#### `default`
+### default
 
 Requires 2 getters to be automatically synthesised.
 
@@ -43,22 +43,24 @@ There are additional customisation options available for getters:
 
 Examples:
 
-```
+```yaml
 getters:
     default
-
+```  
+```yaml
 getters:
     default:
         name_override: vehicle_location
         omit_state_text: true
-
+```  
+```yaml
 getters:
     default:
         omit_state_text: true
         skip_properties_getter: true
 ```
 
-#### `static`
+### static
 
 Defines *static* getters, that always request *specific properties*, to be automatically synthesised.  
 
@@ -73,7 +75,7 @@ Contains an array of *static* getters that have the following keys-values:
 
 Examples:  
 
-```
+```yaml
 getters:
     static:
       - name: get_control_mode
@@ -83,7 +85,7 @@ getters:
 ```
 
 
-### `commands`
+## commands
 
 If not defined in a capability – there are *no commands* for that capability.  
 Otherwise, it's an array of dictionaries (hashes) as elements, with the dictionary having the following keys.  
@@ -104,13 +106,14 @@ Optional keys (at least 1 has to be included; can be combined):
 
 Examples:
 
-```
+```yaml
 commands:
   - name: start_stop_ionising
     mandatory: [0x08]
   - name: set_temperature_settings
     optional: [0x03, 0x04, 0x0c]
-
+```  
+```yaml
 commands:
   - name: control_command
     optional: [0x02, 0x03]
@@ -125,7 +128,7 @@ commands:
 ```
 
 
-### `state`
+## state
 
 If not defined in a capability – there are *no states* for that capability.  
 Defines what *properties* are exposed to the developer (client). This message is sent over the `set` message type.  
@@ -141,14 +144,15 @@ Defines an array of *property IDs* (or keys).
 
 Examples:  
 
-```
+```yaml
 state: all
-
+```
+```yaml
 state: [0x01, 0x02]
 ```
 
 
-### `properties`
+## properties
 
 **Required** for every capability.  
 Follows the same syntax as before, with some additional options for *enums*.  
@@ -169,7 +173,7 @@ Follows the same syntax as before, with some additional options for *enums*.
 
 Examples:  
 
-```
+```yaml
 properties:
   - id: 0x02
     name: action_items
@@ -224,7 +228,7 @@ properties:
 ```
 
 
-### `miscellaneous`
+## miscellaneous
 
 New *types* for properties.  
 
