@@ -11,7 +11,7 @@ Get commands allow a *state* to be queried (requested) from a connected device.
 Set commands allow *setting* of values, but also are used to transfer the *state* to the other device.  
 It should be thought of as one device setting the data in the other one. What the receiving device then does with this data is up to the client / vehicle to decide.
 
-The `.yml` spec files defines the following *values* and *syntax* for each capability.  
+The `.yml` spec files define the following *values* and *syntax* for each capability.  
 
 
 ## getters

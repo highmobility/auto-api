@@ -6,16 +6,59 @@ api:
     update: 11
 
 properties:
-  - id: 0xA0
+  - id: 0xa0
     name: nonce
     type: integer
     size: 9
-  - id: 0xA1
+  - id: 0xa1
     name: car_signature
     type: integer
     size: 64
-  - id: 0xA2
+  - id: 0xa2
     name: timestamp
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch timedifferentiate
+    description: Milliseconds since UNIX Epoch time
+  - id: 0xa3
+    name: failure
+    type: custom
+    items:
+      - name: message_type
+        type: enum
+        size: 1
+        values:
+          - id: 0x00
+            name: get
+          - id: 0x01
+            name: set
+      - name: reason
+        type: enum
+        size: 1
+        values:
+          - id: 0x00
+            name: unsupported_capability
+            pretty_name: Unsupported Capability - Car has not the capability to perform the command
+          - id: 0x01
+            name: unauthorised
+            pretty_name: Unauthorised - User has not been authenticated or lacks permissions
+          - id: 0x02
+            name: incorrect_state
+            pretty_name: Incorrect State - Command can not be executed in the current car state
+          - id: 0x03
+            name: execution_timeout
+            pretty_name: Execution Timeout - Command failed to execute in time for an unknown reason
+          - id: 0x04
+            name: vehicle_asleep
+            pretty_name: Vehicle Asleep - Car has to be waken up before the command can be used. If this is for a virtual car, the emulator has to be loaded
+          - id: 0x05
+            name: invalid_command
+            pretty_name: Invalid Command - Not recognised
+          - id: 0x06
+            name: pending
+            pretty_name: Pending - Capability is being refreshed
+          - id: 0x07
+            name: rate_limit
+            pretty_name: Rate Limit - Capability rate limit has been exceeded
+      - name: description
+        type: string
+        description: Failure description bytes formatted in UTF-8
