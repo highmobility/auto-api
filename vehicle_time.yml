@@ -18,6 +18,15 @@ state: all
 properties:
   - id: 0x01
     name: vehicle_time
-    type: timestamp
-    size: 8
-    description: Milliseconds since UNIX Epoch time
+    type: custom
+    size: 2
+    description: Vehicle time in a 24h format
+    items:
+      - name: hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
