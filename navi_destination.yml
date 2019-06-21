@@ -38,3 +38,32 @@ properties:
     name: destination_name
     type: string
     description: Destination name bytes formatted in UTF-8
+  - id: 0x03
+    name: data_slots_free
+    type: integer
+    size: 1
+    description: Remaining number of POI data slots available.
+  - id: 0x04
+    name: data_slots_max
+    type: integer
+    size: 1
+    description: Maximum number of POI data slots.
+  - id: 0x05
+    name: arrival_duration
+    type: custom
+    size: 2
+    description: Remaining time until reaching the destination.
+    items:
+      - name: hour
+        type: integer
+        size: 1
+        description: Value between 0 and 23
+      - name: minute
+        type: integer
+        size: 1
+        description: Value between 0 and 59
+  - id: 0x06
+    name: distance_to_destination
+    type: integer
+    size: 2
+    description: Remaining distance to reach the destination.
