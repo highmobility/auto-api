@@ -3,8 +3,8 @@
 
 The message types are now unified into 2 types.
 
-* Get commands use `0x00`.  
-* Set commands use `0x01`.  
+* Get commands use `0x00`  
+* Set commands use `0x01`  
 
 Get commands allow a *state* to be queried (requested) from a connected device.  
 
@@ -153,13 +153,13 @@ state: [0x01, 0x02]
 **Required** for every capability.  
 Follows the same syntax as before, with some additional options for *enums*.  
 
-* `id: integer` identifier <sup>required (if a *property* or an *enum value*)</sup>
-* `name: string` name of the property / type <sup>required</sup>
-* `type: string` type of the property / item <sup>required</sup>
-* `size: integer` size of the item <sup>required (if the type isn't *string* or * * doesn't have *dynamic* values)</sup>
-* `[flags]` define additional options for the property (i.e. `multiple: true`) <sup>optional</sup>
-* `[texts]` means other *text* related things (i.e. `pretty_name: string`, * `description: string`) <sup>optional</sup>
-* `values/items` array of values / items that define the data structure in the property (same as previous versions) <sup>required</sup>
+* `id: integer` identifier, required (if a *property* or an *enum value*)
+* `name: string` name of the property / type, required
+* `type: string` type of the property / item, required
+* `size: integer` size of the item, required (if the type isn't *string* or it doesn't have *dynamic* values)
+* `[flags]` define additional options for the property (i.e. `multiple: true`), optional
+* `[texts]` means other *text* related things (i.e. `pretty_name: string`, `description: string`), optional
+* `values/items` array of values / items that define the data structure in the property (same as previous versions), required
 
 *New* keys for `enum` types.  
 
@@ -171,6 +171,17 @@ Examples:
 
 ```
 properties:
+  - id: 0x02
+    name: action_items
+    type: custom
+    multiple: true
+    items:
+      - name: identifier
+        type: integer
+        size: 1
+      - name: name
+        type: string
+        description: Name of the action, bytes in UTF8.
   - id: 0x03
     name: convertible_roof_state
     type: enum
@@ -186,20 +197,6 @@ properties:
         name: emergency_locked
       - id: 0x03
         name: closed_secured
-  - id: 0x04
-    name: sunroof_tilt_state
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: closed
-        verb: close
-      - id: 0x01
-        name: tilted
-      - id: 0x02
-        name: half_tilted
-
-properties:
   - id: 0x1c
     name: wheel_rpms
     type: custom
@@ -224,35 +221,6 @@ properties:
         size: 2
         pretty_name: RPM
         description: The RPM measured at this wheel
-
-properties:
-  - id: 0x12
-    name: price_tariffs
-    type: custom
-    multiple: true
-    items:
-      - name: pricing_type
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: starting_fee
-          - id: 0x01
-            name: per_minute
-          - id: 0x02
-            name: per_kwh
-            pretty_name: Per kWh
-      - name: price
-        type: float
-        size: 4
-        description: The price in 4-bytes per IEEE 754
-      - name: currency_size
-        type: integer
-        size: 1
-        description: Size of the currency string
-      - name: currency
-        type: string
-        description: The currency alphabetic code per ISO 4217 or crypto currency symbol
 ```
 
 
@@ -260,7 +228,7 @@ properties:
 
 New *types* for properties.  
 
-* `datetime` is used in all our *timestamp* / *date* related properties / types (used to be `integer: 8`)
+* `timestamp` is used in all our *timestamp* / *date* related properties / types (used to be `integer: 8`)
 * `signal` used to convey a single action that doesn't have any value (empty *property data component*; i.e. *wake_up*, *clear_notification*)
 * `custom` used when the property contains `items` (meaning it's a custom structure defined by us)
 * `capability_state` represents a state of a capability (i.e. *states* in *vehicle status*)
