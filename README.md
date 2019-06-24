@@ -236,3 +236,20 @@ New *types* for properties.
 * `signal` used to convey a single action that doesn't have any value (empty *property data component*; i.e. *wake_up*, *clear_notification*)
 * `custom` used when the property contains `items` (meaning it's a custom structure defined by us)
 * `capability_state` represents a state of a capability (i.e. *states* in *vehicle status*)
+
+In addition, the *identifiers* and *api version* info has been moved to new locations (structures).  
+*Identifiers* are now defined like this:  
+
+```
+identifier:
+    msb: 0x00
+    lsb: 0x35
+```
+
+And *API version* is defined so:  
+
+```
+api:
+    intro: 3
+    update: 11
+```
