@@ -97,7 +97,6 @@ properties:
     name: charge_mode
     type: enum
     size: 1
-    command_allowed_values: [0x01, 0x02]
     values:
       - id: 0x00
         name: immediate
@@ -105,6 +104,7 @@ properties:
         name: timer_based
       - id: 0x02
         name: inductive
+        disabled_in_command: true
   - id: 0x0e
     name: max_charging_current
     type: float

@@ -21,8 +21,9 @@ state: [0x02, 0x03, 0x04]
 
 properties:
   - id: 0x02
-    size: 2
     name: inside_locks
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: door_location
@@ -48,8 +49,9 @@ properties:
           - name: locked
             id: 0x01
   - id: 0x03
-    size: 2
     name: locks
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: door_location
@@ -75,8 +77,9 @@ properties:
           - name: locked
             id: 0x01
   - id: 0x04
-    size: 2
     name: positions
+    type: custom
+    size: 2
     multiple: true
     items:
       - name: door_location

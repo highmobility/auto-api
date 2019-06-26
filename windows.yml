@@ -67,7 +67,6 @@ properties:
       - name: window_position
         type: enum
         size: 1
-        command_allowed_values: [0x00. 0x01]
         values:
           - id: 0x00
             name: closed
@@ -75,3 +74,4 @@ properties:
             name: open
           - id: 0x02
             name: intermediate
+            disabled_in_command: true

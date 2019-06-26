@@ -65,7 +65,7 @@ getters:
 Defines *static* getters, that always request *specific properties*, to be automatically synthesised.  
 
 ```
-get_[name]()                        --> [id.msb, id.lsb, 0x00] + property_IDs
+get_[name]()    --> [id.msb, id.lsb, 0x00] + property_IDs
 ```
 
 Contains an array of *static* getters that have the following keys-values:
@@ -167,7 +167,7 @@ Follows the same syntax as before, with some additional options for *enums*.
 
 *New* keys for `enum` types.  
 
-* `command_allowed_values: [enum_values]` defines what values are allowed to use in a *command* (that uses that property)
+* `disabled_in_command: bool` defines what values are disallowed to use in a *command* (that uses that property)
 * `verb: string` used to express an action in a *command* or used as another name (i.e. *active - activate*, *triggered - trigger* )
 * `verb_pretty_name: string` defines the "pretty" name of the *verb*
 
@@ -190,7 +190,6 @@ properties:
     name: convertible_roof_state
     type: enum
     size: 1
-    command_allowed_values: [0x00, 0x01]
     values:
       - id: 0x00
         name: closed
@@ -199,8 +198,10 @@ properties:
         name: open
       - id: 0x02
         name: emergency_locked
+        disabled_in_command: true
       - id: 0x03
         name: closed_secured
+        disabled_in_command: true
   - id: 0x1c
     name: wheel_rpms
     type: custom
@@ -237,10 +238,10 @@ New *types* for properties.
 * `custom` used when the property contains `items` (meaning it's a custom structure defined by us)
 * `capability_state` represents a state of a capability (i.e. *states* in *vehicle status*)
 
-In addition, the *identifiers* and *api version* info has been moved to new locations (structures).  
+In addition, the *identifiers* and *API version* has been moved to new locations (structures).  
 *Identifiers* are now defined like this:  
 
-```
+```yaml
 identifier:
     msb: 0x00
     lsb: 0x35
@@ -248,7 +249,7 @@ identifier:
 
 And *API version* is defined so:  
 
-```
+```yaml
 api:
     intro: 3
     update: 11

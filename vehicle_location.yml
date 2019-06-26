@@ -18,6 +18,7 @@ state: all
 properties:
   - id: 0x04
     name: coordinates
+    type: custom
     size: 16
     items:
       - name: latitude
