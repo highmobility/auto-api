@@ -181,7 +181,7 @@ properties:
     multiple: true
     items:
       - name: identifier
-        type: integer
+        type: uinteger
         size: 1
       - name: name
         type: string
@@ -222,7 +222,7 @@ properties:
           - id: 0x03
             name: rear_left
       - name: rpm
-        type: integer
+        type: uinteger
         size: 2
         pretty_name: RPM
         description: The RPM measured at this wheel
