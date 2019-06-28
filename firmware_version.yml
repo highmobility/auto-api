@@ -24,15 +24,15 @@ properties:
     title_case_name: HMKitVersion
     items:
       - name: version_major
-        type: integer
+        type: uinteger
         size: 1
         description: HMKit version major number
       - name: version_minor
-        type: integer
+        type: uinteger
         size: 1
         description: HMKit version minor number
       - name: version_patch
-        type: integer
+        type: uinteger
         size: 1
         description: HMKit version patch number
   - id: 0x02

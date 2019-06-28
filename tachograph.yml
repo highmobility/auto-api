@@ -21,7 +21,7 @@ properties:
     multiple: true
     items:
       - name: driver_number
-        type: integer
+        type: uinteger
         size: 1
         description: The driver number
       - name: working_state
@@ -43,7 +43,7 @@ properties:
     multiple: true
     items:
       - name: driver_number
-        type: integer
+        type: uinteger
         size: 1
         description: The driver number
       - name: time_state
@@ -77,7 +77,7 @@ properties:
     multiple: true
     items:
       - name: driver_number
-        type: integer
+        type: uinteger
         size: 1
         description: The driver number
       - name: card

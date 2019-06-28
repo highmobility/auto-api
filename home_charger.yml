@@ -180,7 +180,7 @@ properties:
         size: 4
         description: The price in 4-bytes per IEEE 754
       - name: currency_size
-        type: integer
+        type: uinteger
         size: 1
         description: Size of the currency string
       - name: currency

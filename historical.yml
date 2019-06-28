@@ -24,7 +24,7 @@ properties:
     multiple: true
   - id: 0x02
     name: capability_identifier
-    type: integer
+    type: uinteger
     size: 2
   - id: 0x03
     name: start_date

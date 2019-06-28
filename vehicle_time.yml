@@ -23,10 +23,10 @@ properties:
     description: Vehicle time in a 24h format
     items:
       - name: hour
-        type: integer
+        type: uinteger
         size: 1
         description: Value between 0 and 23
       - name: minute
-        type: integer
+        type: uinteger
         size: 1
         description: Value between 0 and 59

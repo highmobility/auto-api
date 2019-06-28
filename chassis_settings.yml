@@ -71,7 +71,7 @@ properties:
           - id: 0x01
             name: rear_axle
       - name: value
-        type: integer
+        type: uinteger
         size: 1
         description: The suspension spring rate in N/mm
   - id: 0x06
@@ -89,7 +89,7 @@ properties:
           - id: 0x01
             name: rear_axle
       - name: value
-        type: integer
+        type: uinteger
         size: 1
         description: The maximum possible value for the spring rate
   - id: 0x07
@@ -107,7 +107,7 @@ properties:
           - id: 0x01
             name: rear_axle
       - name: value
-        type: integer
+        type: uinteger
         size: 1
         description: The minimum possible value for the spring rate
   - id: 0x08

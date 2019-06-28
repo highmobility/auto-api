@@ -58,7 +58,7 @@ properties:
     description: The sales designation of the model formatted in UTF-8
   - id: 0x07
     name: model_year
-    type: integer
+    type: uinteger
     size: 2
     description: The car model manufacturing year number
   - id: 0x08
@@ -67,17 +67,17 @@ properties:
     description: The color name formatted in UTF-8
   - id: 0x09
     name: power_in_kw
-    type: integer
+    type: uinteger
     size: 2
     description: The power of the car measured in kw
   - id: 0x0a
     name: number_of_doors
-    type: integer
+    type: uinteger
     size: 1
     description: The number of doors
   - id: 0x0b
     name: number_of_seats
-    type: integer
+    type: uinteger
     size: 1
     description: The number of seats
   - id: 0x0c
@@ -87,7 +87,7 @@ properties:
     description: The engine volume displacement in liters per IEEE 754 formatting
   - id: 0x0d
     name: engine_max_torque
-    type: integer
+    type: uinteger
     size: 2
     description: The maximum engine torque in Nm
   - id: 0x0e

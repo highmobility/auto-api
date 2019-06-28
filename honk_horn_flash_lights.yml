@@ -37,12 +37,12 @@ properties:
         id: 0x03
   - id: 0x02
     name: honk_seconds
-    type: integer
+    type: uinteger
     size: 1
     description: Number of seconds to honk the horn
   - id: 0x03
     name: flash_times
-    type: integer
+    type: uinteger
     size: 1
     description: Number of times to flash the lights
   - id: 0x04

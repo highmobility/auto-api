@@ -22,7 +22,7 @@ properties:
     description: The UTF8 bytes of the URL string
   - id: 0x02
     name: starting_second
-    type: integer
+    type: uinteger
     size: 2
   - id: 0x03
     name: screen

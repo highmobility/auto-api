@@ -17,7 +17,8 @@ commands:
     mandatory: [0x03]
   - name: clear_notification
     constants:
-      - property_id: [0x04]
+      - property_id: 0x04
+        value: [0x00]
 
 state: all
     
@@ -32,16 +33,20 @@ properties:
     multiple: true
     items:
       - name: identifier
-        type: integer
+        type: uinteger
         size: 1
       - name: name
         type: string
         description: Name of the action, bytes in UTF8.
   - id: 0x03
     name: activated_action
-    type: integer
+    type: uinteger
     size: 1
+    description: Identifier of the activated action.
   - id: 0x04
     name: clear
-    type: signal
-    size: 0
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: clear

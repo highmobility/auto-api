@@ -8,11 +8,11 @@ api:
 properties:
   - id: 0xa0
     name: nonce
-    type: integer
+    type: uinteger
     size: 9
   - id: 0xa1
     name: car_signature
-    type: integer
+    type: uinteger
     size: 64
   - id: 0xa2
     name: timestamp

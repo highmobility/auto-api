@@ -14,12 +14,12 @@ state: all
 properties:
   - id: 0x01
     name: failed_message_identifier
-    type: integer
+    type: uinteger
     size: 2
     description: Capability identifier of the failed message
   - id: 0x02
     name: failed_message_type
-    type: integer
+    type: uinteger
     size: 1
     description: Message type of the failed message
   - id: 0x03

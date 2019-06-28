@@ -21,17 +21,17 @@ properties:
     description: Number of days until next servicing of the car, whereas negative is overdue
   - id: 0x02
     name: kilometers_to_next_service
-    type: integer
+    type: uinteger
     size: 4
     description: The amount of kilometers until next servicing of the car
   - id: 0x03
     name: cbs_reports_count
-    type: integer
+    type: uinteger
     size: 1
     description: The number of CBS reports
   - id: 0x04
     name: months_to_exhaust_inpection
-    type: integer
+    type: uinteger
     size: 1
     description: Number of months until exhaust inspection
   - id: 0x05
@@ -49,12 +49,12 @@ properties:
         name: error
   - id: 0x06
     name: service_distance_threshold
-    type: integer
+    type: uinteger
     size: 2
     description: Distance threshold for Service
   - id: 0x07
     name: service_time_threshold
-    type: integer
+    type: uinteger
     size: 1
     description: Time threshold, in weeks, for Service
   - id: 0x08
@@ -78,15 +78,15 @@ properties:
     multiple: true
     items:
       - name: year
-        type: integer
+        type: uinteger
         size: 1
         description: Value between 0 and 99, which corresponds to 2000-2099
       - name: month
-        type: integer
+        type: uinteger
         size: 1
         description: Value between 1 and 12
       - name: identifier
-        type: integer
+        type: uinteger
         size: 2
         description: CBS identifier
       - name: due_status
@@ -100,14 +100,14 @@ properties:
           - id: 0x02
             name: overdue
       - name: text_size
-        type: integer
+        type: uinteger
         size: 2
         description: Size of the CBS text
       - name: text
         type: string
         description: CBS text bytes formatted in UTF-8
       - name: description_size
-        type: integer
+        type: uinteger
         size: 2
         description: Size of the description string
       - name: description

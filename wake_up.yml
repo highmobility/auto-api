@@ -13,9 +13,13 @@ commands:
   - name: wake_up
     constants:
       - property_id: 0x01
+        value: [0x00]
 
 properties:
   - id: 0x01
     name: wake_up
-    type: signal
-    size: 0
+    type: enum
+    size: 1
+    values:
+      - id: 0x00
+        name: wake_up

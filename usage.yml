@@ -18,12 +18,12 @@ state: all
 properties:
   - id: 0x01
     name: average_weekly_distance
-    type: integer
+    type: uinteger
     size: 2
     description: Average weekly distance in km
   - id: 0x02
     name: average_weekly_distance_long_run
-    type: integer
+    type: uinteger
     size: 2
     description: Average weekyl distance, over long term, in km
   - id: 0x03
@@ -100,7 +100,7 @@ properties:
     description: Fuel consumption in the last trip in L
   - id: 0x09
     name: mileage_after_last_trip
-    type: integer
+    type: uinteger
     size: 4
     description: Mileage after the last trip in km
   - id: 0x0a

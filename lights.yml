@@ -56,15 +56,15 @@ properties:
     size: 3
     items:
       - name: rgb_red
-        type: integer
+        type: uinteger
         size: 1
         description: The red colour of RGB in hex
       - name: rgb_green
-        type: integer
+        type: uinteger
         size: 1
         description: The green colour of RGB in hex
       - name: rgb_blue
-        type: integer
+        type: uinteger
         size: 1
         description: The blue colour of RGB in hex
   - id: 0x05

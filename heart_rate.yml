@@ -16,5 +16,5 @@ commands:
 properties:
   - id: 0x01
     name: heart_rate
-    type: integer
+    type: uinteger
     size: 1

@@ -22,9 +22,9 @@ properties:
     multiple: true
     items:
       - name: capability_identifier
-        type: integer
+        type: uinteger
         size: 2
         description: The identifier of the supported capability
       - name: supported_properties
-        type: integer_list
+        type: list_uinteger
         description: Array of supported property identifiers

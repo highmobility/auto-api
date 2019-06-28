@@ -234,7 +234,6 @@ properties:
 New *types* for properties.  
 
 * `timestamp` is used in all our *timestamp* / *date* related properties / types (used to be `integer: 8`)
-* `signal` used to convey a single action that doesn't have any value (empty *property data component*; i.e. *wake_up*, *clear_notification*)
 * `custom` used when the property contains `items` (meaning it's a custom structure defined by us)
 * `capability_state` represents a state of a capability (i.e. *states* in *vehicle status*)
 

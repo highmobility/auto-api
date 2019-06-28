@@ -16,7 +16,7 @@ state: all
 properties:
   - id: 0x01
     name: mileage
-    type: integer
+    type: uinteger
     size: 4
     description: The car mileage (odometer) in km
   - id: 0x02
@@ -31,7 +31,7 @@ properties:
     description: The vehicle speed in km/h, whereas can be negative
   - id: 0x04
     name: engine_rpm
-    type: integer
+    type: uinteger
     size: 2
     title_case_name: engineRPM
     pretty_name: Engine RPM
@@ -67,12 +67,12 @@ properties:
     description: AdBlue level in liters formatted in 4-bytes per IEEE 754 formatting
   - id: 0x0d
     name: distance_since_reset
-    type: integer
+    type: uinteger
     size: 2
     description: The distance driven in km since reset
   - id: 0x0e
     name: distance_since_start
-    type: integer
+    type: uinteger
     size: 2
     description: The distance driven in km since trip start
   - id: 0x0f
@@ -140,23 +140,23 @@ properties:
     multiple: true
     items:
       - name: id
-        type: integer
+        type: uinteger
         size: 2
         pretty_name: ID
         description: Check Control Message identifier
       - name: remaining_minutes
-        type: integer
+        type: uinteger
         size: 4
         description: Remaining time of the message in minutes
       - name: text_size
-        type: integer
+        type: uinteger
         size: 2
         description: Size of the text
       - name: text
         type: string
         description: CCM text bytes formatted in UTF-8
       - name: status_size
-        type: integer
+        type: uinteger
         size: 1
         description: Size of the status
       - name: status
@@ -226,7 +226,7 @@ properties:
           - id: 0x03
             name: rear_left
       - name: rpm
-        type: integer
+        type: uinteger
         size: 2
         pretty_name: RPM
         description: The RPM measured at this wheel
@@ -236,11 +236,11 @@ properties:
     multiple: true
     items:
       - name: occurences
-        type: integer
+        type: uinteger
         size: 1
         description: Number of occurences
       - name: id_size
-        type: integer
+        type: uinteger
         size: 1
         pretty_name: ID Size
         description: Size of the ID string
@@ -249,7 +249,7 @@ properties:
         pretty_name: ID
         description: ID bytes formatted in UTF-8
       - name: ecu_id_size
-        type: integer
+        type: uinteger
         size: 1
         pretty_name: ECU ID Size
         description: Size of the ECU ID string
@@ -258,7 +258,7 @@ properties:
         pretty_name: ECU ID
         description: ECU ID bytes formatted in UTF-8
       - name: status_size
-        type: integer
+        type: uinteger
         size: 1
         description: Size of the status string
       - name: status
@@ -266,6 +266,6 @@ properties:
         description: Status bytes formatted in UTF-8
   - id: 0x1E
     name: mileage_meters
-    type: integer
+    type: uinteger
     size: 4
     description: The car mileage (odometer) in meters

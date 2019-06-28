@@ -30,7 +30,7 @@ state: all
 properties:
   - id: 0x02
     name: estimated_range
-    type: integer
+    type: uinteger
     size: 2
     description: Estimated range in km
   - id: 0x03
@@ -73,7 +73,7 @@ properties:
     description: Charge limit percentage between 0.0-1.0
   - id: 0x09
     name: time_to_complete_charge
-    type: integer
+    type: uinteger
     size: 1
     description: Time until charging completed in minutes
   - id: 0x0a
@@ -150,11 +150,11 @@ properties:
           - id: 0x01
             name: active
       - name: hour
-        type: integer
+        type: uinteger
         size: 1
         description: Value between 0 and 23
       - name: minute
-        type: integer
+        type: uinteger
         size: 1
         description: Value between 0 and 59
   - id: 0x13
@@ -173,11 +173,11 @@ properties:
           - id: 0x01
             name: stop
       - name: hour
-        type: integer
+        type: uinteger
         size: 1
         description: Value between 0 and 23
       - name: minute
-        type: integer
+        type: uinteger
         size: 1
         description: Value between 0 and 59
   - id: 0x14
