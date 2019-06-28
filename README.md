@@ -236,6 +236,7 @@ New *types* for properties.
 * `timestamp` is used in all our *timestamp* / *date* related properties / types (used to be `integer: 8`)
 * `custom` used when the property contains `items` (meaning it's a custom structure defined by us)
 * `capability_state` represents a state of a capability (i.e. *states* in *vehicle status*)
+* `uinteger` represents an *unsigned integer* (for those languages that have it; used to be `integer`)
 
 In addition, the *identifiers* and *API version* has been moved to new locations (structures).  
 *Identifiers* are now defined like this:  
