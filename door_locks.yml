@@ -17,7 +17,7 @@ setters:
   - name: lock_unlock_doors
     mandatory: [0x05]
 
-state: [0x02, 0x03, 0x04]
+state: all
 
 properties:
   - id: 0x02
@@ -105,11 +105,14 @@ properties:
           - name: open
             id: 0x01
   - id: 0x05
-    name: lock_unlock
+    name: lock_state
     type: enum
     size: 1
+    description: Locks state for the whole car (combines all specific lock states if available)
     values:
       - id: 0x00
-        name: unlock
+        name: unlocked
+        verb: unlock
       - id: 0x01
-        name: lock
+        name: locked
+        verb: lock
