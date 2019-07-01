@@ -85,9 +85,9 @@ getters:
 ```
 
 
-## commands
+## setters
 
-If not defined in a capability – there are *no commands* for that capability.  
+If not defined in a capability – there are *no setters* for that capability.  
 Otherwise, it's an array of dictionaries (hashes) as elements, with the dictionary having the following keys.  
 
 The keys are divided into 2 categories: *required* and *optional* ones.  
@@ -98,7 +98,7 @@ Required keys:
 
 Optional keys (at least 1 has to be included; can be combined):  
 
-* `mandatory: [property_IDs]` defines what properties are required as input (and what are actually sent in the command)
+* `mandatory: [property_IDs]` defines what properties are required as input (and what are actually sent in the setter)
 * `optional: [property_IDs]` list of *optional* properties allowed as input, if only this is defined (no *mandatory* or *constants*) - **at least 1** input is required
 * `constants` is an array of constant values defined by the following keys:
     * `property_id: property_ID` defines the constant property
@@ -107,14 +107,14 @@ Optional keys (at least 1 has to be included; can be combined):
 Examples:
 
 ```yaml
-commands:
+setters:
   - name: start_stop_ionising
     mandatory: [0x08]
   - name: set_temperature_settings
     optional: [0x03, 0x04, 0x0c]
 ```  
 ```yaml
-commands:
+setters:
   - name: control_command
     optional: [0x02, 0x03]
   - name: start_control
@@ -167,8 +167,8 @@ Follows the same syntax as before, with some additional options for *enums*.
 
 *New* keys for `enum` types.  
 
-* `disabled_in_command: bool` defines what values are disallowed to use in a *command* (that uses that property)
-* `verb: string` used to express an action in a *command* or used as another name (i.e. *active - activate*, *triggered - trigger* )
+* `disabled_in_setter: bool` defines what values are disallowed to use in a *setters* (that uses that property)
+* `verb: string` used to express an action in a *setters* or used as another name (i.e. *active - activate*, *triggered - trigger* )
 * `verb_pretty_name: string` defines the "pretty" name of the *verb*
 
 Examples:  
@@ -198,10 +198,10 @@ properties:
         name: open
       - id: 0x02
         name: emergency_locked
-        disabled_in_command: true
+        disabled_in_setter: true
       - id: 0x03
         name: closed_secured
-        disabled_in_command: true
+        disabled_in_setter: true
   - id: 0x1c
     name: wheel_rpms
     type: custom

@@ -13,7 +13,7 @@ getters:
     default:
         name_override: locks
 
-commands:
+setters:
   - name: lock_unlock_doors
     mandatory: [0x05]
 

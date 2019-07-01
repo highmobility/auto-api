@@ -9,7 +9,7 @@ api:
     intro: 4
     update: 11
 
-commands:
+setters:
   - name: text_input
     mandatory: [0x01]
 

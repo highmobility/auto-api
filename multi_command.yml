@@ -10,7 +10,7 @@ api:
     intro: 8
     update: 11
 
-commands:
+setters:
   - name: multi_command
     mandatory: [0x02]
 

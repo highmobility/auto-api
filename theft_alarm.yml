@@ -11,7 +11,7 @@ api:
 
 getters: default
 
-commands:
+setters:
   - name: set_theft_alarm
     mandatory: [0x01]
 

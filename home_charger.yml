@@ -11,7 +11,7 @@ api:
 
 getters: default
 
-commands:
+setters:
   - name: set_charge_current
     mandatory: [0x0e]
   - name: set_price_tariffs

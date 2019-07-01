@@ -13,7 +13,7 @@ getters:
     default:
         name_override: windows
 
-commands:
+setters:
   - name: control_windows
     optional: [0x02, 0x03]
 
@@ -74,4 +74,4 @@ properties:
             name: open
           - id: 0x02
             name: intermediate
-            disabled_in_command: true
+            disabled_in_setter: true

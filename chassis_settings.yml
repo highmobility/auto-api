@@ -13,7 +13,7 @@ getters:
     default:
         omit_state_text: true
 
-commands:
+setters:
   - name: set_driving_mode
     mandatory: [0x01]
   - name: start_stop_sports_chrono

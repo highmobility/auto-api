@@ -12,7 +12,7 @@ api:
 
 getters: default
 
-commands:
+setters:
   - name: activate_deactivate_power_takeoff
     mandatory: [0x01]
 

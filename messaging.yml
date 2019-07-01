@@ -9,7 +9,7 @@ api:
     intro: 4
     update: 11
 
-commands:
+setters:
   - name: message_recieved
     mandatory: [0x01]
     optional: [0x02]

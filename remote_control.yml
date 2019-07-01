@@ -16,7 +16,7 @@ getters:
     - name: get_something_special
       properties: [0x02, 0x03]
 
-commands:
+setters:
   - name: control_command
     optional: [0x02, 0x03]
   - name: start_control

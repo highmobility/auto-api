@@ -13,7 +13,7 @@ getters:
     default:
         name_override: rooftop
 
-commands:
+setters:
   - name: control_rooftop
     optional: [0x01, 0x02, 0x03, 0x04, 0x05]
 
@@ -42,25 +42,25 @@ properties:
         name: open
       - id: 0x02
         name: emergency_locked
-        disabled_in_command: true
+        disabled_in_setter: true
       - id: 0x03
         name: closed_secured
-        disabled_in_command: true
+        disabled_in_setter: true
       - id: 0x04
         name: open_secured
-        disabled_in_command: true
+        disabled_in_setter: true
       - id: 0x05
         name: hard_top_mounted
-        disabled_in_command: true
+        disabled_in_setter: true
       - id: 0x06
         name: intermediate_position
-        disabled_in_command: true
+        disabled_in_setter: true
       - id: 0x07
         name: loading_position
-        disabled_in_command: true
+        disabled_in_setter: true
       - id: 0x08
         name: loading_position_immediate
-        disabled_in_command: true
+        disabled_in_setter: true
   - id: 0x04
     name: sunroof_tilt_state
     type: enum

@@ -11,7 +11,7 @@ api:
 
 getters: default
 
-commands:
+setters:
   - name: start_stop_charging
     mandatory: [0x17]
   - name: set_charge_limit
@@ -104,7 +104,7 @@ properties:
         name: timer_based
       - id: 0x02
         name: inductive
-        disabled_in_command: true
+        disabled_in_setter: true
   - id: 0x0e
     name: max_charging_current
     type: float

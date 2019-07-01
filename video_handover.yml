@@ -9,7 +9,7 @@ api:
     intro: 4
     update: 11
 
-commands:
+setters:
   - name: video_handover
     mandatory: [0x01]
     optional: [0x02, 0x03]

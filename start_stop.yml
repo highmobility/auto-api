@@ -12,7 +12,7 @@ api:
 
 getters: default
 
-commands:
+setters:
   - name: activate_deactivate_start_stop
     mandatory: [0x01]
 

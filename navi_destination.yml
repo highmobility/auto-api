@@ -13,7 +13,7 @@ getters:
     default:
         omit_state_text: true
 
-commands:
+setters:
   - name: set_navi_destination
     mandatory: [0x01]
     optional: [0x02]
