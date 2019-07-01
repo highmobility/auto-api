@@ -1,4 +1,4 @@
-name: door_locks
+name: doors
 category: digital_key
 
 identifier:
@@ -21,7 +21,7 @@ state: all
 
 properties:
   - id: 0x02
-    name: inside_locks
+    name: doors_inside_locks
     type: custom
     size: 2
     multiple: true
@@ -38,8 +38,6 @@ properties:
             id: 0x02
           - name: rear_left
             id: 0x03
-          - name: all
-            id: 0x05
       - name: lock_state
         type: enum
         size: 1
@@ -49,7 +47,7 @@ properties:
           - name: locked
             id: 0x01
   - id: 0x03
-    name: locks
+    name: doors_locks
     type: custom
     size: 2
     multiple: true
@@ -66,8 +64,6 @@ properties:
             id: 0x02
           - name: rear_left
             id: 0x03
-          - name: all
-            id: 0x05
       - name: lock_state
         type: enum
         size: 1
@@ -105,7 +101,19 @@ properties:
           - name: open
             id: 0x01
   - id: 0x05
-    name: lock_state
+    name: inside_locks_state
+    type: enum
+    size: 1
+    description: Locks state for the whole car (combines all specific lock states if available)
+    values:
+      - id: 0x00
+        name: unlocked
+        verb: unlock
+      - id: 0x01
+        name: locked
+        verb: lock
+  - id: 0x06
+    name: locks_state
     type: enum
     size: 1
     description: Locks state for the whole car (combines all specific lock states if available)
