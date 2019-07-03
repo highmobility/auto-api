@@ -66,30 +66,30 @@ properties:
         name: damage_larger_than_1_inch
   - id: 0x04
     name: windscreen_zone_matrix
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: unavailable
-      - id: 'value & 0xF0'
-        name: horizontal_size
-        pretty_name: 4 bits representing the horizontal size of the matrix seen from the inside of the car, starting from index 1
-      - id: 'value & 0x0F'
-        name: vertical_size
-        pretty_name: 4 bits representing the vertical size of the matrix, starting from index 1
+    type: custom
+    size: 2
+    items:
+      - name: horisontal_size
+        type: uinteger
+        size: 1
+        description: Representing the horizontal size of the matrix seen from the inside of the car, starting from index 1
+      - name: vertical_axis
+        type: uinteger
+        size: 1
+        description: Representing the vertical size of the matrix, starting from index 1
   - id: 0x05
     name: windscreen_damage_zone
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: unknown
-      - id: 'value & 0xF0'
-        name: horizontal_position
-        pretty_name: 4 bits representing the horizontal position of the zone in a matrix seen from the inside of the car, starting from index 1
-      - id: 'value & 0x0F'
-        name: vertical_position
-        pretty_name: 4 bits representing the vertical position of the zone, starting from index 1
+    type: custom
+    size: 2
+    items:
+      - name: horisontal_size
+        type: uinteger
+        size: 1
+        description: Representing the horizontal position of the zone in a matrix seen from the inside of the car, starting from index 1
+      - name: vertical_axis
+        type: uinteger
+        size: 1
+        description: Representing the vertical position of the zone, starting from index 1
   - id: 0x06
     name: windscreen_needs_replacement
     type: enum

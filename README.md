@@ -130,7 +130,7 @@ setters:
 
 ## state
 
-If not defined in a capability – there are *no states* for that capability.  
+If not defined in a capability – there are *no state* for that capability.  
 Defines what *properties* are exposed to the developer (client). This message is sent over the `set` message type.  
 
 ```

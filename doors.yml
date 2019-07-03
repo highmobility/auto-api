@@ -104,7 +104,7 @@ properties:
     name: inside_locks_state
     type: enum
     size: 1
-    description: Locks state for the whole car (combines all specific lock states if available)
+    description: Inside locks state for the whole car (combines all specific lock states if available)
     values:
       - id: 0x00
         name: unlocked
