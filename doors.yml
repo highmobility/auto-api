@@ -10,8 +10,7 @@ api:
     update: 11
 
 getters:
-    default:
-        name_override: locks
+    default
 
 setters:
   - name: lock_unlock_doors
@@ -21,12 +20,12 @@ state: all
 
 properties:
   - id: 0x02
-    name: doors_inside_locks
+    name: inside_locks
     type: custom
     size: 2
     multiple: true
     items:
-      - name: door_location
+      - name: location
         type: enum
         size: 1
         values:
@@ -47,12 +46,12 @@ properties:
           - name: locked
             id: 0x01
   - id: 0x03
-    name: doors_locks
+    name: locks
     type: custom
     size: 2
     multiple: true
     items:
-      - name: door_location
+      - name: location
         type: enum
         size: 1
         values:
@@ -78,7 +77,7 @@ properties:
     size: 2
     multiple: true
     items:
-      - name: door_location
+      - name: location
         type: enum
         size: 1
         values:
@@ -120,7 +119,5 @@ properties:
     values:
       - id: 0x00
         name: unlocked
-        verb: unlock
       - id: 0x01
         name: locked
-        verb: lock

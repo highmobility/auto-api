@@ -1,0 +1,11 @@
+types:
+  - name: enum
+  - name: integer
+  - name: string
+  - name: timestamp
+  - name: custom
+  - name: capability_state
+  - name: float
+  - name: double
+  - name: uinteger
+  - name: list_uinteger
