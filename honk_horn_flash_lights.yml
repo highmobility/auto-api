@@ -10,8 +10,9 @@ api:
     update: 11
 
 getters:
-  - name: get_flashers_state
-    properties: [0x01]
+  static:
+    - name: get_flashers_state
+      properties: [0x01]
 
 setters:
   - name: honk_flash
