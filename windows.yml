@@ -26,7 +26,7 @@ properties:
     size: 9
     multiple: true
     items:
-      - name: window_location
+      - name: location
         type: enum
         size: 1
         values:
@@ -50,7 +50,7 @@ properties:
     size: 2
     multiple: true
     items:
-      - name: window_location
+      - name: location
         type: enum
         size: 1
         values:
@@ -64,7 +64,7 @@ properties:
             name: rear_left
           - id: 0x04
             name: hatch
-      - name: window_position
+      - name: position
         type: enum
         size: 1
         values:
