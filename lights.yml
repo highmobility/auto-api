@@ -91,7 +91,7 @@ properties:
     size: 2
     multiple: true
     items:
-      - name: fog_light_location
+      - name: location
         type: enum
         size: 1
         values:
@@ -99,7 +99,7 @@ properties:
             name: front
           - id: 0x01
             name: rear
-      - name: fog_light_state
+      - name: state
         type: enum
         size: 1
         values:
@@ -115,7 +115,7 @@ properties:
     size: 2
     multiple: true
     items:
-      - name: reading_lamp_location
+      - name: location
         type: enum
         size: 1
         values:
@@ -127,7 +127,7 @@ properties:
             name: rear_right
           - id: 0x03
             name: rear_left
-      - name: reading_lamp_state
+      - name: state
         type: enum
         size: 1
         values:
@@ -143,7 +143,7 @@ properties:
     size: 2
     multiple: true
     items:
-      - name: interior_light_location
+      - name: location
         type: enum
         size: 1
         values:
@@ -151,7 +151,7 @@ properties:
             name: front
           - id: 0x01
             name: rear
-      - name: interior_light_state
+      - name: state
         type: enum
         size: 1
         values:
