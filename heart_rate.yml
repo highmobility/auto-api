@@ -2,12 +2,12 @@ name: heart_rate
 category: health
 
 identifier:
-    msb: 0x00
-    lsb: 0x29
+  msb: 0x00
+  lsb: 0x29
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 setters:
   - name: send_heart_rate

@@ -2,12 +2,12 @@ name: video_handover
 category: headunit
 
 identifier:
-    msb: 0x00
-    lsb: 0x43
+  msb: 0x00
+  lsb: 0x43
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 setters:
   - name: video_handover

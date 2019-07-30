@@ -2,16 +2,16 @@ name: valet_mode
 category: parking
 
 identifier:
-    msb: 0x00
-    lsb: 0x28
+  msb: 0x00
+  lsb: 0x28
 
 api:
-    intro: 3
-    update: 11
+  intro: 3
+  update: 11
 
 getters:
-    default:
-        omit_state_text: true
+  default:
+    name: get_valet_mode
 
 setters:
   - name: activate_deactivate_valet_mode
@@ -21,7 +21,7 @@ state: all
 
 properties:
   - id: 0x01
-    name: valet_mode
+    name: status
     type: enum
     size: 1
     values:

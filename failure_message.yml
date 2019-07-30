@@ -2,12 +2,12 @@ name: failure_message
 category: api_structure
 
 identifier:
-    msb: 0x00
-    lsb: 0x02
+  msb: 0x00
+  lsb: 0x02
 
 api:
-    intro: 2
-    update: 11
+  intro: 2
+  update: 11
 
 state: all
 

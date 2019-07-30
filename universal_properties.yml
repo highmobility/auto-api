@@ -2,8 +2,8 @@ name: universal_properties
 category: universal
 
 api:
-    intro: 7
-    update: 11
+  intro: 7
+  update: 11
 
 properties:
   - id: 0xa0

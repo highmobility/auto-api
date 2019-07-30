@@ -2,12 +2,12 @@ name: wake_up
 category: digital_key
 
 identifier:
-    msb: 0x00
-    lsb: 0x22
+  msb: 0x00
+  lsb: 0x22
 
 api:
-    intro: 2
-    update: 11
+  intro: 2
+  update: 11
 
 setters:
   - name: wake_up

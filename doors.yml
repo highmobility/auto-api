@@ -2,15 +2,14 @@ name: doors
 category: digital_key
 
 identifier:
-    msb: 0x00
-    lsb: 0x20
+  msb: 0x00
+  lsb: 0x20
 
 api:
-    intro: 1
-    update: 11
+  intro: 1
+  update: 11
 
-getters:
-    default
+getters: default
 
 setters:
   - name: lock_unlock_doors

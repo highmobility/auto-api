@@ -2,16 +2,16 @@ name: usage
 category: diagnostics
 
 identifier:
-    msb: 0x00
-    lsb: 0x68
+  msb: 0x00
+  lsb: 0x68
 
 api:
-    intro: 8
-    update: 11
+  intro: 8
+  update: 11
 
 getters:
-    default:
-        omit_state_text: true
+  default:
+    name: get_usage
 
 state: all
     

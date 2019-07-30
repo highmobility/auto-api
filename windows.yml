@@ -2,16 +2,16 @@ name: windows
 category: chassis
 
 identifier:
-    msb: 0x00
-    lsb: 0x45
+  msb: 0x00
+  lsb: 0x45
 
 api:
-    intro: 2
-    update: 11
+  intro: 2
+  update: 11
 
 getters:
-    default:
-        name_override: windows
+  default:
+    name: get_windows
 
 setters:
   - name: control_windows
@@ -21,7 +21,7 @@ state: all
 
 properties:
   - id: 0x02
-    name: windows_open_percentages
+    name: open_percentages
     type: custom
     size: 9
     multiple: true
@@ -45,7 +45,7 @@ properties:
         size: 8
         description: Value between 0.0 and 1.0
   - id: 0x03
-    name: windows_positions
+    name: positions
     type: custom
     size: 2
     multiple: true

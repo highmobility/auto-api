@@ -2,12 +2,12 @@ name: notifications
 category: headunit
 
 identifier:
-    msb: 0x00
-    lsb: 0x38
+  msb: 0x00
+  lsb: 0x38
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 setters:
   - name: notification

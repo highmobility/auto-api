@@ -2,12 +2,12 @@ name: cruise_control
 category: chassis
 
 identifier:
-    msb: 0x00
-    lsb: 0x62
+  msb: 0x00
+  lsb: 0x62
 
 api:
-    intro: 7
-    update: 11
+  intro: 7
+  update: 11
 
 getters: default
 
@@ -20,7 +20,7 @@ state: all
 
 properties:
   - id: 0x01
-    name: cruise_control
+    name: status
     type: enum
     size: 1
     values:

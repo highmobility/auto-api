@@ -2,16 +2,16 @@ name: light_conditions
 category: environment
 
 identifier:
-    msb: 0x00
-    lsb: 0x54
+  msb: 0x00
+  lsb: 0x54
 
 api:
-    intro: 5
-    update: 11
+  intro: 5
+  update: 11
 
 getters:
-    default:
-        omit_state_text: true
+  default:
+    name: get_light_conditions
 
 state: all
     

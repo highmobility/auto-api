@@ -2,12 +2,12 @@ name: race
 category: diagnostics
 
 identifier:
-    msb: 0x00
-    lsb: 0x57
+  msb: 0x00
+  lsb: 0x57
 
 api:
-    intro: 5
-    update: 11
+  intro: 5
+  update: 11
 
 getters: default
 

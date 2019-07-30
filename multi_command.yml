@@ -3,12 +3,12 @@ pretty_state_name: Multi Command
 category: api_structure
 
 identifier:
-    msb: 0x00
-    lsb: 0x13
+  msb: 0x00
+  lsb: 0x13
 
 api:
-    intro: 8
-    update: 11
+  intro: 8
+  update: 11
 
 setters:
   - name: multi_command

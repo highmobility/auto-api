@@ -2,12 +2,12 @@ name: parking_brake
 category: parking
 
 identifier:
-    msb: 0x00
-    lsb: 0x58
+  msb: 0x00
+  lsb: 0x58
 
 api:
-    intro: 5
-    update: 11
+  intro: 5
+  update: 11
 
 getters: default
 
@@ -19,7 +19,7 @@ state: all
     
 properties:
   - id: 0x01
-    name: parking_brake
+    name: status
     type: enum
     size: 1
     values:

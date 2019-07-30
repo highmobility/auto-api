@@ -2,12 +2,12 @@ name: lights
 category: chassis
 
 identifier:
-    msb: 0x00
-    lsb: 0x36
+  msb: 0x00
+  lsb: 0x36
 
 api:
-    intro: 3
-    update: 11
+  intro: 3
+  update: 11
 
 getters: default
 

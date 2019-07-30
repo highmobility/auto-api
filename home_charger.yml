@@ -2,12 +2,12 @@ name: home_charger
 category: infrastructure
 
 identifier:
-    msb: 0x00
-    lsb: 0x60
+  msb: 0x00
+  lsb: 0x60
 
 api:
-    intro: 6
-    update: 11
+  intro: 6
+  update: 11
 
 getters: default
 
@@ -27,7 +27,7 @@ state: all
 
 properties:
   - id: 0x01
-    name: charging
+    name: charging_status
     type: enum
     size: 1
     values:

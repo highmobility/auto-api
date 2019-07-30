@@ -2,12 +2,12 @@ name: remote_control
 category: parking
 
 identifier:
-    msb: 0x00
-    lsb: 0x27
+  msb: 0x00
+  lsb: 0x27
 
 api:
-    intro: 2
-    update: 11
+  intro: 2
+  update: 11
 
 getters:
   static:

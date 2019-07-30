@@ -2,12 +2,12 @@ name: graphics
 category: headunit
 
 identifier:
-    msb: 0x00
-    lsb: 0x51
+  msb: 0x00
+  lsb: 0x51
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 setters:
   - name: display_image

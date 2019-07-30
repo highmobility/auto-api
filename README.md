@@ -36,8 +36,7 @@ The `_properties` getter takes in *property IDs* as arguments and requests **onl
 
 There are additional customisation options available for getters:
 
-* `name_override: string` used to override the `[name]` in the getters generation
-* `omit_state_text: bool` used to remove the `_state` text from the *state-getter*
+* `name: string` used to override the `[name]` in the getters generation
 * `skip_properties_getter: bool` used to skip the `_properties` getter generation
 	* If `false` (default), the `_properties` getter is **only** generated when there are **more than 1** property in the capability
 
@@ -50,13 +49,11 @@ getters:
 ```yaml
 getters:
     default:
-        name_override: vehicle_location
-        omit_state_text: true
+        name: get_vehicle_location
 ```  
 ```yaml
 getters:
     default:
-        omit_state_text: true
         skip_properties_getter: true
 ```
 

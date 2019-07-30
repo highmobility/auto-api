@@ -2,16 +2,16 @@ name: firmware_version
 category: api_structure
 
 identifier:
-    msb: 0x00
-    lsb: 0x03
+  msb: 0x00
+  lsb: 0x03
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 getters:
-    default:
-        omit_state_text: true
+  default:
+    name: get_firmware_version
 
 state: all
 

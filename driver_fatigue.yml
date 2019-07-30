@@ -2,12 +2,12 @@ name: driver_fatigue
 category: health
 
 identifier:
-    msb: 0x00
-    lsb: 0x41
+  msb: 0x00
+  lsb: 0x41
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 getters: default
 

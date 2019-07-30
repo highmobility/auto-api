@@ -2,12 +2,12 @@ name: trunk
 category: digital_key
 
 identifier:
-    msb: 0x00
-    lsb: 0x21
+  msb: 0x00
+  lsb: 0x21
 
 api:
-    intro: 1
-    update: 11
+  intro: 1
+  update: 11
 
 getters: default
 
@@ -19,7 +19,7 @@ state: all
 
 properties:
   - id: 0x01
-    name: trunk_lock
+    name: lock
     type: enum
     size: 1
     values:
@@ -30,7 +30,7 @@ properties:
         name: locked
         verb: lock
   - id: 0x02
-    name: trunk_position
+    name: position
     type: enum
     size: 1
     values:

@@ -2,16 +2,16 @@ name: rooftop_control
 category: chassis
 
 identifier:
-    msb: 0x00
-    lsb: 0x25
+  msb: 0x00
+  lsb: 0x25
 
 api:
-    intro: 3
-    update: 11
+  intro: 3
+  update: 11
 
 getters:
-    default:
-        name_override: rooftop
+  default:
+    name: get_rooftop_state
 
 setters:
   - name: control_rooftop

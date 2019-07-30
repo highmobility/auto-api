@@ -2,12 +2,12 @@ name: tachograph
 category: heavy_duty
 
 identifier:
-    msb: 0x00
-    lsb: 0x64
+  msb: 0x00
+  lsb: 0x64
 
 api:
-    intro: 7
-    update: 11
+  intro: 7
+  update: 11
 
 getters: default
 

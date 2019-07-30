@@ -2,16 +2,16 @@ name: chassis_settings
 category: chassis
 
 identifier:
-    msb: 0x00
-    lsb: 0x53
+  msb: 0x00
+  lsb: 0x53
 
 api:
-    intro: 5
-    update: 11
+  intro: 5
+  update: 11
 
 getters:
-    default:
-        omit_state_text: true
+  default:
+    name: get_chassis_settings
 
 setters:
   - name: set_driving_mode

@@ -2,16 +2,16 @@ name: dashboard_lights
 category: diagnostics
 
 identifier:
-    msb: 0x00
-    lsb: 0x61
+  msb: 0x00
+  lsb: 0x61
 
 api:
-    intro: 7
-    update: 11
+  intro: 7
+  update: 11
 
 getters:
-    default:
-        omit_state_text: true
+  default:
+    name: get_dashboard_lights
 
 state: all
     

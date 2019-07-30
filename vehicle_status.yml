@@ -2,16 +2,16 @@ name: vehicle_status
 category: api_structure
 
 identifier:
-    msb: 0x00
-    lsb: 0x11
+  msb: 0x00
+  lsb: 0x11
 
 api:
-    intro: 2
-    update: 11
+  intro: 2
+  update: 11
 
 getters:
-    default:
-        omit_state_text: true
+  default:
+    name: get_vehicle_status
 
 state: all
     
@@ -131,6 +131,6 @@ properties:
     type: string
     description: The car brand bytes formatted in UTF-8
   - id: 0x99
-    name: state
+    name: states
     type: capability_state
     multiple: true

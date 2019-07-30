@@ -3,12 +3,12 @@ pretty_state_name: Power Take-Off
 category: heavy_duty
 
 identifier:
-    msb: 0x00
-    lsb: 0x65
+  msb: 0x00
+  lsb: 0x65
 
 api:
-    intro: 7
-    update: 11
+  intro: 7
+  update: 11
 
 getters: default
 
@@ -20,7 +20,7 @@ state: all
     
 properties:
   - id: 0x01
-    name: power_takeoff
+    name: status
     type: enum
     size: 1
     pretty_name: Power Take-Off
@@ -32,7 +32,7 @@ properties:
         name: active
         verb: activate
   - id: 0x02
-    name: power_takeoff_engaged
+    name: engaged
     type: enum
     size: 1
     pretty_name: Power Take-Off engaged

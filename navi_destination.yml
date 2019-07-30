@@ -2,16 +2,16 @@ name: navi_destination
 category: poi
 
 identifier:
-    msb: 0x00
-    lsb: 0x31
+  msb: 0x00
+  lsb: 0x31
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 getters:
-    default:
-        omit_state_text: true
+  default:
+    name: get_navi_destination
 
 setters:
   - name: set_navi_destination

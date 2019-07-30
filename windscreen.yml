@@ -2,12 +2,12 @@ name: windscreen
 category: chassis
 
 identifier:
-    msb: 0x00
-    lsb: 0x42
+  msb: 0x00
+  lsb: 0x42
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 getters: default
 

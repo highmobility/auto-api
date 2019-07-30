@@ -2,12 +2,12 @@ name: ignition
 category: digital_key
 
 identifier:
-    msb: 0x00
-    lsb: 0x35
+  msb: 0x00
+  lsb: 0x35
 
 api:
-    intro: 3
-    update: 11
+  intro: 3
+  update: 11
 
 getters: default
 
@@ -19,7 +19,7 @@ state: all
 
 properties:
   - id: 0x01
-    name: ignition
+    name: status
     type: enum
     size: 1
     values:
@@ -28,7 +28,7 @@ properties:
       - id: 0x01
         name: on
   - id: 0x02
-    name: accessories_ignition
+    name: accessories_status
     type: enum
     size: 1
     values:

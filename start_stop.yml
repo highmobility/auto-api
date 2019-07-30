@@ -3,12 +3,12 @@ pretty_state_name: Start-Stop
 category: digital_key
 
 identifier:
-    msb: 0x00
-    lsb: 0x63
+  msb: 0x00
+  lsb: 0x63
 
 api:
-    intro: 7
-    update: 11
+  intro: 7
+  update: 11
 
 getters: default
 
@@ -20,10 +20,9 @@ state: all
     
 properties:
   - id: 0x01
-    name: start_stop
+    name: status
     type: enum
     size: 1
-    pretty_name: Start-Stop
     values:
       - id: 0x00
         name: inactive

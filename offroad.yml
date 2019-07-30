@@ -2,12 +2,12 @@ name: offroad
 category: diagnostics
 
 identifier:
-    msb: 0x00
-    lsb: 0x52
+  msb: 0x00
+  lsb: 0x52
 
 api:
-    intro: 5
-    update: 11
+  intro: 5
+  update: 11
 
 getters: default
 

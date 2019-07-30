@@ -2,16 +2,16 @@ name: fueling
 category: parking
 
 identifier:
-    msb: 0x00
-    lsb: 0x40
+  msb: 0x00
+  lsb: 0x40
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 getters:
-    default:
-        name_override: gas_flap
+  default:
+    name: get_gas_flap_state
 
 setters:
   - name: control_gas_flap

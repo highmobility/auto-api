@@ -2,12 +2,12 @@ name: seats
 category: chassis
 
 identifier:
-    msb: 0x00
-    lsb: 0x56
+  msb: 0x00
+  lsb: 0x56
 
 api:
-    intro: 5
-    update: 11
+  intro: 5
+  update: 11
 
 getters: default
 
@@ -20,7 +20,7 @@ properties:
     size: 2
     multiple: true
     items:
-      - name: seat_location
+      - name: location
         type: enum
         size: 1
         values:
@@ -48,7 +48,7 @@ properties:
     size: 2
     multiple: true
     items:
-      - name: seat_location
+      - name: location
         type: enum
         size: 1
         values:

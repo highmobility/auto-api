@@ -2,12 +2,12 @@ name: maintenance
 category: diagnostics
 
 identifier:
-    msb: 0x00
-    lsb: 0x34
+  msb: 0x00
+  lsb: 0x34
 
 api:
-    intro: 3
-    update: 11
+  intro: 3
+  update: 11
 
 getters: default
 

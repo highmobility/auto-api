@@ -2,12 +2,12 @@ name: charging
 category: chassis
 
 identifier:
-    msb: 0x00
-    lsb: 0x23
+  msb: 0x00
+  lsb: 0x23
 
 api:
-    intro: 2
-    update: 11
+  intro: 2
+  update: 11
 
 getters: default
 

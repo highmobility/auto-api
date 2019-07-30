@@ -2,12 +2,12 @@ name: diagnostics
 category: diagnostics
 
 identifier:
-    msb: 0x00
-    lsb: 0x33
+  msb: 0x00
+  lsb: 0x33
 
 api:
-    intro: 3
-    update: 11
+  intro: 3
+  update: 11
 
 getters: default
 

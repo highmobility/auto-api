@@ -3,12 +3,12 @@ pretty_state_name: Mobile
 category: headunit
 
 identifier:
-    msb: 0x00
-    lsb: 0x66
+  msb: 0x00
+  lsb: 0x66
 
 api:
-    intro: 8
-    update: 11
+  intro: 8
+  update: 11
 
 getters: default
 

@@ -2,22 +2,22 @@ name: keyfob_position
 category: chassis
 
 identifier:
-    msb: 0x00
-    lsb: 0x48
+  msb: 0x00
+  lsb: 0x48
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 getters:
-    default:
-        omit_state_text: true
+  default:
+    name: get_keyfob_position
 
 state: all
     
 properties:
   - id: 0x01
-    name: keyfob_position
+    name: location
     type: enum
     size: 1
     values:

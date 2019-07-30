@@ -3,12 +3,12 @@ pretty_state_name: Historical States
 category: api_structure
 
 identifier:
-    msb: 0x00
-    lsb: 0x12
+  msb: 0x00
+  lsb: 0x12
 
 api:
-    intro: 8
-    update: 11
+  intro: 8
+  update: 11
 
 setters:
   - name: request_states

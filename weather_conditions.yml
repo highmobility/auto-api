@@ -2,16 +2,16 @@ name: weather_conditions
 category: environment
 
 identifier:
-    msb: 0x00
-    lsb: 0x55
+  msb: 0x00
+  lsb: 0x55
 
 api:
-    intro: 5
-    update: 11
+  intro: 5
+  update: 11
 
 getters:
-    default:
-        omit_state_text: true
+  default:
+    name: get_weather_conditions
 
 state: all
     

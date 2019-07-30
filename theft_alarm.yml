@@ -2,12 +2,12 @@ name: theft_alarm
 category: parking
 
 identifier:
-    msb: 0x00
-    lsb: 0x46
+  msb: 0x00
+  lsb: 0x46
 
 api:
-    intro: 4
-    update: 11
+  intro: 4
+  update: 11
 
 getters: default
 
@@ -19,7 +19,7 @@ state: all
 
 properties:
   - id: 0x01
-    name: theft_alarm
+    name: status
     type: enum
     size: 1
     values:
