@@ -11,8 +11,8 @@ api:
 
 getters:
   static:
-    - name: get_control_mode
-      properties: [0x01]
+    - name: get_control_state
+      properties: [0x01, 0x02]
 
 setters:
   - name: control_command
