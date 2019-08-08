@@ -9,7 +9,8 @@ api:
   intro: 2
   update: 11
 
-getters: default
+getters:
+  default: {}
 
 setters:
   - name: change_starting_times

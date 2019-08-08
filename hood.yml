@@ -7,7 +7,8 @@ identifier:
 
 api_intro: 11
 
-getters: default
+getters:
+  default: {}
 
 state: all
 

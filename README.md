@@ -27,8 +27,8 @@ Otherwise, it's a dictionary (hash) with 2 possible keys.
 Requires 2 getters to be automatically synthesised.
 
 ```
-get_[name]_state()                  --> [id.msb, id.lsb, 0x00]
-get_[name]_properties(property_IDs) --> [id.msb, id.lsb, 0x00] + property_IDs
+get_[cap.name]_state()                  --> [id.msb, id.lsb, 0x00]
+get_[cap.name]_properties(property_IDs) --> [id.msb, id.lsb, 0x00] + property_IDs
 ```
 
 The `_state` getter takes no input and requests **all** properties in the capability.  
@@ -36,7 +36,7 @@ The `_properties` getter takes in *property IDs* as arguments and requests **onl
 
 There are additional customisation options available for getters:
 
-* `name: string` used to override the `[name]` in the getters generation
+* `name: string` used to override the *full name* of the `_state` getter
 * `skip_properties_getter: bool` used to skip the `_properties` getter generation
 	* If `false` (default), the `_properties` getter is **only** generated when there are **more than 1** property in the capability
 
@@ -44,16 +44,12 @@ Examples:
 
 ```yaml
 getters:
-    default
+    default: {}
 ```  
 ```yaml
 getters:
     default:
         name: get_vehicle_location
-```  
-```yaml
-getters:
-    default:
         skip_properties_getter: true
 ```
 

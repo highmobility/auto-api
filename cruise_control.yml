@@ -9,7 +9,8 @@ api:
   intro: 7
   update: 11
 
-getters: default
+getters:
+  default: {}
 
 setters:
   - name: activate_deactivate_cruise_control
@@ -20,7 +21,7 @@ state: all
 
 properties:
   - id: 0x01
-    name: status
+    name: cruise_control
     type: enum
     size: 1
     values:
