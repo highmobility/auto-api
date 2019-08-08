@@ -149,19 +149,13 @@ properties:
         type: uinteger
         size: 4
         description: Remaining time of the message in minutes
-      - name: text_size
-        type: uinteger
-        size: 2
-        description: Size of the text
       - name: text
         type: string
+        size_length: 2
         description: CCM text bytes formatted in UTF-8
-      - name: status_size
-        type: uinteger
-        size: 1
-        description: Size of the status
       - name: status
         type: string
+        size_length: 1
         description: CCM status bytes formatted in UTF-8
   - id: 0x1a
     name: tire_pressures
@@ -240,30 +234,19 @@ properties:
         type: uinteger
         size: 1
         description: Number of occurences
-      - name: id_size
-        type: uinteger
-        size: 1
-        pretty_name: ID Size
-        description: Size of the ID string
       - name: id
         type: string
+        size_length: 1
         pretty_name: ID
         description: ID bytes formatted in UTF-8
-      - name: ecu_id_size
-        type: uinteger
-        size: 1
-        pretty_name: ECU ID Size
-        description: Size of the ECU ID string
       - name: ecu_id
         type: string
+        size_length: 1
         pretty_name: ECU ID
         description: ECU ID bytes formatted in UTF-8
-      - name: status_size
-        type: uinteger
-        size: 1
-        description: Size of the status string
       - name: status
         type: string
+        size_length: 1
         description: Status bytes formatted in UTF-8
   - id: 0x1E
     name: mileage_meters

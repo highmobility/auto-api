@@ -36,7 +36,7 @@ The `_properties` getter takes in *property IDs* as arguments and requests **onl
 
 There are additional customisation options available for getters:
 
-* `name: string` used to override the *full name* of the `_state` getter
+* `name: string` used to override the *full name* of the getters (`_properties` still gets appended)
 * `skip_properties_getter: bool` used to skip the `_properties` getter generation
 	* If `false` (default), the `_properties` getter is **only** generated when there are **more than 1** property in the capability
 
@@ -58,7 +58,7 @@ getters:
 Defines *static* getters, that always request *specific properties*, to be automatically synthesised.  
 
 ```
-get_[name]()    --> [id.msb, id.lsb, 0x00] + property_IDs
+[cap.name]()    --> [id.msb, id.lsb, 0x00] + property_IDs
 ```
 
 Contains an array of *static* getters that have the following keys-values:
@@ -148,7 +148,7 @@ state: [0x01, 0x02]
 ## properties
 
 **Required** for every capability.  
-Follows the same syntax as before, with some additional options for *enums*.  
+Follows the same syntax as before, with some additional options for *enums*:  
 
 * `id: integer` identifier, required (if a *property* or an *enum value*)
 * `name: string` name of the property / type, required
@@ -158,11 +158,15 @@ Follows the same syntax as before, with some additional options for *enums*.
 * `[texts]` means other *text* related things (i.e. `pretty_name: string`, `description: string`), optional
 * `values/items` array of values / items that define the data structure in the property (same as previous versions), required
 
-*New* keys for `enum` types.  
+*New* keys for `enum` types:
 
 * `disabled_in_setter: bool` defines what values are disallowed to use in a *setters* (that uses that property)
 * `verb: string` used to express an action in a *setters* or used as another name (i.e. *active - activate*, *triggered - trigger* )
 * `verb_pretty_name: string` defines the "pretty" name of the *verb*
+
+*New* keys for `string` types:
+
+* `size_length: integer` number of prefix bytes denoting the size of the string (**only** used when inside a `custom` type)
 
 Examples:  
 
@@ -178,6 +182,7 @@ properties:
         size: 1
       - name: name
         type: string
+        size_length: 2
         description: Name of the action, bytes in UTF8.
   - id: 0x03
     name: convertible_roof_state

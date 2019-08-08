@@ -180,10 +180,7 @@ properties:
         type: float
         size: 4
         description: The price in 4-bytes per IEEE 754
-      - name: currency_size
-        type: uinteger
-        size: 1
-        description: Size of the currency string
       - name: currency
         type: string
+        size_length: 1
         description: The currency alphabetic code per ISO 4217 or crypto currency symbol

@@ -37,6 +37,7 @@ properties:
         size: 1
       - name: name
         type: string
+        size_length: 1
         description: Name of the action, bytes in UTF8.
   - id: 0x03
     name: activated_action

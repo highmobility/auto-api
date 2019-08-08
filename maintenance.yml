@@ -100,19 +100,13 @@ properties:
             name: pending
           - id: 0x02
             name: overdue
-      - name: text_size
-        type: uinteger
-        size: 2
-        description: Size of the CBS text
       - name: text
         type: string
+        size_length: 2
         description: CBS text bytes formatted in UTF-8
-      - name: description_size
-        type: uinteger
-        size: 2
-        description: Size of the description string
       - name: description
         type: string
+        size_length: 2
         description: Description bytes formatted in UTF-8
   - id: 0x0C
     name: brake_fluid_change_date
