@@ -31,7 +31,7 @@ get_[cap.name]_state()                  --> [id.msb, id.lsb, 0x00]
 get_[cap.name]_properties(property_IDs) --> [id.msb, id.lsb, 0x00] + property_IDs
 ```
 
-The `_state` getter takes no input and requests **all** properties in the capability.  
+The `_state` getter takes no input and requests **all state** properties in the capability.  
 The `_properties` getter takes in *property IDs* as arguments and requests **only** the specific properties.  
 
 There are additional customisation options available for getters:
