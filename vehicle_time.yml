@@ -18,15 +18,6 @@ state: all
 properties:
   - id: 0x01
     name: vehicle_time
-    type: custom
-    size: 2
+    name_cased: vehicleTime
+    type: types.time
     description: Vehicle time in a 24h format
-    items:
-      - name: hour
-        type: uinteger
-        size: 1
-        description: Value between 0 and 23
-      - name: minute
-        type: uinteger
-        size: 1
-        description: Value between 0 and 59

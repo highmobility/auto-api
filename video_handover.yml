@@ -17,18 +17,21 @@ setters:
 properties:
   - id: 0x01
     name: url
-    type: string
+    name_cased: url
     pretty_name: URL
+    type: string
     description: The UTF8 bytes of the URL string
   - id: 0x02
     name: starting_second
+    name_cased: startingSecond
     type: uinteger
     size: 2
   - id: 0x03
     name: screen
+    name_cased: screen
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: front
       - id: 0x01

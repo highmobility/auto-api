@@ -21,103 +21,29 @@ state: all
 properties:
   - id: 0x02
     name: inside_locks
-    type: custom
-    size: 2
+    name_cased: insideLocks
+    type: types.lock
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - name: front_left
-            id: 0x00
-          - name: front_right
-            id: 0x01
-          - name: rear_right
-            id: 0x02
-          - name: rear_left
-            id: 0x03
-      - name: lock_state
-        type: enum
-        size: 1
-        values:
-          - name: unlocked
-            id: 0x00
-          - name: locked
-            id: 0x01
+    description: Inside lock states for the given doors
   - id: 0x03
     name: locks
-    type: custom
-    size: 2
+    name_cased: locks
+    type: types.lock
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - name: front_left
-            id: 0x00
-          - name: front_right
-            id: 0x01
-          - name: rear_right
-            id: 0x02
-          - name: rear_left
-            id: 0x03
-      - name: lock_state
-        type: enum
-        size: 1
-        values:
-          - name: unlocked
-            id: 0x00
-          - name: locked
-            id: 0x01
+    description: Lock states for the given doors
   - id: 0x04
     name: positions
-    type: custom
-    size: 2
+    name_cased: positions
+    type: types.door_position
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - name: front_left
-            id: 0x00
-          - name: front_right
-            id: 0x01
-          - name: rear_right
-            id: 0x02
-          - name: rear_left
-            id: 0x03
-          - name: all
-            id: 0x05
-      - name: position
-        type: enum
-        size: 1
-        values:
-          - name: closed
-            id: 0x00
-          - name: open
-            id: 0x01
+    description: Door positions for the given doors
   - id: 0x05
     name: inside_locks_state
-    type: enum
-    size: 1
+    name_cased: insideLocksState
+    type: types.lock_state
     description: Inside locks state for the whole car (combines all specific lock states if available)
-    values:
-      - id: 0x00
-        name: unlocked
-        verb: unlock
-      - id: 0x01
-        name: locked
-        verb: lock
   - id: 0x06
     name: locks_state
-    type: enum
-    size: 1
+    name_cased: locksState
+    type: types.lock_state
     description: Locks state for the whole car (combines all specific lock states if available)
-    values:
-      - id: 0x00
-        name: unlocked
-      - id: 0x01
-        name: locked

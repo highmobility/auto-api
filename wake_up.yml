@@ -18,8 +18,9 @@ setters:
 properties:
   - id: 0x01
     name: wake_up
+    name_cased: wakeUp
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: wake_up

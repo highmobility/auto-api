@@ -19,11 +19,13 @@ state: [0x01]
 properties:
   - id: 0x01
     name: multi_states
-    type: capability_state
+    name_cased: multiStates
+    type: types.capability_state
     multiple: true
     description: The bytes of incoming capabilities (states)
   - id: 0x02
     name: multi_commands
-    type: capability_state
+    name_cased: multiCommands
+    type: types.capability_state
     multiple: true
     description: The bytes of outgoing capabilities (commands)

@@ -17,98 +17,66 @@ state: all
 properties:
   - id: 0x01
     name: accelerations
-    type: custom
-    size: 5
+    name_cased: accelerations
+    type: types.acceleration
     multiple: true
-    items:
-      - name: type
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: longitudinal_acceleration
-          - id: 0x01
-            name: lateral_acceleration
-          - id: 0x02
-            name: front_lateral_acceleration
-          - id: 0x03
-            name: rear_lateral_acceleration
-      - name: g_force
-        type: float
-        size: 4
-        description: The accelaration in g-force per IEEE 754 
   - id: 0x02
     name: understeering
+    name_cased: understeering
     type: double
     size: 8
     description: The understeering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 0.3 (30%) marginal, over 30% critical
   - id: 0x03
     name: oversteering
+    name_cased: oversteering
     type: double
     size: 8
     description: The oversteering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 30% marginal, over 30% critical
   - id: 0x04
     name: gas_pedal_position
+    name_cased: gasPedalPosition
     type: double
     size: 8
     description: The gas pedal position between 0.0-1.0, whereas 1.0 (100%) is full throttle
   - id: 0x05
     name: steering_angle
+    name_cased: steeringAngle
     type: integer
     size: 1
     description: The steering angle in degrees, whereas 0 degrees is straight ahead, positive number to the right and negative number to the left
   - id: 0x06
     name: brake_pressure
+    name_cased: brakePressure
     type: float
     size: 4
     description: Brake pressure in bar, whereas 100bar is max value, full brake
   - id: 0x07
     name: yaw_rate
+    name_cased: yawRate
     type: float
     size: 4
     description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
   - id: 0x08
     name: rear_suspension_steering
+    name_cased: rearSuspensionSteering
     type: integer
     size: 1
     description: Rear suspension steering in degrees
   - id: 0x09
     name: electronic_stability_program
-    type: enum
-    size: 1
-    pretty_name: ESP (Electronic Stability Program) intervention
-    values:
-      - id: 0x00
-        name: inactive
-      - id: 0x01
-        name: active
-  - id: 0x0A
+    name_cased: electronicStabilityProgram
+    type: types.active_state
+  - id: 0x0a
     name: brake_torque_vectorings
-    type: custom
-    size: 2
+    name_cased: brakeTorqueVectorings
+    type: types.brake_torque_vectoring
     multiple: true
-    items:
-      - name: axle
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_axle
-          - id: 0x01
-            name: rear_axle
-      - name: vectoring
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: inactive
-          - id: 0x01
-            name: active
-  - id: 0x0B
+  - id: 0x0b
     name: gear_mode
+    name_cased: gearMode
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: manual
       - id: 0x01
@@ -123,57 +91,40 @@ properties:
         name: low_gear
       - id: 0x06
         name: sport
-  - id: 0x0C
+  - id: 0x0c
     name: selected_gear
+    name_cased: selectedGear
     type: integer
     size: 1
     description: The selected gear value, if any
-  - id: 0x0D
+  - id: 0x0d
     name: brake_pedal_position
+    name_cased: brakePedalPosition
     type: double
     size: 8
     description: The brake pedal position between 0.0-1.0, wheras 1.0 (100%) is full brakes
-  - id: 0x0E
+  - id: 0x0e
     name: brake_pedal_switch
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: inactive
-      - id: 0x01
-        name: active
-  - id: 0x0F
+    name_cased: brakePedalSwitch
+    type: types.active_state
+  - id: 0x0f
     name: clutch_pedal_switch
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: inactive
-      - id: 0x01
-        name: active
+    name_cased: clutchPedalSwitch
+    type: types.active_state
   - id: 0x10
     name: accelerator_pedal_idle_switch
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: inactive
-      - id: 0x01
-        name: active
+    name_cased: acceleratorPedalIdleSwitch
+    type: types.active_state
   - id: 0x11
     name: accelerator_pedal_kickdown_switch
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: inactive
-      - id: 0x01
-        name: active
+    name_cased: acceleratorPedalKickdownSwitch
+    type: types.active_state
   - id: 0x12
     name: vehicle_moving
+    name_cased: vehicleMoving
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: not_moving
       - id: 0x01

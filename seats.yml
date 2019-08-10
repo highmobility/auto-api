@@ -17,57 +17,11 @@ state: all
 properties:
   - id: 0x02
     name: persons_detected
-    type: custom
-    size: 2
+    name_cased: personsDetected
+    type: types.person_detected
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-          - id: 0x04
-            name: rear_center
-      - name: person_detected
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: not_detected
-          - id: 0x01
-            name: detected
   - id: 0x03
     name: seatbelts_fastened
-    type: custom
-    size: 2
+    name_cased: seatbeltsFastened
+    type: types.seatbelt_fastened
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-          - id: 0x04
-            name: rear_center
-      - name: seatbelt_fastened
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: not_fastened
-          - id: 0x01
-            name: fastened

@@ -15,9 +15,10 @@ state: all
 properties:
   - id: 0x01
     name: position
+    name_cased: position
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: closed
       - id: 0x01

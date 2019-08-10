@@ -17,239 +17,156 @@ state: all
 properties:
   - id: 0x01
     name: mileage
+    name_cased: mileage
     type: uinteger
     size: 4
     description: The car mileage (odometer) in km
   - id: 0x02
     name: engine_oil_temperature
+    name_cased: engineOilTemperature
     type: integer
     size: 2
     description: Engine oil temperature in Celsius, whereas can be negative
   - id: 0x03
     name: speed
+    name_cased: speed
     type: integer
     size: 2
     description: The vehicle speed in km/h, whereas can be negative
   - id: 0x04
     name: engine_rpm
+    name_cased: engineRPM
+    pretty_name: Engine RPM
     type: uinteger
     size: 2
-    title_case_name: engineRPM
-    pretty_name: Engine RPM
     description: Engine RPM (revolutions per minute)
   - id: 0x05
     name: fuel_level
+    name_cased: fuelLevel
     type: double
     size: 8
     description: Fuel level percentage between 0.0-1.0
   - id: 0x06
     name: estimated_range
+    name_cased: estimatedRange
     type: integer
     size: 2
     description: Estimated range (with combustion engine)
   - id: 0x09
     name: washer_fluid_level
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: low
-      - id: 0x01
-        name: filled
+    name_cased: washerFluidLevel
+    type: types.fluid_level
   - id: 0x0b
     name: battery_voltage
+    name_cased: batteryVoltage
     type: float
     size: 4
     description: Battery voltage per IEEE 754 formatting
   - id: 0x0c
     name: adblue_level
+    name_cased: adBlueLevel
+    pretty_name: AdBlue Level
     type: float
     size: 4
     description: AdBlue level in liters formatted in 4-bytes per IEEE 754 formatting
   - id: 0x0d
     name: distance_since_reset
+    name_cased: distanceSinceReset
     type: uinteger
     size: 2
     description: The distance driven in km since reset
   - id: 0x0e
     name: distance_since_start
+    name_cased: distanceSinceStart
     type: uinteger
     size: 2
     description: The distance driven in km since trip start
   - id: 0x0f
     name: fuel_volume
+    name_cased: fuelVolume
     type: float
     size: 4
     description: The fuel volume measured in liters formatted in 4-bytes per IEEE 754 formatting
   - id: 0x10
     name: anti_lock_braking
-    type: enum
-    size: 1
+    name_cased: antiLockBraking
     pretty_name: Anti-lock braking system (ABS)
-    values:
-      - id: 0x00
-        name: inactive
-      - id: 0x01
-        name: active
+    type: types.active_state
   - id: 0x11
     name: engine_coolant_temperature
+    name_cased: engineCoolantTemperature
     type: integer
     size: 2
     description: Engine coolant temperature in Celsius, whereas can be negative
   - id: 0x12
     name: engine_total_operating_hours
+    name_cased: engineTotalOperatingHours
     type: float
     size: 4
     description: The accumulated time of engine operation per IEEE 754 formatting
   - id: 0x13
     name: engine_total_fuel_consumption
+    name_cased: engineTotalFuelConsumption
     type: float
     size: 4
     description: The accumulated lifespan fuel consumption in liters per IEEE 754 formatting
   - id: 0x14
     name: brake_fluid_level
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: low
-      - id: 0x01
-        name: filled
+    name_cased: brakeFluidLevel
+    type: types.fluid_level
   - id: 0x15
     name: engine_torque
+    name_cased: engineTorque
     type: double
     size: 8
     description: Current engine torque percentage between 0.0-1.0
   - id: 0x16
     name: engine_load
+    name_cased: engineLoad
     type: double
     size: 8
     description: Current engine load percentage between 0.0-1.0
   - id: 0x17
     name: wheel_based_speed
+    name_cased: wheelBasedSpeed
     type: integer
     size: 2
     description: The vehicle speed in km/h measured at the wheel base, whereas can be negative
   - id: 0x18
     name: battery_level
+    name_cased: batteryLevel
     type: double
     size: 8
     description: Battery level in %, value between 0.0 and 1.0
   - id: 0x19
     name: check_control_messages
-    type: custom
+    name_cased: checkControlMessages
+    type: types.check_control_message
     multiple: true
-    items:
-      - name: id
-        type: uinteger
-        size: 2
-        pretty_name: ID
-        description: Check Control Message identifier
-      - name: remaining_minutes
-        type: uinteger
-        size: 4
-        description: Remaining time of the message in minutes
-      - name: text
-        type: string
-        size_length: 2
-        description: CCM text bytes formatted in UTF-8
-      - name: status
-        type: string
-        size_length: 1
-        description: CCM status bytes formatted in UTF-8
   - id: 0x1a
     name: tire_pressures
-    type: custom
-    size: 5
+    name_cased: tirePressures
+    type: types.tire_pressure
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-      - name: pressure
-        type: float
-        size: 4
-        description: Tire pressure in BAR formatted in 4-bytes per IEEE 754
   - id: 0x1b
     name: tire_temperatures
-    type: custom
-    size: 5
+    name_cased: tireTemperatures
+    type: types.tire_temperature
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-      - name: temperature
-        type: float
-        size: 4
-        description: Tire temperature in BAR formatted in 4-bytes per IEEE 754
   - id: 0x1c
     name: wheel_rpms
-    type: custom
-    size: 3
-    multiple: true
+    name_cased: wheelRPMs
     pretty_name: Wheel RPMs
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-      - name: rpm
-        type: uinteger
-        size: 2
-        pretty_name: RPM
-        description: The RPM measured at this wheel
-  - id: 0x1D
-    name: trouble_codes
-    type: custom
+    type: types.wheel_rpm
     multiple: true
-    items:
-      - name: occurences
-        type: uinteger
-        size: 1
-        description: Number of occurences
-      - name: id
-        type: string
-        size_length: 1
-        pretty_name: ID
-        description: ID bytes formatted in UTF-8
-      - name: ecu_id
-        type: string
-        size_length: 1
-        pretty_name: ECU ID
-        description: ECU ID bytes formatted in UTF-8
-      - name: status
-        type: string
-        size_length: 1
-        description: Status bytes formatted in UTF-8
-  - id: 0x1E
+  - id: 0x1d
+    name: trouble_codes
+    name_cased: troubleCodes
+    type: types.trouble_code
+    multiple: true
+  - id: 0x1e
     name: mileage_meters
+    name_cased: mileageMeters
     type: uinteger
     size: 4
     description: The car mileage (odometer) in meters

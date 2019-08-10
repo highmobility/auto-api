@@ -16,6 +16,7 @@ setters:
 properties:
   - id: 0x01
     name: image_url
-    type: string
+    name_cased: imageURL
     pretty_name: Image URL
+    type: string
     description: The UTF8 bytes of the image URL string

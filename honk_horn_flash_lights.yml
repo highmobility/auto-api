@@ -25,35 +25,31 @@ state: [0x01]
 properties:
   - id: 0x01
     name: flashers
+    name_cased: flashers
     type: enum
     size: 1
-    values:
-      - name: inactive
-        id: 0x00
-      - name: emergency_flasher_active
-        id: 0x01
-      - name: left_flasher_active
-        id: 0x02
-      - name: right_flasher_active
-        id: 0x03
+    enum_values:
+      - id: 0x00
+        name: inactive
+      - id: 0x01
+        name: emergency_flasher_active
+      - id: 0x02
+        name: left_flasher_active
+      - id: 0x03
+        name: right_flasher_active
   - id: 0x02
     name: honk_seconds
+    name_cased: honkSeconds
     type: uinteger
     size: 1
     description: Number of seconds to honk the horn
   - id: 0x03
     name: flash_times
+    name_cased: flashTimes
     type: uinteger
     size: 1
     description: Number of times to flash the lights
   - id: 0x04
-    name: emergency_flashers_active_state
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: deactive
-        verb: deactivate
-      - id: 0x01
-        name: active
-        verb: activate
+    name: emergency_flashers_state
+    name_cased: emergencyFlashersState
+    type: types.active_state

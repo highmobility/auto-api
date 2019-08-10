@@ -16,5 +16,6 @@ setters:
 properties:
   - id: 0x01
     name: heart_rate
+    name_cased: heartRate
     type: uinteger
     size: 1

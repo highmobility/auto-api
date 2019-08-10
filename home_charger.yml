@@ -29,9 +29,10 @@ state: all
 properties:
   - id: 0x01
     name: charging_status
+    name_cased: chargingStatus
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: disconnected
       - id: 0x01
@@ -40,9 +41,10 @@ properties:
         name: charging
   - id: 0x02
     name: authentication_mechanism
+    name_cased: authenticationMechanism
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: pin
         pretty_name: PIN
@@ -50,79 +52,58 @@ properties:
         name: app
   - id: 0x03
     name: plug_type
+    name_cased: plugType
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: type_1
       - id: 0x01
         name: type_2
       - id: 0x02
         name: ccs
-        pretty_name: Combined Charging System (CCS)
+        pretty_name: Combined Charging System
       - id: 0x03
         name: chademo
         pretty_name: CHAdeMO
   - id: 0x04
-    name: charging_power
+    name: charging_power_kw
+    name_cased: chargingPowerKW
+    pretty_name: Charging Power (kW)
     type: float
     size: 4
     description: Charging power in kW formatted in 4-bytes per IEEE 754
   - id: 0x05
     name: solar_charging
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: deactivated
-        verb: deactivate
-      - id: 0x01
-        name: activated
-        verb: activate
+    name_cased: solarCharging
+    type: types.active_state
   - id: 0x08
     name: hotspot_enabled
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: disabled
-        verb: disable
-      - id: 0x01
-        name: enabled
-        verb: enable
+    name_cased: hotspotEnabled
+    type: types.enabled_state
   - id: 0x09
     name: hotspot_ssid
-    type: string
+    name_cased: hotspotSSID
     pretty_name: Hotspot SSID
-    title_case_name: hotspotSSID
+    type: string
     description: The Wi-Fi Hotspot SSID formatted in UTF-8
   - id: 0x0a
     name: wi_fi_hotspot_security
-    type: enum
-    size: 1
-    pretty_name: Wi-Fi Hotspot security
-    values:
-      - id: 0x00
-        name: none
-      - id: 0x01
-        name: wep
-        pretty_name: WEP
-      - id: 0x02
-        name: wpa
-        pretty_name: WPA/WPA2 Personal
-      - id: 0x03
-        name: wpa2_personal
-        pretty_name: WPA2 Personal
+    name_cased: wiFiHotspotSecurity
+    pretty_name: Wi-Fi Hotspot Security
+    type: types.network_security
   - id: 0x0b
     name: wi_fi_hotspot_password
-    type: string
+    name_cased: wiFiHotspotPassword
     pretty_name: Wi-Fi Hotspot Password
+    type: string
     description: The Wi-Fi Hotspot password formatted in UTF-8
   - id: 0x0d
     name: authentication_state
+    name_cased: authenticationState
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: unauthenticated
         verb: expire_authentication
@@ -131,56 +112,31 @@ properties:
         verb: authenticate
   - id: 0x0e
     name: charge_current_dc
+    name_cased: chargeCurrentDC
+    pretty_name: Charge current (DC)
     type: float
     size: 4
-    pretty_name: Charge current (DC)
     description: The charge current (DC) per IEEE 754
   - id: 0x0f
     name: maximum_charge_current
+    name_cased: maximumChargeCurrent
+    pretty_name: Maximum charge current
     type: float
     size: 4
-    pretty_name: Maximum charge current
     description: The maximum possible charge current per IEEE 754
   - id: 0x10
     name: minimum_charge_current
+    name_cased: minimumChargeCurrent
+    pretty_name: Minimum charge current
     type: float
     size: 4
-    pretty_name: Minimum charge current
     description: The minimal possible charge current per IEEE 754
   - id: 0x11
     name: coordinates
-    type: custom
-    size: 16
-    items:
-      - name: latitude
-        type: double
-        size: 8
-        description: Latitude in 8-bytes per IEEE 754
-      - name: longitude
-        type: double
-        size: 8
-        description: Longitude in 8-bytes per IEEE 754
+    name_cased: coordinates
+    type: types.coordinates
   - id: 0x12
     name: price_tariffs
-    type: custom
+    name_cased: priceTariffs
+    type: types.price_tariff
     multiple: true
-    items:
-      - name: pricing_type
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: starting_fee
-          - id: 0x01
-            name: per_minute
-          - id: 0x02
-            name: per_kwh
-            pretty_name: Per kWh
-      - name: price
-        type: float
-        size: 4
-        description: The price in 4-bytes per IEEE 754
-      - name: currency
-        type: string
-        size_length: 1
-        description: The currency alphabetic code per ISO 4217 or crypto currency symbol

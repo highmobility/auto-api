@@ -21,19 +21,9 @@ state: all
 properties:
   - id: 0x01
     name: status
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: off
-      - id: 0x01
-        name: on
+    name_cased: status
+    type: types.on_off_state
   - id: 0x02
     name: accessories_status
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: off
-      - id: 0x01
-        name: on
+    name_cased: accessoriesStatus
+    type: types.on_off_state

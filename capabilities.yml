@@ -18,13 +18,6 @@ state: all
 properties:
   - id: 0x01
     name: capabilities
-    type: custom
+    name_cased: capabilities
+    type: types.supported_capability
     multiple: true
-    items:
-      - name: capability_identifier
-        type: uinteger
-        size: 2
-        description: The identifier of the supported capability
-      - name: supported_properties
-        type: list_uinteger
-        description: Array of supported property identifiers

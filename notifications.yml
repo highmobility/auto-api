@@ -25,29 +25,25 @@ state: all
 properties:
   - id: 0x01
     name: text
+    name_cased: text
     type: string
-    description: Text for the notification, bytes in UTF8.
+    description: Text for the notification, bytes in UTF8
   - id: 0x02
     name: action_items
-    type: custom
+    name_cased: actionItems
+    type: types.action_item
     multiple: true
-    items:
-      - name: identifier
-        type: uinteger
-        size: 1
-      - name: name
-        type: string
-        size_length: 1
-        description: Name of the action, bytes in UTF8.
   - id: 0x03
     name: activated_action
+    name_cased: activatedAction
     type: uinteger
     size: 1
-    description: Identifier of the activated action.
+    description: Identifier of the activated action
   - id: 0x04
     name: clear
+    name_cased: clear
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: clear

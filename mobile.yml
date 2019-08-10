@@ -18,10 +18,5 @@ state: all
 properties:
   - id: 0x01
     name: connection
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: disconnected
-      - id: 0x01
-        name: connected
+    name_cased: connection
+    type: types.connection_state

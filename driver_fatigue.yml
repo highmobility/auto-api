@@ -16,10 +16,11 @@ state: all
 
 properties:
   - id: 0x01
-    name: fatigue_level_detected
+    name: detected_fatigue_level
+    name_cased: detectedFatigueLevel
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: light
       - id: 0x01

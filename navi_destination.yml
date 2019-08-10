@@ -23,47 +23,33 @@ state: all
 properties:
   - id: 0x01
     name: coordinates
-    type: custom
-    size: 16
-    items:
-      - name: latitude
-        type: double
-        size: 8
-        description: Latitude in 8-bytes per IEEE 754
-      - name: longitude
-        type: double
-        size: 8
-        description: Longitude in 8-bytes per IEEE 754
+    name_cased: coordinates
+    type: types.coordinates
   - id: 0x02
     name: destination_name
+    name_cased: destinationName
     type: string
     description: Destination name bytes formatted in UTF-8
   - id: 0x03
     name: data_slots_free
+    name_cased: dataSlotsFree
     type: uinteger
     size: 1
     description: Remaining number of POI data slots available.
   - id: 0x04
     name: data_slots_max
+    name_cased: dataSlotsMax
     type: uinteger
     size: 1
     description: Maximum number of POI data slots.
   - id: 0x05
     name: arrival_duration
-    type: custom
-    size: 2
+    name_cased: arrivalDuration
+    type: types.time
     description: Remaining time until reaching the destination.
-    items:
-      - name: hour
-        type: uinteger
-        size: 1
-        description: Value between 0 and 23
-      - name: minute
-        type: uinteger
-        size: 1
-        description: Value between 0 and 59
   - id: 0x06
     name: distance_to_destination
+    name_cased: distanceToDestination
     type: uinteger
     size: 2
     description: Remaining distance to reach the destination.

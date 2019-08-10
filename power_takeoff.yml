@@ -22,22 +22,14 @@ state: all
 properties:
   - id: 0x01
     name: status
-    type: enum
-    size: 1
-    pretty_name: Power Take-Off
-    values:
-      - id: 0x00
-        name: inactive
-        verb: deactivate
-      - id: 0x01
-        name: active
-        verb: activate
+    name_cased: status
+    type: types.active_state
   - id: 0x02
     name: engaged
+    name_cased: engaged
     type: enum
     size: 1
-    pretty_name: Power Take-Off engaged
-    values:
+    enum_values:
       - id: 0x00
         name: not_engaged
       - id: 0x01

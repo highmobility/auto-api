@@ -20,20 +20,21 @@ state: [0x01]
 properties:
   - id: 0x01
     name: states
-    type: capability_state
+    name_cased: states
+    type: types.capability_state
     multiple: true
   - id: 0x02
-    name: capability_identifier
+    name: capability_id
+    name_cased: capabilityID
     type: uinteger
     size: 2
+    description: The identifier of the Capability
   - id: 0x03
     name: start_date
-    type: timestamp
-    size: 8
-    description: Milliseconds since UNIX Epoch time
+    name_cased: startDate
+    type: types.timestamp
   - id: 0x04
     name: end_date
-    type: timestamp
-    size: 8
-    description: Milliseconds since UNIX Epoch time
+    name_cased: endDate
+    type: types.timestamp
             

@@ -18,30 +18,17 @@ state: all
 properties:
   - id: 0x01
     name: hmkit_version
-    type: custom
-    size: 3
-    pretty_name: HMKit Version
-    title_case_name: HMKitVersion
-    items:
-      - name: version_major
-        type: uinteger
-        size: 1
-        description: HMKit version major number
-      - name: version_minor
-        type: uinteger
-        size: 1
-        description: HMKit version minor number
-      - name: version_patch
-        type: uinteger
-        size: 1
-        description: HMKit version patch number
+    name_cased: hmKitVersion
+    type: types.hmkit_version
+    description: HMKit version
   - id: 0x02
     name: hmkit_build_name
-    type: string
+    name_cased: hmKitBuildName
     pretty_name: HMKit Build Name
-    title_case_name: HMKitBuildName
+    type: string
     description: HMKit version build name bytes formatted in UTF-8
   - id: 0x03
     name: application_version
+    name_cased: applicationVersion
     type: string
     description: Application version bytes formatted in UTF-8

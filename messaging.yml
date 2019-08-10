@@ -19,9 +19,11 @@ state: all
 properties:
   - id: 0x01
     name: text
+    name_cased: text
     type: string
     description: The text bytes of UTF8
   - id: 0x02
     name: handle
+    name_cased: handle
     type: string
     description: The optional handle of message, bytes of UTF8

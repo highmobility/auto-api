@@ -26,49 +26,24 @@ state: [0x01, 0x02, 0x03, 0x04]
 properties:
   - id: 0x01
     name: status
-    type: enum
-    size: 1
-    pretty_name: Wi-Fi Enabled
-    title_case_name: wifiEnabled
-    values:
-      - id: 0x00
-        name: disabled
-        verb: disable
-      - id: 0x01
-        name: enabled
-        verb: enable
+    name_cased: status
+    type: types.enabled_state
   - id: 0x02
     name: network_connected
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: disconnected
-      - id: 0x01
-        name: connected
+    name_cased: networkConnection
+    type: types.connection_state
   - id: 0x03
     name: network_ssid
-    type: string
+    name_cased: networkSSID
     pretty_name: Network SSID
-    title_case_name: networkSSID
+    type: string
     description: The network SSID formatted in UTF-8
   - id: 0x04
     name: network_security
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: none
-      - id: 0x01
-        name: wep
-        pretty_name: WEP
-      - id: 0x02
-        name: wpa
-        pretty_name: WPA/WPA2 Personal
-      - id: 0x03
-        name: wpa2_personal
-        pretty_name: WPA2 Personal
+    name_cased: networkSecurity
+    type: types.network_security
   - id: 0x05
     name: password
+    name_cased: password
     type: string
     description: The network password formatted in UTF-8

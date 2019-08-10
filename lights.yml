@@ -21,9 +21,10 @@ state: all
 properties:
   - id: 0x01
     name: front_exterior_light
+    name_cased: frontExteriorLight
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: inactive
         verb: deactivate
@@ -37,128 +38,36 @@ properties:
         name: dlr
         verb: activate_dlr
         pretty_name: Daylight Running Lamps
-        verb_pretty_name: Activate Daylight Running Lamps
       - id: 0x04
         name: automatic
   - id: 0x02
     name: rear_exterior_light
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: inactive
-        verb: deactivate
-      - id: 0x01
-        name: active
-        verb: activate
+    name_cased: rearExteriorLight
+    type: types.active_state
   - id: 0x04
-    name: ambient_light
-    type: custom
-    size: 3
-    items:
-      - name: rgb_red
-        type: uinteger
-        size: 1
-        description: The red colour of RGB in hex
-      - name: rgb_green
-        type: uinteger
-        size: 1
-        description: The green colour of RGB in hex
-      - name: rgb_blue
-        type: uinteger
-        size: 1
-        description: The blue colour of RGB in hex
+    name: ambient_light_colour
+    name_cased: ambientLightColour
+    type: types.rgb_colour
   - id: 0x05
     name: reverse_light
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: inactive
-      - id: 0x01
-        name: active
+    name_cased: reverseLight
+    type: types.active_state
   - id: 0x06
     name: emergency_brake_light
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: inactive
-      - id: 0x01
-        name: active
+    name_cased: emergencyBrakeLight
+    type: types.active_state
   - id: 0x07
     name: fog_lights
-    type: custom
-    size: 2
+    name_cased: fogLights
+    type: types.light
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front
-          - id: 0x01
-            name: rear
-      - name: state
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: inactive
-            verb: deactivate
-          - id: 0x01
-            name: active
-            verb: activate
   - id: 0x08
     name: reading_lamps
-    type: custom
-    size: 2
+    name_cased: readingLamps
+    type: types.reading_lamp
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-      - name: state
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: inactive
-            verb: deactivate
-          - id: 0x01
-            name: active
-            verb: activate
   - id: 0x09
     name: interior_lights
-    type: custom
-    size: 2
+    name_cased: interiorLights
+    type: types.light
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front
-          - id: 0x01
-            name: rear
-      - name: state
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: inactive
-            verb: deactivate
-          - id: 0x01
-            name: active
-            verb: activate

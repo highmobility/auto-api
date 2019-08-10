@@ -22,18 +22,14 @@ state: all
 properties:
   - id: 0x01
     name: cruise_control
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: inactive
-      - id: 0x01
-        name: active
+    name_cased: cruiseControl
+    type: types.active_state
   - id: 0x02
     name: limiter
+    name_cased: limiter
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: not_set
       - id: 0x01
@@ -44,22 +40,19 @@ properties:
         name: speed_fixed
   - id: 0x03
     name: target_speed
+    name_cased: targetSpeed
     type: integer
     size: 2
     description: The target speed in km/h
   - id: 0x04
-    name: acc
-    type: enum
-    size: 1
+    name: adaptive_cruise_control
+    name_cased: adaptiveCruiseControl
     pretty_name: Adaptive Cruise Control
-    values:
-      - id: 0x00
-        name: inactive
-      - id: 0x01
-        name: active
+    type: types.active_state
   - id: 0x05
     name: acc_target_speed
+    name_cased: accTargetSpeed
+    pretty_name: Adaptive Cruise Control (ACC) target speed
     type: integer
     size: 2
-    pretty_name: Adaptive Cruise Control target speed
     description: The target speed in km/h of the Adaptive Cruise Control

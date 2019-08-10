@@ -17,107 +17,46 @@ state: all
 properties:
   - id: 0x01
     name: drivers_working_states
-    type: custom
-    size: 2
+    name_cased: driversWorkingStates
+    type: types.driver_working_state
     multiple: true
-    items:
-      - name: driver_number
-        type: uinteger
-        size: 1
-        description: The driver number
-      - name: working_state
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: resting
-          - id: 0x01
-            name: driver_available
-          - id: 0x02
-            name: working
-          - id: 0x03
-            name: driving
   - id: 0x02
     name: drivers_time_states
-    type: custom
-    size: 2
+    name_cased: driversTimeStates
+    type: types.driver_time_state
     multiple: true
-    items:
-      - name: driver_number
-        type: uinteger
-        size: 1
-        description: The driver number
-      - name: time_state
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: normal
-          - id: 0x01
-            name: 15_min_before_4
-            pretty_name: '15 minutes before 4½ hours'
-          - id: 0x02
-            name: 4_reached
-            pretty_name: '4½ hours reached'
-          - id: 0x03
-            name: 15_min_before_9
-            pretty_name: '15 minutes before 9 hours'
-          - id: 0x04
-            name: 9_reached
-            pretty_name: '9 hours reached'
-          - id: 0x05
-            name: 15_min_before_16
-            pretty_name: '15 minutes before 16 hours'
-          - id: 0x06
-            name: 16_reached
-            pretty_name: '16 hours reached'
   - id: 0x03
-    name: drivers_cards
-    type: custom
-    size: 2
+    name: drivers_cards_present
+    name_cased: driversCardsPresent
+    type: types.driver_card_present
     multiple: true
-    items:
-      - name: driver_number
-        type: uinteger
-        size: 1
-        description: The driver number
-      - name: card
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: not_present
-          - id: 0x01
-            name: present
   - id: 0x04
     name: vehicle_motion
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: not_detected
-      - id: 0x01
-        name: detected
+    name_cased: vehicleMotion
+    type: types.detected
   - id: 0x05
     name: vehicle_overspeed
+    name_cased: vehicleOverspeed
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: no_overspeed
       - id: 0x01
         name: overspeed
   - id: 0x06
     name: vehicle_direction
+    name_cased: vehicleDirection
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: forward
       - id: 0x01
         name: reverse
   - id: 0x07
     name: vehicle_speed
+    name_cased: vehicleSpeed
     type: integer
     size: 2
     description: The tachograph vehicle speed in km/h

@@ -18,15 +18,17 @@ state: all
 properties:
   - id: 0x01
     name: vin
+    name_cased: vin
+    pretty_name: VIN
     type: string
     size: 17
-    pretty_name: VIN
     description: The unique Vehicle Identification Number
   - id: 0x02
     name: powertrain
+    name_cased: powertrain
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: unknown
       - id: 0x01
@@ -42,59 +44,72 @@ properties:
         name: hydrogen_hybrid
   - id: 0x03
     name: model_name
+    name_cased: modelName
     type: string
     description: The car model name bytes formatted in UTF-8
   - id: 0x04
     name: name
+    name_cased: name
     type: string
     description: The car name (nickname) bytes formatted in UTF-8
   - id: 0x05
     name: license_plate
+    name_cased: licensePlate
     type: string
     description: The license plate bytes formatted in UTF-8
   - id: 0x06
     name: sales_designation
+    name_cased: salesDesignation
     type: string
     description: The sales designation of the model formatted in UTF-8
   - id: 0x07
     name: model_year
+    name_cased: modelYear
     type: uinteger
     size: 2
     description: The car model manufacturing year number
   - id: 0x08
-    name: color_name
+    name: colour_name
+    name_cased: colourName
     type: string
-    description: The color name formatted in UTF-8
+    description: The colour name formatted in UTF-8
   - id: 0x09
     name: power_in_kw
+    name_cased: powerInKW
+    pretty_name: Power in kW
     type: uinteger
     size: 2
     description: The power of the car measured in kw
   - id: 0x0a
     name: number_of_doors
+    name_cased: numberOfDoors
     type: uinteger
     size: 1
     description: The number of doors
   - id: 0x0b
     name: number_of_seats
+    name_cased: numberOfSeats
     type: uinteger
     size: 1
     description: The number of seats
   - id: 0x0c
     name: engine_volume
+    name_cased: engineVolume
     type: float
     size: 4
     description: The engine volume displacement in liters per IEEE 754 formatting
   - id: 0x0d
     name: engine_max_torque
+    name_cased: engineMaxTorque
     type: uinteger
     size: 2
     description: The maximum engine torque in Nm
   - id: 0x0e
     name: gearbox
+    name_cased: gearbox
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: manual
       - id: 0x01
@@ -103,18 +118,20 @@ properties:
         name: semi_automatic
   - id: 0x0f
     name: display_unit
+    name_cased: displayUnit
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: km
       - id: 0x01
         name: miles
   - id: 0x10
     name: driver_seat_location
+    name_cased: driverSeatLocation
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: left
       - id: 0x01
@@ -123,14 +140,17 @@ properties:
         name: center
   - id: 0x11
     name: equipments
+    name_cased: equipments
     type: string
     multiple: true
-    description: Equipment that the vehicle is equipped with
+    description: Names of equipment the vehicle is equipped with
   - id: 0x12
     name: brand
+    name_cased: brand
     type: string
     description: The car brand bytes formatted in UTF-8
   - id: 0x99
     name: states
-    type: capability_state
+    name_cased: states
+    type: types.capability_state
     multiple: true

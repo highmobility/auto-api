@@ -27,9 +27,10 @@ state: all
 properties:
   - id: 0x01
     name: wipers
+    name_cased: wipers
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: inactive
         verb: deactivate
@@ -40,9 +41,10 @@ properties:
         name: automatic
   - id: 0x02
     name: wipers_intensity
+    name_cased: wipersIntensity
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: level_0
         pretty_name: Level 0, inactive
@@ -54,9 +56,10 @@ properties:
         name: level_3
   - id: 0x03
     name: windscreen_damage
+    name_cased: windscreenDamage
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: no_impact_detected
       - id: 0x01
@@ -67,35 +70,20 @@ properties:
         name: damage_larger_than_1_inch
   - id: 0x04
     name: windscreen_zone_matrix
-    type: custom
-    size: 2
-    items:
-      - name: horisontal_size
-        type: uinteger
-        size: 1
-        description: Representing the horizontal size of the matrix seen from the inside of the car, starting from index 1
-      - name: vertical_axis
-        type: uinteger
-        size: 1
-        description: Representing the vertical size of the matrix, starting from index 1
+    name_cased: windscreenZoneMatrix
+    type: types.zone
+    description: Representing the size of the matrix, seen from the inside of the vehicle
   - id: 0x05
     name: windscreen_damage_zone
-    type: custom
-    size: 2
-    items:
-      - name: horisontal_size
-        type: uinteger
-        size: 1
-        description: Representing the horizontal position of the zone in a matrix seen from the inside of the car, starting from index 1
-      - name: vertical_axis
-        type: uinteger
-        size: 1
-        description: Representing the vertical position of the zone, starting from index 1
+    name_cased: windscreenDamageZone
+    type: types.zone
+    description: Representing the position in the zone, seen from the inside of the vehicle (1-based index)
   - id: 0x06
     name: windscreen_needs_replacement
+    name_cased: windscreenNeedsReplacement
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: unknown
       - id: 0x01
@@ -104,11 +92,10 @@ properties:
         name: replacement_needed
   - id: 0x07
     name: windscreen_damage_confidence
-    type: double
-    size: 8
-    description: Percentage between 0.0-1.0, confidence of damage detection. Zero if no impact detected.
+    name_cased: windscreenDamageConfidence
+    type: types.percentage
+    description: Confidence of damage detection, 0% if no impact detected
   - id: 0x08
     name: windscreen_damage_detection_time
-    type: timestamp
-    size: 8
-    description: Milliseconds since UNIX Epoch time
+    name_cased: windscreenDamageDetectionTime
+    type: types.timestamp

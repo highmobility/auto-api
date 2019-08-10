@@ -21,12 +21,5 @@ state: all
 properties:
   - id: 0x01
     name: status
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: inactive
-        verb: deacticate
-      - id: 0x01
-        name: active
-        verb: activate
+    name_cased: status
+    type: types.active_state

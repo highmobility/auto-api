@@ -22,19 +22,19 @@ state: all
 properties:
   - id: 0x01
     name: dimming
-    type: double
-    size: 8
-    description: Percentage value between 0.0-1.0 whereas 1.0 is opaque
+    name_cased: dimming
+    type: types.percentage
+    description: 100% is opaque, 0% is transparent
   - id: 0x02
     name: position
-    type: double
-    size: 8
-    description: Percentage value between 0.0-1.0 whereas 1.0 is fully open
+    type: types.percentage
+    description: 100% is fully open, 0% is closed
   - id: 0x03
     name: convertible_roof_state
+    name_cased: convertibleRoofState
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: closed
         verb: close
@@ -63,9 +63,10 @@ properties:
         disabled_in_setter: true
   - id: 0x04
     name: sunroof_tilt_state
+    name_cased: sunroofTiltState
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: closed
         verb: close
@@ -75,9 +76,10 @@ properties:
         name: half_tilted
   - id: 0x05
     name: sunroof_state
+    name_cased: sunroofState
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: closed
         verb: close

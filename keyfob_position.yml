@@ -18,9 +18,10 @@ state: all
 properties:
   - id: 0x01
     name: location
+    name_cased: location
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: out_of_range
       - id: 0x01

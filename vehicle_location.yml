@@ -18,24 +18,17 @@ state: all
 properties:
   - id: 0x04
     name: coordinates
-    type: custom
-    size: 16
-    items:
-      - name: latitude
-        type: double
-        size: 8
-        description: Latitude in 8-bytes per IEEE 754
-      - name: longitude
-        type: double
-        size: 8
-        description: Longitude in 8-bytes per IEEE 754
+    name_cased: coordinates
+    type: types.coordinates
   - id: 0x05
     name: heading
+    name_cased: heading
     type: double
     size: 8
     description: Heading in 8-bytes per IEEE 754
   - id: 0x06
     name: altitude
+    name_cased: altitude
     type: double
     size: 8
     description: Altitude in meters above the WGS 84 reference ellipsoid per double precision IEEE 754 formatting

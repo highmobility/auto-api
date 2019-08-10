@@ -28,26 +28,14 @@ state: all
 properties:
   - id: 0x01
     name: driving_mode
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: regular
-      - id: 0x01
-        name: eco
-      - id: 0x02
-        name: sport
-      - id: 0x03
-        name: sport_plus
-      - id: 0x04
-        name: ecoPlus
-      - id: 0x05
-        name: comfort
+    name_cased: drivingMode
+    type: types.driving_mode
   - id: 0x02
     name: sport_chrono
+    name_cased: sportChrono
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: inactive
         verb: stop
@@ -58,70 +46,37 @@ properties:
         name: reset
   - id: 0x05
     name: current_spring_rates
-    type: custom
-    size: 2
+    name_cased: currentSpringRates
+    type: types.spring_rate
     multiple: true
-    items:
-      - name: axle
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_axle
-          - id: 0x01
-            name: rear_axle
-      - name: value
-        type: uinteger
-        size: 1
-        description: The suspension spring rate in N/mm
+    description: The current values for the spring rates
   - id: 0x06
     name: maximum_spring_rates
-    type: custom
-    size: 2
+    name_cased: maximumSpringRates
+    type: types.spring_rate
     multiple: true
-    items:
-      - name: axle
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_axle
-          - id: 0x01
-            name: rear_axle
-      - name: value
-        type: uinteger
-        size: 1
-        description: The maximum possible value for the spring rate
+    description: The maximum possible values for the spring rates
   - id: 0x07
     name: minimum_spring_rates
-    type: custom
-    size: 2
+    name_cased: minimumSpringRate
+    type: types.spring_rate
     multiple: true
-    items:
-      - name: axle
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_axle
-          - id: 0x01
-            name: rear_axle
-      - name: value
-        type: uinteger
-        size: 1
-        description: The minimum possible value for the spring rate
+    description: The minimum possible values for the spring rates
   - id: 0x08
     name: current_chassis_position
+    name_cased: currentChassisPosition
     type: integer
     size: 1
     description: The chassis position in mm calculated from the lowest point
   - id: 0x09
     name: maximum_chassis_position
+    name_cased: maximumChassisPosition
     type: integer
     size: 1
     descrition: The maximum possible value for the chassis position
-  - id: 0x0A
+  - id: 0x0a
     name: minimum_chassis_position
+    name_cased: minimumChassisPosition
     type: integer
     size: 1
     description: The minimum possible value for the chassis position

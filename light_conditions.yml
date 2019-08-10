@@ -18,6 +18,7 @@ state: all
 properties:
   - id: 0x01
     name: outside_light
+    name_cased: outsideLight
     type: float
     size: 4
     description: Measured outside illuminance in lux, formatted as IEEE 754 decimal

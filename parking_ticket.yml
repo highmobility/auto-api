@@ -30,9 +30,10 @@ state: all
 properties:
   - id: 0x01
     name: status
+    name_cased: status
     type: enum
     size: 1
-    values:
+    enum_values:
       - id: 0x00
         name: ended
         verb: end
@@ -41,21 +42,20 @@ properties:
         verb: start
   - id: 0x02
     name: operator_name
+    name_cased: operatorName
     type: string
     description: Operator Name bytes formatted in UTF-8
   - id: 0x03
     name: operator_ticket_id
-    type: string
+    name_cased: operatorTicketID
     pretty_name: Operator Ticket ID
-    title_case_name: operatorTicketID
+    type: string
     description: Operator Ticket ID bytes formatted in UTF-8
   - id: 0x04
     name: ticket_start_time
-    type: timestamp
-    size: 8
-    description: Milliseconds since UNIX Epoch time
+    name_cased: ticketStartTime
+    type: types.timestamp
   - id: 0x05
     name: ticket_end_time
-    type: timestamp
-    size: 8
-    description: Milliseconds since UNIX Epoch time
+    name_cased: ticketEndTime
+    type: types.timestamp

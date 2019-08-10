@@ -21,22 +21,9 @@ state: all
 properties:
   - id: 0x01
     name: lock
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: unlocked
-        verb: unlock
-      - id: 0x01
-        name: locked
-        verb: lock
+    name_cased: lock
+    type: types.lock_state
   - id: 0x02
     name: position
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: closed
-        verb: close
-      - id: 0x01
-        name: open
+    name_cased: position
+    type: types.position

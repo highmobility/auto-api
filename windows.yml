@@ -22,56 +22,11 @@ state: all
 properties:
   - id: 0x02
     name: open_percentages
-    type: custom
-    size: 9
+    name_cased: openPercentages
+    type: types.window_open_percentage
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-          - id: 0x04
-            name: hatch
-      - name: open_percentage
-        type: double
-        size: 8
-        description: Value between 0.0 and 1.0
   - id: 0x03
     name: positions
-    type: custom
-    size: 2
+    name_cased: positions
+    type: types.window_position
     multiple: true
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-          - id: 0x04
-            name: hatch
-      - name: position
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: closed
-          - id: 0x01
-            name: open
-          - id: 0x02
-            name: intermediate
-            disabled_in_setter: true
