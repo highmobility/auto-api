@@ -216,7 +216,7 @@ Additional keys for `enum` types:
 * `enum_values: []` *every* enum type has an array of **cases** with the following keys:
     * `id: integer` case value in hex
     * `name: string` case name in *snake_case*
-    * *cases* can additionally have the following keys:  
+    * can additionally have the following keys:  
         * `pretty_name: string` case name capitalised and with whitespaces, i.e. *Plug-in Hybrid EV*
         * `verb: string` case name when used in an action (not that imporant), i.e. to *lock* a vehicle or *deactivate* smth
         * `disabled_in_setter: bool` defines what values are disallowed to use in a *setter* (the *lib* should check the input when combining the bytes for a command)
@@ -280,8 +280,9 @@ properties:
         disabled_in_setter: true
 ```
 
+
 **Custom** types are either commonly used types or ones with multiple pieces of information ordered in a specific byte sequence.  
-Custom types are all defined as `type: custom` and are *singular*.
+Commonly used types are some `enum`-s and i.e. `timestamp`. Custom types are usually defined as `type: custom` and are *singular*.
 
 Additional keys for `custom` types:  
 
