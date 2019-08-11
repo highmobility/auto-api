@@ -345,17 +345,6 @@ Examples:
         description: The currency alphabetic code per ISO 4217 or crypto currency symbol
 ```
 
-<!--
-*New* keys for `enum` types:
-
-* `disabled_in_setter: bool` defines what values are disallowed to use in a *setters* (that uses that property)
-* `verb: string` used to express an action in a *setters* or used as another name (i.e. *active - activate*, *triggered - trigger* )
-* `verb_pretty_name: string` defines the "pretty" name of the *verb*
-
-*New* keys for `string` types:
-
-* `size_length: integer` number of prefix bytes denoting the size of the string (**only** used when inside a `custom` type)
--->
 
 ## miscellaneous
 
