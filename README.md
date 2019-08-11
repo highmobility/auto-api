@@ -148,16 +148,204 @@ state: [0x01, 0x02]
 ## properties
 
 **Required** for every capability.  
-Follows the same syntax as before, with some additional options for *enums*:  
+Properties are used to transmit pieces of information.  
 
-* `id: integer` identifier, required (if a *property* or an *enum value*)
-* `name: string` name of the property / type, required
-* `type: string` type of the property / item, required
-* `size: integer` size of the item, required (if the type isn't *string* or it doesn't have *dynamic* values)
-* `[flags]` define additional options for the property (i.e. `multiple: true`), optional
-* `[texts]` means other *text* related things (i.e. `pretty_name: string`, `description: string`), optional
-* `values/items` array of values / items that define the data structure in the property (same as previous versions), required
+Each property can be either a **base** type or a **custom** type.  
+*Base* types are defined in the *types section* below.  
+*Custom* types are referenced from `custom_types.yml` in *capability* files with the syntax: `type: types.[name_of_custom_type]`  
 
+Keys available for *all* properties:
+
+* `id: integer` property identifier in hex
+* `name: string` name of the property in *snake_case*
+* `name_cased: string` name of the property in *camelCase*
+* `type: string` type of the property
+
+Other conditional keys:
+
+* `size: integer` size of the property's *data component*
+    * *only* present for *simple properties* (base-type) *and*
+    * *only* present when the size is known in advance, i.e. *not* for a `string` or an array of bytes (`uinteger` without `size`)
+* `multiple: bool` if the property can occure multiple times in a command-state
+    * defaults to `false`
+* `pretty_name: string` name of the property in a capitalised and whitespaced way, i.e. *Charging Power kW*
+* `description: string` an explanation of the property (what it does, means or represents)
+* `enum_values: []` a property can also be an `enum` – enums are explained in the *types section*
+
+All single-`string` & `uinteger`-bytes properties derive their bytes count from the size of the property's *data component size*.
+
+Examples:  
+
+```yaml
+properties:
+  - id: 0x03
+    name: model_name
+    name_cased: modelName
+    type: string
+    description: The car model name bytes formatted in UTF-8
+  - id: 0x07
+    name: charger_voltage_dc
+    name_cased: chargerVoltageDC
+    pretty_name: Charger voltage (DC)
+    type: float
+    size: 4
+    description: Charger voltage in 4-bytes per IEEE 754
+  - id: 0x0b
+    name: charge_port_state
+    name_cased: chargePortState
+    type: types.position
+  - id: 0x11
+    name: departure_times
+    name_cased: departureTimes
+    type: types.departure_time
+    multiple: true
+```
+
+
+## types
+
+Types follow the same pattern as *properties* - they all have the same *3 keys* as every property (except the `id`).  
+
+**Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double` and `string`.  
+
+Among these simple types, the `enum` is different to others.  
+All enum types are actually a *1-byte size uinteger* values that **can** be used inside *single-type* properties too.  
+
+Additional keys for `enum` types:  
+
+* `enum_values: []` *every* enum type has an array of **cases** with the following keys:
+    * `id: integer` case value in hex
+    * `name: string` case name in *snake_case*
+    * *cases* can additionally have the following keys:  
+        * `pretty_name: string` case name capitalised and with whitespaces, i.e. *Plug-in Hybrid EV*
+        * `verb: string` case name when used in an action (not that imporant), i.e. to *lock* a vehicle or *deactivate* smth
+        * `disabled_in_setter: bool` defines what values are disallowed to use in a *setter* (the *lib* should check the input when combining the bytes for a command)
+
+Examples:  
+
+```yaml
+  - name: active_state
+    name_cased: activeState
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: inactive
+        verb: deactivate
+      - id: 0x01
+        name: active
+        verb: activate
+
+  - name: network_security
+    name_cased: networkSecurity
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: none
+      - id: 0x01
+        name: wep
+        pretty_name: WEP
+      - id: 0x02
+        name: wpa
+        pretty_name: WPA/WPA2 Personal
+      - id: 0x03
+        name: wpa2_personal
+        pretty_name: WPA2 Personal
+        
+properties:
+  - id: 0x17
+    name: charging_state
+    name_cased: chargingState
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: not_charging
+        verb: stop_charging
+      - id: 0x01
+        name: charging
+        verb: start_charging
+      - id: 0x02
+        name: charging_complete
+        disabled_in_setter: true
+      - id: 0x03
+        name: initialising
+        disabled_in_setter: true
+      - id: 0x04
+        name: charging_paused
+        disabled_in_setter: true
+      - id: 0x05
+        name: charging_error
+        disabled_in_setter: true
+```
+
+**Custom** types are either commonly used types or ones with multiple pieces of information ordered in a specific byte sequence.  
+Custom types are all defined as `type: custom` and are *singular*.
+
+Additional keys for `custom` types:  
+
+* `items: []` *every* custom type has an ordered array of *items* that make up the type
+    * consist of *base* or other *custom* types in byte order
+    * `string` has an *implied* **2 byte size prefix** when inside a *custom* type
+
+Examples:  
+
+```yaml
+  - name: action_item
+    name_cased: actionItem
+    type: custom
+    items:
+      - name: id
+        name_cased: id
+        pretty_name: ID
+        type: uinteger
+        size: 1
+      - name: name
+        name_cased: name
+        type: string
+        description: Name of the action, bytes in UTF8
+        
+  - name: brake_torque_vectoring
+    name_cased: brakeTorqueVectoring
+    type: custom
+    size: 2
+    items:
+      - name: axle
+        name_cased: axle
+        type: types.axle
+      - name: state
+        name_cased: state
+        type: types.active_state
+        
+  - name: price_tariff
+    name_cased: priceTariff
+    type: custom
+    items:
+      - name: pricing_type
+        name_cased: pricingType
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: starting_fee
+          - id: 0x01
+            name: per_minute
+          - id: 0x02
+            name: per_kwh
+            pretty_name: Per kWh
+      - name: price
+        name_cased: price
+        type: float
+        size: 4
+        description: The price in 4-bytes per IEEE 754
+      - name: currency
+        name_cased: currency
+        type: string
+        description: The currency alphabetic code per ISO 4217 or crypto currency symbol
+```
+
+<!--
 *New* keys for `enum` types:
 
 * `disabled_in_setter: bool` defines what values are disallowed to use in a *setters* (that uses that property)
@@ -167,75 +355,11 @@ Follows the same syntax as before, with some additional options for *enums*:
 *New* keys for `string` types:
 
 * `size_length: integer` number of prefix bytes denoting the size of the string (**only** used when inside a `custom` type)
-
-Examples:  
-
-```yaml
-properties:
-  - id: 0x02
-    name: action_items
-    type: custom
-    multiple: true
-    items:
-      - name: identifier
-        type: uinteger
-        size: 1
-      - name: name
-        type: string
-        size_length: 2
-        description: Name of the action, bytes in UTF8.
-  - id: 0x03
-    name: convertible_roof_state
-    type: enum
-    size: 1
-    values:
-      - id: 0x00
-        name: closed
-        verb: close
-      - id: 0x01
-        name: open
-      - id: 0x02
-        name: emergency_locked
-        disabled_in_setter: true
-      - id: 0x03
-        name: closed_secured
-        disabled_in_setter: true
-  - id: 0x1c
-    name: wheel_rpms
-    type: custom
-    size: 3
-    multiple: true
-    pretty_name: Wheel RPMs
-    items:
-      - name: location
-        type: enum
-        size: 1
-        values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-      - name: rpm
-        type: uinteger
-        size: 2
-        pretty_name: RPM
-        description: The RPM measured at this wheel
-```
-
+-->
 
 ## miscellaneous
 
-New *types* for properties.  
-
-* `timestamp` is used in all our *timestamp* / *date* related properties / types (used to be `integer: 8`)
-* `custom` used when the property contains `items` (meaning it's a custom structure defined by us)
-* `uinteger` represents an *unsigned integer* (for those languages that have it; used to be `integer`)
-
-In addition, the *identifiers* and *API version* has been moved to new locations (structures).  
+The *identifiers* and *API version* has been moved to new locations (structures).  
 *Identifiers* are now defined like this:  
 
 ```yaml

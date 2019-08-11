@@ -37,7 +37,7 @@ properties:
         name: combustion_engine
       - id: 0x03
         name: phev
-        pretty_name: Plug-in Hybrid (PHEV)
+        pretty_name: Plug-in Hybrid EV
       - id: 0x04
         name: hydrogen
       - id: 0x05

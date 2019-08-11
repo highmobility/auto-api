@@ -26,6 +26,7 @@ properties:
   - id: 0x02
     name: capability_id
     name_cased: capabilityID
+    pretty_name: Capability ID
     type: uinteger
     size: 2
     description: The identifier of the Capability
