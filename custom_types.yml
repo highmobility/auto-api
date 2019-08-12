@@ -652,7 +652,7 @@ types:
       - name: period
         type: double
         size: 8
-        description: % of the period used for a driving mode
+        description: Percentage of the period used for a driving mode
     # MARK: Driving Mode Energy Consumption
   - name: driving_mode_energy_consumption
     name_cased: drivingModeEnergyConsumption
