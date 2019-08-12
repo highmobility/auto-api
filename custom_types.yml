@@ -650,6 +650,7 @@ types:
         name_cased: drivingMode
         type: types.driving_mode
       - name: period
+        name_cased: period
         type: double
         size: 8
         description: Percentage of the period used for a driving mode
