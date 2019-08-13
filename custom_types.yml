@@ -238,7 +238,7 @@ types:
         size: 1
         description: Value between 0 and 23
       - name: minute
-    name_cased: minute
+        name_cased: minute
         type: uinteger
         size: 1
         description: Value between 0 and 59
