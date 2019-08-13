@@ -233,7 +233,7 @@ types:
     size: 2
     items:
       - name: hour
-    name_cased: hour
+        name_cased: hour
         type: uinteger
         size: 1
         description: Value between 0 and 23
