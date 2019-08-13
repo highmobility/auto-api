@@ -41,6 +41,7 @@ types:
   - name: coordinates
     name_cased: coordinates
     type: custom
+    size: 16
     items:
       - name: latitude
         name_cased: latitude
@@ -102,24 +103,6 @@ types:
         name: low
       - id: 0x01
         name: filled
-    # MARK: Hour
-  - name: hour
-    name_cased: hour
-    type: uinteger
-    size: 1
-    description: Value between 0 and 23
-    # MARK: Lock State
-  - name: lock_state
-    name_cased: lockState
-    type: enum
-    size: 1
-    enum_values:
-      - id: 0x00
-        name: unlocked
-        verb: unlock
-      - id: 0x01
-        name: locked
-        verb: lock
     # MARK: Location
   - name: location
     name_cased: location
@@ -144,12 +127,18 @@ types:
         name: front
       - id: 0x01
         name: rear
-    # MARK: Minute
-  - name: minute
-    name_cased: minute
-    type: uinteger
+    # MARK: Lock State
+  - name: lock_state
+    name_cased: lockState
+    type: enum
     size: 1
-    description: Value between 0 and 59
+    enum_values:
+      - id: 0x00
+        name: unlocked
+        verb: unlock
+      - id: 0x01
+        name: locked
+        verb: lock
     # MARK: Network Security
   - name: network_security
     name_cased: networkSecurity
@@ -237,6 +226,22 @@ types:
         pretty_name: Supported property IDs
         type: uinteger
         description: Array of supported property identifiers
+    # MARK: Time
+  - name: time
+    name_cased: time
+    type: custom
+    size: 2
+    items:
+      - name: hour
+    name_cased: hour
+        type: uinteger
+        size: 1
+        description: Value between 0 and 23
+      - name: minute
+    name_cased: minute
+        type: uinteger
+        size: 1
+        description: Value between 0 and 59
     # MARK: Timestamp
   - name: timestamp
     name_cased: timestamp
@@ -862,18 +867,6 @@ types:
         type: uinteger
         size: 1
         description: The suspension spring rate in N/mm
-    # MARK: Time
-  - name: time
-    name_cased: time
-    type: custom
-    size: 2
-    items:
-      - name: hour
-        name_cased: hour
-        type: types.hour
-      - name: minute
-        name_cased: minute
-        type: types.minute
     # MARK: Timer
   - name: timer
     name_cased: timer
