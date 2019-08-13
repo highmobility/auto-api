@@ -1,4 +1,5 @@
 name: chassis_settings
+name_cased: chassisSettings
 category: chassis
 
 identifier:

@@ -1,4 +1,5 @@
 name: messaging
+name_cased: messaging
 category: headunit
 
 identifier:

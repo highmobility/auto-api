@@ -1,5 +1,6 @@
 name: mobile
-pretty_state_name: Mobile
+name_cased: mobile
+pretty_name: Mobile
 category: headunit
 
 identifier:

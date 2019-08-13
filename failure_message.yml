@@ -1,4 +1,5 @@
 name: failure_message
+name_cased: failureMessage
 category: api_structure
 
 identifier:

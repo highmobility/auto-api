@@ -1,4 +1,5 @@
 name: heart_rate
+name_cased: heartRate
 category: health
 
 identifier:

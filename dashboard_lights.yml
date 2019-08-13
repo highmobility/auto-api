@@ -1,4 +1,5 @@
 name: dashboard_lights
+name_cased: dashboardLights
 category: diagnostics
 
 identifier:

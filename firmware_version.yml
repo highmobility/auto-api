@@ -1,4 +1,5 @@
 name: firmware_version
+name_cased: firmwareVersion
 category: api_structure
 
 identifier:

@@ -1,4 +1,5 @@
 name: wake_up
+name_cased: wakeUp
 category: digital_key
 
 identifier:

@@ -1,4 +1,5 @@
 name: video_handover
+name_cased: videoHandover
 category: headunit
 
 identifier:

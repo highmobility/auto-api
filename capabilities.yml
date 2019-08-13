@@ -1,4 +1,5 @@
 name: capabilities
+name_cased: capabilities
 category: api_structure
 
 identifier:

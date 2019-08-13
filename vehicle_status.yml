@@ -1,4 +1,5 @@
 name: vehicle_status
+name_cased: vehicleStatus
 category: api_structure
 
 identifier:

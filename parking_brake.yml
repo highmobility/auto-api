@@ -1,4 +1,5 @@
 name: parking_brake
+name_cased: parkingBrake
 category: parking
 
 identifier:

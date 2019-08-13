@@ -1,4 +1,5 @@
 name: keyfob_position
+name_cased: keyfobPosition
 category: chassis
 
 identifier:

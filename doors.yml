@@ -1,4 +1,5 @@
 name: doors
+name_cased: doors
 category: digital_key
 
 identifier:

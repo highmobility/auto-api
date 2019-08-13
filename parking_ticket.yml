@@ -1,4 +1,5 @@
 name: parking_ticket
+name_cased: parkingTicket
 category: parking
 
 identifier:

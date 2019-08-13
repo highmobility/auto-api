@@ -1,4 +1,5 @@
 name: usage
+name_cased: usage
 category: diagnostics
 
 identifier:

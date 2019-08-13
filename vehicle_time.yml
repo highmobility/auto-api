@@ -1,4 +1,5 @@
 name: vehicle_time
+name_cased: vehicleTime
 category: poi
 
 identifier:

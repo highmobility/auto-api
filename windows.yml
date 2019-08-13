@@ -1,4 +1,5 @@
 name: windows
+name_cased: windows
 category: chassis
 
 identifier:

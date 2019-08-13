@@ -1,4 +1,5 @@
 name: diagnostics
+name_cased: diagnostics
 category: diagnostics
 
 identifier:

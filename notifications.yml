@@ -1,4 +1,5 @@
 name: notifications
+name_cased: notifications
 category: headunit
 
 identifier:

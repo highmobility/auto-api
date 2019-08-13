@@ -1,4 +1,5 @@
 name: offroad
+name_cased: offroad
 category: diagnostics
 
 identifier:

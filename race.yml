@@ -1,4 +1,5 @@
 name: race
+name_cased: race
 category: diagnostics
 
 identifier:

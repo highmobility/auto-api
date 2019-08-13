@@ -1,4 +1,5 @@
 name: rooftop_control
+name_cased: rooftopControl
 category: chassis
 
 identifier:

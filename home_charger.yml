@@ -1,4 +1,5 @@
 name: home_charger
+name_cased: homeCharger
 category: infrastructure
 
 identifier:

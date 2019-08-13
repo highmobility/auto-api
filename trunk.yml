@@ -1,4 +1,5 @@
 name: trunk
+name_cased: trunk
 category: digital_key
 
 identifier:

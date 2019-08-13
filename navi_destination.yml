@@ -1,4 +1,5 @@
 name: navi_destination
+name_cased: naviDestination
 category: poi
 
 identifier:

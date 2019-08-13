@@ -656,8 +656,7 @@ types:
         type: types.driving_mode
       - name: period
         name_cased: period
-        type: double
-        size: 8
+        type: types.percentage
         description: Percentage of the period used for a driving mode
     # MARK: Driving Mode Energy Consumption
   - name: driving_mode_energy_consumption
@@ -680,18 +679,18 @@ types:
     type: custom
     size: 3
     items:
-      - name: version_major
-        name_cased: versionMajor
+      - name: major
+        name_cased: major
         type: uinteger
         size: 1
         description: HMKit version major number
-      - name: version_minor
-        name_cased: versionMinor
+      - name: minor
+        name_cased: minor
         type: uinteger
         size: 1
         description: HMKit version minor number
-      - name: version_patch
-        name_cased: versionPatch
+      - name: patch
+        name_cased: patch
         type: uinteger
         size: 1
         description: HMKit version patch number
@@ -816,7 +815,7 @@ types:
         type: types.time
     # MARK: RGB Colour
   - name: rgb_colour
-    name_cased: rgbColour
+    name_cased: RGBColour
     type: custom
     size: 3
     items:

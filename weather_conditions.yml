@@ -1,4 +1,5 @@
 name: weather_conditions
+name_cased: weatherConditions
 category: environment
 
 identifier:

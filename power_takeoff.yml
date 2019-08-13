@@ -1,5 +1,6 @@
 name: power_takeoff
-pretty_state_name: Power Take-Off
+name_cased: powerTakeoff
+pretty_name: Power Take-Off
 category: heavy_duty
 
 identifier:

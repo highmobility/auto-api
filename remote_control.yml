@@ -1,4 +1,5 @@
 name: remote_control
+name_cased: remoteControl
 category: parking
 
 identifier:

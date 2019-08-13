@@ -1,4 +1,6 @@
 name: wi_fi
+name_cased: wiFi
+pretty_name: Wi-Fi
 category: headunit
 
 identifier:

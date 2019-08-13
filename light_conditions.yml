@@ -1,4 +1,5 @@
 name: light_conditions
+name_cased: lightConditions
 category: environment
 
 identifier:

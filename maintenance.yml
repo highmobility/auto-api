@@ -1,4 +1,5 @@
 name: maintenance
+name_cased: maintenance
 category: diagnostics
 
 identifier:

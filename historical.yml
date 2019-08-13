@@ -1,5 +1,6 @@
 name: historical
-pretty_state_name: Historical States
+name_cased: historical
+pretty_name: Historical States
 category: api_structure
 
 identifier:
@@ -39,3 +40,5 @@ properties:
     name_cased: endDate
     type: types.timestamp
             
+
+

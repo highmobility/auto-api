@@ -1,5 +1,6 @@
 name: start_stop
-pretty_state_name: Start-Stop
+name_cased: startStop
+pretty_name: Start-Stop
 category: digital_key
 
 identifier:
