@@ -10,6 +10,8 @@ api:
   intro: 7
   update: 11
 
+disabled_in: [web]
+
 getters:
   default: {}
 

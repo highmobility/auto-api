@@ -365,3 +365,9 @@ api:
     intro: 3
     update: 11
 ```
+
+In addition, a new `disabled_in` structure for when a capability *isn't to be used* over some communication mediums:
+
+```yaml
+disabled_in: [ble, web]
+```

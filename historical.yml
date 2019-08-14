@@ -11,6 +11,8 @@ api:
   intro: 8
   update: 11
 
+disabled_in: [ble]
+
 setters:
   - name: request_states
     mandatory: [0x02]

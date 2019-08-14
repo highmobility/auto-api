@@ -157,8 +157,9 @@ types:
         name: wpa2_personal
         pretty_name: WPA2 Personal
     # MARK: On-Off State
-  - name: on_off_state
-    name_cased: onOffState
+  - name: on_off
+    name_cased: onOff
+    pretty_name: On-Off
     type: enum
     size: 1
     enum_values:
@@ -292,13 +293,13 @@ types:
         size: 1
         enum_values:
           - id: 0x00
-            name: longitudinal_acceleration
+            name: longitudinal
           - id: 0x01
-            name: lateral_acceleration
+            name: lateral
           - id: 0x02
-            name: front_lateral_acceleration
+            name: front_lateral
           - id: 0x03
-            name: rear_lateral_acceleration
+            name: rear_lateral
       - name: g_force
         name_cased: gForce
         pretty_name: G-force
