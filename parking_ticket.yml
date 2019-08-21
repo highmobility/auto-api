@@ -55,8 +55,12 @@ properties:
   - id: 0x04
     name: ticket_start_time
     name_cased: ticketStartTime
-    type: types.timestamp
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
   - id: 0x05
     name: ticket_end_time
     name_cased: ticketEndTime
-    type: types.timestamp
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time

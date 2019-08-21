@@ -99,4 +99,6 @@ properties:
   - id: 0x08
     name: windscreen_damage_detection_time
     name_cased: windscreenDamageDetectionTime
-    type: types.timestamp
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time

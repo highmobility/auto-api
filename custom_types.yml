@@ -243,12 +243,6 @@ types:
         type: uinteger
         size: 1
         description: Value between 0 and 59
-    # MARK: Timestamp
-  - name: timestamp
-    name_cased: timestamp
-    type: uinteger
-    size: 8
-    description: Milliseconds since UNIX Epoch time
     # MARK: Window Location
   - name: window_location
     name_cased: windowLocation
@@ -886,7 +880,9 @@ types:
             name: departure_date
       - name: date
         name_cased: date
-        type: types.timestamp
+        type: timestamp
+        size: 8
+        description: Milliseconds since UNIX Epoch time
     # MARK: Tire Pressure
   - name: tire_pressure
     name_cased: tirePressure

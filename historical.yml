@@ -36,11 +36,12 @@ properties:
   - id: 0x03
     name: start_date
     name_cased: startDate
-    type: types.timestamp
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
   - id: 0x04
     name: end_date
     name_cased: endDate
-    type: types.timestamp
-            
-
-
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time

@@ -14,7 +14,7 @@ getters:
   default: {}
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: days_to_next_service
@@ -69,15 +69,21 @@ properties:
   - id: 0x08
     name: automatic_teleservice_call_date
     name_cased: automaticTeleserviceCallDate
-    type: types.timestamp
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
   - id: 0x09
     name: teleservice_battery_call_date
     name_cased: teleserviceBatteryCallDate
-    type: types.timestamp
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
   - id: 0x0A
     name: next_inspection_date
     name_cased: nextInspectionDate
-    type: types.timestamp
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
   - id: 0x0B
     name: condition_based_services
     name_cased: conditionBasedServices
@@ -86,4 +92,6 @@ properties:
   - id: 0x0C
     name: brake_fluid_change_date
     name_cased: brakeFluidChangeDate
-    type: types.timestamp
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
