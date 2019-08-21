@@ -206,7 +206,11 @@ properties:
 
 Types follow the same pattern as *properties* - they all have the same *3 keys* as every property (except the `id`).  
 
-**Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double` and `string`.  
+**Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double`, `string` and `timestamp`.
+
+The `timestamp` type can be considered like an _alias_ to `uinteger` of
+size 8. Its purpose is to allow developers to use the built-in
+_DateTime_ data type where it exists.
 
 Among these simple types, the `enum` is different to others.  
 All enum types are actually a *1-byte size uinteger* values that **can** be used inside *single-type* properties too.  
