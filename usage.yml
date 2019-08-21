@@ -15,7 +15,7 @@ getters:
     name: get_usage
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: average_weekly_distance
@@ -88,7 +88,9 @@ properties:
   - id: 0x0d
     name: last_trip_date
     name_cased: lastTripDate
-    type: types.timestamp
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
   - id: 0x0e
     name: average_fuel_consumption
     name_cased: averageFuelConsumption

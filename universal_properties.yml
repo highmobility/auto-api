@@ -20,4 +20,6 @@ properties:
   - id: 0xa2
     name: timestamp
     name_cased: timestamp
-    type: types.timestamp
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
