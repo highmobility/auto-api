@@ -157,9 +157,9 @@ types:
         name: wpa2_personal
         pretty_name: WPA2 Personal
     # MARK: On-Off State
-  - name: on_off
-    name_cased: onOff
-    pretty_name: On-Off
+  - name: on_off_state
+    name_cased: onOffState
+    pretty_name: On-Off-State
     type: enum
     size: 1
     enum_values:
