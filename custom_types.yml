@@ -593,27 +593,27 @@ types:
           - id: 0x00
             name: normal
           - id: 0x01
-            name: 15_min_before_4
+            name: fifteen_min_before_four
             name_cased: 15minBefore4
             pretty_name: '15 minutes before 4½ hours'
           - id: 0x02
-            name: 4_reached
+            name: four_reached
             name_cased: 4Reached
             pretty_name: '4½ hours reached'
           - id: 0x03
-            name: 15_min_before_9
+            name: fifteen_min_before_nine
             name_cased: 15minBefore9
             pretty_name: '15 minutes before 9 hours'
           - id: 0x04
-            name: 9_reached
+            name: nine_reached
             name_cased: 9Reached
             pretty_name: '9 hours reached'
           - id: 0x05
-            name: 15_min_before_16
+            name: fifteen_min_before_sixteen
             name_cased: 15minBefore16
             pretty_name: '15 minutes before 16 hours'
           - id: 0x06
-            name: 16_reached
+            name: sixteen_reached
             name_cased: 16Reached
             pretty_name: '16 hours reached'
     # MARK: Driver Working State
