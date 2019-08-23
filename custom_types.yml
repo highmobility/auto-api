@@ -829,17 +829,17 @@ types:
         type: uinteger
         size: 1
         description: The blue component of RGB
-    # MARK: Seatbelt Fastened
-  - name: seatbelt_fastened
-    name_cased: seatbeltFastened
+    # MARK: Seatbelt State
+  - name: seatbelt_state
+    name_cased: seatbeltState
     type: custom
     size: 2
     items:
       - name: location
         name_cased: location
         type: types.seat_location
-      - name: fastened
-        name_cased: fastened
+      - name: fastened_state
+        name_cased: fastenedState
         type: enum
         size: 1
         enum_values:

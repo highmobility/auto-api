@@ -22,7 +22,7 @@ properties:
     type: types.person_detected
     multiple: true
   - id: 0x03
-    name: seatbelts_fastened
-    name_cased: seatbeltsFastened
-    type: types.seatbelt_fastened
+    name: seatbelts_state
+    name_cased: seatbeltsState
+    type: types.seatbelt_state
     multiple: true
