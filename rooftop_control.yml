@@ -28,6 +28,7 @@ properties:
     description: 100% is opaque, 0% is transparent
   - id: 0x02
     name: position
+    name_cased: position
     type: types.percentage
     description: 100% is fully open, 0% is closed
   - id: 0x03
