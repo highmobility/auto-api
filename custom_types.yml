@@ -25,7 +25,7 @@ types:
     # MARK: Capability State
   - name: capability_state
     name_cased: capabilityState
-    type: uinteger
+    type: bytes
     description: The bytes of a Capability state
     # MARK: Connection State
   - name: connection_state
@@ -225,7 +225,7 @@ types:
       - name: supported_property_ids
         name_cased: supportedPropertyIDs
         pretty_name: Supported property IDs
-        type: uinteger
+        type: bytes
         description: Array of supported property identifiers
     # MARK: Time
   - name: time

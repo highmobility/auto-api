@@ -165,7 +165,7 @@ Other conditional keys:
 
 * `size: integer` size of the property's *data component*
     * *only* present for *simple properties* (base-type) *and*
-    * *only* present when the size is known in advance, i.e. *not* for a `string` or an array of bytes (`uinteger` without `size`)
+    * *only* present when the size is known in advance, i.e. *not* for a `string` or `bytes`
 * `multiple: bool` if the property can occure multiple times in a command-state
     * defaults to `false`
 * `pretty_name: string` name of the property in a capitalised and whitespaced way, i.e. *Charging Power kW*
@@ -206,10 +206,14 @@ properties:
 
 Types follow the same pattern as *properties* - they all have the same *3 keys* as every property (except the `id`).  
 
-**Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double`, `string` and `timestamp`.
+**Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double`, `string`, `bytes` and `timestamp`.
+
+Types `string` and `bytes` can be considered *dynamic* by (usually) appearing without `size: x`.  
+An example of the opposite would be *vehicleStatus.vin*
 
 The `timestamp` type can be considered like an _alias_ to `uinteger` of
-size 8. Its purpose is to allow developers to use the built-in
+size 8.  
+Its purpose is to allow developers to use the built-in
 _DateTime_ data type where it exists.
 
 Among these simple types, the `enum` is different to others.  
@@ -292,7 +296,7 @@ Additional keys for `custom` types:
 
 * `items: []` *every* custom type has an ordered array of *items* that make up the type
     * consist of *base* or other *custom* types in byte order
-    * `string` has an *implied* **2 byte size prefix** when inside a *custom* type
+    * `string` and `bytes` has an *implied* **2 byte size prefix** when inside a *custom* type
 
 Examples:  
 
