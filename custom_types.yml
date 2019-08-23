@@ -265,8 +265,8 @@ types:
     type: custom
     size: 2
     items:
-      - name: horisontal
-        name_cased: horisontal
+      - name: horizontal
+        name_cased: horizontal
         type: uinteger
         size: 1
       - name: vertical
