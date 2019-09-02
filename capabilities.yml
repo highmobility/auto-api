@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_capabilities
+  name: get_capabilities
 
 state: all
     

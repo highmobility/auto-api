@@ -13,8 +13,7 @@ api:
 disabled_in: [web]
 
 getters:
-  default:
-    name: get_keyfob_position
+  name: get_keyfob_position
 
 state: all
     

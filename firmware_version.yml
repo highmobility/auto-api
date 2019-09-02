@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_firmware_version
+  name: get_firmware_version
 
 state: all
 

@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_light_conditions
+  name: get_light_conditions
 
 state: all
     

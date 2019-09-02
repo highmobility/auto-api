@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_navi_destination
+  name: get_navi_destination
 
 setters:
   - name: set_navi_destination

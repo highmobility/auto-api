@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_valet_mode
+  name: get_valet_mode
 
 setters:
   - name: activate_deactivate_valet_mode

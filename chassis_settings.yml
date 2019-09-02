@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_chassis_settings
+  name: get_chassis_settings
 
 setters:
   - name: set_driving_mode

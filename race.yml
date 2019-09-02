@@ -10,8 +10,7 @@ api:
   intro: 5
   update: 11
 
-getters:
-  default: {}
+getters: {}
 
 state: all
     

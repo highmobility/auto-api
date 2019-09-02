@@ -11,8 +11,7 @@ api:
   intro: 7
   update: 11
 
-getters:
-  default: {}
+getters: {}
 
 setters:
   - name: activate_deactivate_start_stop
