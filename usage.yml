@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_usage
+  name: get_usage
 
 state: all
 

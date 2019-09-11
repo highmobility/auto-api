@@ -16,65 +16,35 @@ The `.yml` spec files define the following *values* and *syntax* for each capabi
 
 ## getters
 
-If not defined in a capability – there are *no getters* for that capability.  
-Otherwise, it's a dictionary (hash) with 2 possible keys.
-
-* `default` marks the capability having *default getters*
-* `static` defines a getter that requests *specific properties*
-
-### default
-
-Requires 2 getters to be automatically synthesised.
+If *not* defined in a capability – there are **no getters** for that capability.  
+If defined, is a dictionary (hash) and requires 2 getters to be automatically synthesized following the pattern:
 
 ```
 get_[cap.name]_state()                  --> [id.msb, id.lsb, 0x00]
 get_[cap.name]_properties(property_IDs) --> [id.msb, id.lsb, 0x00] + property_IDs
 ```
 
-The `_state` getter takes no input and requests **all state** properties in the capability.  
-The `_properties` getter takes in *property IDs* as arguments and requests **only** the specific properties.  
+The `_state` getter takes no input and requests **all** `state` properties in the capability.  
+The `_properties` getter takes in *property IDs* as arguments and requests **only** those specified properties.  
 
-There are additional customisation options available for getters:
+There are additional *optional* keys available for getters:
 
-* `name: string` used to override the *full name* of the getters (`_properties` still gets appended)
-* `skip_properties_getter: bool` used to skip the `_properties` getter generation
-	* If `false` (default), the `_properties` getter is **only** generated when there are **more than 1** property in the capability
+* `name: string` used to override the *full name* of the getters (`_properties` still gets appended)  
+* `skip_properties_getter: bool` used to skip the `_properties` getter generation  
+    * If `false` (default), the `_properties` getter is **only** generated when there are **more than 1** property in the capability's `state`
+
 
 Examples:
 
 ```yaml
+getters: {}
+
 getters:
-    default: {}
-```  
-```yaml
+    name: get_vehicle_location
+    skip_properties_getter: true
+    
 getters:
-    default:
-        name: get_vehicle_location
-        skip_properties_getter: true
-```
-
-### static
-
-Defines *static* getters, that always request *specific properties*, to be automatically synthesised.  
-
-```
-[cap.name]()    --> [id.msb, id.lsb, 0x00] + property_IDs
-```
-
-Contains an array of *static* getters that have the following keys-values:
-
-* `name: string` as the name of the getter
-* `properties: [property_IDs]` defines what properties the getter requests
-
-Examples:  
-
-```yaml
-getters:
-    static:
-      - name: get_control_mode
-        properties: [0x01]
-      - name: some_other_getter
-        properties: [0x02, 0x03]
+    name: get_parking_ticket
 ```
 
 
@@ -123,7 +93,7 @@ setters:
 
 ## state
 
-If not defined in a capability – there are *no state* for that capability.  
+If not defined in a capability – there is **no state** for that capability.  
 Defines what *properties* are exposed to the developer (client). This message is sent over the `set` message type.  
 
 ```
@@ -165,7 +135,7 @@ Other conditional keys:
 
 * `size: integer` size of the property's *data component*
     * *only* present for *simple properties* (base-type) *and*
-    * *only* present when the size is known in advance, i.e. *not* for a `string` or an array of bytes (`uinteger` without `size`)
+    * *only* present when the size is known in advance, i.e. *not* for a `string` or `bytes`
 * `multiple: bool` if the property can occure multiple times in a command-state
     * defaults to `false`
 * `pretty_name: string` name of the property in a capitalised and whitespaced way, i.e. *Charging Power kW*
@@ -206,10 +176,14 @@ properties:
 
 Types follow the same pattern as *properties* - they all have the same *3 keys* as every property (except the `id`).  
 
-**Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double`, `string` and `timestamp`.
+**Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double`, `string`, `bytes` and `timestamp`.
+
+Types `string` and `bytes` can be considered *dynamic* by (usually) appearing without `size: x`.  
+An example of the opposite would be *vehicleStatus.vin*
 
 The `timestamp` type can be considered like an _alias_ to `uinteger` of
-size 8. Its purpose is to allow developers to use the built-in
+size 8.  
+Its purpose is to allow developers to use the built-in
 _DateTime_ data type where it exists.
 
 Among these simple types, the `enum` is different to others.  
@@ -292,7 +266,7 @@ Additional keys for `custom` types:
 
 * `items: []` *every* custom type has an ordered array of *items* that make up the type
     * consist of *base* or other *custom* types in byte order
-    * `string` has an *implied* **2 byte size prefix** when inside a *custom* type
+    * `string` and `bytes` has an *implied* **2 byte size prefix** when inside a *custom* type
 
 Examples:  
 

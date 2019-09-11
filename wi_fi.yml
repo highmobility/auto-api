@@ -11,8 +11,7 @@ api:
   intro: 6
   update: 11
 
-getters:
-  default: {}
+getters: {}
 
 setters:
   - name: connect_to_network

@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_rooftop_state
+  name: get_rooftop_state
 
 setters:
   - name: control_rooftop
@@ -28,6 +27,7 @@ properties:
     description: 100% is opaque, 0% is transparent
   - id: 0x02
     name: position
+    name_cased: position
     type: types.percentage
     description: 100% is fully open, 0% is closed
   - id: 0x03

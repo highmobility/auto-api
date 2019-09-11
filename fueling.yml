@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_gas_flap_state
+  name: get_gas_flap_state
 
 setters:
   - name: control_gas_flap

@@ -12,8 +12,7 @@ api:
 
 disabled_in: [web]
 
-getters:
-  default: {}
+getters: {}
 
 setters:
   - name: activate_deactivate_cruise_control

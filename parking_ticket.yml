@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_parking_ticket
+  name: get_parking_ticket
 
 setters:
   - name: start_parking

@@ -25,7 +25,7 @@ types:
     # MARK: Capability State
   - name: capability_state
     name_cased: capabilityState
-    type: uinteger
+    type: bytes
     description: The bytes of a Capability state
     # MARK: Connection State
   - name: connection_state
@@ -225,7 +225,7 @@ types:
       - name: supported_property_ids
         name_cased: supportedPropertyIDs
         pretty_name: Supported property IDs
-        type: uinteger
+        type: bytes
         description: Array of supported property identifiers
     # MARK: Time
   - name: time
@@ -265,8 +265,8 @@ types:
     type: custom
     size: 2
     items:
-      - name: horisontal
-        name_cased: horisontal
+      - name: horizontal
+        name_cased: horizontal
         type: uinteger
         size: 1
       - name: vertical
@@ -798,7 +798,7 @@ types:
         type: types.active_state
     # MARK: Reduction Time
   - name: reduction_time
-    name_cased: departureTime
+    name_cased: reductionTime
     type: custom
     size: 3
     items:
@@ -829,17 +829,17 @@ types:
         type: uinteger
         size: 1
         description: The blue component of RGB
-    # MARK: Seatbelt Fastened
-  - name: seatbelt_fastened
-    name_cased: seatbeltFastened
+    # MARK: Seatbelt State
+  - name: seatbelt_state
+    name_cased: seatbeltState
     type: custom
     size: 2
     items:
       - name: location
         name_cased: location
         type: types.seat_location
-      - name: fastened
-        name_cased: fastened
+      - name: fastened_state
+        name_cased: fastenedState
         type: enum
         size: 1
         enum_values:

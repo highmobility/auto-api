@@ -6,10 +6,11 @@ identifier:
   msb: 0x00
   lsb: 0x67
 
-api_intro: 11
+api:
+  intro: 11
+  update: 11
 
-getters:
-  default: {}
+getters: {}
 
 state: all
 

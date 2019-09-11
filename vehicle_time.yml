@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_vehicle_time
+  name: get_vehicle_time
 
 state: all
     

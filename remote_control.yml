@@ -13,9 +13,8 @@ api:
 disabled_in: [web]
 
 getters:
-  default:
-    name: get_control_state
-    skip_properties_getter: true
+  name: get_control_state
+  skip_properties_getter: true
 
 setters:
   - name: control_command

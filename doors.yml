@@ -10,8 +10,7 @@ api:
   intro: 1
   update: 11
 
-getters:
-  default: {}
+getters: {}
 
 setters:
   - name: lock_unlock_doors

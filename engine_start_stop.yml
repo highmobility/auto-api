@@ -1,6 +1,6 @@
-name: start_stop
-name_cased: startStop
-pretty_name: Start-Stop
+name: engine_start_stop
+name_cased: engineStartStop
+pretty_name: Engine Start-Stop
 category: digital_key
 
 identifier:
@@ -11,8 +11,7 @@ api:
   intro: 7
   update: 11
 
-getters:
-  default: {}
+getters: {}
 
 setters:
   - name: activate_deactivate_start_stop

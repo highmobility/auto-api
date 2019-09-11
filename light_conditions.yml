@@ -11,8 +11,7 @@ api:
   update: 11
 
 getters:
-  default:
-    name: get_light_conditions
+  name: get_light_conditions
 
 state: all
     
@@ -25,6 +24,7 @@ properties:
     description: Measured outside illuminance in lux, formatted as IEEE 754 decimal
   - id: 0x02
     name: inside_light
+    name_cased: insideLight
     type: float
     size: 4
     description: Measured inside illuminance in lux, formatted as IEEE 754 decimal
