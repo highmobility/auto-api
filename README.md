@@ -62,7 +62,7 @@ Required keys:
 Optional keys (at least 1 has to be included; can be combined):  
 
 * `mandatory: [property_IDs]` defines what properties are required as input (and what are actually sent in the setter)
-* `optional: [property_IDs]` list of *optional* properties allowed as input, if only this is defined (no *mandatory* or *constants*) - **at least 1** input is required
+* `optional: [property_IDs]` list of *optional* properties allowed as input. If only optional is defined (no *mandatory* or *constants*) - **at least 1** input is required
 * `constants` is an array of constant values defined by the following keys:
     * `property_id: property_ID` defines the constant property
     * `value: [bytes]` lists the constant value of the property
