@@ -171,8 +171,8 @@ properties:
       - id: 0x01
         name: plugged_in
   - id: 0x17
-    name: charge_state
-    name_cased: chargeState
+    name: status
+    name_cased: status
     type: enum
     size: 1
     enum_values:

@@ -20,8 +20,8 @@ setters:
 
 properties:
   - id: 0x01
-    name: wake_up_state
-    name_cased: wakeUpState
+    name: status
+    name_cased: status
     type: enum
     size: 1
     enum_values:
