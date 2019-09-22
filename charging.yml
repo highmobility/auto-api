@@ -37,7 +37,7 @@ properties:
     description: Estimated range in km
   - id: 0x03
     name: battery_level
-    name_cased: batterLevel
+    name_cased: batteryLevel
     type: double
     size: 8
     description: Battery level percentage between 0.0-1.0
