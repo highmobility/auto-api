@@ -58,7 +58,7 @@ properties:
     description: The maximum possible values for the spring rates
   - id: 0x07
     name: minimum_spring_rates
-    name_cased: minimumSpringRate
+    name_cased: minimumSpringRates
     type: types.spring_rate
     multiple: true
     description: The minimum possible values for the spring rates
