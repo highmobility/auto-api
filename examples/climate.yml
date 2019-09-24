@@ -1,71 +1,87 @@
 inside_temperature:
   - item:
-    - value: '0x41, 0x98, 0x00, 0x00'
-      description: Inside temperature 19C
+      - value: '0x41, 0x98, 0x00, 0x00'
+        parsed_value: 19
+        description: Inside temperature 19C
 
 outside_temperature:
   - item:
-    - value: '0x41, 0x40, 0x00, 0x00'
-      description: Outside temperature 12C
+      - value: '0x41, 0x40, 0x00, 0x00'
+        parsed_value: 12
+        description: Outside temperature 12C
 
 driver_temperature_setting:
   - item:
-    - value: '0x41, 0xAC, 0x00, 0x00'
-      description: Driver temperature setting 21.5C
+      - value: '0x41, 0xAC, 0x00, 0x00'
+        parsed_value: 21.5
+        description: Driver temperature setting 21.5C
 
 passenger_temperature_setting:
   - item:
-    - value: '0x41, 0xAC, 0x00, 0x00'
-      description: Passenger temperature setting 21.5C
+      - value: '0x41, 0xAC, 0x00, 0x00'
+        parsed_value: 21.5
+        description: Passenger temperature setting 21.5C
 
 hvac_state:
   - item:
-    - value: '0x01'
-      description: HVAC activated
+      - value: '0x01'
+        parsed_value: 'active'
+        description: HVAC activated
 
 defogging_state:
   - item:
-    - value: '0x00'
-      description: Defogging deactivated
+      - value: '0x00'
+        parsed_value: 'inactive'
+        description: Defogging deactivated
 
 defrosting_state:
   - item:
-    - value: '0x00'
-      description: Defrosting deactivated
+      - value: '0x00'
+        parsed_value: 'inactive'
+        description: Defrosting deactivated
 
 ionising_state:
   - item:
-    - value: '0x00'
-      description: Ionising deactivated
+      - value: '0x00'
+        parsed_value: 'inactive'
+        description: Ionising deactivated
 
 defrosting_temperature:
   - item:
-    - value: '0x41, 0xAC, 0x00, 0x00'
-      description: Defrosting temperature at 21.5C
+      - value: '0x41, 0xAC, 0x00, 0x00'
+        parsed_value: 21.5
+        description: Defrosting temperature at 21.5C
 
 hvac_weekday_starting_times:
   - item:
-    - name: weekday
-      value: '0x05'
-      description: Auto-HVAC activated for Saturdays
-    - name: hour
-      value: '0x12'
-      description: at 18h
-    - name: minute
-      value: '0x1E'
-      description: 30min
+      - name: weekday
+        value: '0x05'
+        parsed_value: 'saturday'
+        description: Auto-HVAC activated for Saturdays
+      - name: hour
+        value: '0x12'
+        parsed_value: 18
+        description: at 18h
+      - name: minute
+        value: '0x1E'
+        parsed_value: 30
+        description: 30min
   - item:
-    - name: weekday
-      value: '0x06'
-      description: Auto-HVAC activated for Sundays
-    - name: hour
-      value: '0x12'
-      description: at 18h
-    - name: minute
-      value: '0x1E'
-      description: 30min
+      - name: weekday
+        value: '0x06'
+        parsed_value: 'sunday'
+        description: Auto-HVAC activated for Sundays
+      - name: hour
+        value: '0x12'
+        parsed_value: 18
+        description: at 18h
+      - name: minute
+        value: '0x1E'
+        parsed_value: 30
+        description: 30min
 
 rear_temperature_setting:
   - item:
-    - value: '0x41, 0xAC, 0x00, 0x00'
-      description: Rear temperature setting 21.5C
+      - value: '0x41, 0xAC, 0x00, 0x00'
+        parsed_value: 21.5
+        description: Rear temperature setting 21.5C

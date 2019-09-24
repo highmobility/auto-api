@@ -1,39 +1,47 @@
 wipers:
   - item:
-    - value: '0x02'
-      description: Windscreen wipers are set to automatic
+      - value: '0x02'
+        parsed_value: 'automatic'
+        description: Windscreen wipers are set to automatic
 
 wipers_intensity:
   - item:
-    - value: '0x03'
-      description: Wipers are on highest intensity, indicating heavy rain
+      - value: '0x03'
+        parsed_value: 'level_3'
+        description: Wipers are on highest intensity, indicating heavy rain
 
 windscreen_damage:
   - item:
-    - value: '0x01'
-      description: Impact, but no damage detected
+      - value: '0x01'
+        parsed_value: 'impact_but_no_damage_detected'
+        description: Impact, but no damage detected
 
 windscreen_zone_matrix:
   - item:
-    - value: '0x43'
-      description: Zone matrix is 4x3, in total 12 zones
+      - value: '0x43'
+        parsed_value: 67
+        description: Zone matrix is 4x3, in total 12 zones
 
 windscreen_damage_zone:
   - item:
-    - value: '0x12'
-      description: Damage position in horizontally leftmost zone, vertically in the center
+      - value: '0x12'
+        parsed_value: 18
+        description: Damage position in horizontally leftmost zone, vertically in the center
 
 windscreen_needs_replacement:
   - item:
-    - value: '0x02'
-      description: Windscreen needs replacement
+      - value: '0x02'
+        parsed_value: 'replacement_needed'
+        description: Windscreen needs replacement
 
 windscreen_damage_confidence:
   - item:
-    - value: '0x3F, 0xEE, 0x66, 0x66, 0x66, 0x66, 0x66, 0x66'
-      description: Damage detected with 95% confidence
+      - value: '0x3F, 0xEE, 0x66, 0x66, 0x66, 0x66, 0x66, 0x66'
+        parsed_value: 95
+        description: Damage detected with 95% confidence
 
 windscreen_damage_detection_time:
   - item:
-    - value: '0x00, 0x00, 0x01, 0x59, 0x89, 0x38, 0xE7, 0x88'
-      description: 10 January 2017 at 16:32:05 UTC
+      - value: '0x00, 0x00, 0x01, 0x59, 0x89, 0x38, 0xE7, 0x88'
+        parsed_value: '2017-01-10T16:32:05.000Z'
+        description: 10 January 2017 at 16:32:05 UTC

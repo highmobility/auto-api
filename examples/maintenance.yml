@@ -1,122 +1,129 @@
 days_to_next_service:
   - item:
-    - value: '0x01, 0xF5'
-      description: 501 days until servicing
+      - value: '0x01, 0xF5'
+        parsed_value: 501
+        description: 501 days until servicing
 
 kilometers_to_next_service:
   - item:
-    - value: '0x00, 0x00, 0x0E, 0x61'
-      description: 3'681 km until servicing
+      - value: '0x00, 0x00, 0x0E, 0x61'
+        parsed_value: 3681
+        description: 3'681 km until servicing
 
 cbs_reports_count:
   - item:
-    - value: '0x03'
-      description: 3 Condition Based Services
+      - value: '0x03'
+        parsed_value: 3
+        description: 3 Condition Based Services
 
 months_to_exhaust_inpection:
   - item:
-    - value: '0x05'
-      description: 5 months until exhaust inspection
+      - value: '0x05'
+        parsed_value: 5
+        description: 5 months until exhaust inspection
 
 teleservice_availability:
   - item:
-    - value: '0x02'
-      description: Teleservice successful
+      - value: '0x02'
+        parsed_value: 'succesful'
+        description: Teleservice successful
 
 service_distance_threshold:
   - item:
-    - value: '0x01, 0xF4'
-      description: Service distance threshold is 500km
+      - value: '0x01, 0xF4'
+        parsed_value: 500
+        description: Service distance threshold is 500km
 
 service_time_threshold:
   - item:
-    - value: '0x04'
-      description: Service time threshold is 4 weeks
+      - value: '0x04'
+        parsed_value: 4
+        description: Service time threshold is 4 weeks
 
 automatic_teleservice_call_date:
   - item:
-      value: '0x00, 0x00, 0x01, 0x67, 0x40, 0x58, 0xF1, 0x30'
-      description: 23 November 2018 at 11:33:50 UTC
+      - value: '0x00, 0x00, 0x01, 0x67, 0x40, 0x58, 0xF1, 0x30'
+        parsed_value: '2018-10-23T11:33:50.000Z'
+        description: 23 November 2018 at 11:33:50 UTC
 
 teleservice_battery_call_date:
   - item:
-      value: '0x00, 0x00, 0x01, 0x67, 0x40, 0x24, 0xC1, 0xD0'
-      description: 23 November 2018 at 10:36:50 GMT
+      - value: '0x00, 0x00, 0x01, 0x67, 0x40, 0x24, 0xC1, 0xD0'
+        parsed_value: '2018-10-23T10:36:50.000Z'
+        description: 23 November 2018 at 10:36:50 GMT
 
 next_inspection_date:
   - item:
-      value: '0x00, 0x00, 0x01, 0x66, 0xA1, 0x5D, 0x20, 0xD8'
-      description: 23 October 2018 at 14:38:47 GMT
+      - value: '0x00, 0x00, 0x01, 0x66, 0xA1, 0x5D, 0x20, 0xD8'
+        parsed_value: '2018-09-23T14:38:47.000Z'
+        description: 23 October 2018 at 14:38:47 GMT
 
 condition_based_services:
   - item:
-    - name: year
-      size: 1
-      value: '0x13'
-      description: 2019
-    - name: month
-      size: 1
-      value: '0x05'
-      description: May
-    - name: identifier
-      size: 2
-      value: '0x00, 0x03'
-      description: Identifier is 3
-    - name: due_status
-      size: 1
-      value: '0x00'
-      description: Status is OK
-    - name: text_size
-      size: 2
-      value: '0x00, 0x0B'
-      description: Text size is 11 bytes
-    - name: text
-      size: 11
-      value: '0x42, 0x72, 0x61, 0x6B, 0x65, 0x20, 0x66, 0x6C, 0x75, 0x69, 0x64'
-      description: Text is "Brake fluid"
-    - name: description_size
-      size: 2
-      value: '0x00, 0x2C'
-      description: Description size is 44 bytes
-    - name: description
-      size: 44
-      value: '0x4E, 0x65, 0x78, 0x74, 0x20, 0x63, 0x68, 0x61, 0x6E, 0x67, 0x65, 0x20, 0x61, 0x74, 0x20, 0x73, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69, 0x65, 0x64, 0x20, 0x64, 0x61, 0x74, 0x65, 0x20, 0x61, 0x74, 0x20, 0x74, 0x68, 0x65, 0x20, 0x6C, 0x61, 0x74, 0x65, 0x73, 0x74, 0x2E'
-      description: Description is "Next change at specified date at the latest."
+      - name: year
+        size: 1
+        value: '0x13'
+        parsed_value: 19
+        description: 2019
+      - name: month
+        size: 1
+        value: '0x05'
+        parsed_value: 5
+        description: May
+      - name: identifier
+        size: 2
+        value: '0x00, 0x03'
+        parsed_value: 3
+        description: Identifier is 3
+      - name: due_status
+        size: 1
+        value: '0x00'
+        parsed_value: 'ok'
+        description: Status is OK
+      - name: text
+        size: 11
+        value: '0x42, 0x72, 0x61, 0x6B, 0x65, 0x20, 0x66, 0x6C, 0x75, 0x69, 0x64'
+        parsed_value: 'Brake fluid'
+        description: Text is "Brake fluid"
+      - name: description
+        size: 44
+        value: '0x4E, 0x65, 0x78, 0x74, 0x20, 0x63, 0x68, 0x61, 0x6E, 0x67, 0x65, 0x20, 0x61, 0x74, 0x20, 0x73, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69, 0x65, 0x64, 0x20, 0x64, 0x61, 0x74, 0x65, 0x20, 0x61, 0x74, 0x20, 0x74, 0x68, 0x65, 0x20, 0x6C, 0x61, 0x74, 0x65, 0x73, 0x74, 0x2E'
+        parsed_value: 'Next change at specified date at the latest.'
+        description: Description is "Next change at specified date at the latest."
   - item:
-    - name: year
-      size: 1
-      value: '0x13'
-      description: 2019
-    - name: month
-      size: 1
-      value: '0x03'
-      description: March
-    - name: identifier
-      size: 2
-      value: '0x00, 0x20'
-      description: Identifier is 32
-    - name: due_status
-      size: 1
-      value: '0x01'
-      description: Status is pending
-    - name: text_size
-      size: 2
-      value: '0x00, 0x12'
-      description: Text size is 18 bytes
-    - name: text
-      size: 18
-      value: '0x56, 0x65, 0x68, 0x69, 0x63, 0x6C, 0x65, 0x20, 0x69, 0x6E, 0x73, 0x70, 0x65, 0x63, 0x74, 0x69, 0x6F, 0x6E'
-      description: Text is "Vehicle inspection"
-    - name: description_size
-      size: 2
-      value: '0x00, 0x34'
-      description: Description size is 52 bytes
-    - name: description
-      size: 52
-      value: '0x4E, 0x65, 0x78, 0x74, 0x20, 0x6D, 0x61, 0x6E, 0x64, 0x61, 0x74, 0x6F, 0x72, 0x79, 0x20, 0x76, 0x65, 0x68, 0x69, 0x63, 0x6C, 0x65, 0x20, 0x69, 0x6E, 0x73, 0x70, 0x65, 0x63, 0x74, 0x69, 0x6F, 0x6E, 0x20, 0x6F, 0x6E, 0x20, 0x73, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69, 0x65, 0x64, 0x20, 0x64, 0x61, 0x74, 0x65, 0x2E'
-      description: Description is "Next mandatory vehicle inspection on specified date."
+      - name: year
+        size: 1
+        value: '0x13'
+        parsed_value: 19
+        description: 2019
+      - name: month
+        size: 1
+        value: '0x03'
+        parsed_value: 3
+        description: March
+      - name: identifier
+        size: 2
+        value: '0x00, 0x20'
+        parsed_value: 32
+        description: Identifier is 32
+      - name: due_status
+        size: 1
+        value: '0x01'
+        parsed_value: 'pending'
+        description: Status is pending
+      - name: text
+        size: 18
+        value: '0x56, 0x65, 0x68, 0x69, 0x63, 0x6C, 0x65, 0x20, 0x69, 0x6E, 0x73, 0x70, 0x65, 0x63, 0x74, 0x69, 0x6F, 0x6E'
+        parsed_value: 'Vehicle inspection'
+        description: Text is "Vehicle inspection"
+      - name: description
+        size: 52
+        value: '0x4E, 0x65, 0x78, 0x74, 0x20, 0x6D, 0x61, 0x6E, 0x64, 0x61, 0x74, 0x6F, 0x72, 0x79, 0x20, 0x76, 0x65, 0x68, 0x69, 0x63, 0x6C, 0x65, 0x20, 0x69, 0x6E, 0x73, 0x70, 0x65, 0x63, 0x74, 0x69, 0x6F, 0x6E, 0x20, 0x6F, 0x6E, 0x20, 0x73, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69, 0x65, 0x64, 0x20, 0x64, 0x61, 0x74, 0x65, 0x2E'
+        parsed_value: 'Next mandatory vehicle inspection on specified date.'
+        description: Description is "Next mandatory vehicle inspection on specified date."
 
 brake_fluid_change_date:
   - item:
-      value: '0x00, 0x00, 0x01, 0x67, 0x7C, 0x63, 0xD2, 0x80'
-      description: 5 December 2018 at 03:22:56 GMT
+      - value: '0x00, 0x00, 0x01, 0x67, 0x7C, 0x63, 0xD2, 0x80'
+        parsed_value: '2018-11-05T03:22:56.000Z'
+        description: 5 December 2018 at 03:22:56 GMT

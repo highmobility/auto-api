@@ -1,9 +1,11 @@
 gas_flap_lock:
   - item:
-    - value: '0x01'
-      description: Gas flap locked
+      - value: '0x01'
+        parsed_value: 'locked'
+        description: Gas flap locked
 
 gas_flap_position:
   - item:
-    - value: '0x00'
-      description: Gas flap closed
+      - value: '0x00'
+        parsed_value: 'closed'
+        description: Gas flap closed

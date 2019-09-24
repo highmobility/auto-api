@@ -1,4 +1,5 @@
 keyfob_position:
   - item:
-    - value: '0x05'
-      description: Keyfob is positioned inside the car
+      - value: '0x05'
+        parsed_value: 'inside_car'
+        description: Keyfob is positioned inside the car

@@ -1,67 +1,83 @@
 drivers_working_states:
   - item:
-    - name: driver_number
-      value: '0x01'
-      description: Driver 1
-    - name: working_state
-      value: '0x02'
-      description: Driver is working
+      - name: driver_number
+        value: '0x01'
+        parsed_value: 1
+        description: Driver 1
+      - name: working_state
+        value: '0x02'
+        parsed_value: 'working'
+        description: Driver is working
   - item:
-    - name: driver_number
-      value: '0x02'
-      description: Driver 2
-    - name: working_state
-      value: '0x00'
-      description: Driver is resting
+      - name: driver_number
+        value: '0x02'
+        parsed_value: 2
+        description: Driver 2
+      - name: working_state
+        value: '0x00'
+        parsed_value: 'resting'
+        description: Driver is resting
 
 drivers_time_states:
   - item:
-    - name: driver_number
-      value: '0x01'
-      description: Driver 1
-    - name: time_state
-      value: '0x02'
-      description: 4½ hours of driving reached
+      - name: driver_number
+        value: '0x01'
+        parsed_value: 1
+        description: Driver 1
+      - name: time_state
+        value: '0x02'
+        parsed_value: 'four_reached'
+        description: 4½ hours of driving reached
   - item:
-    - name: driver_number
-      value: '0x02'
-      description: Driver 2
-    - name: time_state
-      value: '0x06'
-      description: 16 hours of driving reached
+      - name: driver_number
+        value: '0x02'
+        parsed_value: 2
+        description: Driver 2
+      - name: time_state
+        value: '0x06'
+        parsed_value: 'sixteen_reached'
+        description: 16 hours of driving reached
 
 drivers_cards:
   - item:
-    - name: driver_number
-      value: '0x01'
-      description: Driver 1
-    - name: card
-      value: '0x01'
-      description: Driver card present
+      - name: driver_number
+        value: '0x01'
+        parsed_value: 1
+        description: Driver 1
+      - name: card
+        value: '0x01'
+        parsed_value: 'present'
+        description: Driver card present
   - item:
-    - name: driver_number
-      value: '0x02'
-      description: Driver 2
-    - name: card
-      value: '0x01'
-      description: Driver card present
+      - name: driver_number
+        value: '0x02'
+        parsed_value: 2
+        description: Driver 2
+      - name: card
+        value: '0x01'
+        parsed_value: 'present'
+        description: Driver card present
 
 vehicle_motion:
   - item:
-    - value: '0x01'
-      description: Vehicle motion detected
+      - value: '0x01'
+        parsed_value: 'detected'
+        description: Vehicle motion detected
 
 vehicle_overspeed:
   - item:
-    - value: '0x00'
-      description: No overspeed
+      - value: '0x00'
+        parsed_value: 'no_overspeed'
+        description: No overspeed
 
 vehicle_direction:
   - item:
-    - value: '0x00'
-      description: Vehicle direction is forward
+      - value: '0x00'
+        parsed_value: 'forward'
+        description: Vehicle direction is forward
 
 vehicle_speed:
   - item:
-    - value: '0x00, 0x50'
-      description: Vehicle speed is 80 km/h
+      - value: '0x00, 0x50'
+        parsed_value: 80
+        description: Vehicle speed is 80 km/h

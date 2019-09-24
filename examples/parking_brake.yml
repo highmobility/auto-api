@@ -1,4 +1,5 @@
 parking_brake:
   - item:
-    - value: '0x01'
-      description: Parking brake active
+      - value: '0x01'
+        parsed_value: 'active'
+        description: Parking brake active
