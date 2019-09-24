@@ -47,6 +47,19 @@ getters:
     name: get_parking_ticket
 ```
 
+Binary format:
+
+```
+> gets (requests) ALL the state-properties in a capability
+[cap.msb, cap.lsb, 0x00]
+
+> gets (requests) SPECIFIC state-properties in a capability
+[cap.msb, cap.lsb, 0x00] + property_IDs
+
+> examples
+[0x00, 0x23, 0x00]                > get all Charging state-properties
+[0x00, 0x23, 0x00] + [0x03, 0x0c] > get battery_level and charge_mode in Charging
+```
 
 ## setters
 
@@ -90,6 +103,15 @@ setters:
         value: [0x05]
 ```
 
+Binary format:
+
+```
+> set properties in a capability
+[cap.msb, cap.lsb, 0x01] + properties_bytes
+
+> examples
+[0x00, 0x23, 0x01] + [0x0c, 0x00, 0x04, 0x01, 0x00, 0x01, 0x00] > set_charge_mode in Charging
+```
 
 ## state
 
@@ -97,7 +119,11 @@ If not defined in a capability – there is **no state** for that capability.
 Defines what *properties* are exposed to the developer (client). This message is sent over the `set` message type.  
 
 ```
+> receive properties (same binary as setters)
 [id.msb, id.lsb, 0x01] + state_properties
+
+> examples
+[0x00, 0x23, 0x01] + [0x0c, 0x00, 0x04, 0x01, 0x00, 0x01, 0x00] > received charge_mode in Charging
 ```
 
 Defines an array of *property IDs* (or keys).
@@ -171,6 +197,26 @@ properties:
     multiple: true
 ```
 
+Binary format:
+
+```
+> each property has 1-to-many property components
+[prop.id, prop.size.msb, prop.size.lsb, 
+  prop.component.id, prop.component.size.msb, prop.component.size.lsb, prop.component.value_bytes, 
+  ...additional components]
+
+> currently available PROPERTY COMPONENTS are
+    0x01 - data component
+    0x02 - timestamp component
+    0x03 - failure component
+
+> example
+    0x0c        - property ID (Charging's charge_mode)
+    0x00, 0x04  - property size
+    0x01        - data component ID
+    0x00, 0x01  - data component size
+    0x00        - value (.immediate)
+```
 
 ## types
 
