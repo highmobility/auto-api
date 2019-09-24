@@ -1,4 +1,5 @@
 vehicle_time:
   - item:
-    - value: '0x00, 0x00, 0x01, 0x59, 0x99, 0xE5, 0xBF, 0xC0'
-      description: 13 January 2017 at 22:14:48 GMT
+      - value: '0x00, 0x00, 0x01, 0x59, 0x99, 0xE5, 0xBF, 0xC0'
+        parsed_value: '2017-01-13T22:14:48.000Z'
+        description: 13 January 2017 at 22:14:48 GMT

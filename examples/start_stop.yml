@@ -1,4 +1,0 @@
-start_stop:
-  - item:
-    - value: '0x01'
-      description: Automatic engine start-stop system active

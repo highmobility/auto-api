@@ -1,4 +1,5 @@
 flashers:
   - item:
-    - value: '0x02'
-      description: Left flasher active
+      - value: '0x02'
+        parsed_value: 'left_flasher_active'
+        description: Left flasher active

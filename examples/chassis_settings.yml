@@ -1,72 +1,89 @@
 driving_mode:
   - item:
-    - value: '0x01'
-      description: ECO driving mode
+      - value: '0x01'
+        parsed_value: 'eco'
+        description: ECO driving mode
 
 sport_chrono:
   - item:
-    - value: '0x01'
-      description: Sport Chrono active
+      - value: '0x01'
+        parsed_value: 'active'
+        description: Sport Chrono active
 
 current_spring_rates:
   - item:
-    - name: axle
-      value: '0x00'
-      description: Front axle
-    - name: value
-      value: '0x15'
-      description: Spring rate is 21N/mm
+      - name: axle
+        value: '0x00'
+        parsed_value: 'front'
+        description: Front axle
+      - name: value
+        value: '0x15'
+        parsed_value: 21
+        description: Spring rate is 21N/mm
   - item:
-    - name: axle
-      value: '0x01'
-      description: Rear axle
-    - name: value
-      value: '0x17'
-      description: Spring rate is 23N/mm
+      - name: axle
+        value: '0x01'
+        parsed_value: 'rear'
+        description: Rear axle
+      - name: value
+        value: '0x17'
+        parsed_value: 23
+        description: Spring rate is 23N/mm
 
 maximum_spring_rates:
   - item:
-    - name: axle
-      value: '0x00'
-      description: Front axle
-    - name: value
-      value: '0x25'
-      description: Maximum spring rate is 37N/mm
+      - name: axle
+        value: '0x00'
+        parsed_value: 'front'
+        description: Front axle
+      - name: value
+        value: '0x25'
+        parsed_value: 37
+        description: Maximum spring rate is 37N/mm
   - item:
-    - name: axle
-      value: '0x01'
-      description: Rear axle
-    - name: value
-      value: '0x27'
-      description: Maximum spring rate is 39N/mm
+      - name: axle
+        value: '0x01'
+        parsed_value: 'rear'
+        description: Rear axle
+      - name: value
+        value: '0x27'
+        parsed_value: 39
+        description: Maximum spring rate is 39N/mm
 
 minimum_spring_rates:
   - item:
-    - name: axle
-      value: '0x00'
-      description: Front axle
-    - name: value
-      value: '0x10'
-      description: Minimum spring rate is 16N/mm
+      - name: axle
+        value: '0x00'
+        parsed_value: 'front'
+        description: Front axle
+      - name: value
+        value: '0x10'
+        parsed_value: 16
+        description: Minimum spring rate is 16N/mm
   - item:
-    - name: axle
-      value: '0x01'
-      description: Rear axle
-    - name: value
-      value: '0x12'
-      description: Minimum spring rate is 18N/mm
+      - name: axle
+        value: '0x01'
+        parsed_value: 'rear'
+        description: Rear axle
+      - name: value
+        value: '0x12'
+        parsed_value: 18
+        description: Minimum spring rate is 18N/mm
 
 current_chassis_position:
   - item:
-    - value: '0x19'
-      description: Position is +25mm
+      - value: '0x19'
+        parsed_value: 25
+        description: Position is +25mm
 
 maximum_chassis_position:
   - item:
-    - value: '0x37'
-      description: Maximum possible position is +55mm
+      - value: '0x37'
+        parsed_value: 55
+        description: Maximum possible position is +55mm
 
 minimum_chassis_position:
   - item:
-    - value: '0xE4'
-      description: Minimum possible position is -28mm
+      - value: '0xE4'
+        parsed_value: -28
+        description: Minimum possible position is -28mm

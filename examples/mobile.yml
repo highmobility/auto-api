@@ -1,4 +1,5 @@
 connection:
   - item:
-    - value: '0x01'
-      description: A mobile phone is connected
+      - value: '0x01'
+        parsed_value: 'connected'
+        description: A mobile phone is connected
