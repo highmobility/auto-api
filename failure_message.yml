@@ -68,3 +68,8 @@ properties:
     name_cased: failureDescription
     type: string
     description: Failure description bytes formatted in UTF-8
+  - id: 0x05
+    name: failed_property_ids
+    name_cased: failedPropertyIDs
+    type: bytes
+    description: Array of failed property identifiers
