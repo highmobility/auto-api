@@ -50,7 +50,7 @@ properties:
       - id: 0x01
         name: idle
       - id: 0x02
-        name: succesful
+        name: successful
       - id: 0x03
         name: error
   - id: 0x06

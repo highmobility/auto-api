@@ -78,13 +78,13 @@ properties:
     name_cased: solarCharging
     type: types.active_state
   - id: 0x08
-    name: hotspot_enabled
-    name_cased: hotspotEnabled
+    name: wi_fi_hotspot_enabled
+    name_cased: wifiHotspotEnabled
     type: types.enabled_state
   - id: 0x09
-    name: hotspot_ssid
-    name_cased: hotspotSSID
-    pretty_name: Hotspot SSID
+    name: wi_fi_hotspot_ssid
+    name_cased: wifiHotspotSSID
+    pretty_name: Wi-Fi Hotspot SSID
     type: string
     description: The Wi-Fi Hotspot SSID formatted in UTF-8
   - id: 0x0a
