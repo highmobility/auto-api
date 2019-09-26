@@ -1,29 +1,37 @@
 dashboard_lights:
   - item:
-    - name: light_name
-      value: '0x00'
-      description: High beam, main beam
-    - name: state
-      value: '0x00'
-      description: Inactive
+      - name: light_name
+        value: '0x00'
+        parsed_value: 'high_beam'
+        description: High beam, main beam
+      - name: state
+        value: '0x00'
+        parsed_value: 'inactive'
+        description: Inactive
   - item:
-    - name: light_name
-      value: '0x02'
-      description: Hazard warning
-    - name: state
-      value: '0x01'
-      description: Info
+      - name: light_name
+        value: '0x02'
+        parsed_value: 'hazard_warning'
+        description: Hazard warning
+      - name: state
+        value: '0x01'
+        parsed_value: 'info'
+        description: Info
   - item:
-    - name: light_name
-      value: '0x0F'
-      description: Transmission fluid temperature 
-    - name: state
-      value: '0x03'
-      description: Red
+      - name: light_name
+        value: '0x0F'
+        parsed_value: 'transmission_fluid_temperature'
+        description: Transmission fluid temperature
+      - name: state
+        value: '0x03'
+        parsed_value: 'red'
+        description: Red
   - item:
-    - name: light_name
-      value: '0x15'
-      description: Engine oil level
-    - name: state
-      value: '0x02'
-      description: Yellow
+      - name: light_name
+        value: '0x15'
+        parsed_value: 'engine_oil_level'
+        description: Engine oil level
+      - name: state
+        value: '0x02'
+        parsed_value: 'yellow'
+        description: Yellow

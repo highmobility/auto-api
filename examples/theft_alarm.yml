@@ -1,4 +1,5 @@
 theft_alarm:
   - item:
-    - value: '0x01'
-      description: Theft alarm armed
+      - value: '0x01'
+        parsed_value: 'armed'
+        description: Theft alarm armed

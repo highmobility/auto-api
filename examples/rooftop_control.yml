@@ -1,24 +1,29 @@
 dimming:
   - item:
-    - value: '0x3F, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00'
-      description: Rooftop is opaque (100%)
+      - value: '0x3F, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00'
+        parsed_value: 100
+        description: Rooftop is opaque (100%)
 
 position:
   - item:
-    - value: '0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00'
-      description: Rooftop is fully closed (0%)
+      - value: '0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00'
+        parsed_value: 0
+        description: Rooftop is fully closed (0%)
 
 convertible_roof_state:
   - item:
-    - value: '0x01'
-      description: Convertible roof is open
+      - value: '0x01'
+        parsed_value: 'open'
+        description: Convertible roof is open
 
 sunroof_tilt_state:
   - item:
-    - value: '0x02'
-      description: Sunroof is half-tilted
+      - value: '0x02'
+        parsed_value: 'half_tilted'
+        description: Sunroof is half-tilted
 
 sunroof_state:
   - item:
-    - value: '0x01'
-      description: Sunroof is open
+      - value: '0x01'
+        parsed_value: 'open'
+        description: Sunroof is open

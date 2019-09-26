@@ -281,8 +281,8 @@ types:
     type: custom
     size: 5
     items:
-      - name: type
-        name_cased: type
+      - name: direction
+        name_cased: direction
         type: enum
         size: 1
         enum_values:
