@@ -357,8 +357,8 @@ types:
       - name: year
         name_cased: year
         type: uinteger
-        size: 1
-        description: Value between 0 and 99, which corresponds to 2000-2099
+        size: 2
+        description: The year
       - name: month
         name_cased: month
         type: uinteger
