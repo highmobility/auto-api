@@ -21,14 +21,29 @@ properties:
     name_cased: hmKitVersion
     type: types.hmkit_version
     description: HMKit version
+    examples:
+      - hex: '010f21'
+        values:
+          major: 1
+          minor: 15
+          patch: 33
+        description: HMKit version is 1.15.33
   - id: 0x02
     name: hmkit_build_name
     name_cased: hmKitBuildName
     pretty_name: HMKit Build Name
     type: string
     description: HMKit version build name bytes formatted in UTF-8
+    examples:
+      - hex: '6274737461636b2d75617274'
+        value: 'btstack-uart'
+        description: Build name is 'btstack-uart'
   - id: 0x03
     name: application_version
     name_cased: applicationVersion
     type: string
     description: Application version bytes formatted in UTF-8
+    examples:
+      - hex: '76312e352d70726f64'
+        value: 'v1.5-prod'
+        description: Application version is 'v1.5-prod'

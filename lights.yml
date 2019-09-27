@@ -40,34 +40,90 @@ properties:
         pretty_name: Daylight Running Lamps
       - id: 0x04
         name: automatic
+    examples:
+      - hex: '02'
+        value: 'active_with_full_beam'
+        description: Front exterior lights are active with full beam
   - id: 0x02
     name: rear_exterior_light
     name_cased: rearExteriorLight
     type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Rear exterior lights are active
   - id: 0x04
     name: ambient_light_colour
     name_cased: ambientLightColour
     type: types.rgb_colour
+    examples:
+      - hex: 'ff0000'
+        values:
+          red: 255
+          green: 0
+          blue: 0
+        description: Ambient light is red
   - id: 0x05
     name: reverse_light
     name_cased: reverseLight
     type: types.active_state
+    examples:
+      - hex: '00'
+        value: 'inactive'
+        description: Reverse light is inactive
   - id: 0x06
     name: emergency_brake_light
     name_cased: emergencyBrakeLight
     type: types.active_state
+    examples:
+      - hex: '00'
+        value: 'inactive'
+        description: Emergency brake light is inactive
   - id: 0x07
     name: fog_lights
     name_cased: fogLights
     type: types.light
     multiple: true
+    examples:
+      - hex: '0000'
+        values:
+          location: 'front'
+          state: 'inactive'
+        description: Front fog lights are inactive
+      - hex: '0101'
+        values:
+          location: 'rear'
+          state: 'active'
+        description: Rear fog lights are active
   - id: 0x08
     name: reading_lamps
     name_cased: readingLamps
     type: types.reading_lamp
     multiple: true
+    examples:
+      - hex: '0001'
+        values:
+          location: 'front'
+          state: 'active'
+        description: Front reading lamps are active
+      - hex: '0100'
+        values:
+          location: 'rear'
+          state: 'inactive'
+        description: Rear reading lamps are inactive
   - id: 0x09
     name: interior_lights
     name_cased: interiorLights
     type: types.light
     multiple: true
+    examples:
+      - hex: '0000'
+        values:
+          location: 'front'
+          state: 'inactive'
+        description: Front interior lights are inactive
+      - hex: '0101'
+        values:
+          location: 'rear'
+          state: 'active'
+        description: Rear reading lights are active

@@ -36,19 +36,35 @@ properties:
         name: left_flasher_active
       - id: 0x03
         name: right_flasher_active
+    examples:
+      - hex: '02'
+        value: 'left_flasher_active'
+        description: Left flasher is active
   - id: 0x02
     name: honk_seconds
     name_cased: honkSeconds
     type: uinteger
     size: 1
     description: Number of seconds to honk the horn
+    examples:
+      - hex: '03'
+        value: 3
+        description: Honk the horn for 3 sec
   - id: 0x03
     name: flash_times
     name_cased: flashTimes
     type: uinteger
     size: 1
     description: Number of times to flash the lights
+    examples:
+      - hex: '05'
+        value: 5
+        description: Flash the lights 5 times
   - id: 0x04
     name: emergency_flashers_state
     name_cased: emergencyFlashersState
     type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Emergency flashers are active

@@ -1,5 +1,0 @@
-start_stop:
-  - item:
-      - value: '0x01'
-        parsed_value: 'active'
-        description: Automatic engine start-stop system active

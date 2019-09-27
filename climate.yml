@@ -35,55 +35,110 @@ properties:
     type: float
     size: 4
     description: The inside temperature in celsius per IEEE 754 formatting
+    examples:
+      - hex: '41980000'
+        value: 19.0
+        description: Inside temperature is 19C
   - id: 0x02
     name: outside_temperature
     name_cased: outsideTemperature
     type: float
     size: 4
     description: The outside temperature in celsius per IEEE 754 formatting
+    examples:
+      - hex: '41400000'
+        value: 12.0
+        description: Outside temperature is 12C
   - id: 0x03
     name: driver_temperature_setting
     name_cased: driverTemperatureSetting
     type: float
     size: 4
     description: The driver temperature setting in celsius per IEEE 754 formatting
+    examples:
+      - hex: '41ac0000'
+        value: 21.5
+        description: Driver temperature setting is 21.5C
   - id: 0x04
     name: passenger_temperature_setting
     name_cased: passengerTemperatureSetting
     type: float
     size: 4
     description: The passenger temperature setting in celsius per IEEE 754 formatting
+    examples:
+      - hex: '41ac0000'
+        value: 21.5
+        description: Passenger temperature setting is 21.5C
   - id: 0x05
     name: hvac_state
     name_cased: hvacState
     type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: HVAC is active
   - id: 0x06
     name: defogging_state
     name_cased: defoggingState
     type: types.active_state
+    examples:
+      - hex: '00'
+        value: 'inactive'
+        description: Defogging is inactive
   - id: 0x07
     name: defrosting_state
     name_cased: defrostingState
     type: types.active_state
+    examples:
+      - hex: '00'
+        value: 'inactive'
+        description: Defrosting is inactive
   - id: 0x08
     name: ionising_state
     name_cased: ionisingState
     type: types.active_state
+    examples:
+      - hex: '00'
+        value: 'inactive'
+        description: Ionising is inactive
   - id: 0x09
     name: defrosting_temperature_setting
     name_cased: defrostingTemperatureSetting
     type: float
     size: 4
     description: The defrosting temperature setting in celsius per IEEE 754 formatting
+    examples:
+      - hex: '41ac0000'
+        value: 21.5
+        description: Defrosting temperature setting is 21.5C
   - id: 0x0b
     name: hvac_weekday_starting_times
     name_cased: hvacWeekdayStartingTimes
     pretty_name: HVAC weekday starting times
     type: types.hvac_weekday_starting_time
     multiple: true
+    examples:
+      - hex: '05121e'
+        values:
+          weekday: 'saturday'
+          time:
+            hour: 18
+            minute: 30
+        description: HVAC is started on saturday at 18:30
+      - hex: '06131f'
+        values:
+          weekday: 'sunday'
+          time:
+            hour: 19
+            minute: 31
+        description: HVAC is started on sunday at 19:31
   - id: 0x0c
     name: rear_temperature_setting
     name_cased: rearTemperatureSetting
     type: float
     size: 4
     description: The rear temperature in celsius per IEEE 754 formatting
+    examples:
+      - hex: '41ac0000'
+        value: 21.5
+        description: Rear temperature setting is 21.5C

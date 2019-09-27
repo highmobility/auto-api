@@ -1,5 +1,0 @@
-fatigue_level:
-  - item:
-      - value: '0x01'
-        parsed_value: 'pause_recommended'
-        description: Pause recommended

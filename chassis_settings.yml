@@ -30,6 +30,10 @@ properties:
     name: driving_mode
     name_cased: drivingMode
     type: types.driving_mode
+    examples:
+      - hex: '01'
+        value: 'eco'
+        description: ECO driving mode
   - id: 0x02
     name: sport_chrono
     name_cased: sportChrono
@@ -44,39 +48,88 @@ properties:
         verb: start
       - id: 0x02
         name: reset
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Sport Chrono active
   - id: 0x05
     name: current_spring_rates
     name_cased: currentSpringRates
     type: types.spring_rate
     multiple: true
     description: The current values for the spring rates
+    examples:
+      - hex: '0015'
+        values:
+          axle: 'front'
+          spring_rate: 21
+        description: Front axle spring rate is 21N/mm
+      - hex: '0117'
+        values:
+          axle: 'rear'
+          spring_rate: 23
+        description: Rear axle spring rate is 23N/mm
   - id: 0x06
     name: maximum_spring_rates
     name_cased: maximumSpringRates
     type: types.spring_rate
     multiple: true
     description: The maximum possible values for the spring rates
+    examples:
+      - hex: '0025'
+        values:
+          axle: 'front'
+          spring_rate: 25
+        description: Front axle maximum spring rate is 37N/mm
+      - hex: '0127'
+        values:
+          axle: 'rear'
+          spring_rate: 39
+          description: Rear axle maximum spring rate is 39N/mm
   - id: 0x07
     name: minimum_spring_rates
     name_cased: minimumSpringRates
     type: types.spring_rate
     multiple: true
     description: The minimum possible values for the spring rates
+    examples:
+      - hex: '0010'
+        values:
+          axle: 'front'
+          spring_rate: 16
+        description: Front axle minimum spring rate is 16N/mm
+      - hex: '0112'
+        values:
+          axle: 'rear'
+          spring_rate: 18
+        description: Rear axle minimum spring rate is 18N/mm
   - id: 0x08
     name: current_chassis_position
     name_cased: currentChassisPosition
     type: integer
     size: 1
     description: The chassis position in mm calculated from the lowest point
+    examples:
+      - hex: '19'
+        value: 25
+        description: Current chassis position is 25mm
   - id: 0x09
     name: maximum_chassis_position
     name_cased: maximumChassisPosition
     type: integer
     size: 1
     descrition: The maximum possible value for the chassis position
+    examples:
+      - hex: '37'
+        value: 55
+        description: Maximum chassis position is 55mm
   - id: 0x0a
     name: minimum_chassis_position
     name_cased: minimumChassisPosition
     type: integer
     size: 1
     description: The minimum possible value for the chassis position
+    examples:
+      - hex: 'e4'
+        value: -28
+        description: Minimum chassis position is -28mm

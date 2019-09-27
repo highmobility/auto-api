@@ -23,7 +23,15 @@ properties:
     name: status
     name_cased: status
     type: types.on_off_state
+    examples:
+      - hex: '00'
+        value: 'off'
+        description: Ignition is off
   - id: 0x02
     name: accessories_status
     name_cased: accessoriesStatus
     type: types.on_off_state
+    examples:
+      - hex: '01'
+        value: 'on'
+        description: Accessories power is on

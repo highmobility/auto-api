@@ -25,25 +25,66 @@ properties:
     type: types.lock
     multiple: true
     description: Inside lock states for the given doors
+    examples:
+      - hex: '0001'
+        values:
+          location: 'front_left'
+          lock_state: 'locked'
+        description: Front left door is locked inside
+      - hex: '0100'
+        values:
+          location: 'front_right'
+          lock_state: 'unlocked'
+        description: Front right door is unlocked inside
   - id: 0x03
     name: locks
     name_cased: locks
     type: types.lock
     multiple: true
     description: Lock states for the given doors
+    examples:
+      - hex: '0200'
+        values:
+          location: 'rear_right'
+          lock_state: 'unlocked'
+        description: Rear right door is unlocked
+      - hex: '0301'
+        values:
+          location: 'rear_left'
+          lock_state: 'locked'
+        description: Rear left door is locked
   - id: 0x04
     name: positions
     name_cased: positions
     type: types.door_position
     multiple: true
     description: Door positions for the given doors
+    examples:
+      - hex: '0100'
+        values:
+          location: 'front_right'
+          position: 'closed'
+        description: Front right door is closed
+      - hex: '0001'
+        values:
+          location: 'front_left'
+          position: 'open'
+        description: Front left door is open
   - id: 0x05
     name: inside_locks_state
     name_cased: insideLocksState
     type: types.lock_state
     description: Inside locks state for the whole car (combines all specific lock states if available)
+    examples:
+      - hex: '01'
+        value: 'locked'
+        description: Doors are locked inside
   - id: 0x06
     name: locks_state
     name_cased: locksState
     type: types.lock_state
     description: Locks state for the whole car (combines all specific lock states if available)
+    examples:
+      - hex: '00'
+        value: 'unlocked'
+        description: Doors are unlocked
