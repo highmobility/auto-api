@@ -11,7 +11,7 @@ api:
   update: 11
 
 setters:
-  - name: message_recieved
+  - name: message_received
     mandatory: [0x01]
     optional: [0x02]
 
