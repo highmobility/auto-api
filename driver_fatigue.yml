@@ -31,3 +31,7 @@ properties:
         name: action_needed
       - id: 0x03
         name: car_ready_to_take_over
+    examples:
+      - hex: '01'
+        value: 'pause_recommended'
+        description: Driver is recommended to take a pause

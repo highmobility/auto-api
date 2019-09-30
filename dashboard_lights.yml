@@ -21,3 +21,24 @@ properties:
     name_cased: dashboardLights
     type: types.dashboard_light
     multiple: true
+    examples:
+      - hex: '0000'
+        values:
+          name: 'high_beam'
+          state: 'inactive'
+        description: High beam is inactive
+      - hex: '0201'
+        values:
+          name: 'hazard_warning'
+          state: 'info'
+        description: Info light active for hazard warning
+      - hex: '0f03'
+        values:
+          name: 'transmission_fluid_temperature'
+          state: 'red'
+        description: Red light active for transmission fluid temperature
+      - hex: '1502'
+        values:
+          name: 'engine_oil_level'
+          state: 'yellow'
+        description: Yellow light active for engine oil temperature

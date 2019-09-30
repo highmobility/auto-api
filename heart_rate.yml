@@ -22,3 +22,7 @@ properties:
     name_cased: heartRate
     type: uinteger
     size: 1
+    examples:
+      - hex: '40'
+        value: 64
+        description: Heart rate is 64 bpm

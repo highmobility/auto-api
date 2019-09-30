@@ -19,12 +19,20 @@ properties:
     type: uinteger
     size: 2
     description: Capability identifier of the failed message
+    examples:
+      - hex: '0021'
+        value: 0x0021
+        description: Failed message is Trunk capability
   - id: 0x02
     name: failed_message_type
     name_cased: failedMessageType
     type: uinteger
     size: 1
     description: Message type of the failed message
+    examples:
+      - hex: '01'
+        value: 0x01
+        description: Failed message type is Set
   - id: 0x03
     name: failure_reason
     name_cased: failureReason
@@ -63,13 +71,25 @@ properties:
         name: rate_limit
         pretty_name: Rate Limit
         description: Capability rate limit has been exceeded
+    examples:
+      - hex: '01'
+        value: 'unauthorised'
+        description: Failure occured because of unauthorised state
   - id: 0x04
     name: failure_description
     name_cased: failureDescription
     type: string
     description: Failure description bytes formatted in UTF-8
+    examples:
+      - hex: '54727920616761696e'
+        value: 'Try again'
+        description: Failure description informs to try again
   - id: 0x05
     name: failed_property_ids
     name_cased: failedPropertyIDs
     type: bytes
     description: Array of failed property identifiers
+    examples:
+      - hex: '0102'
+        value: [0x01, 0x02]
+        description: Trunk's lock and position failed

@@ -24,7 +24,15 @@ properties:
     name: gas_flap_lock
     name_cased: gasFlapLock
     type: types.lock_state
+    examples:
+      - hex: '01'
+        value: 'locked'
+        description: Gas flap is locked
   - id: 0x03
     name: gas_flap_position
     name_cased: gasFlapPosition
     type: types.position
+    examples:
+      - hex: '00'
+        value: 'closed'
+        description: Gas flap is closed

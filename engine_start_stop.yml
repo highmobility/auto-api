@@ -24,3 +24,7 @@ properties:
     name: status
     name_cased: status
     type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Automatic engine start-stop system is active

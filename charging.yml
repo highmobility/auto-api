@@ -35,12 +35,20 @@ properties:
     type: uinteger
     size: 2
     description: Estimated range in km
+    examples:
+      - hex: '01b0'
+        value: 432
+        description: 432 km estimated range
   - id: 0x03
     name: battery_level
     name_cased: batteryLevel
     type: double
     size: 8
     description: Battery level percentage between 0.0-1.0
+    examples:
+      - hex: '3fe0000000000000'
+        value: 0.5
+        description: Battery level 50%
   - id: 0x04
     name: battery_current_ac
     name_cased: batteryCurrentAC
@@ -48,6 +56,10 @@ properties:
     type: float
     size: 4
     description: Battery current in 4-bytes per IEEE 754
+    examples:
+      - hex: 'bf19999a'
+        value: -0.6
+        description: Battery current (AC) -0.6
   - id: 0x05
     name: battery_current_dc
     name_cased: batteryCurrentDC
@@ -55,6 +67,10 @@ properties:
     type: float
     size: 4
     description: Battery current in 4-bytes per IEEE 754
+    examples:
+      - hex: 'bf19999a'
+        value: -0.6
+        description: Battery current (DC) -0.6
   - id: 0x06
     name: charger_voltage_ac
     name_cased: chargerVoltageAC
@@ -62,6 +78,10 @@ properties:
     type: float
     size: 4
     description: Charger voltage in 4-bytes per IEEE 754
+    examples:
+      - hex: '43c80000'
+        value: 400
+        description: Charger voltage 400V
   - id: 0x07
     name: charger_voltage_dc
     name_cased: chargerVoltageDC
@@ -69,18 +89,30 @@ properties:
     type: float
     size: 4
     description: Charger voltage in 4-bytes per IEEE 754
+    examples:
+      - hex: '43c80000'
+        value: 400
+        description: Charger voltage 400V
   - id: 0x08
     name: charge_limit
     name_cased: chargeLimit
     type: double
     size: 8
     description: Charge limit percentage between 0.0-1.0
+    examples:
+      - hex: '3feccccccccccccd'
+        value: 0.9
+        description: Charge limit 90%
   - id: 0x09
     name: time_to_complete_charge
     name_cased: timeToCompleteCharge
     type: uinteger
     size: 1
     description: Time until charging completed in minutes
+    examples:
+      - hex: '3c'
+        value: 60
+        description: Time to complete charge 60 minutes
   - id: 0x0a
     name: charging_rate_kw
     name_cased: chargingRateKW
@@ -88,10 +120,18 @@ properties:
     type: float
     size: 4
     description: Charge rate in kW represented as 4-bytes per IEEE 754, when charging
+    examples:
+      - hex: '40600000'
+        value: 3.5
+        description: 3.5 kW charge rate
   - id: 0x0b
     name: charge_port_state
     name_cased: chargePortState
     type: types.position
+    examples:
+      - hex: '01'
+        value: 'open'
+        description: Charge port open
   - id: 0x0c
     name: charge_mode
     name_cased: chargeMode
@@ -105,6 +145,10 @@ properties:
       - id: 0x02
         name: inductive
         disabled_in_setter: true
+    examples:
+      - hex: '01'
+        value: 'timer_based'
+        description: Timer based charging
   - id: 0x0e
     name: max_charging_current
     name_cased: maxChargingCurrent
@@ -112,6 +156,10 @@ properties:
     type: float
     size: 4
     description: Maximum charging current in 4-bytes per IEEE 754
+    examples:
+      - hex: '41c80000'
+        value: 25.0
+        description: Maximum charging current is 25.0 A
   - id: 0x0f
     name: plug_type
     name_cased: plugType
@@ -128,6 +176,10 @@ properties:
       - id: 0x03
         name: chademo
         pretty_name: CHAdeMO
+    examples:
+      - hex: '01'
+        value: 'type_2'
+        description: The socket is Type 2
   - id: 0x10
     name: charging_window_chosen
     name_cased: chargingWindowChosen
@@ -138,28 +190,77 @@ properties:
         name: not_chosen
       - id: 0x01
         name: chosen
+    examples:
+      - hex: '00'
+        value: 'not_chosen'
+        description: No charging windows has been chosen
   - id: 0x11
     name: departure_times
     name_cased: departureTimes
     type: types.departure_time
     multiple: true
+    examples:
+      - hex: '011020'
+        values:
+          active_state: 'active'
+          time:
+            hour: 16
+            minute: 32
+        description: Departure time is active at 16:32
+      - hex: '000b33'
+        values:
+          active_state: 'inactive'
+          time:
+            hour: 11
+            minute: 51
+        description: Departure time is inactive at 11:51
   - id: 0x13
     name: reduction_times
     name_cased: reductionTimes
     pretty_name: Reduction of charging-current times
     type: types.reduction_time
     multiple: true
+    examples:
+      - hex: '001121'
+        values:
+          start_stop: 'start'
+          time:
+            hour: 17
+            minute: 33
+        description: Start reduction of charging current at 17:33
+      - hex: '010c34'
+        values:
+          start_stop: 'stop'
+          time:
+            hour: 12
+            minute: 52
+        description: Stop reduction of charging current at 12:52
   - id: 0x14
     name: battery_temperature
     name_cased: batteryTemperature
     type: float
     size: 4
     description: Battery temperature in Celsius in 4-bytes per IEEE 754
+    examples:
+      - hex: '4219999a'
+        value: 38.4
+        description: The battery temperature is 38.4 degrees Celsius
   - id: 0x15
     name: timers
     name_cased: timers
     type: types.timer
     multiple: true
+    examples:
+      - hex: '00000001598938e788'
+        values:
+          timer_type: 'preferred_start_time'
+          date: '2017-01-10T16:32:05.000Z'
+        description: 10 January 2017 at 16:32:05 UTC
+      - hex: '0100000159893c9108'
+        values:
+          timer_type: 'preferred_end_time'
+          date: '2017-01-10T16:36:05.000Z'
+        description: 10 January 2017 at 16:36:05 GMT
   - id: 0x16
     name: plugged_in
     name_cased: pluggedIn
@@ -170,6 +271,10 @@ properties:
         name: disconnected
       - id: 0x01
         name: plugged_in
+    examples:
+      - hex: '01'
+        value: 'plugged_in'
+        description: The charger is plugged in
   - id: 0x17
     name: status
     name_cased: status
@@ -194,3 +299,7 @@ properties:
       - id: 0x05
         name: charging_error
         disabled_in_setter: true
+    examples:
+      - hex: '01'
+        value: 'charging'
+        description: The vehicle is charging

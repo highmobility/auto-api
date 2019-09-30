@@ -36,3 +36,7 @@ properties:
         name: outside_behind_car
       - id: 0x05
         name: inside_car
+    examples:
+      - hex: '05'
+        value: 'inside_car'
+        description: Keyfob is inside the car
