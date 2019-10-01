@@ -25,8 +25,30 @@ properties:
     name_cased: openPercentages
     type: types.window_open_percentage
     multiple: true
+    examples:
+      - hex: '023fe1eb851eb851ec'
+        values:
+          location: 'rear_right'
+          open_percentage: 0.56
+        description: Rear right window is 56% open
+      - hex: '033fc70a3d70a3d70a'
+        values:
+          location: 'rear_left'
+          open_percentage: 0.18
+        description: Rear left window is 18% open
   - id: 0x03
     name: positions
     name_cased: positions
     type: types.window_position
     multiple: true
+    examples:
+      - hex: '0201'
+        values:
+          location: 'rear_right'
+          position: 'open'
+        description: Rear right window is open
+      - hex: '0300'
+        values:
+          location: 'rear_left'
+          position: 'closed'
+        description: Rear left window is closed

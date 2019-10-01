@@ -25,11 +25,19 @@ properties:
     name_cased: dimming
     type: types.percentage
     description: 100% is opaque, 0% is transparent
+    examples:
+      - hex: '3ff0000000000000'
+        value: 1.0
+        description: Rooftop is opaque (100%)
   - id: 0x02
     name: position
     name_cased: position
     type: types.percentage
     description: 100% is fully open, 0% is closed
+    examples:
+      - hex: '3fe0000000000000'
+        value: 0.5
+        description: Rooftop is half-open (50%)
   - id: 0x03
     name: convertible_roof_state
     name_cased: convertibleRoofState
@@ -62,6 +70,10 @@ properties:
       - id: 0x08
         name: loading_position_immediate
         disabled_in_setter: true
+    examples:
+      - hex: '01'
+        value: 'open'
+        description: Convertible roof is open
   - id: 0x04
     name: sunroof_tilt_state
     name_cased: sunroofTiltState
@@ -75,6 +87,10 @@ properties:
         name: tilted
       - id: 0x02
         name: half_tilted
+    examples:
+      - hex: '02'
+        value: 'half_tilted'
+        description: Sunroof is half-tilted
   - id: 0x05
     name: sunroof_state
     name_cased: sunroofState
@@ -88,3 +104,7 @@ properties:
         name: open
       - id: 0x02
         name: intermediate
+    examples:
+      - hex: '01'
+        value: 'open'
+        description: Sunroof is open

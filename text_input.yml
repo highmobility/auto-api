@@ -20,3 +20,7 @@ properties:
     name_cased: text
     type: string
     description: The UTF8 bytes of the string
+    examples:
+      - hex: '52656e64657a766f757320776974682052616d61'
+        value: 'Rendezvous with Rama'
+        description: Text is 'Rendezvous with Rama'

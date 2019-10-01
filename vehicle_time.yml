@@ -21,3 +21,9 @@ properties:
     name_cased: vehicleTime
     type: types.time
     description: Vehicle time in a 24h format
+    examples:
+      - hex: '1337'
+        values:
+          hour: 19
+          minute: 55
+        description: Vehcile time is 19:55

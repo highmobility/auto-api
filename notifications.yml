@@ -29,17 +29,36 @@ properties:
     name_cased: text
     type: string
     description: Text for the notification, bytes in UTF8
+    examples:
+      - hex: '4f70656e20476172616765'
+        value: 'Open Garage''
+        description: Notification text says 'Open Garage'
   - id: 0x02
     name: action_items
     name_cased: actionItems
     type: types.action_item
     multiple: true
+    examples:
+      - hex: '1b00044f70656e'
+        values:
+          id: 27
+          name: 'Open'
+        description: Notification action named 'Open' with an ID 27
+      - hex: '1c000643616e63656c'
+        values:
+          id: 28
+          name: 'Cancel'
+        description: Notification action named 'Cancel' with an ID 28
   - id: 0x03
     name: activated_action
     name_cased: activatedAction
     type: uinteger
     size: 1
     description: Identifier of the activated action
+    examples:
+      - hex: '1b'
+        value: 27
+        description: Activated action with ID 27
   - id: 0x04
     name: clear
     name_cased: clear
@@ -48,3 +67,7 @@ properties:
     enum_values:
       - id: 0x00
         name: clear
+    examples:
+      - hex: '00'
+        value: 'clear'
+        description: Clear notifications

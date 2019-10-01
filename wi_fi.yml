@@ -29,22 +29,42 @@ properties:
     name: status
     name_cased: status
     type: types.enabled_state
+    examples:
+      - hex: '01'
+        value: 'enabled'
+        description: WiFi is enabled
   - id: 0x02
     name: network_connected
     name_cased: networkConnection
     type: types.connection_state
+    examples:
+      - hex: '01'
+        value: 'connected'
+        description: WiFi is connected
   - id: 0x03
     name: network_ssid
     name_cased: networkSSID
     pretty_name: Network SSID
     type: string
-    description: The network SSID formatted in UTF-8
+    description: The network SSID
+    examples:
+      - hex: '484f4d45'
+        value: 'HOME'
+        description: WiFi network name is 'HOME'
   - id: 0x04
     name: network_security
     name_cased: networkSecurity
     type: types.network_security
+    examples:
+      - hex: '03'
+        value: 'wpa2_personal'
+        description: WiFi network uses WPA2 Personal
   - id: 0x05
     name: password
     name_cased: password
     type: string
-    description: The network password formatted in UTF-8
+    description: The network password
+    examples:
+      - hex: '67726561745f7365637265743132'
+        value: 'great_secret12'
+        description: WiFi network password is 'great_secret12'

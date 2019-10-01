@@ -20,8 +20,30 @@ properties:
     name_cased: personsDetected
     type: types.person_detected
     multiple: true
+    examples:
+      - hex: '0001'
+        values:
+          location: 'front_left'
+          detected: 'detected
+        description: Person detected on the front-left seat
+      - hex: '0100'
+        values:
+          location: 'front_right'
+          detected: 'not_detected'
+        description: No person detected on the front-right seat
   - id: 0x03
     name: seatbelts_state
     name_cased: seatbeltsState
     type: types.seatbelt_state
     multiple: true
+    examples:
+      - hex: '0001'
+        values:
+          location: 'front_left'
+          fastened_state: 'fastened'
+        description: Seatbelt fastened for the front-left seat
+      - hex: '0100'
+        values:
+          location: 'front_right'
+          fastened_state: 'not_fastened'
+        description: Seatbelt not fastened for the front-right seat

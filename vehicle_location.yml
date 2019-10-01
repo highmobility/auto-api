@@ -20,15 +20,29 @@ properties:
     name: coordinates
     name_cased: coordinates
     type: types.coordinates
+    examples:
+      - hex: '404a428f9f44d445402acf562174c4ce'
+        values:
+          latitude: 52.520008
+          longitude: 13.404954
+        description: Vehicle coordinates are 52.520008:13.404954
   - id: 0x05
     name: heading
     name_cased: heading
     type: double
     size: 8
-    description: Heading in 8-bytes per IEEE 754
+    description: Heading in degrees
+    examples:
+      - hex: '402abd80c308feac'
+        value: 13.370123
+        description: Heading direction is 13.370123
   - id: 0x06
     name: altitude
     name_cased: altitude
     type: double
     size: 8
-    description: Altitude in meters above the WGS 84 reference ellipsoid per double precision IEEE 754 formatting
+    description: Altitude in meters above the WGS 84 reference ellipsoid
+    examples:
+      - hex: '4060b00000000000'
+        value: 133.5
+        description: Vehicle altitude is 133.5 m

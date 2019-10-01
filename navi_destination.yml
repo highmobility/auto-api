@@ -25,31 +25,59 @@ properties:
     name: coordinates
     name_cased: coordinates
     type: types.coordinates
+    examples:
+      - hex: '404a428f9f44d445402acf562174c4ce'
+        values:
+          latitude:: 52.520008
+          longitude: 13.404954
+        description: Coordinates are 52.520008:13.404954
   - id: 0x02
     name: destination_name
     name_cased: destinationName
     type: string
     description: Destination name bytes formatted in UTF-8
+    examples:
+      - hex: '4265726c696e'
+        value: 'Berlin'
+        description: Destination name is 'Berlin'
   - id: 0x03
     name: data_slots_free
     name_cased: dataSlotsFree
     type: uinteger
     size: 1
     description: Remaining number of POI data slots available.
+    examples:
+      - hex: '0e'
+        value: 14
+        description: 14 available POI data slots
   - id: 0x04
     name: data_slots_max
     name_cased: dataSlotsMax
     type: uinteger
     size: 1
     description: Maximum number of POI data slots.
+    examples:
+      - hex: '1e'
+        value: 30
+        description: Maximum number of POI data slots is 30
   - id: 0x05
     name: arrival_duration
     name_cased: arrivalDuration
     type: types.time
     description: Remaining time until reaching the destination.
+    examples:
+      - hex: '0220'
+        values:
+          hour: 2
+          minute: 32
+        description: Remaining time to destination is 2h and 32min
   - id: 0x06
     name: distance_to_destination
     name_cased: distanceToDestination
     type: uinteger
     size: 2
     description: Remaining distance to reach the destination.
+    examples:
+      - hex: '0539'
+        value: 1337
+        description: Remaining distance to destination is 1337km

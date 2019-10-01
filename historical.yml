@@ -27,15 +27,19 @@ properties:
     type: types.capability_state
     multiple: true
     examples:
-      - hex: '00200106000401000100'
+      - hex: '002001060004010001000400050100020001'
         values:
           doors:
+            positions:
+              location: 'front_left'
+              position: 'open'
             locks_state: 'unlocked'
         description: Doors capability's locks are unlocked
-      - hex: '0023010a000701000440600000'
+      - hex: '0023010a0007010004406000000b000401000101'
         values:
           charging:
             charging_rate_kw: 3.5
+            charge_port_state: 'open'
         description: Charging capability's charging rate is 3.5 kW
   - id: 0x02
     name: capability_id

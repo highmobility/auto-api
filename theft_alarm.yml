@@ -34,3 +34,7 @@ properties:
       - id: 0x02
         name: triggered
         verb: trigger
+    examples:
+      - hex: '01'
+        value: 'armed'
+        description: Theft alarm is armed
