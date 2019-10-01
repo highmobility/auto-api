@@ -24,7 +24,7 @@ properties:
       - hex: '0001'
         values:
           location: 'front_left'
-          detected: 'detected
+          detected: 'detected'
         description: Person detected on the front-left seat
       - hex: '0100'
         values:
