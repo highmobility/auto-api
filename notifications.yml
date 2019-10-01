@@ -28,7 +28,7 @@ properties:
     name: text
     name_cased: text
     type: string
-    description: Text for the notification, bytes in UTF8
+    description: Text for the notification
     examples:
       - hex: '4f70656e20476172616765'
         value: 'Open Garage''

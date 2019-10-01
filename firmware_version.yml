@@ -33,7 +33,7 @@ properties:
     name_cased: hmKitBuildName
     pretty_name: HMKit Build Name
     type: string
-    description: HMKit version build name bytes formatted in UTF-8
+    description: HMKit version build name
     examples:
       - hex: '6274737461636b2d75617274'
         value: 'btstack-uart'
@@ -42,7 +42,7 @@ properties:
     name: application_version
     name_cased: applicationVersion
     type: string
-    description: Application version bytes formatted in UTF-8
+    description: Application version
     examples:
       - hex: '76312e352d70726f64'
         value: 'v1.5-prod'

@@ -48,7 +48,7 @@ properties:
     name: operator_name
     name_cased: operatorName
     type: string
-    description: Operator Name bytes formatted in UTF-8
+    description: Operator name
     examples:
       - hex: '4265726c696e205061726b696e67'
         value: 'Berlin Parking'
@@ -58,7 +58,7 @@ properties:
     name_cased: operatorTicketID
     pretty_name: Operator Ticket ID
     type: string
-    description: Operator Ticket ID bytes formatted in UTF-8
+    description: Operator Ticket ID
     examples:
       - hex: '3634383934323333'
         value: '64894233'

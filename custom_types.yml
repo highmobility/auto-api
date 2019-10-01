@@ -47,12 +47,12 @@ types:
         name_cased: latitude
         type: double
         size: 8
-        description: Latitude in 8-bytes per IEEE 754
+        description: Latitude
       - name: longitude
         name_cased: longitude
         type: double
         size: 8
-        description: Longitude in 8-bytes per IEEE 754
+        description: Longitude
     # MARK: Detected
   - name: detected
     name_cased: detected
@@ -299,7 +299,7 @@ types:
         pretty_name: G-force
         type: float
         size: 4
-        description: The accelaration in g-force per IEEE 754
+        description: The accelaration in g-force
     # MARK: Action Item
   - name: action_item
     name_cased: actionItem
@@ -313,7 +313,7 @@ types:
       - name: name
         name_cased: name
         type: string
-        description: Name of the action, bytes in UTF8
+        description: Name of the action
     # MARK: Brake Torque Vectoring
   - name: brake_torque_vectoring
     name_cased: brakeTorqueVectoring
@@ -344,11 +344,11 @@ types:
       - name: text
         name_cased: text
         type: string
-        description: CCM text bytes formatted in UTF-8
+        description: CCM text
       - name: status
         name_cased: status
         type: string
-        description: CCM status bytes formatted in UTF-8
+        description: CCM status
     # MARK: Condition Based Service
   - name: condition_based_service
     name_cased: conditionBasedService
@@ -384,11 +384,11 @@ types:
       - name: text
         name_cased: text
         type: string
-        description: CBS text bytes formatted in UTF-8
+        description: CBS text
       - name: description
         name_cased: description
         type: string
-        description: Description bytes formatted in UTF-8
+        description: Description
     # MARK: Dashboard Light
   - name: dashboard_light
     name_cased: dashboardLight
@@ -779,7 +779,7 @@ types:
         name_cased: price
         type: float
         size: 4
-        description: The price in 4-bytes per IEEE 754
+        description: The price
       - name: currency
         name_cased: currency
         type: string
@@ -896,7 +896,7 @@ types:
         name_cased: pressure
         type: float
         size: 4
-        description: Tire temperature in BAR formatted in 4-bytes per IEEE 754
+        description: Tire pressure in BAR
     # MARK: Tire Temperature
   - name: tire_temperature
     name_cased: tireTemperature
@@ -910,7 +910,7 @@ types:
         name_cased: temperature
         type: float
         size: 4
-        description: Tire temperature in BAR formatted in 4-bytes per IEEE 754
+        description: Tire temperature in Celsius
     # MARK: Trouble Code
   - name: trouble_code
     name_cased: troubleCode
@@ -924,16 +924,16 @@ types:
       - name: id
         name_cased: ID
         type: string
-        description: ID bytes formatted in UTF-8
+        description: Identifier
       - name: ecu_id
         name_cased: ecuID
         pretty_name: ECU ID
         type: string
-        description: ECU ID bytes formatted in UTF-8
+        description: Electronic Control Unit identifier
       - name: status
         name_cased: status
         type: string
-        description: Status bytes formatted in UTF-8
+        description: Status
     # MARK: Wheel RPM
   - name: wheel_rpm
     name_cased: wheelRPM

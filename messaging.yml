@@ -22,7 +22,7 @@ properties:
     name: text
     name_cased: text
     type: string
-    description: The text bytes of UTF8
+    description: The text
     examples:
       - hex: '486579206d6f6d21'
         value: 'Hey mom!'
@@ -31,7 +31,7 @@ properties:
     name: handle
     name_cased: handle
     type: string
-    description: The optional handle of message, bytes of UTF8
+    description: The optional handle of message
     examples:
       - hex: '457070'
         value: 'Epp'

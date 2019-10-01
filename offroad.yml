@@ -24,7 +24,7 @@ properties:
     examples:
       - hex: '000a'
         value: 10
-        description: Route inckine is 10 degrees
+        description: Route inckine is 10°
   - id: 0x02
     name: wheel_suspension
     name_cased: wheelSuspension

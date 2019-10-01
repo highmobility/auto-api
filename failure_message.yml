@@ -79,7 +79,7 @@ properties:
     name: failure_description
     name_cased: failureDescription
     type: string
-    description: Failure description bytes formatted in UTF-8
+    description: Failure description
     examples:
       - hex: '54727920616761696e'
         value: 'Try again'

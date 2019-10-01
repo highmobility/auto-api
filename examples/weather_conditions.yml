@@ -1,5 +1,0 @@
-rain_intensity:
-  - item:
-      - value: '0x3F, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00'
-        parsed_value: 100
-        description: 100% (maximum rain)

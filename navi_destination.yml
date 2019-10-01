@@ -35,7 +35,7 @@ properties:
     name: destination_name
     name_cased: destinationName
     type: string
-    description: Destination name bytes formatted in UTF-8
+    description: Destination name 
     examples:
       - hex: '4265726c696e'
         value: 'Berlin'

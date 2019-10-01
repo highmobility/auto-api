@@ -76,7 +76,7 @@ properties:
     name_cased: brakePressure
     type: float
     size: 4
-    description: Brake pressure in bar, whereas 100bar is max value, full brake
+    description: Brake pressure in bar, whereas 100 bar is max value, full brake
     examples:
       - hex: '41a00000'
         value: 20.0
@@ -86,7 +86,7 @@ properties:
     name_cased: yawRate
     type: float
     size: 4
-    description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
+    description: Yaw rate in degrees per second [°/s]
     examples:
       - hex: '40d51eb8'
         value: 6.66

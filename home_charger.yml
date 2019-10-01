@@ -84,7 +84,7 @@ properties:
     pretty_name: Charging Power (kW)
     type: float
     size: 4
-    description: Charging power in kW formatted in 4-bytes per IEEE 754
+    description: Charging power in kW
     examples:
       - hex: '41380000'
         value: 11.5
@@ -110,7 +110,7 @@ properties:
     name_cased: wifiHotspotSSID
     pretty_name: Wi-Fi Hotspot SSID
     type: string
-    description: The Wi-Fi Hotspot SSID formatted in UTF-8
+    description: The Wi-Fi Hotspot SSID
     examples:
       - hex: '436861726765722037363132'
         value: 'Charger 7612'
@@ -129,7 +129,7 @@ properties:
     name_cased: wiFiHotspotPassword
     pretty_name: Wi-Fi Hotspot Password
     type: string
-    description: The Wi-Fi Hotspot password formatted in UTF-8
+    description: The Wi-Fi Hotspot password 
     examples:
       - hex: '5a57337641524e554265'
         value: 'ZW3vARNUBe'
@@ -156,7 +156,7 @@ properties:
     pretty_name: Charge current (DC)
     type: float
     size: 4
-    description: The charge current (DC) per IEEE 754
+    description: The charge direct current
     examples:
       - hex: '3f000000'
         value: 0.5
@@ -167,7 +167,7 @@ properties:
     pretty_name: Maximum charge current
     type: float
     size: 4
-    description: The maximum possible charge current per IEEE 754
+    description: The maximum possible charge current
     examples:
       - hex: '3f800000'
         value: 1.0
@@ -178,7 +178,7 @@ properties:
     pretty_name: Minimum charge current
     type: float
     size: 4
-    description: The minimal possible charge current per IEEE 754
+    description: The minimal possible charge current
     examples:
       - hex: '00000000'
         value: 0.0
