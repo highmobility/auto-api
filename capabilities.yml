@@ -14,7 +14,7 @@ getters:
   name: get_capabilities
 
 state: all
-
+    
 properties:
   - id: 0x01
     name: capabilities
@@ -22,13 +22,14 @@ properties:
     type: types.supported_capability
     multiple: true
     examples:
-      - hex: '00200203040506'
+      - hex: '002000050203040506'
         values:
           capability_id: 0x0020
           supported_property_ids: [0x02, 0x03, 0x04, 0x05, 0x06]
         description: Doors supports inside locks, locks, positions, inside locks state and locks state properties
-      - hex: '0021020811'
+      - hex: '00230003020811'
         values:
           capability_id: 0x0023
           supported_property_ids: [0x02, 0x08, 0x11]
         description: Charging supports estimated range, charge limit and departure times properties
+
