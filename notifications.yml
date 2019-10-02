@@ -31,7 +31,7 @@ properties:
     description: Text for the notification
     examples:
       - hex: '4f70656e20476172616765'
-        value: 'Open Garage''
+        value: 'Open Garage'
         description: Notification text says 'Open Garage'
   - id: 0x02
     name: action_items
