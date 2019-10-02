@@ -69,7 +69,7 @@ properties:
         name: successful
       - id: 0x03
         name: error
-    examples:
+      examples:
         - hex: '02'
           value: 'successful'
           description: Teleservice is available
