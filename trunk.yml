@@ -23,7 +23,15 @@ properties:
     name: lock
     name_cased: lock
     type: types.lock_state
+    examples:
+      - hex: '00'
+        value: 'unlocked'
+        description: Trunk is unlocked
   - id: 0x02
     name: position
     name_cased: position
     type: types.position
+    examples:
+      - hex: '01'
+        value: 'open'
+        description: Trunk is open

@@ -1,5 +1,0 @@
-position:
-  - item:
-      - value: '0x01'
-        parsed_value: 'open'
-        description: Hood is open

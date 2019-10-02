@@ -34,7 +34,7 @@ properties:
     name_cased: insideTemperature
     type: float
     size: 4
-    description: The inside temperature in celsius per IEEE 754 formatting
+    description: The inside temperature in celsius
     examples:
       - hex: '41980000'
         value: 19.0
@@ -44,7 +44,7 @@ properties:
     name_cased: outsideTemperature
     type: float
     size: 4
-    description: The outside temperature in celsius per IEEE 754 formatting
+    description: The outside temperature in celsius
     examples:
       - hex: '41400000'
         value: 12.0
@@ -54,7 +54,7 @@ properties:
     name_cased: driverTemperatureSetting
     type: float
     size: 4
-    description: The driver temperature setting in celsius per IEEE 754 formatting
+    description: The driver temperature setting in celsius
     examples:
       - hex: '41ac0000'
         value: 21.5
@@ -64,7 +64,7 @@ properties:
     name_cased: passengerTemperatureSetting
     type: float
     size: 4
-    description: The passenger temperature setting in celsius per IEEE 754 formatting
+    description: The passenger temperature setting in celsius
     examples:
       - hex: '41ac0000'
         value: 21.5
@@ -106,7 +106,7 @@ properties:
     name_cased: defrostingTemperatureSetting
     type: float
     size: 4
-    description: The defrosting temperature setting in celsius per IEEE 754 formatting
+    description: The defrosting temperature setting in celsius
     examples:
       - hex: '41ac0000'
         value: 21.5
@@ -137,7 +137,7 @@ properties:
     name_cased: rearTemperatureSetting
     type: float
     size: 4
-    description: The rear temperature in celsius per IEEE 754 formatting
+    description: The rear temperature in celsius 
     examples:
       - hex: '41ac0000'
         value: 21.5

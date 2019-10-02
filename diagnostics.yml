@@ -89,7 +89,7 @@ properties:
     name_cased: batteryVoltage
     type: float
     size: 4
-    description: Battery voltage per IEEE 754 formatting
+    description: Battery voltage
     examples:
       - hex: '41400000'
         value: 12.0
@@ -100,7 +100,7 @@ properties:
     pretty_name: AdBlue Level
     type: float
     size: 4
-    description: AdBlue level in liters formatted in 4-bytes per IEEE 754 formatting
+    description: AdBlue level in liters
     examples:
       - hex: '3f000000'
         value: 0.5
@@ -130,7 +130,7 @@ properties:
     name_cased: fuelVolume
     type: float
     size: 4
-    description: The fuel volume measured in liters formatted in 4-bytes per IEEE 754 formatting
+    description: The fuel volume measured in liters
     examples:
       - hex: '420e0000'
         value: 35.5
@@ -159,7 +159,7 @@ properties:
     name_cased: engineTotalOperatingHours
     type: float
     size: 4
-    description: The accumulated time of engine operation per IEEE 754 formatting
+    description: The accumulated time of engine operation
     examples:
       - hex: '44bb94cd'
         value: 1500.65
@@ -169,7 +169,7 @@ properties:
     name_cased: engineTotalFuelConsumption
     type: float
     size: 4
-    description: The accumulated lifespan fuel consumption in liters per IEEE 754 formatting
+    description: The accumulated lifespan fuel consumption in liters 
     examples:
       - hex: '46d78600'
         value: 27587.0

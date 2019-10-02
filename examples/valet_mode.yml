@@ -1,5 +1,0 @@
-valet_mode:
-  - item:
-      - value: '0x01'
-        parsed_value: 'active'
-        description: Activated

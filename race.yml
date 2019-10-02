@@ -20,57 +20,111 @@ properties:
     name_cased: accelerations
     type: types.acceleration
     multiple: true
+    examples:
+      - hex: '003f5d2f1b'
+        values:
+          direction: 'longitudinal'
+          g_force: 0.864
+        description: Longitudinal acceleration is 0.864 g
+      - hex: '01bf40c49c'
+        values:
+          direction: 'lateral'
+          g_force: -0.753
+        description: Lateral acceleration is -0.753 g
   - id: 0x02
     name: understeering
     name_cased: understeering
     type: double
     size: 8
     description: The understeering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 0.3 (30%) marginal, over 30% critical
+    examples:
+      - hex: '3fc851eb851eb852'
+        value: 0.19
+        description: Understeering is at 19%
   - id: 0x03
     name: oversteering
     name_cased: oversteering
     type: double
     size: 8
     description: The oversteering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 30% marginal, over 30% critical
+    examples:
+      - hex: '3fa999999999999a'
+        value: 0.05
+        description: Oversteering is at 5%
   - id: 0x04
     name: gas_pedal_position
     name_cased: gasPedalPosition
     type: double
     size: 8
     description: The gas pedal position between 0.0-1.0, whereas 1.0 (100%) is full throttle
+    examples:
+      - hex: '3fef5c28f5c28f5c'
+        value: 0.98
+        description: Gas pedal position is at 98%
   - id: 0x05
     name: steering_angle
     name_cased: steeringAngle
     type: integer
     size: 1
-    description: The steering angle in degrees, whereas 0 degrees is straight ahead, positive number to the right and negative number to the left
+    description: The steering angle in degrees, whereas 0° is straight ahead, positive number to the right and negative number to the left
+    examples:
+      - hex: '0a'
+        value: 10
+        description: Steering angle is 10° to right
   - id: 0x06
     name: brake_pressure
     name_cased: brakePressure
     type: float
     size: 4
-    description: Brake pressure in bar, whereas 100bar is max value, full brake
+    description: Brake pressure in bar, whereas 100 bar is max value, full brake
+    examples:
+      - hex: '41a00000'
+        value: 20.0
+        description: Brake pressure is 20.0 bar
   - id: 0x07
     name: yaw_rate
     name_cased: yawRate
     type: float
     size: 4
-    description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
+    description: Yaw rate in degrees per second [°/s]
+    examples:
+      - hex: '40d51eb8'
+        value: 6.66
+        description: Yaw rate is 6.66 °/s
   - id: 0x08
     name: rear_suspension_steering
     name_cased: rearSuspensionSteering
     type: integer
     size: 1
     description: Rear suspension steering in degrees
+    examples:
+      - hex: '03'
+        value: 3
+        description: Rear suspension steering is +3°
   - id: 0x09
     name: electronic_stability_program
     name_cased: electronicStabilityProgram
     type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: ESP is active
   - id: 0x0a
     name: brake_torque_vectorings
     name_cased: brakeTorqueVectorings
     type: types.brake_torque_vectoring
     multiple: true
+    examples:
+      - hex: '0101'
+        values:
+          axle: 'front'
+          state: 'active'
+        description: Front brake torque vectoring is active
+      - hex: '0000'
+        values:
+          axle: 'rear'
+          state: 'inactive'
+        description: Rear brake torque vectoring is inactive
   - id: 0x0b
     name: gear_mode
     name_cased: gearMode
@@ -91,34 +145,62 @@ properties:
         name: low_gear
       - id: 0x06
         name: sport
+    examples:
+      - hex: '04'
+        value: 'drive'
+        description: Gear is in drive
   - id: 0x0c
     name: selected_gear
     name_cased: selectedGear
     type: integer
     size: 1
     description: The selected gear value, if any
+    examples:
+      - hex: '04'
+        value: 4
+        description: 4th gear is selected
   - id: 0x0d
     name: brake_pedal_position
     name_cased: brakePedalPosition
     type: double
     size: 8
     description: The brake pedal position between 0.0-1.0, wheras 1.0 (100%) is full brakes
+    examples:
+      - hex: '3fbeb851eb851eb8'
+        value: 0.12
+        description: Brake pedal position is at 12%
   - id: 0x0e
     name: brake_pedal_switch
     name_cased: brakePedalSwitch
     type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Brake pedal switch is active, brake lights active
   - id: 0x0f
     name: clutch_pedal_switch
     name_cased: clutchPedalSwitch
     type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Clutch pedal switch is active, clutch is fully depressed
   - id: 0x10
     name: accelerator_pedal_idle_switch
     name_cased: acceleratorPedalIdleSwitch
     type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Accelerator pedal idle switch is active, pedal released
   - id: 0x11
     name: accelerator_pedal_kickdown_switch
     name_cased: acceleratorPedalKickdownSwitch
     type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Accelerator pedal kickdown switch is active, pedal fully depressed
   - id: 0x12
     name: vehicle_moving
     name_cased: vehicleMoving
@@ -129,3 +211,7 @@ properties:
         name: not_moving
       - id: 0x01
         name: moving
+    examples:
+      - hex: '01'
+        value: 'moving'
+        description: Vehicle is moving

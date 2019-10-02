@@ -69,10 +69,10 @@ properties:
         name: successful
       - id: 0x03
         name: error
-      examples:
-        - hex: '02'
-          value: 'successful'
-          description: Teleservice is available
+    examples:
+      - hex: '02'
+        value: 'successful'
+        description: Teleservice is available
   - id: 0x06
     name: service_distance_threshold
     name_cased: serviceDistanceThreshold

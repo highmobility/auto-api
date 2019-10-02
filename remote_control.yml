@@ -52,15 +52,27 @@ properties:
       - id: 0x05
         name: ended
         verb: stop
+    examples:
+      - hex: '02'
+        value: 'started'
+        description: Remote control is started
   - id: 0x02
     name: angle
     name_cased: angle
     type: integer
     size: 2
     description: Wheel base angle in degrees
+    examples:
+      - hex: '0032'
+        value: 50
+        description: Angle is 50°
   - id: 0x03
     name: speed
     name_cased: speed
     type: integer
     size: 1
     description: Speed in km/h
+    examples:
+      - hex: '05'
+        value: 5
+        description: Speed is 5 km/h

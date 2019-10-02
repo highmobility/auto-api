@@ -20,3 +20,7 @@ properties:
     name: connection
     name_cased: connection
     type: types.connection_state
+    examples:
+      - hex: '01'
+        value: 'connected'
+        description: A mobile phone is connected

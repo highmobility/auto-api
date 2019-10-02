@@ -1,5 +1,0 @@
-parking_brake:
-  - item:
-      - value: '0x01'
-        parsed_value: 'active'
-        description: Parking brake active

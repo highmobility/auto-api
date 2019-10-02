@@ -21,3 +21,7 @@ properties:
     name_cased: rainIntensity
     type: types.percentage
     description: Measured raining intensity percentage, whereas 0% is no rain and 100% is maximum rain
+    examples:
+      - hex: '3ff0000000000000'
+        value: 1.0
+        description: Rain intensity is at 100% (maximum rain)

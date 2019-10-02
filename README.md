@@ -370,6 +370,73 @@ Examples:
         description: The currency alphabetic code per ISO 4217 or crypto currency symbol
 ```
 
+## examples
+
+Every property has an array of examples (currently 1-2 for a given one).  
+The examples are under the key `examples` and can also be used to generate *tests*.
+
+Examples contain 3 parts:  
+
+* `hex` has the hexadecimal value for the `data component` of the property
+* `value(s)` contains the *parsed* value(s) of the hex
+* `description` describes what the data represents (mostly used in doc-examples)
+
+The *values* part has 2 mutually exclusive keys: `value` or `values`.  
+
+`value` is used when the property has a "simple" type that only has a single value (i.e. an *integer*, *string*, *enum*).
+
+
+```yaml
+  - id: 0x01
+    name: lock
+    name_cased: lock
+    type: types.lock_state
+    examples:
+      - hex: '00'
+        value: 'unlocked'
+        description: Trunk is unlocked
+
+  - id: 0x07
+    name: yaw_rate
+    name_cased: yawRate
+    type: float
+    size: 4
+    description: Yaw rate in degrees per second [°/s]
+    examples:
+      - hex: '40d51eb8'
+        value: 6.66
+        description: Yaw rate is 6.66 °/s
+```
+
+`values` is used for properties with *custom types* that contain more than 1 piece of distinct information (i.e. *time* with it's *hour* and *minute*).  
+`values` contains a dictionary with keys as the names of the values in the *custom type*.
+
+```yaml
+  - id: 0x02
+    name: persons_detected
+    name_cased: personsDetected
+    type: types.person_detected
+    multiple: true
+    examples:
+      - hex: '0001'
+        values:
+          location: 'front_left'
+          detected: 'detected'
+        description: Person detected on the front-left seat
+
+  - id: 0x01
+    name: accelerations
+    name_cased: accelerations
+    type: types.acceleration
+    multiple: true
+    examples:
+      - hex: '003f5d2f1b'
+        values:
+          direction: 'longitudinal'
+          g_force: 0.864
+        description: Longitudinal acceleration is 0.864 g
+```
+
 
 ## miscellaneous
 

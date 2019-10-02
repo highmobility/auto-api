@@ -21,12 +21,20 @@ properties:
     name_cased: url
     pretty_name: URL
     type: string
-    description: The UTF8 bytes of the URL string
+    description: URL string
+    examples:
+      - hex: '68747470733a2f2f6269742e6c792f326f6259374735'
+        value: 'https://bit.ly/2obY7G5'
+        description: Video URL is 'https://bit.ly/2obY7G5'
   - id: 0x02
     name: starting_second
     name_cased: startingSecond
     type: uinteger
     size: 2
+    examples:
+      - hex: '0003'
+        value: 3
+        description: Start from the 3rd second
   - id: 0x03
     name: screen
     name_cased: screen
@@ -37,3 +45,7 @@ properties:
         name: front
       - id: 0x01
         name: rear
+    examples:
+      - hex: '01'
+        value: 'rear'
+        description: Play the video on the rear screen

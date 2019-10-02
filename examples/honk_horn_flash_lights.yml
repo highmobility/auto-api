@@ -1,5 +1,0 @@
-flashers:
-  - item:
-      - value: '0x02'
-        parsed_value: 'left_flasher_active'
-        description: Left flasher active

@@ -21,7 +21,7 @@ properties:
     name_cased: outsideLight
     type: float
     size: 4
-    description: Measured outside illuminance in lux, formatted as IEEE 754 decimal
+    description: Measured outside illuminance in lux
     examples:
       - hex: '47d8cc00'
         value: 111000.0
@@ -31,7 +31,7 @@ properties:
     name_cased: insideLight
     type: float
     size: 4
-    description: Measured inside illuminance in lux, formatted as IEEE 754 decimal
+    description: Measured inside illuminance in lux
     examples:
       - hex: '3e800000'
         value: 0.25

@@ -21,9 +21,17 @@ properties:
     type: integer
     size: 2
     description: The route elevation incline in degrees, which is a negative number for decline
+    examples:
+      - hex: '000a'
+        value: 10
+        description: Route inckine is 10°
   - id: 0x02
     name: wheel_suspension
     name_cased: wheelSuspension
     type: double
     size: 8
     description: The wheel suspension level percentage, whereas 0.0 is no suspension and 1.0 maximum suspension
+    examples:
+      - hex: '3fe0000000000000'
+        value: 0.5
+        description: Wheel suspension level is 50%
