@@ -63,12 +63,12 @@ properties:
         values:
           axle: 'front'
           spring_rate: 21
-        description: Front axle spring rate is 21N/mm
+        description: Front axle spring rate is 21 N/mm
       - hex: '0117'
         values:
           axle: 'rear'
           spring_rate: 23
-        description: Rear axle spring rate is 23N/mm
+        description: Rear axle spring rate is 23 N/mm
   - id: 0x06
     name: maximum_spring_rates
     name_cased: maximumSpringRates
@@ -85,7 +85,7 @@ properties:
         values:
           axle: 'rear'
           spring_rate: 39
-          description: Rear axle maximum spring rate is 39N/mm
+        description: Rear axle maximum spring rate is 39N/mm
   - id: 0x07
     name: minimum_spring_rates
     name_cased: minimumSpringRates
