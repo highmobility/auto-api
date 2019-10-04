@@ -329,7 +329,7 @@ Examples:
       - name: name
         name_cased: name
         type: string
-        description: Name of the action, bytes in UTF8
+        description: Name of the action
         
   - name: brake_torque_vectoring
     name_cased: brakeTorqueVectoring
