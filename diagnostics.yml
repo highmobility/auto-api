@@ -228,7 +228,7 @@ properties:
     type: types.check_control_message
     multiple: true
     examples:
-      - hex: '000100019c780002436865636b20656e67696e650005416c657274'
+      - hex: '000100019c78000c436865636b20656e67696e650005416c657274'
         values:
           id: 1
           remaining_minutes: 105592
@@ -241,7 +241,7 @@ properties:
     type: types.tire_pressure
     multiple: true
     examples:
-      - hex: '004014d70a'
+      - hex: '004013d70a'
         values:
           location: 'front_left'
           pressure: 2.31
@@ -297,7 +297,7 @@ properties:
           ecu_id: 'RDU_212FR'
           status: 'PENDING'
         description: Trouble code C1116FA with ECU-ID RDU_212FR occured 2 times and is PENDING
-      - hex: '020007463136334146410006445452323132000750454e44494e47'
+      - hex: '020007433136334146410006445452323132000750454e44494e47'
         values:
           occurences: 2
           id: 'C163AFA'

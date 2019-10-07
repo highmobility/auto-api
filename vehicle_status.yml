@@ -56,7 +56,7 @@ properties:
     type: string
     description: The car model name
     examples:
-      - hex: '527970652058'
+      - hex: '547970652058'
         value: 'Type X'
         description: Model name is 'Type X'
   - id: 0x04
