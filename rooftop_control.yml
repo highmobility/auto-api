@@ -24,7 +24,7 @@ properties:
     name: dimming
     name_cased: dimming
     type: types.percentage
-    description: 100% is opaque, 0% is transparent
+    description: 1.0 (100%) is opaque, 0.0 (0%) is transparent
     examples:
       - hex: '3ff0000000000000'
         value: 1.0
@@ -33,7 +33,7 @@ properties:
     name: position
     name_cased: position
     type: types.percentage
-    description: 100% is fully open, 0% is closed
+    description: 1.0 (100%) is fully open, 0.0 (0%) is closed
     examples:
       - hex: '3fe0000000000000'
         value: 0.5
