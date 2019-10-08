@@ -115,12 +115,12 @@ properties:
     type: types.brake_torque_vectoring
     multiple: true
     examples:
-      - hex: '0101'
+      - hex: '0001'
         values:
           axle: 'front'
           state: 'active'
         description: Front brake torque vectoring is active
-      - hex: '0000'
+      - hex: '0100'
         values:
           axle: 'rear'
           state: 'inactive'

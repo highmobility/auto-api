@@ -103,12 +103,12 @@ properties:
     examples:
       - hex: '0001'
         values:
-          location: 'front'
+          location: 'front_left'
           state: 'active'
         description: Front reading lamps are active
-      - hex: '0100'
+      - hex: '0200'
         values:
-          location: 'rear'
+          location: 'rear_right'
           state: 'inactive'
         description: Rear reading lamps are inactive
   - id: 0x09
