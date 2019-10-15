@@ -227,6 +227,7 @@ properties:
     name_cased: checkControlMessages
     type: types.check_control_message
     multiple: true
+    name_singular: check_control_message
     examples:
       - hex: '000100019c780002436865636b20656e67696e650005416c657274'
         values:
@@ -240,6 +241,7 @@ properties:
     name_cased: tirePressures
     type: types.tire_pressure
     multiple: true
+    name_singular: tire_pressure
     examples:
       - hex: '004014d70a'
         values:
@@ -256,6 +258,7 @@ properties:
     name_cased: tireTemperatures
     type: types.tire_temperature
     multiple: true
+    name_singular: tire_temperature
     examples:
       - hex: '0242200000'
         values:
@@ -273,6 +276,7 @@ properties:
     pretty_name: Wheel RPMs
     type: types.wheel_rpm
     multiple: true
+    name_singular: wheel_rpm
     examples:
       - hex: '0102ea'
         values:
@@ -289,6 +293,7 @@ properties:
     name_cased: troubleCodes
     type: types.trouble_code
     multiple: true
+    name_singular: trouble_code
     examples:
       - hex: '0200074331313136464100095244555f3231324652000750454e44494e47'
         values:

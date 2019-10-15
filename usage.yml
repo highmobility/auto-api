@@ -59,6 +59,7 @@ properties:
     name_cased: drivingModesActivationPeriods
     type: types.driving_mode_activation_period
     multiple: true
+    name_singular: driving_modes_activation_period
     examples:
       - hex: '013fe3333333333333'
         values:
@@ -75,6 +76,7 @@ properties:
     name_cased: drivingModesEnergyConsumptions
     type: types.driving_mode_energy_consumption
     multiple: true
+    name_singular: driving_mode_energy_consumption
     examples:
       - hex: '014204cccd'
         values:

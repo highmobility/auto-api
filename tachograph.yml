@@ -20,6 +20,7 @@ properties:
     name_cased: driversWorkingStates
     type: types.driver_working_state
     multiple: true
+    name_singular: driver_wroking_state
     examples:
       - hex: '0102'
         values:
@@ -36,6 +37,7 @@ properties:
     name_cased: driversTimeStates
     type: types.driver_time_state
     multiple: true
+    name_singular: drivers_time_state
     examples:
       - hex: '0302'
         values:
@@ -52,6 +54,7 @@ properties:
     name_cased: driversCardsPresent
     type: types.driver_card_present
     multiple: true
+    name_singular: drivers_card_present
     examples:
       - hex: '0601'
         values:

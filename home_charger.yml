@@ -198,6 +198,7 @@ properties:
     name_cased: priceTariffs
     type: types.price_tariff
     multiple: true
+    name_singular: price_tariff
     examples:
       - hex: '00409000000003455552'
         values:

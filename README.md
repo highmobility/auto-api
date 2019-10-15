@@ -163,7 +163,8 @@ Other conditional keys:
     * *only* present for *simple properties* (base-type) *and*
     * *only* present when the size is known in advance, i.e. *not* for a `string` or `bytes`
 * `multiple: bool` if the property can occure multiple times in a command-state
-    * defaults to `false`
+    * defaults to `false`. If multiple is present, there is also the `name_singular` value that represents the name's 
+    singular form
 * `pretty_name: string` name of the property in a capitalised and whitespaced way, i.e. *Charging Power kW*
 * `description: string` an explanation of the property (what it does, means or represents)
 * `enum_values: []` a property can also be an `enum` – enums are explained in the *types section*
@@ -195,6 +196,7 @@ properties:
     name_cased: departureTimes
     type: types.departure_time
     multiple: true
+    name_singular: departure_time
 ```
 
 Binary format:
@@ -417,6 +419,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
     name_cased: personsDetected
     type: types.person_detected
     multiple: true
+    name_singular: person_detected
     examples:
       - hex: '0001'
         values:
@@ -429,6 +432,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
     name_cased: accelerations
     type: types.acceleration
     multiple: true
+    name_singular: acceleration
     examples:
       - hex: '003f5d2f1b'
         values:

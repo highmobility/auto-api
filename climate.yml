@@ -117,6 +117,7 @@ properties:
     pretty_name: HVAC weekday starting times
     type: types.hvac_weekday_starting_time
     multiple: true
+    name_singular: hvac_weekday_starting_time
     examples:
       - hex: '05121e'
         values:

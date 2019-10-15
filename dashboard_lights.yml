@@ -21,6 +21,7 @@ properties:
     name_cased: dashboardLights
     type: types.dashboard_light
     multiple: true
+    name_singular: dashboard_light
     examples:
       - hex: '0000'
         values:

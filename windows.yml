@@ -25,6 +25,7 @@ properties:
     name_cased: openPercentages
     type: types.window_open_percentage
     multiple: true
+    name_singular: open_percentage
     examples:
       - hex: '023fe1eb851eb851ec'
         values:
@@ -41,6 +42,7 @@ properties:
     name_cased: positions
     type: types.window_position
     multiple: true
+    name_singular: position
     examples:
       - hex: '0201'
         values:
