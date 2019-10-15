@@ -20,6 +20,7 @@ properties:
     name_cased: accelerations
     type: types.acceleration
     multiple: true
+    name_singular: acceleration
     examples:
       - hex: '003f5d2f1b'
         values:
@@ -114,6 +115,7 @@ properties:
     name_cased: brakeTorqueVectorings
     type: types.brake_torque_vectoring
     multiple: true
+    name_singular: brake_torque_vectoring
     examples:
       - hex: '0001'
         values:

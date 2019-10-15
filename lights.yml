@@ -84,6 +84,7 @@ properties:
     name_cased: fogLights
     type: types.light
     multiple: true
+    name_singular: fog_light
     examples:
       - hex: '0000'
         values:
@@ -100,6 +101,7 @@ properties:
     name_cased: readingLamps
     type: types.reading_lamp
     multiple: true
+    name_singular: reading_lamp
     examples:
       - hex: '0001'
         values:
@@ -116,6 +118,7 @@ properties:
     name_cased: interiorLights
     type: types.light
     multiple: true
+    name_singular: interior_light
     examples:
       - hex: '0000'
         values:

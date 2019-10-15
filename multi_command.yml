@@ -23,6 +23,7 @@ properties:
     name_cased: multiStates
     type: types.capability_state
     multiple: true
+    name_singular: multi_state
     description: The bytes of incoming capabilities (states)
     examples:
       - hex: '002001060004010001000400050100020001'
@@ -44,6 +45,7 @@ properties:
     name_cased: multiCommands
     type: types.capability_state
     multiple: true
+    name_singular: multi_command
     description: The bytes of outgoing capabilities (commands)
     examples:
       - hex: '00200105000401000101'

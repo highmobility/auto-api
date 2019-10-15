@@ -199,6 +199,7 @@ properties:
     name_cased: departureTimes
     type: types.departure_time
     multiple: true
+    name_singular: departure_time
     examples:
       - hex: '011020'
         values:
@@ -220,6 +221,7 @@ properties:
     pretty_name: Reduction of charging-current times
     type: types.reduction_time
     multiple: true
+    name_singular: reduction_time
     examples:
       - hex: '001121'
         values:
@@ -250,6 +252,7 @@ properties:
     name_cased: timers
     type: types.timer
     multiple: true
+    name_singular: timer
     examples:
       - hex: '00000001598938e788'
         values:

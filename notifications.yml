@@ -38,6 +38,7 @@ properties:
     name_cased: actionItems
     type: types.action_item
     multiple: true
+    name_singular: action_item
     examples:
       - hex: '1b00044f70656e'
         values:

@@ -26,6 +26,7 @@ properties:
     name_cased: states
     type: types.capability_state
     multiple: true
+    name_singular: state
     examples:
       - hex: '002001060004010001000400050100020001'
         values:

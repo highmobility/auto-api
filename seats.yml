@@ -20,6 +20,7 @@ properties:
     name_cased: personsDetected
     type: types.person_detected
     multiple: true
+    name_singular: person_detected
     examples:
       - hex: '0001'
         values:
@@ -36,6 +37,7 @@ properties:
     name_cased: seatbeltsState
     type: types.seatbelt_state
     multiple: true
+    name_singular: seatbelt_state
     examples:
       - hex: '0001'
         values:

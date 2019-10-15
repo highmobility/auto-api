@@ -24,6 +24,7 @@ properties:
     name_cased: insideLocks
     type: types.lock
     multiple: true
+    name_singular: inside_lock
     description: Inside lock states for the given doors
     examples:
       - hex: '0001'
@@ -41,6 +42,7 @@ properties:
     name_cased: locks
     type: types.lock
     multiple: true
+    name_singular: lock
     description: Lock states for the given doors
     examples:
       - hex: '0200'
@@ -58,6 +60,7 @@ properties:
     name_cased: positions
     type: types.door_position
     multiple: true
+    name_singular: position
     description: Door positions for the given doors
     examples:
       - hex: '0100'

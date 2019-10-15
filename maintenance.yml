@@ -128,6 +128,7 @@ properties:
     name_cased: conditionBasedServices
     type: types.condition_based_service
     multiple: true
+    name_singular: condition_based_service
     examples:
       - hex: '07e305000300000b4272616b6520666c756964002c4e657874206368616e676520617420737065636966696564206461746520617420746865206c61746573742e'
         values:
