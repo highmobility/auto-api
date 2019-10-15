@@ -203,14 +203,14 @@ properties:
     examples:
       - hex: '011020'
         values:
-          active_state: 'active'
+          state: 'active'
           time:
             hour: 16
             minute: 32
         description: Departure time is active at 16:32
       - hex: '000b33'
         values:
-          active_state: 'inactive'
+          state: 'inactive'
           time:
             hour: 11
             minute: 51

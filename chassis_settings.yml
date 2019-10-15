@@ -81,7 +81,7 @@ properties:
       - hex: '0025'
         values:
           axle: 'front'
-          spring_rate: 25
+          spring_rate: 37
         description: Front axle maximum spring rate is 37N/mm
       - hex: '0127'
         values:

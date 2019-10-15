@@ -101,7 +101,7 @@ properties:
     description: Milliseconds since UNIX Epoch time
     examples:
       - hex: '000001674058f130'
-        value: '2018-10-23T11:33:50.000Z'
+        value: '2018-11-23T11:33:50.000Z'
         description: Automatic teleservice call date is at 23 November 2018 at 11:33:50 UTC
   - id: 0x09
     name: teleservice_battery_call_date
@@ -111,7 +111,7 @@ properties:
     description: Milliseconds since UNIX Epoch time
     examples:
       - hex: '000001674024c1d0'
-        value: '2018-10-23T10:36:50.000Z'
+        value: '2018-11-23T10:36:50.000Z'
         description: Teleservice battery call date is at 23 November 2018 at 10:36:50 GMT
   - id: 0x0A
     name: next_inspection_date
@@ -121,7 +121,7 @@ properties:
     description: Milliseconds since UNIX Epoch time
     examples:
       - hex: '00000166a15d20d8'
-        value: '2018-09-23T14:38:47.000Z'
+        value: '2018-10-23T14:38:47.000Z'
         description: Next inspection date is at 23 October 2018 at 14:38:47 GMT
   - id: 0x0B
     name: condition_based_services
@@ -147,5 +147,5 @@ properties:
     description: Milliseconds since UNIX Epoch time
     examples:
       - hex: '000001677c63d280'
-        value: '2018-11-05T03:22:56.000Z'
+        value: '2018-12-05T03:22:56.000Z'
         description: Brake fluid change date is at 5 December 2018 at 03:22:56 GMT

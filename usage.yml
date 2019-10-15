@@ -115,9 +115,9 @@ properties:
     size: 4
     description: Mileage after the last trip in km
     examples:
-      - hex: '47bac85a'
-        value: 95632.7
-        description: Mileage is 95'632.7 km after last trip
+      - hex: '00017590'
+        value: 95632
+        description: Mileage is 95'632 km after last trip
   - id: 0x0a
     name: last_trip_electric_portion
     name_cased: lastTripElectricPortion
@@ -156,7 +156,7 @@ properties:
     description: Milliseconds since UNIX Epoch time
     examples:
       - hex: '0000016682059d50'
-        value: '2018-09-18T12:34:58.000Z'
+        value: '2018-10-17T12:34:58.000Z'
         description: Last trip happened at 17 October 2018 at 12:34:58 UTC
   - id: 0x0e
     name: average_fuel_consumption

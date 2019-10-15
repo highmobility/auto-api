@@ -20,7 +20,7 @@ properties:
     name_cased: driversWorkingStates
     type: types.driver_working_state
     multiple: true
-    name_singular: driver_wroking_state
+    name_singular: driver_working_state
     examples:
       - hex: '0102'
         values:
