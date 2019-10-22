@@ -18,7 +18,7 @@ setters:
     mandatory: [0x01]
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: status

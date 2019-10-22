@@ -13,7 +13,7 @@ api:
 getters: {}
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: mileage
@@ -169,7 +169,7 @@ properties:
     name_cased: engineTotalFuelConsumption
     type: float
     size: 4
-    description: The accumulated lifespan fuel consumption in liters 
+    description: The accumulated lifespan fuel consumption in liters
     examples:
       - hex: '46d78600'
         value: 27587.0
@@ -253,6 +253,16 @@ properties:
           location: 'front_right'
           pressure: 2.31
         description: Front right tire pressure is 2.31 BAR
+      - hex: '02400f5c29'
+        values:
+          location: 'rear_right'
+          pressure: 2.24
+        description: Rear right tire pressure is 2.24 BAR
+      - hex: '03400f5c29'
+        values:
+          location: 'rear_left'
+          pressure: 2.24
+        description: Rear left tire pressure is 2.24 BAR
   - id: 0x1b
     name: tire_temperatures
     name_cased: tireTemperatures
@@ -260,6 +270,16 @@ properties:
     multiple: true
     name_singular: tire_temperature
     examples:
+      - hex: '0042200000'
+        values:
+          location: 'front_left'
+          temperature: 40
+        description: Front left tire temperature is 40C
+      - hex: '0142200000'
+        values:
+          location: 'front_right'
+          temperature: 40
+        description: Front right tire temperature is 40C
       - hex: '0242200000'
         values:
           location: 'rear_right'
@@ -278,6 +298,11 @@ properties:
     multiple: true
     name_singular: wheel_rpm
     examples:
+      - hex: '0002ea'
+        values:
+          location: 'front_left'
+          rpm: 746
+        description: Front left wheel RPM is 746
       - hex: '0102ea'
         values:
           location: 'front_right'
@@ -288,6 +313,11 @@ properties:
           location: 'rear_right'
           rpm: 746
         description: Rear right wheel RPM is 746
+      - hex: '0302ea'
+        values:
+          location: 'rear_left'
+          rpm: 746
+        description: Rear left wheel RPM is 746
   - id: 0x1d
     name: trouble_codes
     name_cased: troubleCodes

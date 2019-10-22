@@ -27,7 +27,7 @@ setters:
     optional: [0x03, 0x04, 0x0c]
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: inside_temperature
@@ -119,6 +119,41 @@ properties:
     multiple: true
     name_singular: hvac_weekday_starting_time
     examples:
+      - hex: '001000'
+        values:
+          weekday: 'monday'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is started on monday at 16:00
+      - hex: '011000'
+        values:
+          weekday: 'tuesday'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is started on tuesday at 16:00
+      - hex: '021000'
+        values:
+          weekday: 'wednesday'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is started on wednesday at 16:00
+      - hex: '031000'
+        values:
+          weekday: 'thursday'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is started on thursday at 16:00
+      - hex: '041000'
+        values:
+          weekday: 'friday'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is started on friday at 16:00
       - hex: '05121e'
         values:
           weekday: 'saturday'
@@ -133,12 +168,19 @@ properties:
             hour: 19
             minute: 31
         description: HVAC is started on sunday at 19:31
+      - hex: '071000'
+        values:
+          weekday: 'automatic'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is automatic
   - id: 0x0c
     name: rear_temperature_setting
     name_cased: rearTemperatureSetting
     type: float
     size: 4
-    description: The rear temperature in celsius 
+    description: The rear temperature in celsius
     examples:
       - hex: '41ac0000'
         value: 21.5

@@ -13,7 +13,7 @@ api:
 getters: {}
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: accelerations
@@ -32,6 +32,16 @@ properties:
           direction: 'lateral'
           g_force: -0.753
         description: Lateral acceleration is -0.753 g
+      - hex: '02bf40c49c'
+        values:
+          direction: 'front_lateral'
+          g_force: -0.753
+        description: Front lateral acceleration is -0.753 g
+      - hex: '03bf40c49c'
+        values:
+          direction: 'rear_lateral'
+          g_force: -0.753
+        description: Rear lateral acceleration is -0.753 g
   - id: 0x02
     name: understeering
     name_cased: understeering

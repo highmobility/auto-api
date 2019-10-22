@@ -27,7 +27,7 @@ setters:
     mandatory: [0x13]
 
 state: all
-    
+
 properties:
   - id: 0x02
     name: estimated_range
@@ -262,6 +262,11 @@ properties:
       - hex: '0100000159893c9108'
         values:
           timer_type: 'preferred_end_time'
+          date: '2017-01-10T16:36:05.000Z'
+        description: 10 January 2017 at 16:36:05 GMT
+      - hex: '0200000159893c9108'
+        values:
+          timer_type: 'departure_date'
           date: '2017-01-10T16:36:05.000Z'
         description: 10 January 2017 at 16:36:05 GMT
   - id: 0x16
