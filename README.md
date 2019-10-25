@@ -155,7 +155,7 @@ Keys available for *all* properties:
 * `id: integer` property identifier in hex
 * `name: string` name of the property in *snake_case*
 * `name_cased: string` name of the property in *camelCase*
-* `pretty_name: string` human-readable name with uppercases at the start and where needed
+* `pretty_name: string` human-readable name in a capitalised and whitespaced way, i.e. *Charging Power kW*
 * `type: string` type of the property
 
 Other conditional keys:
@@ -165,7 +165,6 @@ Other conditional keys:
     * *only* present when the size is known in advance, i.e. *not* for a `string` or `bytes`
 * `multiple: bool` if the property can occure multiple times in a command-state
     * defaults to `false`
-* `pretty_name: string` name of the property in a capitalised and whitespaced way, i.e. *Charging Power kW*
 * `description: string` an explanation of the property (what it does, means or represents)
 * `enum_values: []` a property can also be an `enum` – enums are explained in the *types section*
 
