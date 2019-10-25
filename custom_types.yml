@@ -785,6 +785,7 @@ types:
     # MARK: Person Detected
   - name: person_detected
     name_cased: personDetected
+    pretty_name: Person detected
     type: custom
     size: 2
     items:
