@@ -21,6 +21,7 @@ properties:
   - id: 0x01
     name: text
     name_cased: text
+    pretty_name: Text
     type: string
     description: The text
     examples:
@@ -30,6 +31,7 @@ properties:
   - id: 0x02
     name: handle
     name_cased: handle
+    pretty_name: Handle
     type: string
     description: The optional handle of message
     examples:

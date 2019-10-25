@@ -22,6 +22,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: enum
     size: 1
     enum_values:

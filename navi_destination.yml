@@ -24,6 +24,7 @@ properties:
   - id: 0x01
     name: coordinates
     name_cased: coordinates
+    pretty_name: Coordinates
     type: types.coordinates
     examples:
       - hex: '404a428f9f44d445402acf562174c4ce'
@@ -34,6 +35,7 @@ properties:
   - id: 0x02
     name: destination_name
     name_cased: destinationName
+    pretty_name: Destination name
     type: string
     description: Destination name 
     examples:
@@ -43,6 +45,7 @@ properties:
   - id: 0x03
     name: data_slots_free
     name_cased: dataSlotsFree
+    pretty_name: Data slots free
     type: uinteger
     size: 1
     description: Remaining number of POI data slots available.
@@ -53,6 +56,7 @@ properties:
   - id: 0x04
     name: data_slots_max
     name_cased: dataSlotsMax
+    pretty_name: Data slots max
     type: uinteger
     size: 1
     description: Maximum number of POI data slots.
@@ -63,6 +67,7 @@ properties:
   - id: 0x05
     name: arrival_duration
     name_cased: arrivalDuration
+    pretty_name: Arrival duration
     type: types.time
     description: Remaining time until reaching the destination.
     examples:
@@ -74,6 +79,7 @@ properties:
   - id: 0x06
     name: distance_to_destination
     name_cased: distanceToDestination
+    pretty_name: Distance to destination
     type: uinteger
     size: 2
     description: Remaining distance to reach the destination.

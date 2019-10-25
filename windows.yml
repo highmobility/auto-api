@@ -23,6 +23,7 @@ properties:
   - id: 0x02
     name: open_percentages
     name_cased: openPercentages
+    pretty_name: Open percentages
     type: types.window_open_percentage
     multiple: true
     examples:
@@ -39,6 +40,7 @@ properties:
   - id: 0x03
     name: positions
     name_cased: positions
+    pretty_name: Positions
     type: types.window_position
     multiple: true
     examples:

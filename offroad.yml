@@ -18,6 +18,7 @@ properties:
   - id: 0x01
     name: route_incline
     name_cased: routeIncline
+    pretty_name: Route incline
     type: integer
     size: 2
     description: The route elevation incline in degrees, which is a negative number for decline
@@ -28,6 +29,7 @@ properties:
   - id: 0x02
     name: wheel_suspension
     name_cased: wheelSuspension
+    pretty_name: Wheel suspension
     type: double
     size: 8
     description: The wheel suspension level percentage, whereas 0.0 is no suspension and 1.0 maximum suspension

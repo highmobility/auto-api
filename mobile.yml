@@ -19,6 +19,7 @@ properties:
   - id: 0x01
     name: connection
     name_cased: connection
+    pretty_name: Connection
     type: types.connection_state
     examples:
       - hex: '01'

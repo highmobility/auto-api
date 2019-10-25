@@ -20,6 +20,7 @@ properties:
   - id: 0x01
     name: detected_fatigue_level
     name_cased: detectedFatigueLevel
+    pretty_name: Detected fatigue level
     type: enum
     size: 1
     enum_values:

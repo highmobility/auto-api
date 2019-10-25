@@ -21,6 +21,7 @@ properties:
   - id: 0x01
     name: location
     name_cased: location
+    pretty_name: Location
     type: enum
     size: 1
     enum_values:

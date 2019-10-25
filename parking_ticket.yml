@@ -31,6 +31,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: enum
     size: 1
     enum_values:
@@ -47,6 +48,7 @@ properties:
   - id: 0x02
     name: operator_name
     name_cased: operatorName
+    pretty_name: Operator name
     type: string
     description: Operator name
     examples:
@@ -56,9 +58,9 @@ properties:
   - id: 0x03
     name: operator_ticket_id
     name_cased: operatorTicketID
-    pretty_name: Operator Ticket ID
+    pretty_name: Operator ticket ID
     type: string
-    description: Operator Ticket ID
+    description: Operator ticket ID
     examples:
       - hex: '3634383934323333'
         value: '64894233'
@@ -66,6 +68,7 @@ properties:
   - id: 0x04
     name: ticket_start_time
     name_cased: ticketStartTime
+    pretty_name: Ticket start time
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time
@@ -76,6 +79,7 @@ properties:
   - id: 0x05
     name: ticket_end_time
     name_cased: ticketEndTime
+    pretty_name: Ticket end time
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time

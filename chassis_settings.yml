@@ -29,6 +29,7 @@ properties:
   - id: 0x01
     name: driving_mode
     name_cased: drivingMode
+    pretty_name: Driving mode
     type: types.driving_mode
     examples:
       - hex: '01'
@@ -37,6 +38,7 @@ properties:
   - id: 0x02
     name: sport_chrono
     name_cased: sportChrono
+    pretty_name: Sport chrono
     type: enum
     size: 1
     enum_values:
@@ -55,6 +57,7 @@ properties:
   - id: 0x05
     name: current_spring_rates
     name_cased: currentSpringRates
+    pretty_name: Current spring rates
     type: types.spring_rate
     multiple: true
     description: The current values for the spring rates
@@ -72,6 +75,7 @@ properties:
   - id: 0x06
     name: maximum_spring_rates
     name_cased: maximumSpringRates
+    pretty_name: Maximum spring rates
     type: types.spring_rate
     multiple: true
     description: The maximum possible values for the spring rates
@@ -89,6 +93,7 @@ properties:
   - id: 0x07
     name: minimum_spring_rates
     name_cased: minimumSpringRates
+    pretty_name: Minimum spring rates
     type: types.spring_rate
     multiple: true
     description: The minimum possible values for the spring rates
@@ -106,6 +111,7 @@ properties:
   - id: 0x08
     name: current_chassis_position
     name_cased: currentChassisPosition
+    pretty_name: Current chassis position
     type: integer
     size: 1
     description: The chassis position in mm calculated from the lowest point
@@ -116,6 +122,7 @@ properties:
   - id: 0x09
     name: maximum_chassis_position
     name_cased: maximumChassisPosition
+    pretty_name: Maximum chassis position
     type: integer
     size: 1
     descrition: The maximum possible value for the chassis position
@@ -126,6 +133,7 @@ properties:
   - id: 0x0a
     name: minimum_chassis_position
     name_cased: minimumChassisPosition
+    pretty_name: Minimum chassis position
     type: integer
     size: 1
     description: The minimum possible value for the chassis position

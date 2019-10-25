@@ -19,6 +19,7 @@ properties:
   - id: 0x01
     name: outside_light
     name_cased: outsideLight
+    pretty_name: Outside light
     type: float
     size: 4
     description: Measured outside illuminance in lux
@@ -29,6 +30,7 @@ properties:
   - id: 0x02
     name: inside_light
     name_cased: insideLight
+    pretty_name: Inside light
     type: float
     size: 4
     description: Measured inside illuminance in lux

@@ -23,6 +23,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: types.active_state
     examples:
       - hex: '01'
@@ -31,6 +32,7 @@ properties:
   - id: 0x02
     name: engaged
     name_cased: engaged
+    pretty_name: Engaged
     type: enum
     size: 1
     enum_values:

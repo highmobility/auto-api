@@ -18,6 +18,7 @@ properties:
   - id: 0x01
     name: position
     name_cased: position
+    pretty_name: Position
     type: enum
     size: 1
     enum_values:

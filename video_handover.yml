@@ -29,6 +29,7 @@ properties:
   - id: 0x02
     name: starting_second
     name_cased: startingSecond
+    pretty_name: Starting second
     type: uinteger
     size: 2
     examples:
@@ -38,6 +39,7 @@ properties:
   - id: 0x03
     name: screen
     name_cased: screen
+    pretty_name: Screen
     type: enum
     size: 1
     enum_values:

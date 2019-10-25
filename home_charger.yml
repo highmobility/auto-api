@@ -30,6 +30,7 @@ properties:
   - id: 0x01
     name: charging_status
     name_cased: chargingStatus
+    pretty_name: Charging status
     type: enum
     size: 1
     enum_values:
@@ -46,6 +47,7 @@ properties:
   - id: 0x02
     name: authentication_mechanism
     name_cased: authenticationMechanism
+    pretty_name: Authentication mechanism
     type: enum
     size: 1
     enum_values:
@@ -61,6 +63,7 @@ properties:
   - id: 0x03
     name: plug_type
     name_cased: plugType
+    pretty_name: Plug type
     type: enum
     size: 1
     enum_values:
@@ -92,6 +95,7 @@ properties:
   - id: 0x05
     name: solar_charging
     name_cased: solarCharging
+    pretty_name: Solar charging
     type: types.active_state
     examples:
       - hex: '01'
@@ -100,6 +104,7 @@ properties:
   - id: 0x08
     name: wi_fi_hotspot_enabled
     name_cased: wifiHotspotEnabled
+    pretty_name: Wi-Fi hotspot enabled
     type: types.enabled_state
     examples:
       - hex: '01'
@@ -108,7 +113,7 @@ properties:
   - id: 0x09
     name: wi_fi_hotspot_ssid
     name_cased: wifiHotspotSSID
-    pretty_name: Wi-Fi Hotspot SSID
+    pretty_name: Wi-Fi hotspot SSID
     type: string
     description: The Wi-Fi Hotspot SSID
     examples:
@@ -118,7 +123,7 @@ properties:
   - id: 0x0a
     name: wi_fi_hotspot_security
     name_cased: wiFiHotspotSecurity
-    pretty_name: Wi-Fi Hotspot Security
+    pretty_name: Wi-Fi hotspot security
     type: types.network_security
     examples:
       - hex: '03'
@@ -127,7 +132,7 @@ properties:
   - id: 0x0b
     name: wi_fi_hotspot_password
     name_cased: wiFiHotspotPassword
-    pretty_name: Wi-Fi Hotspot Password
+    pretty_name: Wi-Fi hotspot password
     type: string
     description: The Wi-Fi Hotspot password 
     examples:
@@ -137,6 +142,7 @@ properties:
   - id: 0x0d
     name: authentication_state
     name_cased: authenticationState
+    pretty_name: Authentication state
     type: enum
     size: 1
     enum_values:
@@ -186,6 +192,7 @@ properties:
   - id: 0x11
     name: coordinates
     name_cased: coordinates
+    pretty_name: Coordinates
     type: types.coordinates
     examples:
       - hex: '404a428f9f44d445402acf562174c4ce'
@@ -196,6 +203,7 @@ properties:
   - id: 0x12
     name: price_tariffs
     name_cased: priceTariffs
+    pretty_name: Price tariffs
     type: types.price_tariff
     multiple: true
     examples:

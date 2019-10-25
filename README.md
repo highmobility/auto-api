@@ -155,6 +155,7 @@ Keys available for *all* properties:
 * `id: integer` property identifier in hex
 * `name: string` name of the property in *snake_case*
 * `name_cased: string` name of the property in *camelCase*
+* `pretty_name: string` human-readable name with uppercases at the start and where needed
 * `type: string` type of the property
 
 Other conditional keys:
@@ -177,6 +178,7 @@ properties:
   - id: 0x03
     name: model_name
     name_cased: modelName
+    pretty_name: Model name
     type: string
     description: The car model name bytes formatted in UTF-8
   - id: 0x07
@@ -189,10 +191,12 @@ properties:
   - id: 0x0b
     name: charge_port_state
     name_cased: chargePortState
+    pretty_name: Charge port state
     type: types.position
   - id: 0x11
     name: departure_times
     name_cased: departureTimes
+    pretty_name: Departure times
     type: types.departure_time
     multiple: true
 ```
@@ -220,7 +224,7 @@ Binary format:
 
 ## types
 
-Types follow the same pattern as *properties* - they all have the same *3 keys* as every property (except the `id`).  
+Types follow the same pattern as *properties* - they all have the same *4 keys* as every property (except the `id`).  
 
 **Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double`, `string`, `bytes` and `timestamp`.
 
@@ -250,6 +254,7 @@ Examples:
 ```yaml
   - name: active_state
     name_cased: activeState
+    pretty_name: Active state
     type: enum
     size: 1
     enum_values:
@@ -262,6 +267,7 @@ Examples:
 
   - name: network_security
     name_cased: networkSecurity
+    pretty_name: Network security
     type: enum
     size: 1
     enum_values:
@@ -281,6 +287,7 @@ properties:
   - id: 0x17
     name: charging_state
     name_cased: chargingState
+    pretty_name: Charging state
     type: enum
     size: 1
     enum_values:
@@ -319,6 +326,7 @@ Examples:
 ```yaml
   - name: action_item
     name_cased: actionItem
+    pretty_name: Action item
     type: custom
     items:
       - name: id
@@ -333,6 +341,7 @@ Examples:
         
   - name: brake_torque_vectoring
     name_cased: brakeTorqueVectoring
+    pretty_name: Brake torque vectoring
     type: custom
     size: 2
     items:
@@ -345,6 +354,7 @@ Examples:
         
   - name: price_tariff
     name_cased: priceTariff
+    pretty_name: Price tariff
     type: custom
     items:
       - name: pricing_type
@@ -390,6 +400,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x01
     name: lock
     name_cased: lock
+    pretty_name: Lock
     type: types.lock_state
     examples:
       - hex: '00'
@@ -399,6 +410,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x07
     name: yaw_rate
     name_cased: yawRate
+    pretty_name: Yaw rate
     type: float
     size: 4
     description: Yaw rate in degrees per second [°/s]
@@ -415,6 +427,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x02
     name: persons_detected
     name_cased: personsDetected
+    pretty_name: Persons detected
     type: types.person_detected
     multiple: true
     examples:
@@ -427,6 +440,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x01
     name: accelerations
     name_cased: accelerations
+    pretty_name: Accelerations
     type: types.acceleration
     multiple: true
     examples:

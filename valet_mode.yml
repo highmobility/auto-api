@@ -23,6 +23,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: types.active_state
     examples:
       - hex: '01'

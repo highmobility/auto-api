@@ -22,6 +22,7 @@ properties:
   - id: 0x01
     name: lock
     name_cased: lock
+    pretty_name: Lock
     type: types.lock_state
     examples:
       - hex: '00'
@@ -30,6 +31,7 @@ properties:
   - id: 0x02
     name: position
     name_cased: position
+    pretty_name: Position
     type: types.position
     examples:
       - hex: '01'

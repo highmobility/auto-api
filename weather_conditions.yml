@@ -19,6 +19,7 @@ properties:
   - id: 0x01
     name: rain_intensity
     name_cased: rainIntensity
+    pretty_name: Rain intensity
     type: types.percentage
     description: Measured raining intensity percentage, whereas 0% is no rain and 100% is maximum rain
     examples:

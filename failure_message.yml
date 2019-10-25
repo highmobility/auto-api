@@ -16,6 +16,7 @@ properties:
   - id: 0x01
     name: failed_message_id
     name_cased: failedMessageID
+    pretty_name: Failed message ID
     type: uinteger
     size: 2
     description: Capability identifier of the failed message
@@ -26,6 +27,7 @@ properties:
   - id: 0x02
     name: failed_message_type
     name_cased: failedMessageType
+    pretty_name: Failed message type
     type: uinteger
     size: 1
     description: Message type of the failed message
@@ -36,6 +38,7 @@ properties:
   - id: 0x03
     name: failure_reason
     name_cased: failureReason
+    pretty_name: Failure reason
     type: enum
     size: 1
     enum_values:
@@ -78,6 +81,7 @@ properties:
   - id: 0x04
     name: failure_description
     name_cased: failureDescription
+    pretty_name: Failure description
     type: string
     description: Failure description
     examples:
@@ -87,6 +91,7 @@ properties:
   - id: 0x05
     name: failed_property_ids
     name_cased: failedPropertyIDs
+    pretty_name: Failed property IDs
     type: bytes
     description: Array of failed property identifiers
     examples:

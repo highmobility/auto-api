@@ -18,6 +18,7 @@ properties:
   - id: 0x02
     name: persons_detected
     name_cased: personsDetected
+    pretty_name: Persons detected
     type: types.person_detected
     multiple: true
     examples:
@@ -34,6 +35,7 @@ properties:
   - id: 0x03
     name: seatbelts_state
     name_cased: seatbeltsState
+    pretty_name: Seatbelts state
     type: types.seatbelt_state
     multiple: true
     examples:

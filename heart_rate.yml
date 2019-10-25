@@ -20,6 +20,7 @@ properties:
   - id: 0x01
     name: heart_rate
     name_cased: heartRate
+    pretty_name: Heart rate
     type: uinteger
     size: 1
     examples:

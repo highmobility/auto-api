@@ -19,6 +19,7 @@ properties:
   - id: 0x01
     name: capabilities
     name_cased: capabilities
+    pretty_name: Capabilities
     type: types.supported_capability
     multiple: true
     examples:

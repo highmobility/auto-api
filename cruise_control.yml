@@ -25,6 +25,7 @@ properties:
   - id: 0x01
     name: cruise_control
     name_cased: cruiseControl
+    pretty_name: Cruise control
     type: types.active_state
     examples:
       - hex: '01'
@@ -33,6 +34,7 @@ properties:
   - id: 0x02
     name: limiter
     name_cased: limiter
+    pretty_name: Limiter
     type: enum
     size: 1
     enum_values:
@@ -51,6 +53,7 @@ properties:
   - id: 0x03
     name: target_speed
     name_cased: targetSpeed
+    pretty_name: Target speed
     type: integer
     size: 2
     description: The target speed in km/h

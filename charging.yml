@@ -32,6 +32,7 @@ properties:
   - id: 0x02
     name: estimated_range
     name_cased: estimatedRange
+    pretty_name: Estimated range
     type: uinteger
     size: 2
     description: Estimated range in km
@@ -42,6 +43,7 @@ properties:
   - id: 0x03
     name: battery_level
     name_cased: batteryLevel
+    pretty_name: Battery level
     type: double
     size: 8
     description: Battery level percentage between 0.0-1.0
@@ -96,6 +98,7 @@ properties:
   - id: 0x08
     name: charge_limit
     name_cased: chargeLimit
+    pretty_name: Charge limit
     type: double
     size: 8
     description: Charge limit percentage between 0.0-1.0
@@ -106,6 +109,7 @@ properties:
   - id: 0x09
     name: time_to_complete_charge
     name_cased: timeToCompleteCharge
+    pretty_name: Time to complete charge
     type: uinteger
     size: 1
     description: Time until charging completed in minutes
@@ -127,6 +131,7 @@ properties:
   - id: 0x0b
     name: charge_port_state
     name_cased: chargePortState
+    pretty_name: Charge port state
     type: types.position
     examples:
       - hex: '01'
@@ -135,6 +140,7 @@ properties:
   - id: 0x0c
     name: charge_mode
     name_cased: chargeMode
+    pretty_name: Charge mode
     type: enum
     size: 1
     enum_values:
@@ -163,6 +169,7 @@ properties:
   - id: 0x0f
     name: plug_type
     name_cased: plugType
+    pretty_name: Plug type
     type: enum
     size: 1
     enum_values:
@@ -183,6 +190,7 @@ properties:
   - id: 0x10
     name: charging_window_chosen
     name_cased: chargingWindowChosen
+    pretty_name: Charging window chosen
     type: enum
     size: 1
     enum_values:
@@ -197,6 +205,7 @@ properties:
   - id: 0x11
     name: departure_times
     name_cased: departureTimes
+    pretty_name: Departure times
     type: types.departure_time
     multiple: true
     examples:
@@ -238,6 +247,7 @@ properties:
   - id: 0x14
     name: battery_temperature
     name_cased: batteryTemperature
+    pretty_name: Battery temperature
     type: float
     size: 4
     description: Battery temperature in Celsius
@@ -248,6 +258,7 @@ properties:
   - id: 0x15
     name: timers
     name_cased: timers
+    pretty_name: Timers
     type: types.timer
     multiple: true
     examples:
@@ -264,6 +275,7 @@ properties:
   - id: 0x16
     name: plugged_in
     name_cased: pluggedIn
+    pretty_name: Plugged in
     type: enum
     size: 1
     enum_values:
@@ -278,6 +290,7 @@ properties:
   - id: 0x17
     name: status
     name_cased: status
+    pretty_name: Status
     type: enum
     size: 1
     enum_values:

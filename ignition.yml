@@ -22,6 +22,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: types.on_off_state
     examples:
       - hex: '00'
@@ -30,6 +31,7 @@ properties:
   - id: 0x02
     name: accessories_status
     name_cased: accessoriesStatus
+    pretty_name: Accessories status
     type: types.on_off_state
     examples:
       - hex: '01'

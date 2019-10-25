@@ -18,6 +18,7 @@ properties:
   - id: 0x01
     name: drivers_working_states
     name_cased: driversWorkingStates
+    pretty_name: Drivers working states
     type: types.driver_working_state
     multiple: true
     examples:
@@ -34,6 +35,7 @@ properties:
   - id: 0x02
     name: drivers_time_states
     name_cased: driversTimeStates
+    pretty_name: Drivers time states
     type: types.driver_time_state
     multiple: true
     examples:
@@ -50,6 +52,7 @@ properties:
   - id: 0x03
     name: drivers_cards_present
     name_cased: driversCardsPresent
+    pretty_name: Drivers cards present
     type: types.driver_card_present
     multiple: true
     examples:
@@ -66,6 +69,7 @@ properties:
   - id: 0x04
     name: vehicle_motion
     name_cased: vehicleMotion
+    pretty_name: Vehicle motion
     type: types.detected
     examples:
       - hex: '01'
@@ -74,6 +78,7 @@ properties:
   - id: 0x05
     name: vehicle_overspeed
     name_cased: vehicleOverspeed
+    pretty_name: Vehicle overspeed
     type: enum
     size: 1
     enum_values:
@@ -88,6 +93,7 @@ properties:
   - id: 0x06
     name: vehicle_direction
     name_cased: vehicleDirection
+    pretty_name: Vehicle direction
     type: enum
     size: 1
     enum_values:
@@ -102,6 +108,7 @@ properties:
   - id: 0x07
     name: vehicle_speed
     name_cased: vehicleSpeed
+    pretty_name: Vehicle speed
     type: integer
     size: 2
     description: The tachograph vehicle speed in km/h

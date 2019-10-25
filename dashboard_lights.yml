@@ -19,6 +19,7 @@ properties:
   - id: 0x01
     name: dashboard_lights
     name_cased: dashboardLights
+    pretty_name: Dashboard lights
     type: types.dashboard_light
     multiple: true
     examples:

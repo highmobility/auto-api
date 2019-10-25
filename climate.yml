@@ -32,6 +32,7 @@ properties:
   - id: 0x01
     name: inside_temperature
     name_cased: insideTemperature
+    pretty_name: Inside temperature
     type: float
     size: 4
     description: The inside temperature in celsius
@@ -42,6 +43,7 @@ properties:
   - id: 0x02
     name: outside_temperature
     name_cased: outsideTemperature
+    pretty_name: Outside temperature
     type: float
     size: 4
     description: The outside temperature in celsius
@@ -52,6 +54,7 @@ properties:
   - id: 0x03
     name: driver_temperature_setting
     name_cased: driverTemperatureSetting
+    pretty_name: Driver temperature setting
     type: float
     size: 4
     description: The driver temperature setting in celsius
@@ -62,6 +65,7 @@ properties:
   - id: 0x04
     name: passenger_temperature_setting
     name_cased: passengerTemperatureSetting
+    pretty_name: Passenger temperature setting
     type: float
     size: 4
     description: The passenger temperature setting in celsius
@@ -72,6 +76,7 @@ properties:
   - id: 0x05
     name: hvac_state
     name_cased: hvacState
+    pretty_name: HVAC state
     type: types.active_state
     examples:
       - hex: '01'
@@ -80,6 +85,7 @@ properties:
   - id: 0x06
     name: defogging_state
     name_cased: defoggingState
+    pretty_name: Defogging state
     type: types.active_state
     examples:
       - hex: '00'
@@ -88,6 +94,7 @@ properties:
   - id: 0x07
     name: defrosting_state
     name_cased: defrostingState
+    pretty_name: Defrosting state
     type: types.active_state
     examples:
       - hex: '00'
@@ -96,6 +103,7 @@ properties:
   - id: 0x08
     name: ionising_state
     name_cased: ionisingState
+    pretty_name: Ionising state
     type: types.active_state
     examples:
       - hex: '00'
@@ -104,6 +112,7 @@ properties:
   - id: 0x09
     name: defrosting_temperature_setting
     name_cased: defrostingTemperatureSetting
+    pretty_name: Defrosting temperature setting
     type: float
     size: 4
     description: The defrosting temperature setting in celsius
@@ -135,6 +144,7 @@ properties:
   - id: 0x0c
     name: rear_temperature_setting
     name_cased: rearTemperatureSetting
+    pretty_name: Rear temperature setting
     type: float
     size: 4
     description: The rear temperature in celsius 

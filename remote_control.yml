@@ -34,6 +34,7 @@ properties:
   - id: 0x01
     name: control_mode
     name_cased: controlMode
+    pretty_name: Control mode
     type: enum
     size: 1
     enum_values:
@@ -59,6 +60,7 @@ properties:
   - id: 0x02
     name: angle
     name_cased: angle
+    pretty_name: Angle
     type: integer
     size: 2
     description: Wheel base angle in degrees
@@ -69,6 +71,7 @@ properties:
   - id: 0x03
     name: speed
     name_cased: speed
+    pretty_name: Speed
     type: integer
     size: 1
     description: Speed in km/h

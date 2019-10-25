@@ -27,6 +27,7 @@ properties:
   - id: 0x01
     name: text
     name_cased: text
+    pretty_name: Text
     type: string
     description: Text for the notification
     examples:
@@ -36,6 +37,7 @@ properties:
   - id: 0x02
     name: action_items
     name_cased: actionItems
+    pretty_name: Action items
     type: types.action_item
     multiple: true
     examples:
@@ -52,6 +54,7 @@ properties:
   - id: 0x03
     name: activated_action
     name_cased: activatedAction
+    pretty_name: Activate action
     type: uinteger
     size: 1
     description: Identifier of the activated action
@@ -62,6 +65,7 @@ properties:
   - id: 0x04
     name: clear
     name_cased: clear
+    pretty_name: Clear
     type: enum
     size: 1
     enum_values:

@@ -30,6 +30,7 @@ properties:
   - id: 0x02
     name: powertrain
     name_cased: powertrain
+    pretty_name: Powertrain
     type: enum
     size: 1
     enum_values:
@@ -53,6 +54,7 @@ properties:
   - id: 0x03
     name: model_name
     name_cased: modelName
+    pretty_name: Model name
     type: string
     description: The car model name
     examples:
@@ -62,6 +64,7 @@ properties:
   - id: 0x04
     name: name
     name_cased: name
+    pretty_name: Name
     type: string
     description: The car name (nickname)
     examples:
@@ -71,6 +74,7 @@ properties:
   - id: 0x05
     name: license_plate
     name_cased: licensePlate
+    pretty_name: Licence plate
     type: string
     description: The license plate number
     examples:
@@ -80,6 +84,7 @@ properties:
   - id: 0x06
     name: sales_designation
     name_cased: salesDesignation
+    pretty_name: Sales designation
     type: string
     description: The sales designation of the model
     examples:
@@ -89,6 +94,7 @@ properties:
   - id: 0x07
     name: model_year
     name_cased: modelYear
+    pretty_name: Model year
     type: uinteger
     size: 2
     description: The car model manufacturing year number
@@ -99,6 +105,7 @@ properties:
   - id: 0x08
     name: colour_name
     name_cased: colourName
+    pretty_name: Colour name
     type: string
     description: The colour name
     examples:
@@ -119,6 +126,7 @@ properties:
   - id: 0x0a
     name: number_of_doors
     name_cased: numberOfDoors
+    pretty_name: Number of doors
     type: uinteger
     size: 1
     description: The number of doors
@@ -129,6 +137,7 @@ properties:
   - id: 0x0b
     name: number_of_seats
     name_cased: numberOfSeats
+    pretty_name: Number of seats
     type: uinteger
     size: 1
     description: The number of seats
@@ -139,6 +148,7 @@ properties:
   - id: 0x0c
     name: engine_volume
     name_cased: engineVolume
+    pretty_name: Engine volume
     type: float
     size: 4
     description: The engine volume displacement in liters
@@ -149,6 +159,7 @@ properties:
   - id: 0x0d
     name: engine_max_torque
     name_cased: engineMaxTorque
+    pretty_name: Engine max torque
     type: uinteger
     size: 2
     description: The maximum engine torque in Nm
@@ -159,6 +170,7 @@ properties:
   - id: 0x0e
     name: gearbox
     name_cased: gearbox
+    pretty_name: Gearbox
     type: enum
     size: 1
     enum_values:
@@ -175,6 +187,7 @@ properties:
   - id: 0x0f
     name: display_unit
     name_cased: displayUnit
+    pretty_name: Display unit
     type: enum
     size: 1
     enum_values:
@@ -189,6 +202,7 @@ properties:
   - id: 0x10
     name: driver_seat_location
     name_cased: driverSeatLocation
+    pretty_name: Driver seat location
     type: enum
     size: 1
     enum_values:
@@ -205,6 +219,7 @@ properties:
   - id: 0x11
     name: equipments
     name_cased: equipments
+    pretty_name: Equipments
     type: string
     multiple: true
     description: Names of equipment the vehicle is equipped with
@@ -218,6 +233,7 @@ properties:
   - id: 0x12
     name: brand
     name_cased: brand
+    pretty_name: Brand
     type: string
     description: The car brand bytes
     examples:
@@ -227,6 +243,7 @@ properties:
   - id: 0x99
     name: states
     name_cased: states
+    pretty_name: States
     type: types.capability_state
     multiple: true
     examples:

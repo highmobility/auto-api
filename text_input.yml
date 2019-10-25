@@ -18,6 +18,7 @@ properties:
   - id: 0x01
     name: text
     name_cased: text
+    pretty_name: Text
     type: string
     description: The text
     examples:

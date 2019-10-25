@@ -22,6 +22,7 @@ properties:
   - id: 0x02
     name: inside_locks
     name_cased: insideLocks
+    pretty_name: Inside locks
     type: types.lock
     multiple: true
     description: Inside lock states for the given doors
@@ -39,6 +40,7 @@ properties:
   - id: 0x03
     name: locks
     name_cased: locks
+    pretty_name: Locks
     type: types.lock
     multiple: true
     description: Lock states for the given doors
@@ -56,6 +58,7 @@ properties:
   - id: 0x04
     name: positions
     name_cased: positions
+    pretty_name: Positions
     type: types.door_position
     multiple: true
     description: Door positions for the given doors
@@ -73,6 +76,7 @@ properties:
   - id: 0x05
     name: inside_locks_state
     name_cased: insideLocksState
+    pretty_name: Inside locks state
     type: types.lock_state
     description: Inside locks state for the whole car (combines all specific lock states if available)
     examples:
@@ -82,6 +86,7 @@ properties:
   - id: 0x06
     name: locks_state
     name_cased: locksState
+    pretty_name: Locks state
     type: types.lock_state
     description: Locks state for the whole car (combines all specific lock states if available)
     examples:
