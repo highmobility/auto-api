@@ -222,6 +222,7 @@ properties:
     pretty_name: Equipments
     type: string
     multiple: true
+    name_singular: equipment
     description: Names of equipment the vehicle is equipped with
     examples:
       - hex: '5061726b696e672073656e736f7273'
@@ -246,6 +247,7 @@ properties:
     pretty_name: States
     type: types.capability_state
     multiple: true
+    name_singular: state
     examples:
       - hex: '002001060004010001000400050100020001'
         values:

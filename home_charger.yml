@@ -134,7 +134,7 @@ properties:
     name_cased: wiFiHotspotPassword
     pretty_name: Wi-Fi hotspot password
     type: string
-    description: The Wi-Fi Hotspot password 
+    description: The Wi-Fi Hotspot password
     examples:
       - hex: '5a57337641524e554265'
         value: 'ZW3vARNUBe'
@@ -206,6 +206,7 @@ properties:
     pretty_name: Price tariffs
     type: types.price_tariff
     multiple: true
+    name_singular: price_tariff
     examples:
       - hex: '00409000000003455552'
         values:
@@ -213,10 +214,15 @@ properties:
           price: 4.5
           currency: 'EUR'
         description: Charger starting fee tariff is 4.5 EUR
+      - hex: '013e99999a0003455552'
+        values:
+          pricing_type: 'per_minute'
+          price: 0.3
+          currency: 'EUR'
+        description: Charger per minute fee tariff is 0.3 EUR
       - hex: '023e99999a0006526970706c65'
         values:
           pricing_type: 'per_kwh'
           price: 0.3
           currency: 'Ripple'
         description: Charger per kWh tariff is 0.3 Ripple
-

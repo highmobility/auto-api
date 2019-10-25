@@ -26,31 +26,64 @@ properties:
     pretty_name: Open percentages
     type: types.window_open_percentage
     multiple: true
+    name_singular: open_percentage
     examples:
-      - hex: '023fe1eb851eb851ec'
+      - hex: '003fc999999999999a'
+        values:
+          location: 'front_left'
+          open_percentage: 0.2
+        description: Front left window is 20% open
+      - hex: '013fe0000000000000'
+        values:
+          location: 'front_right'
+          open_percentage: 0.5
+        description: Front right window is 50% open
+      - hex: '023fe0000000000000'
         values:
           location: 'rear_right'
-          open_percentage: 0.56
-        description: Rear right window is 56% open
-      - hex: '033fc70a3d70a3d70a'
+          open_percentage: 0.5
+        description: Rear right window is 50% open
+      - hex: '033fb999999999999a'
         values:
           location: 'rear_left'
+          open_percentage: 0.1
+        description: Rear left window is 10% open
+      - hex: '043fc70a3d70a3d70a'
+        values:
+          location: 'hatch'
           open_percentage: 0.18
-        description: Rear left window is 18% open
+        description: Hatch is 18% open
+
   - id: 0x03
     name: positions
     name_cased: positions
     pretty_name: Positions
     type: types.window_position
     multiple: true
+    name_singular: position
     examples:
-      - hex: '0201'
+      - hex: '0001'
+        values:
+          location: 'front_left'
+          position: 'open'
+        description: Front left window is open
+      - hex: '0101'
+        values:
+          location: 'front_right'
+          position: 'open'
+        description: Front right window is open
+      - hex: '0200'
         values:
           location: 'rear_right'
-          position: 'open'
-        description: Rear right window is open
-      - hex: '0300'
+          position: 'closed'
+        description: Rear right window is closed
+      - hex: '0301'
         values:
           location: 'rear_left'
-          position: 'closed'
-        description: Rear left window is closed
+          position: 'open'
+        description: Rear left window is open
+      - hex: '0401'
+        values:
+          location: 'hatch'
+          position: 'open'
+        description: Hatch is open

@@ -22,6 +22,7 @@ properties:
     pretty_name: Capabilities
     type: types.supported_capability
     multiple: true
+    name_singular: capability
     examples:
       - hex: '002000050203040506'
         values:

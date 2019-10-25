@@ -17,7 +17,7 @@ setters:
     optional: [0x01, 0x02, 0x04, 0x07, 0x08, 0x09]
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: front_exterior_light
@@ -90,6 +90,7 @@ properties:
     pretty_name: Fog lights
     type: types.light
     multiple: true
+    name_singular: fog_light
     examples:
       - hex: '0000'
         values:
@@ -107,23 +108,35 @@ properties:
     pretty_name: Reading lamps
     type: types.reading_lamp
     multiple: true
+    name_singular: reading_lamp
     examples:
       - hex: '0001'
         values:
           location: 'front_left'
           state: 'active'
-        description: Front reading lamps are active
+        description: Front left reading lamp is active
+      - hex: '0101'
+        values:
+          location: 'front_right'
+          state: 'active'
+        description: Front right reading lamp is active
       - hex: '0200'
         values:
           location: 'rear_right'
           state: 'inactive'
-        description: Rear reading lamps are inactive
+        description: Rear right reading lamp is inactive
+      - hex: '0300'
+        values:
+          location: 'rear_left'
+          state: 'inactive'
+        description: Rear left reading lamp is inactive
   - id: 0x09
     name: interior_lights
     name_cased: interiorLights
     pretty_name: Interior lights
     type: types.light
     multiple: true
+    name_singular: interior_light
     examples:
       - hex: '0000'
         values:

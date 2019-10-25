@@ -60,6 +60,7 @@ properties:
     pretty_name: Current spring rates
     type: types.spring_rate
     multiple: true
+    name_singular: current_spring_rate
     description: The current values for the spring rates
     examples:
       - hex: '0015'
@@ -78,6 +79,7 @@ properties:
     pretty_name: Maximum spring rates
     type: types.spring_rate
     multiple: true
+    name_singular: maximum_spring_rate
     description: The maximum possible values for the spring rates
     examples:
       - hex: '0025'
@@ -96,6 +98,7 @@ properties:
     pretty_name: Minimum spring rates
     type: types.spring_rate
     multiple: true
+    name_singular: minimum_spring_rate
     description: The minimum possible values for the spring rates
     examples:
       - hex: '0010'

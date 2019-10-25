@@ -40,6 +40,7 @@ properties:
     pretty_name: Action items
     type: types.action_item
     multiple: true
+    name_singular: action_item
     examples:
       - hex: '1b00044f70656e'
         values:

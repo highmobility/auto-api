@@ -13,7 +13,7 @@ api:
 getters: {}
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: accelerations
@@ -21,6 +21,7 @@ properties:
     pretty_name: Accelerations
     type: types.acceleration
     multiple: true
+    name_singular: acceleration
     examples:
       - hex: '003f5d2f1b'
         values:
@@ -32,6 +33,16 @@ properties:
           direction: 'lateral'
           g_force: -0.753
         description: Lateral acceleration is -0.753 g
+      - hex: '02bf40c49c'
+        values:
+          direction: 'front_lateral'
+          g_force: -0.753
+        description: Front lateral acceleration is -0.753 g
+      - hex: '03bf40c49c'
+        values:
+          direction: 'rear_lateral'
+          g_force: -0.753
+        description: Rear lateral acceleration is -0.753 g
   - id: 0x02
     name: understeering
     name_cased: understeering
@@ -124,6 +135,7 @@ properties:
     pretty_name: Brake torque vectorings
     type: types.brake_torque_vectoring
     multiple: true
+    name_singular: brake_torque_vectoring
     examples:
       - hex: '0001'
         values:
