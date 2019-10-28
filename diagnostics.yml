@@ -67,9 +67,7 @@ properties:
     name: fuel_level
     name_cased: fuelLevel
     pretty_name: Fuel level
-    unit: '%'
-    type: double
-    size: 8
+    type: types.percentage
     description: Fuel level percentage between 0.0-1.0
     examples:
       - hex: '3feccccccccccccd'
@@ -214,9 +212,7 @@ properties:
     name: engine_torque
     name_cased: engineTorque
     pretty_name: Engine torque
-    unit: '%'
-    type: double
-    size: 8
+    type: types.percentage
     description: Current engine torque percentage between 0.0-1.0
     examples:
       - hex: '3fc999999999999a'
@@ -226,9 +222,7 @@ properties:
     name: engine_load
     name_cased: engineLoad
     pretty_name: Engine load
-    unit: '%'
-    type: double
-    size: 8
+    type: types.percentage
     description: Current engine load percentage between 0.0-1.0
     examples:
       - hex: '3fb999999999999a'
@@ -250,9 +244,7 @@ properties:
     name: battery_level
     name_cased: batteryLevel
     pretty_name: Battery level
-    unit: '%'
-    type: double
-    size: 8
+    type: types.percentage
     description: Battery level in %, value between 0.0 and 1.0
     examples:
       - hex: '3fe1eb851eb851ec'

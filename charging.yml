@@ -45,9 +45,7 @@ properties:
     name: battery_level
     name_cased: batteryLevel
     pretty_name: Battery level
-    unit: %
-    type: double
-    size: 8
+    type: types.percentage
     description: Battery level percentage between 0.0-1.0
     examples:
       - hex: '3fe0000000000000'
@@ -105,9 +103,7 @@ properties:
     name: charge_limit
     name_cased: chargeLimit
     pretty_name: Charge limit
-    unit: %
-    type: double
-    size: 8
+    type: types.percentage
     description: Charge limit percentage between 0.0-1.0
     examples:
       - hex: '3feccccccccccccd'

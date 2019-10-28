@@ -31,9 +31,7 @@ properties:
     name: wheel_suspension
     name_cased: wheelSuspension
     pretty_name: Wheel suspension
-    unit: '%'
-    type: double
-    size: 8
+    type: types.percentage
     description: The wheel suspension level percentage, whereas 0.0 is no suspension and 1.0 maximum suspension
     examples:
       - hex: '3fe0000000000000'

@@ -47,9 +47,7 @@ properties:
     name: understeering
     name_cased: understeering
     pretty_name: Understeering
-    unit: '%'
-    type: double
-    size: 8
+    type: types.percentage
     description: The understeering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 0.3 (30%) marginal, over 30% critical
     examples:
       - hex: '3fc851eb851eb852'
@@ -59,9 +57,7 @@ properties:
     name: oversteering
     name_cased: oversteering
     pretty_name: Oversteering
-    unit: '%'
-    type: double
-    size: 8
+    type: types.percentage
     description: The oversteering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 30% marginal, over 30% critical
     examples:
       - hex: '3fa999999999999a'
@@ -71,9 +67,7 @@ properties:
     name: gas_pedal_position
     name_cased: gasPedalPosition
     pretty_name: Gas pedal position
-    unit: '%'
-    type: double
-    size: 8
+    type: types.percentage
     description: The gas pedal position between 0.0-1.0, whereas 1.0 (100%) is full throttle
     examples:
       - hex: '3fef5c28f5c28f5c'
@@ -194,9 +188,7 @@ properties:
     name: brake_pedal_position
     name_cased: brakePedalPosition
     pretty_name: Brake pedal position
-    unit: '%'
-    type: double
-    size: 8
+    type: types.percentage
     description: The brake pedal position between 0.0-1.0, wheras 1.0 (100%) is full brakes
     examples:
       - hex: '3fbeb851eb851eb8'
