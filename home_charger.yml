@@ -85,6 +85,7 @@ properties:
     name: charging_power_kw
     name_cased: chargingPowerKW
     pretty_name: Charging Power (kW)
+    unit: kW
     type: float
     size: 4
     description: Charging power in kW
@@ -160,6 +161,7 @@ properties:
     name: charge_current_dc
     name_cased: chargeCurrentDC
     pretty_name: Charge current (DC)
+    unit: V
     type: float
     size: 4
     description: The charge direct current
@@ -171,6 +173,7 @@ properties:
     name: maximum_charge_current
     name_cased: maximumChargeCurrent
     pretty_name: Maximum charge current
+    unit: V
     type: float
     size: 4
     description: The maximum possible charge current
@@ -182,6 +185,7 @@ properties:
     name: minimum_charge_current
     name_cased: minimumChargeCurrent
     pretty_name: Minimum charge current
+    unit: V
     type: float
     size: 4
     description: The minimal possible charge current

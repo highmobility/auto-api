@@ -14,12 +14,13 @@ getters:
   name: get_light_conditions
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: outside_light
     name_cased: outsideLight
     pretty_name: Outside light
+    unit: lux
     type: float
     size: 4
     description: Measured outside illuminance in lux
@@ -31,6 +32,7 @@ properties:
     name: inside_light
     name_cased: insideLight
     pretty_name: Inside light
+    unit: lux
     type: float
     size: 4
     description: Measured inside illuminance in lux

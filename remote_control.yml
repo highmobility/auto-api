@@ -61,6 +61,7 @@ properties:
     name: angle
     name_cased: angle
     pretty_name: Angle
+    unit: °
     type: integer
     size: 2
     description: Wheel base angle in degrees
@@ -72,6 +73,7 @@ properties:
     name: speed
     name_cased: speed
     pretty_name: Speed
+    unit: km/h
     type: integer
     size: 1
     description: Speed in km/h

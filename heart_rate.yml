@@ -21,6 +21,7 @@ properties:
     name: heart_rate
     name_cased: heartRate
     pretty_name: Heart rate
+    unit: bpm
     type: uinteger
     size: 1
     examples:

@@ -20,7 +20,7 @@ setters:
     mandatory: [0x04]
 
 state: [0x01]
-    
+
 properties:
   - id: 0x01
     name: flashers
@@ -45,6 +45,7 @@ properties:
     name: honk_seconds
     name_cased: honkSeconds
     pretty_name: Honk seconds
+    unit: s
     type: uinteger
     size: 1
     description: Number of seconds to honk the horn

@@ -14,7 +14,7 @@ getters:
   name: get_vehicle_location
 
 state: all
-    
+
 properties:
   - id: 0x04
     name: coordinates
@@ -31,6 +31,7 @@ properties:
     name: heading
     name_cased: heading
     pretty_name: Heading
+    unit: °
     type: double
     size: 8
     description: Heading in degrees
@@ -42,6 +43,7 @@ properties:
     name: altitude
     name_cased: altitude
     pretty_name: Altitude
+    unit: m
     type: double
     size: 8
     description: Altitude in meters above the WGS 84 reference ellipsoid

@@ -30,6 +30,7 @@ properties:
     name: kilometers_to_next_service
     name_cased: kilometersToNextService
     pretty_name: Kilometers to next service
+    unit: km
     type: uinteger
     size: 4
     description: The amount of kilometers until next servicing of the car
@@ -82,6 +83,7 @@ properties:
     name: service_distance_threshold
     name_cased: serviceDistanceThreshold
     pretty_name: Service distance threshold
+    unit: km
     type: uinteger
     size: 2
     description: Distance threshold for Service

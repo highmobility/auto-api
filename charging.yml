@@ -33,6 +33,7 @@ properties:
     name: estimated_range
     name_cased: estimatedRange
     pretty_name: Estimated range
+    unit: km
     type: uinteger
     size: 2
     description: Estimated range in km
@@ -44,6 +45,7 @@ properties:
     name: battery_level
     name_cased: batteryLevel
     pretty_name: Battery level
+    unit: %
     type: double
     size: 8
     description: Battery level percentage between 0.0-1.0
@@ -55,6 +57,7 @@ properties:
     name: battery_current_ac
     name_cased: batteryCurrentAC
     pretty_name: Battery current (AC)
+    unit: A
     type: float
     size: 4
     description: Battery active current
@@ -66,6 +69,7 @@ properties:
     name: battery_current_dc
     name_cased: batteryCurrentDC
     pretty_name: Battery current (DC)
+    unit: A
     type: float
     size: 4
     description: Battery direct current
@@ -77,6 +81,7 @@ properties:
     name: charger_voltage_ac
     name_cased: chargerVoltageAC
     pretty_name: Charger voltage (AC)
+    unit: V
     type: float
     size: 4
     description: Charger voltage
@@ -88,6 +93,7 @@ properties:
     name: charger_voltage_dc
     name_cased: chargerVoltageDC
     pretty_name: Charger voltage (DC)
+    unit: V
     type: float
     size: 4
     description: Charger voltage
@@ -99,6 +105,7 @@ properties:
     name: charge_limit
     name_cased: chargeLimit
     pretty_name: Charge limit
+    unit: %
     type: double
     size: 8
     description: Charge limit percentage between 0.0-1.0
@@ -110,6 +117,7 @@ properties:
     name: time_to_complete_charge
     name_cased: timeToCompleteCharge
     pretty_name: Time to complete charge
+    unit: min
     type: uinteger
     size: 1
     description: Time until charging completed in minutes
@@ -121,6 +129,7 @@ properties:
     name: charging_rate_kw
     name_cased: chargingRateKW
     pretty_name: Charging rate (kW)
+    unit: kW
     type: float
     size: 4
     description: Charge rate in kW when charging
@@ -159,6 +168,7 @@ properties:
     name: max_charging_current
     name_cased: maxChargingCurrent
     pretty_name: Maximum charging current
+    unit: A
     type: float
     size: 4
     description: Maximum charging current
@@ -250,13 +260,14 @@ properties:
     name: battery_temperature
     name_cased: batteryTemperature
     pretty_name: Battery temperature
+    unit: °C
     type: float
     size: 4
     description: Battery temperature in Celsius
     examples:
       - hex: '4219999a'
         value: 38.4
-        description: The battery temperature is 38.4 C°
+        description: The battery temperature is 38.4 °C
   - id: 0x15
     name: timers
     name_cased: timers

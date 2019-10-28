@@ -1,6 +1,5 @@
-
 types:
-    # MARK: Active State
+  # MARK: Active State
   - name: active_state
     name_cased: activeState
     pretty_name: Active state
@@ -184,6 +183,7 @@ types:
   - name: percentage
     name_cased: percentage
     pretty_name: Percentage
+    unit: '%'
     type: double
     size: 8
     description: Percentage value between 0.0 - 1.0 (0% - 100%)
@@ -206,16 +206,16 @@ types:
     type: enum
     size: 1
     enum_values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-          - id: 0x04
-            name: rear_center
+      - id: 0x00
+        name: front_left
+      - id: 0x01
+        name: front_right
+      - id: 0x02
+        name: rear_right
+      - id: 0x03
+        name: rear_left
+      - id: 0x04
+        name: rear_center
     # MARK: Start Stop
   - name: start_stop
     name_cased: startStop
@@ -253,11 +253,13 @@ types:
     items:
       - name: hour
         name_cased: hour
+        unit: h
         type: uinteger
         size: 1
         description: Value between 0 and 23
       - name: minute
         name_cased: minute
+        unit: m
         type: uinteger
         size: 1
         description: Value between 0 and 59
@@ -294,7 +296,6 @@ types:
         type: uinteger
         size: 1
 
-
     # MARK: Acceleration
   - name: acceleration
     name_cased: acceleration
@@ -318,6 +319,7 @@ types:
       - name: g_force
         name_cased: gForce
         pretty_name: G-force
+        unit: g
         type: float
         size: 4
         description: The accelaration in g-force
@@ -363,6 +365,7 @@ types:
         description: Check Control Message identifier
       - name: remaining_minutes
         name_cased: remainingMinutes
+        unit: min
         type: uinteger
         size: 4
         description: Remaining time of the message in minutes
@@ -698,6 +701,7 @@ types:
         type: types.driving_mode
       - name: consumption
         name_cased: consumption
+        unit: kWh
         type: float
         size: 4
         description: Energy consumption in the driving mode in kWh
@@ -901,6 +905,7 @@ types:
         type: types.axle
       - name: spring_rate
         name_cased: springRate
+        unit: N/mm
         type: uinteger
         size: 1
         description: The suspension spring rate in N/mm
@@ -939,6 +944,7 @@ types:
         type: types.location
       - name: pressure
         name_cased: pressure
+        unit: BAR
         type: float
         size: 4
         description: Tire pressure in BAR
@@ -954,6 +960,7 @@ types:
         type: types.location
       - name: temperature
         name_cased: temperature
+        unit: °C
         type: float
         size: 4
         description: Tire temperature in Celsius
@@ -994,6 +1001,7 @@ types:
         description: Wheel location
       - name: rpm
         name_cased: RPM
+        unit: RPM
         type: uinteger
         size: 2
         description: The RPM measured at this wheel

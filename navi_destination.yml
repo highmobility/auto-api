@@ -19,7 +19,7 @@ setters:
     optional: [0x02]
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: coordinates
@@ -37,7 +37,7 @@ properties:
     name_cased: destinationName
     pretty_name: Destination name
     type: string
-    description: Destination name 
+    description: Destination name
     examples:
       - hex: '4265726c696e'
         value: 'Berlin'
@@ -80,6 +80,7 @@ properties:
     name: distance_to_destination
     name_cased: distanceToDestination
     pretty_name: Distance to destination
+    unit: km
     type: uinteger
     size: 2
     description: Remaining distance to reach the destination.

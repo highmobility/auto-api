@@ -115,6 +115,7 @@ properties:
     name: current_chassis_position
     name_cased: currentChassisPosition
     pretty_name: Current chassis position
+    unit: mm
     type: integer
     size: 1
     description: The chassis position in mm calculated from the lowest point
@@ -126,6 +127,7 @@ properties:
     name: maximum_chassis_position
     name_cased: maximumChassisPosition
     pretty_name: Maximum chassis position
+    unit: mm
     type: integer
     size: 1
     descrition: The maximum possible value for the chassis position
@@ -137,6 +139,7 @@ properties:
     name: minimum_chassis_position
     name_cased: minimumChassisPosition
     pretty_name: Minimum chassis position
+    unit: mm
     type: integer
     size: 1
     description: The minimum possible value for the chassis position

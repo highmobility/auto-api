@@ -54,6 +54,7 @@ properties:
     name: target_speed
     name_cased: targetSpeed
     pretty_name: Target speed
+    unit: km/h
     type: integer
     size: 2
     description: The target speed in km/h
@@ -74,6 +75,7 @@ properties:
     name: acc_target_speed
     name_cased: accTargetSpeed
     pretty_name: Adaptive Cruise Control (ACC) target speed
+    unit: km/h
     type: integer
     size: 2
     description: The target speed in km/h of the Adaptive Cruise Control

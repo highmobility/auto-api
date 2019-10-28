@@ -13,7 +13,7 @@ api:
 getters: {}
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: drivers_working_states
@@ -112,6 +112,7 @@ properties:
     name: vehicle_speed
     name_cased: vehicleSpeed
     pretty_name: Vehicle speed
+    unit: km/h
     type: integer
     size: 2
     description: The tachograph vehicle speed in km/h
