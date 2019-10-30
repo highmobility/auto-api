@@ -1,5 +1,6 @@
 name: chassis_settings
 name_cased: chassisSettings
+pretty_name: Chassis Settings
 category: chassis
 
 identifier:

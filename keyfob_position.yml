@@ -1,5 +1,6 @@
 name: keyfob_position
 name_cased: keyfobPosition
+pretty_name: Keyfob Position
 category: chassis
 
 identifier:
@@ -16,7 +17,7 @@ getters:
   name: get_keyfob_position
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: location

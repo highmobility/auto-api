@@ -1,5 +1,6 @@
 name: light_conditions
 name_cased: lightConditions
+pretty_name: Light Conditions
 category: environment
 
 identifier:

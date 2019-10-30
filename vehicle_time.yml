@@ -1,5 +1,6 @@
 name: vehicle_time
 name_cased: vehicleTime
+pretty_name: Vehicle Time
 category: poi
 
 identifier:
@@ -14,7 +15,7 @@ getters:
   name: get_vehicle_time
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: vehicle_time

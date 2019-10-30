@@ -1,5 +1,6 @@
 name: driver_fatigue
 name_cased: driverFatigue
+pretty_name: Driver Fatigue
 category: health
 
 identifier:

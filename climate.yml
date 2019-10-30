@@ -1,5 +1,6 @@
 name: climate
 name_cased: climate
+pretty_name: Climate
 category: chassis
 
 identifier:

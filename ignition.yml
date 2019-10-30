@@ -1,5 +1,6 @@
 name: ignition
 name_cased: ignition
+pretty_name: Ignition
 category: digital_key
 
 identifier:

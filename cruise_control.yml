@@ -1,5 +1,6 @@
 name: cruise_control
 name_cased: cruiseControl
+pretty_name: Cruise Control
 category: chassis
 
 identifier:

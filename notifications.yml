@@ -1,5 +1,6 @@
 name: notifications
 name_cased: notifications
+pretty_name: Notifications
 category: headunit
 
 identifier:
@@ -22,7 +23,7 @@ setters:
         value: [0x00]
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: text

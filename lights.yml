@@ -1,5 +1,6 @@
 name: lights
 name_cased: lights
+pretty_name: Lights
 category: chassis
 
 identifier:

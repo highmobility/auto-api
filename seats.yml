@@ -1,5 +1,6 @@
 name: seats
 name_cased: seats
+pretty_name: Seats
 category: chassis
 
 identifier:

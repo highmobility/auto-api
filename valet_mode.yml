@@ -1,5 +1,6 @@
 name: valet_mode
 name_cased: valetMode
+pretty_name: Valet Mode
 category: parking
 
 identifier:

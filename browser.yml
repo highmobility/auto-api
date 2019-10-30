@@ -1,5 +1,6 @@
 name: browser
 name_cased: browser
+pretty_name: Browser
 category: headunit
 
 identifier:

@@ -1,5 +1,6 @@
 name: rooftop_control
 name_cased: rooftopControl
+pretty_name: Rooftop Control
 category: chassis
 
 identifier:
@@ -18,7 +19,7 @@ setters:
     optional: [0x01, 0x02, 0x03, 0x04, 0x05]
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: dimming

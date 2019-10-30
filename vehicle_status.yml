@@ -1,5 +1,6 @@
 name: vehicle_status
 name_cased: vehicleStatus
+pretty_name: Vehicle Status
 category: api_structure
 
 identifier:
@@ -14,7 +15,7 @@ getters:
   name: get_vehicle_status
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: vin

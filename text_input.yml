@@ -1,5 +1,6 @@
 name: text_input
 name_cased: textInput
+pretty_name: Text Input
 category: headunit
 
 identifier:

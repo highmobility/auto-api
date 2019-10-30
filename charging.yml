@@ -1,5 +1,6 @@
 name: charging
 name_cased: charging
+pretty_name: Charging
 category: chassis
 
 identifier:

@@ -1,5 +1,6 @@
 name: failure_message
 name_cased: failureMessage
+pretty_name: Failure Message
 category: api_structure
 
 identifier:

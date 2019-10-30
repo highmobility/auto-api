@@ -1,5 +1,6 @@
 name: vehicle_location
 name_cased: vehicleLocation
+pretty_name: Vehicle Location
 category: poi
 
 identifier:

@@ -1,5 +1,6 @@
 name: weather_conditions
 name_cased: weatherConditions
+pretty_name: Weather Conditions
 category: environment
 
 identifier:
@@ -14,7 +15,7 @@ getters:
   name: get_weather_conditions
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: rain_intensity

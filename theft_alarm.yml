@@ -1,5 +1,6 @@
 name: theft_alarm
 name_cased: theftAlarm
+pretty_name: Theft Alarm
 category: parking
 
 identifier:
