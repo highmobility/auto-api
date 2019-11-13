@@ -131,7 +131,7 @@ properties:
     unit: mm
     type: integer
     size: 1
-    descrition: The maximum possible value for the chassis position
+    description: The maximum possible value for the chassis position
     examples:
       - hex: '37'
         value: 55
