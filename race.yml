@@ -237,6 +237,7 @@ properties:
     pretty_name: Vehicle moving
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: not_moving
