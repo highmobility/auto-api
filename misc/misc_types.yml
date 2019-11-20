@@ -1,0 +1,31 @@
+
+types:
+  # MARK: Property Failure
+  - name: property_failure
+    name_cased: propertyFailure
+    pretty_name: Property Failure
+    type: custom
+    items:
+      - name: reason
+        name_cased: reason
+        pretty_name: Reason
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: rate_limit
+          - id: 0x01
+            name: execution_timeout
+          - id: 0x02
+            name: format_error
+          - id: 0x03
+            name: unauthorised
+          - id: 0x04
+            name: unknown
+          - id: 0x05
+            name: pending
+      - name: description
+        name_cased: description
+        pretty_name: Description
+        type: string
+        description: Failure description
