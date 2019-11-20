@@ -17,11 +17,14 @@ setters:
   - name: set_windscreen_damage
     mandatory: [0x03]
     optional: [0x05]
+    description: Set the windscreen damage. This is for instance used to reset the glass damage or correct it. Damage confidence percentage is automatically set to either 0% or 100%.
   - name: set_windscreen_replacement_needed
     mandatory: [0x06]
+    description: Set if the windscreen needs replacement.
   - name: control_wipers
     mandatory: [0x01]
     optional: [0x02]
+    description: Control the wipers.
 
 state: all
 

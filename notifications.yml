@@ -15,12 +15,15 @@ setters:
   - name: notification
     mandatory: [0x01]
     optional: [0x02]
+    description: Send a notification to the car or smart device. The notification can have action items that the user can respond with.
   - name: action
     mandatory: [0x03]
+    description: Activate/choose a notification action.
   - name: clear_notification
     constants:
       - property_id: 0x04
         value: [0x00]
+    description: Clear the Notification in either the car or device that has previously been sent, ignoring driver feedback.
 
 state: all
 

@@ -16,6 +16,7 @@ getters: {}
 setters:
   - name: control_trunk
     optional: [0x01, 0x02]
+    description: Unlock/Lock and Open/Close the trunk.
 
 state: all
 

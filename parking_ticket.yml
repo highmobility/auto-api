@@ -21,10 +21,12 @@ setters:
     constants:
       - property_id: 0x01
         value: [0x01]
+    description: Start parking. This clears the last parking ticket information and starts a new one. The end time can be left unset depending on the operator.
   - name: end_parking
     constants:
       - property_id: 0x01
         value: [0x00]
+    description: End parking. This updates the parking ticket information. If no end date was set, the current time is set as the ending time.
 
 state: all
 

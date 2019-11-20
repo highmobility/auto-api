@@ -17,6 +17,7 @@ getters:
 setters:
   - name: control_gas_flap
     optional: [0x02, 0x03]
+    description: Control the gas flap of the car.
 
 state: all
 

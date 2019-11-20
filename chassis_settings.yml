@@ -17,12 +17,16 @@ getters:
 setters:
   - name: set_driving_mode
     mandatory: [0x01]
+    description: Set the driving mode.
   - name: start_stop_sports_chrono
     mandatory: [0x02]
+    description: Start/Stop sport chrono.
   - name: set_spring_rates
     mandatory: [0x05]
+    description: Set the spring rates.
   - name: set_chassis_position
     mandatory: [0x08]
+    description: Set the chassis position.
 
 state: all
 
@@ -131,7 +135,7 @@ properties:
     unit: mm
     type: integer
     size: 1
-    descrition: The maximum possible value for the chassis position
+    description: The maximum possible value for the chassis position
     examples:
       - hex: '37'
         value: 55

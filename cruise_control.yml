@@ -19,6 +19,7 @@ setters:
   - name: activate_deactivate_cruise_control
     mandatory: [0x01]
     optional: [0x03]
+    description: Activate or deactivate cruise control.
 
 state: all
 

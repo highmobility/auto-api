@@ -15,6 +15,7 @@ setters:
   - name: message_received
     mandatory: [0x01]
     optional: [0x02]
+    description: Notify the car that a message has been received. Depending on the car system, it will display or read it loud to the driver.
 
 state: all
 

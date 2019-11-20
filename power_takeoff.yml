@@ -16,6 +16,7 @@ getters: {}
 setters:
   - name: activate_deactivate_power_takeoff
     mandatory: [0x01]
+    description: Activate or deactivate power take-off.
 
 state: all
     

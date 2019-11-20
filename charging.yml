@@ -16,16 +16,22 @@ getters: {}
 setters:
   - name: start_stop_charging
     mandatory: [0x17]
+    description: Start or stop charging, which can only be controlled when the car is plugged in.
   - name: set_charge_limit
     mandatory: [0x08]
+    description: Set the charge limit, to which point the car will charge itself.
   - name: open_close_charging_port
     mandatory: [0x0b]
+    description: Open or close the charge port of the car.
   - name: set_charge_mode
     mandatory: [0x0c]
+    description: Set the charge mode of the car.
   - name: set_charging_timers
     mandatory: [0x15]
+    description: Set the charging timers of the car. The command can include one of the different timer types or all.
   - name: set_reduction_of_charging_current_times
     mandatory: [0x13]
+    description: Set the reduction of charging times of the car. The command can include different values for start and stop.
 
 state: all
 

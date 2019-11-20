@@ -16,14 +16,19 @@ getters: {}
 setters:
   - name: set_charge_current
     mandatory: [0x0e]
+    description: Set the charge current of the home charger.
   - name: set_price_tariffs
     mandatory: [0x12]
+    description: Set the price tariffs of the home charger.
   - name: activate_deactivate_solar_charging
     mandatory: [0x05]
+    description: Activate or deactivate charging from solar power.
   - name: enable_disable_wi_fi_hotspot
     mandatory: [0x08]
+    description: Enable or disable the Wi-Fi Hotspot.
   - name: authenticate_expire
     mandatory: [0x0d]
+    description: Authenticate or expire the charging session. Only if the session is authenticated can the charging be started by the vehicle.
 
 state: all
 

@@ -17,10 +17,13 @@ setters:
   - name: connect_to_network
     mandatory: [0x03, 0x04]
     optional: [0x05]
+    description: Connect the car to a Wi-Fi network.
   - name: forget_network
     mandatory: [0x03]
+    description: Forget a network that the car has previously connected to.
   - name: enable_disable_wi_fi
     mandatory: [0x01]
+    description: Enable or disable Wi-Fi completely.
 
 state: [0x01, 0x02, 0x03, 0x04]
     

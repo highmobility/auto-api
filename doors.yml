@@ -16,6 +16,7 @@ getters: {}
 setters:
   - name: lock_unlock_doors
     mandatory: [0x05]
+    description: Attempt to lock or unlock all doors of the car.
 
 state: all
 

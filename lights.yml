@@ -16,6 +16,7 @@ getters: {}
 setters:
   - name: control_lights
     optional: [0x01, 0x02, 0x04, 0x07, 0x08, 0x09]
+    description: Set the lights state.
 
 state: all
 

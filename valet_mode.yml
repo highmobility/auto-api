@@ -17,6 +17,7 @@ getters:
 setters:
   - name: activate_deactivate_valet_mode
     mandatory: [0x01]
+    description: Activate or deactivate valet mode.
 
 state: all
 

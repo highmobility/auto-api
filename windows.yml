@@ -17,6 +17,7 @@ getters:
 setters:
   - name: control_windows
     optional: [0x02, 0x03]
+    description: Open or close the windows. Either one or all windows can be controlled with the same command.
 
 state: all
 

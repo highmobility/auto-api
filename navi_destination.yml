@@ -18,6 +18,7 @@ setters:
   - name: set_navi_destination
     mandatory: [0x01]
     optional: [0x02]
+    description: Set the navigation destination. This will be forwarded to the navigation system of the car.
 
 state: all
 

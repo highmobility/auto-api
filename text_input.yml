@@ -14,6 +14,7 @@ api:
 setters:
   - name: text_input
     mandatory: [0x01]
+    description: Send a keystroke or entire sentences as input to the car headunit. This can act as an alternative to the input devices that the car is equipped with.
 
 properties:
   - id: 0x01

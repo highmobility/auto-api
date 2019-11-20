@@ -291,10 +291,12 @@ types:
         name_cased: horizontal
         type: uinteger
         size: 1
+        description: Horizontal component of the matrix
       - name: vertical
         name_cased: vertical
         type: uinteger
         size: 1
+        description: Vertical component of the matrix
 
     # MARK: Acceleration
   - name: acceleration
@@ -334,6 +336,7 @@ types:
         pretty_name: ID
         type: uinteger
         size: 1
+        description: Action identifier
       - name: name
         name_cased: name
         type: string
@@ -977,6 +980,7 @@ types:
         description: Number of occurences
       - name: id
         name_cased: ID
+        pretty_name: ID
         type: string
         description: Identifier
       - name: ecu_id
@@ -1001,6 +1005,7 @@ types:
         description: Wheel location
       - name: rpm
         name_cased: RPM
+        pretty_name: RPM
         unit: RPM
         type: uinteger
         size: 2

@@ -16,6 +16,7 @@ getters: {}
 setters:
   - name: set_parking_brake
     mandatory: [0x01]
+    description: Turn on or off the parking brake.
 
 state: all
 
