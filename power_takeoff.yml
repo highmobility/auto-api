@@ -18,7 +18,7 @@ setters:
     mandatory: [0x01]
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: status
@@ -35,6 +35,7 @@ properties:
     pretty_name: Engaged
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: not_engaged

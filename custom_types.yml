@@ -5,6 +5,7 @@ types:
     pretty_name: Active state
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: inactive
@@ -49,11 +50,13 @@ types:
     items:
       - name: latitude
         name_cased: latitude
+        validation: 'min:-90|max:90'
         type: double
         size: 8
         description: Latitude
       - name: longitude
         name_cased: longitude
+        validation: 'min:-180|max:180'
         type: double
         size: 8
         description: Longitude
@@ -63,6 +66,7 @@ types:
     pretty_name: Detected
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: not_detected
@@ -93,6 +97,7 @@ types:
     pretty_name: Enabled state
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: disabled
@@ -143,6 +148,7 @@ types:
     pretty_name: Lock state
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: unlocked
@@ -174,6 +180,7 @@ types:
     pretty_name: On-Off State
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: off
@@ -184,6 +191,7 @@ types:
     name_cased: percentage
     pretty_name: Percentage
     unit: '%'
+    validation: 'min:0|max:1'
     type: double
     size: 8
     description: Percentage value between 0.0 - 1.0 (0% - 100%)
@@ -193,6 +201,7 @@ types:
     pretty_name: Position
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: closed
@@ -254,12 +263,14 @@ types:
       - name: hour
         name_cased: hour
         unit: h
+        validation: 'min:0|max:23'
         type: uinteger
         size: 1
         description: Value between 0 and 23
       - name: minute
         name_cased: minute
         unit: m
+        validation: 'min:0|max:59'
         type: uinteger
         size: 1
         description: Value between 0 and 59
@@ -602,6 +613,7 @@ types:
         name_cased: cardPresent
         type: enum
         size: 1
+        controls: 'switch'
         enum_values:
           - id: 0x00
             name: not_present
@@ -888,6 +900,7 @@ types:
         name_cased: fastenedState
         type: enum
         size: 1
+        controls: 'switch'
         enum_values:
           - id: 0x00
             name: not_fastened
