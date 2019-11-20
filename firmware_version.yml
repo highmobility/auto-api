@@ -2,6 +2,7 @@ name: firmware_version
 name_cased: firmwareVersion
 pretty_name: Firmware Version
 category: api_structure
+authorization: false
 
 identifier:
   msb: 0x00

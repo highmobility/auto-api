@@ -71,6 +71,7 @@ The keys are divided into 2 categories: *required* and *optional* ones.
 Required keys:  
 
 * `name: string` as the name of the setter
+* `desctiotion: string` description of what the setter does
 
 Optional keys (at least 1 has to be included; can be combined):  
 
@@ -473,6 +474,8 @@ api:
     intro: 3
     update: 11
 ```
+
+Every capability has `authorization: bool` denoting if the capability required permissions to access.
 
 In addition, a new `disabled_in` structure for when a capability *isn't to be used* over some communication mediums:
 

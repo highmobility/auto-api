@@ -2,6 +2,7 @@ name: keyfob_position
 name_cased: keyfobPosition
 pretty_name: Keyfob Position
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00

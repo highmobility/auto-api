@@ -2,6 +2,7 @@ name: weather_conditions
 name_cased: weatherConditions
 pretty_name: Weather Conditions
 category: environment
+authorization: true
 
 identifier:
   msb: 0x00

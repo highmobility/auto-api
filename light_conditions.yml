@@ -2,6 +2,7 @@ name: light_conditions
 name_cased: lightConditions
 pretty_name: Light Conditions
 category: environment
+authorization: true
 
 identifier:
   msb: 0x00

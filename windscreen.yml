@@ -2,6 +2,7 @@ name: windscreen
 name_cased: windscreen
 pretty_name: Windscreen
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00

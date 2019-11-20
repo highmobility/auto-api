@@ -2,6 +2,7 @@ name: graphics
 name_cased: graphics
 pretty_name: Graphics
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00

@@ -2,6 +2,7 @@ name: notifications
 name_cased: notifications
 pretty_name: Notifications
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00

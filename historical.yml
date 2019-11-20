@@ -2,6 +2,7 @@ name: historical
 name_cased: historical
 pretty_name: Historical States
 category: api_structure
+authorization: false
 
 identifier:
   msb: 0x00

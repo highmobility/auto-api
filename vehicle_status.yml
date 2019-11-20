@@ -2,6 +2,7 @@ name: vehicle_status
 name_cased: vehicleStatus
 pretty_name: Vehicle Status
 category: api_structure
+authorization: false
 
 identifier:
   msb: 0x00

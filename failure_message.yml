@@ -2,6 +2,7 @@ name: failure_message
 name_cased: failureMessage
 pretty_name: Failure Message
 category: api_structure
+authorization: false
 
 identifier:
   msb: 0x00

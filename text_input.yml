@@ -2,6 +2,7 @@ name: text_input
 name_cased: textInput
 pretty_name: Text Input
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00

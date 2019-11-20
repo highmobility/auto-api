@@ -2,6 +2,7 @@ name: navi_destination
 name_cased: naviDestination
 pretty_name: Navi Destination
 category: poi
+authorization: true
 
 identifier:
   msb: 0x00

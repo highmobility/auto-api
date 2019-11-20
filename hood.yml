@@ -2,6 +2,7 @@ name: hood
 name_cased: hood
 pretty_name: Hood
 category: digital_key
+authorization: true
 
 identifier:
   msb: 0x00

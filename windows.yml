@@ -2,6 +2,7 @@ name: windows
 name_cased: windows
 pretty_name: Windows
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00

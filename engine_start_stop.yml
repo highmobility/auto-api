@@ -2,6 +2,7 @@ name: engine_start_stop
 name_cased: engineStartStop
 pretty_name: Engine Start-Stop
 category: digital_key
+authorization: true
 
 identifier:
   msb: 0x00

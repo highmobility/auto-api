@@ -2,6 +2,7 @@ name: race
 name_cased: race
 pretty_name: Race
 category: diagnostics
+authorization: true
 
 identifier:
   msb: 0x00

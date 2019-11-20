@@ -2,6 +2,7 @@ name: messaging
 name_cased: messaging
 pretty_name: Messaging
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00

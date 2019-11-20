@@ -2,6 +2,7 @@ name: multi_command
 name_cased: multiCommand
 pretty_name: Multi Command
 category: api_structure
+authorization: false
 
 identifier:
   msb: 0x00

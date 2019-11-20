@@ -2,6 +2,7 @@ name: tachograph
 name_cased: tachograph
 pretty_name: Tachograph
 category: heavy_duty
+authorization: true
 
 identifier:
   msb: 0x00

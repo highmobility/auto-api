@@ -2,6 +2,7 @@ name: mobile
 name_cased: mobile
 pretty_name: Mobile
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00

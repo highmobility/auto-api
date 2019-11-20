@@ -2,6 +2,7 @@ name: video_handover
 name_cased: videoHandover
 pretty_name: Video Handover
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00

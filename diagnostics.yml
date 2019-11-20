@@ -2,6 +2,7 @@ name: diagnostics
 name_cased: diagnostics
 pretty_name: Diagnostics
 category: diagnostics
+authorization: true
 
 identifier:
   msb: 0x00

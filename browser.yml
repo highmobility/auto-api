@@ -2,6 +2,7 @@ name: browser
 name_cased: browser
 pretty_name: Browser
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00

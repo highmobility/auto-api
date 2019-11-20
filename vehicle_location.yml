@@ -2,6 +2,7 @@ name: vehicle_location
 name_cased: vehicleLocation
 pretty_name: Vehicle Location
 category: poi
+authorization: true
 
 identifier:
   msb: 0x00

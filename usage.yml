@@ -2,6 +2,7 @@ name: usage
 name_cased: usage
 pretty_name: Usage
 category: diagnostics
+authorization: true
 
 identifier:
   msb: 0x00

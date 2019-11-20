@@ -2,6 +2,7 @@ name: parking_brake
 name_cased: parkingBrake
 pretty_name: Parking Brake
 category: parking
+authorization: true
 
 identifier:
   msb: 0x00

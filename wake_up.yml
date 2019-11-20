@@ -2,6 +2,7 @@ name: wake_up
 name_cased: wakeUp
 pretty_name: Wake Up
 category: digital_key
+authorization: true
 
 identifier:
   msb: 0x00

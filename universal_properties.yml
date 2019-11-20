@@ -1,6 +1,7 @@
 name: universal_properties
 name_cased: universalProperties
 category: universal
+authorization: false
 
 api:
   intro: 7

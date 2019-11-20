@@ -2,6 +2,7 @@ name: trunk
 name_cased: trunk
 pretty_name: Trunk
 category: digital_key
+authorization: true
 
 identifier:
   msb: 0x00

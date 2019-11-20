@@ -2,6 +2,7 @@ name: honk_horn_flash_lights
 name_cased: honkHornFlashLights
 pretty_name: Honk Horn & Flash Lights
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00

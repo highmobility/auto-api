@@ -2,6 +2,7 @@ name: chassis_settings
 name_cased: chassisSettings
 pretty_name: Chassis Settings
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00

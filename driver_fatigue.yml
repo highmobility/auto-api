@@ -2,6 +2,7 @@ name: driver_fatigue
 name_cased: driverFatigue
 pretty_name: Driver Fatigue
 category: health
+authorization: true
 
 identifier:
   msb: 0x00

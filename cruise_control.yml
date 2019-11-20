@@ -2,6 +2,7 @@ name: cruise_control
 name_cased: cruiseControl
 pretty_name: Cruise Control
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00

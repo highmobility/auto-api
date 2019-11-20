@@ -2,6 +2,7 @@ name: home_charger
 name_cased: homeCharger
 pretty_name: Home Charger
 category: infrastructure
+authorization: true
 
 identifier:
   msb: 0x00

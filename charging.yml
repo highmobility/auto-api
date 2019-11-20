@@ -2,6 +2,7 @@ name: charging
 name_cased: charging
 pretty_name: Charging
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00

@@ -2,6 +2,7 @@ name: remote_control
 name_cased: remoteControl
 pretty_name: Remote Control
 category: parking
+authorization: true
 
 identifier:
   msb: 0x00

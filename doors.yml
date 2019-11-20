@@ -2,6 +2,7 @@ name: doors
 name_cased: doors
 pretty_name: Doors
 category: digital_key
+authorization: true
 
 identifier:
   msb: 0x00
