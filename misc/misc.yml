@@ -29,3 +29,8 @@ types:
         pretty_name: Description
         type: string
         description: Failure description
+
+
+identification:
+  type: 0x01
+  version: 0x0b

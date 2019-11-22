@@ -458,6 +458,8 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
 
 ## miscellaneous
 
+### capbility identifier
+
 The *identifiers* and *API version* has been moved to new locations (structures).  
 *Identifiers* are now defined like this:  
 
@@ -467,6 +469,8 @@ identifier:
     lsb: 0x35
 ```
 
+### capability version
+
 And *API version* is defined so:  
 
 ```yaml
@@ -475,10 +479,55 @@ api:
     update: 11
 ```
 
+### requires authorization (permissions)
+
 Every capability has `authorization: bool` denoting if the capability required permissions to access.
+
+### usable environment
 
 In addition, a new `disabled_in` structure for when a capability *isn't to be used* over some communication mediums:
 
 ```yaml
 disabled_in: [ble, web]
+```
+
+### identification
+
+Lastly, every command is prefixed with *2 bytes* for protocol identification.
+These can be found at `misc > misc.yml > identification`
+
+Binary format:
+
+```yaml
+[protocol_type, protocol_version]
+
+protocol_type:
+  0x01      AutoAPI
+  0x02      VSS
+  
+protocol_version:
+  uint8     version number
+```
+
+Examples:
+
+```yaml
+[
+  0x01,       # Protocol Type is AutoAPI
+  0x0b,       # Protocol Versions is Level 11
+  0x00, 0x23, # Message Identifier for Charging
+  0x00        # Command Type for Get Charging State
+]
+
+[
+  0x01,       # Protocol Type is AutoAPI
+  0x0b,       # Protocol Versions is Level 11
+  0x00, 0x23, # Message Identifier for Open Close Charging Port
+  0x01,       # Command Type for Open Close Charging Port
+  0x0b,       # Property ID for Charge port state
+  0x00, 0x04, # Property Size is 4 bytes
+  0x01,       # Data Component identifier
+  0x00, 0x01, # Data Component size is 1 byte(s)
+  0x01,       # Charge port open
+]
 ```
