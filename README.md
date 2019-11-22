@@ -458,7 +458,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
 
 ## miscellaneous
 
-### capbility identifier
+### capability identifier
 
 The *identifiers* and *API version* has been moved to new locations (structures).  
 *Identifiers* are now defined like this:  
@@ -481,7 +481,7 @@ api:
 
 ### requires authorization (permissions)
 
-Every capability has `authorization: bool` denoting if the capability required permissions to access.
+Every capability has `authorization: bool` denoting if the capability requires permissions to access.
 
 ### usable environment
 
