@@ -494,7 +494,15 @@ disabled_in: [ble, web]
 ### identification
 
 Lastly, every command is prefixed with *2 bytes* for protocol identification.
-These can be found at `misc > misc.yml > identification`
+These can be found at `misc > misc.yml > identification`.
+
+Currently for *AutoAPI L11* these are:
+
+```yaml
+identification:
+  type: 0x01
+  version: 0x0b
+```
 
 Binary format:
 
