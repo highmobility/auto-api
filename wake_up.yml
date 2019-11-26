@@ -31,6 +31,8 @@ properties:
     enum_values:
       - id: 0x00
         name: wake_up
+      - id: 0x01
+        name: sleep
     examples:
       - hex: '00'
         value: 'wake_up'
