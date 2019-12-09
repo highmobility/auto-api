@@ -32,5 +32,4 @@ types:
 
 
 identification:
-  type: 0x01
   version: 0x0b
