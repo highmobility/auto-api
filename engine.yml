@@ -1,0 +1,33 @@
+name: engine
+name_cased: engine
+pretty_name: Engine
+category: digital_key
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x69
+
+api:
+  intro: 11
+  update: 11
+
+getters: {}
+
+setters:
+  - name: turn_engine_on_off
+    mandatory: [0x01]
+    description: Attempt to turn the car engine on or off.
+
+state: all
+
+properties:
+  - id: 0x01
+    name: status
+    name_cased: status
+    pretty_name: Status
+    type: types.on_off_state
+    examples:
+      - hex: '00'
+        value: 'off'
+        description: Engine is off
