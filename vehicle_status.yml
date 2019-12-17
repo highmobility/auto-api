@@ -238,7 +238,7 @@ properties:
     name_cased: brand
     pretty_name: Brand
     type: string
-    description: The car brand bytes
+    description: The car brand
     examples:
       - hex: '5465736c61'
         value: 'Tesla'
