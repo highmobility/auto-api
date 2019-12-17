@@ -1,6 +1,8 @@
 name: light_conditions
 name_cased: lightConditions
+pretty_name: Light Conditions
 category: environment
+authorization: true
 
 identifier:
   msb: 0x00
@@ -14,11 +16,13 @@ getters:
   name: get_light_conditions
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: outside_light
     name_cased: outsideLight
+    pretty_name: Outside light
+    unit: lux
     type: float
     size: 4
     description: Measured outside illuminance in lux
@@ -29,6 +33,8 @@ properties:
   - id: 0x02
     name: inside_light
     name_cased: insideLight
+    pretty_name: Inside light
+    unit: lux
     type: float
     size: 4
     description: Measured inside illuminance in lux

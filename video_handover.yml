@@ -1,6 +1,8 @@
 name: video_handover
 name_cased: videoHandover
+pretty_name: Video Handover
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00
@@ -14,6 +16,7 @@ setters:
   - name: video_handover
     mandatory: [0x01]
     optional: [0x02, 0x03]
+    description: Hand over a video from smart device to car headunit to be shown in the car display. The emulator supports HTML5 video player formats .mp4 and .webm.
 
 properties:
   - id: 0x01
@@ -29,6 +32,7 @@ properties:
   - id: 0x02
     name: starting_second
     name_cased: startingSecond
+    pretty_name: Starting second
     type: uinteger
     size: 2
     examples:
@@ -38,6 +42,7 @@ properties:
   - id: 0x03
     name: screen
     name_cased: screen
+    pretty_name: Screen
     type: enum
     size: 1
     enum_values:

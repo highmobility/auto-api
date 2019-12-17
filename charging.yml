@@ -1,6 +1,8 @@
 name: charging
 name_cased: charging
+pretty_name: Charging
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00
@@ -15,23 +17,31 @@ getters: {}
 setters:
   - name: start_stop_charging
     mandatory: [0x17]
+    description: Start or stop charging, which can only be controlled when the car is plugged in.
   - name: set_charge_limit
     mandatory: [0x08]
+    description: Set the charge limit, to which point the car will charge itself.
   - name: open_close_charging_port
     mandatory: [0x0b]
+    description: Open or close the charge port of the car.
   - name: set_charge_mode
     mandatory: [0x0c]
+    description: Set the charge mode of the car.
   - name: set_charging_timers
     mandatory: [0x15]
+    description: Set the charging timers of the car. The command can include one of the different timer types or all.
   - name: set_reduction_of_charging_current_times
     mandatory: [0x13]
+    description: Set the reduction of charging times of the car. The command can include different values for start and stop.
 
 state: all
-    
+
 properties:
   - id: 0x02
     name: estimated_range
     name_cased: estimatedRange
+    pretty_name: Estimated range
+    unit: km
     type: uinteger
     size: 2
     description: Estimated range in km
@@ -42,8 +52,8 @@ properties:
   - id: 0x03
     name: battery_level
     name_cased: batteryLevel
-    type: double
-    size: 8
+    pretty_name: Battery level
+    type: types.percentage
     description: Battery level percentage between 0.0-1.0
     examples:
       - hex: '3fe0000000000000'
@@ -53,6 +63,7 @@ properties:
     name: battery_current_ac
     name_cased: batteryCurrentAC
     pretty_name: Battery current (AC)
+    unit: A
     type: float
     size: 4
     description: Battery active current
@@ -64,6 +75,7 @@ properties:
     name: battery_current_dc
     name_cased: batteryCurrentDC
     pretty_name: Battery current (DC)
+    unit: A
     type: float
     size: 4
     description: Battery direct current
@@ -75,6 +87,7 @@ properties:
     name: charger_voltage_ac
     name_cased: chargerVoltageAC
     pretty_name: Charger voltage (AC)
+    unit: V
     type: float
     size: 4
     description: Charger voltage
@@ -86,6 +99,7 @@ properties:
     name: charger_voltage_dc
     name_cased: chargerVoltageDC
     pretty_name: Charger voltage (DC)
+    unit: V
     type: float
     size: 4
     description: Charger voltage
@@ -96,8 +110,8 @@ properties:
   - id: 0x08
     name: charge_limit
     name_cased: chargeLimit
-    type: double
-    size: 8
+    pretty_name: Charge limit
+    type: types.percentage
     description: Charge limit percentage between 0.0-1.0
     examples:
       - hex: '3feccccccccccccd'
@@ -106,6 +120,8 @@ properties:
   - id: 0x09
     name: time_to_complete_charge
     name_cased: timeToCompleteCharge
+    pretty_name: Time to complete charge
+    unit: min
     type: uinteger
     size: 1
     description: Time until charging completed in minutes
@@ -117,6 +133,7 @@ properties:
     name: charging_rate_kw
     name_cased: chargingRateKW
     pretty_name: Charging rate (kW)
+    unit: kW
     type: float
     size: 4
     description: Charge rate in kW when charging
@@ -127,6 +144,7 @@ properties:
   - id: 0x0b
     name: charge_port_state
     name_cased: chargePortState
+    pretty_name: Charge port state
     type: types.position
     examples:
       - hex: '01'
@@ -135,6 +153,7 @@ properties:
   - id: 0x0c
     name: charge_mode
     name_cased: chargeMode
+    pretty_name: Charge mode
     type: enum
     size: 1
     enum_values:
@@ -153,6 +172,7 @@ properties:
     name: max_charging_current
     name_cased: maxChargingCurrent
     pretty_name: Maximum charging current
+    unit: A
     type: float
     size: 4
     description: Maximum charging current
@@ -163,6 +183,7 @@ properties:
   - id: 0x0f
     name: plug_type
     name_cased: plugType
+    pretty_name: Plug type
     type: enum
     size: 1
     enum_values:
@@ -183,6 +204,7 @@ properties:
   - id: 0x10
     name: charging_window_chosen
     name_cased: chargingWindowChosen
+    pretty_name: Charging window chosen
     type: enum
     size: 1
     enum_values:
@@ -197,6 +219,7 @@ properties:
   - id: 0x11
     name: departure_times
     name_cased: departureTimes
+    pretty_name: Departure times
     type: types.departure_time
     multiple: true
     name_singular: departure_time
@@ -240,16 +263,19 @@ properties:
   - id: 0x14
     name: battery_temperature
     name_cased: batteryTemperature
+    pretty_name: Battery temperature
+    unit: °C
     type: float
     size: 4
     description: Battery temperature in Celsius
     examples:
       - hex: '4219999a'
         value: 38.4
-        description: The battery temperature is 38.4 C°
+        description: The battery temperature is 38.4 °C
   - id: 0x15
     name: timers
     name_cased: timers
+    pretty_name: Timers
     type: types.timer
     multiple: true
     name_singular: timer
@@ -264,9 +290,15 @@ properties:
           timer_type: 'preferred_end_time'
           date: '2017-01-10T16:36:05.000Z'
         description: 10 January 2017 at 16:36:05 GMT
+      - hex: '0200000159893c9108'
+        values:
+          timer_type: 'departure_date'
+          date: '2017-01-10T16:36:05.000Z'
+        description: 10 January 2017 at 16:36:05 GMT
   - id: 0x16
     name: plugged_in
     name_cased: pluggedIn
+    pretty_name: Plugged in
     type: enum
     size: 1
     enum_values:
@@ -281,6 +313,7 @@ properties:
   - id: 0x17
     name: status
     name_cased: status
+    pretty_name: Status
     type: enum
     size: 1
     enum_values:

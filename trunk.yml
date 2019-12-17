@@ -1,6 +1,8 @@
 name: trunk
 name_cased: trunk
+pretty_name: Trunk
 category: digital_key
+authorization: true
 
 identifier:
   msb: 0x00
@@ -15,6 +17,7 @@ getters: {}
 setters:
   - name: control_trunk
     optional: [0x01, 0x02]
+    description: Unlock/Lock and Open/Close the trunk.
 
 state: all
 
@@ -22,6 +25,7 @@ properties:
   - id: 0x01
     name: lock
     name_cased: lock
+    pretty_name: Lock
     type: types.lock_state
     examples:
       - hex: '00'
@@ -30,6 +34,7 @@ properties:
   - id: 0x02
     name: position
     name_cased: position
+    pretty_name: Position
     type: types.position
     examples:
       - hex: '01'

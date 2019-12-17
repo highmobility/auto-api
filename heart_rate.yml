@@ -1,6 +1,8 @@
 name: heart_rate
 name_cased: heartRate
+pretty_name: Heart Rate
 category: health
+authorization: true
 
 identifier:
   msb: 0x00
@@ -15,11 +17,14 @@ disabled_in: [web]
 setters:
   - name: send_heart_rate
     mandatory: [0x01]
+    description: Send the driver heart rate to the car.
 
 properties:
   - id: 0x01
     name: heart_rate
     name_cased: heartRate
+    pretty_name: Heart rate
+    unit: bpm
     type: uinteger
     size: 1
     examples:

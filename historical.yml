@@ -1,7 +1,8 @@
 name: historical
 name_cased: historical
-pretty_name: Historical States
+pretty_name: Historical
 category: api_structure
+authorization: false
 
 identifier:
   msb: 0x00
@@ -17,6 +18,7 @@ setters:
   - name: request_states
     mandatory: [0x02]
     optional: [0x03, 0x04]
+    description: Request historical states.
 
 state: [0x01]
 
@@ -24,11 +26,12 @@ properties:
   - id: 0x01
     name: states
     name_cased: states
+    pretty_name: States
     type: types.capability_state
     multiple: true
     name_singular: state
     examples:
-      - hex: '002001060004010001000400050100020001'
+      - hex: '0b002001060004010001000400050100020001'
         values:
           doors:
             positions:
@@ -36,7 +39,7 @@ properties:
               position: 'open'
             locks_state: 'unlocked'
         description: Doors capability's locks are unlocked
-      - hex: '0023010a0007010004406000000b000401000101'
+      - hex: '0b0023010a0007010004406000000b000401000101'
         values:
           charging:
             charging_rate_kw: 3.5
@@ -56,6 +59,7 @@ properties:
   - id: 0x03
     name: start_date
     name_cased: startDate
+    pretty_name: Start date
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time
@@ -66,6 +70,7 @@ properties:
   - id: 0x04
     name: end_date
     name_cased: endDate
+    pretty_name: End date
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time

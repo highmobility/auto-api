@@ -2,6 +2,7 @@ name: wi_fi
 name_cased: wiFi
 pretty_name: Wi-Fi
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00
@@ -17,10 +18,13 @@ setters:
   - name: connect_to_network
     mandatory: [0x03, 0x04]
     optional: [0x05]
+    description: Connect the car to a Wi-Fi network.
   - name: forget_network
     mandatory: [0x03]
+    description: Forget a network that the car has previously connected to.
   - name: enable_disable_wi_fi
     mandatory: [0x01]
+    description: Enable or disable Wi-Fi completely.
 
 state: [0x01, 0x02, 0x03, 0x04]
     
@@ -28,6 +32,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: types.enabled_state
     examples:
       - hex: '01'
@@ -35,7 +40,8 @@ properties:
         description: WiFi is enabled
   - id: 0x02
     name: network_connected
-    name_cased: networkConnection
+    name_cased: networkConnected
+    pretty_name: Network connected
     type: types.connection_state
     examples:
       - hex: '01'
@@ -54,6 +60,7 @@ properties:
   - id: 0x04
     name: network_security
     name_cased: networkSecurity
+    pretty_name: Network security
     type: types.network_security
     examples:
       - hex: '03'
@@ -62,6 +69,7 @@ properties:
   - id: 0x05
     name: password
     name_cased: password
+    pretty_name: Password
     type: string
     description: The network password
     examples:

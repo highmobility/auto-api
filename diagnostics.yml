@@ -1,6 +1,8 @@
 name: diagnostics
 name_cased: diagnostics
+pretty_name: Diagnostics
 category: diagnostics
+authorization: true
 
 identifier:
   msb: 0x00
@@ -13,11 +15,13 @@ api:
 getters: {}
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: mileage
     name_cased: mileage
+    pretty_name: Mileage
+    unit: km
     type: uinteger
     size: 4
     description: The car mileage (odometer) in km
@@ -28,6 +32,8 @@ properties:
   - id: 0x02
     name: engine_oil_temperature
     name_cased: engineOilTemperature
+    pretty_name: Engine oil temperature
+    unit: °C
     type: integer
     size: 2
     description: Engine oil temperature in Celsius, whereas can be negative
@@ -38,6 +44,8 @@ properties:
   - id: 0x03
     name: speed
     name_cased: speed
+    pretty_name: Speed
+    unit: km/h
     type: integer
     size: 2
     description: The vehicle speed in km/h, whereas can be negative
@@ -49,6 +57,7 @@ properties:
     name: engine_rpm
     name_cased: engineRPM
     pretty_name: Engine RPM
+    unit: RPM
     type: uinteger
     size: 2
     description: Engine RPM (revolutions per minute)
@@ -59,8 +68,8 @@ properties:
   - id: 0x05
     name: fuel_level
     name_cased: fuelLevel
-    type: double
-    size: 8
+    pretty_name: Fuel level
+    type: types.percentage
     description: Fuel level percentage between 0.0-1.0
     examples:
       - hex: '3feccccccccccccd'
@@ -69,6 +78,8 @@ properties:
   - id: 0x06
     name: estimated_range
     name_cased: estimatedRange
+    pretty_name: Estimate range
+    unit: km
     type: integer
     size: 2
     description: Estimated range (with combustion engine)
@@ -79,6 +90,7 @@ properties:
   - id: 0x09
     name: washer_fluid_level
     name_cased: washerFluidLevel
+    pretty_name: Washer fluid level
     type: types.fluid_level
     examples:
       - hex: '01'
@@ -87,6 +99,8 @@ properties:
   - id: 0x0b
     name: battery_voltage
     name_cased: batteryVoltage
+    pretty_name: Battery voltage
+    unit: V
     type: float
     size: 4
     description: Battery voltage
@@ -97,7 +111,8 @@ properties:
   - id: 0x0c
     name: adblue_level
     name_cased: adBlueLevel
-    pretty_name: AdBlue Level
+    pretty_name: AdBlue level
+    unit: l
     type: float
     size: 4
     description: AdBlue level in liters
@@ -108,6 +123,8 @@ properties:
   - id: 0x0d
     name: distance_since_reset
     name_cased: distanceSinceReset
+    pretty_name: Distance since reset
+    unit: km
     type: uinteger
     size: 2
     description: The distance driven in km since reset
@@ -118,6 +135,8 @@ properties:
   - id: 0x0e
     name: distance_since_start
     name_cased: distanceSinceStart
+    pretty_name: Distance since start
+    unit: km
     type: uinteger
     size: 2
     description: The distance driven in km since trip start
@@ -128,6 +147,8 @@ properties:
   - id: 0x0f
     name: fuel_volume
     name_cased: fuelVolume
+    pretty_name: Fuel volume
+    unit: l
     type: float
     size: 4
     description: The fuel volume measured in liters
@@ -147,6 +168,8 @@ properties:
   - id: 0x11
     name: engine_coolant_temperature
     name_cased: engineCoolantTemperature
+    pretty_name: Engine coolant temperature
+    unit: °C
     type: integer
     size: 2
     description: Engine coolant temperature in Celsius, whereas can be negative
@@ -157,6 +180,8 @@ properties:
   - id: 0x12
     name: engine_total_operating_hours
     name_cased: engineTotalOperatingHours
+    pretty_name: Engine total operation hours
+    unit: h
     type: float
     size: 4
     description: The accumulated time of engine operation
@@ -167,9 +192,11 @@ properties:
   - id: 0x13
     name: engine_total_fuel_consumption
     name_cased: engineTotalFuelConsumption
+    pretty_name: Engine total fuel consumption
+    unit: l
     type: float
     size: 4
-    description: The accumulated lifespan fuel consumption in liters 
+    description: The accumulated lifespan fuel consumption in liters
     examples:
       - hex: '46d78600'
         value: 27587.0
@@ -177,6 +204,7 @@ properties:
   - id: 0x14
     name: brake_fluid_level
     name_cased: brakeFluidLevel
+    pretty_name: Brake fluid level
     type: types.fluid_level
     examples:
       - hex: '00'
@@ -185,8 +213,8 @@ properties:
   - id: 0x15
     name: engine_torque
     name_cased: engineTorque
-    type: double
-    size: 8
+    pretty_name: Engine torque
+    type: types.percentage
     description: Current engine torque percentage between 0.0-1.0
     examples:
       - hex: '3fc999999999999a'
@@ -195,8 +223,8 @@ properties:
   - id: 0x16
     name: engine_load
     name_cased: engineLoad
-    type: double
-    size: 8
+    pretty_name: Engine load
+    type: types.percentage
     description: Current engine load percentage between 0.0-1.0
     examples:
       - hex: '3fb999999999999a'
@@ -205,6 +233,8 @@ properties:
   - id: 0x17
     name: wheel_based_speed
     name_cased: wheelBasedSpeed
+    pretty_name: Wheel based speed
+    unit: km/h
     type: integer
     size: 2
     description: The vehicle speed in km/h measured at the wheel base, whereas can be negative
@@ -215,8 +245,8 @@ properties:
   - id: 0x18
     name: battery_level
     name_cased: batteryLevel
-    type: double
-    size: 8
+    pretty_name: Battery level
+    type: types.percentage
     description: Battery level in %, value between 0.0 and 1.0
     examples:
       - hex: '3fe1eb851eb851ec'
@@ -225,6 +255,7 @@ properties:
   - id: 0x19
     name: check_control_messages
     name_cased: checkControlMessages
+    pretty_name: Check control messages
     type: types.check_control_message
     multiple: true
     name_singular: check_control_message
@@ -239,6 +270,7 @@ properties:
   - id: 0x1a
     name: tire_pressures
     name_cased: tirePressures
+    pretty_name: Tire pressures
     type: types.tire_pressure
     multiple: true
     name_singular: tire_pressure
@@ -253,13 +285,34 @@ properties:
           location: 'front_right'
           pressure: 2.31
         description: Front right tire pressure is 2.31 BAR
+      - hex: '02400f5c29'
+        values:
+          location: 'rear_right'
+          pressure: 2.24
+        description: Rear right tire pressure is 2.24 BAR
+      - hex: '03400f5c29'
+        values:
+          location: 'rear_left'
+          pressure: 2.24
+        description: Rear left tire pressure is 2.24 BAR
   - id: 0x1b
     name: tire_temperatures
     name_cased: tireTemperatures
+    pretty_name: Tire temperatures
     type: types.tire_temperature
     multiple: true
     name_singular: tire_temperature
     examples:
+      - hex: '0042200000'
+        values:
+          location: 'front_left'
+          temperature: 40
+        description: Front left tire temperature is 40C
+      - hex: '0142200000'
+        values:
+          location: 'front_right'
+          temperature: 40
+        description: Front right tire temperature is 40C
       - hex: '0242200000'
         values:
           location: 'rear_right'
@@ -278,6 +331,11 @@ properties:
     multiple: true
     name_singular: wheel_rpm
     examples:
+      - hex: '0002ea'
+        values:
+          location: 'front_left'
+          rpm: 746
+        description: Front left wheel RPM is 746
       - hex: '0102ea'
         values:
           location: 'front_right'
@@ -288,9 +346,15 @@ properties:
           location: 'rear_right'
           rpm: 746
         description: Rear right wheel RPM is 746
+      - hex: '0302ea'
+        values:
+          location: 'rear_left'
+          rpm: 746
+        description: Rear left wheel RPM is 746
   - id: 0x1d
     name: trouble_codes
     name_cased: troubleCodes
+    pretty_name: Trouble codes
     type: types.trouble_code
     multiple: true
     name_singular: trouble_code
@@ -312,6 +376,8 @@ properties:
   - id: 0x1e
     name: mileage_meters
     name_cased: mileageMeters
+    pretty_name: Mileage meters
+    unit: m
     type: uinteger
     size: 4
     description: The car mileage (odometer) in meters

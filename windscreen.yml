@@ -1,6 +1,8 @@
 name: windscreen
 name_cased: windscreen
+pretty_name: Windscreen
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00
@@ -16,18 +18,22 @@ setters:
   - name: set_windscreen_damage
     mandatory: [0x03]
     optional: [0x05]
+    description: Set the windscreen damage. This is for instance used to reset the glass damage or correct it. Damage confidence percentage is automatically set to either 0% or 100%.
   - name: set_windscreen_replacement_needed
     mandatory: [0x06]
+    description: Set if the windscreen needs replacement.
   - name: control_wipers
     mandatory: [0x01]
     optional: [0x02]
+    description: Control the wipers.
 
 state: all
 
 properties:
   - id: 0x01
-    name: wipers
-    name_cased: wipers
+    name: wipers_status
+    name_cased: wipersStatus
+    pretty_name: Wipers status
     type: enum
     size: 1
     enum_values:
@@ -46,6 +52,7 @@ properties:
   - id: 0x02
     name: wipers_intensity
     name_cased: wipersIntensity
+    pretty_name: Wipers intensity
     type: enum
     size: 1
     enum_values:
@@ -65,6 +72,7 @@ properties:
   - id: 0x03
     name: windscreen_damage
     name_cased: windscreenDamage
+    pretty_name: Windscreen damage
     type: enum
     size: 1
     enum_values:
@@ -83,6 +91,7 @@ properties:
   - id: 0x04
     name: windscreen_zone_matrix
     name_cased: windscreenZoneMatrix
+    pretty_name: Windscreen zone matrix
     type: types.zone
     description: Representing the size of the matrix, seen from the inside of the vehicle
     examples:
@@ -94,6 +103,7 @@ properties:
   - id: 0x05
     name: windscreen_damage_zone
     name_cased: windscreenDamageZone
+    pretty_name: Windscreen damage zone
     type: types.zone
     description: Representing the position in the zone, seen from the inside of the vehicle (1-based index)
     examples:
@@ -105,6 +115,7 @@ properties:
   - id: 0x06
     name: windscreen_needs_replacement
     name_cased: windscreenNeedsReplacement
+    pretty_name: Windscreen needs replacement
     type: enum
     size: 1
     enum_values:
@@ -121,6 +132,7 @@ properties:
   - id: 0x07
     name: windscreen_damage_confidence
     name_cased: windscreenDamageConfidence
+    pretty_name: Windscreen damage confidence
     type: types.percentage
     description: Confidence of damage detection, 0% if no impact detected
     examples:
@@ -130,6 +142,7 @@ properties:
   - id: 0x08
     name: windscreen_damage_detection_time
     name_cased: windscreenDamageDetectionTime
+    pretty_name: Windscreen damage detection time
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time

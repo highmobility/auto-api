@@ -1,6 +1,8 @@
 name: capabilities
 name_cased: capabilities
+pretty_name: Capabilities
 category: api_structure
+authorization: false
 
 identifier:
   msb: 0x00
@@ -19,6 +21,7 @@ properties:
   - id: 0x01
     name: capabilities
     name_cased: capabilities
+    pretty_name: Capabilities
     type: types.supported_capability
     multiple: true
     name_singular: capability

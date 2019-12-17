@@ -1,6 +1,8 @@
 name: lights
 name_cased: lights
+pretty_name: Lights
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00
@@ -15,13 +17,15 @@ getters: {}
 setters:
   - name: control_lights
     optional: [0x01, 0x02, 0x04, 0x07, 0x08, 0x09]
+    description: Set the lights state.
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: front_exterior_light
     name_cased: frontExteriorLight
+    pretty_name: Front exterior light
     type: enum
     size: 1
     enum_values:
@@ -47,6 +51,7 @@ properties:
   - id: 0x02
     name: rear_exterior_light
     name_cased: rearExteriorLight
+    pretty_name: Rear exterior light
     type: types.active_state
     examples:
       - hex: '01'
@@ -55,6 +60,7 @@ properties:
   - id: 0x04
     name: ambient_light_colour
     name_cased: ambientLightColour
+    pretty_name: Ambient light colour
     type: types.rgb_colour
     examples:
       - hex: 'ff0000'
@@ -66,6 +72,7 @@ properties:
   - id: 0x05
     name: reverse_light
     name_cased: reverseLight
+    pretty_name: Reverse light
     type: types.active_state
     examples:
       - hex: '00'
@@ -74,6 +81,7 @@ properties:
   - id: 0x06
     name: emergency_brake_light
     name_cased: emergencyBrakeLight
+    pretty_name: Emergency brake light
     type: types.active_state
     examples:
       - hex: '00'
@@ -82,6 +90,7 @@ properties:
   - id: 0x07
     name: fog_lights
     name_cased: fogLights
+    pretty_name: Fog lights
     type: types.light
     multiple: true
     name_singular: fog_light
@@ -99,6 +108,7 @@ properties:
   - id: 0x08
     name: reading_lamps
     name_cased: readingLamps
+    pretty_name: Reading lamps
     type: types.reading_lamp
     multiple: true
     name_singular: reading_lamp
@@ -107,15 +117,26 @@ properties:
         values:
           location: 'front_left'
           state: 'active'
-        description: Front reading lamps are active
+        description: Front left reading lamp is active
+      - hex: '0101'
+        values:
+          location: 'front_right'
+          state: 'active'
+        description: Front right reading lamp is active
       - hex: '0200'
         values:
           location: 'rear_right'
           state: 'inactive'
-        description: Rear reading lamps are inactive
+        description: Rear right reading lamp is inactive
+      - hex: '0300'
+        values:
+          location: 'rear_left'
+          state: 'inactive'
+        description: Rear left reading lamp is inactive
   - id: 0x09
     name: interior_lights
     name_cased: interiorLights
+    pretty_name: Interior lights
     type: types.light
     multiple: true
     name_singular: interior_light

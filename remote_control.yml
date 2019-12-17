@@ -1,6 +1,8 @@
 name: remote_control
 name_cased: remoteControl
+pretty_name: Remote Control
 category: parking
+authorization: true
 
 identifier:
   msb: 0x00
@@ -19,14 +21,17 @@ getters:
 setters:
   - name: control_command
     optional: [0x02, 0x03]
+    description: To be sent every time the controls for the car wants to be changed or once a second if the controls remain the same. If the car does not receive the command every second it will stop the control mode.
   - name: start_control
     constants:
       - property_id: 0x01
         value: [0x02]
+    description: Attempt to start the control mode of the car.
   - name: stop_control
     constants:
       - property_id: 0x01
         value: [0x05]
+    description: Attempt to stop the control mode of the car.
 
 state: [0x01, 0x02]
 
@@ -34,6 +39,7 @@ properties:
   - id: 0x01
     name: control_mode
     name_cased: controlMode
+    pretty_name: Control mode
     type: enum
     size: 1
     enum_values:
@@ -59,6 +65,8 @@ properties:
   - id: 0x02
     name: angle
     name_cased: angle
+    pretty_name: Angle
+    unit: °
     type: integer
     size: 2
     description: Wheel base angle in degrees
@@ -69,6 +77,8 @@ properties:
   - id: 0x03
     name: speed
     name_cased: speed
+    pretty_name: Speed
+    unit: km/h
     type: integer
     size: 1
     description: Speed in km/h

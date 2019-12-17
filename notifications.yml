@@ -1,6 +1,8 @@
 name: notifications
 name_cased: notifications
+pretty_name: Notifications
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00
@@ -14,19 +16,23 @@ setters:
   - name: notification
     mandatory: [0x01]
     optional: [0x02]
+    description: Send a notification to the car or smart device. The notification can have action items that the user can respond with.
   - name: action
     mandatory: [0x03]
+    description: Activate/choose a notification action.
   - name: clear_notification
     constants:
       - property_id: 0x04
         value: [0x00]
+    description: Clear the Notification in either the car or device that has previously been sent, ignoring driver feedback.
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: text
     name_cased: text
+    pretty_name: Text
     type: string
     description: Text for the notification
     examples:
@@ -36,6 +42,7 @@ properties:
   - id: 0x02
     name: action_items
     name_cased: actionItems
+    pretty_name: Action items
     type: types.action_item
     multiple: true
     name_singular: action_item
@@ -53,6 +60,7 @@ properties:
   - id: 0x03
     name: activated_action
     name_cased: activatedAction
+    pretty_name: Activate action
     type: uinteger
     size: 1
     description: Identifier of the activated action
@@ -63,6 +71,7 @@ properties:
   - id: 0x04
     name: clear
     name_cased: clear
+    pretty_name: Clear
     type: enum
     size: 1
     enum_values:

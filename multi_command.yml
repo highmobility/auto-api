@@ -2,6 +2,7 @@ name: multi_command
 name_cased: multiCommand
 pretty_name: Multi Command
 category: api_structure
+authorization: false
 
 identifier:
   msb: 0x00
@@ -21,12 +22,13 @@ properties:
   - id: 0x01
     name: multi_states
     name_cased: multiStates
+    pretty_name: Multi-states
     type: types.capability_state
     multiple: true
     name_singular: multi_state
     description: The bytes of incoming capabilities (states)
     examples:
-      - hex: '002001060004010001000400050100020001'
+      - hex: '0b002001060004010001000400050100020001'
         values:
           doors:
             positions:
@@ -34,7 +36,7 @@ properties:
               position: 'open'
             locks_state: 'unlocked'
         description: Doors capability's locks are unlocked
-      - hex: '0023010a0007010004406000000b000401000101'
+      - hex: '0b0023010a0007010004406000000b000401000101'
         values:
           charging:
             charging_rate_kw: 3.5
@@ -43,17 +45,18 @@ properties:
   - id: 0x02
     name: multi_commands
     name_cased: multiCommands
+    pretty_name: Multi-commands
     type: types.capability_state
     multiple: true
     name_singular: multi_command
     description: The bytes of outgoing capabilities (commands)
     examples:
-      - hex: '00200105000401000101'
+      - hex: '0b00200105000401000101'
         values:
           doors:
             inside_locks_state: 'locked'
         description: Lock inside door locks
-      - hex: '00350101000401000100'
+      - hex: '0b00350101000401000100'
         values:
           ignition:
             status: 'off'

@@ -1,6 +1,8 @@
 name: race
 name_cased: race
+pretty_name: Race
 category: diagnostics
+authorization: true
 
 identifier:
   msb: 0x00
@@ -13,11 +15,12 @@ api:
 getters: {}
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: accelerations
     name_cased: accelerations
+    pretty_name: Accelerations
     type: types.acceleration
     multiple: true
     name_singular: acceleration
@@ -32,11 +35,21 @@ properties:
           direction: 'lateral'
           g_force: -0.753
         description: Lateral acceleration is -0.753 g
+      - hex: '02bf40c49c'
+        values:
+          direction: 'front_lateral'
+          g_force: -0.753
+        description: Front lateral acceleration is -0.753 g
+      - hex: '03bf40c49c'
+        values:
+          direction: 'rear_lateral'
+          g_force: -0.753
+        description: Rear lateral acceleration is -0.753 g
   - id: 0x02
     name: understeering
     name_cased: understeering
-    type: double
-    size: 8
+    pretty_name: Understeering
+    type: types.percentage
     description: The understeering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 0.3 (30%) marginal, over 30% critical
     examples:
       - hex: '3fc851eb851eb852'
@@ -45,8 +58,8 @@ properties:
   - id: 0x03
     name: oversteering
     name_cased: oversteering
-    type: double
-    size: 8
+    pretty_name: Oversteering
+    type: types.percentage
     description: The oversteering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 30% marginal, over 30% critical
     examples:
       - hex: '3fa999999999999a'
@@ -55,8 +68,8 @@ properties:
   - id: 0x04
     name: gas_pedal_position
     name_cased: gasPedalPosition
-    type: double
-    size: 8
+    pretty_name: Gas pedal position
+    type: types.percentage
     description: The gas pedal position between 0.0-1.0, whereas 1.0 (100%) is full throttle
     examples:
       - hex: '3fef5c28f5c28f5c'
@@ -65,6 +78,8 @@ properties:
   - id: 0x05
     name: steering_angle
     name_cased: steeringAngle
+    pretty_name: Steering angle
+    unit: °
     type: integer
     size: 1
     description: The steering angle in degrees, whereas 0° is straight ahead, positive number to the right and negative number to the left
@@ -75,6 +90,8 @@ properties:
   - id: 0x06
     name: brake_pressure
     name_cased: brakePressure
+    pretty_name: Brake pressure
+    unit: BAR
     type: float
     size: 4
     description: Brake pressure in bar, whereas 100 bar is max value, full brake
@@ -85,6 +102,8 @@ properties:
   - id: 0x07
     name: yaw_rate
     name_cased: yawRate
+    pretty_name: Yaw rate
+    unit: °/s
     type: float
     size: 4
     description: Yaw rate in degrees per second [°/s]
@@ -95,6 +114,8 @@ properties:
   - id: 0x08
     name: rear_suspension_steering
     name_cased: rearSuspensionSteering
+    pretty_name: Rear suspension steering
+    unit: °
     type: integer
     size: 1
     description: Rear suspension steering in degrees
@@ -105,6 +126,7 @@ properties:
   - id: 0x09
     name: electronic_stability_program
     name_cased: electronicStabilityProgram
+    pretty_name: Electronic stability program
     type: types.active_state
     examples:
       - hex: '01'
@@ -113,6 +135,7 @@ properties:
   - id: 0x0a
     name: brake_torque_vectorings
     name_cased: brakeTorqueVectorings
+    pretty_name: Brake torque vectorings
     type: types.brake_torque_vectoring
     multiple: true
     name_singular: brake_torque_vectoring
@@ -130,6 +153,7 @@ properties:
   - id: 0x0b
     name: gear_mode
     name_cased: gearMode
+    pretty_name: Gear mode
     type: enum
     size: 1
     enum_values:
@@ -154,6 +178,7 @@ properties:
   - id: 0x0c
     name: selected_gear
     name_cased: selectedGear
+    pretty_name: Selected gear
     type: integer
     size: 1
     description: The selected gear value, if any
@@ -164,8 +189,8 @@ properties:
   - id: 0x0d
     name: brake_pedal_position
     name_cased: brakePedalPosition
-    type: double
-    size: 8
+    pretty_name: Brake pedal position
+    type: types.percentage
     description: The brake pedal position between 0.0-1.0, wheras 1.0 (100%) is full brakes
     examples:
       - hex: '3fbeb851eb851eb8'
@@ -174,6 +199,7 @@ properties:
   - id: 0x0e
     name: brake_pedal_switch
     name_cased: brakePedalSwitch
+    pretty_name: Brake pedal switch
     type: types.active_state
     examples:
       - hex: '01'
@@ -182,6 +208,7 @@ properties:
   - id: 0x0f
     name: clutch_pedal_switch
     name_cased: clutchPedalSwitch
+    pretty_name: Clutch pedal switch
     type: types.active_state
     examples:
       - hex: '01'
@@ -190,6 +217,7 @@ properties:
   - id: 0x10
     name: accelerator_pedal_idle_switch
     name_cased: acceleratorPedalIdleSwitch
+    pretty_name: Accelerator pedal idle switch
     type: types.active_state
     examples:
       - hex: '01'
@@ -198,6 +226,7 @@ properties:
   - id: 0x11
     name: accelerator_pedal_kickdown_switch
     name_cased: acceleratorPedalKickdownSwitch
+    pretty_name: Accelerator pedal kickdown switch
     type: types.active_state
     examples:
       - hex: '01'
@@ -206,8 +235,10 @@ properties:
   - id: 0x12
     name: vehicle_moving
     name_cased: vehicleMoving
+    pretty_name: Vehicle moving
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: not_moving

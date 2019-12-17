@@ -1,6 +1,8 @@
 name: valet_mode
 name_cased: valetMode
+pretty_name: Valet Mode
 category: parking
+authorization: true
 
 identifier:
   msb: 0x00
@@ -16,6 +18,7 @@ getters:
 setters:
   - name: activate_deactivate_valet_mode
     mandatory: [0x01]
+    description: Activate or deactivate valet mode.
 
 state: all
 
@@ -23,6 +26,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: types.active_state
     examples:
       - hex: '01'

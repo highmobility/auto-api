@@ -1,6 +1,8 @@
 name: parking_brake
 name_cased: parkingBrake
+pretty_name: Parking Brake
 category: parking
+authorization: true
 
 identifier:
   msb: 0x00
@@ -15,6 +17,7 @@ getters: {}
 setters:
   - name: set_parking_brake
     mandatory: [0x01]
+    description: Turn on or off the parking brake.
 
 state: all
 
@@ -22,6 +25,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: types.active_state
     examples:
       - hex: '01'

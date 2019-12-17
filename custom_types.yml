@@ -1,10 +1,11 @@
-
 types:
-    # MARK: Active State
+  # MARK: Active State
   - name: active_state
     name_cased: activeState
+    pretty_name: Active state
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: inactive
@@ -15,6 +16,7 @@ types:
     # MARK: Axle
   - name: axle
     name_cased: axle
+    pretty_name: Axle
     type: enum
     size: 1
     enum_values:
@@ -25,11 +27,13 @@ types:
     # MARK: Capability State
   - name: capability_state
     name_cased: capabilityState
+    pretty_name: Capability state
     type: bytes
     description: The bytes of a Capability state
     # MARK: Connection State
   - name: connection_state
     name_cased: connectionState
+    pretty_name: Connection state
     type: enum
     size: 1
     enum_values:
@@ -40,24 +44,29 @@ types:
     # MARK: Coordinates
   - name: coordinates
     name_cased: coordinates
+    pretty_name: Coordinates
     type: custom
     size: 16
     items:
       - name: latitude
         name_cased: latitude
+        validation: 'min:-90|max:90'
         type: double
         size: 8
         description: Latitude
       - name: longitude
         name_cased: longitude
+        validation: 'min:-180|max:180'
         type: double
         size: 8
         description: Longitude
     # MARK: Detected
   - name: detected
     name_cased: detected
+    pretty_name: Detected
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: not_detected
@@ -66,6 +75,7 @@ types:
     # MARK: Driving Mode
   - name: driving_mode
     name_cased: drivingMode
+    pretty_name: Driving mode
     type: enum
     size: 1
     enum_values:
@@ -84,8 +94,10 @@ types:
     # MARK: EnabledState
   - name: enabled_state
     name_cased: enabledState
+    pretty_name: Enabled state
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: disabled
@@ -96,6 +108,7 @@ types:
     # MARK: Fluid Level
   - name: fluid_level
     name_cased: fluidLevel
+    pretty_name: Fluid level
     type: enum
     size: 1
     enum_values:
@@ -106,6 +119,7 @@ types:
     # MARK: Location
   - name: location
     name_cased: location
+    pretty_name: Location
     type: enum
     size: 1
     enum_values:
@@ -120,6 +134,7 @@ types:
     # MARK: Location Longitudinal
   - name: location_longitudinal
     name_cased: locationLongitudinal
+    pretty_name: Location longitudinal
     type: enum
     size: 1
     enum_values:
@@ -130,8 +145,10 @@ types:
     # MARK: Lock State
   - name: lock_state
     name_cased: lockState
+    pretty_name: Lock state
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: unlocked
@@ -142,6 +159,7 @@ types:
     # MARK: Network Security
   - name: network_security
     name_cased: networkSecurity
+    pretty_name: Network security
     type: enum
     size: 1
     enum_values:
@@ -159,9 +177,10 @@ types:
     # MARK: On-Off State
   - name: on_off_state
     name_cased: onOffState
-    pretty_name: On-Off-State
+    pretty_name: On-Off State
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: off
@@ -170,14 +189,19 @@ types:
     # MARK: Percentage
   - name: percentage
     name_cased: percentage
+    pretty_name: Percentage
+    unit: '%'
+    validation: 'min:0|max:1'
     type: double
     size: 8
     description: Percentage value between 0.0 - 1.0 (0% - 100%)
     # MARK: Position
   - name: position
     name_cased: position
+    pretty_name: Position
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: closed
@@ -187,19 +211,20 @@ types:
     # MARK: Seat Location
   - name: seat_location
     name_cased: seatLocation
+    pretty_name: Seat location
     type: enum
     size: 1
     enum_values:
-          - id: 0x00
-            name: front_left
-          - id: 0x01
-            name: front_right
-          - id: 0x02
-            name: rear_right
-          - id: 0x03
-            name: rear_left
-          - id: 0x04
-            name: rear_center
+      - id: 0x00
+        name: front_left
+      - id: 0x01
+        name: front_right
+      - id: 0x02
+        name: rear_right
+      - id: 0x03
+        name: rear_left
+      - id: 0x04
+        name: rear_center
     # MARK: Start Stop
   - name: start_stop
     name_cased: startStop
@@ -214,6 +239,7 @@ types:
     # MARK: Supported Capability
   - name: supported_capability
     name_cased: supportedCapability
+    pretty_name: Supported capability
     type: custom
     items:
       - name: capability_id
@@ -230,22 +256,28 @@ types:
     # MARK: Time
   - name: time
     name_cased: time
+    pretty_name: Time
     type: custom
     size: 2
     items:
       - name: hour
         name_cased: hour
+        unit: h
+        validation: 'min:0|max:23'
         type: uinteger
         size: 1
         description: Value between 0 and 23
       - name: minute
         name_cased: minute
+        unit: m
+        validation: 'min:0|max:59'
         type: uinteger
         size: 1
         description: Value between 0 and 59
     # MARK: Window Location
   - name: window_location
     name_cased: windowLocation
+    pretty_name: Window location
     type: enum
     size: 1
     enum_values:
@@ -262,6 +294,7 @@ types:
     # MARK: Zone
   - name: zone
     name_cased: zone
+    pretty_name: Zone
     type: custom
     size: 2
     items:
@@ -269,15 +302,17 @@ types:
         name_cased: horizontal
         type: uinteger
         size: 1
+        description: Horizontal component of the matrix
       - name: vertical
         name_cased: vertical
         type: uinteger
         size: 1
-
+        description: Vertical component of the matrix
 
     # MARK: Acceleration
   - name: acceleration
     name_cased: acceleration
+    pretty_name: Acceleration
     type: custom
     size: 5
     items:
@@ -297,12 +332,14 @@ types:
       - name: g_force
         name_cased: gForce
         pretty_name: G-force
+        unit: g
         type: float
         size: 4
         description: The accelaration in g-force
     # MARK: Action Item
   - name: action_item
     name_cased: actionItem
+    pretty_name: Action item
     type: custom
     items:
       - name: id
@@ -310,6 +347,7 @@ types:
         pretty_name: ID
         type: uinteger
         size: 1
+        description: Action identifier
       - name: name
         name_cased: name
         type: string
@@ -317,6 +355,7 @@ types:
     # MARK: Brake Torque Vectoring
   - name: brake_torque_vectoring
     name_cased: brakeTorqueVectoring
+    pretty_name: Brake torque vectoring
     type: custom
     size: 2
     items:
@@ -329,15 +368,18 @@ types:
     # MARK: Check Control Message
   - name: check_control_message
     name_cased: checkControlMessage
+    pretty_name: Check control message
     type: custom
     items:
       - name: id
         name_cased: ID
+        pretty_name: ID
         type: uinteger
         size: 2
         description: Check Control Message identifier
       - name: remaining_minutes
         name_cased: remainingMinutes
+        unit: min
         type: uinteger
         size: 4
         description: Remaining time of the message in minutes
@@ -352,6 +394,7 @@ types:
     # MARK: Condition Based Service
   - name: condition_based_service
     name_cased: conditionBasedService
+    pretty_name: Condition based service
     type: custom
     items:
       - name: year
@@ -392,6 +435,7 @@ types:
     # MARK: Dashboard Light
   - name: dashboard_light
     name_cased: dashboardLight
+    pretty_name: Dashboard light
     type: custom
     size: 2
     items:
@@ -521,6 +565,7 @@ types:
     # MARK: Departure Time
   - name: departure_time
     name_cased: departureTime
+    pretty_name: Departure time
     type: custom
     size: 3
     items:
@@ -533,6 +578,7 @@ types:
     # MARK: Door Position
   - name: door_position
     name_cased: doorPosition
+    pretty_name: Door position
     type: custom
     size: 2
     items:
@@ -557,6 +603,7 @@ types:
     # MARK: Driver Card
   - name: driver_card_present
     name_cased: driverCardPresent
+    pretty_name: Driver card present
     type: custom
     size: 2
     items:
@@ -569,6 +616,7 @@ types:
         name_cased: cardPresent
         type: enum
         size: 1
+        controls: 'switch'
         enum_values:
           - id: 0x00
             name: not_present
@@ -577,6 +625,7 @@ types:
     # MARK: Driver Time State
   - name: driver_time_state
     name_cased: driverTimeState
+    pretty_name: Driver time state
     type: custom
     size: 2
     items:
@@ -619,6 +668,7 @@ types:
     # MARK: Driver Working State
   - name: driver_working_state
     name_cased: driverWorkingState
+    pretty_name: Driving working state
     type: custom
     size: 2
     items:
@@ -643,6 +693,7 @@ types:
     # MARK: Driving Mode Activation Period
   - name: driving_mode_activation_period
     name_cased: drivingModeActivationPeriod
+    pretty_name: Driving mode activation period
     type: custom
     size: 9
     items:
@@ -656,6 +707,7 @@ types:
     # MARK: Driving Mode Energy Consumption
   - name: driving_mode_energy_consumption
     name_cased: drivingModeEnergyConsumption
+    pretty_name: Driving mode energy consumption
     type: custom
     size: 5
     items:
@@ -664,13 +716,14 @@ types:
         type: types.driving_mode
       - name: consumption
         name_cased: consumption
+        unit: kWh
         type: float
         size: 4
         description: Energy consumption in the driving mode in kWh
     # MARK: HMKit Version
   - name: hmkit_version
     name_cased: HMKitVersion
-    pretty_name: HMKit Version
+    pretty_name: HMKit version
     type: custom
     size: 3
     items:
@@ -723,6 +776,7 @@ types:
     # MARK: Light
   - name: light
     name_cased: light
+    pretty_name: Light
     type: custom
     size: 2
     items:
@@ -735,6 +789,7 @@ types:
     # MARK: Lock
   - name: lock
     name_cased: lock
+    pretty_name: Lock
     type: custom
     size: 2
     items:
@@ -749,6 +804,7 @@ types:
     # MARK: Person Detected
   - name: person_detected
     name_cased: personDetected
+    pretty_name: Person detected
     type: custom
     size: 2
     items:
@@ -761,6 +817,7 @@ types:
     # MARK: Price Tariff
   - name: price_tariff
     name_cased: priceTariff
+    pretty_name: Price tariff
     type: custom
     items:
       - name: pricing_type
@@ -787,6 +844,7 @@ types:
     # MARK: Reading Lamp
   - name: reading_lamp
     name_cased: readingLamp
+    pretty_name: Reading lamp
     type: custom
     size: 2
     items:
@@ -799,6 +857,7 @@ types:
     # MARK: Reduction Time
   - name: reduction_time
     name_cased: reductionTime
+    pretty_name: Reduction time
     type: custom
     size: 3
     items:
@@ -811,6 +870,7 @@ types:
     # MARK: RGB Colour
   - name: rgb_colour
     name_cased: RGBColour
+    pretty_name: RGB colour
     type: custom
     size: 3
     items:
@@ -832,6 +892,7 @@ types:
     # MARK: Seatbelt State
   - name: seatbelt_state
     name_cased: seatbeltState
+    pretty_name: Seatbelt state
     type: custom
     size: 2
     items:
@@ -842,6 +903,7 @@ types:
         name_cased: fastenedState
         type: enum
         size: 1
+        controls: 'switch'
         enum_values:
           - id: 0x00
             name: not_fastened
@@ -850,6 +912,7 @@ types:
     # MARK: Spring Rate
   - name: spring_rate
     name_cased: springRate
+    pretty_name: Spring rate
     type: custom
     size: 2
     items:
@@ -858,12 +921,14 @@ types:
         type: types.axle
       - name: spring_rate
         name_cased: springRate
+        unit: N/mm
         type: uinteger
         size: 1
         description: The suspension spring rate in N/mm
     # MARK: Timer
   - name: timer
     name_cased: timer
+    pretty_name: Timer
     type: custom
     size: 9
     items:
@@ -886,6 +951,7 @@ types:
     # MARK: Tire Pressure
   - name: tire_pressure
     name_cased: tirePressure
+    pretty_name: Tire pressure
     type: custom
     size: 5
     items:
@@ -894,12 +960,14 @@ types:
         type: types.location
       - name: pressure
         name_cased: pressure
+        unit: BAR
         type: float
         size: 4
         description: Tire pressure in BAR
     # MARK: Tire Temperature
   - name: tire_temperature
     name_cased: tireTemperature
+    pretty_name: Tire temperature
     type: custom
     size: 5
     items:
@@ -908,12 +976,14 @@ types:
         type: types.location
       - name: temperature
         name_cased: temperature
+        unit: °C
         type: float
         size: 4
         description: Tire temperature in Celsius
     # MARK: Trouble Code
   - name: trouble_code
     name_cased: troubleCode
+    pretty_name: Trouble code
     type: custom
     items:
       - name: occurences
@@ -923,6 +993,7 @@ types:
         description: Number of occurences
       - name: id
         name_cased: ID
+        pretty_name: ID
         type: string
         description: Identifier
       - name: ecu_id
@@ -937,6 +1008,7 @@ types:
     # MARK: Wheel RPM
   - name: wheel_rpm
     name_cased: wheelRPM
+    pretty_name: Wheel RPM
     type: custom
     size: 3
     items:
@@ -946,12 +1018,15 @@ types:
         description: Wheel location
       - name: rpm
         name_cased: RPM
+        pretty_name: RPM
+        unit: RPM
         type: uinteger
         size: 2
         description: The RPM measured at this wheel
     # MARK: Window Open Percentage
   - name: window_open_percentage
     name_cased: windowOpenPercentage
+    pretty_name: Window open percentage
     type: custom
     size: 9
     items:
@@ -964,6 +1039,7 @@ types:
     # MARK: Window Position
   - name: window_position
     name_cased: windowPosition
+    pretty_name: Window position
     type: custom
     size: 2
     items:

@@ -1,6 +1,8 @@
 name: seats
 name_cased: seats
+pretty_name: Seats
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00
@@ -13,11 +15,12 @@ api:
 getters: {}
 
 state: all
-    
+
 properties:
   - id: 0x02
     name: persons_detected
     name_cased: personsDetected
+    pretty_name: Persons detected
     type: types.person_detected
     multiple: true
     name_singular: person_detected
@@ -32,9 +35,25 @@ properties:
           location: 'front_right'
           detected: 'not_detected'
         description: No person detected on the front-right seat
+      - hex: '0200'
+        values:
+          location: 'rear_right'
+          detected: 'not_detected'
+        description: No person detected on the rear-right seat
+      - hex: '0300'
+        values:
+          location: 'rear_left'
+          detected: 'not_detected'
+        description: No person detected on the rear-left seat
+      - hex: '0400'
+        values:
+          location: 'rear_center'
+          detected: 'not_detected'
+        description: No person detected on the rear-center seat
   - id: 0x03
     name: seatbelts_state
     name_cased: seatbeltsState
+    pretty_name: Seatbelts state
     type: types.seatbelt_state
     multiple: true
     name_singular: seatbelt_state
@@ -49,3 +68,18 @@ properties:
           location: 'front_right'
           fastened_state: 'not_fastened'
         description: Seatbelt not fastened for the front-right seat
+      - hex: '0200'
+        values:
+          location: 'rear_right'
+          fastened_state: 'not_fastened'
+        description: Seatbelt not fastened for the rear-right seat
+      - hex: '0300'
+        values:
+          location: 'rear_left'
+          fastened_state: 'not_fastened'
+        description: Seatbelt not fastened for the rear-left seat
+      - hex: '0400'
+        values:
+          location: 'rear_center'
+          fastened_state: 'not_fastened'
+        description: Seatbelt not fastened for the rear-center seat

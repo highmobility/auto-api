@@ -71,6 +71,7 @@ The keys are divided into 2 categories: *required* and *optional* ones.
 Required keys:  
 
 * `name: string` as the name of the setter
+* `desctiotion: string` description of what the setter does
 
 Optional keys (at least 1 has to be included; can be combined):  
 
@@ -155,6 +156,7 @@ Keys available for *all* properties:
 * `id: integer` property identifier in hex
 * `name: string` name of the property in *snake_case*
 * `name_cased: string` name of the property in *camelCase*
+* `pretty_name: string` human-readable name in a capitalised and whitespaced way, i.e. *Charging Power kW*
 * `type: string` type of the property
 
 Other conditional keys:
@@ -163,9 +165,8 @@ Other conditional keys:
     * *only* present for *simple properties* (base-type) *and*
     * *only* present when the size is known in advance, i.e. *not* for a `string` or `bytes`
 * `multiple: bool` if the property can occure multiple times in a command-state
-    * defaults to `false`. If multiple is present, there is also the `name_singular` value that represents the name's 
-    singular form
-* `pretty_name: string` name of the property in a capitalised and whitespaced way, i.e. *Charging Power kW*
+    * defaults to `false`. 
+    * If multiple is present, there is also the `name_singular` value that represents the name's singular form
 * `description: string` an explanation of the property (what it does, means or represents)
 * `enum_values: []` a property can also be an `enum` – enums are explained in the *types section*
 
@@ -178,6 +179,7 @@ properties:
   - id: 0x03
     name: model_name
     name_cased: modelName
+    pretty_name: Model name
     type: string
     description: The car model name bytes formatted in UTF-8
   - id: 0x07
@@ -190,10 +192,12 @@ properties:
   - id: 0x0b
     name: charge_port_state
     name_cased: chargePortState
+    pretty_name: Charge port state
     type: types.position
   - id: 0x11
     name: departure_times
     name_cased: departureTimes
+    pretty_name: Departure times
     type: types.departure_time
     multiple: true
     name_singular: departure_time
@@ -222,7 +226,7 @@ Binary format:
 
 ## types
 
-Types follow the same pattern as *properties* - they all have the same *3 keys* as every property (except the `id`).  
+Types follow the same pattern as *properties* - they all have the same *4 keys* as every property (except the `id`).  
 
 **Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double`, `string`, `bytes` and `timestamp`.
 
@@ -252,6 +256,7 @@ Examples:
 ```yaml
   - name: active_state
     name_cased: activeState
+    pretty_name: Active state
     type: enum
     size: 1
     enum_values:
@@ -264,6 +269,7 @@ Examples:
 
   - name: network_security
     name_cased: networkSecurity
+    pretty_name: Network security
     type: enum
     size: 1
     enum_values:
@@ -283,6 +289,7 @@ properties:
   - id: 0x17
     name: charging_state
     name_cased: chargingState
+    pretty_name: Charging state
     type: enum
     size: 1
     enum_values:
@@ -321,6 +328,7 @@ Examples:
 ```yaml
   - name: action_item
     name_cased: actionItem
+    pretty_name: Action item
     type: custom
     items:
       - name: id
@@ -335,6 +343,7 @@ Examples:
         
   - name: brake_torque_vectoring
     name_cased: brakeTorqueVectoring
+    pretty_name: Brake torque vectoring
     type: custom
     size: 2
     items:
@@ -347,6 +356,7 @@ Examples:
         
   - name: price_tariff
     name_cased: priceTariff
+    pretty_name: Price tariff
     type: custom
     items:
       - name: pricing_type
@@ -392,6 +402,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x01
     name: lock
     name_cased: lock
+    pretty_name: Lock
     type: types.lock_state
     examples:
       - hex: '00'
@@ -401,6 +412,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x07
     name: yaw_rate
     name_cased: yawRate
+    pretty_name: Yaw rate
     type: float
     size: 4
     description: Yaw rate in degrees per second [°/s]
@@ -417,6 +429,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x02
     name: persons_detected
     name_cased: personsDetected
+    pretty_name: Persons detected
     type: types.person_detected
     multiple: true
     name_singular: person_detected
@@ -430,6 +443,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x01
     name: accelerations
     name_cased: accelerations
+    pretty_name: Accelerations
     type: types.acceleration
     multiple: true
     name_singular: acceleration
@@ -444,6 +458,8 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
 
 ## miscellaneous
 
+### capability identifier
+
 The *identifiers* and *API version* has been moved to new locations (structures).  
 *Identifiers* are now defined like this:  
 
@@ -453,6 +469,8 @@ identifier:
     lsb: 0x35
 ```
 
+### capability version
+
 And *API version* is defined so:  
 
 ```yaml
@@ -461,8 +479,63 @@ api:
     update: 11
 ```
 
+### requires authorization (permissions)
+
+Every capability has `authorization: bool` denoting if the capability requires permissions to access.
+
+### usable environment
+
 In addition, a new `disabled_in` structure for when a capability *isn't to be used* over some communication mediums:
 
 ```yaml
 disabled_in: [ble, web]
+```
+
+### identification
+
+Lastly, every command is prefixed with *2 bytes* for protocol identification.
+These can be found at `misc > misc.yml > identification`.
+
+Currently for *AutoAPI L11* these are:
+
+```yaml
+identification:
+  type: 0x01
+  version: 0x0b
+```
+
+Binary format:
+
+```yaml
+[protocol_type, protocol_version]
+
+protocol_type:
+  0x01      AutoAPI
+  0x02      VSS
+  
+protocol_version:
+  uint8     version number
+```
+
+Examples:
+
+```yaml
+[
+  0x01,       # Protocol Type is AutoAPI
+  0x0b,       # Protocol Versions is Level 11
+  0x00, 0x23, # Message Identifier for Charging
+  0x00        # Command Type for Get Charging State
+]
+
+[
+  0x01,       # Protocol Type is AutoAPI
+  0x0b,       # Protocol Versions is Level 11
+  0x00, 0x23, # Message Identifier for Open Close Charging Port
+  0x01,       # Command Type for Open Close Charging Port
+  0x0b,       # Property ID for Charge port state
+  0x00, 0x04, # Property Size is 4 bytes
+  0x01,       # Data Component identifier
+  0x00, 0x01, # Data Component size is 1 byte(s)
+  0x01,       # Charge port open
+]
 ```

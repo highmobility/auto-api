@@ -1,6 +1,8 @@
 name: cruise_control
 name_cased: cruiseControl
+pretty_name: Cruise Control
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00
@@ -18,6 +20,7 @@ setters:
   - name: activate_deactivate_cruise_control
     mandatory: [0x01]
     optional: [0x03]
+    description: Activate or deactivate cruise control.
 
 state: all
 
@@ -25,6 +28,7 @@ properties:
   - id: 0x01
     name: cruise_control
     name_cased: cruiseControl
+    pretty_name: Cruise control
     type: types.active_state
     examples:
       - hex: '01'
@@ -33,6 +37,7 @@ properties:
   - id: 0x02
     name: limiter
     name_cased: limiter
+    pretty_name: Limiter
     type: enum
     size: 1
     enum_values:
@@ -51,6 +56,8 @@ properties:
   - id: 0x03
     name: target_speed
     name_cased: targetSpeed
+    pretty_name: Target speed
+    unit: km/h
     type: integer
     size: 2
     description: The target speed in km/h
@@ -71,6 +78,7 @@ properties:
     name: acc_target_speed
     name_cased: accTargetSpeed
     pretty_name: Adaptive Cruise Control (ACC) target speed
+    unit: km/h
     type: integer
     size: 2
     description: The target speed in km/h of the Adaptive Cruise Control

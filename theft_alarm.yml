@@ -1,6 +1,8 @@
 name: theft_alarm
 name_cased: theftAlarm
+pretty_name: Theft Alarm
 category: parking
+authorization: true
 
 identifier:
   msb: 0x00
@@ -15,6 +17,7 @@ getters: {}
 setters:
   - name: set_theft_alarm
     mandatory: [0x01]
+    description: Unarm or arm the theft alarm of the car.
 
 state: all
 
@@ -22,6 +25,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: enum
     size: 1
     enum_values:

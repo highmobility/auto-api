@@ -2,6 +2,7 @@ name: power_takeoff
 name_cased: powerTakeoff
 pretty_name: Power Take-Off
 category: heavy_duty
+authorization: true
 
 identifier:
   msb: 0x00
@@ -16,13 +17,15 @@ getters: {}
 setters:
   - name: activate_deactivate_power_takeoff
     mandatory: [0x01]
+    description: Activate or deactivate power take-off.
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: types.active_state
     examples:
       - hex: '01'
@@ -31,8 +34,10 @@ properties:
   - id: 0x02
     name: engaged
     name_cased: engaged
+    pretty_name: Engaged
     type: enum
     size: 1
+    controls: 'switch'
     enum_values:
       - id: 0x00
         name: not_engaged

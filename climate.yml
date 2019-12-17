@@ -1,6 +1,8 @@
 name: climate
 name_cased: climate
+pretty_name: Climate
 category: chassis
+authorization: true
 
 identifier:
   msb: 0x00
@@ -15,23 +17,31 @@ getters: {}
 setters:
   - name: change_starting_times
     mandatory: [0x0b]
+    description: Set the HVAC (Heating, ventilation, and air conditioning) automated starting times.
   - name: start_stop_hvac
     mandatory: [0x05]
+    description: Start or stop the HVAC system to reach driver and passenger set temperatures. The car will use cooling, defrosting and defogging as appropriate.
   - name: start_stop_defogging
     mandatory: [0x06]
+    description: Manually start or stop defogging.
   - name: start_stop_defrosting
     mandatory: [0x07]
+    description: Manually start or stop defrosting.
   - name: start_stop_ionising
     mandatory: [0x08]
+    description: Manually start or stop ionising.
   - name: set_temperature_settings
     optional: [0x03, 0x04, 0x0c]
+    description: Set the preferred temperature settings.
 
 state: all
-    
+
 properties:
   - id: 0x01
     name: inside_temperature
     name_cased: insideTemperature
+    pretty_name: Inside temperature
+    unit: °C
     type: float
     size: 4
     description: The inside temperature in celsius
@@ -42,6 +52,8 @@ properties:
   - id: 0x02
     name: outside_temperature
     name_cased: outsideTemperature
+    pretty_name: Outside temperature
+    unit: °C
     type: float
     size: 4
     description: The outside temperature in celsius
@@ -52,6 +64,8 @@ properties:
   - id: 0x03
     name: driver_temperature_setting
     name_cased: driverTemperatureSetting
+    pretty_name: Driver temperature setting
+    unit: °C
     type: float
     size: 4
     description: The driver temperature setting in celsius
@@ -62,6 +76,8 @@ properties:
   - id: 0x04
     name: passenger_temperature_setting
     name_cased: passengerTemperatureSetting
+    pretty_name: Passenger temperature setting
+    unit: °C
     type: float
     size: 4
     description: The passenger temperature setting in celsius
@@ -72,6 +88,7 @@ properties:
   - id: 0x05
     name: hvac_state
     name_cased: hvacState
+    pretty_name: HVAC state
     type: types.active_state
     examples:
       - hex: '01'
@@ -80,6 +97,7 @@ properties:
   - id: 0x06
     name: defogging_state
     name_cased: defoggingState
+    pretty_name: Defogging state
     type: types.active_state
     examples:
       - hex: '00'
@@ -88,6 +106,7 @@ properties:
   - id: 0x07
     name: defrosting_state
     name_cased: defrostingState
+    pretty_name: Defrosting state
     type: types.active_state
     examples:
       - hex: '00'
@@ -96,6 +115,7 @@ properties:
   - id: 0x08
     name: ionising_state
     name_cased: ionisingState
+    pretty_name: Ionising state
     type: types.active_state
     examples:
       - hex: '00'
@@ -104,6 +124,8 @@ properties:
   - id: 0x09
     name: defrosting_temperature_setting
     name_cased: defrostingTemperatureSetting
+    pretty_name: Defrosting temperature setting
+    unit: °C
     type: float
     size: 4
     description: The defrosting temperature setting in celsius
@@ -119,6 +141,41 @@ properties:
     multiple: true
     name_singular: hvac_weekday_starting_time
     examples:
+      - hex: '001000'
+        values:
+          weekday: 'monday'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is started on monday at 16:00
+      - hex: '011000'
+        values:
+          weekday: 'tuesday'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is started on tuesday at 16:00
+      - hex: '021000'
+        values:
+          weekday: 'wednesday'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is started on wednesday at 16:00
+      - hex: '031000'
+        values:
+          weekday: 'thursday'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is started on thursday at 16:00
+      - hex: '041000'
+        values:
+          weekday: 'friday'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is started on friday at 16:00
       - hex: '05121e'
         values:
           weekday: 'saturday'
@@ -133,12 +190,21 @@ properties:
             hour: 19
             minute: 31
         description: HVAC is started on sunday at 19:31
+      - hex: '071000'
+        values:
+          weekday: 'automatic'
+          time:
+            hour: 16
+            minute: 00
+        description: HVAC is automatic
   - id: 0x0c
     name: rear_temperature_setting
     name_cased: rearTemperatureSetting
+    pretty_name: Rear temperature setting
+    unit: °C
     type: float
     size: 4
-    description: The rear temperature in celsius 
+    description: The rear temperature in celsius
     examples:
       - hex: '41ac0000'
         value: 21.5

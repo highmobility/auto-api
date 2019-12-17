@@ -1,6 +1,8 @@
 name: wake_up
 name_cased: wakeUp
+pretty_name: Wake Up
 category: digital_key
+authorization: true
 
 identifier:
   msb: 0x00
@@ -17,16 +19,20 @@ setters:
     constants:
       - property_id: 0x01
         value: [0x00]
+    description: Wake up the car. This is necessary when the car has fallen asleep, in which case the car responds with the Failure Message to all incoming messages. The car is also waken up by the Lock/Unlock Doors message.
 
 properties:
   - id: 0x01
     name: status
     name_cased: status
+    pretty_name: Status
     type: enum
     size: 1
     enum_values:
       - id: 0x00
         name: wake_up
+      - id: 0x01
+        name: sleep
     examples:
       - hex: '00'
         value: 'wake_up'

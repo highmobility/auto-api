@@ -1,6 +1,8 @@
 name: browser
 name_cased: browser
+pretty_name: Browser
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00
@@ -13,6 +15,7 @@ api:
 setters:
   - name: load_url
     mandatory: [0x01]
+    description: Load a URL in the headunit browser. A URL shortener can be used in other cases. Note that for the car emulator the URL has to be for a secure site (HTTPS).
 
 properties:
   - id: 0x01

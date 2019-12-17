@@ -1,6 +1,8 @@
 name: home_charger
 name_cased: homeCharger
+pretty_name: Home Charger
 category: infrastructure
+authorization: true
 
 identifier:
   msb: 0x00
@@ -15,14 +17,19 @@ getters: {}
 setters:
   - name: set_charge_current
     mandatory: [0x0e]
+    description: Set the charge current of the home charger.
   - name: set_price_tariffs
     mandatory: [0x12]
+    description: Set the price tariffs of the home charger.
   - name: activate_deactivate_solar_charging
     mandatory: [0x05]
+    description: Activate or deactivate charging from solar power.
   - name: enable_disable_wi_fi_hotspot
     mandatory: [0x08]
+    description: Enable or disable the Wi-Fi Hotspot.
   - name: authenticate_expire
     mandatory: [0x0d]
+    description: Authenticate or expire the charging session. Only if the session is authenticated can the charging be started by the vehicle.
 
 state: all
 
@@ -30,6 +37,7 @@ properties:
   - id: 0x01
     name: charging_status
     name_cased: chargingStatus
+    pretty_name: Charging status
     type: enum
     size: 1
     enum_values:
@@ -46,6 +54,7 @@ properties:
   - id: 0x02
     name: authentication_mechanism
     name_cased: authenticationMechanism
+    pretty_name: Authentication mechanism
     type: enum
     size: 1
     enum_values:
@@ -61,6 +70,7 @@ properties:
   - id: 0x03
     name: plug_type
     name_cased: plugType
+    pretty_name: Plug type
     type: enum
     size: 1
     enum_values:
@@ -82,6 +92,7 @@ properties:
     name: charging_power_kw
     name_cased: chargingPowerKW
     pretty_name: Charging Power (kW)
+    unit: kW
     type: float
     size: 4
     description: Charging power in kW
@@ -92,6 +103,7 @@ properties:
   - id: 0x05
     name: solar_charging
     name_cased: solarCharging
+    pretty_name: Solar charging
     type: types.active_state
     examples:
       - hex: '01'
@@ -100,6 +112,7 @@ properties:
   - id: 0x08
     name: wi_fi_hotspot_enabled
     name_cased: wifiHotspotEnabled
+    pretty_name: Wi-Fi hotspot enabled
     type: types.enabled_state
     examples:
       - hex: '01'
@@ -108,7 +121,7 @@ properties:
   - id: 0x09
     name: wi_fi_hotspot_ssid
     name_cased: wifiHotspotSSID
-    pretty_name: Wi-Fi Hotspot SSID
+    pretty_name: Wi-Fi hotspot SSID
     type: string
     description: The Wi-Fi Hotspot SSID
     examples:
@@ -118,7 +131,7 @@ properties:
   - id: 0x0a
     name: wi_fi_hotspot_security
     name_cased: wiFiHotspotSecurity
-    pretty_name: Wi-Fi Hotspot Security
+    pretty_name: Wi-Fi hotspot security
     type: types.network_security
     examples:
       - hex: '03'
@@ -127,9 +140,9 @@ properties:
   - id: 0x0b
     name: wi_fi_hotspot_password
     name_cased: wiFiHotspotPassword
-    pretty_name: Wi-Fi Hotspot Password
+    pretty_name: Wi-Fi hotspot password
     type: string
-    description: The Wi-Fi Hotspot password 
+    description: The Wi-Fi Hotspot password
     examples:
       - hex: '5a57337641524e554265'
         value: 'ZW3vARNUBe'
@@ -137,6 +150,7 @@ properties:
   - id: 0x0d
     name: authentication_state
     name_cased: authenticationState
+    pretty_name: Authentication state
     type: enum
     size: 1
     enum_values:
@@ -154,6 +168,7 @@ properties:
     name: charge_current_dc
     name_cased: chargeCurrentDC
     pretty_name: Charge current (DC)
+    unit: V
     type: float
     size: 4
     description: The charge direct current
@@ -165,6 +180,7 @@ properties:
     name: maximum_charge_current
     name_cased: maximumChargeCurrent
     pretty_name: Maximum charge current
+    unit: V
     type: float
     size: 4
     description: The maximum possible charge current
@@ -176,6 +192,7 @@ properties:
     name: minimum_charge_current
     name_cased: minimumChargeCurrent
     pretty_name: Minimum charge current
+    unit: V
     type: float
     size: 4
     description: The minimal possible charge current
@@ -186,6 +203,7 @@ properties:
   - id: 0x11
     name: coordinates
     name_cased: coordinates
+    pretty_name: Coordinates
     type: types.coordinates
     examples:
       - hex: '404a428f9f44d445402acf562174c4ce'
@@ -196,6 +214,7 @@ properties:
   - id: 0x12
     name: price_tariffs
     name_cased: priceTariffs
+    pretty_name: Price tariffs
     type: types.price_tariff
     multiple: true
     name_singular: price_tariff
@@ -206,10 +225,15 @@ properties:
           price: 4.5
           currency: 'EUR'
         description: Charger starting fee tariff is 4.5 EUR
+      - hex: '013e99999a0003455552'
+        values:
+          pricing_type: 'per_minute'
+          price: 0.3
+          currency: 'EUR'
+        description: Charger per minute fee tariff is 0.3 EUR
       - hex: '023e99999a0006526970706c65'
         values:
           pricing_type: 'per_kwh'
           price: 0.3
           currency: 'Ripple'
         description: Charger per kWh tariff is 0.3 Ripple
-

@@ -1,6 +1,8 @@
 name: maintenance
 name_cased: maintenance
+pretty_name: Maintenance
 category: diagnostics
+authorization: true
 
 identifier:
   msb: 0x00
@@ -18,6 +20,7 @@ properties:
   - id: 0x01
     name: days_to_next_service
     name_cased: daysToNextService
+    pretty_name: Days to next service
     type: integer
     size: 2
     description: Number of days until next servicing of the car, whereas negative is overdue
@@ -28,6 +31,8 @@ properties:
   - id: 0x02
     name: kilometers_to_next_service
     name_cased: kilometersToNextService
+    pretty_name: Kilometers to next service
+    unit: km
     type: uinteger
     size: 4
     description: The amount of kilometers until next servicing of the car
@@ -38,6 +43,7 @@ properties:
   - id: 0x03
     name: cbs_reports_count
     name_cased: cbsReportsCount
+    pretty_name: CBS reports count
     type: uinteger
     size: 1
     description: The number of CBS reports
@@ -48,6 +54,7 @@ properties:
   - id: 0x04
     name: months_to_exhaust_inspection
     name_cased: monthsToExhaustInspection
+    pretty_name: Months to exhaust inspection
     type: uinteger
     size: 1
     description: Number of months until exhaust inspection
@@ -58,6 +65,7 @@ properties:
   - id: 0x05
     name: teleservice_availability
     name_cased: teleserviceAvailability
+    pretty_name: Teleservice availability
     type: enum
     size: 1
     enum_values:
@@ -76,6 +84,8 @@ properties:
   - id: 0x06
     name: service_distance_threshold
     name_cased: serviceDistanceThreshold
+    pretty_name: Service distance threshold
+    unit: km
     type: uinteger
     size: 2
     description: Distance threshold for Service
@@ -86,6 +96,7 @@ properties:
   - id: 0x07
     name: service_time_threshold
     name_cased: serviceTimeThreshold
+    pretty_name: Service time threshold
     type: uinteger
     size: 1
     description: Time threshold, in weeks, for Service
@@ -96,6 +107,7 @@ properties:
   - id: 0x08
     name: automatic_teleservice_call_date
     name_cased: automaticTeleserviceCallDate
+    pretty_name: Automatic teleservice call date
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time
@@ -106,6 +118,7 @@ properties:
   - id: 0x09
     name: teleservice_battery_call_date
     name_cased: teleserviceBatteryCallDate
+    pretty_name: Teleservice battery call date
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time
@@ -116,6 +129,7 @@ properties:
   - id: 0x0A
     name: next_inspection_date
     name_cased: nextInspectionDate
+    pretty_name: Next inspection date
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time
@@ -126,6 +140,7 @@ properties:
   - id: 0x0B
     name: condition_based_services
     name_cased: conditionBasedServices
+    pretty_name: Condition based services
     type: types.condition_based_service
     multiple: true
     name_singular: condition_based_service
@@ -142,6 +157,7 @@ properties:
   - id: 0x0C
     name: brake_fluid_change_date
     name_cased: brakeFluidChangeDate
+    pretty_name: Brake fluid change date
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time

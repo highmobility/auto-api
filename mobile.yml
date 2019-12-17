@@ -2,6 +2,7 @@ name: mobile
 name_cased: mobile
 pretty_name: Mobile
 category: headunit
+authorization: true
 
 identifier:
   msb: 0x00
@@ -19,6 +20,7 @@ properties:
   - id: 0x01
     name: connection
     name_cased: connection
+    pretty_name: Connection
     type: types.connection_state
     examples:
       - hex: '01'

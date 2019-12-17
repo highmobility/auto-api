@@ -1,6 +1,8 @@
 name: vehicle_location
 name_cased: vehicleLocation
+pretty_name: Vehicle Location
 category: poi
+authorization: true
 
 identifier:
   msb: 0x00
@@ -14,11 +16,12 @@ getters:
   name: get_vehicle_location
 
 state: all
-    
+
 properties:
   - id: 0x04
     name: coordinates
     name_cased: coordinates
+    pretty_name: Coordinates
     type: types.coordinates
     examples:
       - hex: '404a428f9f44d445402acf562174c4ce'
@@ -29,6 +32,8 @@ properties:
   - id: 0x05
     name: heading
     name_cased: heading
+    pretty_name: Heading
+    unit: °
     type: double
     size: 8
     description: Heading in degrees
@@ -39,6 +44,8 @@ properties:
   - id: 0x06
     name: altitude
     name_cased: altitude
+    pretty_name: Altitude
+    unit: m
     type: double
     size: 8
     description: Altitude in meters above the WGS 84 reference ellipsoid
