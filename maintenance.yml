@@ -1,116 +1,167 @@
 name: maintenance
+name_cased: maintenance
+pretty_name: Maintenance
 category: diagnostics
-id_msb: 0x00
-id_lsb: 0x34
-api_intro: 3
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_maintenance_state
-  - id: 0x01
-    name: maintenance_state
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x34
+
+api:
+  intro: 3
+  update: 11
+
+getters: {}
+
+state: all
+
 properties:
   - id: 0x01
+    name: days_to_next_service
+    name_cased: daysToNextService
+    pretty_name: Days to next service
     type: integer
     size: 2
-    name: days_to_next_service
     description: Number of days until next servicing of the car, whereas negative is overdue
+    examples:
+      - hex: '01f5'
+        value: 501
+        description: 501 days until next service
   - id: 0x02
-    type: integer
-    size: 4
     name: kilometers_to_next_service
+    name_cased: kilometersToNextService
+    pretty_name: Kilometers to next service
+    unit: km
+    type: uinteger
+    size: 4
     description: The amount of kilometers until next servicing of the car
+    examples:
+      - hex: '00000e61'
+        value: 3681
+        description: 3'681 km until next service
   - id: 0x03
-    type: integer
-    size: 1
     name: cbs_reports_count
-    description: The number of CBS reports
-  - id: 0x04
-    type: integer
+    name_cased: cbsReportsCount
+    pretty_name: CBS reports count
+    type: uinteger
     size: 1
-    name: months_to_exhaust_inpection
+    description: The number of CBS reports
+    examples:
+      - hex: '03'
+        value: 3
+        description: Condition Based Service reports count is 3
+  - id: 0x04
+    name: months_to_exhaust_inspection
+    name_cased: monthsToExhaustInspection
+    pretty_name: Months to exhaust inspection
+    type: uinteger
+    size: 1
     description: Number of months until exhaust inspection
+    examples:
+      - hex: '05'
+        value: 5
+        description: 5 months until exhaust inspection
   - id: 0x05
+    name: teleservice_availability
+    name_cased: teleserviceAvailability
+    pretty_name: Teleservice availability
     type: enum
     size: 1
-    name: teleservice_availability
-    values:
-      - name: pending
-        id: 0x00
-      - name: idle
-        id: 0x01
-      - name: succesful
-        id: 0x02
-      - name: error
-        id: 0x03
+    enum_values:
+      - id: 0x00
+        name: pending
+      - id: 0x01
+        name: idle
+      - id: 0x02
+        name: successful
+      - id: 0x03
+        name: error
+    examples:
+      - hex: '02'
+        value: 'successful'
+        description: Teleservice is available
   - id: 0x06
-    type: integer
-    size: 2
     name: service_distance_threshold
+    name_cased: serviceDistanceThreshold
+    pretty_name: Service distance threshold
+    unit: km
+    type: uinteger
+    size: 2
     description: Distance threshold for Service
+    examples:
+      - hex: '01f4'
+        value: 500
+        description: Service distance threshold is 500 km
   - id: 0x07
-    type: integer
-    size: 1
     name: service_time_threshold
+    name_cased: serviceTimeThreshold
+    pretty_name: Service time threshold
+    type: uinteger
+    size: 1
     description: Time threshold, in weeks, for Service
+    examples:
+      - hex: '04'
+        value: 4
+        description: Service time threshold is 4 weeks
   - id: 0x08
-    size: 8
     name: automatic_teleservice_call_date
-    type: integer
+    name_cased: automaticTeleserviceCallDate
+    pretty_name: Automatic teleservice call date
+    type: timestamp
+    size: 8
     description: Milliseconds since UNIX Epoch time
+    examples:
+      - hex: '000001674058f130'
+        value: '2018-11-23T11:33:50.000Z'
+        description: Automatic teleservice call date is at 23 November 2018 at 11:33:50 UTC
   - id: 0x09
-    size: 8
     name: teleservice_battery_call_date
-    type: integer
-    description: Milliseconds since UNIX Epoch time
-  - id: 0x0A
+    name_cased: teleserviceBatteryCallDate
+    pretty_name: Teleservice battery call date
+    type: timestamp
     size: 8
-    name: next_inspection_date
-    type: integer
     description: Milliseconds since UNIX Epoch time
+    examples:
+      - hex: '000001674024c1d0'
+        value: '2018-11-23T10:36:50.000Z'
+        description: Teleservice battery call date is at 23 November 2018 at 10:36:50 GMT
+  - id: 0x0A
+    name: next_inspection_date
+    name_cased: nextInspectionDate
+    pretty_name: Next inspection date
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
+    examples:
+      - hex: '00000166a15d20d8'
+        value: '2018-10-23T14:38:47.000Z'
+        description: Next inspection date is at 23 October 2018 at 14:38:47 GMT
   - id: 0x0B
     name: condition_based_services
+    name_cased: conditionBasedServices
+    pretty_name: Condition based services
+    type: types.condition_based_service
     multiple: true
-    items:
-      - name: year
-        type: integer
-        size: 1
-        description: Value between 0 and 99, which corresponds to 2000-2099
-      - name: month
-        type: integer
-        size: 1
-        description: Value between 1 and 12
-      - name: identifier
-        type: integer
-        size: 2
-        description: CBS identifier
-      - name: due_status
-        type: enum
-        size: 1
+    name_singular: condition_based_service
+    examples:
+      - hex: '07e305000300000b4272616b6520666c756964002c4e657874206368616e676520617420737065636966696564206461746520617420746865206c61746573742e'
         values:
-          - name: ok
-            id: 0x00
-          - name: pending
-            id: 0x01
-          - name: overdue
-            id: 0x02
-      - name: text_size
-        type: integer
-        size: 2
-        description: Size of the CBS text
-      - name: text
-        type: string
-        description: CBS text bytes formatted in UTF-8
-      - name: description_size
-        type: integer
-        size: 2
-        description: Size of the description string
-      - name: description
-        type: string
-        description: Description bytes formatted in UTF-8
+          year: 2019
+          month: 5
+          id: 3
+          due_status: 'ok'
+          text: 'Brake fluid'
+          description: 'Next change at specified date at the latest.'
+        description: Next latest brake fluid change date is 2019 May in a CBS with ID 3 and status 'ok'
   - id: 0x0C
-    size: 8
     name: brake_fluid_change_date
-    type: integer
+    name_cased: brakeFluidChangeDate
+    pretty_name: Brake fluid change date
+    type: timestamp
+    size: 8
     description: Milliseconds since UNIX Epoch time
+    examples:
+      - hex: '000001677c63d280'
+        value: '2018-12-05T03:22:56.000Z'
+        description: Brake fluid change date is at 5 December 2018 at 03:22:56 GMT

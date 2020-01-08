@@ -1,138 +1,203 @@
 name: dashboard_lights
+name_cased: dashboardLights
+pretty_name: Dashboard Lights
 category: diagnostics
-id_msb: 0x00
-id_lsb: 0x61
-api_intro: 7
-message_types:
-  - id: 0x00
-    name: get_dashboard_lights
-  - id: 0x01
-    name: dashboard_lights
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x61
+
+api:
+  intro: 7
+  update: 11
+
+getters:
+  name: get_dashboard_lights
+
+state: all
+
 properties:
   - id: 0x01
-    size: 2
     name: dashboard_lights
+    name_cased: dashboardLights
+    pretty_name: Dashboard lights
+    type: types.dashboard_light
     multiple: true
-    items:
-      - name: light_name
-        type: enum
-        size: 1
+    name_singular: dashboard_light
+    examples:
+      - hex: '0000'
         values:
-          - name: high_beam
-            pretty_name: High beam, main beam (info only)
-            id: 0x00
-          - name: low_beam
-            pretty_name: Low beam, dipped beam (info only)
-            id: 0x01
-          - name: hazard_warning
-            pretty_name: Hazard warning (info only)
-            id: 0x02
-          - name: brake_failure
-            pretty_name: Brake failure/brake system malfunction (red only)
-            id: 0x03
-          - name: hatch_open
-            pretty_name: Hatch open (info only)
-            id: 0x04
-          - name: fuel_level
-            pretty_name: Fuel level (yellow only)
-            id: 0x05
-          - name: engine_coolant_temperature
-            pretty_name: Engine coolant temperature (red only)
-            id: 0x06
-          - name: battery_charging_condition
-            pretty_name: Battery charging condition (yellow or red)
-            id: 0x07
-          - name: engine_oil
-            pretty_name: Engine oil (yellow only)
-            id: 0x08
-          - name: position_lights
-            pretty_name: Position lights, side lights (info only)
-            id: 0x09
-          - name: front_fog_light
-            pretty_name: Front fog light (info only)
-            id: 0x0A
-          - name: rear_fog_light
-            pretty_name: Rear fog light (info only)
-            id: 0x0B
-          - name: park_heating
-            pretty_name: Park Heating (info only)
-            id: 0x0C
-          - name: engine_indicator
-            pretty_name: Engine indicator (yellow only)
-            id: 0x0D
-          - name: service_call
-            pretty_name: Service, call for maintenance (yellow only)
-            id: 0x0E
-          - name: transmission_fluid_temperature
-            pretty_name: Transmission fluid temperature (yellow or red)
-            id: 0x0F
-          - name: transmission_failure
-            pretty_name: Transmission failure/malfunction (red only)
-            id: 0x10
-          - name: anti_lock_brake_failure
-            pretty_name: Anti-lock brake system failure (yellow only)
-            id: 0x11
-          - name: worn_brake_linings
-            pretty_name: Worn brake linings (yellow only)
-            id: 0x12
-          - name: windscreen_washer_fluid
-            pretty_name: Windscreen washer fluid/windshield washer fluid (yellow only)
-            id: 0x13
-          - name: tire_failure
-            pretty_name: Tire failure/malfunction (yellow only)
-            id: 0x14
-          - name: engine_oil_level
-            pretty_name: Engine oil level (yellow only)
-            id: 0x15
-          - name: engine_coolant_level
-            pretty_name: Engine coolant level (yellow only)
-            id: 0x16
-          - name: steering_failure
-            pretty_name: Steering failure (yellow or red)
-            id: 0x17
-          - name: esc_indication
-            pretty_name: Electronic Speed Controller indiction (info only)
-            id: 0x18
-          - name: brake_lights
-            pretty_name: Brake lights (info only)
-            id: 0x19
-          - name: adblue_level
-            pretty_name: AdBlue level (yellow or red)
-            id: 0x1A
-          - name: fuel_filter_diff_pressure
-            pretty_name: Fuel filter differential pressure (yellow only)
-            id: 0x1B
-          - name: seat_belt
-            pretty_name: Seat belt (red only)
-            id: 0x1C
-          - name: advanced_braking
-            pretty_name: Advanced emergency braking system (yellow only)
-            id: 0x1D
-          - name: acc
-            pretty_name: Autonomous Cruise Control (yellow only)
-            id: 0x1E
-          - name: trailer_connected
-            pretty_name: Trailer connected (info only)
-            id: 0x1F
-          - name: airbag
-            pretty_name: Airbag (yellow only)
-            id: 0x20
-          - name: esc_switched_off
-            pretty_name: ESC switched off (info only)
-            id: 0x21
-          - name: lane_departure_warning_off
-            pretty_name: Lane departure warning switched off (info only)
-            id: 0x22
-      - name: state
-        type: enum
-        size: 1
+          name: 'high_beam'
+          state: 'inactive'
+        description: High beam is inactive
+      - hex: '0100'
         values:
-          - name: inactive
-            id: 0x00
-          - name: info
-            id: 0x01
-          - name: yellow
-            id: 0x02
-          - name: red
-            id: 0x03
+          name: 'low_beam'
+          state: 'inactive'
+        description: Low beam is inactive
+      - hex: '0201'
+        values:
+          name: 'hazard_warning'
+          state: 'info'
+        description: Info light active for hazard warning
+      - hex: '0300'
+        values:
+          name: 'brake_failure'
+          state: 'inactive'
+        description: Brake failure/brake system malfunction is inactive
+      - hex: '0400'
+        values:
+          name: 'hatch_open'
+          state: 'inactive'
+        description: Hatch open is inactive
+      - hex: '0500'
+        values:
+          name: 'fuel_level'
+          state: 'inactive'
+        description: Fuel level is inactive
+      - hex: '0600'
+        values:
+          name: 'engine_coolant_temperature'
+          state: 'inactive'
+        description: Engine coolant temperature is inactive
+      - hex: '0700'
+        values:
+          name: 'battery_charging_condition'
+          state: 'inactive'
+        description: Battery charging condition is inactive
+      - hex: '0800'
+        values:
+          name: 'engine_oil'
+          state: 'inactive'
+        description: Engine oil is inactive
+      - hex: '0900'
+        values:
+          name: 'position_lights'
+          state: 'inactive'
+        description: Position lights is inactive
+      - hex: '0a00'
+        values:
+          name: 'front_fog_light'
+          state: 'inactive'
+        description: Front fog light is inactive
+      - hex: '0b00'
+        values:
+          name: 'rear_fog_light'
+          state: 'inactive'
+        description: Rear fog light is inactive
+      - hex: '0c00'
+        values:
+          name: 'park_heating'
+          state: 'inactive'
+        description: Park heating is inactive
+      - hex: '0d00'
+        values:
+          name: 'engine_indicator'
+          state: 'inactive'
+        description: Engine indicator is inactive
+      - hex: '0e00'
+        values:
+          name: 'service_call'
+          state: 'inactive'
+        description: Service call for maintenance is inactive
+      - hex: '0f03'
+        values:
+          name: 'transmission_fluid_temperature'
+          state: 'red'
+        description: Red light active for transmission fluid temperature
+      - hex: '1000'
+        values:
+          name: 'transmission_failure'
+          state: 'inactive'
+        description: Transmission failure/malfunction is inactive
+      - hex: '1100'
+        values:
+          name: 'anti_lock_brake_failure'
+          state: 'inactive'
+        description: Anti-lock brake system failure is inactive
+      - hex: '1200'
+        values:
+          name: 'worn_brake_linings'
+          state: 'inactive'
+        description: Worn brake linings is inactive
+      - hex: '1300'
+        values:
+          name: 'windscreen_washer_fluid'
+          state: 'inactive'
+        description: Windscreen washer fluid/windshield washer fluid is inactive
+      - hex: '1400'
+        values:
+          name: 'tire_failure'
+          state: 'inactive'
+        description: Tire failure/malfunction is inactive
+      - hex: '1502'
+        values:
+          name: 'engine_oil_level'
+          state: 'yellow'
+        description: Yellow light active for engine oil temperature
+      - hex: '1600'
+        values:
+          name: 'engine_coolant_level'
+          state: 'inactive'
+        description: Engine coolant level is inactive
+      - hex: '1700'
+        values:
+          name: 'steering_failure'
+          state: 'inactive'
+        description: Steering failure is inactive
+      - hex: '1800'
+        values:
+          name: 'esc_indication'
+          state: 'inactive'
+        description: Electronic Speed Controller is inactive
+      - hex: '1900'
+        values:
+          name: 'brake_lights'
+          state: 'inactive'
+        description: Brake lights is inactive
+      - hex: '1a00'
+        values:
+          name: 'adblue_level'
+          state: 'inactive'
+        description: AdBlue is inactive
+      - hex: '1b00'
+        values:
+          name: 'fuel_filter_diff_pressure'
+          state: 'inactive'
+        description: Fuel filter differential pressure is inactive
+      - hex: '1c00'
+        values:
+          name: 'seat_belt'
+          state: 'inactive'
+        description: Seat belt is inactive
+      - hex: '1d00'
+        values:
+          name: 'advanced_braking'
+          state: 'inactive'
+        description: Advanced emergency braking system is inactive
+      - hex: '1e00'
+        values:
+          name: 'acc'
+          state: 'inactive'
+        description: Autonomous Cruise Control is inactive
+      - hex: '1f00'
+        values:
+          name: 'trailer_connected'
+          state: 'inactive'
+        description: Trailer connected is inactive
+      - hex: '2000'
+        values:
+          name: 'airbag'
+          state: 'inactive'
+        description: Airbag is inactive
+      - hex: '2100'
+        values:
+          name: 'esc_switched_off'
+          state: 'inactive'
+        description: ESC switched off is inactive
+      - hex: '2200'
+        values:
+          name: 'lane_departure_warning_off'
+          state: 'inactive'
+        description: Lane departure warning switched off is inactive

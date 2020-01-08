@@ -1,22 +1,43 @@
 name: messaging
+name_cased: messaging
+pretty_name: Messaging
 category: headunit
-id_msb: 0x00
-id_lsb: 0x37
-api_intro: 4
-api_update: 5
-message_types:
-  - id: 0x00
-    name: message_received
-    properties:
-      - id: 0x01
-        name: text
-        type: string
-        mandatory: true
-        description: The text bytes of UTF8
-      - id: 0x02
-        name: handle
-        type: string
-        description: The optional handle of message, bytes of UTF8
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x37
+
+api:
+  intro: 4
+  update: 11
+
+setters:
+  - name: message_received
+    mandatory: [0x01]
+    optional: [0x02]
+    description: Notify the car that a message has been received. Depending on the car system, it will display or read it loud to the driver.
+
+state: all
+
+properties:
   - id: 0x01
-    name: send_message
-    
+    name: text
+    name_cased: text
+    pretty_name: Text
+    type: string
+    description: The text
+    examples:
+      - hex: '486579206d6f6d21'
+        value: 'Hey mom!'
+        description: Message text says 'Hey mom!'
+  - id: 0x02
+    name: handle
+    name_cased: handle
+    pretty_name: Handle
+    type: string
+    description: The optional handle of message
+    examples:
+      - hex: '457070'
+        value: 'Epp'
+        description: Name of the sender/receiver is Epp

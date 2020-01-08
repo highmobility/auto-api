@@ -1,18 +1,32 @@
 name: vehicle_time
+name_cased: vehicleTime
+pretty_name: Vehicle Time
 category: poi
-id_msb: 0x00
-id_lsb: 0x50
-api_intro: 5
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_vehicle_time
-  - id: 0x01
-    name: vehicle_time
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x50
+
+api:
+  intro: 5
+  update: 11
+
+getters:
+  name: get_vehicle_time
+
+state: all
+
 properties:
   - id: 0x01
-    type: integer
-    size: 8
     name: vehicle_time
-    description: Milliseconds since UNIX Epoch time
+    name_cased: vehicleTime
+    pretty_name: Vehicle time
+    type: types.time
+    description: Vehicle time in a 24h format
+    examples:
+      - hex: '1337'
+        values:
+          hour: 19
+          minute: 55
+        description: Vehcile time is 19:55

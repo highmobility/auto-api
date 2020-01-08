@@ -1,29 +1,56 @@
 name: video_handover
+name_cased: videoHandover
+pretty_name: Video Handover
 category: headunit
-id_msb: 0x00
-id_lsb: 0x43
-api_intro: 4
-api_update: 5
-message_types:
-  - id: 0x00
-    name: video_handover
-    properties:
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x43
+
+api:
+  intro: 4
+  update: 11
+
+setters:
+  - name: video_handover
+    mandatory: [0x01]
+    optional: [0x02, 0x03]
+    description: Hand over a video from smart device to car headunit to be shown in the car display. The emulator supports HTML5 video player formats .mp4 and .webm.
+
+properties:
+  - id: 0x01
+    name: url
+    name_cased: url
+    pretty_name: URL
+    type: string
+    description: URL string
+    examples:
+      - hex: '68747470733a2f2f6269742e6c792f326f6259374735'
+        value: 'https://bit.ly/2obY7G5'
+        description: Video URL is 'https://bit.ly/2obY7G5'
+  - id: 0x02
+    name: starting_second
+    name_cased: startingSecond
+    pretty_name: Starting second
+    type: uinteger
+    size: 2
+    examples:
+      - hex: '0003'
+        value: 3
+        description: Start from the 3rd second
+  - id: 0x03
+    name: screen
+    name_cased: screen
+    pretty_name: Screen
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: front
       - id: 0x01
-        name: url
-        pretty_name: URL
-        type: string
-        mandatory: true
-        description: The UTF8 bytes of the URL string
-      - id: 0x02
-        name: starting_second
-        type: integer
-        size: 2
-      - id: 0x03
-        name: screen
-        type: enum
-        size: 1
-        values:
-          - name: front
-            id: 0x00
-          - name: rear
-            id: 0x01
+        name: rear
+    examples:
+      - hex: '01'
+        value: 'rear'
+        description: Play the video on the rear screen

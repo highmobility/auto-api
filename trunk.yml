@@ -1,52 +1,42 @@
 name: trunk
+name_cased: trunk
+pretty_name: Trunk
 category: digital_key
-id_msb: 0x00
-id_lsb: 0x21
-api_intro: 1
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_trunk_state
-  - id: 0x01
-    name: trunk_state
-  - id: 0x12
-    name: control_trunk
-    properties:
-      - id: 0x01
-        name: trunk_lock
-        type: enum
-        size: 1
-        values:
-          - name: unlocked
-            id: 0x00
-          - name: locked
-            id: 0x01
-      - id: 0x02
-        name: trunk_position
-        type: enum
-        size: 1
-        values:
-          - name: closed
-            id: 0x00
-          - name: open
-            id: 0x01
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x21
+
+api:
+  intro: 1
+  update: 11
+
+getters: {}
+
+setters:
+  - name: control_trunk
+    optional: [0x01, 0x02]
+    description: Unlock/Lock and Open/Close the trunk.
+
+state: all
+
 properties:
   - id: 0x01
-    type: enum
-    size: 1
-    name: trunk_lock
-    values:
-      - name: unlocked
-        id: 0x00
-      - name: locked
-        id: 0x01
+    name: lock
+    name_cased: lock
+    pretty_name: Lock
+    type: types.lock_state
+    examples:
+      - hex: '00'
+        value: 'unlocked'
+        description: Trunk is unlocked
   - id: 0x02
-    type: enum
-    size: 1
-    name: trunk_position
-    values:
-      - name: closed
-        id: 0x00
-      - name: open
-        id: 0x01
+    name: position
+    name_cased: position
+    pretty_name: Position
+    type: types.position
+    examples:
+      - hex: '01'
+        value: 'open'
+        description: Trunk is open

@@ -1,61 +1,88 @@
 name: remote_control
+name_cased: remoteControl
+pretty_name: Remote Control
 category: parking
-id_msb: 0x00
-id_lsb: 0x27
-api_intro: 2
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_control_mode
-  - id: 0x01
-    name: control_mode
-  - id: 0x04
-    name: control_command
-    properties:
-      - id: 0x01
-        name: speed
-        type: integer
-        size: 1
-        description: Speed in km/h
-      - id: 0x02
-        name: angle
-        type: integer
-        size: 2
-        description: Angle of the steering
-  - id: 0x12
-    name: start_stop_control
-    properties:
-      - id: 0x01
-        name: start_stop
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: start
-            id: 0x00
-          - name: stop
-            id: 0x01
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x27
+
+api:
+  intro: 2
+  update: 11
+
+disabled_in: [web]
+
+getters:
+  name: get_control_state
+  skip_properties_getter: true
+
+setters:
+  - name: control_command
+    optional: [0x02, 0x03]
+    description: To be sent every time the controls for the car wants to be changed or once a second if the controls remain the same. If the car does not receive the command every second it will stop the control mode.
+  - name: start_control
+    constants:
+      - property_id: 0x01
+        value: [0x02]
+    description: Attempt to start the control mode of the car.
+  - name: stop_control
+    constants:
+      - property_id: 0x01
+        value: [0x05]
+    description: Attempt to stop the control mode of the car.
+
+state: [0x01, 0x02]
+
 properties:
   - id: 0x01
+    name: control_mode
+    name_cased: controlMode
+    pretty_name: Control mode
     type: enum
     size: 1
-    name: control_mode
-    values:
-      - name: control_mode_unavailable
-        id: 0x00
-      - name: control_mode_available
-        id: 0x01
-      - name: control_started
-        id: 0x02
-      - name: control_failed_to_start
-        id: 0x03
-      - name: control_aborted
-        id: 0x04
-      - name: control_ended
-        id: 0x05
+    enum_values:
+      - id: 0x00
+        name: unavailable
+      - id: 0x01
+        name: available
+      - id: 0x02
+        name: started
+        verb: start
+      - id: 0x03
+        name: failed_to_start
+      - id: 0x04
+        name: aborted
+        verb: abort
+      - id: 0x05
+        name: ended
+        verb: stop
+    examples:
+      - hex: '02'
+        value: 'started'
+        description: Remote control is started
   - id: 0x02
+    name: angle
+    name_cased: angle
+    pretty_name: Angle
+    unit: °
     type: integer
     size: 2
-    name: angle
     description: Wheel base angle in degrees
+    examples:
+      - hex: '0032'
+        value: 50
+        description: Angle is 50°
+  - id: 0x03
+    name: speed
+    name_cased: speed
+    pretty_name: Speed
+    unit: km/h
+    type: integer
+    size: 1
+    description: Speed in km/h
+    examples:
+      - hex: '05'
+        value: 5
+        description: Speed is 5 km/h

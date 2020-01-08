@@ -1,23 +1,36 @@
 name: hood
+name_cased: hood
+pretty_name: Hood
 category: digital_key
-id_msb: 0x00
-id_lsb: 0x67
-api_intro: 8
-message_types:
-  - id: 0x00
-    name: get_hood_state
-  - id: 0x01
-    name: hood_state
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x67
+
+api:
+  intro: 11
+  update: 11
+
+getters: {}
+
+state: all
 
 properties:
   - id: 0x01
+    name: position
+    name_cased: position
+    pretty_name: Position
     type: enum
     size: 1
-    name: position
-    values:
-      - name: closed
-        id: 0x00
-      - name: open
-        id: 0x01
-      - name: intermediate
-        id: 0x02
+    enum_values:
+      - id: 0x00
+        name: closed
+      - id: 0x01
+        name: open
+      - id: 0x02
+        name: intermediate
+    examples:
+      - hex: '01'
+        value: 'open'
+        description: Hood is open

@@ -1,35 +1,55 @@
 name: vehicle_location
+name_cased: vehicleLocation
+pretty_name: Vehicle Location
 category: poi
-id_msb: 0x00
-id_lsb: 0x30
-api_intro: 2
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_vehicle_location
-  - id: 0x01
-    name: vehicle_location
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x30
+
+api:
+  intro: 2
+  update: 11
+
+getters:
+  name: get_vehicle_location
+
+state: all
+
 properties:
   - id: 0x04
-    size: 16
     name: coordinates
-    items:
-      - name: latitude
-        type: double
-        size: 8
-        description: Latitude in 8-bytes per IEEE 754
-      - name: longitude
-        type: double
-        size: 8
-        description: Longitude in 8-bytes per IEEE 754
+    name_cased: coordinates
+    pretty_name: Coordinates
+    type: types.coordinates
+    examples:
+      - hex: '404a428f9f44d445402acf562174c4ce'
+        values:
+          latitude: 52.520008
+          longitude: 13.404954
+        description: Vehicle coordinates are 52.520008:13.404954
   - id: 0x05
-    type: double
-    size: 8
     name: heading
-    description: Heading in 8-bytes per IEEE 754
-  - id: 0x06
+    name_cased: heading
+    pretty_name: Heading
+    unit: °
     type: double
     size: 8
+    description: Heading in degrees
+    examples:
+      - hex: '402abd80c308feac'
+        value: 13.370123
+        description: Heading direction is 13.370123°
+  - id: 0x06
     name: altitude
-    description: Altitude in meters above the WGS 84 reference ellipsoid per double precision IEEE 754 formatting
+    name_cased: altitude
+    pretty_name: Altitude
+    unit: m
+    type: double
+    size: 8
+    description: Altitude in meters above the WGS 84 reference ellipsoid
+    examples:
+      - hex: '4060b00000000000'
+        value: 133.5
+        description: Vehicle altitude is 133.5 m

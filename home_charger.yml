@@ -1,242 +1,239 @@
 name: home_charger
+name_cased: homeCharger
+pretty_name: Home Charger
 category: infrastructure
-id_msb: 0x00
-id_lsb: 0x60
-api_intro: 6
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_home_charger_state
-  - id: 0x01
-    name: home_charger_state
-  - id: 0x12
-    name: set_charge_current
-    properties:
-      - id: 0x01
-        name: charging_current
-        type: float
-        size: 4
-        mandatory: true
-        description: The current in 4-bytes per IEEE 754
-  - id: 0x13
-    name: set_price_tariffs
-    properties:
-      - id: 0x12
-        name: price_tariffs
-        multiple: true
-        items:
-          - name: pricing_type
-            type: enum
-            size: 1
-            values:
-              - name: starting_fee
-                id: 0x00
-              - name: per_minute
-                id: 0x01
-              - name: per_kwh
-                pretty_name: Per kWh
-                id: 0x02
-          - name: price
-            type: float
-            size: 4
-            description: The price in 4-bytes per IEEE 754
-          - name: currency_size
-            type: integer
-            size: 1
-            description: Size of the currency string
-          - name: currency
-            type: string
-            description: The currency alphabetic code per ISO 4217 or crypto currency symbol
-  - id: 0x14
-    name: activate_deactivate_solar_charging
-    properties:
-      - id: 0x01
-        name: solar_charging
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: deactivated
-            id: 0x00
-          - name: activated
-            id: 0x01
-  - id: 0x15
-    name: enable_disable_wi_fi_hotspot
-    properties:
-      - id: 0x01
-        name: hotspot_enabled
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: disabled
-            id: 0x00
-          - name: enabled
-            id: 0x01
-  - id: 0x16
-    name: authenticate_expire
-    properties:
-      - id: 0x01
-        name: authentication
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: expire_authentication
-            id: 0x00
-          - name: authenticate
-            id: 0x01
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x60
+
+api:
+  intro: 6
+  update: 11
+
+getters: {}
+
+setters:
+  - name: set_charge_current
+    mandatory: [0x0e]
+    description: Set the charge current of the home charger.
+  - name: set_price_tariffs
+    mandatory: [0x12]
+    description: Set the price tariffs of the home charger.
+  - name: activate_deactivate_solar_charging
+    mandatory: [0x05]
+    description: Activate or deactivate charging from solar power.
+  - name: enable_disable_wi_fi_hotspot
+    mandatory: [0x08]
+    description: Enable or disable the Wi-Fi Hotspot.
+  - name: authenticate_expire
+    mandatory: [0x0d]
+    description: Authenticate or expire the charging session. Only if the session is authenticated can the charging be started by the vehicle.
+
+state: all
 
 properties:
   - id: 0x01
+    name: charging_status
+    name_cased: chargingStatus
+    pretty_name: Charging status
     type: enum
     size: 1
-    name: charging
-    values:
-      - name: disconnected
-        id: 0x00
-      - name: plugged_in
-        id: 0x01
-      - name: charging
-        id: 0x02
+    enum_values:
+      - id: 0x00
+        name: disconnected
+      - id: 0x01
+        name: plugged_in
+      - id: 0x02
+        name: charging
+    examples:
+      - hex: '02'
+        value: 'charging'
+        description: Charging is active
   - id: 0x02
-    type: enum
-    size: 1
     name: authentication_mechanism
-    values:
-      - name: pin
+    name_cased: authenticationMechanism
+    pretty_name: Authentication mechanism
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: pin
         pretty_name: PIN
-        id: 0x00
-      - name: app
-        id: 0x01
+      - id: 0x01
+        name: app
+    examples:
+      - hex: '01'
+        value: 'app'
+        description: Authentication mechanism is an app
   - id: 0x03
-    type: enum
-    size: 1
     name: plug_type
-    values:
-      - name: type_1
-        id: 0x00
-      - name: type_2
-        id: 0x01
-      - name: ccs
-        pretty_name: Combined Charging System (CCS)
-        id: 0x02
-      - name: chademo
+    name_cased: plugType
+    pretty_name: Plug type
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: type_1
+      - id: 0x01
+        name: type_2
+      - id: 0x02
+        name: ccs
+        pretty_name: Combined Charging System
+      - id: 0x03
+        name: chademo
         pretty_name: CHAdeMO
-        id: 0x03
+    examples:
+      - hex: '01'
+        value: 'type_2'
+        description: Type 2 plug
   - id: 0x04
+    name: charging_power_kw
+    name_cased: chargingPowerKW
+    pretty_name: Charging Power (kW)
+    unit: kW
     type: float
     size: 4
-    name: charging_power
-    description: Charging power in kW formatted in 4-bytes per IEEE 754
+    description: Charging power in kW
+    examples:
+      - hex: '41380000'
+        value: 11.5
+        description: Charging power is 11.5 kW
   - id: 0x05
-    type: enum
-    size: 1
     name: solar_charging
-    values:
-      - name: deactivated
-        id: 0x00
-      - name: activated
-        id: 0x01
+    name_cased: solarCharging
+    pretty_name: Solar charging
+    type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Solar charging is active
   - id: 0x08
-    type: enum
-    size: 1
-    name: hotspot_enabled
-    values:
-      - name: disabled
-        id: 0x00
-      - name: enabled
-        id: 0x01
+    name: wi_fi_hotspot_enabled
+    name_cased: wifiHotspotEnabled
+    pretty_name: Wi-Fi hotspot enabled
+    type: types.enabled_state
+    examples:
+      - hex: '01'
+        value: 'enabled'
+        description: WiFi hotspot is enabled
   - id: 0x09
+    name: wi_fi_hotspot_ssid
+    name_cased: wifiHotspotSSID
+    pretty_name: Wi-Fi hotspot SSID
     type: string
-    name: hotspot_ssid
-    pretty_name: Hotspot SSID
-    title_case_name: hotspotSSID
-    description: The Wi-Fi Hotspot SSID formatted in UTF-8
-  - id: 0x0A
-    type: enum
-    size: 1
+    description: The Wi-Fi Hotspot SSID
+    examples:
+      - hex: '436861726765722037363132'
+        value: 'Charger 7612'
+        description: WiFi hotspot SSID is 'Charger 7612'
+  - id: 0x0a
     name: wi_fi_hotspot_security
-    pretty_name: Wi-Fi Hotspot security
-    values:
-      - name: none
-        id: 0x00
-      - name: wep
-        pretty_name: WEP
-        id: 0x01
-      - name: wpa
-        pretty_name: WPA/WPA2 Personal
-        id: 0x02
-      - name: wpa2_personal
-        pretty_name: WPA2 Personal
-        id: 0x03
-  - id: 0x0B
-    type: string
+    name_cased: wiFiHotspotSecurity
+    pretty_name: Wi-Fi hotspot security
+    type: types.network_security
+    examples:
+      - hex: '03'
+        value: 'wpa2_personal'
+        description: WiFi hotspot security uses WPA2-Personal
+  - id: 0x0b
     name: wi_fi_hotspot_password
-    pretty_name: Wi-Fi Hotspot Password
-    description: The Wi-Fi Hotspot password formatted in UTF-8
-  - id: 0x0D
+    name_cased: wiFiHotspotPassword
+    pretty_name: Wi-Fi hotspot password
+    type: string
+    description: The Wi-Fi Hotspot password
+    examples:
+      - hex: '5a57337641524e554265'
+        value: 'ZW3vARNUBe'
+        description: WiFi hotspot password is 'ZW3vARNUBe'
+  - id: 0x0d
+    name: authentication_state
+    name_cased: authenticationState
+    pretty_name: Authentication state
     type: enum
     size: 1
-    name: authentication_state
-    values:
-      - name: unauthenticated
-        id: 0x00
-      - name: authenticated
-        id: 0x01
-  - id: 0x0E
-    type: float
-    size: 4
+    enum_values:
+      - id: 0x00
+        name: unauthenticated
+        verb: expire_authentication
+      - id: 0x01
+        name: authenticated
+        verb: authenticate
+    examples:
+      - hex: '01'
+        value: 'authenticated'
+        description: Is authenticated to the charger
+  - id: 0x0e
     name: charge_current_dc
+    name_cased: chargeCurrentDC
     pretty_name: Charge current (DC)
-    description: The charge current (DC) per IEEE 754
-  - id: 0x0F
+    unit: V
     type: float
     size: 4
+    description: The charge direct current
+    examples:
+      - hex: '3f000000'
+        value: 0.5
+        description: Charger direct current is 0.5 V
+  - id: 0x0f
     name: maximum_charge_current
+    name_cased: maximumChargeCurrent
     pretty_name: Maximum charge current
-    description: The maximum possible charge current per IEEE 754
-  - id: 0x10
+    unit: V
     type: float
     size: 4
+    description: The maximum possible charge current
+    examples:
+      - hex: '3f800000'
+        value: 1.0
+        description: Maximum charger current is 1.0 V
+  - id: 0x10
     name: minimum_charge_current
+    name_cased: minimumChargeCurrent
     pretty_name: Minimum charge current
-    description: The minimal possible charge current per IEEE 754
+    unit: V
+    type: float
+    size: 4
+    description: The minimal possible charge current
+    examples:
+      - hex: '00000000'
+        value: 0.0
+        description: Minimum charger current is 0.0 V
   - id: 0x11
-    size: 16
     name: coordinates
-    items:
-      - name: latitude
-        type: double
-        size: 8
-        description: Latitude in 8-bytes per IEEE 754
-      - name: longitude
-        type: double
-        size: 8
-        description: Longitude in 8-bytes per IEEE 754
+    name_cased: coordinates
+    pretty_name: Coordinates
+    type: types.coordinates
+    examples:
+      - hex: '404a428f9f44d445402acf562174c4ce'
+        values:
+          latitude: 52.520008
+          longitude: 13.404954
+        description: Charger is located at 52.520008:13.404954
   - id: 0x12
     name: price_tariffs
+    name_cased: priceTariffs
+    pretty_name: Price tariffs
+    type: types.price_tariff
     multiple: true
-    items:
-      - name: pricing_type
-        type: enum
-        size: 1
+    name_singular: price_tariff
+    examples:
+      - hex: '00409000000003455552'
         values:
-          - name: starting_fee
-            id: 0x00
-          - name: per_minute
-            id: 0x01
-          - name: per_kwh
-            pretty_name: Per kWh
-            id: 0x02
-      - name: price
-        type: float
-        size: 4
-        description: The price in 4-bytes per IEEE 754
-      - name: currency_size
-        type: integer
-        size: 1
-        description: Size of the currency string
-      - name: currency
-        type: string
-        description: The currency alphabetic code per ISO 4217 or crypto currency symbol
+          pricing_type: 'starting_fee'
+          price: 4.5
+          currency: 'EUR'
+        description: Charger starting fee tariff is 4.5 EUR
+      - hex: '013e99999a0003455552'
+        values:
+          pricing_type: 'per_minute'
+          price: 0.3
+          currency: 'EUR'
+        description: Charger per minute fee tariff is 0.3 EUR
+      - hex: '023e99999a0006526970706c65'
+        values:
+          pricing_type: 'per_kwh'
+          price: 0.3
+          currency: 'Ripple'
+        description: Charger per kWh tariff is 0.3 Ripple

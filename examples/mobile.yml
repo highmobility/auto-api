@@ -1,4 +1,0 @@
-connection:
-  - item:
-    - value: '0x01'
-      description: A mobile phone is connected

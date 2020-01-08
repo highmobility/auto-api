@@ -1,115 +1,125 @@
 name: tachograph
+name_cased: tachograph
+pretty_name: Tachograph
 category: heavy_duty
-id_msb: 0x00
-id_lsb: 0x64
-api_intro: 7
-message_types:
-  - id: 0x00
-    name: get_tachograph_state
-  - id: 0x01
-    name: tachograph_state
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x64
+
+api:
+  intro: 7
+  update: 11
+
+getters: {}
+
+state: all
+
 properties:
   - id: 0x01
-    size: 2
     name: drivers_working_states
+    name_cased: driversWorkingStates
+    pretty_name: Drivers working states
+    type: types.driver_working_state
     multiple: true
-    items:
-      - name: driver_number
-        type: integer
-        size: 1
-        description: The driver number
-      - name: working_state
-        type: enum
-        size: 1
+    name_singular: driver_working_state
+    examples:
+      - hex: '0102'
         values:
-          - name: resting
-            id: 0x00
-          - name: driver_available
-            id: 0x01
-          - name: working
-            id: 0x02
-          - name: driving
-            id: 0x03
+          driver_number: 1
+          working_state: 'working'
+        description: Driver nr 1 is working
+      - hex: '0200'
+        values:
+          driver_number: 2
+          working_state: 'resting'
+        description: Driver nr 2 is resting
   - id: 0x02
-    size: 2
     name: drivers_time_states
+    name_cased: driversTimeStates
+    pretty_name: Drivers time states
+    type: types.driver_time_state
     multiple: true
-    items:
-      - name: driver_number
-        type: integer
-        size: 1
-        description: The driver number
-      - name: time_state
-        type: enum
-        size: 1
+    name_singular: drivers_time_state
+    examples:
+      - hex: '0302'
         values:
-          - name: normal
-            id: 0x00
-          - name: 15_min_before_4
-            pretty_name: '15 minutes before 4½ hours'
-            id: 0x01
-          - name: 4_reached
-            pretty_name: '4½ hours reached'
-            id: 0x02
-          - name: 15_min_before_9
-            pretty_name: '15 minutes before 9 hours'
-            id: 0x03
-          - name: 9_reached
-            pretty_name: '9 hours reached'
-            id: 0x04
-          - name: 15_min_before_16
-            pretty_name: '15 minutes before 16 hours'
-            id: 0x05
-          - name: 16_reached
-            pretty_name: '16 hours reached'
-            id: 0x06
+          driver_number: 3
+          time_state: 'four_reached'
+        description: Driver nr 3 has reached 4 hours
+      - hex: '0405'
+        values:
+          driver_number: 4
+          time_state: 'fifteen_min_before_sixteen'
+        description: Driver nr 4 has reached 15 hours and 45 minutes
   - id: 0x03
-    size: 2
-    name: drivers_cards
+    name: drivers_cards_present
+    name_cased: driversCardsPresent
+    pretty_name: Drivers cards present
+    type: types.driver_card_present
     multiple: true
-    items:
-      - name: driver_number
-        type: integer
-        size: 1
-        description: The driver number
-      - name: card
-        type: enum
-        size: 1
+    name_singular: drivers_card_present
+    examples:
+      - hex: '0601'
         values:
-          - name: not_present
-            id: 0x00
-          - name: present
-            id: 0x01
+          driver_number: 6
+          card_present: 'present'
+        description: Driver nr 6 has a card present
+      - hex: '0700'
+        values:
+          driver_number: 7
+          card_present: 'not_present'
+        description: Driver nr 7 does not have a card present
   - id: 0x04
-    type: enum
-    size: 1
     name: vehicle_motion
-    values:
-      - name: not_detected
-        id: 0x00
-      - name: detected
-        id: 0x01
+    name_cased: vehicleMotion
+    pretty_name: Vehicle motion
+    type: types.detected
+    examples:
+      - hex: '01'
+        value: 'detected'
+        description: Detected vehicle in motion
   - id: 0x05
-    type: enum
-    size: 1
     name: vehicle_overspeed
-    values:
-      - name: no_overspeed
-        id: 0x00
-      - name: overspeed
-        id: 0x01
-  - id: 0x06
+    name_cased: vehicleOverspeed
+    pretty_name: Vehicle overspeed
     type: enum
     size: 1
+    controls: 'switch'
+    enum_values:
+      - id: 0x00
+        name: no_overspeed
+      - id: 0x01
+        name: overspeed
+    examples:
+      - hex: '00'
+        value: 'no_overspeed'
+        description: Vehicle is not overspeeding
+  - id: 0x06
     name: vehicle_direction
-    values:
-      - name: forward
-        id: 0x00
-      - name: reverse
-        id: 0x01
+    name_cased: vehicleDirection
+    pretty_name: Vehicle direction
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: forward
+      - id: 0x01
+        name: reverse
+    examples:
+      - hex: '00'
+        value: 'forward'
+        description: Vehicle is moving forward
   - id: 0x07
+    name: vehicle_speed
+    name_cased: vehicleSpeed
+    pretty_name: Vehicle speed
+    unit: km/h
     type: integer
     size: 2
-    name: vehicle_speed
     description: The tachograph vehicle speed in km/h
+    examples:
+      - hex: '0050'
+        value: 80
+        description: Vehicle speed is 80 km/h

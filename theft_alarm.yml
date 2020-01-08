@@ -1,39 +1,44 @@
 name: theft_alarm
+name_cased: theftAlarm
+pretty_name: Theft Alarm
 category: parking
-id_msb: 0x00
-id_lsb: 0x46
-api_intro: 4
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_theft_alarm_state
-  - id: 0x01
-    name: theft_alarm_state
-  - id: 0x12
-    name: set_theft_alarm_state
-    properties:
-      - id: 0x01
-        name: theft_alarm
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: unarm
-            id: 0x00
-          - name: arm
-            id: 0x01
-          - name: trigger
-            id: 0x02
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x46
+
+api:
+  intro: 4
+  update: 11
+
+getters: {}
+
+setters:
+  - name: set_theft_alarm
+    mandatory: [0x01]
+    description: Unarm or arm the theft alarm of the car.
+
+state: all
 
 properties:
   - id: 0x01
+    name: status
+    name_cased: status
+    pretty_name: Status
     type: enum
     size: 1
-    name: theft_alarm
-    values:
-      - name: not_armed
-        id: 0x00
-      - name: armed
-        id: 0x01
-      - name: triggered
-        id: 0x02
+    enum_values:
+      - id: 0x00
+        name: unarmed
+        verb: unarm
+      - id: 0x01
+        name: armed
+        verb: arm
+      - id: 0x02
+        name: triggered
+        verb: trigger
+    examples:
+      - hex: '01'
+        value: 'armed'
+        description: Theft alarm is armed

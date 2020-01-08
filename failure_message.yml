@@ -1,54 +1,102 @@
 name: failure_message
+name_cased: failureMessage
+pretty_name: Failure Message
 category: api_structure
-id_msb: 0x00
-id_lsb: 0x02
-api_intro: 2
-api_update: 9
-message_types:
-  - id: 0x01
-    name: failure
+authorization: false
+
+identifier:
+  msb: 0x00
+  lsb: 0x02
+
+api:
+  intro: 2
+  update: 11
+
+state: all
 
 properties:
   - id: 0x01
-    type: integer
+    name: failed_message_id
+    name_cased: failedMessageID
+    pretty_name: Failed message ID
+    type: uinteger
     size: 2
-    name: failed_message_identifier
     description: Capability identifier of the failed message
+    examples:
+      - hex: '0021'
+        value: 0x0021
+        description: Failed message is Trunk capability
   - id: 0x02
-    type: integer
-    size: 1
     name: failed_message_type
+    name_cased: failedMessageType
+    pretty_name: Failed message type
+    type: uinteger
+    size: 1
     description: Message type of the failed message
+    examples:
+      - hex: '01'
+        value: 0x01
+        description: Failed message type is Set
   - id: 0x03
+    name: failure_reason
+    name_cased: failureReason
+    pretty_name: Failure reason
     type: enum
     size: 1
-    name: failure_reason
-    values:
-      - name: unsupported_capability
-        pretty_name: Unsupported Capability - Car has not the capability to perform the command
-        id: 0x00
-      - name: unauthorised
-        pretty_name: Unauthorised - User has not been authenticated or lacks permissions
-        id: 0x01
-      - name: incorrect_state
-        pretty_name: Incorrect State - Command can not be executed in the current car state
-        id: 0x02
-      - name: execution_timeout
-        pretty_name: Execution Timeout - Command failed to execute in time for an unknown reason
-        id: 0x03
-      - name: vehicle_asleep
-        pretty_name: Vehicle Asleep - Car has to be waken up before the command can be used. If this is for a virtual car, the emulator has to be loaded
-        id: 0x04
-      - name: invalid_command
-        pretty_name: Invalid Command - Not recognised
-        id: 0x05
-      - name: pending
-        pretty_name: Pending - Capability is being refreshed
-        id: 0x06
-      - name: rate_limit
-        pretty_name: Rate Limit - Capability rate limit has been exceeded
-        id: 0x07
+    enum_values:
+      - id: 0x00
+        name: unsupported_capability
+        pretty_name: Unsupported Capability
+        description: Car has not the capability to perform the command
+      - id: 0x01
+        name: unauthorised
+        pretty_name: Unauthorised
+        description: User has not been authenticated or lacks permissions
+      - id: 0x02
+        name: incorrect_state
+        pretty_name: Incorrect State
+        description: Command can not be executed in the current car state
+      - id: 0x03
+        name: execution_timeout
+        pretty_name: Execution Timeout
+        description: Command failed to execute in time for an unknown reason
+      - id: 0x04
+        name: vehicle_asleep
+        pretty_name: Vehicle Asleep
+        description: Car has to be waken up before the command can be used. If this is for a virtual car, the emulator has to be loaded
+      - id: 0x05
+        name: invalid_command
+        pretty_name: Invalid Command
+        description: Command not recognised
+      - id: 0x06
+        name: pending
+        pretty_name: Pending
+        description: Capability is being refreshed
+      - id: 0x07
+        name: rate_limit
+        pretty_name: Rate Limit
+        description: Capability rate limit has been exceeded
+    examples:
+      - hex: '01'
+        value: 'unauthorised'
+        description: Failure occured because of unauthorised state
   - id: 0x04
-    type: string
     name: failure_description
-    description: Failure description bytes formatted in UTF-8
+    name_cased: failureDescription
+    pretty_name: Failure description
+    type: string
+    description: Failure description
+    examples:
+      - hex: '54727920616761696e'
+        value: 'Try again'
+        description: Failure description informs to try again
+  - id: 0x05
+    name: failed_property_ids
+    name_cased: failedPropertyIDs
+    pretty_name: Failed property IDs
+    type: bytes
+    description: Array of failed property identifiers
+    examples:
+      - hex: '0102'
+        value: [0x01, 0x02]
+        description: Trunk's lock and position failed

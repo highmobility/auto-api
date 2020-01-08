@@ -1,18 +1,30 @@
 name: weather_conditions
+name_cased: weatherConditions
+pretty_name: Weather Conditions
 category: environment
-id_msb: 0x00
-id_lsb: 0x55
-api_intro: 5
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_weather_conditions
-  - id: 0x01
-    name: weather_conditions
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x55
+
+api:
+  intro: 5
+  update: 11
+
+getters:
+  name: get_weather_conditions
+
+state: all
+
 properties:
   - id: 0x01
-    type: double
-    size: 8
     name: rain_intensity
-    description: Measured raining intensity percentage, whereas 0.0 is no rain and 1.0 (100%) is maximum rain
+    name_cased: rainIntensity
+    pretty_name: Rain intensity
+    type: types.percentage
+    description: Measured raining intensity percentage, whereas 0% is no rain and 100% is maximum rain
+    examples:
+      - hex: '3ff0000000000000'
+        value: 1.0
+        description: Rain intensity is at 100% (maximum rain)

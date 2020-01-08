@@ -1,9 +1,0 @@
-trunk_lock:
-  - item:
-    - value: '0x00'
-      description: The trunk is unlocked
-
-trunk_position:
-  - item:
-    - value: '0x01'
-      description: The trunk is opened

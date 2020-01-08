@@ -1,112 +1,118 @@
 name: rooftop_control
+name_cased: rooftopControl
+pretty_name: Rooftop Control
 category: chassis
-id_msb: 0x00
-id_lsb: 0x25
-api_intro: 3
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_rooftop_state
-  - id: 0x01
-    name: rooftop_state
-  - id: 0x12
-    name: control_rooftop
-    properties:
-      - id: 0x01
-        name: dimming
-        type: double
-        size: 8
-        description: Percentage value between 0.0-1.0 whereas 1.0 is opaque
-      - id: 0x02
-        name: position
-        type: double
-        size: 8
-        description: Percentage value between 0.0-1.0 whereas 1.0 is fully open
-      - id: 0x03
-        name: convertible_roof_state
-        type: enum
-        size: 1
-        values:
-          - name: closed
-            id: 0x00
-          - name: open
-            id: 0x01
-      - id: 0x04
-        type: enum
-        size: 1
-        name: sunroof_tilt_state
-        values:
-          - name: closed
-            id: 0x00
-          - name: tilt
-            id: 0x01
-          - name: half_tilt
-            id: 0x02
-      - id: 0x05
-        type: enum
-        size: 1
-        name: sunroof_state
-        values:
-          - name: closed
-            id: 0x00
-          - name: open
-            id: 0x01
-          - name: intermediate
-            id: 0x02
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x25
+
+api:
+  intro: 3
+  update: 11
+
+getters:
+  name: get_rooftop_state
+
+setters:
+  - name: control_rooftop
+    optional: [0x01, 0x02, 0x03, 0x04, 0x05]
+    description: Set the rooftop state.
+
+state: all
+
 properties:
   - id: 0x01
-    type: double
-    size: 8
     name: dimming
-    description: Percentage value between 0.0-1.0 whereas 1.0 is opaque
+    name_cased: dimming
+    pretty_name: Dimming
+    type: types.percentage
+    description: 1.0 (100%) is opaque, 0.0 (0%) is transparent
+    examples:
+      - hex: '3ff0000000000000'
+        value: 1.0
+        description: Rooftop is opaque (100%)
   - id: 0x02
-    type: double
-    size: 8
     name: position
-    description: Percentage value between 0.0-1.0 whereas 1.0 is fully open
+    name_cased: position
+    pretty_name: Position
+    type: types.percentage
+    description: 1.0 (100%) is fully open, 0.0 (0%) is closed
+    examples:
+      - hex: '3fe0000000000000'
+        value: 0.5
+        description: Rooftop is half-open (50%)
   - id: 0x03
-    type: enum
-    size: 1
     name: convertible_roof_state
-    values:
-      - name: closed
-        id: 0x00
-      - name: open
-        id: 0x01
-      - name: emergency_locked
-        id: 0x02
-      - name: closed_secured
-        id: 0x03
-      - name: open_secured
-        id: 0x04
-      - name: hard_top_mounted
-        id: 0x05
-      - name: intermediate_position
-        id: 0x06
-      - name: loading_position
-        id: 0x07
-      - name: loading_position_immediate
-        id: 0x08
+    name_cased: convertibleRoofState
+    pretty_name: Convertible roof state
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: open
+      - id: 0x02
+        name: emergency_locked
+        disabled_in_setter: true
+      - id: 0x03
+        name: closed_secured
+        disabled_in_setter: true
+      - id: 0x04
+        name: open_secured
+        disabled_in_setter: true
+      - id: 0x05
+        name: hard_top_mounted
+        disabled_in_setter: true
+      - id: 0x06
+        name: intermediate_position
+        disabled_in_setter: true
+      - id: 0x07
+        name: loading_position
+        disabled_in_setter: true
+      - id: 0x08
+        name: loading_position_immediate
+        disabled_in_setter: true
+    examples:
+      - hex: '01'
+        value: 'open'
+        description: Convertible roof is open
   - id: 0x04
-    type: enum
-    size: 1
     name: sunroof_tilt_state
-    values:
-      - name: closed
-        id: 0x00
-      - name: tilted
-        id: 0x01
-      - name: half_tilted
-        id: 0x02
-  - id: 0x05
+    name_cased: sunroofTiltState
+    pretty_name: Sunroof tilt state
     type: enum
     size: 1
+    enum_values:
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: tilted
+      - id: 0x02
+        name: half_tilted
+    examples:
+      - hex: '02'
+        value: 'half_tilted'
+        description: Sunroof is half-tilted
+  - id: 0x05
     name: sunroof_state
-    values:
-      - name: closed
-        id: 0x00
-      - name: open
-        id: 0x01
-      - name: intermediate
-        id: 0x02
+    name_cased: sunroofState
+    pretty_name: Sunroof state
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: open
+      - id: 0x02
+        name: intermediate
+    examples:
+      - hex: '01'
+        value: 'open'
+        description: Sunroof is open

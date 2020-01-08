@@ -1,9 +1,0 @@
-ignition:
-  - item:
-    - value: '0x01'
-      description: Engine ignition is ON
-
-accessories_ignition:
-  - item:
-    - value: '0x01'
-      description: Ignition state is powering on accessories such as radio

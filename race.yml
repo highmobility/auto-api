@@ -1,174 +1,250 @@
 name: race
+name_cased: race
+pretty_name: Race
 category: diagnostics
-id_msb: 0x00
-id_lsb: 0x57
-api_intro: 5
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_race_state
-  - id: 0x01
-    name: race_state
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x57
+
+api:
+  intro: 5
+  update: 11
+
+getters: {}
+
+state: all
+
 properties:
   - id: 0x01
-    size: 5
     name: accelerations
+    name_cased: accelerations
+    pretty_name: Accelerations
+    type: types.acceleration
     multiple: true
-    items:
-      - name: type
-        type: enum
-        size: 1
+    name_singular: acceleration
+    examples:
+      - hex: '003f5d2f1b'
         values:
-          - name: longitudinal_acceleration
-            id: 0x00
-          - name: lateral_acceleration
-            id: 0x01
-          - name: front_lateral_acceleration
-            id: 0x02
-          - name: rear_lateral_acceleration
-            id: 0x03
-      - name: g_force
-        size: 4
-        type: float
-        description: The accelaration in g-force per IEEE 754 
+          direction: 'longitudinal'
+          g_force: 0.864
+        description: Longitudinal acceleration is 0.864 g
+      - hex: '01bf40c49c'
+        values:
+          direction: 'lateral'
+          g_force: -0.753
+        description: Lateral acceleration is -0.753 g
+      - hex: '02bf40c49c'
+        values:
+          direction: 'front_lateral'
+          g_force: -0.753
+        description: Front lateral acceleration is -0.753 g
+      - hex: '03bf40c49c'
+        values:
+          direction: 'rear_lateral'
+          g_force: -0.753
+        description: Rear lateral acceleration is -0.753 g
   - id: 0x02
-    type: double
-    size: 8
     name: understeering
+    name_cased: understeering
+    pretty_name: Understeering
+    type: types.percentage
     description: The understeering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 0.3 (30%) marginal, over 30% critical
+    examples:
+      - hex: '3fc851eb851eb852'
+        value: 0.19
+        description: Understeering is at 19%
   - id: 0x03
-    type: double
-    size: 8
     name: oversteering
+    name_cased: oversteering
+    pretty_name: Oversteering
+    type: types.percentage
     description: The oversteering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 30% marginal, over 30% critical
+    examples:
+      - hex: '3fa999999999999a'
+        value: 0.05
+        description: Oversteering is at 5%
   - id: 0x04
-    type: double
-    size: 8
     name: gas_pedal_position
+    name_cased: gasPedalPosition
+    pretty_name: Gas pedal position
+    type: types.percentage
     description: The gas pedal position between 0.0-1.0, whereas 1.0 (100%) is full throttle
+    examples:
+      - hex: '3fef5c28f5c28f5c'
+        value: 0.98
+        description: Gas pedal position is at 98%
   - id: 0x05
-    type: integer
-    size: 1
     name: steering_angle
-    description: The steering angle in degrees, whereas 0 degrees is straight ahead, positive number to the right and negative number to the left
+    name_cased: steeringAngle
+    pretty_name: Steering angle
+    unit: °
+    type: integer
+    size: 1
+    description: The steering angle in degrees, whereas 0° is straight ahead, positive number to the right and negative number to the left
+    examples:
+      - hex: '0a'
+        value: 10
+        description: Steering angle is 10° to right
   - id: 0x06
-    type: float
-    size: 4
     name: brake_pressure
-    description: Brake pressure in bar, whereas 100bar is max value, full brake
-  - id: 0x07
+    name_cased: brakePressure
+    pretty_name: Brake pressure
+    unit: BAR
     type: float
     size: 4
+    description: Brake pressure in bar, whereas 100 bar is max value, full brake
+    examples:
+      - hex: '41a00000'
+        value: 20.0
+        description: Brake pressure is 20.0 bar
+  - id: 0x07
     name: yaw_rate
-    description: Yaw rate in degrees per second [°/s] per IEEE 754 formatting
+    name_cased: yawRate
+    pretty_name: Yaw rate
+    unit: °/s
+    type: float
+    size: 4
+    description: Yaw rate in degrees per second [°/s]
+    examples:
+      - hex: '40d51eb8'
+        value: 6.66
+        description: Yaw rate is 6.66 °/s
   - id: 0x08
-    type: integer
-    size: 1
     name: rear_suspension_steering
-    description: Rear suspension steering in degrees
-  - id: 0x09
-    type: enum
-    size: 1
-    name: electronic_stability_program
-    pretty_name: ESP (Electronic Stability Program) intervention
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
-  - id: 0x0A
-    size: 2
-    name: brake_torque_vectorings
-    multiple: true
-    items:
-      - name: axle
-        type: enum
-        size: 1
-        values:
-          - name: front_axle
-            id: 0x00
-          - name: rear_axle
-            id: 0x01
-      - name: vectoring
-        type: enum
-        size: 1
-        values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
-  - id: 0x0B
-    type: enum
-    size: 1
-    name: gear_mode
-    values:
-      - name: manual
-        id: 0x00
-      - name: park
-        id: 0x01
-      - name: reverse
-        id: 0x02
-      - name: neutral
-        id: 0x03
-      - name: drive
-        id: 0x04
-      - name: low_gear
-        id: 0x05
-      - name: sport
-        id: 0x06
-  - id: 0x0C
+    name_cased: rearSuspensionSteering
+    pretty_name: Rear suspension steering
+    unit: °
     type: integer
     size: 1
+    description: Rear suspension steering in degrees
+    examples:
+      - hex: '03'
+        value: 3
+        description: Rear suspension steering is +3°
+  - id: 0x09
+    name: electronic_stability_program
+    name_cased: electronicStabilityProgram
+    pretty_name: Electronic stability program
+    type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: ESP is active
+  - id: 0x0a
+    name: brake_torque_vectorings
+    name_cased: brakeTorqueVectorings
+    pretty_name: Brake torque vectorings
+    type: types.brake_torque_vectoring
+    multiple: true
+    name_singular: brake_torque_vectoring
+    examples:
+      - hex: '0001'
+        values:
+          axle: 'front'
+          state: 'active'
+        description: Front brake torque vectoring is active
+      - hex: '0100'
+        values:
+          axle: 'rear'
+          state: 'inactive'
+        description: Rear brake torque vectoring is inactive
+  - id: 0x0b
+    name: gear_mode
+    name_cased: gearMode
+    pretty_name: Gear mode
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: manual
+      - id: 0x01
+        name: park
+      - id: 0x02
+        name: reverse
+      - id: 0x03
+        name: neutral
+      - id: 0x04
+        name: drive
+      - id: 0x05
+        name: low_gear
+      - id: 0x06
+        name: sport
+    examples:
+      - hex: '04'
+        value: 'drive'
+        description: Gear is in drive
+  - id: 0x0c
     name: selected_gear
+    name_cased: selectedGear
+    pretty_name: Selected gear
+    type: integer
+    size: 1
     description: The selected gear value, if any
-  - id: 0x0D
-    type: double
-    size: 8
+    examples:
+      - hex: '04'
+        value: 4
+        description: 4th gear is selected
+  - id: 0x0d
     name: brake_pedal_position
+    name_cased: brakePedalPosition
+    pretty_name: Brake pedal position
+    type: types.percentage
     description: The brake pedal position between 0.0-1.0, wheras 1.0 (100%) is full brakes
-  - id: 0x0E
-    type: enum
-    size: 1
+    examples:
+      - hex: '3fbeb851eb851eb8'
+        value: 0.12
+        description: Brake pedal position is at 12%
+  - id: 0x0e
     name: brake_pedal_switch
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
-  - id: 0x0F
-    type: enum
-    size: 1
+    name_cased: brakePedalSwitch
+    pretty_name: Brake pedal switch
+    type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Brake pedal switch is active, brake lights active
+  - id: 0x0f
     name: clutch_pedal_switch
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+    name_cased: clutchPedalSwitch
+    pretty_name: Clutch pedal switch
+    type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Clutch pedal switch is active, clutch is fully depressed
   - id: 0x10
-    type: enum
-    size: 1
     name: accelerator_pedal_idle_switch
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+    name_cased: acceleratorPedalIdleSwitch
+    pretty_name: Accelerator pedal idle switch
+    type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Accelerator pedal idle switch is active, pedal released
   - id: 0x11
-    type: enum
-    size: 1
     name: accelerator_pedal_kickdown_switch
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+    name_cased: acceleratorPedalKickdownSwitch
+    pretty_name: Accelerator pedal kickdown switch
+    type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Accelerator pedal kickdown switch is active, pedal fully depressed
   - id: 0x12
+    name: vehicle_moving
+    name_cased: vehicleMoving
+    pretty_name: Vehicle moving
     type: enum
     size: 1
-    name: vehicle_moving
-    values:
-      - name: not_moving
-        id: 0x00
-      - name: moving
-        id: 0x01
+    controls: 'switch'
+    enum_values:
+      - id: 0x00
+        name: not_moving
+      - id: 0x01
+        name: moving
+    examples:
+      - hex: '01'
+        value: 'moving'
+        description: Vehicle is moving

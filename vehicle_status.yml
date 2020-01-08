@@ -1,133 +1,267 @@
 name: vehicle_status
+name_cased: vehicleStatus
+pretty_name: Vehicle Status
 category: api_structure
-id_msb: 0x00
-id_lsb: 0x11
-api_intro: 2
-api_update: 9
-message_types:
-  - id: 0x00
-    name: get_vehicle_status
-  - id: 0x01
-    name: vehicle_status
-    
+authorization: false
+
+identifier:
+  msb: 0x00
+  lsb: 0x11
+
+api:
+  intro: 2
+  update: 11
+
+getters:
+  name: get_vehicle_status
+
+state: all
+
 properties:
   - id: 0x01
+    name: vin
+    name_cased: vin
+    pretty_name: VIN
     type: string
     size: 17
-    name: vin
-    pretty_name: VIN
     description: The unique Vehicle Identification Number
+    examples:
+      - hex: '4a46325348424443374348343531383639'
+        value: 'JF2SHBDC7CH451869'
+        description: VIN is 'JF2SHBDC7CH451869'
   - id: 0x02
+    name: powertrain
+    name_cased: powertrain
+    pretty_name: Powertrain
     type: enum
     size: 1
-    name: powertrain
-    values:
-      - name: unknown
-        id: 0x00
-      - name: all_electric
-        id: 0x01
-      - name: combustion_engine
-        id: 0x02
-      - name: phev
-        pretty_name: Plug-in Hybrid (PHEV)
-        id: 0x03
-      - name: hydrogen
-        id: 0x04
-      - name: hydrogen_hybrid
-        id: 0x05
+    enum_values:
+      - id: 0x00
+        name: unknown
+      - id: 0x01
+        name: all_electric
+      - id: 0x02
+        name: combustion_engine
+      - id: 0x03
+        name: phev
+        pretty_name: Plug-in Hybrid EV
+      - id: 0x04
+        name: hydrogen
+      - id: 0x05
+        name: hydrogen_hybrid
+    examples:
+      - hex: '01'
+        value: 'all_electric'
+        description: Powertrain is all electric
   - id: 0x03
-    type: string
     name: model_name
-    description: The car model name bytes formatted in UTF-8
+    name_cased: modelName
+    pretty_name: Model name
+    type: string
+    description: The car model name
+    examples:
+      - hex: '547970652058'
+        value: 'Type X'
+        description: Model name is 'Type X'
   - id: 0x04
-    type: string
     name: name
-    description: The car name (nickname) bytes formatted in UTF-8
+    name_cased: name
+    pretty_name: Name
+    type: string
+    description: The car name (nickname)
+    examples:
+      - hex: '537065656479'
+        value: 'Speedy'
+        description: Name of the vehicle is 'Speedy'
   - id: 0x05
-    type: string
     name: license_plate
-    description: The license plate bytes formatted in UTF-8
+    name_cased: licensePlate
+    pretty_name: Licence plate
+    type: string
+    description: The license plate number
+    examples:
+      - hex: '414243313233'
+        value: 'ABC123'
+        description: Licence plate number is 'ABC123'
   - id: 0x06
-    type: string
     name: sales_designation
-    description: The sales designation of the model formatted in UTF-8
-  - id: 0x07
-    type: integer
-    size: 2
-    name: model_year
-    description: The car model manufacturing year number
-  - id: 0x08
+    name_cased: salesDesignation
+    pretty_name: Sales designation
     type: string
-    name: color_name
-    description: The color name formatted in UTF-8
-  - id: 0x09
-    type: integer
+    description: The sales designation of the model
+    examples:
+      - hex: '5061636b6167652b'
+        value: 'Package+'
+        description: Sales designation is 'Package+'
+  - id: 0x07
+    name: model_year
+    name_cased: modelYear
+    pretty_name: Model year
+    type: uinteger
     size: 2
+    description: The car model manufacturing year number
+    examples:
+      - hex: '07e3'
+        value: 2019
+        description: Vehicle manufacturing year is 2019
+  - id: 0x08
+    name: colour_name
+    name_cased: colourName
+    pretty_name: Colour name
+    type: string
+    description: The colour name
+    examples:
+      - hex: '4573746f72696c20426c6175'
+        value: 'Estoril Blau'
+        description: Colour is named 'Estoril Blau'
+  - id: 0x09
     name: power_in_kw
-    description: The power of the car measured in kw
-  - id: 0x0A
-    type: integer
-    size: 1
+    name_cased: powerInKW
+    pretty_name: Power in kW
+    type: uinteger
+    size: 2
+    description: The power of the car measured in kW
+    examples:
+      - hex: '00dc'
+        value: 220
+        description: Vehicle has 220 kW of power
+  - id: 0x0a
     name: number_of_doors
-    description: The number of doors
-  - id: 0x0B
-    type: integer
+    name_cased: numberOfDoors
+    pretty_name: Number of doors
+    type: uinteger
     size: 1
+    description: The number of doors
+    examples:
+      - hex: '05'
+        value: 5
+        description: Vehicle has 5 doors
+  - id: 0x0b
     name: number_of_seats
+    name_cased: numberOfSeats
+    pretty_name: Number of seats
+    type: uinteger
+    size: 1
     description: The number of seats
-  - id: 0x0C
+    examples:
+      - hex: '05'
+        value: 5
+        description: Vehicle has 5 seats
+  - id: 0x0c
+    name: engine_volume
+    name_cased: engineVolume
+    pretty_name: Engine volume
     type: float
     size: 4
-    name: engine_volume
-    description: The engine volume displacement in liters per IEEE 754 formatting
-  - id: 0x0D
-    type: integer
-    size: 2
+    description: The engine volume displacement in liters
+    examples:
+      - hex: '40200000'
+        value: 2.5
+        description: Engine volume is 2.5 L
+  - id: 0x0d
     name: engine_max_torque
+    name_cased: engineMaxTorque
+    pretty_name: Engine max torque
+    type: uinteger
+    size: 2
     description: The maximum engine torque in Nm
-  - id: 0x0E
-    type: enum
-    size: 1
+    examples:
+      - hex: '00f5'
+        value: 245
+        description: Engine maximum torque is 245 Nm
+  - id: 0x0e
     name: gearbox
-    values:
-      - name: manual
-        id: 0x00
-      - name: automatic
-        id: 0x01
-      - name: semi_automatic
-        id: 0x02
-  - id: 0x0F
+    name_cased: gearbox
+    pretty_name: Gearbox
     type: enum
     size: 1
+    enum_values:
+      - id: 0x00
+        name: manual
+      - id: 0x01
+        name: automatic
+      - id: 0x02
+        name: semi_automatic
+    examples:
+      - hex: '01'
+        value: 'automatic'
+        description: Vehicle has an automatic gearbox
+  - id: 0x0f
     name: display_unit
-    values:
-      - name: km
-        id: 0x00
-      - name: miles
-        id: 0x01
-  - id: 0x10
+    name_cased: displayUnit
+    pretty_name: Display unit
     type: enum
     size: 1
+    enum_values:
+      - id: 0x00
+        name: km
+      - id: 0x01
+        name: miles
+    examples:
+      - hex: '00'
+        value: 'km'
+        description: Vehicle displays values in kilometers
+  - id: 0x10
     name: driver_seat_location
-    values:
-      - name: left
-        id: 0x00
-      - name: right
-        id: 0x01
-      - name: center
-        id: 0x02
+    name_cased: driverSeatLocation
+    pretty_name: Driver seat location
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: left
+      - id: 0x01
+        name: right
+      - id: 0x02
+        name: center
+    examples:
+      - hex: '00'
+        value: 'left'
+        description: Driver seat is located on the left
   - id: 0x11
-    type: string
     name: equipments
-    multiple: true
-    description: Equipment that the vehicle is equipped with
-  - id: 0x12
+    name_cased: equipments
+    pretty_name: Equipments
     type: string
-    name: brand
-    description: The car brand bytes formatted in UTF-8
-  - id: 0x99
-    type: capability_state
-    name: state
     multiple: true
-
-    
+    name_singular: equipment
+    description: Names of equipment the vehicle is equipped with
+    examples:
+      - hex: '5061726b696e672073656e736f7273'
+        value: 'Parking sensors'
+        description: Parking sensors are equipped (installed)
+      - hex: '4175746f6d6174696320776970657273'
+        value: 'Automatic wipers'
+        description: Automatic wipers are equipped (installed)
+  - id: 0x12
+    name: brand
+    name_cased: brand
+    pretty_name: Brand
+    type: string
+    description: The car brand
+    examples:
+      - hex: '5465736c61'
+        value: 'Tesla'
+        description: Vehicle brand is 'Tesla'
+  - id: 0x99
+    name: states
+    name_cased: states
+    pretty_name: States
+    type: types.capability_state
+    multiple: true
+    name_singular: state
+    examples:
+      - hex: '0b002001060004010001000400050100020001'
+        values:
+          doors:
+            positions:
+              location: 'front_left'
+              position: 'open'
+            locks_state: 'unlocked'
+        description: Doors capability's locks are unlocked
+      - hex: '0b0023010a0007010004406000000b000401000101'
+        values:
+          charging:
+            charging_rate_kw: 3.5
+            charge_port_state: 'open'
+        description: Charging capability's charging rate is 3.5 kW

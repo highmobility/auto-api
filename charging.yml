@@ -1,308 +1,341 @@
 name: charging
+name_cased: charging
+pretty_name: Charging
 category: chassis
-id_msb: 0x00
-id_lsb: 0x23
-api_intro: 2
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_charge_state
-  - id: 0x01
-    name: charge_state
-  - id: 0x12
-    name: start_stop_charging
-    properties:
-      - id: 0x01
-        name: active_state
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: stop_charging
-            id: 0x00
-          - name: start_charging
-            id: 0x01
-  - id: 0x13
-    name: set_charge_limit
-    properties:
-      - id: 0x01
-        name: charge_limit
-        type: double
-        size: 8
-        mandatory: true
-        description: Charge limit percentage between 0.0-1.0
-  - id: 0x14
-    name: open_close_charging_port
-    properties:
-      - id: 0x01
-        name: charge_port_state
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: closed
-            id: 0x00
-          - name: open
-            id: 0x01
-  - id: 0x15
-    name: set_charge_mode
-    properties:
-      - id: 0x01
-        name: charge_mode
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: timer_based
-            id: 0x01
-          - name: inductive
-            id: 0x02
-  - id: 0x16
-    name: set_charging_timers
-    properties:
-      - id: 0x0D
-        name: timers
-        size: 9
-        multiple: true
-        mandatory: true
-        items:
-          - name: timer_type
-            type: enum
-            size: 1
-            values:
-              - name: preferred_start_time
-                id: 0x00
-              - name: preferred_end_time
-                id: 0x01
-              - name: departure_date
-                id: 0x02
-          - name: date
-            type: integer
-            size: 8
-            description: Milliseconds since UNIX Epoch time
-  - id: 0x17
-    name: set_reduction_of_charging_current_times
-    properties:
-      - id: 0x01
-        name: reduction_times
-        pretty_name: Reduction of charging-current times
-        size: 3
-        multiple: true
-        mandatory: true
-        items:
-          - name: start_stop
-            type: enum
-            size: 1
-            values:
-              - name: start
-                id: 0x00
-              - name: stop
-                id: 0x01
-          - name: hour
-            type: integer
-            size: 1
-            description: Value between 0 and 23
-          - name: minute
-            type: integer
-            size: 1
-            description: Value between 0 and 59
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x23
+
+api:
+  intro: 2
+  update: 11
+
+getters: {}
+
+setters:
+  - name: start_stop_charging
+    mandatory: [0x17]
+    description: Start or stop charging, which can only be controlled when the car is plugged in.
+  - name: set_charge_limit
+    mandatory: [0x08]
+    description: Set the charge limit, to which point the car will charge itself.
+  - name: open_close_charging_port
+    mandatory: [0x0b]
+    description: Open or close the charge port of the car.
+  - name: set_charge_mode
+    mandatory: [0x0c]
+    description: Set the charge mode of the car.
+  - name: set_charging_timers
+    mandatory: [0x15]
+    description: Set the charging timers of the car. The command can include one of the different timer types or all.
+  - name: set_reduction_of_charging_current_times
+    mandatory: [0x13]
+    description: Set the reduction of charging times of the car. The command can include different values for start and stop.
+
+state: all
+
 properties:
   - id: 0x02
-    type: integer
-    size: 2
     name: estimated_range
+    name_cased: estimatedRange
+    pretty_name: Estimated range
+    unit: km
+    type: uinteger
+    size: 2
     description: Estimated range in km
+    examples:
+      - hex: '01b0'
+        value: 432
+        description: 432 km estimated range
   - id: 0x03
-    type: double
-    size: 8
     name: battery_level
+    name_cased: batteryLevel
+    pretty_name: Battery level
+    type: types.percentage
     description: Battery level percentage between 0.0-1.0
+    examples:
+      - hex: '3fe0000000000000'
+        value: 0.5
+        description: Battery level 50%
   - id: 0x04
-    type: float
-    size: 4
     name: battery_current_ac
-    title_case_name: batteryCurrentAC
+    name_cased: batteryCurrentAC
     pretty_name: Battery current (AC)
-    description: Battery current in 4-bytes per IEEE 754
+    unit: A
+    type: float
+    size: 4
+    description: Battery active current
+    examples:
+      - hex: 'bf19999a'
+        value: -0.6
+        description: Battery current (AC) -0.6
   - id: 0x05
-    type: float
-    size: 4
     name: battery_current_dc
-    title_case_name: batteryCurrentDC
+    name_cased: batteryCurrentDC
     pretty_name: Battery current (DC)
-    description: Battery current in 4-bytes per IEEE 754
+    unit: A
+    type: float
+    size: 4
+    description: Battery direct current
+    examples:
+      - hex: 'bf19999a'
+        value: -0.6
+        description: Battery current (DC) -0.6
   - id: 0x06
-    type: float
-    size: 4
     name: charger_voltage_ac
-    title_case_name: batteryVoltageAC
+    name_cased: chargerVoltageAC
     pretty_name: Charger voltage (AC)
-    description: Charger voltage in 4-bytes per IEEE 754
+    unit: V
+    type: float
+    size: 4
+    description: Charger voltage
+    examples:
+      - hex: '43c80000'
+        value: 400
+        description: Charger voltage 400V
   - id: 0x07
-    type: float
-    size: 4
     name: charger_voltage_dc
-    title_case_name: batteryVoltageDC
+    name_cased: chargerVoltageDC
     pretty_name: Charger voltage (DC)
-    description: Charger voltage in 4-bytes per IEEE 754
+    unit: V
+    type: float
+    size: 4
+    description: Charger voltage
+    examples:
+      - hex: '43c80000'
+        value: 400
+        description: Charger voltage 400V
   - id: 0x08
-    type: double
-    size: 8
     name: charge_limit
+    name_cased: chargeLimit
+    pretty_name: Charge limit
+    type: types.percentage
     description: Charge limit percentage between 0.0-1.0
+    examples:
+      - hex: '3feccccccccccccd'
+        value: 0.9
+        description: Charge limit 90%
   - id: 0x09
-    type: integer
-    size: 1
     name: time_to_complete_charge
+    name_cased: timeToCompleteCharge
+    pretty_name: Time to complete charge
+    unit: min
+    type: uinteger
+    size: 1
     description: Time until charging completed in minutes
-  - id: 0x0A
-    type: float
-    size: 4
+    examples:
+      - hex: '3c'
+        value: 60
+        description: Time to complete charge 60 minutes
+  - id: 0x0a
     name: charging_rate_kw
-    title_case_name: chargingRateKW
+    name_cased: chargingRateKW
     pretty_name: Charging rate (kW)
-    description: Charge rate in kW represented as 4-bytes per IEEE 754, when charging
-  - id: 0x0B
-    type: enum
-    size: 1
+    unit: kW
+    type: float
+    size: 4
+    description: Charge rate in kW when charging
+    examples:
+      - hex: '40600000'
+        value: 3.5
+        description: 3.5 kW charge rate
+  - id: 0x0b
     name: charge_port_state
-    values:
-      - name: closed
-        id: 0x00
-      - name: open
-        id: 0x01
-  - id: 0x0C
-    type: enum
-    size: 1
+    name_cased: chargePortState
+    pretty_name: Charge port state
+    type: types.position
+    examples:
+      - hex: '01'
+        value: 'open'
+        description: Charge port open
+  - id: 0x0c
     name: charge_mode
-    values:
-      - name: immediate
-        id: 0x00
-      - name: timer_based
-        id: 0x01
-      - name: inductive
-        id: 0x02
-  - id: 0x0E
-    type: float
-    size: 4
+    name_cased: chargeMode
+    pretty_name: Charge mode
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: immediate
+      - id: 0x01
+        name: timer_based
+      - id: 0x02
+        name: inductive
+        disabled_in_setter: true
+    examples:
+      - hex: '01'
+        value: 'timer_based'
+        description: Timer based charging
+  - id: 0x0e
     name: max_charging_current
+    name_cased: maxChargingCurrent
     pretty_name: Maximum charging current
-    description: Maximum charging current in 4-bytes per IEEE 754
-  - id: 0x0F
-    type: enum
-    size: 1
-    name: plug_type
-    values:
-      - name: type_1
-        id: 0x00
-      - name: type_2
-        id: 0x01
-      - name: ccs
-        pretty_name: Combined Charging System (CCS)
-        id: 0x02
-      - name: chademo
-        pretty_name: CHAdeMO
-        id: 0x03
-  - id: 0x10
-    type: enum
-    size: 1
-    name: charging_window_chosen
-    values:
-      - name: not_chosen
-        id: 0x00
-      - name: chosen
-        id: 0x01
-  - id: 0x11
-    size: 3
-    name: departure_times
-    multiple: true
-    items:
-      - name: active_state
-        type: enum
-        size: 1
-        values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
-      - name: hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-  - id: 0x13
-    size: 3
-    name: reduction_times
-    pretty_name: Reduction of charging-current times
-    multiple: true
-    items:
-      - name: start_stop
-        type: enum
-        size: 1
-        values:
-          - name: start
-            id: 0x00
-          - name: stop
-            id: 0x01
-      - name: hour
-        type: integer
-        size: 1
-        description: Value between 0 and 23
-      - name: minute
-        type: integer
-        size: 1
-        description: Value between 0 and 59
-  - id: 0x14
+    unit: A
     type: float
     size: 4
-    name: battery_temperature
-    description: Battery temperature in Celsius in 4-bytes per IEEE 754
-  - id: 0x15
-    size: 9
-    name: timers
+    description: Maximum charging current
+    examples:
+      - hex: '41c80000'
+        value: 25.0
+        description: Maximum charging current is 25.0 A
+  - id: 0x0f
+    name: plug_type
+    name_cased: plugType
+    pretty_name: Plug type
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: type_1
+      - id: 0x01
+        name: type_2
+      - id: 0x02
+        name: ccs
+        pretty_name: Combined Charging System (CCS)
+      - id: 0x03
+        name: chademo
+        pretty_name: CHAdeMO
+    examples:
+      - hex: '01'
+        value: 'type_2'
+        description: The socket is Type 2
+  - id: 0x10
+    name: charging_window_chosen
+    name_cased: chargingWindowChosen
+    pretty_name: Charging window chosen
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: not_chosen
+      - id: 0x01
+        name: chosen
+    examples:
+      - hex: '00'
+        value: 'not_chosen'
+        description: No charging windows has been chosen
+  - id: 0x11
+    name: departure_times
+    name_cased: departureTimes
+    pretty_name: Departure times
+    type: types.departure_time
     multiple: true
-    items:
-      - name: timer_type
-        type: enum
-        size: 1
+    name_singular: departure_time
+    examples:
+      - hex: '011020'
         values:
-          - name: preferred_start_time
-            id: 0x00
-          - name: preferred_end_time
-            id: 0x01
-          - name: departure_date
-            id: 0x02
-      - name: date
-        type: integer
-        size: 8
-        description: Milliseconds since UNIX Epoch time
+          state: 'active'
+          time:
+            hour: 16
+            minute: 32
+        description: Departure time is active at 16:32
+      - hex: '000b33'
+        values:
+          state: 'inactive'
+          time:
+            hour: 11
+            minute: 51
+        description: Departure time is inactive at 11:51
+  - id: 0x13
+    name: reduction_times
+    name_cased: reductionTimes
+    pretty_name: Reduction of charging-current times
+    type: types.reduction_time
+    multiple: true
+    name_singular: reduction_time
+    examples:
+      - hex: '001121'
+        values:
+          start_stop: 'start'
+          time:
+            hour: 17
+            minute: 33
+        description: Start reduction of charging current at 17:33
+      - hex: '010c34'
+        values:
+          start_stop: 'stop'
+          time:
+            hour: 12
+            minute: 52
+        description: Stop reduction of charging current at 12:52
+  - id: 0x14
+    name: battery_temperature
+    name_cased: batteryTemperature
+    pretty_name: Battery temperature
+    unit: °C
+    type: float
+    size: 4
+    description: Battery temperature in Celsius
+    examples:
+      - hex: '4219999a'
+        value: 38.4
+        description: The battery temperature is 38.4 °C
+  - id: 0x15
+    name: timers
+    name_cased: timers
+    pretty_name: Timers
+    type: types.timer
+    multiple: true
+    name_singular: timer
+    examples:
+      - hex: '00000001598938e788'
+        values:
+          timer_type: 'preferred_start_time'
+          date: '2017-01-10T16:32:05.000Z'
+        description: 10 January 2017 at 16:32:05 UTC
+      - hex: '0100000159893c9108'
+        values:
+          timer_type: 'preferred_end_time'
+          date: '2017-01-10T16:36:05.000Z'
+        description: 10 January 2017 at 16:36:05 GMT
+      - hex: '0200000159893c9108'
+        values:
+          timer_type: 'departure_date'
+          date: '2017-01-10T16:36:05.000Z'
+        description: 10 January 2017 at 16:36:05 GMT
   - id: 0x16
-    type: enum
-    size: 1
     name: plugged_in
-    values:
-      - name: disconnected
-        id: 0x00
-      - name: plugged_in
-        id: 0x01
-  - id: 0x17
+    name_cased: pluggedIn
+    pretty_name: Plugged in
     type: enum
     size: 1
-    name: charging_state
-    values:
-      - name: not_charging
-        id: 0x00
-      - name: charging
-        id: 0x01
-      - name: charging_complete
-        id: 0x02
-      - name: initialising
-        id: 0x03
-      - name: charging_paused
-        id: 0x04
-      - name: charging_error
-        id: 0x05
+    enum_values:
+      - id: 0x00
+        name: disconnected
+      - id: 0x01
+        name: plugged_in
+    examples:
+      - hex: '01'
+        value: 'plugged_in'
+        description: The charger is plugged in
+  - id: 0x17
+    name: status
+    name_cased: status
+    pretty_name: Status
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: not_charging
+        verb: stop_charging
+      - id: 0x01
+        name: charging
+        verb: start_charging
+      - id: 0x02
+        name: charging_complete
+        disabled_in_setter: true
+      - id: 0x03
+        name: initialising
+        disabled_in_setter: true
+      - id: 0x04
+        name: charging_paused
+        disabled_in_setter: true
+      - id: 0x05
+        name: charging_error
+        disabled_in_setter: true
+    examples:
+      - hex: '01'
+        value: 'charging'
+        description: The vehicle is charging

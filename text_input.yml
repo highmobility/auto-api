@@ -1,15 +1,30 @@
 name: text_input
+name_cased: textInput
+pretty_name: Text Input
 category: headunit
-id_msb: 0x00
-id_lsb: 0x44
-api_intro: 4
-api_update: 5
-message_types:
-  - id: 0x00
-    name: text_input
-    properties:
-      - id: 0x01
-        name: text
-        type: string
-        mandatory: true
-        description: The UTF8 bytes of the string
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x44
+
+api:
+  intro: 4
+  update: 11
+
+setters:
+  - name: text_input
+    mandatory: [0x01]
+    description: Send a keystroke or entire sentences as input to the car headunit. This can act as an alternative to the input devices that the car is equipped with.
+
+properties:
+  - id: 0x01
+    name: text
+    name_cased: text
+    pretty_name: Text
+    type: string
+    description: The text
+    examples:
+      - hex: '52656e64657a766f757320776974682052616d61'
+        value: 'Rendezvous with Rama'
+        description: Text is 'Rendezvous with Rama'

@@ -1,47 +1,49 @@
 name: power_takeoff
-pretty_state_name: Power Take-Off
+name_cased: powerTakeoff
+pretty_name: Power Take-Off
 category: heavy_duty
-id_msb: 0x00
-id_lsb: 0x65
-api_intro: 7
-message_types:
-  - id: 0x00
-    name: get_power_takeoff_state
-  - id: 0x01
-    name: power_takeoff_state
-  - id: 0x02
-    name: activate_deactivate_power_takeoff
-    properties:
-      - id: 0x01
-        name: activate
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
+authorization: true
 
-    
+identifier:
+  msb: 0x00
+  lsb: 0x65
+
+api:
+  intro: 7
+  update: 11
+
+getters: {}
+
+setters:
+  - name: activate_deactivate_power_takeoff
+    mandatory: [0x01]
+    description: Activate or deactivate power take-off.
+
+state: all
+
 properties:
   - id: 0x01
-    type: enum
-    size: 1
-    name: power_takeoff
-    pretty_name: Power Take-Off
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+    name: status
+    name_cased: status
+    pretty_name: Status
+    type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Power take-off is active
   - id: 0x02
+    name: engaged
+    name_cased: engaged
+    pretty_name: Engaged
     type: enum
     size: 1
-    name: power_takeoff_engaged
-    pretty_name: Power Take-Off engaged
-    values:
-      - name: not_engaged
-        id: 0x00
-      - name: engaged
-        id: 0x01
+    controls: 'switch'
+    enum_values:
+      - id: 0x00
+        name: not_engaged
+      - id: 0x01
+        name: engaged
+    examples:
+      - hex: '01'
+        value: 'engaged'
+        description: Power take-off is engaged

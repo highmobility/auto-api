@@ -1,172 +1,152 @@
 name: windscreen
+name_cased: windscreen
+pretty_name: Windscreen
 category: chassis
-id_msb: 0x00
-id_lsb: 0x42
-api_intro: 4
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_windscreen_state
-  - id: 0x01
-    name: windscreen_state
-  - id: 0x12
-    name: set_windscreen_damage
-    properties:
-      - id: 0x01
-        name: windscreen_damage
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: no_impact_detected
-            id: 0x00
-          - name: impact_but_no_damage_detected
-            id: 0x01
-          - name: damage_smaller_than_1_inch
-            id: 0x02
-          - name: damage_larger_than_1_inch
-            id: 0x03
-      - id: 0x02
-        type: enum
-        size: 1
-        name: windscreen_damage_zone
-        values:
-          - name: unknown
-            id: 0x00
-          - name: horizontal_position
-            pretty_name: 4 bits representing the horizontal position of the zone in a matrix seen from the inside of the car, starting from index 1
-            id: 'value & 0xF0'
-          - name: vertical_position
-            pretty_name: 4 bits representing the vertical position of the zone, starting from index 1
-            id: 'value & 0x0F'
-  - id: 0x13
-    name: set_windscreen_replacement_needed
-    properties:
-      - id: 0x01
-        name: windscreen_needs_replacement
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: unknown
-            id: 0x00
-          - name: no_replacement_needed
-            id: 0x01
-          - name: replacement_needed
-            id: 0x02
-  - id: 0x14
-    name: control_wipers
-    properties:
-      - id: 0x01
-        name: wipers_state
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
-          - name: automatic
-            id: 0x02
-      - id: 0x02
-        name: wipers_intensity
-        type: enum
-        size: 1
-        values:
-          - name: level_0
-            pretty_name: Level 0, inactive
-            id: 0x00
-          - name: level_1
-            id: 0x01
-          - name: level_2
-            id: 0x02
-          - name: level_3
-            id: 0x03
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x42
+
+api:
+  intro: 4
+  update: 11
+
+getters: {}
+
+setters:
+  - name: set_windscreen_damage
+    mandatory: [0x03]
+    optional: [0x05]
+    description: Set the windscreen damage. This is for instance used to reset the glass damage or correct it. Damage confidence percentage is automatically set to either 0% or 100%.
+  - name: set_windscreen_replacement_needed
+    mandatory: [0x06]
+    description: Set if the windscreen needs replacement.
+  - name: control_wipers
+    mandatory: [0x01]
+    optional: [0x02]
+    description: Control the wipers.
+
+state: all
 
 properties:
   - id: 0x01
+    name: wipers_status
+    name_cased: wipersStatus
+    pretty_name: Wipers status
     type: enum
     size: 1
-    name: wipers
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
-      - name: automatic
-        id: 0x02
+    enum_values:
+      - id: 0x00
+        name: inactive
+        verb: deactivate
+      - id: 0x01
+        name: active
+        verb: activate
+      - id: 0x02
+        name: automatic
+    examples:
+      - hex: '02'
+        value: 'automatic'
+        description: Windscreen wipers are set to automatic mode
   - id: 0x02
-    type: enum
-    size: 1
     name: wipers_intensity
-    values:
-      - name: level_0
+    name_cased: wipersIntensity
+    pretty_name: Wipers intensity
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: level_0
         pretty_name: Level 0, inactive
-        id: 0x00
-      - name: level_1
-        id: 0x01
-      - name: level_2
-        id: 0x02
-      - name: level_3
-        id: 0x03
+      - id: 0x01
+        name: level_1
+      - id: 0x02
+        name: level_2
+      - id: 0x03
+        name: level_3
+    examples:
+      - hex: '03'
+        value: 'level_3'
+        description: Wipers are on highest intensity, indicating heavy rain
   - id: 0x03
-    type: enum
-    size: 1
     name: windscreen_damage
-    values:
-      - name: no_impact_detected
-        id: 0x00
-      - name: impact_but_no_damage_detected
-        id: 0x01
-      - name: damage_smaller_than_1_inch
-        id: 0x02
-      - name: damage_larger_than_1_inch
-        id: 0x03
+    name_cased: windscreenDamage
+    pretty_name: Windscreen damage
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: no_impact_detected
+      - id: 0x01
+        name: impact_but_no_damage_detected
+      - id: 0x02
+        name: damage_smaller_than_1_inch
+      - id: 0x03
+        name: damage_larger_than_1_inch
+    examples:
+      - hex: '01'
+        value: 'impact_but_no_damage_detected'
+        description: Windscreen detected an impact, but no damage
   - id: 0x04
-    type: enum
-    size: 1
     name: windscreen_zone_matrix
-    values:
-      - name: unavailable
-        id: 0x00
-      - name: horizontal_size
-        pretty_name: 4 bits representing the horizontal size of the matrix seen from the inside of the car, starting from index 1
-        id: 'value & 0xF0'
-      - name: vertical_size
-        pretty_name: 4 bits representing the vertical size of the matrix, starting from index 1
-        id: 'value & 0x0F'
+    name_cased: windscreenZoneMatrix
+    pretty_name: Windscreen zone matrix
+    type: types.zone
+    description: Representing the size of the matrix, seen from the inside of the vehicle
+    examples:
+      - hex: '0403'
+        values:
+          horizontal: 4
+          vertical: 3
+        description: Windscreen is divided into a matrix 4 columns horizontally by 3 rows vertically
   - id: 0x05
-    type: enum
-    size: 1
     name: windscreen_damage_zone
-    values:
-      - name: unknown
-        id: 0x00
-      - name: horizontal_position
-        pretty_name: 4 bits representing the horizontal position of the zone in a matrix seen from the inside of the car, starting from index 1
-        id: 'value & 0xF0'
-      - name: vertical_position
-        pretty_name: 4 bits representing the vertical position of the zone, starting from index 1
-        id: 'value & 0x0F'
+    name_cased: windscreenDamageZone
+    pretty_name: Windscreen damage zone
+    type: types.zone
+    description: Representing the position in the zone, seen from the inside of the vehicle (1-based index)
+    examples:
+      - hex: '0102'
+        values:
+          horizontal: 1
+          vertical: 2
+        description: Damage is detected in the 1st column from left and the 2nd row from the top
   - id: 0x06
+    name: windscreen_needs_replacement
+    name_cased: windscreenNeedsReplacement
+    pretty_name: Windscreen needs replacement
     type: enum
     size: 1
-    name: windscreen_needs_replacement
-    values:
-      - name: unknown
-        id: 0x00
-      - name: no_replacement_needed
-        id: 0x01
-      - name: replacement_needed
-        id: 0x02
+    enum_values:
+      - id: 0x00
+        name: unknown
+      - id: 0x01
+        name: no_replacement_needed
+      - id: 0x02
+        name: replacement_needed
+    examples:
+      - hex: '01'
+        value: 'no_replacement_needed'
+        description: Windscreen does not need replacement
   - id: 0x07
-    type: double
-    size: 8
     name: windscreen_damage_confidence
-    description: Percentage between 0.0-1.0, confidence of damage detection. Zero if no impact detected.
+    name_cased: windscreenDamageConfidence
+    pretty_name: Windscreen damage confidence
+    type: types.percentage
+    description: Confidence of damage detection, 0% if no impact detected
+    examples:
+      - hex: '3fee666666666666'
+        value: 0.95
+        description: Damage detected with 95% confidence
   - id: 0x08
-    type: integer
-    size: 8
     name: windscreen_damage_detection_time
+    name_cased: windscreenDamageDetectionTime
+    pretty_name: Windscreen damage detection time
+    type: timestamp
+    size: 8
     description: Milliseconds since UNIX Epoch time
+    examples:
+      - hex: '000001598938e788'
+        value: '2017-01-10T16:32:05.000Z'
+        description: Windscreen damage detected at 10 January 2017 at 16:32:05 UTC

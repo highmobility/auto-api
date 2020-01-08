@@ -1,4 +1,0 @@
-theft_alarm:
-  - item:
-    - value: '0x01'
-      description: Theft alarm armed

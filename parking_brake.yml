@@ -1,35 +1,33 @@
 name: parking_brake
+name_cased: parkingBrake
+pretty_name: Parking Brake
 category: parking
-id_msb: 0x00
-id_lsb: 0x58
-api_intro: 5
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_parking_brake_state
-  - id: 0x01
-    name: parking_brake_state
-  - id: 0x12
-    name: set_parking_brake
-    properties:
-      - id: 0x01
-        name: parking_brake
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: inactive
-            id: 0x00
-          - name: active
-            id: 0x01
-    
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x58
+
+api:
+  intro: 5
+  update: 11
+
+getters: {}
+
+setters:
+  - name: set_parking_brake
+    mandatory: [0x01]
+    description: Turn on or off the parking brake.
+
+state: all
+
 properties:
   - id: 0x01
-    type: enum
-    size: 1
-    name: parking_brake
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+    name: status
+    name_cased: status
+    pretty_name: Status
+    type: types.active_state
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Parking brake is active

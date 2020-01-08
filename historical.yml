@@ -1,35 +1,80 @@
 name: historical
-pretty_state_name: Historical States
+name_cased: historical
+pretty_name: Historical
 category: api_structure
-id_msb: 0x00
-id_lsb: 0x12
-api_intro: 8
-api_update: 10
-message_types:
-  - id: 0x00
-    name: get_states
-    properties:
-      - id: 0x01
-        name: capability_identifier
-        size: 2
-        type: integer
-        mandatory: true
-      - id: 0x02
-        name: start_date
-        size: 8
-        type: integer
-        description: Milliseconds since UNIX Epoch time
-      - id: 0x03
-        name: end_date
-        size: 8
-        type: integer
-        description: Milliseconds since UNIX Epoch time
-  - id: 0x01
-    name: states
+authorization: false
+
+identifier:
+  msb: 0x00
+  lsb: 0x12
+
+api:
+  intro: 8
+  update: 11
+
+disabled_in: [ble]
+
+setters:
+  - name: request_states
+    mandatory: [0x02]
+    optional: [0x03, 0x04]
+    description: Request historical states.
+
+state: [0x01]
 
 properties:
   - id: 0x01
-    type: capability_state
     name: states
+    name_cased: states
+    pretty_name: States
+    type: types.capability_state
     multiple: true
-            
+    name_singular: state
+    examples:
+      - hex: '0b002001060004010001000400050100020001'
+        values:
+          doors:
+            positions:
+              location: 'front_left'
+              position: 'open'
+            locks_state: 'unlocked'
+        description: Doors capability's locks are unlocked
+      - hex: '0b0023010a0007010004406000000b000401000101'
+        values:
+          charging:
+            charging_rate_kw: 3.5
+            charge_port_state: 'open'
+        description: Charging capability's charging rate is 3.5 kW
+  - id: 0x02
+    name: capability_id
+    name_cased: capabilityID
+    pretty_name: Capability ID
+    type: uinteger
+    size: 2
+    description: The identifier of the Capability
+    examples:
+      - hex: '0060'
+        value: 0x0060
+        description: Home charger's identifier
+  - id: 0x03
+    name: start_date
+    name_cased: startDate
+    pretty_name: Start date
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
+    examples:
+      - hex: '0000016da6524300'
+        value: '2019-10-07T13:04:32.000Z'
+        description: 7. October 2019 at 13:04:32 GMT
+  - id: 0x04
+    name: end_date
+    name_cased: endDate
+    pretty_name: End date
+    type: timestamp
+    size: 8
+    description: Milliseconds since UNIX Epoch time
+    examples:
+      - hex: '0000016d71e2c4f0'
+        value: '2019-09-27T08:42:30.000Z'
+        description: 27. September 2019 at 08:42:30 GMT

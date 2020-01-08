@@ -1,164 +1,155 @@
 name: chassis_settings
+name_cased: chassisSettings
+pretty_name: Chassis Settings
 category: chassis
-id_msb: 0x00
-id_lsb: 0x53
-api_intro: 5
-api_update: 8
-message_types:
-  - id: 0x00
-    name: get_chassis_settings
-  - id: 0x01
-    name: chassis_settings
-  - id: 0x12
-    name: set_driving_mode
-    properties:
-      - id: 0x01
-        name: driving_mode
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: regular
-            id: 0x00
-          - name: eco
-            id: 0x01
-          - name: sport
-            id: 0x02
-          - name: sportPlus
-            id: 0x03
-          - name: ecoPlus
-            id: 0x04
-  - id: 0x13
-    name: start_stop_sports_chrono
-    properties:
-      - id: 0x01
-        name: start_stop
-        type: enum
-        size: 1
-        mandatory: true
-        values:
-          - name: start
-            id: 0x00
-          - name: stop
-            id: 0x01
-          - name: reset
-            id: 0x02
-  - id: 0x14
-    name: set_spring_rates
-    properties:
-      - id: 0x01
-        name: spring_rates
-        size: 2
-        multiple: true
-        mandatory: true
-        items:
-          - name: axle
-            type: enum
-            size: 1
-            values:
-              - name: front
-                id: 0x00
-              - name: rear
-                id: 0x01
-          - name: value
-            type: integer
-            size: 1
-            description: The suspension spring rate in N/mm
-  - id: 0x15
-    name: set_chassis_position
-    properties:
-      - id: 0x01
-        name: chassis_position
-        type: integer
-        size: 1
-        description: The chassis position in mm calculated from the lowest point
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x53
+
+api:
+  intro: 5
+  update: 11
+
+getters:
+  name: get_chassis_settings
+
+setters:
+  - name: set_driving_mode
+    mandatory: [0x01]
+    description: Set the driving mode.
+  - name: start_stop_sports_chrono
+    mandatory: [0x02]
+    description: Start/Stop sport chrono.
+  - name: set_spring_rates
+    mandatory: [0x05]
+    description: Set the spring rates.
+  - name: set_chassis_position
+    mandatory: [0x08]
+    description: Set the chassis position.
+
+state: all
 
 properties:
   - id: 0x01
-    type: enum
-    size: 1
     name: driving_mode
-    values:
-      - name: regular
-        id: 0x00
-      - name: eco
-        id: 0x01
-      - name: sport
-        id: 0x02
-      - name: sport_plus
-        id: 0x03
+    name_cased: drivingMode
+    pretty_name: Driving mode
+    type: types.driving_mode
+    examples:
+      - hex: '01'
+        value: 'eco'
+        description: ECO driving mode
   - id: 0x02
+    name: sport_chrono
+    name_cased: sportChrono
+    pretty_name: Sport chrono
     type: enum
     size: 1
-    name: sport_chrono
-    values:
-      - name: inactive
-        id: 0x00
-      - name: active
-        id: 0x01
+    enum_values:
+      - id: 0x00
+        name: inactive
+        verb: stop
+      - id: 0x01
+        name: active
+        verb: start
+      - id: 0x02
+        name: reset
+    examples:
+      - hex: '01'
+        value: 'active'
+        description: Sport Chrono active
   - id: 0x05
-    size: 2
     name: current_spring_rates
+    name_cased: currentSpringRates
+    pretty_name: Current spring rates
+    type: types.spring_rate
     multiple: true
-    items:
-      - name: axle
-        type: enum
-        size: 1
+    name_singular: current_spring_rate
+    description: The current values for the spring rates
+    examples:
+      - hex: '0015'
         values:
-          - name: front_axle
-            id: 0x00
-          - name: rear_axle
-            id: 0x01
-      - name: value
-        type: integer
-        size: 1
-        description: The suspension spring rate in N/mm
+          axle: 'front'
+          spring_rate: 21
+        description: Front axle spring rate is 21 N/mm
+      - hex: '0117'
+        values:
+          axle: 'rear'
+          spring_rate: 23
+        description: Rear axle spring rate is 23 N/mm
   - id: 0x06
-    size: 2
     name: maximum_spring_rates
+    name_cased: maximumSpringRates
+    pretty_name: Maximum spring rates
+    type: types.spring_rate
     multiple: true
-    items:
-      - name: axle
-        type: enum
-        size: 1
+    name_singular: maximum_spring_rate
+    description: The maximum possible values for the spring rates
+    examples:
+      - hex: '0025'
         values:
-          - name: front_axle
-            id: 0x00
-          - name: rear_axle
-            id: 0x01
-      - name: value
-        type: integer
-        size: 1
-        description: The maximum possible value for the spring rate
+          axle: 'front'
+          spring_rate: 37
+        description: Front axle maximum spring rate is 37N/mm
+      - hex: '0127'
+        values:
+          axle: 'rear'
+          spring_rate: 39
+        description: Rear axle maximum spring rate is 39N/mm
   - id: 0x07
-    size: 2
     name: minimum_spring_rates
+    name_cased: minimumSpringRates
+    pretty_name: Minimum spring rates
+    type: types.spring_rate
     multiple: true
-    items:
-      - name: axle
-        type: enum
-        size: 1
+    name_singular: minimum_spring_rate
+    description: The minimum possible values for the spring rates
+    examples:
+      - hex: '0010'
         values:
-          - name: front_axle
-            id: 0x00
-          - name: rear_axle
-            id: 0x01
-      - name: value
-        type: integer
-        size: 1
-        description: The minimum possible value for the spring rate
+          axle: 'front'
+          spring_rate: 16
+        description: Front axle minimum spring rate is 16N/mm
+      - hex: '0112'
+        values:
+          axle: 'rear'
+          spring_rate: 18
+        description: Rear axle minimum spring rate is 18N/mm
   - id: 0x08
-    type: integer
-    size: 1
     name: current_chassis_position
+    name_cased: currentChassisPosition
+    pretty_name: Current chassis position
+    unit: mm
+    type: integer
+    size: 1
     description: The chassis position in mm calculated from the lowest point
+    examples:
+      - hex: '19'
+        value: 25
+        description: Current chassis position is 25mm
   - id: 0x09
-    type: integer
-    size: 1
     name: maximum_chassis_position
-    descrition: The maximum possible value for the chassis position
-  - id: 0x0A
+    name_cased: maximumChassisPosition
+    pretty_name: Maximum chassis position
+    unit: mm
     type: integer
     size: 1
+    description: The maximum possible value for the chassis position
+    examples:
+      - hex: '37'
+        value: 55
+        description: Maximum chassis position is 55mm
+  - id: 0x0a
     name: minimum_chassis_position
+    name_cased: minimumChassisPosition
+    pretty_name: Minimum chassis position
+    unit: mm
+    type: integer
+    size: 1
     description: The minimum possible value for the chassis position
+    examples:
+      - hex: 'e4'
+        value: -28
+        description: Minimum chassis position is -28mm
