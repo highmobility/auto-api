@@ -1,8 +1,7 @@
 # AutoAPI
 
-The Auto API is a list of predefined APIs for cars which follow a coherent structure.
+The Auto API specification is an open source vehicle data model built for the purpose of providing a consistent data protocol for communication between cars and external 3rd party services.  
 
-The `.yml` spec files define each capability (API).  
 
 Table of contents
 =================
@@ -18,11 +17,12 @@ Table of contents
 <!--te-->
 
 
-## Overview
+## Overview 
 
 #### Capabilities
 
 The API is divided into `capabilities` that group together APIs with similar semantics.  
+The `.yml` spec files define each capability (API). 
 
 A capability could have:  
 
