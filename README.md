@@ -49,7 +49,7 @@ Please find more info about the properties in the [spec](https://github.com/high
 
 ## Features
 
-**Generatable**: From version L11, the spec is written to encourage automatic generation of platform native libs (by creating a program for that).
+**Generatable**: From version L11, the spec is written to encourage automatic generation of platform native libs (by creating a parser for that).
 
 **Dynamic**: The definitions can be easily updated and dependent libs regenerated. When only adding capabilities and properties - older libs-parsers work as before.
 
