@@ -13,7 +13,7 @@ Table of contents
    * [Getting Started](#getting-started)
       * [Documentation](#documentation)
    * [Contributing](#contributing)
-   * [Licence](#licence)
+   * [License](#license)
 <!--te-->
 
 
@@ -78,6 +78,6 @@ We would love to accept your patches and contributions to this project. Before g
 See more in [CONTRIBUTING.md](https://github.com/highmobility/auto-api/tree/master/CONTRIBUTING.md)
 
 
-## Licence
+## License
 
-This repository is using MIT licence. See more in [LICENCE](https://github.com/highmobility/auto-api/tree/master/LICENCE)
+This repository is using MIT license. See more in [LICENSE](https://github.com/highmobility/auto-api/tree/master/LICENSE)
