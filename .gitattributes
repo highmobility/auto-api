@@ -1,2 +1,4 @@
 *.yml linguist-vendored=false
+docs/*.yml linguist-vendored=false
 tools/*.yml linguist-vendored=false
+tools/* linguist-vendored=false
