@@ -78,7 +78,7 @@ properties:
   - id: 0x06
     name: estimated_range
     name_cased: estimatedRange
-    pretty_name: Estimate range
+    pretty_name: Estimated range
     unit: km
     type: integer
     size: 2
@@ -86,7 +86,7 @@ properties:
     examples:
       - hex: '0109'
         value: 265
-        description: Estimate range is 256 km
+        description: Estimated range is 256 km
   - id: 0x09
     name: washer_fluid_level
     name_cased: washerFluidLevel
