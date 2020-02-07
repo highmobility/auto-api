@@ -39,8 +39,8 @@ properties:
         name: active_with_full_beam
         verb: activate_with_full_beam
       - id: 0x03
-        name: dlr
-        verb: activate_dlr
+        name: drl
+        verb: activate_drl
         pretty_name: Daylight Running Lamps
       - id: 0x04
         name: automatic
