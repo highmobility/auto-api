@@ -29,4 +29,4 @@ properties:
         values:
           hour: 19
           minute: 55
-        description: Vehcile time is 19:55
+        description: Vehicle time is 19:55
