@@ -71,7 +71,7 @@ The keys are divided into 2 categories: *required* and *optional* ones.
 Required keys:  
 
 * `name: string` as the name of the setter
-* `desctiotion: string` description of what the setter does
+* `description: string` description of what the setter does
 
 Optional keys (at least 1 has to be included; can be combined):  
 
