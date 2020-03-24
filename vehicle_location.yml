@@ -53,3 +53,15 @@ properties:
       - hex: '4060b00000000000'
         value: 133.5
         description: Vehicle altitude is 133.5 m
+  - id: 0x07
+    name: fuzzy_coordinates
+    name_cased: fuzzyCoordinates
+    pretty_name: Fuzzy coordinates
+    type: types.coordinates
+    examples:
+      - hex: '404a428f5c28f5c3402acccccccccccd'
+        values:
+          latitude: 52.52
+          longitude: 13.40
+        description: Vehicle fuzzy coordinates are 52.52 : 13.40
+
