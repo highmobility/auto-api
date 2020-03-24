@@ -18,6 +18,7 @@ state: all
 
 properties:
   - id: 0x01
+    deprecated: true
     name: mileage
     name_cased: mileage
     pretty_name: Mileage
@@ -374,6 +375,7 @@ properties:
           status: 'PENDING'
         description: Trouble code C163AFA with ECU-ID DTR212 occured 2 times and is PENDING
   - id: 0x1e
+    deprecated: true
     name: mileage_meters
     name_cased: mileageMeters
     pretty_name: Mileage meters
