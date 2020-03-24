@@ -36,3 +36,22 @@ properties:
           capability_id: 0x0023
           supported_property_ids: [0x02, 0x08, 0x11]
         description: Charging supports estimated range, charge limit and departure times properties
+  - id: 0x02
+    name: webhooks
+    name_cased: webhooks
+    pretty_name: Webhooks
+    type: types.webhook
+    multiple: true
+    examples:
+      - hex: '0101'
+        values:
+          available: 'available'
+          event: 'trip_started'
+        description: Webhook 'trip_started' is available to use.
+      - hex: '0102'
+        values:
+          available: 'available'
+          event: 'trip_ended'
+        description: Webhook 'trip_ended' is available to use.
+
+

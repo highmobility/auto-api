@@ -1005,6 +1005,42 @@ types:
         name_cased: status
         type: string
         description: Status
+    # MARK: Webhook
+  - name: webhook
+    name_cased: webhook
+    pretty_name: Webhook
+    type: custom
+    items:
+      - name: available
+        name_cased: available
+        type: enum
+        size: 1
+        description: If the specified webhook is available.
+        enum_values:
+          - id: 0x00
+            name: unavailable
+          - id: 0x01
+            name: available
+      - name: event
+        name_cased: event
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: ping
+            description: Sent every time when the webhook is configured or changed.
+          - id: 0x01
+            name: trip_started
+            description: Sent every time a vehicle starts a trip.
+          - id: 0x02
+            name: trip_ended
+            description: Sent when a vehicle ends a trip.
+          - id: 0x03
+            name: vehicle_location_changed
+            description: Sent when the vehicle location changes.
+          - id: 0x04
+            name: authorization_changed
+            description: Sent when the authorization status changes.
     # MARK: Wheel RPM
   - name: wheel_rpm
     name_cased: wheelRPM
