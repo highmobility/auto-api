@@ -208,31 +208,6 @@ types:
         verb: close
       - id: 0x01
         name: open
-    # MARK: Property Availability
-  - name: property_availabilty
-    name_cased: propertyAvailabilty
-    pretty_name: Property availabilty
-    type: enum
-    size: 1
-    enum_values:
-      - id: 0x00
-        name: update_rate_trip_high
-        description: The property data is updated with high frequency during a trip.
-      - id: 0x01
-        name: update_rate_trip
-        description: The property data is updated regularly during a trip.
-      - id: 0x02
-        name: update_rate_trip_start_end
-        description: The property data is updated at the start and end of each trip.
-      - id: 0x03
-        name: update_rate_trip_end
-        description: The property data is updated by the end of each trip.
-      - id: 0x04
-        name: update_rate_unknown
-        description: The property data is updated sporadically.
-      - id: 0x05
-        name: not_available
-        description: The property is not available for the vehicle.
     # MARK: Seat Location
   - name: seat_location
     name_cased: seatLocation
