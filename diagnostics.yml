@@ -385,3 +385,17 @@ properties:
       - hex: '000249f1'
         value: 150001
         description: Odometer is showing 150'001 meters
+  - id: 0x1f
+    name: odometer
+    name_cased: odometer
+    pretty_name: Odometer
+    unit_type: length
+    unit_type_id: 0x0f
+    type: double
+    size: 8
+    description: The car odometer value in a given units.
+    examples:
+      - hex: '401999999999999a0400020f00'
+        value: 6.4
+        unit_type_value: megameters
+        description: Odometer is showing 6.4 Mm – length of the Great Wall.
