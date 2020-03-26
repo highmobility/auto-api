@@ -20,7 +20,7 @@ properties:
   - id: 0x01
     deprecated:
       new_name: odometer
-      reason: 'mileage' is an incorrect term for this
+      reason: mileage is an incorrect term for this
     name: mileage
     name_cased: mileage
     pretty_name: Mileage
@@ -379,7 +379,7 @@ properties:
   - id: 0x1e
     deprecated:
       new_name: odometer
-      reason: 'mileage_meters' is an incorrect term for this
+      reason: mileage_meters is an incorrect term for this
     name: mileage_meters
     name_cased: mileageMeters
     pretty_name: Mileage meters

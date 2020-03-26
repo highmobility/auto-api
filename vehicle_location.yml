@@ -63,5 +63,5 @@ properties:
         values:
           latitude: 52.52
           longitude: 13.40
-        description: Vehicle fuzzy coordinates are 52.52 : 13.40
+        description: Vehicle fuzzy coordinates are 52.52:13.40
 
