@@ -1,0 +1,114 @@
+#
+# proeprty_componentns.yml
+#
+#
+# Defines some of the property components.
+# One property can have many components (i.e. data, timestamp)
+#
+# [id, size_msb, size_lsb, component_data...]
+#
+
+
+property_components:
+
+  - id: 0x01
+    name: data
+    name_cased: data
+    pretty_name: Data
+    type: bytes
+    description: The main component used to transmit values
+
+  - id: 0x02
+    name: timestamp
+    name_cased: timestamp
+    pretty_name: Timestamp
+    type: timestamp
+    description: The timestamp (when the data was created) of the property
+
+  - id: 0x03
+    name: failure
+    name_cased: failure
+    pretty_name: Failure
+    type: custom
+    description: Information about why retrieving a property failed
+    items:
+      - name: reason
+        name_cased: reason
+        pretty_name: Reason
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: rate_limit
+          - id: 0x01
+            name: execution_timeout
+          - id: 0x02
+            name: format_error
+          - id: 0x03
+            name: unauthorised
+          - id: 0x04
+            name: unknown
+          - id: 0x05
+            name: pending
+          - id: 0x06
+            name: internal_oem_error
+      - name: description
+        name_cased: description
+        pretty_name: Description
+        type: string
+        description: Failure description
+
+  - id: 0x04
+    name: unit_type
+    name_cased: unitType
+    pretty_name: Unit type
+    type: custom
+    items:
+      - name: measurement_type
+        name_cased: measurementType
+        pretty_name: Measurement type
+        type: uinteger
+        size: 1
+        description: The type of measurement
+      - name: unit_type
+        name_cased: unitType
+        pretty_name: Unit type
+        type: uinteger
+        size: 1
+        description: The type of unit
+
+  - id: 0x05
+    name: capability
+    name_cased: capability
+    pretty_name: Capability
+    type: custom
+    items:
+      - name: availability
+        name_cased: availability
+        pretty_name: Availability
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: update_rate_trip_high
+            description: The property data is updated with high frequency during a trip.
+          - id: 0x01
+            name: update_rate_trip
+            description: The property data is updated regularly during a trip.
+          - id: 0x02
+            name: update_rate_trip_start_end
+            description: The property data is updated at the start and end of each trip.
+          - id: 0x03
+            name: update_rate_trip_end
+            description: The property data is updated by the end of each trip.
+          - id: 0x04
+            name: update_rate_unknown
+            description: The property data is updated sporadically.
+          - id: 0x05
+            name: not_available
+            description: The property is not available for the vehicle.
+      - name: rate_limit
+        name_cased: rateLimit
+        pretty_name: Rate limit
+        type: string
+        description: String denoting the rate limit
