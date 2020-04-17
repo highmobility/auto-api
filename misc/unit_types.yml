@@ -175,8 +175,16 @@ measurement_types:
       - name: kilowattHours
         id: 0x04
 
-  - name: frequency
+  - name: energy_efficiency
     id: 0x0c
+    unit_types:
+      - name: kwh_per_100_kilometers
+        id: 0x00
+      - name: miles_per_kwh
+        id: 0x01
+
+  - name: frequency
+    id: 0x0d
     unit_types:
       - name: terahertz
         id: 0x00
@@ -196,7 +204,7 @@ measurement_types:
         id: 0x07
 
   - name: fuel_efficiency
-    id: 0x0d
+    id: 0x0e
     unit_types:
       - name: liters_per_100_kilometers
         id: 0x00
@@ -206,7 +214,7 @@ measurement_types:
         id: 0x02
 
   - name: information_storage
-    id: 0x0e
+    id: 0x0f
     unit_types:
       - name: bytes
         id: 0x00
@@ -280,7 +288,7 @@ measurement_types:
         id: 0x22
 
   - name: length
-    id: 0x0f
+    id: 0x10
     unit_types:
       - name: megameters
         id: 0x00
@@ -328,13 +336,13 @@ measurement_types:
         id: 0x15
 
   - name: illuminance
-    id: 0x10
+    id: 0x11
     unit_types:
       - name: lux
         id: 0x00
 
   - name: mass
-    id: 0x11
+    id: 0x12
     unit_types:
       - name: kilograms
         id: 0x00
@@ -370,7 +378,7 @@ measurement_types:
         id: 0x0f
 
   - name: power
-    id: 0x12
+    id: 0x13
     unit_types:
       - name: terawatts
         id: 0x00
@@ -396,7 +404,7 @@ measurement_types:
         id: 0x0a
 
   - name: pressure
-    id: 0x13
+    id: 0x14
     unit_types:
       - name: newtons_per_meters_squared
         id: 0x00
@@ -419,8 +427,18 @@ measurement_types:
       - name: pounds_force_per_square_inch
         id: 0x09
 
+  - name: rotational_speed
+    id: 0x15
+    unit_types:
+      - name: degrees_per_second
+        id: 0x00
+      - name: radians_per_second
+        id: 0x01
+      - name: revolutions_per_minute
+        id: 0x02
+
   - name: speed
-    id: 0x14
+    id: 0x16
     unit_types:
       - name: meters_per_second
         id: 0x00
@@ -432,7 +450,7 @@ measurement_types:
         id: 0x03
 
   - name: temperature
-    id: 0x15
+    id: 0x17
     unit_types:
       - name: kelvin
         id: 0x00
@@ -441,8 +459,18 @@ measurement_types:
       - name: fahrenheit
         id: 0x02
 
+  - name: torque
+    id: 0x18
+    unit_types:
+      - name: newton_meters
+        id: 0x00
+      - name: newton_millimeters
+        id: 0x01
+      - name: pound_feet
+        id: 0x02
+
   - name: volume
-    id: 0x16
+    id: 0x19
     unit_types:
       - name: megaliters
         id: 0x00

@@ -1,3 +1,12 @@
+#
+# custom_types.yml
+#
+#
+# Defines the 'custom' types used in AutoAPI.
+# Additionally defines commonly used 'enum' types.
+#
+
+
 types:
   # MARK: Active State
   - name: active_state
@@ -329,13 +338,13 @@ types:
             name: front_lateral
           - id: 0x03
             name: rear_lateral
-      - name: g_force
-        name_cased: gForce
-        pretty_name: G-force
-        unit: g
-        type: float
-        size: 4
-        description: The accelaration in g-force
+      - name: acceleration
+        name_cased: acceleration
+        pretty_name: Acceleration
+        unit_type: acceleration
+        type: double
+        size: 8
+        description: The accelaration
     # MARK: Action Item
   - name: action_item
     name_cased: actionItem
@@ -716,10 +725,10 @@ types:
         type: types.driving_mode
       - name: consumption
         name_cased: consumption
-        unit: kWh
-        type: float
-        size: 4
-        description: Energy consumption in the driving mode in kWh
+        unit_type: energy
+        type: double
+        size: 8
+        description: Energy consumption in the driving mode
     # MARK: HMKit Version
   - name: hmkit_version
     name_cased: HMKitVersion
@@ -921,10 +930,10 @@ types:
         type: types.axle
       - name: spring_rate
         name_cased: springRate
-        unit: N/mm
-        type: uinteger
-        size: 1
-        description: The suspension spring rate in N/mm
+        unit_type: torque
+        type: double
+        size: 8
+        description: The suspension spring rate
     # MARK: Timer
   - name: timer
     name_cased: timer
@@ -960,10 +969,10 @@ types:
         type: types.location
       - name: pressure
         name_cased: pressure
-        unit: BAR
-        type: float
-        size: 4
-        description: Tire pressure in BAR
+        unit_type: pressure
+        type: double
+        size: 8
+        description: Tire pressure
     # MARK: Tire Temperature
   - name: tire_temperature
     name_cased: tireTemperature
@@ -976,10 +985,10 @@ types:
         type: types.location
       - name: temperature
         name_cased: temperature
-        unit: °C
-        type: float
-        size: 4
-        description: Tire temperature in Celsius
+        unit_type: temperature
+        type: double
+        size: 8
+        description: Tire temperature
     # MARK: Trouble Code
   - name: trouble_code
     name_cased: troubleCode
@@ -1055,9 +1064,9 @@ types:
       - name: rpm
         name_cased: RPM
         pretty_name: RPM
-        unit: RPM
-        type: uinteger
-        size: 2
+        unit_type: rotational_speed
+        type: double
+        size: 8
         description: The RPM measured at this wheel
     # MARK: Window Open Percentage
   - name: window_open_percentage

@@ -1,13 +1,12 @@
-name: universal_properties
-name_cased: universalProperties
-category: universal
-authorization: false
+#
+# universal_properties.yml
+#
+#
+# Defines the properties that can be included with every capability.
+#
 
-api:
-  intro: 7
-  update: 11
 
-properties:
+universal_properties:
   - id: 0xa0
     name: nonce
     name_cased: nonce

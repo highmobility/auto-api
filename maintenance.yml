@@ -21,9 +21,13 @@ properties:
     name: days_to_next_service
     name_cased: daysToNextService
     pretty_name: Days to next service
-    type: integer
-    size: 2
-    description: Number of days until next servicing of the car, whereas negative is overdue
+    deprecated:
+      new_name: time_to_next_service
+      reason: remove 'days' from the name
+    unit_type: duration
+    type: double
+    size: 8
+    description: Time until next servicing of the car, whereas negative is overdue
     examples:
       - hex: '01f5'
         value: 501
@@ -32,10 +36,13 @@ properties:
     name: kilometers_to_next_service
     name_cased: kilometersToNextService
     pretty_name: Kilometers to next service
-    unit: km
-    type: uinteger
-    size: 4
-    description: The amount of kilometers until next servicing of the car
+    deprecated:
+      new_name: distance_to_next_service
+      reason: remove 'kilometers' from the name
+    unit_type: length
+    type: double
+    size: 8
+    description: The distance until next servicing of the car
     examples:
       - hex: '00000e61'
         value: 3681
@@ -55,9 +62,13 @@ properties:
     name: months_to_exhaust_inspection
     name_cased: monthsToExhaustInspection
     pretty_name: Months to exhaust inspection
-    type: uinteger
-    size: 1
-    description: Number of months until exhaust inspection
+    deprecated:
+      new_name: time_to_exhaust_inspection
+      reason: remove 'months' from the name
+    unit_type: duration
+    type: double
+    size: 8
+    description: Time until exhaust inspection
     examples:
       - hex: '05'
         value: 5
@@ -85,10 +96,10 @@ properties:
     name: service_distance_threshold
     name_cased: serviceDistanceThreshold
     pretty_name: Service distance threshold
-    unit: km
-    type: uinteger
-    size: 2
-    description: Distance threshold for Service
+    unit_type: length
+    type: double
+    size: 8
+    description: Distance threshold for service
     examples:
       - hex: '01f4'
         value: 500
@@ -97,9 +108,10 @@ properties:
     name: service_time_threshold
     name_cased: serviceTimeThreshold
     pretty_name: Service time threshold
-    type: uinteger
-    size: 1
-    description: Time threshold, in weeks, for Service
+    unit_type: duration
+    type: double
+    size: 8
+    description: Time threshold for service
     examples:
       - hex: '04'
         value: 4
@@ -126,7 +138,7 @@ properties:
       - hex: '000001674024c1d0'
         value: '2018-11-23T10:36:50.000Z'
         description: Teleservice battery call date is at 23 November 2018 at 10:36:50 GMT
-  - id: 0x0A
+  - id: 0x0a
     name: next_inspection_date
     name_cased: nextInspectionDate
     pretty_name: Next inspection date
@@ -137,7 +149,7 @@ properties:
       - hex: '00000166a15d20d8'
         value: '2018-10-23T14:38:47.000Z'
         description: Next inspection date is at 23 October 2018 at 14:38:47 GMT
-  - id: 0x0B
+  - id: 0x0b
     name: condition_based_services
     name_cased: conditionBasedServices
     pretty_name: Condition based services
@@ -154,7 +166,7 @@ properties:
           text: 'Brake fluid'
           description: 'Next change at specified date at the latest.'
         description: Next latest brake fluid change date is 2019 May in a CBS with ID 3 and status 'ok'
-  - id: 0x0C
+  - id: 0x0c
     name: brake_fluid_change_date
     name_cased: brakeFluidChangeDate
     pretty_name: Brake fluid change date
@@ -165,3 +177,32 @@ properties:
       - hex: '000001677c63d280'
         value: '2018-12-05T03:22:56.000Z'
         description: Brake fluid change date is at 5 December 2018 at 03:22:56 GMT
+  - id: 0x0d
+    name: time_to_next_service
+    name_cased: timeToNextService
+    pretty_name: Time to next service
+    unit_type: duration
+    type: double
+    size: 8
+    description: Time until next servicing of the car, whereas negative is overdue
+  - id: 0x0e
+    name: distance_to_next_service
+    name_cased: distanceToNextService
+    pretty_name: Distance to next service
+    unit_type: length
+    type: double
+    size: 8
+    description: The distance until next servicing of the car
+    examples:
+      - hex: '00000e61'
+        value: 3681
+        description: 3'681 km until next service
+  - id: 0x0f
+    name: time_to_exhaust_inspection
+    name_cased: timeToExhaustInspection
+    pretty_name: Time to exhaust inspection
+    unit_type: duration
+    type: double
+    size: 8
+    description: Time until exhaust inspection
+

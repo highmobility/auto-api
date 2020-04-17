@@ -41,10 +41,10 @@ properties:
     name: inside_temperature
     name_cased: insideTemperature
     pretty_name: Inside temperature
-    unit: °C
-    type: float
-    size: 4
-    description: The inside temperature in celsius
+    unit_type: temperature
+    type: double
+    size: 8
+    description: The inside temperature
     examples:
       - hex: '41980000'
         value: 19.0
@@ -53,10 +53,10 @@ properties:
     name: outside_temperature
     name_cased: outsideTemperature
     pretty_name: Outside temperature
-    unit: °C
-    type: float
-    size: 4
-    description: The outside temperature in celsius
+    unit_type: temperature
+    type: double
+    size: 8
+    description: The outside temperature
     examples:
       - hex: '41400000'
         value: 12.0
@@ -65,10 +65,10 @@ properties:
     name: driver_temperature_setting
     name_cased: driverTemperatureSetting
     pretty_name: Driver temperature setting
-    unit: °C
-    type: float
-    size: 4
-    description: The driver temperature setting in celsius
+    unit_type: temperature
+    type: double
+    size: 8
+    description: The driver temperature setting
     examples:
       - hex: '41ac0000'
         value: 21.5
@@ -77,10 +77,10 @@ properties:
     name: passenger_temperature_setting
     name_cased: passengerTemperatureSetting
     pretty_name: Passenger temperature setting
-    unit: °C
-    type: float
-    size: 4
-    description: The passenger temperature setting in celsius
+    unit_type: temperature
+    type: double
+    size: 8
+    description: The passenger temperature setting
     examples:
       - hex: '41ac0000'
         value: 21.5
@@ -125,10 +125,10 @@ properties:
     name: defrosting_temperature_setting
     name_cased: defrostingTemperatureSetting
     pretty_name: Defrosting temperature setting
-    unit: °C
-    type: float
-    size: 4
-    description: The defrosting temperature setting in celsius
+    unit_type: temperature
+    type: double
+    size: 8
+    description: The defrosting temperature setting
     examples:
       - hex: '41ac0000'
         value: 21.5
@@ -201,10 +201,10 @@ properties:
     name: rear_temperature_setting
     name_cased: rearTemperatureSetting
     pretty_name: Rear temperature setting
-    unit: °C
-    type: float
-    size: 4
-    description: The rear temperature in celsius
+    unit_type: temperature
+    type: double
+    size: 8
+    description: The rear temperature
     examples:
       - hex: '41ac0000'
         value: 21.5

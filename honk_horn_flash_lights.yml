@@ -49,10 +49,13 @@ properties:
     name: honk_seconds
     name_cased: honkSeconds
     pretty_name: Honk seconds
-    unit: s
-    type: uinteger
-    size: 1
-    description: Number of seconds to honk the horn
+    deprecated:
+      new_name: honk_time
+      reason: remove 'seconds' from the name
+    unit_type: duration
+    type: double
+    size: 8
+    description: Time to honk the horn
     examples:
       - hex: '03'
         value: 3
@@ -77,3 +80,11 @@ properties:
       - hex: '01'
         value: 'active'
         description: Emergency flashers are active
+  - id: 0x05
+    name: honk_time
+    name_cased: honkTime
+    pretty_name: Honk time
+    unit_type: duration
+    type: double
+    size: 8
+    description: Time to honk the horn

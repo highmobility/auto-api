@@ -118,9 +118,13 @@ properties:
     name: power_in_kw
     name_cased: powerInKW
     pretty_name: Power in kW
-    type: uinteger
-    size: 2
-    description: The power of the car measured in kW
+    deprecated:
+      new_name: power
+      reason: remove the unit constraint
+    unit_type: power
+    type: double
+    size: 8
+    description: The power of the car
     examples:
       - hex: '00dc'
         value: 220
@@ -151,9 +155,10 @@ properties:
     name: engine_volume
     name_cased: engineVolume
     pretty_name: Engine volume
-    type: float
-    size: 4
-    description: The engine volume displacement in liters
+    unit_type: volume
+    type: double
+    size: 8
+    description: The engine volume displacement
     examples:
       - hex: '40200000'
         value: 2.5
@@ -162,9 +167,10 @@ properties:
     name: engine_max_torque
     name_cased: engineMaxTorque
     pretty_name: Engine max torque
-    type: uinteger
-    size: 2
-    description: The maximum engine torque in Nm
+    unit_type: torque
+    type: double
+    size: 8
+    description: The maximum engine torque
     examples:
       - hex: '00f5'
         value: 245
@@ -243,6 +249,14 @@ properties:
       - hex: '5465736c61'
         value: 'Tesla'
         description: Vehicle brand is 'Tesla'
+  - id: 0x13
+    name: power
+    name_cased: power
+    pretty_name: Power
+    unit_type: power
+    type: double
+    size: 8
+    description: The power of the car
   - id: 0x99
     name: states
     name_cased: states

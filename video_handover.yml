@@ -33,8 +33,13 @@ properties:
     name: starting_second
     name_cased: startingSecond
     pretty_name: Starting second
-    type: uinteger
-    size: 2
+    deprecated:
+      new_name: starting_time
+      reason: remove the unit constraint
+    unit_type: duration
+    type: double
+    size: 8
+    description: Start the video from the given time
     examples:
       - hex: '0003'
         value: 3
@@ -54,3 +59,11 @@ properties:
       - hex: '01'
         value: 'rear'
         description: Play the video on the rear screen
+  - id: 0x04
+    name: starting_time
+    name_cased: startingTime
+    pretty_name: Starting time
+    unit_type: duration
+    type: double
+    size: 8
+    description: Start the video from the given time

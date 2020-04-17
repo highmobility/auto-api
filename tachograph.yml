@@ -115,10 +115,10 @@ properties:
     name: vehicle_speed
     name_cased: vehicleSpeed
     pretty_name: Vehicle speed
-    unit: km/h
-    type: integer
-    size: 2
-    description: The tachograph vehicle speed in km/h
+    unit_type: speed
+    type: double
+    size: 8
+    description: The tachograph vehicle speed
     examples:
       - hex: '0050'
         value: 80

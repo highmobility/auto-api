@@ -33,10 +33,10 @@ properties:
     name: heading
     name_cased: heading
     pretty_name: Heading
-    unit: °
+    unit_type: angle
     type: double
     size: 8
-    description: Heading in degrees
+    description: Heading angle
     examples:
       - hex: '402abd80c308feac'
         value: 13.370123
@@ -45,10 +45,10 @@ properties:
     name: altitude
     name_cased: altitude
     pretty_name: Altitude
-    unit: m
+    unit_type: length
     type: double
     size: 8
-    description: Altitude in meters above the WGS 84 reference ellipsoid
+    description: Altitude above the WGS 84 reference ellipsoid
     examples:
       - hex: '4060b00000000000'
         value: 133.5

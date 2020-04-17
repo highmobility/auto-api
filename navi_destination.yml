@@ -71,7 +71,9 @@ properties:
     name: arrival_duration
     name_cased: arrivalDuration
     pretty_name: Arrival duration
-    type: types.time
+    unit_type: duration
+    type: double
+    size: 8
     description: Remaining time until reaching the destination.
     examples:
       - hex: '0220'
@@ -83,9 +85,9 @@ properties:
     name: distance_to_destination
     name_cased: distanceToDestination
     pretty_name: Distance to destination
-    unit: km
-    type: uinteger
-    size: 2
+    unit_type: length
+    type: double
+    size: 8
     description: Remaining distance to reach the destination.
     examples:
       - hex: '0539'

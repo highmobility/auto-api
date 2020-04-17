@@ -79,10 +79,10 @@ properties:
     name: steering_angle
     name_cased: steeringAngle
     pretty_name: Steering angle
-    unit: °
-    type: integer
-    size: 1
-    description: The steering angle in degrees, whereas 0° is straight ahead, positive number to the right and negative number to the left
+    unit_type: angle
+    type: double
+    size: 8
+    description: The steering angle, whereas 0 is straight ahead, positive number to the right and negative number to the left
     examples:
       - hex: '0a'
         value: 10
@@ -91,10 +91,10 @@ properties:
     name: brake_pressure
     name_cased: brakePressure
     pretty_name: Brake pressure
-    unit: BAR
-    type: float
-    size: 4
-    description: Brake pressure in bar, whereas 100 bar is max value, full brake
+    unit_type: pressure
+    type: double
+    size: 8
+    description: Brake pressure
     examples:
       - hex: '41a00000'
         value: 20.0
@@ -104,9 +104,10 @@ properties:
     name_cased: yawRate
     pretty_name: Yaw rate
     unit: °/s
-    type: float
-    size: 4
-    description: Yaw rate in degrees per second [°/s]
+    unit_type: angle
+    type: double
+    size: 8
+    description: Yaw rate per second (i.e. °/s)
     examples:
       - hex: '40d51eb8'
         value: 6.66
@@ -115,10 +116,10 @@ properties:
     name: rear_suspension_steering
     name_cased: rearSuspensionSteering
     pretty_name: Rear suspension steering
-    unit: °
-    type: integer
-    size: 1
-    description: Rear suspension steering in degrees
+    unit_type: angle
+    type: double
+    size: 8
+    description: Rear suspension steering
     examples:
       - hex: '03'
         value: 3

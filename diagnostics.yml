@@ -18,16 +18,16 @@ state: all
 
 properties:
   - id: 0x01
-    deprecated:
-      new_name: odometer
-      reason: mileage is an incorrect term for this
     name: mileage
     name_cased: mileage
     pretty_name: Mileage
-    unit: km
-    type: uinteger
-    size: 4
-    description: The car mileage (odometer) in km
+    deprecated:
+      new_name: odometer
+      reason: 'mileage' is an incorrect term for this
+    unit_type: length
+    type: double
+    size: 8
+    description: The car mileage (odometer)
     examples:
       - hex: '000249f0'
         value: 150000
@@ -36,22 +36,22 @@ properties:
     name: engine_oil_temperature
     name_cased: engineOilTemperature
     pretty_name: Engine oil temperature
-    unit: °C
-    type: integer
-    size: 2
-    description: Engine oil temperature in Celsius, whereas can be negative
+    unit_type: temperature
+    type: double
+    size: 8
+    description: Engine oil temperature, whereas can be negative
     examples:
       - hex: '0063'
         value: 99
-        description: Engine oil temperature is 99C
+        description: Engine oil temperature is 99°C
   - id: 0x03
     name: speed
     name_cased: speed
     pretty_name: Speed
-    unit: km/h
-    type: integer
-    size: 2
-    description: The vehicle speed in km/h, whereas can be negative
+    unit_type: speed
+    type: double
+    size: 8
+    description: The vehicle speed, whereas can be negative
     examples:
       - hex: '003c'
         value: 60
@@ -82,9 +82,9 @@ properties:
     name: estimated_range
     name_cased: estimatedRange
     pretty_name: Estimated range
-    unit: km
-    type: integer
-    size: 2
+    unit_type: length
+    type: double
+    size: 8
     description: Estimated range (with combustion engine)
     examples:
       - hex: '0109'
@@ -103,9 +103,9 @@ properties:
     name: battery_voltage
     name_cased: batteryVoltage
     pretty_name: Battery voltage
-    unit: V
-    type: float
-    size: 4
+    unit_type: electric_potential_difference
+    type: double
+    size: 8
     description: Battery voltage
     examples:
       - hex: '41400000'
@@ -115,9 +115,9 @@ properties:
     name: adblue_level
     name_cased: adBlueLevel
     pretty_name: AdBlue level
-    unit: l
-    type: float
-    size: 4
+    unit_type: volume
+    type: double
+    size: 8
     description: AdBlue level in liters
     examples:
       - hex: '3f000000'
@@ -127,10 +127,10 @@ properties:
     name: distance_since_reset
     name_cased: distanceSinceReset
     pretty_name: Distance since reset
-    unit: km
-    type: uinteger
-    size: 2
-    description: The distance driven in km since reset
+    unit_type: length
+    type: double
+    size: 8
+    description: The distance driven since reset
     examples:
       - hex: '05dc'
         value: 1500
@@ -139,10 +139,10 @@ properties:
     name: distance_since_start
     name_cased: distanceSinceStart
     pretty_name: Distance since start
-    unit: km
-    type: uinteger
-    size: 2
-    description: The distance driven in km since trip start
+    unit_type: length
+    type: double
+    size: 8
+    description: The distance driven since trip start
     examples:
       - hex: '000a'
         value: 10
@@ -151,9 +151,9 @@ properties:
     name: fuel_volume
     name_cased: fuelVolume
     pretty_name: Fuel volume
-    unit: l
-    type: float
-    size: 4
+    unit_type: volume
+    type: double
+    size: 8
     description: The fuel volume measured in liters
     examples:
       - hex: '420e0000'
@@ -172,10 +172,10 @@ properties:
     name: engine_coolant_temperature
     name_cased: engineCoolantTemperature
     pretty_name: Engine coolant temperature
-    unit: °C
-    type: integer
-    size: 2
-    description: Engine coolant temperature in Celsius, whereas can be negative
+    unit_type: temperature
+    type: double
+    size: 8
+    description: Engine coolant temperature, whereas can be negative
     examples:
       - hex: '0014'
         value: 20
@@ -184,9 +184,9 @@ properties:
     name: engine_total_operating_hours
     name_cased: engineTotalOperatingHours
     pretty_name: Engine total operation hours
-    unit: h
-    type: float
-    size: 4
+    unit_type: duration
+    type: double
+    size: 8
     description: The accumulated time of engine operation
     examples:
       - hex: '44bb94cd'
@@ -196,10 +196,10 @@ properties:
     name: engine_total_fuel_consumption
     name_cased: engineTotalFuelConsumption
     pretty_name: Engine total fuel consumption
-    unit: l
-    type: float
-    size: 4
-    description: The accumulated lifespan fuel consumption in liters
+    unit_type: volume
+    type: double
+    size: 8
+    description: The accumulated lifespan fuel consumption
     examples:
       - hex: '46d78600'
         value: 27587.0
@@ -237,10 +237,10 @@ properties:
     name: wheel_based_speed
     name_cased: wheelBasedSpeed
     pretty_name: Wheel based speed
-    unit: km/h
-    type: integer
-    size: 2
-    description: The vehicle speed in km/h measured at the wheel base, whereas can be negative
+    unit_type: speed
+    type: double
+    size: 8
+    description: The vehicle speed measured at the wheel base, whereas can be negative
     examples:
       - hex: '0041'
         value: 65
@@ -377,26 +377,26 @@ properties:
           status: 'PENDING'
         description: Trouble code C163AFA with ECU-ID DTR212 occured 2 times and is PENDING
   - id: 0x1e
-    deprecated:
-      new_name: odometer
-      reason: mileage_meters is an incorrect term for this
     name: mileage_meters
     name_cased: mileageMeters
     pretty_name: Mileage meters
-    unit: m
-    type: uinteger
-    size: 4
+    deprecated:
+      new_name: odometer
+      reason: 'mileage_meters' is an incorrect term for this
+    unit_type: length
+    type: double
+    size: 8
     description: The car mileage (odometer) in meters
     examples:
-      - hex: '000249f1'
-        value: 150001
+      - hex: '41024f8800000000'
+        value: 150001.0
+        unit_type_value: meters
         description: Odometer is showing 150'001 meters
   - id: 0x1f
     name: odometer
     name_cased: odometer
     pretty_name: Odometer
     unit_type: length
-    unit_type_id: 0x0f
     type: double
     size: 8
     description: The car odometer value in a given units.

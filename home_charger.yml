@@ -91,11 +91,14 @@ properties:
   - id: 0x04
     name: charging_power_kw
     name_cased: chargingPowerKW
-    pretty_name: Charging Power (kW)
-    unit: kW
-    type: float
-    size: 4
-    description: Charging power in kW
+    pretty_name: Charging power (kW)
+    deprecated:
+      new_name: charging_power
+      reason: remove 'kw' from the name
+    unit_type: power
+    type: double
+    size: 8
+    description: Charging power
     examples:
       - hex: '41380000'
         value: 11.5
@@ -168,9 +171,9 @@ properties:
     name: charge_current_dc
     name_cased: chargeCurrentDC
     pretty_name: Charge current (DC)
-    unit: V
-    type: float
-    size: 4
+    unit_type: electric_potential_difference
+    type: double
+    size: 8
     description: The charge direct current
     examples:
       - hex: '3f000000'
@@ -180,9 +183,9 @@ properties:
     name: maximum_charge_current
     name_cased: maximumChargeCurrent
     pretty_name: Maximum charge current
-    unit: V
-    type: float
-    size: 4
+    unit_type: electric_potential_difference
+    type: double
+    size: 8
     description: The maximum possible charge current
     examples:
       - hex: '3f800000'
@@ -192,9 +195,9 @@ properties:
     name: minimum_charge_current
     name_cased: minimumChargeCurrent
     pretty_name: Minimum charge current
-    unit: V
-    type: float
-    size: 4
+    unit_type: electric_potential_difference
+    type: double
+    size: 8
     description: The minimal possible charge current
     examples:
       - hex: '00000000'
@@ -237,3 +240,11 @@ properties:
           price: 0.3
           currency: 'Ripple'
         description: Charger per kWh tariff is 0.3 Ripple
+  - id: 0x13
+    name: charging_power
+    name_cased: chargingPower
+    pretty_name: Charging power
+    unit_type: power
+    type: double
+    size: 8
+    description: Charging power output from the charger

@@ -41,10 +41,10 @@ properties:
     name: estimated_range
     name_cased: estimatedRange
     pretty_name: Estimated range
-    unit: km
-    type: uinteger
-    size: 2
-    description: Estimated range in km
+    unit_type: length
+    type: double
+    size: 8
+    description: Estimated range
     examples:
       - hex: '01b0'
         value: 432
@@ -63,10 +63,10 @@ properties:
     name: battery_current_ac
     name_cased: batteryCurrentAC
     pretty_name: Battery current (AC)
-    unit: A
-    type: float
-    size: 4
-    description: Battery active current
+    unit_type: electric_current
+    type: double
+    size: 8
+    description: Battery alternating current
     examples:
       - hex: 'bf19999a'
         value: -0.6
@@ -75,9 +75,9 @@ properties:
     name: battery_current_dc
     name_cased: batteryCurrentDC
     pretty_name: Battery current (DC)
-    unit: A
-    type: float
-    size: 4
+    unit_type: electric_current
+    type: double
+    size: 8
     description: Battery direct current
     examples:
       - hex: 'bf19999a'
@@ -87,9 +87,9 @@ properties:
     name: charger_voltage_ac
     name_cased: chargerVoltageAC
     pretty_name: Charger voltage (AC)
-    unit: V
-    type: float
-    size: 4
+    unit_type: electric_potential_difference
+    type: double
+    size: 8
     description: Charger voltage
     examples:
       - hex: '43c80000'
@@ -99,9 +99,9 @@ properties:
     name: charger_voltage_dc
     name_cased: chargerVoltageDC
     pretty_name: Charger voltage (DC)
-    unit: V
-    type: float
-    size: 4
+    unit_type: electric_potential_difference
+    type: double
+    size: 8
     description: Charger voltage
     examples:
       - hex: '43c80000'
@@ -121,10 +121,10 @@ properties:
     name: time_to_complete_charge
     name_cased: timeToCompleteCharge
     pretty_name: Time to complete charge
-    unit: min
-    type: uinteger
-    size: 1
-    description: Time until charging completed in minutes
+    unit_type: duration
+    type: double
+    size: 8
+    description: Time until charging completed
     examples:
       - hex: '3c'
         value: 60
@@ -133,10 +133,13 @@ properties:
     name: charging_rate_kw
     name_cased: chargingRateKW
     pretty_name: Charging rate (kW)
-    unit: kW
-    type: float
-    size: 4
-    description: Charge rate in kW when charging
+    deprecated:
+      new_name: charging_rate
+      reason: remove 'kw' from the name
+    unit_type: power
+    type: double
+    size: 8
+    description: Charge rate when charging
     examples:
       - hex: '40600000'
         value: 3.5
@@ -172,9 +175,9 @@ properties:
     name: max_charging_current
     name_cased: maxChargingCurrent
     pretty_name: Maximum charging current
-    unit: A
-    type: float
-    size: 4
+    unit_type: electric_current
+    type: double
+    size: 8
     description: Maximum charging current
     examples:
       - hex: '41c80000'
@@ -264,10 +267,10 @@ properties:
     name: battery_temperature
     name_cased: batteryTemperature
     pretty_name: Battery temperature
-    unit: °C
-    type: float
-    size: 4
-    description: Battery temperature in Celsius
+    unit_type: temperature
+    type: double
+    size: 8
+    description: Battery temperature
     examples:
       - hex: '4219999a'
         value: 38.4
@@ -339,3 +342,11 @@ properties:
       - hex: '01'
         value: 'charging'
         description: The vehicle is charging
+  - id: 0x18
+    name: charging_rate
+    name_cased: chargingRate
+    pretty_name: Charging rate
+    unit_type: power
+    type: double
+    size: 8
+    description: Charge rate when charging

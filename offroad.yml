@@ -21,10 +21,10 @@ properties:
     name: route_incline
     name_cased: routeIncline
     pretty_name: Route incline
-    type: integer
-    unit: °
-    size: 2
-    description: The route elevation incline in degrees, which is a negative number for decline
+    unit_type: angle
+    type: double
+    size: 8
+    description: The route elevation incline, which is a negative number for decline
     examples:
       - hex: '000a'
         value: 10

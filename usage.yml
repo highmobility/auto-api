@@ -22,10 +22,10 @@ properties:
     name: average_weekly_distance
     name_cased: averageWeeklyDistance
     pretty_name: Average weekly distance
-    unit: km
-    type: uinteger
-    size: 2
-    description: Average weekly distance in km
+    unit_type: length
+    type: double
+    size: 8
+    description: Average weekly distance
     examples:
       - hex: '029a'
         value: 666
@@ -34,10 +34,10 @@ properties:
     name: average_weekly_distance_long_run
     name_cased: averageWeeklyDistanceLongRun
     pretty_name: Average weekly distance long run
-    unit: km
-    type: uinteger
-    size: 2
-    description: Average weekyl distance, over long term, in km
+    unit_type: length
+    type: double
+    size: 8
+    description: Average weekyl distance over long term
     examples:
       - hex: '029c'
         value: 668
@@ -142,10 +142,10 @@ properties:
     name: last_trip_energy_consumption
     name_cased: lastTripEnergyConsumption
     pretty_name: Last trip energy consumption
-    unit: kWh
-    type: float
-    size: 4
-    description: Energy consumption in the last trip in kWh
+    unit_type: energy
+    type: double
+    size: 8
+    description: Energy consumption in the last trip
     examples:
       - hex: '42ca999a'
         value: 101.3
@@ -154,10 +154,10 @@ properties:
     name: last_trip_fuel_consumption
     name_cased: lastTripFuelConsumption
     pretty_name: Last trip fuel consumption
-    unit: L
-    type: float
-    size: 4
-    description: Fuel consumption in the last trip in L
+    unit_type: volume
+    type: double
+    size: 8
+    description: Fuel consumption in the last trip
     examples:
       - hex: '41b40000'
         value: 22.5
@@ -166,10 +166,13 @@ properties:
     name: mileage_after_last_trip
     name_cased: mileageAfterLastTrip
     pretty_name: Mileage after last trip
-    unit: km
-    type: uinteger
-    size: 4
-    description: Mileage after the last trip in km
+    deprecated:
+      new_name: odometer_after_last_trip
+      reason: 'mileage' is an incorrect term for this
+    unit_type: length
+    type: double
+    size: 8
+    description: Mileage after the last trip
     examples:
       - hex: '00017590'
         value: 95632
@@ -189,10 +192,10 @@ properties:
     name: last_trip_average_energy_recuperation
     name_cased: lastTripAverageEnergyRecuperation
     pretty_name: Last trip average energy recuperation
-    unit: kWh / 100km
-    type: float
-    size: 4
-    description: Energy recuperation rate for last trip, in kWh / 100 km
+    unit_type: energy_efficiency
+    type: double
+    size: 8
+    description: Energy recuperation rate for last trip
     examples:
       - hex: '40b5c28f'
         value: 5.68
@@ -223,10 +226,10 @@ properties:
     name: average_fuel_consumption
     name_cased: averageFuelConsumption
     pretty_name: Average fuel consumption
-    unit: L / 100km
-    type: float
-    size: 4
-    description: Average fuel consumption for current trip in liters / 100 km
+    unit_type: fuel_efficiency
+    type: double
+    size: 8
+    description: Average fuel consumption for current trip
     examples:
       - hex: '40d00000'
         value: 6.5
@@ -235,11 +238,19 @@ properties:
     name: current_fuel_consumption
     name_cased: currentFuelConsumption
     pretty_name: Current fuel consumption
-    unit: L / 100km
-    type: float
-    size: 4
-    description: Current fuel consumption in liters / 100 km
+    unit_type: fuel_efficiency
+    type: double
+    size: 8
+    description: Current fuel consumption
     examples:
       - hex: '40f00000'
         value: 7.5
         description: Current fuel consumption is 7.5 L / 100 km
+  - id: 0x10
+    name: odometer_after_last_trip
+    name_cased: odometerAfterLastTrip
+    pretty_name: Odometer after last trip
+    unit_type: length
+    type: double
+    size: 8
+    description: Odometer after the last trip

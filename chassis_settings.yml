@@ -121,10 +121,10 @@ properties:
     name: current_chassis_position
     name_cased: currentChassisPosition
     pretty_name: Current chassis position
-    unit: mm
-    type: integer
-    size: 1
-    description: The chassis position in mm calculated from the lowest point
+    unit_type: length
+    type: double
+    size: 8
+    description: The chassis position calculated from the lowest point
     examples:
       - hex: '19'
         value: 25
@@ -133,9 +133,9 @@ properties:
     name: maximum_chassis_position
     name_cased: maximumChassisPosition
     pretty_name: Maximum chassis position
-    unit: mm
-    type: integer
-    size: 1
+    unit_type: length
+    type: double
+    size: 8
     description: The maximum possible value for the chassis position
     examples:
       - hex: '37'
@@ -145,9 +145,9 @@ properties:
     name: minimum_chassis_position
     name_cased: minimumChassisPosition
     pretty_name: Minimum chassis position
-    unit: mm
-    type: integer
-    size: 1
+    unit_type: length
+    type: double
+    size: 8
     description: The minimum possible value for the chassis position
     examples:
       - hex: 'e4'
