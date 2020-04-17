@@ -24,9 +24,9 @@ properties:
     name: heart_rate
     name_cased: heartRate
     pretty_name: Heart rate
-    unit: bpm
-    type: uinteger
-    size: 1
+    unit_type: frequency
+    type: double
+    size: 8
     examples:
       - hex: '40'
         value: 64
