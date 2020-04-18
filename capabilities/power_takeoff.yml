@@ -28,7 +28,7 @@ properties:
     pretty_name: Status
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: Power take-off is active
   - id: 0x02
@@ -44,6 +44,6 @@ properties:
       - id: 0x01
         name: engaged
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'engaged'
         description: Power take-off is engaged

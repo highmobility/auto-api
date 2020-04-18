@@ -46,9 +46,11 @@ properties:
     size: 8
     description: Estimated range
     examples:
-      - hex: '01b0'
-        value: 432
-        description: 432 km estimated range
+      - data_component: '407b01999999999a'
+        unit_component: '1101'
+        value: 432.1
+        unit: kilometers
+        description: 432.1km estimated range
   - id: 0x03
     name: battery_level
     name_cased: batteryLevel
@@ -56,7 +58,7 @@ properties:
     type: types.percentage
     description: Battery level percentage between 0.0-1.0
     examples:
-      - hex: '3fe0000000000000'
+      - data_component: '3fe0000000000000'
         value: 0.5
         description: Battery level 50%
   - id: 0x04
@@ -68,9 +70,11 @@ properties:
     size: 8
     description: Battery alternating current
     examples:
-      - hex: 'bf19999a'
+      - data_component: 'bfe3333333333333'
+        unit_component: '0802'
         value: -0.6
-        description: Battery current (AC) -0.6
+        unit: amperes
+        description: Battery alternating current is -0.6A
   - id: 0x05
     name: battery_current_dc
     name_cased: batteryCurrentDC
@@ -80,9 +84,11 @@ properties:
     size: 8
     description: Battery direct current
     examples:
-      - hex: 'bf19999a'
+      - data_component: 'bfe3333333333333'
+        unit_component: '0802'
         value: -0.6
-        description: Battery current (DC) -0.6
+        unit: amperes
+        description: Battery direct current is -0.6A
   - id: 0x06
     name: charger_voltage_ac
     name_cased: chargerVoltageAC
@@ -90,11 +96,13 @@ properties:
     unit_type: electric_potential_difference
     type: double
     size: 8
-    description: Charger voltage
+    description: Charger voltage for alternating current
     examples:
-      - hex: '43c80000'
+      - data_component: '4079000000000000'
+        unit_component: '0902'
         value: 400
-        description: Charger voltage 400V
+        unit: volts
+        description: Charger voltage is 400.0V for alternating current
   - id: 0x07
     name: charger_voltage_dc
     name_cased: chargerVoltageDC
@@ -102,11 +110,13 @@ properties:
     unit_type: electric_potential_difference
     type: double
     size: 8
-    description: Charger voltage
+    description: Charger voltage for direct current
     examples:
-      - hex: '43c80000'
+      - data_component: '43c80000'
+        unit_component: '0902'
         value: 400
-        description: Charger voltage 400V
+        unit: volts
+        description: Charger voltage is 400.0V for direct current
   - id: 0x08
     name: charge_limit
     name_cased: chargeLimit
@@ -114,9 +124,9 @@ properties:
     type: types.percentage
     description: Charge limit percentage between 0.0-1.0
     examples:
-      - hex: '3feccccccccccccd'
+      - data_component: '3feccccccccccccd'
         value: 0.9
-        description: Charge limit 90%
+        description: Charge limit is set to 90%
   - id: 0x09
     name: time_to_complete_charge
     name_cased: timeToCompleteCharge
@@ -126,9 +136,11 @@ properties:
     size: 8
     description: Time until charging completed
     examples:
-      - hex: '3c'
+      - data_component: '404e000000000000'
+        unit_component: '0601'
         value: 60
-        description: Time to complete charge 60 minutes
+        unit: minutes
+        description: Time to complete charge is 60.0 minutes
   - id: 0x0a
     name: charging_rate_kw
     name_cased: chargingRateKW
@@ -139,20 +151,22 @@ properties:
     unit_type: power
     type: double
     size: 8
-    description: Charge rate when charging
+    description: Charging rate
     examples:
-      - hex: '40600000'
+      - data_component: '400c000000000000'
+        unit_component: '1303'
         value: 3.5
-        description: 3.5 kW charge rate
+        unit: kilowatts
+        description: Charging rate is 3.5kW
   - id: 0x0b
     name: charge_port_state
     name_cased: chargePortState
     pretty_name: Charge port state
     type: types.position
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'open'
-        description: Charge port open
+        description: Charge port is open
   - id: 0x0c
     name: charge_mode
     name_cased: chargeMode
@@ -168,9 +182,9 @@ properties:
         name: inductive
         disabled_in_setter: true
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'timer_based'
-        description: Timer based charging
+        description: Charging is 'timer based'
   - id: 0x0e
     name: max_charging_current
     name_cased: maxChargingCurrent
@@ -180,9 +194,11 @@ properties:
     size: 8
     description: Maximum charging current
     examples:
-      - hex: '41c80000'
+      - data_component: '4039000000000000'
+        unit_component: '0802'
         value: 25.0
-        description: Maximum charging current is 25.0 A
+        unit: amperes
+        description: Maximum charging current is 25.0A
   - id: 0x0f
     name: plug_type
     name_cased: plugType
@@ -201,9 +217,9 @@ properties:
         name: chademo
         pretty_name: CHAdeMO
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'type_2'
-        description: The socket is Type 2
+        description: Electric plug type is 'Type 2'
   - id: 0x10
     name: charging_window_chosen
     name_cased: chargingWindowChosen
@@ -216,9 +232,9 @@ properties:
       - id: 0x01
         name: chosen
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'not_chosen'
-        description: No charging windows has been chosen
+        description: Charging window is not chosen
   - id: 0x11
     name: departure_times
     name_cased: departureTimes
@@ -227,36 +243,36 @@ properties:
     multiple: true
     name_singular: departure_time
     examples:
-      - hex: '011020'
+      - data_component: '011020'
         values:
           state: 'active'
           time:
             hour: 16
             minute: 32
-        description: Departure time is active at 16:32
-      - hex: '000b33'
+        description: Departure time 16:32 is active
+      - data_component: '000b33'
         values:
           state: 'inactive'
           time:
             hour: 11
             minute: 51
-        description: Departure time is inactive at 11:51
+        description: Departure time 11:51 is inactive
   - id: 0x13
     name: reduction_times
     name_cased: reductionTimes
-    pretty_name: Reduction of charging-current times
+    pretty_name: Reduction of charging times
     type: types.reduction_time
     multiple: true
     name_singular: reduction_time
     examples:
-      - hex: '001121'
+      - data_component: '001121'
         values:
           start_stop: 'start'
           time:
             hour: 17
             minute: 33
-        description: Start reduction of charging current at 17:33
-      - hex: '010c34'
+        description: Start reduction of charging at 17:33
+      - data_component: '010c34'
         values:
           start_stop: 'stop'
           time:
@@ -272,9 +288,11 @@ properties:
     size: 8
     description: Battery temperature
     examples:
-      - hex: '4219999a'
+      - data_component: '4043333333333333'
+        unit_component: '1701'
         value: 38.4
-        description: The battery temperature is 38.4 °C
+        unit: celsius
+        description: The battery temperature is 38.4°C
   - id: 0x15
     name: timers
     name_cased: timers
@@ -283,21 +301,21 @@ properties:
     multiple: true
     name_singular: timer
     examples:
-      - hex: '00000001598938e788'
+      - data_component: '00000001598938e788'
         values:
           timer_type: 'preferred_start_time'
           date: '2017-01-10T16:32:05.000Z'
-        description: 10 January 2017 at 16:32:05 UTC
-      - hex: '0100000159893c9108'
+        description: Preferred start time is 10 January 2017 at 16:32:05 UTC
+      - data_component: '0100000159893c9108'
         values:
           timer_type: 'preferred_end_time'
           date: '2017-01-10T16:36:05.000Z'
-        description: 10 January 2017 at 16:36:05 GMT
-      - hex: '0200000159893c9108'
+        description: Preferred end time is 10 January 2017 at 16:36:05 GMT
+      - data_component: '0200000159893c9108'
         values:
           timer_type: 'departure_date'
           date: '2017-01-10T16:36:05.000Z'
-        description: 10 January 2017 at 16:36:05 GMT
+        description: Departure date is 10 January 2017 at 16:36:05 GMT
   - id: 0x16
     name: plugged_in
     name_cased: pluggedIn
@@ -310,7 +328,7 @@ properties:
       - id: 0x01
         name: plugged_in
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'plugged_in'
         description: The charger is plugged in
   - id: 0x17
@@ -339,7 +357,7 @@ properties:
         name: charging_error
         disabled_in_setter: true
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'charging'
         description: The vehicle is charging
   - id: 0x18
@@ -350,3 +368,9 @@ properties:
     type: double
     size: 8
     description: Charge rate when charging
+    examples:
+      - data_component: '4062c00000000000'
+        unit_component: '1303'
+        value: 150.0
+        unit: kilowatts
+        description: Charging rate is 150.0kW

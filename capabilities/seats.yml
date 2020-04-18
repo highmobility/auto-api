@@ -25,27 +25,27 @@ properties:
     multiple: true
     name_singular: person_detected
     examples:
-      - hex: '0001'
+      - data_component: '0001'
         values:
           location: 'front_left'
           detected: 'detected'
         description: Person detected on the front-left seat
-      - hex: '0100'
+      - data_component: '0100'
         values:
           location: 'front_right'
           detected: 'not_detected'
         description: No person detected on the front-right seat
-      - hex: '0200'
+      - data_component: '0200'
         values:
           location: 'rear_right'
           detected: 'not_detected'
         description: No person detected on the rear-right seat
-      - hex: '0300'
+      - data_component: '0300'
         values:
           location: 'rear_left'
           detected: 'not_detected'
         description: No person detected on the rear-left seat
-      - hex: '0400'
+      - data_component: '0400'
         values:
           location: 'rear_center'
           detected: 'not_detected'
@@ -58,27 +58,27 @@ properties:
     multiple: true
     name_singular: seatbelt_state
     examples:
-      - hex: '0001'
+      - data_component: '0001'
         values:
           location: 'front_left'
           fastened_state: 'fastened'
         description: Seatbelt fastened for the front-left seat
-      - hex: '0100'
+      - data_component: '0100'
         values:
           location: 'front_right'
           fastened_state: 'not_fastened'
         description: Seatbelt not fastened for the front-right seat
-      - hex: '0200'
+      - data_component: '0200'
         values:
           location: 'rear_right'
           fastened_state: 'not_fastened'
         description: Seatbelt not fastened for the rear-right seat
-      - hex: '0300'
+      - data_component: '0300'
         values:
           location: 'rear_left'
           fastened_state: 'not_fastened'
         description: Seatbelt not fastened for the rear-left seat
-      - hex: '0400'
+      - data_component: '0400'
         values:
           location: 'rear_center'
           fastened_state: 'not_fastened'

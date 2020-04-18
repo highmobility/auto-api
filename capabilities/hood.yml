@@ -31,6 +31,6 @@ properties:
       - id: 0x02
         name: intermediate
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'open'
         description: Hood is open

@@ -25,6 +25,6 @@ properties:
     pretty_name: URL
     description: The URL
     examples:
-      - hex: '68747470733a2f2f61626f75742e686967682d6d6f62696c6974792e636f6d'
+      - data_component: '68747470733a2f2f61626f75742e686967682d6d6f62696c6974792e636f6d'
         value: 'https://about.high-mobility.com'
-        description: URL is https://about.high-mobility.com
+        description: URL is "https://about.high-mobility.com"

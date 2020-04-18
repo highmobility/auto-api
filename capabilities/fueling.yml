@@ -29,7 +29,7 @@ properties:
     pretty_name: Gas flap lock
     type: types.lock_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'locked'
         description: Gas flap is locked
   - id: 0x03
@@ -38,6 +38,6 @@ properties:
     pretty_name: Gas flap position
     type: types.position
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'closed'
         description: Gas flap is closed

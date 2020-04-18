@@ -28,7 +28,7 @@ properties:
     pretty_name: Status
     type: types.on_off_state
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'off'
         description: Ignition is off
   - id: 0x02
@@ -37,6 +37,6 @@ properties:
     pretty_name: Accessories status
     type: types.on_off_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'on'
         description: Accessories power is on

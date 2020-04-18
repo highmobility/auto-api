@@ -38,9 +38,9 @@ properties:
     pretty_name: Driving mode
     type: types.driving_mode
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'eco'
-        description: ECO driving mode
+        description: Driving mode is set to ECO
   - id: 0x02
     name: sport_chrono
     name_cased: sportChrono
@@ -57,9 +57,9 @@ properties:
       - id: 0x02
         name: reset
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
-        description: Sport Chrono active
+        description: Sport Chrono is active
   - id: 0x05
     name: current_spring_rates
     name_cased: currentSpringRates
@@ -69,16 +69,20 @@ properties:
     name_singular: current_spring_rate
     description: The current values for the spring rates
     examples:
-      - hex: '0015'
+      - data_component: '4035000000000000'
+        unit_component: '1801'
         values:
           axle: 'front'
-          spring_rate: 21
-        description: Front axle spring rate is 21 N/mm
-      - hex: '0117'
+          spring_rate: 21.0
+        unit: newton_millimeters
+        description: Front axle spring rate is 21.0N/mm
+      - data_component: '4037000000000000'
+        unit_component: '1801'
         values:
           axle: 'rear'
-          spring_rate: 23
-        description: Rear axle spring rate is 23 N/mm
+          spring_rate: 23.0
+        unit: newton_millimeters
+        description: Rear axle spring rate is 23.0N/mm
   - id: 0x06
     name: maximum_spring_rates
     name_cased: maximumSpringRates
@@ -88,16 +92,20 @@ properties:
     name_singular: maximum_spring_rate
     description: The maximum possible values for the spring rates
     examples:
-      - hex: '0025'
+      - data_component: '4042800000000000'
+        unit_component: '1801'
         values:
           axle: 'front'
-          spring_rate: 37
-        description: Front axle maximum spring rate is 37N/mm
-      - hex: '0127'
+          spring_rate: 37.0
+        unit: newton_millimeters
+        description: Front axle maximum spring rate is 37.0N/mm
+      - data_component: '4043800000000000'
+        unit_component: '1801'
         values:
           axle: 'rear'
-          spring_rate: 39
-        description: Rear axle maximum spring rate is 39N/mm
+          spring_rate: 39.0
+        unit: newton_millimeters
+        description: Rear axle maximum spring rate is 39.0N/mm
   - id: 0x07
     name: minimum_spring_rates
     name_cased: minimumSpringRates
@@ -107,16 +115,20 @@ properties:
     name_singular: minimum_spring_rate
     description: The minimum possible values for the spring rates
     examples:
-      - hex: '0010'
+      - data_component: '4030000000000000'
+        unit_component: '1801'
         values:
           axle: 'front'
-          spring_rate: 16
-        description: Front axle minimum spring rate is 16N/mm
-      - hex: '0112'
+          spring_rate: 16.0
+        unit: newton_millimeters
+        description: Front axle minimum spring rate is 16.0N/mm
+      - data_component: '4032000000000000'
+        unit_component: '1801'
         values:
           axle: 'rear'
-          spring_rate: 18
-        description: Rear axle minimum spring rate is 18N/mm
+          spring_rate: 18.0
+        unit: newton_millimeters
+        description: Rear axle minimum spring rate is 18.0N/mm
   - id: 0x08
     name: current_chassis_position
     name_cased: currentChassisPosition
@@ -126,9 +138,11 @@ properties:
     size: 8
     description: The chassis position calculated from the lowest point
     examples:
-      - hex: '19'
-        value: 25
-        description: Current chassis position is 25mm
+      - data_component: '4039666666666666'
+        unit_component: '1107'
+        value: 25.4
+        unit: millimeters
+        description: Current chassis position is 25.4mm
   - id: 0x09
     name: maximum_chassis_position
     name_cased: maximumChassisPosition
@@ -138,9 +152,11 @@ properties:
     size: 8
     description: The maximum possible value for the chassis position
     examples:
-      - hex: '37'
-        value: 55
-        description: Maximum chassis position is 55mm
+      - data_component: '404bc00000000000'
+        unit_component: '1107'
+        value: 55.5
+        unit: millimeters
+        description: Maximum chassis position is 55.5mm
   - id: 0x0a
     name: minimum_chassis_position
     name_cased: minimumChassisPosition
@@ -150,6 +166,8 @@ properties:
     size: 8
     description: The minimum possible value for the chassis position
     examples:
-      - hex: 'e4'
-        value: -28
-        description: Minimum chassis position is -28mm
+      - data_component: 'c03c666666666666'
+        unit_component: '1107'
+        value: -28.4
+        unit: millimeters
+        description: Minimum chassis position is -28.4mm

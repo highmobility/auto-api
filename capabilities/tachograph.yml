@@ -25,12 +25,12 @@ properties:
     multiple: true
     name_singular: driver_working_state
     examples:
-      - hex: '0102'
+      - data_component: '0102'
         values:
           driver_number: 1
           working_state: 'working'
         description: Driver nr 1 is working
-      - hex: '0200'
+      - data_component: '0200'
         values:
           driver_number: 2
           working_state: 'resting'
@@ -43,12 +43,12 @@ properties:
     multiple: true
     name_singular: drivers_time_state
     examples:
-      - hex: '0302'
+      - data_component: '0302'
         values:
           driver_number: 3
           time_state: 'four_reached'
         description: Driver nr 3 has reached 4 hours
-      - hex: '0405'
+      - data_component: '0405'
         values:
           driver_number: 4
           time_state: 'fifteen_min_before_sixteen'
@@ -61,12 +61,12 @@ properties:
     multiple: true
     name_singular: drivers_card_present
     examples:
-      - hex: '0601'
+      - data_component: '0601'
         values:
           driver_number: 6
           card_present: 'present'
         description: Driver nr 6 has a card present
-      - hex: '0700'
+      - data_component: '0700'
         values:
           driver_number: 7
           card_present: 'not_present'
@@ -77,7 +77,7 @@ properties:
     pretty_name: Vehicle motion
     type: types.detected
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'detected'
         description: Detected vehicle in motion
   - id: 0x05
@@ -93,7 +93,7 @@ properties:
       - id: 0x01
         name: overspeed
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'no_overspeed'
         description: Vehicle is not overspeeding
   - id: 0x06
@@ -108,7 +108,7 @@ properties:
       - id: 0x01
         name: reverse
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'forward'
         description: Vehicle is moving forward
   - id: 0x07
@@ -120,6 +120,8 @@ properties:
     size: 8
     description: The tachograph vehicle speed
     examples:
-      - hex: '0050'
-        value: 80
-        description: Vehicle speed is 80 km/h
+      - data_component: '4054000000000000'
+        unit_component: '1601'
+        value: 80.0
+        unit: kilometers_per_hour
+        description: Vehicle speed is 80.0km/h

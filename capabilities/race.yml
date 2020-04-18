@@ -21,30 +21,38 @@ properties:
     name: accelerations
     name_cased: accelerations
     pretty_name: Accelerations
+    name_singular: acceleration
     type: types.acceleration
     multiple: true
-    name_singular: acceleration
     examples:
-      - hex: '003f5d2f1b'
+      - data_component: '003feba5e353f7ced9'
+        unit_component: '0101'
         values:
           direction: 'longitudinal'
           g_force: 0.864
-        description: Longitudinal acceleration is 0.864 g
-      - hex: '01bf40c49c'
+        unit: gravity
+        description: Longitudinal acceleration is 0.864g
+      - data_component: '01bfe8189374bc6a7f'
+        unit_component: '0101'
         values:
           direction: 'lateral'
           g_force: -0.753
-        description: Lateral acceleration is -0.753 g
-      - hex: '02bf40c49c'
+        unit: gravity
+        description: Lateral acceleration is -0.753g
+      - data_component: '023fe8189374bc6a7f'
+        unit_component: '0101'
         values:
           direction: 'front_lateral'
-          g_force: -0.753
-        description: Front lateral acceleration is -0.753 g
-      - hex: '03bf40c49c'
+          g_force: 0.753
+        unit: gravity
+        description: Front lateral acceleration is 0.753g
+      - data_component: '03bfeba5e353f7ced9'
+        unit_component: '0101'
         values:
           direction: 'rear_lateral'
-          g_force: -0.753
-        description: Rear lateral acceleration is -0.753 g
+          g_force: -0.864
+        unit: gravity
+        description: Rear lateral acceleration is -0.864g
   - id: 0x02
     name: understeering
     name_cased: understeering
@@ -52,7 +60,7 @@ properties:
     type: types.percentage
     description: The understeering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 0.3 (30%) marginal, over 30% critical
     examples:
-      - hex: '3fc851eb851eb852'
+      - data_component: '3fc851eb851eb852'
         value: 0.19
         description: Understeering is at 19%
   - id: 0x03
@@ -62,7 +70,7 @@ properties:
     type: types.percentage
     description: The oversteering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 30% marginal, over 30% critical
     examples:
-      - hex: '3fa999999999999a'
+      - data_component: '3fa999999999999a'
         value: 0.05
         description: Oversteering is at 5%
   - id: 0x04
@@ -72,7 +80,7 @@ properties:
     type: types.percentage
     description: The gas pedal position between 0.0-1.0, whereas 1.0 (100%) is full throttle
     examples:
-      - hex: '3fef5c28f5c28f5c'
+      - data_component: '3fef5c28f5c28f5c'
         value: 0.98
         description: Gas pedal position is at 98%
   - id: 0x05
@@ -84,8 +92,10 @@ properties:
     size: 8
     description: The steering angle, whereas 0 is straight ahead, positive number to the right and negative number to the left
     examples:
-      - hex: '0a'
-        value: 10
+      - data_component: '4024000000000000'
+        unit_component: '0200'
+        value: 10.0
+        unit: degrees
         description: Steering angle is 10° to right
   - id: 0x06
     name: brake_pressure
@@ -96,22 +106,25 @@ properties:
     size: 8
     description: Brake pressure
     examples:
-      - hex: '41a00000'
+      - data_component: '4034000000000000'
+        unit_component: '1406'
         value: 20.0
-        description: Brake pressure is 20.0 bar
+        unit: bars
+        description: Brake pressure is 20.0bar
   - id: 0x07
     name: yaw_rate
     name_cased: yawRate
     pretty_name: Yaw rate
-    unit: °/s
-    unit_type: angle
+    unit_type: rotational_speed
     type: double
     size: 8
-    description: Yaw rate per second (i.e. °/s)
+    description: Yaw turning rate
     examples:
-      - hex: '40d51eb8'
+      - data_component: '401aa3d70a3d70a4'
+        unit_component: '1500'
         value: 6.66
-        description: Yaw rate is 6.66 °/s
+        unit: degrees_per_second
+        description: Yaw rate is 6.66°/s
   - id: 0x08
     name: rear_suspension_steering
     name_cased: rearSuspensionSteering
@@ -121,8 +134,10 @@ properties:
     size: 8
     description: Rear suspension steering
     examples:
-      - hex: '03'
-        value: 3
+      - data_component: '400a666666666666'
+        unit_component: '0200'
+        value: 3.3
+        unit: degrees
         description: Rear suspension steering is +3°
   - id: 0x09
     name: electronic_stability_program
@@ -130,7 +145,7 @@ properties:
     pretty_name: Electronic stability program
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: ESP is active
   - id: 0x0a
@@ -141,12 +156,12 @@ properties:
     multiple: true
     name_singular: brake_torque_vectoring
     examples:
-      - hex: '0001'
+      - data_component: '0001'
         values:
           axle: 'front'
           state: 'active'
         description: Front brake torque vectoring is active
-      - hex: '0100'
+      - data_component: '0100'
         values:
           axle: 'rear'
           state: 'inactive'
@@ -173,7 +188,7 @@ properties:
       - id: 0x06
         name: sport
     examples:
-      - hex: '04'
+      - data_component: '04'
         value: 'drive'
         description: Gear is in drive
   - id: 0x0c
@@ -184,7 +199,7 @@ properties:
     size: 1
     description: The selected gear value, if any
     examples:
-      - hex: '04'
+      - data_component: '04'
         value: 4
         description: 4th gear is selected
   - id: 0x0d
@@ -194,7 +209,7 @@ properties:
     type: types.percentage
     description: The brake pedal position between 0.0-1.0, wheras 1.0 (100%) is full brakes
     examples:
-      - hex: '3fbeb851eb851eb8'
+      - data_component: '3fbeb851eb851eb8'
         value: 0.12
         description: Brake pedal position is at 12%
   - id: 0x0e
@@ -203,7 +218,7 @@ properties:
     pretty_name: Brake pedal switch
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: Brake pedal switch is active, brake lights active
   - id: 0x0f
@@ -212,7 +227,7 @@ properties:
     pretty_name: Clutch pedal switch
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: Clutch pedal switch is active, clutch is fully depressed
   - id: 0x10
@@ -221,7 +236,7 @@ properties:
     pretty_name: Accelerator pedal idle switch
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: Accelerator pedal idle switch is active, pedal released
   - id: 0x11
@@ -230,7 +245,7 @@ properties:
     pretty_name: Accelerator pedal kickdown switch
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: Accelerator pedal kickdown switch is active, pedal fully depressed
   - id: 0x12
@@ -246,6 +261,6 @@ properties:
       - id: 0x01
         name: moving
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'moving'
         description: Vehicle is moving

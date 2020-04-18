@@ -26,12 +26,12 @@ properties:
     multiple: true
     name_singular: capability
     examples:
-      - hex: '002000050203040506'
+      - data_component: '002000050203040506'
         values:
           capability_id: 0x0020
           supported_property_ids: [0x02, 0x03, 0x04, 0x05, 0x06]
         description: Doors supports inside locks, locks, positions, inside locks state and locks state properties
-      - hex: '00230003020811'
+      - data_component: '00230003020811'
         values:
           capability_id: 0x0023
           supported_property_ids: [0x02, 0x08, 0x11]
@@ -43,12 +43,12 @@ properties:
     type: types.webhook
     multiple: true
     examples:
-      - hex: '0101'
+      - data_component: '0101'
         values:
           available: 'available'
           event: 'trip_started'
         description: Webhook 'trip_started' is available to use.
-      - hex: '0102'
+      - data_component: '0102'
         values:
           available: 'available'
           event: 'trip_ended'

@@ -31,7 +31,7 @@ properties:
     pretty_name: Cruise control
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: Cruise control is active
   - id: 0x02
@@ -50,7 +50,7 @@ properties:
       - id: 0x03
         name: speed_fixed
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'higher_speed_requested'
         description: Higher speed requested by the limiter
   - id: 0x03
@@ -62,16 +62,18 @@ properties:
     size: 8
     description: The target speed
     examples:
-      - hex: '003d'
-        value: 61
-        description: The target speed is set to 61km/h
+      - data_component: '404e800000000000'
+        unit_component: '1601'
+        value: 61.0
+        unit: kilometers_per_hour
+        description: The target speed is set to 61.0km/h
   - id: 0x04
     name: adaptive_cruise_control
     name_cased: adaptiveCruiseControl
     pretty_name: Adaptive Cruise Control
     type: types.active_state
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'inactive'
         description: Adaptive Cruise Control is inactive
   - id: 0x05
@@ -83,6 +85,8 @@ properties:
     size: 8
     description: The target speed of the Adaptive Cruise Control
     examples:
-      - hex: '0043'
-        value: 67
-        description: The Adaptive Cruise Control target speed is set to 67km/h
+      - data_component: '4050c00000000000'
+        unit_component: '1601'
+        value: 67.0
+        unit: kilometers_per_hour
+        description: The Adaptive Cruise Control target speed is set to 67.0km/h

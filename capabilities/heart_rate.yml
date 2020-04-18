@@ -28,6 +28,8 @@ properties:
     type: double
     size: 8
     examples:
-      - hex: '40'
-        value: 64
-        description: Heart rate is 64 bpm
+      - data_component: '4050000000000000'
+        unit_component: '0d08'
+        value: 64.0
+        unit: beats_per_minute
+        description: Heart rate is 64.0bpm

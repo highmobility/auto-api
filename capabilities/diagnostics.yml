@@ -29,9 +29,11 @@ properties:
     size: 8
     description: The car mileage (odometer)
     examples:
-      - hex: '000249f0'
-        value: 150000
-        description: Odometer is showing 150'000 km
+      - data_component: '41024f8000000000'
+        unit_component: '1101'
+        value: 150000.0
+        unit: kilometers
+        description: Odometer is showing 150'000.0km
   - id: 0x02
     name: engine_oil_temperature
     name_cased: engineOilTemperature
@@ -41,9 +43,11 @@ properties:
     size: 8
     description: Engine oil temperature, whereas can be negative
     examples:
-      - hex: '0063'
-        value: 99
-        description: Engine oil temperature is 99°C
+      - data_component: '4058e00000000000'
+        unit_component: '1701'
+        value: 99.5
+        unit: celsius
+        description: Engine oil temperature is 99.5°C
   - id: 0x03
     name: speed
     name_cased: speed
@@ -53,21 +57,25 @@ properties:
     size: 8
     description: The vehicle speed, whereas can be negative
     examples:
-      - hex: '003c'
-        value: 60
-        description: Vehicle speed is 60km/h
+      - data_component: '404e000000000000'
+        unit_component: '1601'
+        value: 60.0
+        unit: kilometers_per_hour
+        description: Vehicle speed is 60.0km/h
   - id: 0x04
     name: engine_rpm
     name_cased: engineRPM
     pretty_name: Engine RPM
-    unit: RPM
-    type: uinteger
-    size: 2
+    unit_type: rotational_speed
+    type: double
+    size: 8
     description: Engine RPM (revolutions per minute)
     examples:
-      - hex: '09c4'
-        value: 2500
-        description: RPM is 2500
+      - data_component: '40a3880000000000'
+        unit_component: '1502'
+        value: 2500.0
+        unit: revolutions_per_minute
+        description: Engine RPM is 2500.0
   - id: 0x05
     name: fuel_level
     name_cased: fuelLevel
@@ -75,7 +83,7 @@ properties:
     type: types.percentage
     description: Fuel level percentage between 0.0-1.0
     examples:
-      - hex: '3feccccccccccccd'
+      - data_component: '3feccccccccccccd'
         value: 0.9
         description: Fuel level is at 90%
   - id: 0x06
@@ -87,16 +95,18 @@ properties:
     size: 8
     description: Estimated range (with combustion engine)
     examples:
-      - hex: '0109'
-        value: 265
-        description: Estimated range is 256 km
+      - data_component: '4070900000000000'
+        unit_component: '1101'
+        value: 265.0
+        unit: kilometers
+        description: Estimated range is 256.0km
   - id: 0x09
     name: washer_fluid_level
     name_cased: washerFluidLevel
     pretty_name: Washer fluid level
     type: types.fluid_level
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'filled'
         description: Washer fluid is filled
   - id: 0x0b
@@ -108,9 +118,11 @@ properties:
     size: 8
     description: Battery voltage
     examples:
-      - hex: '41400000'
-        value: 12.0
-        description: Battery voltage is 12V
+      - data_component: '4028333333333333'
+        unit_component: '0902'
+        value: 12.1
+        unit: volts
+        description: Battery voltage is 12.1V
   - id: 0x0c
     name: adblue_level
     name_cased: adBlueLevel
@@ -120,9 +132,11 @@ properties:
     size: 8
     description: AdBlue level in liters
     examples:
-      - hex: '3f000000'
-        value: 0.5
-        description: 0.5 liters of AdBlue remaining
+      - data_component: '3fe199999999999a'
+        unit_component: '1902'
+        value: 0.55
+        unit: liters
+        description: 0.55 liters of AdBlue remaining
   - id: 0x0d
     name: distance_since_reset
     name_cased: distanceSinceReset
@@ -132,9 +146,11 @@ properties:
     size: 8
     description: The distance driven since reset
     examples:
-      - hex: '05dc'
-        value: 1500
-        description: 1'500km driven since reset
+      - data_component: '4097706666666666'
+        unit_component: '1101'
+        value: 1500.1
+        unit: kilometers
+        description: 1'500.1km driven since reset
   - id: 0x0e
     name: distance_since_start
     name_cased: distanceSinceStart
@@ -144,9 +160,11 @@ properties:
     size: 8
     description: The distance driven since trip start
     examples:
-      - hex: '000a'
-        value: 10
-        description: 10km driven since the engine start
+      - data_component: '4028cccccccccccd'
+        unit_component: '1101'
+        value: 12.4
+        unit: kilometers
+        description: 12.4km driven since the engine start
   - id: 0x0f
     name: fuel_volume
     name_cased: fuelVolume
@@ -156,8 +174,10 @@ properties:
     size: 8
     description: The fuel volume measured in liters
     examples:
-      - hex: '420e0000'
+      - data_component: '4041c00000000000'
+        unit_component: '1902'
         value: 35.5
+        unit: liters
         description: 35.5 liters of fuel remaining
   - id: 0x10
     name: anti_lock_braking
@@ -165,7 +185,7 @@ properties:
     pretty_name: Anti-lock braking system (ABS)
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: ABS is active
   - id: 0x11
@@ -175,11 +195,13 @@ properties:
     unit_type: temperature
     type: double
     size: 8
-    description: Engine coolant temperature, whereas can be negative
+    description: Engine coolant temperature
     examples:
-      - hex: '0014'
-        value: 20
-        description: Engine coolant temperature is 20C
+      - data_component: '4034000000000000'
+        unit_component: '1701'
+        value: 20.0
+        unit: celsius
+        description: Engine coolant temperature is 20°C
   - id: 0x12
     name: engine_total_operating_hours
     name_cased: engineTotalOperatingHours
@@ -189,9 +211,11 @@ properties:
     size: 8
     description: The accumulated time of engine operation
     examples:
-      - hex: '44bb94cd'
+      - data_component: '409772999999999a'
+        unit_component: '0600'
         value: 1500.65
-        description: The engine has been operating 1'500.65 hours in total
+        unit: hours
+        description: The engine has operated 1'500.65h in total
   - id: 0x13
     name: engine_total_fuel_consumption
     name_cased: engineTotalFuelConsumption
@@ -201,8 +225,10 @@ properties:
     size: 8
     description: The accumulated lifespan fuel consumption
     examples:
-      - hex: '46d78600'
+      - data_component: '40daf0c000000000'
+        unit_component: '1902'
         value: 27587.0
+        unit: liters
         description: The engine has consumend 27'587.0 liters of fuel over it's lifespan
   - id: 0x14
     name: brake_fluid_level
@@ -210,7 +236,7 @@ properties:
     pretty_name: Brake fluid level
     type: types.fluid_level
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'low'
         description: Brake fluid is low
   - id: 0x15
@@ -220,7 +246,7 @@ properties:
     type: types.percentage
     description: Current engine torque percentage between 0.0-1.0
     examples:
-      - hex: '3fc999999999999a'
+      - data_component: '3fc999999999999a'
         value: 0.2
         description: Engine torque is currently at 20%
   - id: 0x16
@@ -230,7 +256,7 @@ properties:
     type: types.percentage
     description: Current engine load percentage between 0.0-1.0
     examples:
-      - hex: '3fb999999999999a'
+      - data_component: '3fb999999999999a'
         value: 0.1
         description: Engine load is currently at 10%
   - id: 0x17
@@ -242,9 +268,11 @@ properties:
     size: 8
     description: The vehicle speed measured at the wheel base, whereas can be negative
     examples:
-      - hex: '0041'
-        value: 65
-        description: Wheel based speed is 65km/h
+      - data_component: '4050400000000000'
+        unit_component: '1601'
+        value: 65.0
+        unit: kilometers_per_hour
+        description: Wheel based speed is 65.0km/h
   - id: 0x18
     name: battery_level
     name_cased: batteryLevel
@@ -252,7 +280,7 @@ properties:
     type: types.percentage
     description: Battery level in %, value between 0.0 and 1.0
     examples:
-      - hex: '3fe1eb851eb851ec'
+      - data_component: '3fe1eb851eb851ec'
         value: 0.56
         description: Battery level is at 56%
   - id: 0x19
@@ -263,12 +291,14 @@ properties:
     multiple: true
     name_singular: check_control_message
     examples:
-      - hex: '000100019c78000c436865636b20656e67696e650005416c657274'
+      - data_component: '000140f9c78000000000000c436865636b20656e67696e650005416c657274'
+        unit_component: '0601'
         values:
           id: 1
-          remaining_minutes: 105592
+          remaining_time: 105592.0
           text: 'Check engine'
           status: 'Alert'
+        unit: minutes
         description: 105'592 minutes remaining for Check Engine Alert control message with ID 1
   - id: 0x1a
     name: tire_pressures
@@ -278,26 +308,34 @@ properties:
     multiple: true
     name_singular: tire_pressure
     examples:
-      - hex: '004013d70a'
+      - data_component: '0040027ae147ae147b'
+        unit_component: '1406'
         values:
           location: 'front_left'
           pressure: 2.31
-        description: Front left tire pressure is 2.31 BAR
-      - hex: '014013d70a'
+        unit: bars
+        description: Front left tire pressure is 2.31BAR
+      - data_component: '0140027ae147ae147b'
+        unit_component: '1406'
         values:
           location: 'front_right'
           pressure: 2.31
-        description: Front right tire pressure is 2.31 BAR
-      - hex: '02400f5c29'
+        unit: bars
+        description: Front right tire pressure is 2.31BAR
+      - data_component: '024001eb851eb851ec'
+        unit_component: '1406'
         values:
           location: 'rear_right'
           pressure: 2.24
-        description: Rear right tire pressure is 2.24 BAR
-      - hex: '03400f5c29'
+        unit: bars
+        description: Rear right tire pressure is 2.24BAR
+      - data_component: '034001eb851eb851ec'
+        unit_component: '1406'
         values:
           location: 'rear_left'
           pressure: 2.24
-        description: Rear left tire pressure is 2.24 BAR
+        unit: bars
+        description: Rear left tire pressure is 2.24BAR
   - id: 0x1b
     name: tire_temperatures
     name_cased: tireTemperatures
@@ -306,26 +344,34 @@ properties:
     multiple: true
     name_singular: tire_temperature
     examples:
-      - hex: '0042200000'
+      - data_component: '0040440ccccccccccd'
+        unit_component: '1701'
         values:
           location: 'front_left'
-          temperature: 40
-        description: Front left tire temperature is 40C
-      - hex: '0142200000'
+          temperature: 40.1
+        unit: celsius
+        description: Front left tire temperature is 40.1°C
+      - data_component: '01404419999999999a'
+        unit_component: '1701'
         values:
           location: 'front_right'
-          temperature: 40
-        description: Front right tire temperature is 40C
-      - hex: '0242200000'
+          temperature: 40.2
+        unit: celsius
+        description: Front right tire temperature is 40.2°C
+      - data_component: '024044266666666666'
+        unit_component: '1701'
         values:
           location: 'rear_right'
-          temperature: 40
-        description: Rear right tire temperature is 40C
-      - hex: '0342200000'
+          temperature: 40.3
+        unit: celsius
+        description: Rear right tire temperature is 40.3°C
+      - data_component: '034044333333333333'
+        unit_component: '1701'
         values:
           location: 'rear_left'
-          temperature: 40
-        description: Rear left tire temperature is 40C
+          temperature: 40.4
+        unit: celsius
+        description: Rear left tire temperature is 40.4°C
   - id: 0x1c
     name: wheel_rpms
     name_cased: wheelRPMs
@@ -334,26 +380,34 @@ properties:
     multiple: true
     name_singular: wheel_rpm
     examples:
-      - hex: '0002ea'
+      - data_component: '004087080000000000'
+        unit_component: '1502'
         values:
           location: 'front_left'
-          rpm: 746
-        description: Front left wheel RPM is 746
-      - hex: '0102ea'
+          rpm: 737.0
+        unit: revolutions_per_minute
+        description: Front left wheel is doing 737.0RPM
+      - data_component: '014087580000000000'
+        unit_component: '1502'
         values:
           location: 'front_right'
-          rpm: 746
-        description: Front right wheel RPM is 746
-      - hex: '0202ea'
+          rpm: 747.0
+        unit: revolutions_per_minute
+        description: Front right wheel is doing 747.0RPM
+      - data_component: '024088480000000000'
+        unit_component: '1502'
         values:
           location: 'rear_right'
-          rpm: 746
-        description: Rear right wheel RPM is 746
-      - hex: '0302ea'
+          rpm: 777.0
+        unit: revolutions_per_minute
+        description: Rear right wheel is doing 777.0RPM
+      - data_component: '034088980000000000'
+        unit_component: '1502'
         values:
           location: 'rear_left'
-          rpm: 746
-        description: Rear left wheel RPM is 746
+          rpm: 787.0
+        unit: revolutions_per_minute
+        description: Rear left wheel is doing 787.0RPM
   - id: 0x1d
     name: trouble_codes
     name_cased: troubleCodes
@@ -362,20 +416,20 @@ properties:
     multiple: true
     name_singular: trouble_code
     examples:
-      - hex: '0200074331313136464100095244555f3231324652000750454e44494e47'
+      - data_component: '0200074331313136464100095244555f3231324652000750454e44494e47'
         values:
           occurences: 2
           id: 'C1116FA'
           ecu_id: 'RDU_212FR'
           status: 'PENDING'
-        description: Trouble code C1116FA with ECU-ID RDU_212FR occured 2 times and is PENDING
-      - hex: '020007433136334146410006445452323132000750454e44494e47'
+        description: Trouble code 'C1116FA' with ECU-ID 'RDU_212FR' occured 2 times and is 'PENDING'
+      - data_component: '020007433136334146410006445452323132000750454e44494e47'
         values:
           occurences: 2
           id: 'C163AFA'
           ecu_id: 'DTR212'
           status: 'PENDING'
-        description: Trouble code C163AFA with ECU-ID DTR212 occured 2 times and is PENDING
+        description: Trouble code 'C163AFA' with ECU-ID 'DTR212' occured 2 times and is 'PENDING'
   - id: 0x1e
     name: mileage_meters
     name_cased: mileageMeters
@@ -388,10 +442,11 @@ properties:
     size: 8
     description: The car mileage (odometer) in meters
     examples:
-      - hex: '41024f8800000000'
+      - data_component: '41024f8800000000'
+        unit_component: '1101'
         value: 150001.0
-        unit_type_value: meters
-        description: Odometer is showing 150'001 meters
+        unit: kilometers
+        description: Odometer is showing 150'001km
   - id: 0x1f
     name: odometer
     name_cased: odometer
@@ -401,7 +456,8 @@ properties:
     size: 8
     description: The car odometer value in a given units.
     examples:
-      - hex: '401999999999999a0400020f00'
+      - data_component: '401999999999999a'
+        unit_component: '1100'
         value: 6.4
-        unit_type_value: megameters
-        description: Odometer is showing 6.4 Mm – length of the Great Wall.
+        unit: megameters
+        description: Odometer is showing 6.4Mm – length of the Great Wall.

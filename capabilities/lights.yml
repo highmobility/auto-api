@@ -45,7 +45,7 @@ properties:
       - id: 0x04
         name: automatic
     examples:
-      - hex: '02'
+      - data_component: '02'
         value: 'active_with_full_beam'
         description: Front exterior lights are active with full beam
   - id: 0x02
@@ -54,7 +54,7 @@ properties:
     pretty_name: Rear exterior light
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: Rear exterior lights are active
   - id: 0x04
@@ -63,7 +63,7 @@ properties:
     pretty_name: Ambient light colour
     type: types.rgb_colour
     examples:
-      - hex: 'ff0000'
+      - data_component: 'ff0000'
         values:
           red: 255
           green: 0
@@ -75,7 +75,7 @@ properties:
     pretty_name: Reverse light
     type: types.active_state
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'inactive'
         description: Reverse light is inactive
   - id: 0x06
@@ -84,7 +84,7 @@ properties:
     pretty_name: Emergency brake light
     type: types.active_state
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'inactive'
         description: Emergency brake light is inactive
   - id: 0x07
@@ -95,12 +95,12 @@ properties:
     multiple: true
     name_singular: fog_light
     examples:
-      - hex: '0000'
+      - data_component: '0000'
         values:
           location: 'front'
           state: 'inactive'
         description: Front fog lights are inactive
-      - hex: '0101'
+      - data_component: '0101'
         values:
           location: 'rear'
           state: 'active'
@@ -113,22 +113,22 @@ properties:
     multiple: true
     name_singular: reading_lamp
     examples:
-      - hex: '0001'
+      - data_component: '0001'
         values:
           location: 'front_left'
           state: 'active'
         description: Front left reading lamp is active
-      - hex: '0101'
+      - data_component: '0101'
         values:
           location: 'front_right'
           state: 'active'
         description: Front right reading lamp is active
-      - hex: '0200'
+      - data_component: '0200'
         values:
           location: 'rear_right'
           state: 'inactive'
         description: Rear right reading lamp is inactive
-      - hex: '0300'
+      - data_component: '0300'
         values:
           location: 'rear_left'
           state: 'inactive'
@@ -141,12 +141,12 @@ properties:
     multiple: true
     name_singular: interior_light
     examples:
-      - hex: '0000'
+      - data_component: '0000'
         values:
           location: 'front'
           state: 'inactive'
         description: Front interior lights are inactive
-      - hex: '0101'
+      - data_component: '0101'
         values:
           location: 'rear'
           state: 'active'

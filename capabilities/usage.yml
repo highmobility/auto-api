@@ -27,9 +27,11 @@ properties:
     size: 8
     description: Average weekly distance
     examples:
-      - hex: '029a'
-        value: 666
-        description: Average weekly distance is 666 km
+      - data_component: '4084d4cccccccccd'
+        unit_component: '1101'
+        value: 666.6
+        unit: kilometers
+        description: Average weekly distance is 666.6km
   - id: 0x02
     name: average_weekly_distance_long_run
     name_cased: averageWeeklyDistanceLongRun
@@ -39,9 +41,11 @@ properties:
     size: 8
     description: Average weekyl distance over long term
     examples:
-      - hex: '029c'
-        value: 668
-        description: Average weekly distance, over long term, is 668 km
+      - data_component: '40884d999999999a'
+        unit_component: '1101'
+        value: 777.7
+        unit: kilometers
+        description: Average weekly distance, over long term, is 777.7km
   - id: 0x03
     name: acceleration_evaluation
     name_cased: accelerationEvaluation
@@ -49,7 +53,7 @@ properties:
     type: types.percentage
     description: Acceleration evaluation percentage
     examples:
-      - hex: '3fe6666666666666'
+      - data_component: '3fe6666666666666'
         value: 0.7
         description: Acceleration is evaluated at 70%
   - id: 0x04
@@ -59,7 +63,7 @@ properties:
     type: types.percentage
     description: Driving style evaluation percentage
     examples:
-      - hex: '3fec28f5c28f5c29'
+      - data_component: '3fec28f5c28f5c29'
         value: 0.88
         description: Driving style is evaluated at 88%
   - id: 0x05
@@ -70,32 +74,32 @@ properties:
     multiple: true
     name_singular: driving_modes_activation_period
     examples:
-      - hex: '003fc999999999999a'
+      - data_component: '003fc999999999999a'
         values:
           driving_mode: 'regular'
           period: 0.2
         description: Driving mode 'regular' is engaged 20% of the time
-      - hex: '013fd3333333333333'
+      - data_component: '013fd3333333333333'
         values:
           driving_mode: 'eco'
           period: 0.3
         description: Driving mode 'eco' is engaged 30% of the time
-      - hex: '023fb999999999999a'
+      - data_component: '023fb999999999999a'
         values:
           driving_mode: 'sport'
           period: 0.1
         description: Driving mode 'eco' is engaged 10% of the time
-      - hex: '033fb999999999999a'
+      - data_component: '033fb999999999999a'
         values:
           driving_mode: 'sport_plus'
           period: 0.1
         description: Driving mode 'eco' is engaged 1% of the time
-      - hex: '043fd3333333333333'
+      - data_component: '043fd3333333333333'
         values:
           driving_mode: 'ecoPlus'
           period: 0.3
         description: Driving mode 'eco' is engaged 30% of the time
-      - hex: '050000000000000000'
+      - data_component: '050000000000000000'
         values:
           driving_mode: 'comfort'
           period: 0.0
@@ -104,40 +108,52 @@ properties:
     name: driving_modes_energy_consumptions
     name_cased: drivingModesEnergyConsumptions
     pretty_name: Driving modes energy consumptions
+    name_singular: driving_mode_energy_consumption
     type: types.driving_mode_energy_consumption
     multiple: true
-    name_singular: driving_mode_energy_consumption
     examples:
-      - hex: '0041a1999a'
+      - data_component: '004034333333333333'
+        unit_component: '0b04'
         values:
           driving_mode: 'regular'
           consumption: 20.2
-        description: Driving mode 'regular' consumed 20.2 kWh of electric energy
-      - hex: '014204cccd'
+        unit: kilowatt_hours
+        description: Driving mode 'regular' consumed 20.2kWh of electric energy
+      - data_component: '01404099999999999a'
+        unit_component: '0b04'
         values:
           driving_mode: 'eco'
           consumption: 33.2
-        description: Driving mode 'eco' consumed 33.2 kWh of electric energy
-      - hex: '0242580000'
+        unit: kilowatt_hours
+        description: Driving mode 'eco' consumed 33.2kWh of electric energy
+      - data_component: '02404b266666666666'
+        unit_component: '0b04'
         values:
           driving_mode: 'sport'
-          consumption: 54.0
-        description: Driving mode 'sport' consumed 54.0 kWh of electric energy
-      - hex: '034281999a'
+          consumption: 54.3
+        unit: kilowatt_hours
+        description: Driving mode 'sport' consumed 54.3kWh of electric energy
+      - data_component: '034050333333333333'
+        unit_component: '0b04'
         values:
           driving_mode: 'sport_plus'
           consumption: 64.8
-        description: Driving mode 'sport_plus' consumed 64.8 kWh of electric energy
-      - hex: '0441900000'
+        unit: kilowatt_hours
+        description: Driving mode 'sport_plus' consumed 64.8kWh of electric energy
+      - data_component: '044032000000000000'
+        unit_component: '0b04'
         values:
           driving_mode: 'ecoPlus'
           consumption: 18.0
-        description: Driving mode 'ecoPlus' consumed 18.0 kWh of electric energy
-      - hex: '0542066666'
+        unit: kilowatt_hours
+        description: Driving mode 'ecoPlus' consumed 18.0kWh of electric energy
+      - data_component: '054040d9999999999a'
+        unit_component: '0b04'
         values:
           driving_mode: 'comfort'
-          consumption: 33.6
-        description: Driving mode 'comfort' consumed 33.6 kWh of electric energy
+          consumption: 33.7
+        unit: kilowatt_hours
+        description: Driving mode 'comfort' consumed 33.7kWh of electric energy
   - id: 0x07
     name: last_trip_energy_consumption
     name_cased: lastTripEnergyConsumption
@@ -147,9 +163,11 @@ properties:
     size: 8
     description: Energy consumption in the last trip
     examples:
-      - hex: '42ca999a'
+      - data_component: '4059533333333333'
+        unit_component: '0b04'
         value: 101.3
-        description: Last trip consumed 101.3 kWh of electric energy
+        unit: kilowatt_hours
+        description: Last trip consumed 101.3kWh of electric energy
   - id: 0x08
     name: last_trip_fuel_consumption
     name_cased: lastTripFuelConsumption
@@ -159,9 +177,11 @@ properties:
     size: 8
     description: Fuel consumption in the last trip
     examples:
-      - hex: '41b40000'
+      - data_component: '4036800000000000'
+        unit_component: '1902'
         value: 22.5
-        description: Last trip consumed 22.5 L of fuel
+        unit: liters
+        description: Last trip consumed 22.5 liters of fuel
   - id: 0x09
     name: mileage_after_last_trip
     name_cased: mileageAfterLastTrip
@@ -174,9 +194,11 @@ properties:
     size: 8
     description: Mileage after the last trip
     examples:
-      - hex: '00017590'
-        value: 95632
-        description: Mileage is 95'632 km after last trip
+      - data_component: '40f7590000000000'
+        unit_component: '1101'
+        value: 95632.0
+        unit: kilometers
+        description: Mileage is 95'632km after last trip
   - id: 0x0a
     name: last_trip_electric_portion
     name_cased: lastTripElectricPortion
@@ -185,7 +207,7 @@ properties:
     size: 8
     description: Portion of the last trip used in electric mode
     examples:
-      - hex: '3fe6666666666666'
+      - data_component: '3fe6666666666666'
         value: 0.7
         description: Electric postion of the last trip is 70%
   - id: 0x0b
@@ -197,9 +219,11 @@ properties:
     size: 8
     description: Energy recuperation rate for last trip
     examples:
-      - hex: '40b5c28f'
+      - data_component: '4016b851eb851eb8'
+        unit_component: '0c00'
         value: 5.68
-        description: 5.68 kWh / 100 km of electric energy was recuperated during last trip
+        unit: kwh_per_100_kilometers
+        description: 5.68kWh/100km of electric energy was recuperated during last trip
   - id: 0x0c
     name: last_trip_battery_remaining
     name_cased: lastTripBatteryRemaining
@@ -208,7 +232,7 @@ properties:
     size: 8
     description: Battery % remaining after last trip
     examples:
-      - hex: '3fe0000000000000'
+      - data_component: '3fe0000000000000'
         value: 0.5
         description: Battery is at 50% after last trip
   - id: 0x0d
@@ -219,7 +243,7 @@ properties:
     size: 8
     description: Milliseconds since UNIX Epoch time
     examples:
-      - hex: '0000016682059d50'
+      - data_component: '0000016682059d50'
         value: '2018-10-17T12:34:58.000Z'
         description: Last trip happened at 17 October 2018 at 12:34:58 UTC
   - id: 0x0e
@@ -231,9 +255,11 @@ properties:
     size: 8
     description: Average fuel consumption for current trip
     examples:
-      - hex: '40d00000'
+      - data_component: '401a000000000000'
+        unit_component: '0e00'
         value: 6.5
-        description: Average fuel consumption is 6.5 L / 100 km
+        unit: liters_per_100_kilometers
+        description: Average fuel consumption is 6.5 liters per 100km
   - id: 0x0f
     name: current_fuel_consumption
     name_cased: currentFuelConsumption
@@ -243,9 +269,11 @@ properties:
     size: 8
     description: Current fuel consumption
     examples:
-      - hex: '40f00000'
+      - data_component: '401e000000000000'
+        unit_component: '0e00'
         value: 7.5
-        description: Current fuel consumption is 7.5 L / 100 km
+        unit: liters_per_100_kilometers
+        description: Current fuel consumption is 7.5 liters per 100km
   - id: 0x10
     name: odometer_after_last_trip
     name_cased: odometerAfterLastTrip
@@ -254,3 +282,9 @@ properties:
     type: double
     size: 8
     description: Odometer after the last trip
+    examples:
+      - data_component: '40f7590000000000'
+        unit_component: '1101'
+        value: 95632.0
+        unit: kilometers
+        description: Odometer is 95'632km after last trip

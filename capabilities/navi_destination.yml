@@ -30,7 +30,7 @@ properties:
     pretty_name: Coordinates
     type: types.coordinates
     examples:
-      - hex: '404a428f9f44d445402acf562174c4ce'
+      - data_component: '404a428f9f44d445402acf562174c4ce'
         values:
           latitude: 52.520008
           longitude: 13.404954
@@ -42,7 +42,7 @@ properties:
     type: string
     description: Destination name
     examples:
-      - hex: '4265726c696e'
+      - data_component: '4265726c696e'
         value: 'Berlin'
         description: Destination name is 'Berlin'
   - id: 0x03
@@ -53,7 +53,7 @@ properties:
     size: 1
     description: Remaining number of POI data slots available.
     examples:
-      - hex: '0e'
+      - data_component: '0e'
         value: 14
         description: 14 available POI data slots
   - id: 0x04
@@ -64,7 +64,7 @@ properties:
     size: 1
     description: Maximum number of POI data slots.
     examples:
-      - hex: '1e'
+      - data_component: '1e'
         value: 30
         description: Maximum number of POI data slots is 30
   - id: 0x05
@@ -76,11 +76,11 @@ properties:
     size: 8
     description: Remaining time until reaching the destination.
     examples:
-      - hex: '0220'
-        values:
-          hour: 2
-          minute: 32
-        description: Remaining time to destination is 2h and 32min
+      - data_component: '4004cccccccccccd'
+        unit_component: '0600'
+        value: 2.6
+        unit: hours
+        description: Remaining time to destination is 2.6h
   - id: 0x06
     name: distance_to_destination
     name_cased: distanceToDestination
@@ -90,6 +90,8 @@ properties:
     size: 8
     description: Remaining distance to reach the destination.
     examples:
-      - hex: '0539'
-        value: 1337
-        description: Remaining distance to destination is 1337km
+      - data_component: '4094e40000000000'
+        unit_component: '1101'
+        value: 1337.0
+        unit: kilometers
+        description: Remaining distance to destination is 1337.0km

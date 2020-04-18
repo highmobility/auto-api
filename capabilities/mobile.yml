@@ -23,6 +23,6 @@ properties:
     pretty_name: Connection
     type: types.connection_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'connected'
         description: A mobile phone is connected

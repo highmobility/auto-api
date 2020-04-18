@@ -29,9 +29,11 @@ properties:
     size: 8
     description: Time until next servicing of the car, whereas negative is overdue
     examples:
-      - hex: '01f5'
-        value: 501
-        description: 501 days until next service
+      - data_component: '407f500000000000'
+        unit_component: '0603'
+        value: 501.0
+        unit: days
+        description: 501.0 days until next service
   - id: 0x02
     name: kilometers_to_next_service
     name_cased: kilometersToNextService
@@ -44,9 +46,11 @@ properties:
     size: 8
     description: The distance until next servicing of the car
     examples:
-      - hex: '00000e61'
-        value: 3681
-        description: 3'681 km until next service
+      - data_component: '40acc20000000000'
+        unit_component: '1101'
+        value: 3681.0
+        unit: kilometers
+        description: 3'681km until next service
   - id: 0x03
     name: cbs_reports_count
     name_cased: cbsReportsCount
@@ -55,7 +59,7 @@ properties:
     size: 1
     description: The number of CBS reports
     examples:
-      - hex: '03'
+      - data_component: '03'
         value: 3
         description: Condition Based Service reports count is 3
   - id: 0x04
@@ -70,8 +74,10 @@ properties:
     size: 8
     description: Time until exhaust inspection
     examples:
-      - hex: '05'
-        value: 5
+      - data_component: '4014000000000000'
+        unit_component: '0605'
+        value: 5.0
+        unit: months
         description: 5 months until exhaust inspection
   - id: 0x05
     name: teleservice_availability
@@ -89,7 +95,7 @@ properties:
       - id: 0x03
         name: error
     examples:
-      - hex: '02'
+      - data_component: '02'
         value: 'successful'
         description: Teleservice is available
   - id: 0x06
@@ -101,9 +107,11 @@ properties:
     size: 8
     description: Distance threshold for service
     examples:
-      - hex: '01f4'
-        value: 500
-        description: Service distance threshold is 500 km
+      - data_component: '40b3880000000000'
+        unit_component: '1101'
+        value: 5000.0
+        unit: kilometers
+        description: Service distance threshold is 5000.0km
   - id: 0x07
     name: service_time_threshold
     name_cased: serviceTimeThreshold
@@ -113,8 +121,10 @@ properties:
     size: 8
     description: Time threshold for service
     examples:
-      - hex: '04'
+      - data_component: '4010000000000000'
+        unit_component: '0604'
         value: 4
+        unit: weeks
         description: Service time threshold is 4 weeks
   - id: 0x08
     name: automatic_teleservice_call_date
@@ -122,9 +132,9 @@ properties:
     pretty_name: Automatic teleservice call date
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch time
+    description: Automatic teleservice call date
     examples:
-      - hex: '000001674058f130'
+      - data_component: '000001674058f130'
         value: '2018-11-23T11:33:50.000Z'
         description: Automatic teleservice call date is at 23 November 2018 at 11:33:50 UTC
   - id: 0x09
@@ -133,9 +143,9 @@ properties:
     pretty_name: Teleservice battery call date
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch time
+    description: Teleservice batter call date
     examples:
-      - hex: '000001674024c1d0'
+      - data_component: '000001674024c1d0'
         value: '2018-11-23T10:36:50.000Z'
         description: Teleservice battery call date is at 23 November 2018 at 10:36:50 GMT
   - id: 0x0a
@@ -144,9 +154,9 @@ properties:
     pretty_name: Next inspection date
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch time
+    description: Next inspection date
     examples:
-      - hex: '00000166a15d20d8'
+      - data_component: '00000166a15d20d8'
         value: '2018-10-23T14:38:47.000Z'
         description: Next inspection date is at 23 October 2018 at 14:38:47 GMT
   - id: 0x0b
@@ -157,7 +167,7 @@ properties:
     multiple: true
     name_singular: condition_based_service
     examples:
-      - hex: '07e305000300000b4272616b6520666c756964002c4e657874206368616e676520617420737065636966696564206461746520617420746865206c61746573742e'
+      - data_component: '07e305000300000b4272616b6520666c756964002c4e657874206368616e676520617420737065636966696564206461746520617420746865206c61746573742e'
         values:
           year: 2019
           month: 5
@@ -174,7 +184,7 @@ properties:
     size: 8
     description: Milliseconds since UNIX Epoch time
     examples:
-      - hex: '000001677c63d280'
+      - data_component: '000001677c63d280'
         value: '2018-12-05T03:22:56.000Z'
         description: Brake fluid change date is at 5 December 2018 at 03:22:56 GMT
   - id: 0x0d
@@ -184,7 +194,13 @@ properties:
     unit_type: duration
     type: double
     size: 8
-    description: Time until next servicing of the car, whereas negative is overdue
+    description: Time until next servicing of the vehicle
+    examples:
+      - data_component: '407f500000000000'
+        unit_component: '0603'
+        value: 501.0
+        unit: days
+        description: 501.0 days until next service
   - id: 0x0e
     name: distance_to_next_service
     name_cased: distanceToNextService
@@ -192,11 +208,13 @@ properties:
     unit_type: length
     type: double
     size: 8
-    description: The distance until next servicing of the car
+    description: The distance until next servicing of the vehicle
     examples:
-      - hex: '00000e61'
-        value: 3681
-        description: 3'681 km until next service
+      - data_component: '40acc20000000000'
+        unit_component: '1101'
+        value: 3681.0
+        unit: kilometers
+        description: 3'681km until next service
   - id: 0x0f
     name: time_to_exhaust_inspection
     name_cased: timeToExhaustInspection
@@ -205,4 +223,9 @@ properties:
     type: double
     size: 8
     description: Time until exhaust inspection
-
+    examples:
+      - data_component: '4014000000000000'
+        unit_component: '0605'
+        value: 5.0
+        unit: months
+        description: 5 months until exhaust inspection

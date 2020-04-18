@@ -42,7 +42,7 @@ properties:
       - id: 0x03
         name: right_flasher_active
     examples:
-      - hex: '02'
+      - data_component: '02'
         value: 'left_flasher_active'
         description: Left flasher is active
   - id: 0x02
@@ -57,9 +57,11 @@ properties:
     size: 8
     description: Time to honk the horn
     examples:
-      - hex: '03'
-        value: 3
-        description: Honk the horn for 3 sec
+      - data_component: '4008000000000000'
+        unit_component: '0602'
+        value: 3.0
+        unit: seconds
+        description: Honk the horn for 3.0s
   - id: 0x03
     name: flash_times
     name_cased: flashTimes
@@ -68,7 +70,7 @@ properties:
     size: 1
     description: Number of times to flash the lights
     examples:
-      - hex: '05'
+      - data_component: '05'
         value: 5
         description: Flash the lights 5 times
   - id: 0x04
@@ -77,7 +79,7 @@ properties:
     pretty_name: Emergency flasher state
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: Emergency flashers are active
   - id: 0x05
@@ -88,3 +90,9 @@ properties:
     type: double
     size: 8
     description: Time to honk the horn
+    examples:
+      - data_component: '4000000000000000'
+        unit_component: '0602'
+        value: 2.0
+        unit: seconds
+        description: Honk the horn for 2.0s

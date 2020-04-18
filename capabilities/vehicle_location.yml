@@ -24,7 +24,7 @@ properties:
     pretty_name: Coordinates
     type: types.coordinates
     examples:
-      - hex: '404a428f9f44d445402acf562174c4ce'
+      - data_component: '404a428f9f44d445402acf562174c4ce'
         values:
           latitude: 52.520008
           longitude: 13.404954
@@ -38,8 +38,10 @@ properties:
     size: 8
     description: Heading angle
     examples:
-      - hex: '402abd80c308feac'
+      - data_component: '402abd80c308feac'
+        unit_component: '0200'
         value: 13.370123
+        unit: degrees
         description: Heading direction is 13.370123°
   - id: 0x06
     name: altitude
@@ -50,16 +52,18 @@ properties:
     size: 8
     description: Altitude above the WGS 84 reference ellipsoid
     examples:
-      - hex: '4060b00000000000'
+      - data_component: '4060b00000000000'
+        unit_component: '1104'
         value: 133.5
-        description: Vehicle altitude is 133.5 m
+        unit: meters
+        description: Vehicle altitude is 133.5m
   - id: 0x07
     name: fuzzy_coordinates
     name_cased: fuzzyCoordinates
     pretty_name: Fuzzy coordinates
     type: types.coordinates
     examples:
-      - hex: '404a428f5c28f5c3402acccccccccccd'
+      - data_component: '404a428f5c28f5c3402acccccccccccd'
         values:
           latitude: 52.52
           longitude: 13.40

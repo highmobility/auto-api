@@ -46,7 +46,7 @@ properties:
         name: started
         verb: start
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'ended'
         description: Parking ticket has ended
   - id: 0x02
@@ -56,7 +56,7 @@ properties:
     type: string
     description: Operator name
     examples:
-      - hex: '4265726c696e205061726b696e67'
+      - data_component: '4265726c696e205061726b696e67'
         value: 'Berlin Parking'
         description: Operator name is 'Berlin Parking'
   - id: 0x03
@@ -66,7 +66,7 @@ properties:
     type: string
     description: Operator ticket ID
     examples:
-      - hex: '3634383934323333'
+      - data_component: '3634383934323333'
         value: '64894233'
         description: Operator ticket ID is '64894233'
   - id: 0x04
@@ -75,9 +75,9 @@ properties:
     pretty_name: Ticket start time
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch time
+    description: Parking ticket start time
     examples:
-      - hex: '0000015989dfca30'
+      - data_component: '0000015989dfca30'
         value: '2017-01-10T19:34:22.000Z'
         description: Parking ticket started at 10 January 2017 at 19:34:22 GMT
   - id: 0x05
@@ -86,8 +86,8 @@ properties:
     pretty_name: Ticket end time
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch time
+    description: Parking ticket end time
     examples:
-      - hex: '0000016dab1a8528'
+      - data_component: '0000016dab1a8528'
         value: '2019-10-08T11:21:45.000Z'
         description: Parking ticket ended at 8. October 2019 at 11:21:45 GMT

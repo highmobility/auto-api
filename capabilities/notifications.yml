@@ -36,7 +36,7 @@ properties:
     type: string
     description: Text for the notification
     examples:
-      - hex: '4f70656e20476172616765'
+      - data_component: '4f70656e20476172616765'
         value: 'Open Garage'
         description: Notification text says 'Open Garage'
   - id: 0x02
@@ -47,12 +47,12 @@ properties:
     multiple: true
     name_singular: action_item
     examples:
-      - hex: '1b00044f70656e'
+      - data_component: '1b00044f70656e'
         values:
           id: 27
           name: 'Open'
         description: Notification action named 'Open' with an ID 27
-      - hex: '1c000643616e63656c'
+      - data_component: '1c000643616e63656c'
         values:
           id: 28
           name: 'Cancel'
@@ -65,7 +65,7 @@ properties:
     size: 1
     description: Identifier of the activated action
     examples:
-      - hex: '1b'
+      - data_component: '1b'
         value: 27
         description: Activated action with ID 27
   - id: 0x04
@@ -78,6 +78,6 @@ properties:
       - id: 0x00
         name: clear
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'clear'
         description: Clear notifications

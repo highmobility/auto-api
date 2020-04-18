@@ -39,6 +39,6 @@ properties:
         name: triggered
         verb: trigger
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'armed'
         description: Theft alarm is armed

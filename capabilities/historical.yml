@@ -31,20 +31,20 @@ properties:
     multiple: true
     name_singular: state
     examples:
-      - hex: '0b002001060004010001000400050100020001'
+      - data_component: '0b002001060004010001000400050100020001'
         values:
           doors:
             positions:
               location: 'front_left'
               position: 'open'
             locks_state: 'unlocked'
-        description: Doors capability's locks are unlocked
-      - hex: '0b0023010a0007010004406000000b000401000101'
+        description: Doors capability - front left door is open and locks are unlocked
+      - data_component: '0b0023010a0010010008400c00000000000002000213030b000401000101'
         values:
           charging:
-            charging_rate_kw: 3.5
             charge_port_state: 'open'
-        description: Charging capability's charging rate is 3.5 kW
+            charging_rate_kw: 3.5
+        description: Charging capability - charging port is open and charging rate is 3.5kW
   - id: 0x02
     name: capability_id
     name_cased: capabilityID
@@ -53,28 +53,28 @@ properties:
     size: 2
     description: The identifier of the Capability
     examples:
-      - hex: '0060'
+      - data_component: '0060'
         value: 0x0060
-        description: Home charger's identifier
+        description: Home Charger capability identifier
   - id: 0x03
     name: start_date
     name_cased: startDate
     pretty_name: Start date
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch time
+    description: Start date for historical data query
     examples:
-      - hex: '0000016da6524300'
+      - data_component: '0000016da6524300'
         value: '2019-10-07T13:04:32.000Z'
-        description: 7. October 2019 at 13:04:32 GMT
+        description: Start date is 7. October 2019 at 13:04:32 GMT
   - id: 0x04
     name: end_date
     name_cased: endDate
     pretty_name: End date
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch time
+    description: End date for historical data query
     examples:
-      - hex: '0000016d71e2c4f0'
+      - data_component: '0000016d71e2c4f0'
         value: '2019-09-27T08:42:30.000Z'
-        description: 27. September 2019 at 08:42:30 GMT
+        description: End date is 27. September 2019 at 08:42:30 GMT

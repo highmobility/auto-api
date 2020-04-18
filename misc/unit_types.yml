@@ -172,7 +172,7 @@ measurement_types:
         id: 0x02
       - name: calories
         id: 0x03
-      - name: kilowattHours
+      - name: kilowatt_hours
         id: 0x04
 
   - name: energy_efficiency
@@ -202,7 +202,7 @@ measurement_types:
         id: 0x06
       - name: nanohertz
         id: 0x07
-      - name: bpm
+      - name: beats_per_minute
         id: 0x08
 
   - name: fuel_efficiency
@@ -289,8 +289,14 @@ measurement_types:
       - name: kibibits
         id: 0x22
 
-  - name: length
+  - name: illuminance
     id: 0x10
+    unit_types:
+      - name: lux
+        id: 0x00
+
+  - name: length
+    id: 0x11
     unit_types:
       - name: megameters
         id: 0x00
@@ -336,12 +342,6 @@ measurement_types:
         id: 0x14
       - name: parsecs
         id: 0x15
-
-  - name: illuminance
-    id: 0x11
-    unit_types:
-      - name: lux
-        id: 0x00
 
   - name: mass
     id: 0x12

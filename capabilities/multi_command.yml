@@ -28,20 +28,20 @@ properties:
     name_singular: multi_state
     description: The incoming states
     examples:
-      - hex: '0b002001060004010001000400050100020001'
+      - data_component: '0b002001060004010001000400050100020001'
         values:
           doors:
             positions:
               location: 'front_left'
               position: 'open'
             locks_state: 'unlocked'
-        description: Doors capability's locks are unlocked
-      - hex: '0b0023010a0007010004406000000b000401000101'
+        description: Doors capability - open front left door and unlock all locks
+      - data_component: '0b0023010a0010010008400c00000000000002000213030b000401000101'
         values:
           charging:
-            charging_rate_kw: 3.5
             charge_port_state: 'open'
-        description: Charging capability's charging rate is 3.5 kW
+            charging_rate_kw: 3.5
+        description: Charging capability - open charging port and charge with 3.5kW
   - id: 0x02
     name: multi_commands
     name_cased: multiCommands
@@ -51,12 +51,12 @@ properties:
     name_singular: multi_command
     description: The outgoing commands
     examples:
-      - hex: '0b00200105000401000101'
+      - data_component: '0b00200105000401000101'
         values:
           doors:
             inside_locks_state: 'locked'
         description: Lock inside door locks
-      - hex: '0b00350101000401000100'
+      - data_component: '0b00350101000401000100'
         values:
           ignition:
             status: 'off'

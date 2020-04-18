@@ -323,7 +323,7 @@ types:
     name_cased: acceleration
     pretty_name: Acceleration
     type: custom
-    size: 5
+    size: 9
     items:
       - name: direction
         name_cased: direction
@@ -386,12 +386,12 @@ types:
         type: uinteger
         size: 2
         description: Check Control Message identifier
-      - name: remaining_minutes
-        name_cased: remainingMinutes
-        unit: min
-        type: uinteger
-        size: 4
-        description: Remaining time of the message in minutes
+      - name: remaining_time
+        name_cased: remainingTime
+        unit_type: duration
+        type: double
+        size: 8
+        description: Remaining time of the message
       - name: text
         name_cased: text
         type: string
@@ -718,7 +718,7 @@ types:
     name_cased: drivingModeEnergyConsumption
     pretty_name: Driving mode energy consumption
     type: custom
-    size: 5
+    size: 9
     items:
       - name: driving_mode
         name_cased: drivingMode
@@ -923,7 +923,7 @@ types:
     name_cased: springRate
     pretty_name: Spring rate
     type: custom
-    size: 2
+    size: 9
     items:
       - name: axle
         name_cased: axle
@@ -962,7 +962,7 @@ types:
     name_cased: tirePressure
     pretty_name: Tire pressure
     type: custom
-    size: 5
+    size: 9
     items:
       - name: location
         name_cased: location
@@ -978,7 +978,7 @@ types:
     name_cased: tireTemperature
     pretty_name: Tire temperature
     type: custom
-    size: 5
+    size: 9
     items:
       - name: location
         name_cased: location
@@ -1055,7 +1055,7 @@ types:
     name_cased: wheelRPM
     pretty_name: Wheel RPM
     type: custom
-    size: 3
+    size: 9
     items:
       - name: location
         name_cased: location

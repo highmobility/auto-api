@@ -48,7 +48,7 @@ properties:
       - id: 0x02
         name: charging
     examples:
-      - hex: '02'
+      - data_component: '02'
         value: 'charging'
         description: Charging is active
   - id: 0x02
@@ -64,7 +64,7 @@ properties:
       - id: 0x01
         name: app
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'app'
         description: Authentication mechanism is an app
   - id: 0x03
@@ -85,9 +85,9 @@ properties:
         name: chademo
         pretty_name: CHAdeMO
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'type_2'
-        description: Type 2 plug
+        description: Plug type is 'Type 2'
   - id: 0x04
     name: charging_power_kw
     name_cased: chargingPowerKW
@@ -100,16 +100,18 @@ properties:
     size: 8
     description: Charging power
     examples:
-      - hex: '41380000'
+      - data_component: '4027000000000000'
+        unit_component: '1303'
         value: 11.5
-        description: Charging power is 11.5 kW
+        unit: kilowatts
+        description: Charging power is 11.5kW
   - id: 0x05
     name: solar_charging
     name_cased: solarCharging
     pretty_name: Solar charging
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: Solar charging is active
   - id: 0x08
@@ -118,7 +120,7 @@ properties:
     pretty_name: Wi-Fi hotspot enabled
     type: types.enabled_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'enabled'
         description: WiFi hotspot is enabled
   - id: 0x09
@@ -128,7 +130,7 @@ properties:
     type: string
     description: The Wi-Fi Hotspot SSID
     examples:
-      - hex: '436861726765722037363132'
+      - data_component: '436861726765722037363132'
         value: 'Charger 7612'
         description: WiFi hotspot SSID is 'Charger 7612'
   - id: 0x0a
@@ -137,9 +139,9 @@ properties:
     pretty_name: Wi-Fi hotspot security
     type: types.network_security
     examples:
-      - hex: '03'
+      - data_component: '03'
         value: 'wpa2_personal'
-        description: WiFi hotspot security uses WPA2-Personal
+        description: WiFi hotspot security uses the WPA2-Personal algorithm
   - id: 0x0b
     name: wi_fi_hotspot_password
     name_cased: wiFiHotspotPassword
@@ -147,7 +149,7 @@ properties:
     type: string
     description: The Wi-Fi Hotspot password
     examples:
-      - hex: '5a57337641524e554265'
+      - data_component: '5a57337641524e554265'
         value: 'ZW3vARNUBe'
         description: WiFi hotspot password is 'ZW3vARNUBe'
   - id: 0x0d
@@ -164,7 +166,7 @@ properties:
         name: authenticated
         verb: authenticate
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'authenticated'
         description: Is authenticated to the charger
   - id: 0x0e
@@ -176,9 +178,11 @@ properties:
     size: 8
     description: The charge direct current
     examples:
-      - hex: '3f000000'
+      - data_component: '3fe0000000000000'
+        unit_component: '0902'
         value: 0.5
-        description: Charger direct current is 0.5 V
+        unit: volts
+        description: Charger direct current is 0.5V
   - id: 0x0f
     name: maximum_charge_current
     name_cased: maximumChargeCurrent
@@ -188,9 +192,11 @@ properties:
     size: 8
     description: The maximum possible charge current
     examples:
-      - hex: '3f800000'
+      - data_component: '3ff0000000000000'
+        unit_component: '0902'
         value: 1.0
-        description: Maximum charger current is 1.0 V
+        unit: volts
+        description: Maximum charger current is 1.0V
   - id: 0x10
     name: minimum_charge_current
     name_cased: minimumChargeCurrent
@@ -200,16 +206,18 @@ properties:
     size: 8
     description: The minimal possible charge current
     examples:
-      - hex: '00000000'
-        value: 0.0
-        description: Minimum charger current is 0.0 V
+      - data_component: '3fb999999999999a'
+        unit_component: '0902'
+        value: 0.1
+        unit: volts
+        description: Minimum charger current is 0.1V
   - id: 0x11
     name: coordinates
     name_cased: coordinates
     pretty_name: Coordinates
     type: types.coordinates
     examples:
-      - hex: '404a428f9f44d445402acf562174c4ce'
+      - data_component: '404a428f9f44d445402acf562174c4ce'
         values:
           latitude: 52.520008
           longitude: 13.404954
@@ -222,24 +230,24 @@ properties:
     multiple: true
     name_singular: price_tariff
     examples:
-      - hex: '00409000000003455552'
+      - data_component: '00409000000003455552'
         values:
           pricing_type: 'starting_fee'
           price: 4.5
           currency: 'EUR'
-        description: Charger starting fee tariff is 4.5 EUR
-      - hex: '013e99999a0003455552'
+        description: Charger starting fee tariff is 4.5€
+      - data_component: '013e99999a0003455552'
         values:
           pricing_type: 'per_minute'
           price: 0.3
           currency: 'EUR'
-        description: Charger per minute fee tariff is 0.3 EUR
-      - hex: '023e99999a0006526970706c65'
+        description: Charger per minute fee tariff is 0.3€
+      - data_component: '023e99999a0006526970706c65'
         values:
           pricing_type: 'per_kwh'
           price: 0.3
           currency: 'Ripple'
-        description: Charger per kWh tariff is 0.3 Ripple
+        description: Charger per kWh tariff is 0.3RPL
   - id: 0x13
     name: charging_power
     name_cased: chargingPower
@@ -248,3 +256,9 @@ properties:
     type: double
     size: 8
     description: Charging power output from the charger
+    examples:
+      - data_component: '4075e00000000000'
+        unit_component: '1303'
+        value: 350.0
+        unit: kilowatts
+        description: Charging power is 350.0kW

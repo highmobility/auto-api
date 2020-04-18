@@ -29,6 +29,6 @@ properties:
     pretty_name: Status
     type: types.active_state
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'active'
         description: Valet mode is active

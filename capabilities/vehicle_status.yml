@@ -26,7 +26,7 @@ properties:
     size: 17
     description: The unique Vehicle Identification Number
     examples:
-      - hex: '4a46325348424443374348343531383639'
+      - data_component: '4a46325348424443374348343531383639'
         value: 'JF2SHBDC7CH451869'
         description: VIN is 'JF2SHBDC7CH451869'
   - id: 0x02
@@ -50,7 +50,7 @@ properties:
       - id: 0x05
         name: hydrogen_hybrid
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'all_electric'
         description: Powertrain is all electric
   - id: 0x03
@@ -60,7 +60,7 @@ properties:
     type: string
     description: The car model name
     examples:
-      - hex: '547970652058'
+      - data_component: '547970652058'
         value: 'Type X'
         description: Model name is 'Type X'
   - id: 0x04
@@ -70,7 +70,7 @@ properties:
     type: string
     description: The car name (nickname)
     examples:
-      - hex: '537065656479'
+      - data_component: '537065656479'
         value: 'Speedy'
         description: Name of the vehicle is 'Speedy'
   - id: 0x05
@@ -80,7 +80,7 @@ properties:
     type: string
     description: The license plate number
     examples:
-      - hex: '414243313233'
+      - data_component: '414243313233'
         value: 'ABC123'
         description: Licence plate number is 'ABC123'
   - id: 0x06
@@ -90,7 +90,7 @@ properties:
     type: string
     description: The sales designation of the model
     examples:
-      - hex: '5061636b6167652b'
+      - data_component: '5061636b6167652b'
         value: 'Package+'
         description: Sales designation is 'Package+'
   - id: 0x07
@@ -101,7 +101,7 @@ properties:
     size: 2
     description: The car model manufacturing year number
     examples:
-      - hex: '07e3'
+      - data_component: '07e3'
         value: 2019
         description: Vehicle manufacturing year is 2019
   - id: 0x08
@@ -111,7 +111,7 @@ properties:
     type: string
     description: The colour name
     examples:
-      - hex: '4573746f72696c20426c6175'
+      - data_component: '4573746f72696c20426c6175'
         value: 'Estoril Blau'
         description: Colour is named 'Estoril Blau'
   - id: 0x09
@@ -124,11 +124,13 @@ properties:
     unit_type: power
     type: double
     size: 8
-    description: The power of the car
+    description: The power of the vehicle
     examples:
-      - hex: '00dc'
-        value: 220
-        description: Vehicle has 220 kW of power
+      - data_component: '406b800000000000'
+        unit_component: '1303'
+        value: 220.0
+        unit: kilowatts
+        description: Vehicle has 220kW of power
   - id: 0x0a
     name: number_of_doors
     name_cased: numberOfDoors
@@ -137,7 +139,7 @@ properties:
     size: 1
     description: The number of doors
     examples:
-      - hex: '05'
+      - data_component: '05'
         value: 5
         description: Vehicle has 5 doors
   - id: 0x0b
@@ -148,7 +150,7 @@ properties:
     size: 1
     description: The number of seats
     examples:
-      - hex: '05'
+      - data_component: '05'
         value: 5
         description: Vehicle has 5 seats
   - id: 0x0c
@@ -160,9 +162,11 @@ properties:
     size: 8
     description: The engine volume displacement
     examples:
-      - hex: '40200000'
+      - data_component: '4004000000000000'
+        unit_component: '1902'
         value: 2.5
-        description: Engine volume is 2.5 L
+        unit: liters
+        description: Engine volume is 2.5L
   - id: 0x0d
     name: engine_max_torque
     name_cased: engineMaxTorque
@@ -172,9 +176,11 @@ properties:
     size: 8
     description: The maximum engine torque
     examples:
-      - hex: '00f5'
-        value: 245
-        description: Engine maximum torque is 245 Nm
+      - data_component: '406ea00000000000'
+        unit_component: '1800'
+        value: 245.0
+        unit: newton_meters
+        description: Engine maximum torque is 245.0Nm
   - id: 0x0e
     name: gearbox
     name_cased: gearbox
@@ -189,7 +195,7 @@ properties:
       - id: 0x02
         name: semi_automatic
     examples:
-      - hex: '01'
+      - data_component: '01'
         value: 'automatic'
         description: Vehicle has an automatic gearbox
   - id: 0x0f
@@ -204,7 +210,7 @@ properties:
       - id: 0x01
         name: miles
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'km'
         description: Vehicle displays values in kilometers
   - id: 0x10
@@ -221,7 +227,7 @@ properties:
       - id: 0x02
         name: center
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'left'
         description: Driver seat is located on the left
   - id: 0x11
@@ -233,10 +239,10 @@ properties:
     name_singular: equipment
     description: Names of equipment the vehicle is equipped with
     examples:
-      - hex: '5061726b696e672073656e736f7273'
+      - data_component: '5061726b696e672073656e736f7273'
         value: 'Parking sensors'
         description: Parking sensors are equipped (installed)
-      - hex: '4175746f6d6174696320776970657273'
+      - data_component: '4175746f6d6174696320776970657273'
         value: 'Automatic wipers'
         description: Automatic wipers are equipped (installed)
   - id: 0x12
@@ -246,7 +252,7 @@ properties:
     type: string
     description: The car brand
     examples:
-      - hex: '5465736c61'
+      - data_component: '5465736c61'
         value: 'Tesla'
         description: Vehicle brand is 'Tesla'
   - id: 0x13
@@ -256,7 +262,13 @@ properties:
     unit_type: power
     type: double
     size: 8
-    description: The power of the car
+    description: The power of the vehicle
+    examples:
+      - data_component: '406b800000000000'
+        unit_component: '1303'
+        value: 220.0
+        unit: kilowatts
+        description: Vehicle has 220kW of power
   - id: 0x99
     name: states
     name_cased: states
@@ -265,17 +277,17 @@ properties:
     multiple: true
     name_singular: state
     examples:
-      - hex: '0b002001060004010001000400050100020001'
+      - data_component: '0b002001060004010001000400050100020001'
         values:
           doors:
             positions:
               location: 'front_left'
               position: 'open'
             locks_state: 'unlocked'
-        description: Doors capability's locks are unlocked
-      - hex: '0b0023010a0007010004406000000b000401000101'
+        description: Doors capability - front left door is open and locks are unlocked
+      - data_component: '0b0023010a0010010008400c00000000000002000213030b000401000101'
         values:
           charging:
-            charging_rate_kw: 3.5
             charge_port_state: 'open'
-        description: Charging capability's charging rate is 3.5 kW
+            charging_rate_kw: 3.5
+        description: Charging capability - charging port is open and charging rate is 3.5kW

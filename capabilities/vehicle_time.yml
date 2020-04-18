@@ -25,7 +25,7 @@ properties:
     type: types.time
     description: Vehicle time in a 24h format
     examples:
-      - hex: '1337'
+      - data_component: '1337'
         values:
           hour: 19
           minute: 55
