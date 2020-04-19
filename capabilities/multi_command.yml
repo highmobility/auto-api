@@ -1,6 +1,6 @@
 name: multi_command
 name_cased: multiCommand
-pretty_name: Multi Command
+name_pretty: Multi Command
 category: api_structure
 authorization: false
 
@@ -22,7 +22,7 @@ properties:
   - id: 0x01
     name: multi_states
     name_cased: multiStates
-    pretty_name: Multi-states
+    name_pretty: Multi-states
     type: types.capability_state
     multiple: true
     name_singular: multi_state
@@ -45,7 +45,7 @@ properties:
   - id: 0x02
     name: multi_commands
     name_cased: multiCommands
-    pretty_name: Multi-commands
+    name_pretty: Multi-commands
     type: types.capability_state
     multiple: true
     name_singular: multi_command

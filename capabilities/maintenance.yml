@@ -1,6 +1,6 @@
 name: maintenance
 name_cased: maintenance
-pretty_name: Maintenance
+name_pretty: Maintenance
 category: diagnostics
 authorization: true
 
@@ -20,7 +20,7 @@ properties:
   - id: 0x01
     name: days_to_next_service
     name_cased: daysToNextService
-    pretty_name: Days to next service
+    name_pretty: Days to next service
     deprecated:
       new_name: time_to_next_service
       reason: remove 'days' from the name
@@ -37,7 +37,7 @@ properties:
   - id: 0x02
     name: kilometers_to_next_service
     name_cased: kilometersToNextService
-    pretty_name: Kilometers to next service
+    name_pretty: Kilometers to next service
     deprecated:
       new_name: distance_to_next_service
       reason: remove 'kilometers' from the name
@@ -54,7 +54,7 @@ properties:
   - id: 0x03
     name: cbs_reports_count
     name_cased: cbsReportsCount
-    pretty_name: CBS reports count
+    name_pretty: CBS reports count
     type: uinteger
     size: 1
     description: The number of CBS reports
@@ -65,7 +65,7 @@ properties:
   - id: 0x04
     name: months_to_exhaust_inspection
     name_cased: monthsToExhaustInspection
-    pretty_name: Months to exhaust inspection
+    name_pretty: Months to exhaust inspection
     deprecated:
       new_name: time_to_exhaust_inspection
       reason: remove 'months' from the name
@@ -82,7 +82,7 @@ properties:
   - id: 0x05
     name: teleservice_availability
     name_cased: teleserviceAvailability
-    pretty_name: Teleservice availability
+    name_pretty: Teleservice availability
     type: enum
     size: 1
     enum_values:
@@ -101,7 +101,7 @@ properties:
   - id: 0x06
     name: service_distance_threshold
     name_cased: serviceDistanceThreshold
-    pretty_name: Service distance threshold
+    name_pretty: Service distance threshold
     unit_type: length
     type: double
     size: 8
@@ -115,7 +115,7 @@ properties:
   - id: 0x07
     name: service_time_threshold
     name_cased: serviceTimeThreshold
-    pretty_name: Service time threshold
+    name_pretty: Service time threshold
     unit_type: duration
     type: double
     size: 8
@@ -129,7 +129,7 @@ properties:
   - id: 0x08
     name: automatic_teleservice_call_date
     name_cased: automaticTeleserviceCallDate
-    pretty_name: Automatic teleservice call date
+    name_pretty: Automatic teleservice call date
     type: timestamp
     size: 8
     description: Automatic teleservice call date
@@ -140,7 +140,7 @@ properties:
   - id: 0x09
     name: teleservice_battery_call_date
     name_cased: teleserviceBatteryCallDate
-    pretty_name: Teleservice battery call date
+    name_pretty: Teleservice battery call date
     type: timestamp
     size: 8
     description: Teleservice batter call date
@@ -151,7 +151,7 @@ properties:
   - id: 0x0a
     name: next_inspection_date
     name_cased: nextInspectionDate
-    pretty_name: Next inspection date
+    name_pretty: Next inspection date
     type: timestamp
     size: 8
     description: Next inspection date
@@ -162,7 +162,7 @@ properties:
   - id: 0x0b
     name: condition_based_services
     name_cased: conditionBasedServices
-    pretty_name: Condition based services
+    name_pretty: Condition based services
     type: types.condition_based_service
     multiple: true
     name_singular: condition_based_service
@@ -179,7 +179,7 @@ properties:
   - id: 0x0c
     name: brake_fluid_change_date
     name_cased: brakeFluidChangeDate
-    pretty_name: Brake fluid change date
+    name_pretty: Brake fluid change date
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time
@@ -190,7 +190,7 @@ properties:
   - id: 0x0d
     name: time_to_next_service
     name_cased: timeToNextService
-    pretty_name: Time to next service
+    name_pretty: Time to next service
     unit_type: duration
     type: double
     size: 8
@@ -204,7 +204,7 @@ properties:
   - id: 0x0e
     name: distance_to_next_service
     name_cased: distanceToNextService
-    pretty_name: Distance to next service
+    name_pretty: Distance to next service
     unit_type: length
     type: double
     size: 8
@@ -218,7 +218,7 @@ properties:
   - id: 0x0f
     name: time_to_exhaust_inspection
     name_cased: timeToExhaustInspection
-    pretty_name: Time to exhaust inspection
+    name_pretty: Time to exhaust inspection
     unit_type: duration
     type: double
     size: 8

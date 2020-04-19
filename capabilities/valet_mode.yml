@@ -1,6 +1,6 @@
 name: valet_mode
 name_cased: valetMode
-pretty_name: Valet Mode
+name_pretty: Valet Mode
 category: parking
 authorization: true
 
@@ -26,7 +26,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
-    pretty_name: Status
+    name_pretty: Status
     type: types.active_state
     examples:
       - data_component: '01'

@@ -1,6 +1,6 @@
 name: offroad
 name_cased: offroad
-pretty_name: Offroad
+name_pretty: Offroad
 category: diagnostics
 authorization: true
 
@@ -20,7 +20,7 @@ properties:
   - id: 0x01
     name: route_incline
     name_cased: routeIncline
-    pretty_name: Route incline
+    name_pretty: Route incline
     unit_type: angle
     type: double
     size: 8
@@ -34,7 +34,7 @@ properties:
   - id: 0x02
     name: wheel_suspension
     name_cased: wheelSuspension
-    pretty_name: Wheel suspension
+    name_pretty: Wheel suspension
     type: types.percentage
     description: The wheel suspension level percentage, whereas 0.0 is no suspension and 1.0 maximum suspension
     examples:

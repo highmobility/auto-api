@@ -1,6 +1,6 @@
 name: wi_fi
 name_cased: wiFi
-pretty_name: Wi-Fi
+name_pretty: Wi-Fi
 category: headunit
 authorization: true
 
@@ -32,7 +32,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
-    pretty_name: Status
+    name_pretty: Status
     type: types.enabled_state
     examples:
       - data_component: '01'
@@ -41,7 +41,7 @@ properties:
   - id: 0x02
     name: network_connected
     name_cased: networkConnected
-    pretty_name: Network connected
+    name_pretty: Network connected
     type: types.connection_state
     examples:
       - data_component: '01'
@@ -50,7 +50,7 @@ properties:
   - id: 0x03
     name: network_ssid
     name_cased: networkSSID
-    pretty_name: Network SSID
+    name_pretty: Network SSID
     type: string
     description: The network SSID
     examples:
@@ -60,7 +60,7 @@ properties:
   - id: 0x04
     name: network_security
     name_cased: networkSecurity
-    pretty_name: Network security
+    name_pretty: Network security
     type: types.network_security
     examples:
       - data_component: '03'
@@ -69,7 +69,7 @@ properties:
   - id: 0x05
     name: password
     name_cased: password
-    pretty_name: Password
+    name_pretty: Password
     type: string
     description: The network password
     examples:

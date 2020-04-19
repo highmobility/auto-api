@@ -1,6 +1,6 @@
 name: historical
 name_cased: historical
-pretty_name: Historical
+name_pretty: Historical
 category: api_structure
 authorization: false
 
@@ -26,7 +26,7 @@ properties:
   - id: 0x01
     name: states
     name_cased: states
-    pretty_name: States
+    name_pretty: States
     type: types.capability_state
     multiple: true
     name_singular: state
@@ -48,7 +48,7 @@ properties:
   - id: 0x02
     name: capability_id
     name_cased: capabilityID
-    pretty_name: Capability ID
+    name_pretty: Capability ID
     type: uinteger
     size: 2
     description: The identifier of the Capability
@@ -59,7 +59,7 @@ properties:
   - id: 0x03
     name: start_date
     name_cased: startDate
-    pretty_name: Start date
+    name_pretty: Start date
     type: timestamp
     size: 8
     description: Start date for historical data query
@@ -70,7 +70,7 @@ properties:
   - id: 0x04
     name: end_date
     name_cased: endDate
-    pretty_name: End date
+    name_pretty: End date
     type: timestamp
     size: 8
     description: End date for historical data query

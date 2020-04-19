@@ -1,6 +1,6 @@
 name: usage
 name_cased: usage
-pretty_name: Usage
+name_pretty: Usage
 category: diagnostics
 authorization: true
 
@@ -21,7 +21,7 @@ properties:
   - id: 0x01
     name: average_weekly_distance
     name_cased: averageWeeklyDistance
-    pretty_name: Average weekly distance
+    name_pretty: Average weekly distance
     unit_type: length
     type: double
     size: 8
@@ -35,7 +35,7 @@ properties:
   - id: 0x02
     name: average_weekly_distance_long_run
     name_cased: averageWeeklyDistanceLongRun
-    pretty_name: Average weekly distance long run
+    name_pretty: Average weekly distance long run
     unit_type: length
     type: double
     size: 8
@@ -49,7 +49,7 @@ properties:
   - id: 0x03
     name: acceleration_evaluation
     name_cased: accelerationEvaluation
-    pretty_name: Acceleration evaluation
+    name_pretty: Acceleration evaluation
     type: types.percentage
     description: Acceleration evaluation percentage
     examples:
@@ -59,7 +59,7 @@ properties:
   - id: 0x04
     name: driving_style_evaluation
     name_cased: drivingStyleEvaluation
-    pretty_name: Driving style evaluation
+    name_pretty: Driving style evaluation
     type: types.percentage
     description: Driving style evaluation percentage
     examples:
@@ -69,7 +69,7 @@ properties:
   - id: 0x05
     name: driving_modes_activation_periods
     name_cased: drivingModesActivationPeriods
-    pretty_name: Driving modes activation periods
+    name_pretty: Driving modes activation periods
     type: types.driving_mode_activation_period
     multiple: true
     name_singular: driving_modes_activation_period
@@ -107,7 +107,7 @@ properties:
   - id: 0x06
     name: driving_modes_energy_consumptions
     name_cased: drivingModesEnergyConsumptions
-    pretty_name: Driving modes energy consumptions
+    name_pretty: Driving modes energy consumptions
     name_singular: driving_mode_energy_consumption
     type: types.driving_mode_energy_consumption
     multiple: true
@@ -157,7 +157,7 @@ properties:
   - id: 0x07
     name: last_trip_energy_consumption
     name_cased: lastTripEnergyConsumption
-    pretty_name: Last trip energy consumption
+    name_pretty: Last trip energy consumption
     unit_type: energy
     type: double
     size: 8
@@ -171,7 +171,7 @@ properties:
   - id: 0x08
     name: last_trip_fuel_consumption
     name_cased: lastTripFuelConsumption
-    pretty_name: Last trip fuel consumption
+    name_pretty: Last trip fuel consumption
     unit_type: volume
     type: double
     size: 8
@@ -185,7 +185,7 @@ properties:
   - id: 0x09
     name: mileage_after_last_trip
     name_cased: mileageAfterLastTrip
-    pretty_name: Mileage after last trip
+    name_pretty: Mileage after last trip
     deprecated:
       new_name: odometer_after_last_trip
       reason: 'mileage' is an incorrect term for this
@@ -202,7 +202,7 @@ properties:
   - id: 0x0a
     name: last_trip_electric_portion
     name_cased: lastTripElectricPortion
-    pretty_name: Last trip electric portion
+    name_pretty: Last trip electric portion
     type: types.percentage
     size: 8
     description: Portion of the last trip used in electric mode
@@ -213,7 +213,7 @@ properties:
   - id: 0x0b
     name: last_trip_average_energy_recuperation
     name_cased: lastTripAverageEnergyRecuperation
-    pretty_name: Last trip average energy recuperation
+    name_pretty: Last trip average energy recuperation
     unit_type: energy_efficiency
     type: double
     size: 8
@@ -227,7 +227,7 @@ properties:
   - id: 0x0c
     name: last_trip_battery_remaining
     name_cased: lastTripBatteryRemaining
-    pretty_name: Last trip battery remaining
+    name_pretty: Last trip battery remaining
     type: types.percentage
     size: 8
     description: Battery % remaining after last trip
@@ -238,7 +238,7 @@ properties:
   - id: 0x0d
     name: last_trip_date
     name_cased: lastTripDate
-    pretty_name: Last trip date
+    name_pretty: Last trip date
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time
@@ -249,7 +249,7 @@ properties:
   - id: 0x0e
     name: average_fuel_consumption
     name_cased: averageFuelConsumption
-    pretty_name: Average fuel consumption
+    name_pretty: Average fuel consumption
     unit_type: fuel_efficiency
     type: double
     size: 8
@@ -263,7 +263,7 @@ properties:
   - id: 0x0f
     name: current_fuel_consumption
     name_cased: currentFuelConsumption
-    pretty_name: Current fuel consumption
+    name_pretty: Current fuel consumption
     unit_type: fuel_efficiency
     type: double
     size: 8
@@ -277,7 +277,7 @@ properties:
   - id: 0x10
     name: odometer_after_last_trip
     name_cased: odometerAfterLastTrip
-    pretty_name: Odometer after last trip
+    name_pretty: Odometer after last trip
     unit_type: length
     type: double
     size: 8

@@ -10,7 +10,7 @@ universal_properties:
   - id: 0xa0
     name: nonce
     name_cased: nonce
-    pretty_name: Nonce
+    name_pretty: Nonce
     type: bytes
     size: 9
     examples:
@@ -20,7 +20,7 @@ universal_properties:
   - id: 0xa1
     name: car_signature
     name_cased: carSignature
-    pretty_name: Car signature
+    name_pretty: Car signature
     type: bytes
     size: 64
     examples:
@@ -30,7 +30,7 @@ universal_properties:
   - id: 0xa2
     name: timestamp
     name_cased: timestamp
-    pretty_name: Timestamp
+    name_pretty: Timestamp
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time

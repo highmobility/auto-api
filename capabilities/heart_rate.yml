@@ -1,6 +1,6 @@
 name: heart_rate
 name_cased: heartRate
-pretty_name: Heart Rate
+name_pretty: Heart Rate
 category: health
 authorization: true
 
@@ -23,7 +23,7 @@ properties:
   - id: 0x01
     name: heart_rate
     name_cased: heartRate
-    pretty_name: Heart rate
+    name_pretty: Heart rate
     unit_type: frequency
     type: double
     size: 8

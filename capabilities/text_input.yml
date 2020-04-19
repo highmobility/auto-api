@@ -1,6 +1,6 @@
 name: text_input
 name_cased: textInput
-pretty_name: Text Input
+name_pretty: Text Input
 category: headunit
 authorization: true
 
@@ -21,7 +21,7 @@ properties:
   - id: 0x01
     name: text
     name_cased: text
-    pretty_name: Text
+    name_pretty: Text
     type: string
     description: The text
     examples:

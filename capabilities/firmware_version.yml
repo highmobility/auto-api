@@ -1,6 +1,6 @@
 name: firmware_version
 name_cased: firmwareVersion
-pretty_name: Firmware Version
+name_pretty: Firmware Version
 category: api_structure
 authorization: false
 
@@ -21,7 +21,7 @@ properties:
   - id: 0x01
     name: hmkit_version
     name_cased: hmKitVersion
-    pretty_name: HMKit version
+    name_pretty: HMKit version
     type: types.hmkit_version
     description: HMKit version
     examples:
@@ -34,7 +34,7 @@ properties:
   - id: 0x02
     name: hmkit_build_name
     name_cased: hmKitBuildName
-    pretty_name: HMKit build name
+    name_pretty: HMKit build name
     type: string
     description: HMKit version build name
     examples:
@@ -44,7 +44,7 @@ properties:
   - id: 0x03
     name: application_version
     name_cased: applicationVersion
-    pretty_name: Application version
+    name_pretty: Application version
     type: string
     description: Application version
     examples:

@@ -1,6 +1,6 @@
 name: parking_brake
 name_cased: parkingBrake
-pretty_name: Parking Brake
+name_pretty: Parking Brake
 category: parking
 authorization: true
 
@@ -25,7 +25,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
-    pretty_name: Status
+    name_pretty: Status
     type: types.active_state
     examples:
       - data_component: '01'

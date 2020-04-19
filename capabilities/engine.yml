@@ -1,6 +1,6 @@
 name: engine
 name_cased: engine
-pretty_name: Engine
+name_pretty: Engine
 category: digital_key
 authorization: true
 
@@ -25,7 +25,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
-    pretty_name: Status
+    name_pretty: Status
     type: types.on_off_state
     examples:
       - data_component: '00'

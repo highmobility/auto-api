@@ -1,6 +1,6 @@
 name: tachograph
 name_cased: tachograph
-pretty_name: Tachograph
+name_pretty: Tachograph
 category: heavy_duty
 authorization: true
 
@@ -20,7 +20,7 @@ properties:
   - id: 0x01
     name: drivers_working_states
     name_cased: driversWorkingStates
-    pretty_name: Drivers working states
+    name_pretty: Drivers working states
     type: types.driver_working_state
     multiple: true
     name_singular: driver_working_state
@@ -38,7 +38,7 @@ properties:
   - id: 0x02
     name: drivers_time_states
     name_cased: driversTimeStates
-    pretty_name: Drivers time states
+    name_pretty: Drivers time states
     type: types.driver_time_state
     multiple: true
     name_singular: drivers_time_state
@@ -56,7 +56,7 @@ properties:
   - id: 0x03
     name: drivers_cards_present
     name_cased: driversCardsPresent
-    pretty_name: Drivers cards present
+    name_pretty: Drivers cards present
     type: types.driver_card_present
     multiple: true
     name_singular: drivers_card_present
@@ -74,7 +74,7 @@ properties:
   - id: 0x04
     name: vehicle_motion
     name_cased: vehicleMotion
-    pretty_name: Vehicle motion
+    name_pretty: Vehicle motion
     type: types.detected
     examples:
       - data_component: '01'
@@ -83,7 +83,7 @@ properties:
   - id: 0x05
     name: vehicle_overspeed
     name_cased: vehicleOverspeed
-    pretty_name: Vehicle overspeed
+    name_pretty: Vehicle overspeed
     type: enum
     size: 1
     controls: 'switch'
@@ -99,7 +99,7 @@ properties:
   - id: 0x06
     name: vehicle_direction
     name_cased: vehicleDirection
-    pretty_name: Vehicle direction
+    name_pretty: Vehicle direction
     type: enum
     size: 1
     enum_values:
@@ -114,7 +114,7 @@ properties:
   - id: 0x07
     name: vehicle_speed
     name_cased: vehicleSpeed
-    pretty_name: Vehicle speed
+    name_pretty: Vehicle speed
     unit_type: speed
     type: double
     size: 8

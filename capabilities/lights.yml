@@ -1,6 +1,6 @@
 name: lights
 name_cased: lights
-pretty_name: Lights
+name_pretty: Lights
 category: chassis
 authorization: true
 
@@ -25,7 +25,7 @@ properties:
   - id: 0x01
     name: front_exterior_light
     name_cased: frontExteriorLight
-    pretty_name: Front exterior light
+    name_pretty: Front exterior light
     type: enum
     size: 1
     enum_values:
@@ -41,7 +41,7 @@ properties:
       - id: 0x03
         name: drl
         verb: activate_drl
-        pretty_name: Daylight Running Lamps
+        name_pretty: Daylight Running Lamps
       - id: 0x04
         name: automatic
     examples:
@@ -51,7 +51,7 @@ properties:
   - id: 0x02
     name: rear_exterior_light
     name_cased: rearExteriorLight
-    pretty_name: Rear exterior light
+    name_pretty: Rear exterior light
     type: types.active_state
     examples:
       - data_component: '01'
@@ -60,7 +60,7 @@ properties:
   - id: 0x04
     name: ambient_light_colour
     name_cased: ambientLightColour
-    pretty_name: Ambient light colour
+    name_pretty: Ambient light colour
     type: types.rgb_colour
     examples:
       - data_component: 'ff0000'
@@ -72,7 +72,7 @@ properties:
   - id: 0x05
     name: reverse_light
     name_cased: reverseLight
-    pretty_name: Reverse light
+    name_pretty: Reverse light
     type: types.active_state
     examples:
       - data_component: '00'
@@ -81,7 +81,7 @@ properties:
   - id: 0x06
     name: emergency_brake_light
     name_cased: emergencyBrakeLight
-    pretty_name: Emergency brake light
+    name_pretty: Emergency brake light
     type: types.active_state
     examples:
       - data_component: '00'
@@ -90,7 +90,7 @@ properties:
   - id: 0x07
     name: fog_lights
     name_cased: fogLights
-    pretty_name: Fog lights
+    name_pretty: Fog lights
     type: types.light
     multiple: true
     name_singular: fog_light
@@ -108,7 +108,7 @@ properties:
   - id: 0x08
     name: reading_lamps
     name_cased: readingLamps
-    pretty_name: Reading lamps
+    name_pretty: Reading lamps
     type: types.reading_lamp
     multiple: true
     name_singular: reading_lamp
@@ -136,7 +136,7 @@ properties:
   - id: 0x09
     name: interior_lights
     name_cased: interiorLights
-    pretty_name: Interior lights
+    name_pretty: Interior lights
     type: types.light
     multiple: true
     name_singular: interior_light

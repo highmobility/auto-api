@@ -1,6 +1,6 @@
 name: browser
 name_cased: browser
-pretty_name: Browser
+name_pretty: Browser
 category: headunit
 authorization: true
 
@@ -22,7 +22,7 @@ properties:
     name: url
     type: string
     name_cased: url
-    pretty_name: URL
+    name_pretty: URL
     description: The URL
     examples:
       - data_component: '68747470733a2f2f61626f75742e686967682d6d6f62696c6974792e636f6d'

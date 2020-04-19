@@ -1,6 +1,6 @@
 name: dashboard_lights
 name_cased: dashboardLights
-pretty_name: Dashboard Lights
+name_pretty: Dashboard Lights
 category: diagnostics
 authorization: true
 
@@ -21,7 +21,7 @@ properties:
   - id: 0x01
     name: dashboard_lights
     name_cased: dashboardLights
-    pretty_name: Dashboard lights
+    name_pretty: Dashboard lights
     type: types.dashboard_light
     multiple: true
     name_singular: dashboard_light

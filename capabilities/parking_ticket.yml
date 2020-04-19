@@ -1,6 +1,6 @@
 name: parking_ticket
 name_cased: parkingTicket
-pretty_name: Parking Ticket
+name_pretty: Parking Ticket
 category: parking
 authorization: true
 
@@ -35,7 +35,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
-    pretty_name: Status
+    name_pretty: Status
     type: enum
     size: 1
     enum_values:
@@ -52,7 +52,7 @@ properties:
   - id: 0x02
     name: operator_name
     name_cased: operatorName
-    pretty_name: Operator name
+    name_pretty: Operator name
     type: string
     description: Operator name
     examples:
@@ -62,7 +62,7 @@ properties:
   - id: 0x03
     name: operator_ticket_id
     name_cased: operatorTicketID
-    pretty_name: Operator ticket ID
+    name_pretty: Operator ticket ID
     type: string
     description: Operator ticket ID
     examples:
@@ -72,7 +72,7 @@ properties:
   - id: 0x04
     name: ticket_start_time
     name_cased: ticketStartTime
-    pretty_name: Ticket start time
+    name_pretty: Ticket start time
     type: timestamp
     size: 8
     description: Parking ticket start time
@@ -83,7 +83,7 @@ properties:
   - id: 0x05
     name: ticket_end_time
     name_cased: ticketEndTime
-    pretty_name: Ticket end time
+    name_pretty: Ticket end time
     type: timestamp
     size: 8
     description: Parking ticket end time

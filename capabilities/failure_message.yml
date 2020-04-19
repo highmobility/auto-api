@@ -1,6 +1,6 @@
 name: failure_message
 name_cased: failureMessage
-pretty_name: Failure Message
+name_pretty: Failure Message
 category: api_structure
 authorization: false
 
@@ -18,7 +18,7 @@ properties:
   - id: 0x01
     name: failed_message_id
     name_cased: failedMessageID
-    pretty_name: Failed message ID
+    name_pretty: Failed message ID
     type: uinteger
     size: 2
     description: Capability identifier of the failed message
@@ -29,7 +29,7 @@ properties:
   - id: 0x02
     name: failed_message_type
     name_cased: failedMessageType
-    pretty_name: Failed message type
+    name_pretty: Failed message type
     type: uinteger
     size: 1
     description: Message type of the failed message
@@ -40,45 +40,45 @@ properties:
   - id: 0x03
     name: failure_reason
     name_cased: failureReason
-    pretty_name: Failure reason
+    name_pretty: Failure reason
     type: enum
     size: 1
     enum_values:
       - id: 0x00
         name: unsupported_capability
-        pretty_name: Unsupported Capability
+        name_pretty: Unsupported Capability
         description: Car has not the capability to perform the command
       - id: 0x01
         name: unauthorised
-        pretty_name: Unauthorised
+        name_pretty: Unauthorised
         description: User has not been authenticated or lacks permissions
       - id: 0x02
         name: incorrect_state
-        pretty_name: Incorrect State
+        name_pretty: Incorrect State
         description: Command can not be executed in the current car state
       - id: 0x03
         name: execution_timeout
-        pretty_name: Execution Timeout
+        name_pretty: Execution Timeout
         description: Command failed to execute in time for an unknown reason
       - id: 0x04
         name: vehicle_asleep
-        pretty_name: Vehicle Asleep
+        name_pretty: Vehicle Asleep
         description: Car has to be waken up before the command can be used. If this is for a virtual car, the emulator has to be loaded
       - id: 0x05
         name: invalid_command
-        pretty_name: Invalid Command
+        name_pretty: Invalid Command
         description: Command not recognised
       - id: 0x06
         name: pending
-        pretty_name: Pending
+        name_pretty: Pending
         description: Capability is being refreshed
       - id: 0x07
         name: rate_limit
-        pretty_name: Rate Limit
+        name_pretty: Rate Limit
         description: Capability rate limit has been exceeded
       - id: 0x08
         name: internal_oem_error
-        pretty_name: Internal OEM error
+        name_pretty: Internal OEM error
         description: API call to OEM returned an error.
     examples:
       - data_component: '01'
@@ -87,7 +87,7 @@ properties:
   - id: 0x04
     name: failure_description
     name_cased: failureDescription
-    pretty_name: Failure description
+    name_pretty: Failure description
     type: string
     description: Failure description
     examples:
@@ -97,7 +97,7 @@ properties:
   - id: 0x05
     name: failed_property_ids
     name_cased: failedPropertyIDs
-    pretty_name: Failed property IDs
+    name_pretty: Failed property IDs
     type: bytes
     description: Array of failed property identifiers
     examples:

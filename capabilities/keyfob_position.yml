@@ -1,6 +1,6 @@
 name: keyfob_position
 name_cased: keyfobPosition
-pretty_name: Keyfob Position
+name_pretty: Keyfob Position
 category: chassis
 authorization: true
 
@@ -23,7 +23,7 @@ properties:
   - id: 0x01
     name: location
     name_cased: location
-    pretty_name: Location
+    name_pretty: Location
     type: enum
     size: 1
     enum_values:

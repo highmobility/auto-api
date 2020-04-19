@@ -2,7 +2,7 @@
 permissions:
   - name: auto_api
     id: '0x10'
-    pretty_name: Auto API
+    name_pretty: Auto API
     bytes:
       - idx: 1
         bits:
@@ -170,7 +170,7 @@ permissions:
             description: Allowed to get the hood state
   - name: car_rental
     id: '0x20'
-    pretty_name: Car Rental
+    name_pretty: Car Rental
     bytes:
       - idx: 1
         bits:

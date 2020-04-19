@@ -1,6 +1,6 @@
 name: race
 name_cased: race
-pretty_name: Race
+name_pretty: Race
 category: diagnostics
 authorization: true
 
@@ -20,7 +20,7 @@ properties:
   - id: 0x01
     name: accelerations
     name_cased: accelerations
-    pretty_name: Accelerations
+    name_pretty: Accelerations
     name_singular: acceleration
     type: types.acceleration
     multiple: true
@@ -56,7 +56,7 @@ properties:
   - id: 0x02
     name: understeering
     name_cased: understeering
-    pretty_name: Understeering
+    name_pretty: Understeering
     type: types.percentage
     description: The understeering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 0.3 (30%) marginal, over 30% critical
     examples:
@@ -66,7 +66,7 @@ properties:
   - id: 0x03
     name: oversteering
     name_cased: oversteering
-    pretty_name: Oversteering
+    name_pretty: Oversteering
     type: types.percentage
     description: The oversteering percentage between 0.0-1.0 whereas up to 0.2 (20%) is considered OK, up to 30% marginal, over 30% critical
     examples:
@@ -76,7 +76,7 @@ properties:
   - id: 0x04
     name: gas_pedal_position
     name_cased: gasPedalPosition
-    pretty_name: Gas pedal position
+    name_pretty: Gas pedal position
     type: types.percentage
     description: The gas pedal position between 0.0-1.0, whereas 1.0 (100%) is full throttle
     examples:
@@ -86,7 +86,7 @@ properties:
   - id: 0x05
     name: steering_angle
     name_cased: steeringAngle
-    pretty_name: Steering angle
+    name_pretty: Steering angle
     unit_type: angle
     type: double
     size: 8
@@ -100,7 +100,7 @@ properties:
   - id: 0x06
     name: brake_pressure
     name_cased: brakePressure
-    pretty_name: Brake pressure
+    name_pretty: Brake pressure
     unit_type: pressure
     type: double
     size: 8
@@ -114,7 +114,7 @@ properties:
   - id: 0x07
     name: yaw_rate
     name_cased: yawRate
-    pretty_name: Yaw rate
+    name_pretty: Yaw rate
     unit_type: rotational_speed
     type: double
     size: 8
@@ -128,7 +128,7 @@ properties:
   - id: 0x08
     name: rear_suspension_steering
     name_cased: rearSuspensionSteering
-    pretty_name: Rear suspension steering
+    name_pretty: Rear suspension steering
     unit_type: angle
     type: double
     size: 8
@@ -142,7 +142,7 @@ properties:
   - id: 0x09
     name: electronic_stability_program
     name_cased: electronicStabilityProgram
-    pretty_name: Electronic stability program
+    name_pretty: Electronic stability program
     type: types.active_state
     examples:
       - data_component: '01'
@@ -151,7 +151,7 @@ properties:
   - id: 0x0a
     name: brake_torque_vectorings
     name_cased: brakeTorqueVectorings
-    pretty_name: Brake torque vectorings
+    name_pretty: Brake torque vectorings
     type: types.brake_torque_vectoring
     multiple: true
     name_singular: brake_torque_vectoring
@@ -169,7 +169,7 @@ properties:
   - id: 0x0b
     name: gear_mode
     name_cased: gearMode
-    pretty_name: Gear mode
+    name_pretty: Gear mode
     type: enum
     size: 1
     enum_values:
@@ -194,7 +194,7 @@ properties:
   - id: 0x0c
     name: selected_gear
     name_cased: selectedGear
-    pretty_name: Selected gear
+    name_pretty: Selected gear
     type: integer
     size: 1
     description: The selected gear value, if any
@@ -205,7 +205,7 @@ properties:
   - id: 0x0d
     name: brake_pedal_position
     name_cased: brakePedalPosition
-    pretty_name: Brake pedal position
+    name_pretty: Brake pedal position
     type: types.percentage
     description: The brake pedal position between 0.0-1.0, wheras 1.0 (100%) is full brakes
     examples:
@@ -215,7 +215,7 @@ properties:
   - id: 0x0e
     name: brake_pedal_switch
     name_cased: brakePedalSwitch
-    pretty_name: Brake pedal switch
+    name_pretty: Brake pedal switch
     type: types.active_state
     examples:
       - data_component: '01'
@@ -224,7 +224,7 @@ properties:
   - id: 0x0f
     name: clutch_pedal_switch
     name_cased: clutchPedalSwitch
-    pretty_name: Clutch pedal switch
+    name_pretty: Clutch pedal switch
     type: types.active_state
     examples:
       - data_component: '01'
@@ -233,7 +233,7 @@ properties:
   - id: 0x10
     name: accelerator_pedal_idle_switch
     name_cased: acceleratorPedalIdleSwitch
-    pretty_name: Accelerator pedal idle switch
+    name_pretty: Accelerator pedal idle switch
     type: types.active_state
     examples:
       - data_component: '01'
@@ -242,7 +242,7 @@ properties:
   - id: 0x11
     name: accelerator_pedal_kickdown_switch
     name_cased: acceleratorPedalKickdownSwitch
-    pretty_name: Accelerator pedal kickdown switch
+    name_pretty: Accelerator pedal kickdown switch
     type: types.active_state
     examples:
       - data_component: '01'
@@ -251,7 +251,7 @@ properties:
   - id: 0x12
     name: vehicle_moving
     name_cased: vehicleMoving
-    pretty_name: Vehicle moving
+    name_pretty: Vehicle moving
     type: enum
     size: 1
     controls: 'switch'

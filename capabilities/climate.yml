@@ -1,6 +1,6 @@
 name: climate
 name_cased: climate
-pretty_name: Climate
+name_pretty: Climate
 category: chassis
 authorization: true
 
@@ -40,7 +40,7 @@ properties:
   - id: 0x01
     name: inside_temperature
     name_cased: insideTemperature
-    pretty_name: Inside temperature
+    name_pretty: Inside temperature
     unit_type: temperature
     type: double
     size: 8
@@ -54,7 +54,7 @@ properties:
   - id: 0x02
     name: outside_temperature
     name_cased: outsideTemperature
-    pretty_name: Outside temperature
+    name_pretty: Outside temperature
     unit_type: temperature
     type: double
     size: 8
@@ -68,7 +68,7 @@ properties:
   - id: 0x03
     name: driver_temperature_setting
     name_cased: driverTemperatureSetting
-    pretty_name: Driver temperature setting
+    name_pretty: Driver temperature setting
     unit_type: temperature
     type: double
     size: 8
@@ -82,7 +82,7 @@ properties:
   - id: 0x04
     name: passenger_temperature_setting
     name_cased: passengerTemperatureSetting
-    pretty_name: Passenger temperature setting
+    name_pretty: Passenger temperature setting
     unit_type: temperature
     type: double
     size: 8
@@ -96,7 +96,7 @@ properties:
   - id: 0x05
     name: hvac_state
     name_cased: hvacState
-    pretty_name: HVAC state
+    name_pretty: HVAC state
     type: types.active_state
     examples:
       - data_component: '01'
@@ -105,7 +105,7 @@ properties:
   - id: 0x06
     name: defogging_state
     name_cased: defoggingState
-    pretty_name: Defogging state
+    name_pretty: Defogging state
     type: types.active_state
     examples:
       - data_component: '00'
@@ -114,7 +114,7 @@ properties:
   - id: 0x07
     name: defrosting_state
     name_cased: defrostingState
-    pretty_name: Defrosting state
+    name_pretty: Defrosting state
     type: types.active_state
     examples:
       - data_component: '00'
@@ -123,7 +123,7 @@ properties:
   - id: 0x08
     name: ionising_state
     name_cased: ionisingState
-    pretty_name: Ionising state
+    name_pretty: Ionising state
     type: types.active_state
     examples:
       - data_component: '00'
@@ -132,7 +132,7 @@ properties:
   - id: 0x09
     name: defrosting_temperature_setting
     name_cased: defrostingTemperatureSetting
-    pretty_name: Defrosting temperature setting
+    name_pretty: Defrosting temperature setting
     unit_type: temperature
     type: double
     size: 8
@@ -147,7 +147,7 @@ properties:
     name: hvac_weekday_starting_times
     name_cased: hvacWeekdayStartingTimes
     name_singular: hvac_weekday_starting_time
-    pretty_name: HVAC weekday starting times
+    name_pretty: HVAC weekday starting times
     type: types.hvac_weekday_starting_time
     multiple: true
     examples:
@@ -210,7 +210,7 @@ properties:
   - id: 0x0c
     name: rear_temperature_setting
     name_cased: rearTemperatureSetting
-    pretty_name: Rear temperature setting
+    name_pretty: Rear temperature setting
     unit_type: temperature
     type: double
     size: 8

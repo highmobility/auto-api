@@ -1,6 +1,6 @@
 name: doors
 name_cased: doors
-pretty_name: Doors
+name_pretty: Doors
 category: digital_key
 authorization: true
 
@@ -25,7 +25,7 @@ properties:
   - id: 0x02
     name: inside_locks
     name_cased: insideLocks
-    pretty_name: Inside locks
+    name_pretty: Inside locks
     type: types.lock
     multiple: true
     name_singular: inside_lock
@@ -54,7 +54,7 @@ properties:
   - id: 0x03
     name: locks
     name_cased: locks
-    pretty_name: Locks
+    name_pretty: Locks
     type: types.lock
     multiple: true
     name_singular: lock
@@ -83,7 +83,7 @@ properties:
   - id: 0x04
     name: positions
     name_cased: positions
-    pretty_name: Positions
+    name_pretty: Positions
     type: types.door_position
     multiple: true
     name_singular: position
@@ -117,7 +117,7 @@ properties:
   - id: 0x05
     name: inside_locks_state
     name_cased: insideLocksState
-    pretty_name: Inside locks state
+    name_pretty: Inside locks state
     type: types.lock_state
     description: Inside locks state for the whole car (combines all specific lock states if available)
     examples:
@@ -127,7 +127,7 @@ properties:
   - id: 0x06
     name: locks_state
     name_cased: locksState
-    pretty_name: Locks state
+    name_pretty: Locks state
     type: types.lock_state
     description: Locks state for the whole car (combines all specific lock states if available)
     examples:

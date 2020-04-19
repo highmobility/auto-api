@@ -1,6 +1,6 @@
 name: home_charger
 name_cased: homeCharger
-pretty_name: Home Charger
+name_pretty: Home Charger
 category: infrastructure
 authorization: true
 
@@ -37,7 +37,7 @@ properties:
   - id: 0x01
     name: charging_status
     name_cased: chargingStatus
-    pretty_name: Charging status
+    name_pretty: Charging status
     type: enum
     size: 1
     enum_values:
@@ -54,13 +54,13 @@ properties:
   - id: 0x02
     name: authentication_mechanism
     name_cased: authenticationMechanism
-    pretty_name: Authentication mechanism
+    name_pretty: Authentication mechanism
     type: enum
     size: 1
     enum_values:
       - id: 0x00
         name: pin
-        pretty_name: PIN
+        name_pretty: PIN
       - id: 0x01
         name: app
     examples:
@@ -70,7 +70,7 @@ properties:
   - id: 0x03
     name: plug_type
     name_cased: plugType
-    pretty_name: Plug type
+    name_pretty: Plug type
     type: enum
     size: 1
     enum_values:
@@ -80,10 +80,10 @@ properties:
         name: type_2
       - id: 0x02
         name: ccs
-        pretty_name: Combined Charging System
+        name_pretty: Combined Charging System
       - id: 0x03
         name: chademo
-        pretty_name: CHAdeMO
+        name_pretty: CHAdeMO
     examples:
       - data_component: '01'
         value: 'type_2'
@@ -91,7 +91,7 @@ properties:
   - id: 0x04
     name: charging_power_kw
     name_cased: chargingPowerKW
-    pretty_name: Charging power (kW)
+    name_pretty: Charging power (kW)
     deprecated:
       new_name: charging_power
       reason: remove 'kw' from the name
@@ -108,7 +108,7 @@ properties:
   - id: 0x05
     name: solar_charging
     name_cased: solarCharging
-    pretty_name: Solar charging
+    name_pretty: Solar charging
     type: types.active_state
     examples:
       - data_component: '01'
@@ -117,7 +117,7 @@ properties:
   - id: 0x08
     name: wi_fi_hotspot_enabled
     name_cased: wifiHotspotEnabled
-    pretty_name: Wi-Fi hotspot enabled
+    name_pretty: Wi-Fi hotspot enabled
     type: types.enabled_state
     examples:
       - data_component: '01'
@@ -126,7 +126,7 @@ properties:
   - id: 0x09
     name: wi_fi_hotspot_ssid
     name_cased: wifiHotspotSSID
-    pretty_name: Wi-Fi hotspot SSID
+    name_pretty: Wi-Fi hotspot SSID
     type: string
     description: The Wi-Fi Hotspot SSID
     examples:
@@ -136,7 +136,7 @@ properties:
   - id: 0x0a
     name: wi_fi_hotspot_security
     name_cased: wiFiHotspotSecurity
-    pretty_name: Wi-Fi hotspot security
+    name_pretty: Wi-Fi hotspot security
     type: types.network_security
     examples:
       - data_component: '03'
@@ -145,7 +145,7 @@ properties:
   - id: 0x0b
     name: wi_fi_hotspot_password
     name_cased: wiFiHotspotPassword
-    pretty_name: Wi-Fi hotspot password
+    name_pretty: Wi-Fi hotspot password
     type: string
     description: The Wi-Fi Hotspot password
     examples:
@@ -155,7 +155,7 @@ properties:
   - id: 0x0d
     name: authentication_state
     name_cased: authenticationState
-    pretty_name: Authentication state
+    name_pretty: Authentication state
     type: enum
     size: 1
     enum_values:
@@ -172,7 +172,7 @@ properties:
   - id: 0x0e
     name: charge_current_dc
     name_cased: chargeCurrentDC
-    pretty_name: Charge current (DC)
+    name_pretty: Charge current (DC)
     unit_type: electric_potential_difference
     type: double
     size: 8
@@ -186,7 +186,7 @@ properties:
   - id: 0x0f
     name: maximum_charge_current
     name_cased: maximumChargeCurrent
-    pretty_name: Maximum charge current
+    name_pretty: Maximum charge current
     unit_type: electric_potential_difference
     type: double
     size: 8
@@ -200,7 +200,7 @@ properties:
   - id: 0x10
     name: minimum_charge_current
     name_cased: minimumChargeCurrent
-    pretty_name: Minimum charge current
+    name_pretty: Minimum charge current
     unit_type: electric_potential_difference
     type: double
     size: 8
@@ -214,7 +214,7 @@ properties:
   - id: 0x11
     name: coordinates
     name_cased: coordinates
-    pretty_name: Coordinates
+    name_pretty: Coordinates
     type: types.coordinates
     examples:
       - data_component: '404a428f9f44d445402acf562174c4ce'
@@ -225,7 +225,7 @@ properties:
   - id: 0x12
     name: price_tariffs
     name_cased: priceTariffs
-    pretty_name: Price tariffs
+    name_pretty: Price tariffs
     type: types.price_tariff
     multiple: true
     name_singular: price_tariff
@@ -251,7 +251,7 @@ properties:
   - id: 0x13
     name: charging_power
     name_cased: chargingPower
-    pretty_name: Charging power
+    name_pretty: Charging power
     unit_type: power
     type: double
     size: 8

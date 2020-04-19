@@ -1,6 +1,6 @@
 name: notifications
 name_cased: notifications
-pretty_name: Notifications
+name_pretty: Notifications
 category: headunit
 authorization: true
 
@@ -32,7 +32,7 @@ properties:
   - id: 0x01
     name: text
     name_cased: text
-    pretty_name: Text
+    name_pretty: Text
     type: string
     description: Text for the notification
     examples:
@@ -42,7 +42,7 @@ properties:
   - id: 0x02
     name: action_items
     name_cased: actionItems
-    pretty_name: Action items
+    name_pretty: Action items
     type: types.action_item
     multiple: true
     name_singular: action_item
@@ -60,7 +60,7 @@ properties:
   - id: 0x03
     name: activated_action
     name_cased: activatedAction
-    pretty_name: Activate action
+    name_pretty: Activate action
     type: uinteger
     size: 1
     description: Identifier of the activated action
@@ -71,7 +71,7 @@ properties:
   - id: 0x04
     name: clear
     name_cased: clear
-    pretty_name: Clear
+    name_pretty: Clear
     type: enum
     size: 1
     enum_values:

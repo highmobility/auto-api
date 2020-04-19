@@ -1,6 +1,6 @@
 name: trunk
 name_cased: trunk
-pretty_name: Trunk
+name_pretty: Trunk
 category: digital_key
 authorization: true
 
@@ -25,7 +25,7 @@ properties:
   - id: 0x01
     name: lock
     name_cased: lock
-    pretty_name: Lock
+    name_pretty: Lock
     type: types.lock_state
     examples:
       - data_component: '00'
@@ -34,7 +34,7 @@ properties:
   - id: 0x02
     name: position
     name_cased: position
-    pretty_name: Position
+    name_pretty: Position
     type: types.position
     examples:
       - data_component: '01'

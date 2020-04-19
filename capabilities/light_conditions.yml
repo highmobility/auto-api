@@ -1,6 +1,6 @@
 name: light_conditions
 name_cased: lightConditions
-pretty_name: Light Conditions
+name_pretty: Light Conditions
 category: environment
 authorization: true
 
@@ -21,7 +21,7 @@ properties:
   - id: 0x01
     name: outside_light
     name_cased: outsideLight
-    pretty_name: Outside light
+    name_pretty: Outside light
     unit_type: illuminance
     type: double
     size: 8
@@ -35,7 +35,7 @@ properties:
   - id: 0x02
     name: inside_light
     name_cased: insideLight
-    pretty_name: Inside light
+    name_pretty: Inside light
     unit_type: illuminance
     type: double
     size: 8

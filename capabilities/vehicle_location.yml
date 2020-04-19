@@ -1,6 +1,6 @@
 name: vehicle_location
 name_cased: vehicleLocation
-pretty_name: Vehicle Location
+name_pretty: Vehicle Location
 category: poi
 authorization: true
 
@@ -21,7 +21,7 @@ properties:
   - id: 0x04
     name: coordinates
     name_cased: coordinates
-    pretty_name: Coordinates
+    name_pretty: Coordinates
     type: types.coordinates
     examples:
       - data_component: '404a428f9f44d445402acf562174c4ce'
@@ -32,7 +32,7 @@ properties:
   - id: 0x05
     name: heading
     name_cased: heading
-    pretty_name: Heading
+    name_pretty: Heading
     unit_type: angle
     type: double
     size: 8
@@ -46,7 +46,7 @@ properties:
   - id: 0x06
     name: altitude
     name_cased: altitude
-    pretty_name: Altitude
+    name_pretty: Altitude
     unit_type: length
     type: double
     size: 8
@@ -60,7 +60,7 @@ properties:
   - id: 0x07
     name: fuzzy_coordinates
     name_cased: fuzzyCoordinates
-    pretty_name: Fuzzy coordinates
+    name_pretty: Fuzzy coordinates
     type: types.coordinates
     examples:
       - data_component: '404a428f5c28f5c3402acccccccccccd'

@@ -1,6 +1,6 @@
 name: hood
 name_cased: hood
-pretty_name: Hood
+name_pretty: Hood
 category: digital_key
 authorization: true
 
@@ -20,7 +20,7 @@ properties:
   - id: 0x01
     name: position
     name_cased: position
-    pretty_name: Position
+    name_pretty: Position
     type: enum
     size: 1
     enum_values:

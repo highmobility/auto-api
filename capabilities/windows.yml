@@ -1,6 +1,6 @@
 name: windows
 name_cased: windows
-pretty_name: Windows
+name_pretty: Windows
 category: chassis
 authorization: true
 
@@ -26,7 +26,7 @@ properties:
   - id: 0x02
     name: open_percentages
     name_cased: openPercentages
-    pretty_name: Open percentages
+    name_pretty: Open percentages
     type: types.window_open_percentage
     multiple: true
     name_singular: open_percentage
@@ -60,7 +60,7 @@ properties:
   - id: 0x03
     name: positions
     name_cased: positions
-    pretty_name: Positions
+    name_pretty: Positions
     type: types.window_position
     multiple: true
     name_singular: position

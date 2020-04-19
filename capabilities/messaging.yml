@@ -1,6 +1,6 @@
 name: messaging
 name_cased: messaging
-pretty_name: Messaging
+name_pretty: Messaging
 category: headunit
 authorization: true
 
@@ -24,7 +24,7 @@ properties:
   - id: 0x01
     name: text
     name_cased: text
-    pretty_name: Text
+    name_pretty: Text
     type: string
     description: The text
     examples:
@@ -34,7 +34,7 @@ properties:
   - id: 0x02
     name: handle
     name_cased: handle
-    pretty_name: Handle
+    name_pretty: Handle
     type: string
     description: The optional handle of message
     examples:

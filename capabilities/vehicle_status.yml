@@ -1,6 +1,6 @@
 name: vehicle_status
 name_cased: vehicleStatus
-pretty_name: Vehicle Status
+name_pretty: Vehicle Status
 category: api_structure
 authorization: false
 
@@ -21,7 +21,7 @@ properties:
   - id: 0x01
     name: vin
     name_cased: vin
-    pretty_name: VIN
+    name_pretty: VIN
     type: string
     size: 17
     description: The unique Vehicle Identification Number
@@ -32,7 +32,7 @@ properties:
   - id: 0x02
     name: powertrain
     name_cased: powertrain
-    pretty_name: Powertrain
+    name_pretty: Powertrain
     type: enum
     size: 1
     enum_values:
@@ -44,7 +44,7 @@ properties:
         name: combustion_engine
       - id: 0x03
         name: phev
-        pretty_name: Plug-in Hybrid EV
+        name_pretty: Plug-in Hybrid EV
       - id: 0x04
         name: hydrogen
       - id: 0x05
@@ -56,7 +56,7 @@ properties:
   - id: 0x03
     name: model_name
     name_cased: modelName
-    pretty_name: Model name
+    name_pretty: Model name
     type: string
     description: The car model name
     examples:
@@ -66,7 +66,7 @@ properties:
   - id: 0x04
     name: name
     name_cased: name
-    pretty_name: Name
+    name_pretty: Name
     type: string
     description: The car name (nickname)
     examples:
@@ -76,7 +76,7 @@ properties:
   - id: 0x05
     name: license_plate
     name_cased: licensePlate
-    pretty_name: Licence plate
+    name_pretty: Licence plate
     type: string
     description: The license plate number
     examples:
@@ -86,7 +86,7 @@ properties:
   - id: 0x06
     name: sales_designation
     name_cased: salesDesignation
-    pretty_name: Sales designation
+    name_pretty: Sales designation
     type: string
     description: The sales designation of the model
     examples:
@@ -96,7 +96,7 @@ properties:
   - id: 0x07
     name: model_year
     name_cased: modelYear
-    pretty_name: Model year
+    name_pretty: Model year
     type: uinteger
     size: 2
     description: The car model manufacturing year number
@@ -107,7 +107,7 @@ properties:
   - id: 0x08
     name: colour_name
     name_cased: colourName
-    pretty_name: Colour name
+    name_pretty: Colour name
     type: string
     description: The colour name
     examples:
@@ -117,7 +117,7 @@ properties:
   - id: 0x09
     name: power_in_kw
     name_cased: powerInKW
-    pretty_name: Power in kW
+    name_pretty: Power in kW
     deprecated:
       new_name: power
       reason: remove the unit constraint
@@ -134,7 +134,7 @@ properties:
   - id: 0x0a
     name: number_of_doors
     name_cased: numberOfDoors
-    pretty_name: Number of doors
+    name_pretty: Number of doors
     type: uinteger
     size: 1
     description: The number of doors
@@ -145,7 +145,7 @@ properties:
   - id: 0x0b
     name: number_of_seats
     name_cased: numberOfSeats
-    pretty_name: Number of seats
+    name_pretty: Number of seats
     type: uinteger
     size: 1
     description: The number of seats
@@ -156,7 +156,7 @@ properties:
   - id: 0x0c
     name: engine_volume
     name_cased: engineVolume
-    pretty_name: Engine volume
+    name_pretty: Engine volume
     unit_type: volume
     type: double
     size: 8
@@ -170,7 +170,7 @@ properties:
   - id: 0x0d
     name: engine_max_torque
     name_cased: engineMaxTorque
-    pretty_name: Engine max torque
+    name_pretty: Engine max torque
     unit_type: torque
     type: double
     size: 8
@@ -184,7 +184,7 @@ properties:
   - id: 0x0e
     name: gearbox
     name_cased: gearbox
-    pretty_name: Gearbox
+    name_pretty: Gearbox
     type: enum
     size: 1
     enum_values:
@@ -201,7 +201,7 @@ properties:
   - id: 0x0f
     name: display_unit
     name_cased: displayUnit
-    pretty_name: Display unit
+    name_pretty: Display unit
     type: enum
     size: 1
     enum_values:
@@ -216,7 +216,7 @@ properties:
   - id: 0x10
     name: driver_seat_location
     name_cased: driverSeatLocation
-    pretty_name: Driver seat location
+    name_pretty: Driver seat location
     type: enum
     size: 1
     enum_values:
@@ -233,7 +233,7 @@ properties:
   - id: 0x11
     name: equipments
     name_cased: equipments
-    pretty_name: Equipments
+    name_pretty: Equipments
     type: string
     multiple: true
     name_singular: equipment
@@ -248,7 +248,7 @@ properties:
   - id: 0x12
     name: brand
     name_cased: brand
-    pretty_name: Brand
+    name_pretty: Brand
     type: string
     description: The car brand
     examples:
@@ -258,7 +258,7 @@ properties:
   - id: 0x13
     name: power
     name_cased: power
-    pretty_name: Power
+    name_pretty: Power
     unit_type: power
     type: double
     size: 8
@@ -272,7 +272,7 @@ properties:
   - id: 0x99
     name: states
     name_cased: states
-    pretty_name: States
+    name_pretty: States
     type: types.capability_state
     multiple: true
     name_singular: state

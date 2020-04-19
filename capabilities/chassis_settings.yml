@@ -1,6 +1,6 @@
 name: chassis_settings
 name_cased: chassisSettings
-pretty_name: Chassis Settings
+name_pretty: Chassis Settings
 category: chassis
 authorization: true
 
@@ -35,7 +35,7 @@ properties:
   - id: 0x01
     name: driving_mode
     name_cased: drivingMode
-    pretty_name: Driving mode
+    name_pretty: Driving mode
     type: types.driving_mode
     examples:
       - data_component: '01'
@@ -44,7 +44,7 @@ properties:
   - id: 0x02
     name: sport_chrono
     name_cased: sportChrono
-    pretty_name: Sport chrono
+    name_pretty: Sport chrono
     type: enum
     size: 1
     enum_values:
@@ -63,7 +63,7 @@ properties:
   - id: 0x05
     name: current_spring_rates
     name_cased: currentSpringRates
-    pretty_name: Current spring rates
+    name_pretty: Current spring rates
     type: types.spring_rate
     multiple: true
     name_singular: current_spring_rate
@@ -86,7 +86,7 @@ properties:
   - id: 0x06
     name: maximum_spring_rates
     name_cased: maximumSpringRates
-    pretty_name: Maximum spring rates
+    name_pretty: Maximum spring rates
     type: types.spring_rate
     multiple: true
     name_singular: maximum_spring_rate
@@ -109,7 +109,7 @@ properties:
   - id: 0x07
     name: minimum_spring_rates
     name_cased: minimumSpringRates
-    pretty_name: Minimum spring rates
+    name_pretty: Minimum spring rates
     type: types.spring_rate
     multiple: true
     name_singular: minimum_spring_rate
@@ -132,7 +132,7 @@ properties:
   - id: 0x08
     name: current_chassis_position
     name_cased: currentChassisPosition
-    pretty_name: Current chassis position
+    name_pretty: Current chassis position
     unit_type: length
     type: double
     size: 8
@@ -146,7 +146,7 @@ properties:
   - id: 0x09
     name: maximum_chassis_position
     name_cased: maximumChassisPosition
-    pretty_name: Maximum chassis position
+    name_pretty: Maximum chassis position
     unit_type: length
     type: double
     size: 8
@@ -160,7 +160,7 @@ properties:
   - id: 0x0a
     name: minimum_chassis_position
     name_cased: minimumChassisPosition
-    pretty_name: Minimum chassis position
+    name_pretty: Minimum chassis position
     unit_type: length
     type: double
     size: 8

@@ -1,6 +1,6 @@
 name: cruise_control
 name_cased: cruiseControl
-pretty_name: Cruise Control
+name_pretty: Cruise Control
 category: chassis
 authorization: true
 
@@ -28,7 +28,7 @@ properties:
   - id: 0x01
     name: cruise_control
     name_cased: cruiseControl
-    pretty_name: Cruise control
+    name_pretty: Cruise control
     type: types.active_state
     examples:
       - data_component: '01'
@@ -37,7 +37,7 @@ properties:
   - id: 0x02
     name: limiter
     name_cased: limiter
-    pretty_name: Limiter
+    name_pretty: Limiter
     type: enum
     size: 1
     enum_values:
@@ -56,7 +56,7 @@ properties:
   - id: 0x03
     name: target_speed
     name_cased: targetSpeed
-    pretty_name: Target speed
+    name_pretty: Target speed
     unit_type: speed
     type: double
     size: 8
@@ -70,7 +70,7 @@ properties:
   - id: 0x04
     name: adaptive_cruise_control
     name_cased: adaptiveCruiseControl
-    pretty_name: Adaptive Cruise Control
+    name_pretty: Adaptive Cruise Control
     type: types.active_state
     examples:
       - data_component: '00'
@@ -79,7 +79,7 @@ properties:
   - id: 0x05
     name: acc_target_speed
     name_cased: accTargetSpeed
-    pretty_name: Adaptive Cruise Control (ACC) target speed
+    name_pretty: Adaptive Cruise Control (ACC) target speed
     unit_type: speed
     type: double
     size: 8

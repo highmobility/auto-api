@@ -1,6 +1,6 @@
 name: charging
 name_cased: charging
-pretty_name: Charging
+name_pretty: Charging
 category: chassis
 authorization: true
 
@@ -40,7 +40,7 @@ properties:
   - id: 0x02
     name: estimated_range
     name_cased: estimatedRange
-    pretty_name: Estimated range
+    name_pretty: Estimated range
     unit_type: length
     type: double
     size: 8
@@ -54,7 +54,7 @@ properties:
   - id: 0x03
     name: battery_level
     name_cased: batteryLevel
-    pretty_name: Battery level
+    name_pretty: Battery level
     type: types.percentage
     description: Battery level percentage between 0.0-1.0
     examples:
@@ -64,7 +64,7 @@ properties:
   - id: 0x04
     name: battery_current_ac
     name_cased: batteryCurrentAC
-    pretty_name: Battery current (AC)
+    name_pretty: Battery current (AC)
     unit_type: electric_current
     type: double
     size: 8
@@ -78,7 +78,7 @@ properties:
   - id: 0x05
     name: battery_current_dc
     name_cased: batteryCurrentDC
-    pretty_name: Battery current (DC)
+    name_pretty: Battery current (DC)
     unit_type: electric_current
     type: double
     size: 8
@@ -92,7 +92,7 @@ properties:
   - id: 0x06
     name: charger_voltage_ac
     name_cased: chargerVoltageAC
-    pretty_name: Charger voltage (AC)
+    name_pretty: Charger voltage (AC)
     unit_type: electric_potential_difference
     type: double
     size: 8
@@ -106,7 +106,7 @@ properties:
   - id: 0x07
     name: charger_voltage_dc
     name_cased: chargerVoltageDC
-    pretty_name: Charger voltage (DC)
+    name_pretty: Charger voltage (DC)
     unit_type: electric_potential_difference
     type: double
     size: 8
@@ -120,7 +120,7 @@ properties:
   - id: 0x08
     name: charge_limit
     name_cased: chargeLimit
-    pretty_name: Charge limit
+    name_pretty: Charge limit
     type: types.percentage
     description: Charge limit percentage between 0.0-1.0
     examples:
@@ -130,7 +130,7 @@ properties:
   - id: 0x09
     name: time_to_complete_charge
     name_cased: timeToCompleteCharge
-    pretty_name: Time to complete charge
+    name_pretty: Time to complete charge
     unit_type: duration
     type: double
     size: 8
@@ -144,7 +144,7 @@ properties:
   - id: 0x0a
     name: charging_rate_kw
     name_cased: chargingRateKW
-    pretty_name: Charging rate (kW)
+    name_pretty: Charging rate (kW)
     deprecated:
       new_name: charging_rate
       reason: remove 'kw' from the name
@@ -161,7 +161,7 @@ properties:
   - id: 0x0b
     name: charge_port_state
     name_cased: chargePortState
-    pretty_name: Charge port state
+    name_pretty: Charge port state
     type: types.position
     examples:
       - data_component: '01'
@@ -170,7 +170,7 @@ properties:
   - id: 0x0c
     name: charge_mode
     name_cased: chargeMode
-    pretty_name: Charge mode
+    name_pretty: Charge mode
     type: enum
     size: 1
     enum_values:
@@ -188,7 +188,7 @@ properties:
   - id: 0x0e
     name: max_charging_current
     name_cased: maxChargingCurrent
-    pretty_name: Maximum charging current
+    name_pretty: Maximum charging current
     unit_type: electric_current
     type: double
     size: 8
@@ -202,7 +202,7 @@ properties:
   - id: 0x0f
     name: plug_type
     name_cased: plugType
-    pretty_name: Plug type
+    name_pretty: Plug type
     type: enum
     size: 1
     enum_values:
@@ -212,10 +212,10 @@ properties:
         name: type_2
       - id: 0x02
         name: ccs
-        pretty_name: Combined Charging System (CCS)
+        name_pretty: Combined Charging System (CCS)
       - id: 0x03
         name: chademo
-        pretty_name: CHAdeMO
+        name_pretty: CHAdeMO
     examples:
       - data_component: '01'
         value: 'type_2'
@@ -223,7 +223,7 @@ properties:
   - id: 0x10
     name: charging_window_chosen
     name_cased: chargingWindowChosen
-    pretty_name: Charging window chosen
+    name_pretty: Charging window chosen
     type: enum
     size: 1
     enum_values:
@@ -238,7 +238,7 @@ properties:
   - id: 0x11
     name: departure_times
     name_cased: departureTimes
-    pretty_name: Departure times
+    name_pretty: Departure times
     type: types.departure_time
     multiple: true
     name_singular: departure_time
@@ -260,7 +260,7 @@ properties:
   - id: 0x13
     name: reduction_times
     name_cased: reductionTimes
-    pretty_name: Reduction of charging times
+    name_pretty: Reduction of charging times
     type: types.reduction_time
     multiple: true
     name_singular: reduction_time
@@ -282,7 +282,7 @@ properties:
   - id: 0x14
     name: battery_temperature
     name_cased: batteryTemperature
-    pretty_name: Battery temperature
+    name_pretty: Battery temperature
     unit_type: temperature
     type: double
     size: 8
@@ -296,7 +296,7 @@ properties:
   - id: 0x15
     name: timers
     name_cased: timers
-    pretty_name: Timers
+    name_pretty: Timers
     type: types.timer
     multiple: true
     name_singular: timer
@@ -319,7 +319,7 @@ properties:
   - id: 0x16
     name: plugged_in
     name_cased: pluggedIn
-    pretty_name: Plugged in
+    name_pretty: Plugged in
     type: enum
     size: 1
     enum_values:
@@ -334,7 +334,7 @@ properties:
   - id: 0x17
     name: status
     name_cased: status
-    pretty_name: Status
+    name_pretty: Status
     type: enum
     size: 1
     enum_values:
@@ -363,7 +363,7 @@ properties:
   - id: 0x18
     name: charging_rate
     name_cased: chargingRate
-    pretty_name: Charging rate
+    name_pretty: Charging rate
     unit_type: power
     type: double
     size: 8

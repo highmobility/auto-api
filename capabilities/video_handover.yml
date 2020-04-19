@@ -1,6 +1,6 @@
 name: video_handover
 name_cased: videoHandover
-pretty_name: Video Handover
+name_pretty: Video Handover
 category: headunit
 authorization: true
 
@@ -22,7 +22,7 @@ properties:
   - id: 0x01
     name: url
     name_cased: url
-    pretty_name: URL
+    name_pretty: URL
     type: string
     description: URL string
     examples:
@@ -32,7 +32,7 @@ properties:
   - id: 0x02
     name: starting_second
     name_cased: startingSecond
-    pretty_name: Starting second
+    name_pretty: Starting second
     deprecated:
       new_name: starting_time
       reason: remove the unit constraint
@@ -49,7 +49,7 @@ properties:
   - id: 0x03
     name: screen
     name_cased: screen
-    pretty_name: Screen
+    name_pretty: Screen
     type: enum
     size: 1
     enum_values:
@@ -64,7 +64,7 @@ properties:
   - id: 0x04
     name: starting_time
     name_cased: startingTime
-    pretty_name: Starting time
+    name_pretty: Starting time
     unit_type: duration
     type: double
     size: 8

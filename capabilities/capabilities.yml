@@ -1,6 +1,6 @@
 name: capabilities
 name_cased: capabilities
-pretty_name: Capabilities
+name_pretty: Capabilities
 category: api_structure
 authorization: false
 
@@ -21,7 +21,7 @@ properties:
   - id: 0x01
     name: capabilities
     name_cased: capabilities
-    pretty_name: Capabilities
+    name_pretty: Capabilities
     type: types.supported_capability
     multiple: true
     name_singular: capability
@@ -39,7 +39,7 @@ properties:
   - id: 0x02
     name: webhooks
     name_cased: webhooks
-    pretty_name: Webhooks
+    name_pretty: Webhooks
     type: types.webhook
     multiple: true
     examples:

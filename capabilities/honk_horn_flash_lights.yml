@@ -1,6 +1,6 @@
 name: honk_horn_flash_lights
 name_cased: honkHornFlashLights
-pretty_name: Honk Horn & Flash Lights
+name_pretty: Honk Horn & Flash Lights
 category: chassis
 authorization: true
 
@@ -29,7 +29,7 @@ properties:
   - id: 0x01
     name: flashers
     name_cased: flashers
-    pretty_name: Flashers
+    name_pretty: Flashers
     type: enum
     size: 1
     enum_values:
@@ -48,7 +48,7 @@ properties:
   - id: 0x02
     name: honk_seconds
     name_cased: honkSeconds
-    pretty_name: Honk seconds
+    name_pretty: Honk seconds
     deprecated:
       new_name: honk_time
       reason: remove 'seconds' from the name
@@ -65,7 +65,7 @@ properties:
   - id: 0x03
     name: flash_times
     name_cased: flashTimes
-    pretty_name: Flash times
+    name_pretty: Flash times
     type: uinteger
     size: 1
     description: Number of times to flash the lights
@@ -76,7 +76,7 @@ properties:
   - id: 0x04
     name: emergency_flashers_state
     name_cased: emergencyFlashersState
-    pretty_name: Emergency flasher state
+    name_pretty: Emergency flasher state
     type: types.active_state
     examples:
       - data_component: '01'
@@ -85,7 +85,7 @@ properties:
   - id: 0x05
     name: honk_time
     name_cased: honkTime
-    pretty_name: Honk time
+    name_pretty: Honk time
     unit_type: duration
     type: double
     size: 8

@@ -1,6 +1,6 @@
 name: windscreen
 name_cased: windscreen
-pretty_name: Windscreen
+name_pretty: Windscreen
 category: chassis
 authorization: true
 
@@ -33,7 +33,7 @@ properties:
   - id: 0x01
     name: wipers_status
     name_cased: wipersStatus
-    pretty_name: Wipers status
+    name_pretty: Wipers status
     type: enum
     size: 1
     enum_values:
@@ -52,13 +52,13 @@ properties:
   - id: 0x02
     name: wipers_intensity
     name_cased: wipersIntensity
-    pretty_name: Wipers intensity
+    name_pretty: Wipers intensity
     type: enum
     size: 1
     enum_values:
       - id: 0x00
         name: level_0
-        pretty_name: Level 0, inactive
+        name_pretty: Level 0, inactive
       - id: 0x01
         name: level_1
       - id: 0x02
@@ -72,7 +72,7 @@ properties:
   - id: 0x03
     name: windscreen_damage
     name_cased: windscreenDamage
-    pretty_name: Windscreen damage
+    name_pretty: Windscreen damage
     type: enum
     size: 1
     enum_values:
@@ -91,7 +91,7 @@ properties:
   - id: 0x04
     name: windscreen_zone_matrix
     name_cased: windscreenZoneMatrix
-    pretty_name: Windscreen zone matrix
+    name_pretty: Windscreen zone matrix
     type: types.zone
     description: Representing the size of the matrix, seen from the inside of the vehicle
     examples:
@@ -103,7 +103,7 @@ properties:
   - id: 0x05
     name: windscreen_damage_zone
     name_cased: windscreenDamageZone
-    pretty_name: Windscreen damage zone
+    name_pretty: Windscreen damage zone
     type: types.zone
     description: Representing the position in the zone, seen from the inside of the vehicle (1-based index)
     examples:
@@ -115,7 +115,7 @@ properties:
   - id: 0x06
     name: windscreen_needs_replacement
     name_cased: windscreenNeedsReplacement
-    pretty_name: Windscreen needs replacement
+    name_pretty: Windscreen needs replacement
     type: enum
     size: 1
     enum_values:
@@ -132,7 +132,7 @@ properties:
   - id: 0x07
     name: windscreen_damage_confidence
     name_cased: windscreenDamageConfidence
-    pretty_name: Windscreen damage confidence
+    name_pretty: Windscreen damage confidence
     type: types.percentage
     description: Confidence of damage detection, 0% if no impact detected
     examples:
@@ -142,7 +142,7 @@ properties:
   - id: 0x08
     name: windscreen_damage_detection_time
     name_cased: windscreenDamageDetectionTime
-    pretty_name: Windscreen damage detection time
+    name_pretty: Windscreen damage detection time
     type: timestamp
     size: 8
     description: Milliseconds since UNIX Epoch time

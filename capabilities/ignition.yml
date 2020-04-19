@@ -1,6 +1,6 @@
 name: ignition
 name_cased: ignition
-pretty_name: Ignition
+name_pretty: Ignition
 category: digital_key
 authorization: true
 
@@ -25,7 +25,7 @@ properties:
   - id: 0x01
     name: status
     name_cased: status
-    pretty_name: Status
+    name_pretty: Status
     type: types.on_off_state
     examples:
       - data_component: '00'
@@ -34,7 +34,7 @@ properties:
   - id: 0x02
     name: accessories_status
     name_cased: accessoriesStatus
-    pretty_name: Accessories status
+    name_pretty: Accessories status
     type: types.on_off_state
     examples:
       - data_component: '01'

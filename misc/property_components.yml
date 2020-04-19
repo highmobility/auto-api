@@ -14,27 +14,27 @@ property_components:
   - id: 0x01
     name: data
     name_cased: data
-    pretty_name: Data
+    name_pretty: Data
     type: bytes
     description: The main component used to transmit values
 
   - id: 0x02
     name: timestamp
     name_cased: timestamp
-    pretty_name: Timestamp
+    name_pretty: Timestamp
     type: timestamp
     description: The timestamp (when the data was created) of the property
 
   - id: 0x03
     name: failure
     name_cased: failure
-    pretty_name: Failure
+    name_pretty: Failure
     type: custom
     description: Information about why retrieving a property failed
     items:
       - name: reason
         name_cased: reason
-        pretty_name: Reason
+        name_pretty: Reason
         type: enum
         size: 1
         enum_values:
@@ -54,25 +54,25 @@ property_components:
             name: internal_oem_error
       - name: description
         name_cased: description
-        pretty_name: Description
+        name_pretty: Description
         type: string
         description: Failure description
 
   - id: 0x04
     name: unit_type
     name_cased: unitType
-    pretty_name: Unit type
+    name_pretty: Unit type
     type: custom
     items:
       - name: measurement_type
         name_cased: measurementType
-        pretty_name: Measurement type
+        name_pretty: Measurement type
         type: uinteger
         size: 1
         description: The type of measurement
       - name: unit_type
         name_cased: unitType
-        pretty_name: Unit type
+        name_pretty: Unit type
         type: uinteger
         size: 1
         description: The type of unit
@@ -80,12 +80,12 @@ property_components:
   - id: 0x05
     name: capability
     name_cased: capability
-    pretty_name: Capability
+    name_pretty: Capability
     type: custom
     items:
       - name: availability
         name_cased: availability
-        pretty_name: Availability
+        name_pretty: Availability
         type: enum
         size: 1
         enum_values:
@@ -109,6 +109,6 @@ property_components:
             description: The property is not available for the vehicle.
       - name: rate_limit
         name_cased: rateLimit
-        pretty_name: Rate limit
+        name_pretty: Rate limit
         type: string
         description: String denoting the rate limit

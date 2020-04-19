@@ -1,6 +1,6 @@
 name: mobile
 name_cased: mobile
-pretty_name: Mobile
+name_pretty: Mobile
 category: headunit
 authorization: true
 
@@ -20,7 +20,7 @@ properties:
   - id: 0x01
     name: connection
     name_cased: connection
-    pretty_name: Connection
+    name_pretty: Connection
     type: types.connection_state
     examples:
       - data_component: '01'

@@ -1,6 +1,6 @@
 name: fueling
 name_cased: fueling
-pretty_name: Fueling
+name_pretty: Fueling
 category: parking
 authorization: true
 
@@ -26,7 +26,7 @@ properties:
   - id: 0x02
     name: gas_flap_lock
     name_cased: gasFlapLock
-    pretty_name: Gas flap lock
+    name_pretty: Gas flap lock
     type: types.lock_state
     examples:
       - data_component: '01'
@@ -35,7 +35,7 @@ properties:
   - id: 0x03
     name: gas_flap_position
     name_cased: gasFlapPosition
-    pretty_name: Gas flap position
+    name_pretty: Gas flap position
     type: types.position
     examples:
       - data_component: '00'
