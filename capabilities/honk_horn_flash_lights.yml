@@ -17,7 +17,7 @@ getters:
 
 setters:
   - name: honk_flash
-    optional: [0x02, 0x03]
+    optional: [0x05, 0x03]
     description: Honk the horn and/or flash the blinker lights. This can be done simultaneously or just one action at the time. It is also possible to pass in how many times the lights should be flashed and how many seconds the horn should be honked.
   - name: activate_deactivate_emergency_flasher
     mandatory: [0x04]
@@ -51,7 +51,7 @@ properties:
     name_pretty: Honk seconds
     deprecated:
       new_name: honk_time
-      reason: remove 'seconds' from the name
+      reason: removed the unit from the name
     unit_type: duration
     type: double
     size: 8

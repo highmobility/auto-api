@@ -23,7 +23,7 @@ properties:
     name_pretty: Days to next service
     deprecated:
       new_name: time_to_next_service
-      reason: remove 'days' from the name
+      reason: removed the unit from the name
     unit_type: duration
     type: double
     size: 8
@@ -40,7 +40,7 @@ properties:
     name_pretty: Kilometers to next service
     deprecated:
       new_name: distance_to_next_service
-      reason: remove 'kilometers' from the name
+      reason: removed the unit from the name
     unit_type: length
     type: double
     size: 8
@@ -68,7 +68,7 @@ properties:
     name_pretty: Months to exhaust inspection
     deprecated:
       new_name: time_to_exhaust_inspection
-      reason: remove 'months' from the name
+      reason: removed the unit from the name
     unit_type: duration
     type: double
     size: 8

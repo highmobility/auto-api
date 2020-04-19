@@ -94,7 +94,7 @@ properties:
     name_pretty: Charging power (kW)
     deprecated:
       new_name: charging_power
-      reason: remove 'kw' from the name
+      reason: removed the unit from the name
     unit_type: power
     type: double
     size: 8

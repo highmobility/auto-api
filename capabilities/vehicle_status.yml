@@ -120,7 +120,7 @@ properties:
     name_pretty: Power in kW
     deprecated:
       new_name: power
-      reason: remove the unit constraint
+      reason: removed the unit from the name
     unit_type: power
     type: double
     size: 8

@@ -206,6 +206,9 @@ properties:
     name: engine_total_operating_hours
     name_cased: engineTotalOperatingHours
     name_pretty: Engine total operation hours
+    deprecated:
+      new_name: engine_total_operating_time
+      reason: removed the unit from the name
     unit_type: duration
     type: double
     size: 8
@@ -436,7 +439,7 @@ properties:
     name_pretty: Mileage meters
     deprecated:
       new_name: odometer
-      reason: 'mileage_meters' is an incorrect term for this
+      reason: 'mileage' is an incorrect term for this
     unit_type: length
     type: double
     size: 8
@@ -461,3 +464,17 @@ properties:
         value: 6.4
         unit: megameters
         description: Odometer is showing 6.4Mm – length of the Great Wall.
+  - id: 0x20
+    name: engine_total_operating_time
+    name_cased: engineTotalOperatingTime
+    name_pretty: Engine total operation time
+    unit_type: duration
+    type: double
+    size: 8
+    description: The accumulated time of engine operation
+    examples:
+      - data_component: '409772999999999a'
+        unit_component: '0600'
+        value: 1500.65
+        unit: hours
+        description: The engine has operated 1'500.65h in total
