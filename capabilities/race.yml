@@ -90,7 +90,7 @@ properties:
     unit_type: angle
     type: double
     size: 8
-    description: The steering angle, whereas 0 is straight ahead, positive number to the right and negative number to the left
+    description: The steering angle, whereas 0.0 is straight ahead, positive number to the right and negative number to the left
     examples:
       - data_component: '4024000000000000'
         unit_component: '0200'

@@ -41,7 +41,7 @@ properties:
     unit_type: temperature
     type: double
     size: 8
-    description: Engine oil temperature, whereas can be negative
+    description: Engine oil temperature
     examples:
       - data_component: '4058e00000000000'
         unit_component: '1701'
@@ -55,7 +55,7 @@ properties:
     unit_type: speed
     type: double
     size: 8
-    description: The vehicle speed, whereas can be negative
+    description: The vehicle speed
     examples:
       - data_component: '404e000000000000'
         unit_component: '1601'
@@ -136,7 +136,7 @@ properties:
         unit_component: '1902'
         value: 0.55
         unit: liters
-        description: 0.55 liters of AdBlue remaining
+        description: 0.55L of AdBlue remaining
   - id: 0x0d
     name: distance_since_reset
     name_cased: distanceSinceReset
@@ -178,7 +178,7 @@ properties:
         unit_component: '1902'
         value: 35.5
         unit: liters
-        description: 35.5 liters of fuel remaining
+        description: 35.5L of fuel remaining
   - id: 0x10
     name: anti_lock_braking
     name_cased: antiLockBraking
@@ -232,7 +232,7 @@ properties:
         unit_component: '1902'
         value: 27587.0
         unit: liters
-        description: The engine has consumend 27'587.0 liters of fuel over it's lifespan
+        description: The engine has consumend 27'587.0L of fuel over it's lifespan
   - id: 0x14
     name: brake_fluid_level
     name_cased: brakeFluidLevel
@@ -269,7 +269,7 @@ properties:
     unit_type: speed
     type: double
     size: 8
-    description: The vehicle speed measured at the wheel base, whereas can be negative
+    description: The vehicle speed measured at the wheel base
     examples:
       - data_component: '4050400000000000'
         unit_component: '1601'

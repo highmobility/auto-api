@@ -181,7 +181,7 @@ properties:
         unit_component: '1902'
         value: 22.5
         unit: liters
-        description: Last trip consumed 22.5 liters of fuel
+        description: Last trip consumed 22.5L of fuel
   - id: 0x09
     name: mileage_after_last_trip
     name_cased: mileageAfterLastTrip
@@ -259,7 +259,7 @@ properties:
         unit_component: '0e00'
         value: 6.5
         unit: liters_per_100_kilometers
-        description: Average fuel consumption is 6.5 liters per 100km
+        description: Average fuel consumption is 6.5L per 100km
   - id: 0x0f
     name: current_fuel_consumption
     name_cased: currentFuelConsumption
@@ -273,7 +273,7 @@ properties:
         unit_component: '0e00'
         value: 7.5
         unit: liters_per_100_kilometers
-        description: Current fuel consumption is 7.5 liters per 100km
+        description: Current fuel consumption is 7.5L per 100km
   - id: 0x10
     name: odometer_after_last_trip
     name_cased: odometerAfterLastTrip

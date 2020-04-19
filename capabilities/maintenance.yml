@@ -27,7 +27,7 @@ properties:
     unit_type: duration
     type: double
     size: 8
-    description: Time until next servicing of the car, whereas negative is overdue
+    description: Time until next servicing of the car
     examples:
       - data_component: '407f500000000000'
         unit_component: '0603'
