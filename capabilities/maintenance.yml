@@ -44,7 +44,7 @@ properties:
     unit_type: length
     type: double
     size: 8
-    description: The distance until next servicing of the car
+    description: The distance until next servicing of the vehicle
     examples:
       - data_component: '40acc20000000000'
         unit_component: '1101'

@@ -14,19 +14,19 @@ universal_properties:
     type: bytes
     size: 9
     examples:
-      - hex: '0123456789abcdef01'
+      - data_component: '0123456789abcdef01'
         value: [0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef, 0x01]
         description: Nonce is 0123456789abcdef01 in hex
   - id: 0xa1
-    name: car_signature
-    name_cased: carSignature
-    name_pretty: Car signature
+    name: vehicle_signature
+    name_cased: vehicleSignature
+    name_pretty: Vehicle signature
     type: bytes
     size: 64
     examples:
-      - hex: '0123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef0102'
+      - data_component: '0123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef0102'
         value: [0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef, 0x01, 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef, 0x01, 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef, 0x01, 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef, 0x01, 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef, 0x01, 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef, 0x01, 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef, 0x01, 0x02]
-        description: Car signature is 0123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef0102 in hex
+        description: Vehicle signature is 0123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef0102 in hex
   - id: 0xa2
     name: timestamp
     name_cased: timestamp
@@ -35,6 +35,6 @@ universal_properties:
     size: 8
     description: Milliseconds since UNIX Epoch time
     examples:
-      - hex: '0000016d82cebD50'
+      - data_component: '0000016d82cebD50'
         value: '2019-09-30T15:34:10.000Z'
         description: Timestamp denotes 30. September 2019 at 15:34:10 GMT

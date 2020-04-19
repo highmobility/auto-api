@@ -17,7 +17,7 @@ disabled_in: [web]
 setters:
   - name: send_heart_rate
     mandatory: [0x01]
-    description: Send the driver heart rate to the car.
+    description: Send the driver heart rate to the vehicle.
 
 properties:
   - id: 0x01

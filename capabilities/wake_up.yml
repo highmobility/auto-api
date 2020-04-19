@@ -19,7 +19,7 @@ setters:
     constants:
       - property_id: 0x01
         value: [0x00]
-    description: Wake up the car. This is necessary when the car has fallen asleep, in which case the car responds with the Failure Message to all incoming messages. The car is also waken up by the Lock/Unlock Doors message.
+    description: Wake up the vehicle. This is necessary when the vehicle has fallen asleep, in which case the vehicle responds with the Failure Message to all incoming messages. The vehicle is also waken up by the Lock/Unlock Doors message.
 
 properties:
   - id: 0x01

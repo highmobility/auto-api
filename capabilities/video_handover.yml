@@ -16,7 +16,7 @@ setters:
   - name: video_handover
     mandatory: [0x01]
     optional: [0x04, 0x03]
-    description: Hand over a video from smart device to car headunit to be shown in the car display. The emulator supports HTML5 video player formats .mp4 and .webm.
+    description: Hand over a video from smart device to vehicle headunit to be shown in the vehicle display. The emulator supports HTML5 video player formats .mp4 and .webm.
 
 properties:
   - id: 0x01

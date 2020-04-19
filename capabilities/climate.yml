@@ -20,7 +20,7 @@ setters:
     description: Set the HVAC (Heating, ventilation, and air conditioning) automated starting times.
   - name: start_stop_hvac
     mandatory: [0x05]
-    description: Start or stop the HVAC system to reach driver and passenger set temperatures. The car will use cooling, defrosting and defogging as appropriate.
+    description: Start or stop the HVAC system to reach driver and passenger set temperatures. The vehicle will use cooling, defrosting and defogging as appropriate.
   - name: start_stop_defogging
     mandatory: [0x06]
     description: Manually start or stop defogging.

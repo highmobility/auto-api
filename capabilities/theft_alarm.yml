@@ -17,7 +17,7 @@ getters: {}
 setters:
   - name: set_theft_alarm
     mandatory: [0x01]
-    description: Unarm or arm the theft alarm of the car.
+    description: Unarm or arm the theft alarm of the vehicle.
 
 state: all
 

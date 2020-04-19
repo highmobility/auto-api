@@ -17,7 +17,7 @@ getters: {}
 setters:
   - name: turn_engine_on_off
     mandatory: [0x01]
-    description: Attempt to turn the car engine on or off.
+    description: Attempt to turn the vehicle engine on or off.
 
 state: all
 

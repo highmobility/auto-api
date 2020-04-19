@@ -15,7 +15,7 @@ api:
 setters:
   - name: load_url
     mandatory: [0x01]
-    description: Load a URL in the headunit browser. A URL shortener can be used in other cases. Note that for the car emulator the URL has to be for a secure site (HTTPS).
+    description: Load a URL in the headunit browser. A URL shortener can be used in other cases. Note that for the vehicle emulator the URL has to be for a secure site (HTTPS).
 
 properties:
   - id: 0x01

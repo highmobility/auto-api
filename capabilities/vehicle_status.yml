@@ -58,7 +58,7 @@ properties:
     name_cased: modelName
     name_pretty: Model name
     type: string
-    description: The car model name
+    description: The vehicle model name
     examples:
       - data_component: '547970652058'
         value: 'Type X'
@@ -68,7 +68,7 @@ properties:
     name_cased: name
     name_pretty: Name
     type: string
-    description: The car name (nickname)
+    description: The vehicle name (nickname)
     examples:
       - data_component: '537065656479'
         value: 'Speedy'
@@ -99,7 +99,7 @@ properties:
     name_pretty: Model year
     type: uinteger
     size: 2
-    description: The car model manufacturing year number
+    description: The vehicle model manufacturing year number
     examples:
       - data_component: '07e3'
         value: 2019
@@ -250,7 +250,7 @@ properties:
     name_cased: brand
     name_pretty: Brand
     type: string
-    description: The car brand
+    description: The vehicle brand
     examples:
       - data_component: '5465736c61'
         value: 'Tesla'

@@ -27,7 +27,7 @@ properties:
     unit_type: length
     type: double
     size: 8
-    description: The car mileage (odometer)
+    description: The vehicle mileage (odometer)
     examples:
       - data_component: '41024f8000000000'
         unit_component: '1101'
@@ -443,7 +443,7 @@ properties:
     unit_type: length
     type: double
     size: 8
-    description: The car mileage (odometer) in meters
+    description: The vehicle mileage (odometer) in meters
     examples:
       - data_component: '41024f8800000000'
         unit_component: '1101'
@@ -457,7 +457,7 @@ properties:
     unit_type: length
     type: double
     size: 8
-    description: The car odometer value in a given units.
+    description: The vehicle odometer value in a given units.
     examples:
       - data_component: '401999999999999a'
         unit_component: '1100'

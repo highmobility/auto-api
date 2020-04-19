@@ -21,7 +21,7 @@ setters:
     description: Honk the horn and/or flash the blinker lights. This can be done simultaneously or just one action at the time. It is also possible to pass in how many times the lights should be flashed and how many seconds the horn should be honked.
   - name: activate_deactivate_emergency_flasher
     mandatory: [0x04]
-    description: This activates or deactivates the emergency flashers of the car, typically the blinkers to alarm other drivers.
+    description: This activates or deactivates the emergency flashers of the vehicle, typically the blinkers to alarm other drivers.
 
 state: [0x01]
 

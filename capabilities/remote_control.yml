@@ -21,17 +21,17 @@ getters:
 setters:
   - name: control_command
     optional: [0x02, 0x03]
-    description: To be sent every time the controls for the car wants to be changed or once a second if the controls remain the same. If the car does not receive the command every second it will stop the control mode.
+    description: To be sent every time the controls for the vehicle wants to be changed or once a second if the controls remain the same. If the vehicle does not receive the command every second it will stop the control mode.
   - name: start_control
     constants:
       - property_id: 0x01
         value: [0x02]
-    description: Attempt to start the control mode of the car.
+    description: Attempt to start the control mode of the vehicle.
   - name: stop_control
     constants:
       - property_id: 0x01
         value: [0x05]
-    description: Attempt to stop the control mode of the car.
+    description: Attempt to stop the control mode of the vehicle.
 
 state: [0x01, 0x02]
 

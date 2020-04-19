@@ -17,7 +17,7 @@ getters: {}
 setters:
   - name: lock_unlock_doors
     mandatory: [0x06]
-    description: Attempt to lock or unlock all doors of the car.
+    description: Attempt to lock or unlock all doors of the vehicle.
 
 state: all
 
@@ -119,7 +119,7 @@ properties:
     name_cased: insideLocksState
     name_pretty: Inside locks state
     type: types.lock_state
-    description: Inside locks state for the whole car (combines all specific lock states if available)
+    description: Inside locks state for the whole vehicle (combines all specific lock states if available)
     examples:
       - data_component: '01'
         value: 'locked'
@@ -129,7 +129,7 @@ properties:
     name_cased: locksState
     name_pretty: Locks state
     type: types.lock_state
-    description: Locks state for the whole car (combines all specific lock states if available)
+    description: Locks state for the whole vehicle (combines all specific lock states if available)
     examples:
       - data_component: '00'
         value: 'unlocked'

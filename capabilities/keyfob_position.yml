@@ -42,4 +42,4 @@ properties:
     examples:
       - data_component: '05'
         value: 'inside_car'
-        description: Keyfob is inside the car
+        description: Keyfob is inside the vehicle
