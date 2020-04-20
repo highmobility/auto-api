@@ -41,8 +41,18 @@ measurement_types:
       - name: revolutions
         id: 0x05
 
-  - name: area
+  - name: angular_velocity
     id: 0x03
+    unit_types:
+      - name: degrees_per_second
+        id: 0x00
+      - name: radians_per_second
+        id: 0x01
+      - name: revolutions_per_minute
+        id: 0x02
+
+  - name: area
+    id: 0x04
     unit_types:
       - name: square_megameters
         id: 0x00
@@ -74,7 +84,7 @@ measurement_types:
         id: 0x0d
 
   - name: concentration_mass
-    id: 0x04
+    id: 0x05
     unit_types:
       - name: gramsPerLiter
         id: 0x00
@@ -82,13 +92,13 @@ measurement_types:
         id: 0x01
 
   - name: dispersion
-    id: 0x05
+    id: 0x06
     unit_types:
       - name: parts_per_million
         id: 0x00
 
   - name: duration
-    id: 0x06
+    id: 0x07
     unit_types:
       - name: hours
         id: 0x00
@@ -104,7 +114,7 @@ measurement_types:
         id: 0x05
 
   - name: electric_charge
-    id: 0x07
+    id: 0x08
     unit_types:
       - name: coulombs
         id: 0x00
@@ -120,7 +130,7 @@ measurement_types:
         id: 0x05
 
   - name: electric_current
-    id: 0x08
+    id: 0x09
     unit_types:
       - name: megaamperes
         id: 0x00
@@ -134,7 +144,7 @@ measurement_types:
         id: 0x04
 
   - name: electric_potential_difference
-    id: 0x09
+    id: 0x0a
     unit_types:
       - name: megavolts
         id: 0x00
@@ -148,7 +158,7 @@ measurement_types:
         id: 0x04
 
   - name: electric_resistance
-    id: 0x0a
+    id: 0x0b
     unit_types:
       - name: megaohms
         id: 0x00
@@ -162,7 +172,7 @@ measurement_types:
         id: 0x04
 
   - name: energy
-    id: 0x0b
+    id: 0x0c
     unit_types:
       - name: kilojoules
         id: 0x00
@@ -176,7 +186,7 @@ measurement_types:
         id: 0x04
 
   - name: energy_efficiency
-    id: 0x0c
+    id: 0x0d
     unit_types:
       - name: kwh_per_100_kilometers
         id: 0x00
@@ -184,7 +194,7 @@ measurement_types:
         id: 0x01
 
   - name: frequency
-    id: 0x0d
+    id: 0x0e
     unit_types:
       - name: terahertz
         id: 0x00
@@ -206,7 +216,7 @@ measurement_types:
         id: 0x08
 
   - name: fuel_efficiency
-    id: 0x0e
+    id: 0x0f
     unit_types:
       - name: liters_per_100_kilometers
         id: 0x00
@@ -216,7 +226,7 @@ measurement_types:
         id: 0x02
 
   - name: information_storage
-    id: 0x0f
+    id: 0x10
     unit_types:
       - name: bytes
         id: 0x00
@@ -290,13 +300,13 @@ measurement_types:
         id: 0x22
 
   - name: illuminance
-    id: 0x10
+    id: 0x11
     unit_types:
       - name: lux
         id: 0x00
 
   - name: length
-    id: 0x11
+    id: 0x12
     unit_types:
       - name: megameters
         id: 0x00
@@ -344,7 +354,7 @@ measurement_types:
         id: 0x15
 
   - name: mass
-    id: 0x12
+    id: 0x13
     unit_types:
       - name: kilograms
         id: 0x00
@@ -380,7 +390,7 @@ measurement_types:
         id: 0x0f
 
   - name: power
-    id: 0x13
+    id: 0x14
     unit_types:
       - name: terawatts
         id: 0x00
@@ -406,7 +416,7 @@ measurement_types:
         id: 0x0a
 
   - name: pressure
-    id: 0x14
+    id: 0x15
     unit_types:
       - name: newtons_per_meters_squared
         id: 0x00
@@ -428,16 +438,6 @@ measurement_types:
         id: 0x08
       - name: pounds_force_per_square_inch
         id: 0x09
-
-  - name: rotational_speed
-    id: 0x15
-    unit_types:
-      - name: degrees_per_second
-        id: 0x00
-      - name: radians_per_second
-        id: 0x01
-      - name: revolutions_per_minute
-        id: 0x02
 
   - name: speed
     id: 0x16
