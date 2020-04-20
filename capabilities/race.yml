@@ -115,7 +115,7 @@ properties:
     name: yaw_rate
     name_cased: yawRate
     name_pretty: Yaw rate
-    unit_type: rotational_speed
+    unit_type: angular_velocity
     type: double
     size: 8
     description: Yaw turning rate

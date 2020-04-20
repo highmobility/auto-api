@@ -66,7 +66,7 @@ properties:
     name: engine_rpm
     name_cased: engineRPM
     name_pretty: Engine RPM
-    unit_type: rotational_speed
+    unit_type: angular_velocity
     type: double
     size: 8
     description: Engine RPM (revolutions per minute)
