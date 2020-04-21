@@ -82,6 +82,7 @@ property_components:
     name_cased: availability
     name_pretty: Availability
     type: custom
+    size: 10
     items:
       - name: availability
         name_cased: availability
@@ -110,5 +111,18 @@ property_components:
       - name: rate_limit
         name_cased: rateLimit
         name_pretty: Rate limit
-        type: string
-        description: String denoting the rate limit
+        unit: frequency
+        type: double
+        size: 8
+        description: Frequency denoting the rate limit
+      - name: target
+        name_cased: target
+        name_pretty: Target
+        type: enum
+        size: 1
+        description: Rate limit applies per
+        enum_values:
+          - id: 0x00
+            name: app
+          - id: 0x01
+            name: vehicle
