@@ -65,6 +65,9 @@ properties:
     name: battery_current_ac
     name_cased: batteryCurrentAC
     name_pretty: Battery current (AC)
+    deprecated:
+      new_name: battery_current
+      reason: moved AC/DC distinction into a separate property
     unit: electric_current
     type: double
     size: 8
@@ -79,6 +82,9 @@ properties:
     name: battery_current_dc
     name_cased: batteryCurrentDC
     name_pretty: Battery current (DC)
+    deprecated:
+      new_name: battery_current
+      reason: moved AC/DC distinction into a separate property
     unit: electric_current
     type: double
     size: 8
@@ -93,6 +99,9 @@ properties:
     name: charger_voltage_ac
     name_cased: chargerVoltageAC
     name_pretty: Charger voltage (AC)
+    deprecated:
+      new_name: charger_voltage
+      reason: moved AC/DC distinction into a separate property
     unit: electric_potential_difference
     type: double
     size: 8
@@ -107,6 +116,9 @@ properties:
     name: charger_voltage_dc
     name_cased: chargerVoltageDC
     name_pretty: Charger voltage (DC)
+    deprecated:
+      new_name: charger_voltage
+      reason: moved AC/DC distinction into a separate property
     unit: electric_potential_difference
     type: double
     size: 8
@@ -374,3 +386,45 @@ properties:
         value: 150.0
         unit: kilowatts
         description: Charging rate is 150.0kW
+  - id: 0x19
+    name: battery_current
+    name_cased: batteryCurrent
+    name_pretty: Battery current
+    unit: electric_current
+    type: double
+    size: 8
+    description: Battery current
+    examples:
+      - data_component: 'bfe3333333333333'
+        unit_component: '0902'
+        value: -0.6
+        unit: amperes
+        description: Battery current is -0.6A
+  - id: 0x1a
+    name: charger_voltage
+    name_cased: chargerVoltage
+    name_pretty: Charger voltage
+    unit: electric_potential_difference
+    type: double
+    size: 8
+    description: Charger voltage
+    examples:
+      - data_component: '4079000000000000'
+        unit_component: '0a02'
+        value: 400
+        unit: volts
+        description: Charger voltage is 400.0V
+  - id: 0x1b
+    name: current_type
+    name_cased: currentType
+    name_pretty: Current type
+    type: enum
+    size: 1
+    description: Type of current in use
+    enum_values:
+      - id: 0x00
+        name: alternating_current
+        name_pretty: AC
+      - id: 0x01
+        name: direct_current
+        name_pretty: DC
