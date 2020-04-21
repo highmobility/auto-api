@@ -58,14 +58,16 @@ properties:
         unit: meters
         description: Vehicle altitude is 133.5m
   - id: 0x07
-    name: fuzzy_coordinates
-    name_cased: fuzzyCoordinates
-    name_pretty: Fuzzy coordinates
-    type: types.coordinates
+    name: precision
+    name_cased: precision
+    name_pretty: Precision
+    unit: length
+    type: double
+    size: 8
     examples:
-      - data_component: '404a428f5c28f5c3402acccccccccccd'
-        values:
-          latitude: 52.52
-          longitude: 13.40
-        description: Vehicle fuzzy coordinates are 52.52:13.40
+      - data_component: '407f400000000000'
+        unit_component: '1204'
+        value: 500.0
+        unit: meters
+        description: Precision is 500m
 
