@@ -33,7 +33,7 @@ properties:
     name: heading
     name_cased: heading
     name_pretty: Heading
-    unit_type: angle
+    unit: angle
     type: double
     size: 8
     description: Heading angle
@@ -47,13 +47,13 @@ properties:
     name: altitude
     name_cased: altitude
     name_pretty: Altitude
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: Altitude above the WGS 84 reference ellipsoid
     examples:
       - data_component: '4060b00000000000'
-        unit_component: '1104'
+        unit_component: '1204'
         value: 133.5
         unit: meters
         description: Vehicle altitude is 133.5m

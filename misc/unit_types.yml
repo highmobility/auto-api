@@ -11,12 +11,6 @@
 
 measurement_types:
 
-  - name: unknown
-    id: 0x00
-    unit_types:
-      - name: unknown
-        id: 0x00
-
   - name: acceleration
     id: 0x01
     unit_types:
@@ -30,14 +24,8 @@ measurement_types:
     unit_types:
       - name: degrees
         id: 0x00
-      - name: arc_minutes
-        id: 0x01
-      - name: arc_seconds
-        id: 0x02
       - name: radians
         id: 0x03
-      - name: gradians
-        id: 0x04
       - name: revolutions
         id: 0x05
 
@@ -54,8 +42,6 @@ measurement_types:
   - name: area
     id: 0x04
     unit_types:
-      - name: square_megameters
-        id: 0x00
       - name: square_kilometers
         id: 0x01
       - name: square_meters
@@ -64,10 +50,6 @@ measurement_types:
         id: 0x03
       - name: square_millimeters
         id: 0x04
-      - name: square_micrometers
-        id: 0x05
-      - name: square_nanometers
-        id: 0x06
       - name: square_inches
         id: 0x07
       - name: square_feet
@@ -76,12 +58,6 @@ measurement_types:
         id: 0x09
       - name: square_miles
         id: 0x0a
-      - name: acres
-        id: 0x0b
-      - name: ares
-        id: 0x0c
-      - name: hectares
-        id: 0x0d
 
   - name: concentration_mass
     id: 0x05
@@ -118,58 +94,40 @@ measurement_types:
     unit_types:
       - name: coulombs
         id: 0x00
-      - name: megaampereHours
-        id: 0x01
       - name: kiloampereHours
         id: 0x02
       - name: ampereHours
         id: 0x03
       - name: milliampereHours
         id: 0x04
-      - name: microampereHours
-        id: 0x05
 
   - name: electric_current
     id: 0x09
     unit_types:
-      - name: megaamperes
-        id: 0x00
       - name: kiloamperes
         id: 0x01
       - name: amperes
         id: 0x02
       - name: milliamperes
         id: 0x03
-      - name: microamperes
-        id: 0x04
 
   - name: electric_potential_difference
     id: 0x0a
     unit_types:
-      - name: megavolts
-        id: 0x00
       - name: kilovolts
         id: 0x01
       - name: volts
         id: 0x02
       - name: millivolts
         id: 0x03
-      - name: microvolts
-        id: 0x04
 
   - name: electric_resistance
     id: 0x0b
     unit_types:
-      - name: megaohms
-        id: 0x00
       - name: kiloohms
         id: 0x01
       - name: ohms
         id: 0x02
-      - name: milliohms
-        id: 0x03
-      - name: microohms
-        id: 0x04
 
   - name: energy
     id: 0x0c
@@ -178,10 +136,6 @@ measurement_types:
         id: 0x00
       - name: joules
         id: 0x01
-      - name: kilocalories
-        id: 0x02
-      - name: calories
-        id: 0x03
       - name: kilowatt_hours
         id: 0x04
 
@@ -196,8 +150,6 @@ measurement_types:
   - name: frequency
     id: 0x0e
     unit_types:
-      - name: terahertz
-        id: 0x00
       - name: gigahertz
         id: 0x01
       - name: megahertz
@@ -208,10 +160,6 @@ measurement_types:
         id: 0x04
       - name: millihertz
         id: 0x05
-      - name: microhertz
-        id: 0x06
-      - name: nanohertz
-        id: 0x07
       - name: beats_per_minute
         id: 0x08
 
@@ -234,30 +182,12 @@ measurement_types:
         id: 0x01
       - name: nibbles
         id: 0x02
-      - name: yottabytes
-        id: 0x03
-      - name: zettabytes
-        id: 0x04
-      - name: exabytes
-        id: 0x05
-      - name: petabytes
-        id: 0x06
-      - name: terabytes
-        id: 0x07
       - name: gigabytes
         id: 0x08
       - name: megabytes
         id: 0x09
       - name: kilobytes
         id: 0x0a
-      - name: yottabits
-        id: 0x0b
-      - name: zettabits
-        id: 0x0c
-      - name: exabits
-        id: 0x0d
-      - name: petabits
-        id: 0x0e
       - name: terabits
         id: 0x0f
       - name: gigabits
@@ -266,38 +196,6 @@ measurement_types:
         id: 0x11
       - name: kilobits
         id: 0x12
-      - name: yobibytes
-        id: 0x13
-      - name: zebibytes
-        id: 0x14
-      - name: exbibytes
-        id: 0x15
-      - name: pebibytes
-        id: 0x16
-      - name: tebibytes
-        id: 0x17
-      - name: gibibytes
-        id: 0x18
-      - name: mebibytes
-        id: 0x19
-      - name: kibibytes
-        id: 0x1a
-      - name: yobibits
-        id: 0x1b
-      - name: zebibits
-        id: 0x1c
-      - name: exbibits
-        id: 0x1d
-      - name: pebibits
-        id: 0x1e
-      - name: tebibits
-        id: 0x1f
-      - name: gibibits
-        id: 0x20
-      - name: mebibits
-        id: 0x21
-      - name: kibibits
-        id: 0x22
 
   - name: illuminance
     id: 0x11
@@ -312,10 +210,6 @@ measurement_types:
         id: 0x00
       - name: kilometers
         id: 0x01
-      - name: hectometers
-        id: 0x02
-      - name: decameters
-        id: 0x03
       - name: meters
         id: 0x04
       - name: decimeters
@@ -324,12 +218,6 @@ measurement_types:
         id: 0x06
       - name: millimeters
         id: 0x07
-      - name: micrometers
-        id: 0x08
-      - name: nanometers
-        id: 0x09
-      - name: picometers
-        id: 0x0a
       - name: inches
         id: 0x0b
       - name: feet
@@ -340,18 +228,8 @@ measurement_types:
         id: 0x0e
       - name: scandinavian_miles
         id: 0x0f
-      - name: lightyears
-        id: 0x10
       - name: nautical_miles
         id: 0x11
-      - name: fathoms
-        id: 0x12
-      - name: furlongs
-        id: 0x13
-      - name: astronomical_units
-        id: 0x14
-      - name: parsecs
-        id: 0x15
 
   - name: mass
     id: 0x13
@@ -360,18 +238,8 @@ measurement_types:
         id: 0x00
       - name: grams
         id: 0x01
-      - name: decigrams
-        id: 0x02
-      - name: centigrams
-        id: 0x03
       - name: milligrams
         id: 0x04
-      - name: micrograms
-        id: 0x05
-      - name: nanograms
-        id: 0x06
-      - name: picograms
-        id: 0x07
       - name: ounces
         id: 0x08
       - name: pounds
@@ -382,20 +250,10 @@ measurement_types:
         id: 0x0b
       - name: short_tons
         id: 0x0c
-      - name: carats
-        id: 0x0d
-      - name: ounces_troy
-        id: 0x0e
-      - name: slugs
-        id: 0x0f
 
   - name: power
     id: 0x14
     unit_types:
-      - name: terawatts
-        id: 0x00
-      - name: gigawatts
-        id: 0x01
       - name: megawatts
         id: 0x02
       - name: kilowatts
@@ -404,14 +262,6 @@ measurement_types:
         id: 0x04
       - name: milliwatts
         id: 0x05
-      - name: microwatts
-        id: 0x06
-      - name: nanowatts
-        id: 0x07
-      - name: picowatts
-        id: 0x08
-      - name: femtowatts
-        id: 0x09
       - name: horsepower
         id: 0x0a
 
@@ -420,14 +270,8 @@ measurement_types:
     unit_types:
       - name: newtons_per_meters_squared
         id: 0x00
-      - name: gigapascals
-        id: 0x01
-      - name: megapascals
-        id: 0x02
       - name: kilopascals
         id: 0x03
-      - name: hectopascals
-        id: 0x04
       - name: inches_of_mercury
         id: 0x05
       - name: bars
@@ -474,10 +318,6 @@ measurement_types:
   - name: volume
     id: 0x19
     unit_types:
-      - name: megaliters
-        id: 0x00
-      - name: kiloliters
-        id: 0x01
       - name: liters
         id: 0x02
       - name: deciliters
@@ -486,8 +326,6 @@ measurement_types:
         id: 0x04
       - name: milliliters
         id: 0x05
-      - name: cubic_kilometers
-        id: 0x06
       - name: cubic_meters
         id: 0x07
       - name: cubic_decimeters
@@ -500,39 +338,11 @@ measurement_types:
         id: 0x0b
       - name: cubic_feet
         id: 0x0c
-      - name: cubic_yards
-        id: 0x0d
-      - name: cubic_miles
-        id: 0x0e
-      - name: acre_feet
-        id: 0x0f
-      - name: bushels
-        id: 0x10
-      - name: teaspoons
-        id: 0x11
-      - name: tablespoons
-        id: 0x12
       - name: fluid_ounces
         id: 0x13
-      - name: cups
-        id: 0x14
-      - name: pints
-        id: 0x15
-      - name: quarts
-        id: 0x16
       - name: gallons
         id: 0x17
-      - name: imperial_teaspoons
-        id: 0x18
-      - name: imperial_tablespoons
-        id: 0x19
       - name: imperial_fluid_ounces
         id: 0x1a
-      - name: imperial_pints
-        id: 0x1b
-      - name: imperial_quarts
-        id: 0x1c
       - name: imperial_gallons
         id: 0x1d
-      - name: metric_cups
-        id: 0x1e

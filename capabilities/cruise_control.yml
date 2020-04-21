@@ -57,7 +57,7 @@ properties:
     name: target_speed
     name_cased: targetSpeed
     name_pretty: Target speed
-    unit_type: speed
+    unit: speed
     type: double
     size: 8
     description: The target speed
@@ -80,7 +80,7 @@ properties:
     name: acc_target_speed
     name_cased: accTargetSpeed
     name_pretty: Adaptive Cruise Control (ACC) target speed
-    unit_type: speed
+    unit: speed
     type: double
     size: 8
     description: The target speed of the Adaptive Cruise Control

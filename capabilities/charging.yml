@@ -41,13 +41,13 @@ properties:
     name: estimated_range
     name_cased: estimatedRange
     name_pretty: Estimated range
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: Estimated range
     examples:
       - data_component: '407b01999999999a'
-        unit_component: '1101'
+        unit_component: '1201'
         value: 432.1
         unit: kilometers
         description: 432.1km estimated range
@@ -65,13 +65,13 @@ properties:
     name: battery_current_ac
     name_cased: batteryCurrentAC
     name_pretty: Battery current (AC)
-    unit_type: electric_current
+    unit: electric_current
     type: double
     size: 8
     description: Battery alternating current
     examples:
       - data_component: 'bfe3333333333333'
-        unit_component: '0802'
+        unit_component: '0902'
         value: -0.6
         unit: amperes
         description: Battery alternating current is -0.6A
@@ -79,13 +79,13 @@ properties:
     name: battery_current_dc
     name_cased: batteryCurrentDC
     name_pretty: Battery current (DC)
-    unit_type: electric_current
+    unit: electric_current
     type: double
     size: 8
     description: Battery direct current
     examples:
       - data_component: 'bfe3333333333333'
-        unit_component: '0802'
+        unit_component: '0902'
         value: -0.6
         unit: amperes
         description: Battery direct current is -0.6A
@@ -93,13 +93,13 @@ properties:
     name: charger_voltage_ac
     name_cased: chargerVoltageAC
     name_pretty: Charger voltage (AC)
-    unit_type: electric_potential_difference
+    unit: electric_potential_difference
     type: double
     size: 8
     description: Charger voltage for alternating current
     examples:
       - data_component: '4079000000000000'
-        unit_component: '0902'
+        unit_component: '0a02'
         value: 400
         unit: volts
         description: Charger voltage is 400.0V for alternating current
@@ -107,13 +107,13 @@ properties:
     name: charger_voltage_dc
     name_cased: chargerVoltageDC
     name_pretty: Charger voltage (DC)
-    unit_type: electric_potential_difference
+    unit: electric_potential_difference
     type: double
     size: 8
     description: Charger voltage for direct current
     examples:
       - data_component: '43c80000'
-        unit_component: '0902'
+        unit_component: '0a02'
         value: 400
         unit: volts
         description: Charger voltage is 400.0V for direct current
@@ -131,13 +131,13 @@ properties:
     name: time_to_complete_charge
     name_cased: timeToCompleteCharge
     name_pretty: Time to complete charge
-    unit_type: duration
+    unit: duration
     type: double
     size: 8
     description: Time until charging completed
     examples:
       - data_component: '404e000000000000'
-        unit_component: '0601'
+        unit_component: '0701'
         value: 60
         unit: minutes
         description: Time to complete charge is 60.0 minutes
@@ -148,13 +148,13 @@ properties:
     deprecated:
       new_name: charging_rate
       reason: removed the unit from the name
-    unit_type: power
+    unit: power
     type: double
     size: 8
     description: Charging rate
     examples:
       - data_component: '400c000000000000'
-        unit_component: '1303'
+        unit_component: '1403'
         value: 3.5
         unit: kilowatts
         description: Charging rate is 3.5kW
@@ -189,13 +189,13 @@ properties:
     name: max_charging_current
     name_cased: maxChargingCurrent
     name_pretty: Maximum charging current
-    unit_type: electric_current
+    unit: electric_current
     type: double
     size: 8
     description: Maximum charging current
     examples:
       - data_component: '4039000000000000'
-        unit_component: '0802'
+        unit_component: '0902'
         value: 25.0
         unit: amperes
         description: Maximum charging current is 25.0A
@@ -283,7 +283,7 @@ properties:
     name: battery_temperature
     name_cased: batteryTemperature
     name_pretty: Battery temperature
-    unit_type: temperature
+    unit: temperature
     type: double
     size: 8
     description: Battery temperature
@@ -364,13 +364,13 @@ properties:
     name: charging_rate
     name_cased: chargingRate
     name_pretty: Charging rate
-    unit_type: power
+    unit: power
     type: double
     size: 8
     description: Charge rate when charging
     examples:
       - data_component: '4062c00000000000'
-        unit_component: '1303'
+        unit_component: '1403'
         value: 150.0
         unit: kilowatts
         description: Charging rate is 150.0kW

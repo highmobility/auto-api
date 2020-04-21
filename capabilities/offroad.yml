@@ -21,7 +21,7 @@ properties:
     name: route_incline
     name_cased: routeIncline
     name_pretty: Route incline
-    unit_type: angle
+    unit: angle
     type: double
     size: 8
     description: The route elevation incline

@@ -78,9 +78,9 @@ property_components:
         description: The type of unit
 
   - id: 0x05
-    name: capability
-    name_cased: capability
-    name_pretty: Capability
+    name: availability
+    name_cased: availability
+    name_pretty: Availability
     type: custom
     items:
       - name: availability

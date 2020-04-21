@@ -52,13 +52,13 @@ properties:
     deprecated:
       new_name: honk_time
       reason: removed the unit from the name
-    unit_type: duration
+    unit: duration
     type: double
     size: 8
     description: Time to honk the horn
     examples:
       - data_component: '4008000000000000'
-        unit_component: '0602'
+        unit_component: '0702'
         value: 3.0
         unit: seconds
         description: Honk the horn for 3.0s
@@ -86,13 +86,13 @@ properties:
     name: honk_time
     name_cased: honkTime
     name_pretty: Honk time
-    unit_type: duration
+    unit: duration
     type: double
     size: 8
     description: Time to honk the horn
     examples:
       - data_component: '4000000000000000'
-        unit_component: '0602'
+        unit_component: '0702'
         value: 2.0
         unit: seconds
         description: Honk the horn for 2.0s

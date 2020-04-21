@@ -66,7 +66,7 @@ properties:
     name: angle
     name_cased: angle
     name_pretty: Angle
-    unit_type: angle
+    unit: angle
     type: double
     size: 8
     description: Wheel base angle
@@ -80,7 +80,7 @@ properties:
     name: speed
     name_cased: speed
     name_pretty: Speed
-    unit_type: speed
+    unit: speed
     type: double
     size: 8
     description: Target speed

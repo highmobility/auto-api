@@ -36,13 +36,13 @@ properties:
     deprecated:
       new_name: starting_time
       reason: removed the unit from the name
-    unit_type: duration
+    unit: duration
     type: double
     size: 8
     description: Start the video from the given time
     examples:
       - data_component: '4008000000000000'
-        unit_component: '0602'
+        unit_component: '0702'
         value: 3.0
         unit: seconds
         description: Start from 3.0s
@@ -65,13 +65,13 @@ properties:
     name: starting_time
     name_cased: startingTime
     name_pretty: Starting time
-    unit_type: duration
+    unit: duration
     type: double
     size: 8
     description: Start the video from the given time
     examples:
       - data_component: '4004000000000000'
-        unit_component: '0602'
+        unit_component: '0702'
         value: 2.5
         unit: seconds
         description: Start from 2.5s

@@ -133,13 +133,13 @@ properties:
     name: current_chassis_position
     name_cased: currentChassisPosition
     name_pretty: Current chassis position
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: The chassis position calculated from the lowest point
     examples:
       - data_component: '4039666666666666'
-        unit_component: '1107'
+        unit_component: '1207'
         value: 25.4
         unit: millimeters
         description: Current chassis position is 25.4mm
@@ -147,13 +147,13 @@ properties:
     name: maximum_chassis_position
     name_cased: maximumChassisPosition
     name_pretty: Maximum chassis position
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: The maximum possible value for the chassis position
     examples:
       - data_component: '404bc00000000000'
-        unit_component: '1107'
+        unit_component: '1207'
         value: 55.5
         unit: millimeters
         description: Maximum chassis position is 55.5mm
@@ -161,13 +161,13 @@ properties:
     name: minimum_chassis_position
     name_cased: minimumChassisPosition
     name_pretty: Minimum chassis position
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: The minimum possible value for the chassis position
     examples:
       - data_component: 'c03c666666666666'
-        unit_component: '1107'
+        unit_component: '1207'
         value: -28.4
         unit: millimeters
         description: Minimum chassis position is -28.4mm

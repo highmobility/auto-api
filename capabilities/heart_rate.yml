@@ -24,12 +24,12 @@ properties:
     name: heart_rate
     name_cased: heartRate
     name_pretty: Heart rate
-    unit_type: frequency
+    unit: frequency
     type: double
     size: 8
     examples:
       - data_component: '4050000000000000'
-        unit_component: '0d08'
+        unit_component: '0e08'
         value: 64.0
         unit: beats_per_minute
         description: Heart rate is 64.0bpm

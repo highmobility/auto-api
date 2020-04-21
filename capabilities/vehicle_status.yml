@@ -121,13 +121,13 @@ properties:
     deprecated:
       new_name: power
       reason: removed the unit from the name
-    unit_type: power
+    unit: power
     type: double
     size: 8
     description: The power of the vehicle
     examples:
       - data_component: '406b800000000000'
-        unit_component: '1303'
+        unit_component: '1403'
         value: 220.0
         unit: kilowatts
         description: Vehicle has 220kW of power
@@ -157,7 +157,7 @@ properties:
     name: engine_volume
     name_cased: engineVolume
     name_pretty: Engine volume
-    unit_type: volume
+    unit: volume
     type: double
     size: 8
     description: The engine volume displacement
@@ -171,7 +171,7 @@ properties:
     name: engine_max_torque
     name_cased: engineMaxTorque
     name_pretty: Engine max torque
-    unit_type: torque
+    unit: torque
     type: double
     size: 8
     description: The maximum engine torque
@@ -259,13 +259,13 @@ properties:
     name: power
     name_cased: power
     name_pretty: Power
-    unit_type: power
+    unit: power
     type: double
     size: 8
     description: The power of the vehicle
     examples:
       - data_component: '406b800000000000'
-        unit_component: '1303'
+        unit_component: '1403'
         value: 220.0
         unit: kilowatts
         description: Vehicle has 220kW of power

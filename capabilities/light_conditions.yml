@@ -22,13 +22,13 @@ properties:
     name: outside_light
     name_cased: outsideLight
     name_pretty: Outside light
-    unit_type: illuminance
+    unit: illuminance
     type: double
     size: 8
     description: Measured outside illuminance
     examples:
       - data_component: '40fb198000000000'
-        unit_component: '1000'
+        unit_component: '1100'
         value: 111000.0
         unit: lux
         description: Outside illuminance is 111'000.0lux
@@ -36,13 +36,13 @@ properties:
     name: inside_light
     name_cased: insideLight
     name_pretty: Inside light
-    unit_type: illuminance
+    unit: illuminance
     type: double
     size: 8
     description: Measured inside illuminance
     examples:
       - data_component: '3fd0000000000000'
-        unit_component: '1000'
+        unit_component: '1100'
         value: 0.25
         unit: lux
         description: Inside illuminance is 0.25lux

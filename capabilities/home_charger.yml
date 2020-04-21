@@ -95,13 +95,13 @@ properties:
     deprecated:
       new_name: charging_power
       reason: removed the unit from the name
-    unit_type: power
+    unit: power
     type: double
     size: 8
     description: Charging power
     examples:
       - data_component: '4027000000000000'
-        unit_component: '1303'
+        unit_component: '1403'
         value: 11.5
         unit: kilowatts
         description: Charging power is 11.5kW
@@ -173,13 +173,13 @@ properties:
     name: charge_current_dc
     name_cased: chargeCurrentDC
     name_pretty: Charge current (DC)
-    unit_type: electric_potential_difference
+    unit: electric_potential_difference
     type: double
     size: 8
     description: The charge direct current
     examples:
       - data_component: '3fe0000000000000'
-        unit_component: '0902'
+        unit_component: '0a02'
         value: 0.5
         unit: volts
         description: Charger direct current is 0.5V
@@ -187,13 +187,13 @@ properties:
     name: maximum_charge_current
     name_cased: maximumChargeCurrent
     name_pretty: Maximum charge current
-    unit_type: electric_potential_difference
+    unit: electric_potential_difference
     type: double
     size: 8
     description: The maximum possible charge current
     examples:
       - data_component: '3ff0000000000000'
-        unit_component: '0902'
+        unit_component: '0a02'
         value: 1.0
         unit: volts
         description: Maximum charger current is 1.0V
@@ -201,13 +201,13 @@ properties:
     name: minimum_charge_current
     name_cased: minimumChargeCurrent
     name_pretty: Minimum charge current
-    unit_type: electric_potential_difference
+    unit: electric_potential_difference
     type: double
     size: 8
     description: The minimal possible charge current
     examples:
       - data_component: '3fb999999999999a'
-        unit_component: '0902'
+        unit_component: '0a02'
         value: 0.1
         unit: volts
         description: Minimum charger current is 0.1V
@@ -252,13 +252,13 @@ properties:
     name: charging_power
     name_cased: chargingPower
     name_pretty: Charging power
-    unit_type: power
+    unit: power
     type: double
     size: 8
     description: Charging power output from the charger
     examples:
       - data_component: '4075e00000000000'
-        unit_component: '1303'
+        unit_component: '1403'
         value: 350.0
         unit: kilowatts
         description: Charging power is 350.0kW

@@ -87,7 +87,7 @@ properties:
     name: steering_angle
     name_cased: steeringAngle
     name_pretty: Steering angle
-    unit_type: angle
+    unit: angle
     type: double
     size: 8
     description: The steering angle, whereas 0.0 is straight ahead, positive number to the right and negative number to the left
@@ -101,13 +101,13 @@ properties:
     name: brake_pressure
     name_cased: brakePressure
     name_pretty: Brake pressure
-    unit_type: pressure
+    unit: pressure
     type: double
     size: 8
     description: Brake pressure
     examples:
       - data_component: '4034000000000000'
-        unit_component: '1406'
+        unit_component: '1506'
         value: 20.0
         unit: bars
         description: Brake pressure is 20.0bar
@@ -115,13 +115,13 @@ properties:
     name: yaw_rate
     name_cased: yawRate
     name_pretty: Yaw rate
-    unit_type: angular_velocity
+    unit: angular_velocity
     type: double
     size: 8
     description: Yaw turning rate
     examples:
       - data_component: '401aa3d70a3d70a4'
-        unit_component: '1500'
+        unit_component: '0300'
         value: 6.66
         unit: degrees_per_second
         description: Yaw rate is 6.66°/s
@@ -129,7 +129,7 @@ properties:
     name: rear_suspension_steering
     name_cased: rearSuspensionSteering
     name_pretty: Rear suspension steering
-    unit_type: angle
+    unit: angle
     type: double
     size: 8
     description: Rear suspension steering

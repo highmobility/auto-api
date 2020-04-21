@@ -199,7 +199,7 @@ types:
   - name: percentage
     name_cased: percentage
     name_pretty: Percentage
-    unit: '%'
+    unit_sign: '%'
     validation: 'min:0|max:1'
     type: double
     size: 8
@@ -271,14 +271,14 @@ types:
     items:
       - name: hour
         name_cased: hour
-        unit: h
+        unit_sign: h
         validation: 'min:0|max:23'
         type: uinteger
         size: 1
         description: Value between 0 and 23
       - name: minute
         name_cased: minute
-        unit: m
+        unit_sign: m
         validation: 'min:0|max:59'
         type: uinteger
         size: 1
@@ -341,7 +341,7 @@ types:
       - name: acceleration
         name_cased: acceleration
         name_pretty: Acceleration
-        unit_type: acceleration
+        unit: acceleration
         type: double
         size: 8
         description: The accelaration
@@ -388,7 +388,7 @@ types:
         description: Check Control Message identifier
       - name: remaining_time
         name_cased: remainingTime
-        unit_type: duration
+        unit: duration
         type: double
         size: 8
         description: Remaining time of the message
@@ -725,7 +725,7 @@ types:
         type: types.driving_mode
       - name: consumption
         name_cased: consumption
-        unit_type: energy
+        unit: energy
         type: double
         size: 8
         description: Energy consumption in the driving mode
@@ -930,7 +930,7 @@ types:
         type: types.axle
       - name: spring_rate
         name_cased: springRate
-        unit_type: torque
+        unit: torque
         type: double
         size: 8
         description: The suspension spring rate
@@ -969,7 +969,7 @@ types:
         type: types.location
       - name: pressure
         name_cased: pressure
-        unit_type: pressure
+        unit: pressure
         type: double
         size: 8
         description: Tire pressure
@@ -985,7 +985,7 @@ types:
         type: types.location
       - name: temperature
         name_cased: temperature
-        unit_type: temperature
+        unit: temperature
         type: double
         size: 8
         description: Tire temperature
@@ -1019,6 +1019,7 @@ types:
     name_cased: webhook
     name_pretty: Webhook
     type: custom
+    size: 2
     items:
       - name: available
         name_cased: available
@@ -1064,7 +1065,7 @@ types:
       - name: rpm
         name_cased: RPM
         name_pretty: RPM
-        unit_type: rotational_speed
+        unit: angular_velocity
         type: double
         size: 8
         description: The RPM measured at this wheel

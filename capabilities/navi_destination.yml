@@ -71,13 +71,13 @@ properties:
     name: arrival_duration
     name_cased: arrivalDuration
     name_pretty: Arrival duration
-    unit_type: duration
+    unit: duration
     type: double
     size: 8
     description: Remaining time until reaching the destination.
     examples:
       - data_component: '4004cccccccccccd'
-        unit_component: '0600'
+        unit_component: '0700'
         value: 2.6
         unit: hours
         description: Remaining time to destination is 2.6h
@@ -85,13 +85,13 @@ properties:
     name: distance_to_destination
     name_cased: distanceToDestination
     name_pretty: Distance to destination
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: Remaining distance to reach the destination.
     examples:
       - data_component: '4094e40000000000'
-        unit_component: '1101'
+        unit_component: '1201'
         value: 1337.0
         unit: kilometers
         description: Remaining distance to destination is 1337.0km

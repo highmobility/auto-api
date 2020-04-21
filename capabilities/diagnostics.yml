@@ -24,13 +24,13 @@ properties:
     deprecated:
       new_name: odometer
       reason: 'mileage' is an incorrect term for this
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: The vehicle mileage (odometer)
     examples:
       - data_component: '41024f8000000000'
-        unit_component: '1101'
+        unit_component: '1201'
         value: 150000.0
         unit: kilometers
         description: Odometer is showing 150'000.0km
@@ -38,7 +38,7 @@ properties:
     name: engine_oil_temperature
     name_cased: engineOilTemperature
     name_pretty: Engine oil temperature
-    unit_type: temperature
+    unit: temperature
     type: double
     size: 8
     description: Engine oil temperature
@@ -52,7 +52,7 @@ properties:
     name: speed
     name_cased: speed
     name_pretty: Speed
-    unit_type: speed
+    unit: speed
     type: double
     size: 8
     description: The vehicle speed
@@ -66,13 +66,13 @@ properties:
     name: engine_rpm
     name_cased: engineRPM
     name_pretty: Engine RPM
-    unit_type: angular_velocity
+    unit: angular_velocity
     type: double
     size: 8
     description: Engine RPM (revolutions per minute)
     examples:
       - data_component: '40a3880000000000'
-        unit_component: '1502'
+        unit_component: '0302'
         value: 2500.0
         unit: revolutions_per_minute
         description: Engine RPM is 2500.0
@@ -90,13 +90,13 @@ properties:
     name: estimated_range
     name_cased: estimatedRange
     name_pretty: Estimated range
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: Estimated range (with combustion engine)
     examples:
       - data_component: '4070900000000000'
-        unit_component: '1101'
+        unit_component: '1201'
         value: 265.0
         unit: kilometers
         description: Estimated range is 256.0km
@@ -113,13 +113,13 @@ properties:
     name: battery_voltage
     name_cased: batteryVoltage
     name_pretty: Battery voltage
-    unit_type: electric_potential_difference
+    unit: electric_potential_difference
     type: double
     size: 8
     description: Battery voltage
     examples:
       - data_component: '4028333333333333'
-        unit_component: '0902'
+        unit_component: '0a02'
         value: 12.1
         unit: volts
         description: Battery voltage is 12.1V
@@ -127,7 +127,7 @@ properties:
     name: adblue_level
     name_cased: adBlueLevel
     name_pretty: AdBlue level
-    unit_type: volume
+    unit: volume
     type: double
     size: 8
     description: AdBlue level in liters
@@ -141,13 +141,13 @@ properties:
     name: distance_since_reset
     name_cased: distanceSinceReset
     name_pretty: Distance since reset
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: The distance driven since reset
     examples:
       - data_component: '4097706666666666'
-        unit_component: '1101'
+        unit_component: '1201'
         value: 1500.1
         unit: kilometers
         description: 1'500.1km driven since reset
@@ -155,13 +155,13 @@ properties:
     name: distance_since_start
     name_cased: distanceSinceStart
     name_pretty: Distance since start
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: The distance driven since trip start
     examples:
       - data_component: '4028cccccccccccd'
-        unit_component: '1101'
+        unit_component: '1201'
         value: 12.4
         unit: kilometers
         description: 12.4km driven since the engine start
@@ -169,7 +169,7 @@ properties:
     name: fuel_volume
     name_cased: fuelVolume
     name_pretty: Fuel volume
-    unit_type: volume
+    unit: volume
     type: double
     size: 8
     description: The fuel volume measured in liters
@@ -192,7 +192,7 @@ properties:
     name: engine_coolant_temperature
     name_cased: engineCoolantTemperature
     name_pretty: Engine coolant temperature
-    unit_type: temperature
+    unit: temperature
     type: double
     size: 8
     description: Engine coolant temperature
@@ -209,13 +209,13 @@ properties:
     deprecated:
       new_name: engine_total_operating_time
       reason: removed the unit from the name
-    unit_type: duration
+    unit: duration
     type: double
     size: 8
     description: The accumulated time of engine operation
     examples:
       - data_component: '409772999999999a'
-        unit_component: '0600'
+        unit_component: '0700'
         value: 1500.65
         unit: hours
         description: The engine has operated 1'500.65h in total
@@ -223,7 +223,7 @@ properties:
     name: engine_total_fuel_consumption
     name_cased: engineTotalFuelConsumption
     name_pretty: Engine total fuel consumption
-    unit_type: volume
+    unit: volume
     type: double
     size: 8
     description: The accumulated lifespan fuel consumption
@@ -266,7 +266,7 @@ properties:
     name: wheel_based_speed
     name_cased: wheelBasedSpeed
     name_pretty: Wheel based speed
-    unit_type: speed
+    unit: speed
     type: double
     size: 8
     description: The vehicle speed measured at the wheel base
@@ -312,28 +312,28 @@ properties:
     name_singular: tire_pressure
     examples:
       - data_component: '0040027ae147ae147b'
-        unit_component: '1406'
+        unit_component: '1506'
         values:
           location: 'front_left'
           pressure: 2.31
         unit: bars
         description: Front left tire pressure is 2.31BAR
       - data_component: '0140027ae147ae147b'
-        unit_component: '1406'
+        unit_component: '1506'
         values:
           location: 'front_right'
           pressure: 2.31
         unit: bars
         description: Front right tire pressure is 2.31BAR
       - data_component: '024001eb851eb851ec'
-        unit_component: '1406'
+        unit_component: '1506'
         values:
           location: 'rear_right'
           pressure: 2.24
         unit: bars
         description: Rear right tire pressure is 2.24BAR
       - data_component: '034001eb851eb851ec'
-        unit_component: '1406'
+        unit_component: '1506'
         values:
           location: 'rear_left'
           pressure: 2.24
@@ -384,28 +384,28 @@ properties:
     name_singular: wheel_rpm
     examples:
       - data_component: '004087080000000000'
-        unit_component: '1502'
+        unit_component: '0302'
         values:
           location: 'front_left'
           rpm: 737.0
         unit: revolutions_per_minute
         description: Front left wheel is doing 737.0RPM
       - data_component: '014087580000000000'
-        unit_component: '1502'
+        unit_component: '0302'
         values:
           location: 'front_right'
           rpm: 747.0
         unit: revolutions_per_minute
         description: Front right wheel is doing 747.0RPM
       - data_component: '024088480000000000'
-        unit_component: '1502'
+        unit_component: '0302'
         values:
           location: 'rear_right'
           rpm: 777.0
         unit: revolutions_per_minute
         description: Rear right wheel is doing 777.0RPM
       - data_component: '034088980000000000'
-        unit_component: '1502'
+        unit_component: '0302'
         values:
           location: 'rear_left'
           rpm: 787.0
@@ -440,13 +440,13 @@ properties:
     deprecated:
       new_name: odometer
       reason: 'mileage' is an incorrect term for this
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: The vehicle mileage (odometer) in meters
     examples:
       - data_component: '41024f8800000000'
-        unit_component: '1101'
+        unit_component: '1201'
         value: 150001.0
         unit: kilometers
         description: Odometer is showing 150'001km
@@ -454,13 +454,13 @@ properties:
     name: odometer
     name_cased: odometer
     name_pretty: Odometer
-    unit_type: length
+    unit: length
     type: double
     size: 8
     description: The vehicle odometer value in a given units.
     examples:
       - data_component: '401999999999999a'
-        unit_component: '1100'
+        unit_component: '1200'
         value: 6.4
         unit: megameters
         description: Odometer is showing 6.4Mm – length of the Great Wall.
@@ -468,13 +468,13 @@ properties:
     name: engine_total_operating_time
     name_cased: engineTotalOperatingTime
     name_pretty: Engine total operation time
-    unit_type: duration
+    unit: duration
     type: double
     size: 8
     description: The accumulated time of engine operation
     examples:
       - data_component: '409772999999999a'
-        unit_component: '0600'
+        unit_component: '0700'
         value: 1500.65
         unit: hours
         description: The engine has operated 1'500.65h in total

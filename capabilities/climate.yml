@@ -41,7 +41,7 @@ properties:
     name: inside_temperature
     name_cased: insideTemperature
     name_pretty: Inside temperature
-    unit_type: temperature
+    unit: temperature
     type: double
     size: 8
     description: The inside temperature
@@ -55,7 +55,7 @@ properties:
     name: outside_temperature
     name_cased: outsideTemperature
     name_pretty: Outside temperature
-    unit_type: temperature
+    unit: temperature
     type: double
     size: 8
     description: The outside temperature
@@ -69,7 +69,7 @@ properties:
     name: driver_temperature_setting
     name_cased: driverTemperatureSetting
     name_pretty: Driver temperature setting
-    unit_type: temperature
+    unit: temperature
     type: double
     size: 8
     description: The driver temperature setting
@@ -83,7 +83,7 @@ properties:
     name: passenger_temperature_setting
     name_cased: passengerTemperatureSetting
     name_pretty: Passenger temperature setting
-    unit_type: temperature
+    unit: temperature
     type: double
     size: 8
     description: The passenger temperature setting
@@ -133,7 +133,7 @@ properties:
     name: defrosting_temperature_setting
     name_cased: defrostingTemperatureSetting
     name_pretty: Defrosting temperature setting
-    unit_type: temperature
+    unit: temperature
     type: double
     size: 8
     description: The defrosting temperature setting
@@ -211,7 +211,7 @@ properties:
     name: rear_temperature_setting
     name_cased: rearTemperatureSetting
     name_pretty: Rear temperature setting
-    unit_type: temperature
+    unit: temperature
     type: double
     size: 8
     description: The rear temperature
