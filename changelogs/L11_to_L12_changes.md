@@ -3,14 +3,15 @@
 Level 12 contains a number of updates to the protocol.  
 
 **These include**:  
-new capability for static vehicle information (properties split from `vehicle_status`)  
-new property component to dynamically transfer values in different units  
-new property component to output availability information for a given datapoint  
-new properties to go along with the _unit component_  
-new deprecation structure to ease the pain of future API changes  
-changes to fields in spec to foster consitency  
-other minor changes  
+- new capability for static vehicle information (properties split from `vehicle_status`)  
+- new property component to dynamically transfer values in different units  
+- new property component to output availability information for a given datapoint  
+- new properties to go along with the _unit component_  
+- new deprecation structure to ease the pain of future API changes  
+- changes to fields in spec to foster consitency  
+- other minor changes  
 
+TOC:
 * [Spec Changes](#spec-changes)
   * [Renamed Fields](#renamed-fields)
   * [Misc Changes](#misc-changes)
