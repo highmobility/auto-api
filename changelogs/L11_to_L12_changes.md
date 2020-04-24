@@ -1,5 +1,15 @@
 # AutoAPI L12 Changelog
-Level 12 contains a number of updates to the protocol, including new property components, changes to the spec and more.  
+
+Level 12 contains a number of updates to the protocol.  
+
+**These include**:  
+new capability for static vehicle information (properties split from `vehicle_status`)  
+new property component to dynamically transfer values in different units  
+new property component to output availability information for a given datapoint  
+new properties to go along with the _unit component_  
+new deprecation structure to ease the pain of future API changes  
+changes to fields in spec to foster consitency  
+other minor changes  
 
 * [Spec Changes](#spec-changes)
   * [Renamed Fields](#renamed-fields)
@@ -32,10 +42,10 @@ There are a number of other miscellaneous changes:
   - in `failure_message` property `0x03`
   - in _failure component's_ `reason`
 - moved files and definitions around for better organisation
-  - all _capabilities_ definitions (files) are now in `capabilities/` folder
-  - other spec files are moved to `misc/` folder
-    - _property components_ are now defined in `property_components.yml`
-    - _version_ is now defined in `version.yml` with a simpler structure (removed `identification`)
+  - all _capabilities_ definitions (files) are now in [`capabilities/`](https://github.com/highmobility/auto-api/tree/level12/capabilities) folder
+  - other spec files are moved to [`misc/`](https://github.com/highmobility/auto-api/tree/level12/misc) folder
+    - _property components_ are now defined in [`property_components.yml`](https://github.com/highmobility/auto-api/blob/level12/misc/property_components.yml)
+    - _version_ is now defined in [`version.yml`](https://github.com/highmobility/auto-api/blob/level12/misc/version.yml) with a simpler structure (removed `identification: version`)
 - changed references of _car_ to _vehicle_ to encompass a bigger range of machines
 
 ## Capabilities Changes
