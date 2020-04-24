@@ -2,17 +2,17 @@
 Level 12 contains a number of updates to the protocol, including new property components, changes to the spec and more.  
 
 * [Spec Changes](#spec-changes)
- * [Renamed Fields](#renamed-fields)
- * [Misc Changes](#misc-changes)
+  * [Renamed Fields](#renamed-fields)
+  * [Misc Changes](#misc-changes)
 * [Capabilities Changes](#capabilities-changes)
 * [New Properties](#new-properties)
 * [Deprecations](#deprecations)
 * [Unit Component](#unit-component)
- * [Component](#component)
- * [Spec Changes](#spec-changes)
+  * [Component](#component)
+  * [Spec Changes](#spec-changes)
 * [Availability Component](#availability-component)
- * [Component](#component)
- * [Availability Getters](#availability-getters)
+  * [Component](#component)
+  * [Availability Getters](#availability-getters)
 
 ## Spec Changes
 ### Renamed Fields
@@ -29,11 +29,11 @@ Some fields in the spec have been renamed for more consistency.
 There are a number of other miscellaneous changes:  
 
 - added `internal_oem_error` to _failure reason_
- - in `failure_message` property `0x03`
- - in _failure component's_ `reason`
+  - in `failure_message` property `0x03`
+  - in _failure component's_ `reason`
 - moved files and definitions around for better organisation
- - all _capabilities_ definitions (files) are now in `capabilities/` folder
- - other spec files are moved to `misc/` folder
+  - all _capabilities_ definitions (files) are now in `capabilities/` folder
+  - other spec files are moved to `misc/` folder
      - _property components_ are now defined in `property_components.yml`
      - _version_ is now defined in `version.yml` with a simpler structure (removed `identification`)
 - changed references of _car_ to _vehicle_ to encompass a bigger range of machines
@@ -41,10 +41,10 @@ There are a number of other miscellaneous changes:
 ## Capabilities Changes
 
 - **engine start stop** is removed
- - it's single property is moved to `engine` as a property named `start_stop_state`
+  - it's single property is moved to `engine` as a property named `start_stop_state`
 - **vehicle status** is broken into two
- - new capability `vehicle_information` that contains the _static_ properties
- - old capability `vehicle_status` stays to output `states` properties
+  - new capability `vehicle_information` that contains the _static_ properties
+  - old capability `vehicle_status` stays to output `states` properties
 
 ## New Properties
 
@@ -52,33 +52,33 @@ There are a number of new properties.
 A few are simply additive to the spec, some are from capabilities' changes and others are new because of the _unit component_ (see more [below](#unit-component)).
 
 - **capabilities**
- - added `webhooks` - outputs _webhook_ information
+  - added `webhooks` - outputs _webhook_ information
 - **charging**
- - added `battery_current` - outputs _electric current_ (i.e. `0.6A`)
- - added `charging_rate` - outputs _power_ (i.e. `150.31kW`)
- - added `charger_voltage` - outputs _voltage_ (i.e. `200V`)
- - added `current_type` - outputs _direct_ or _alternating current_ value
+  - added `battery_current` - outputs _electric current_ (i.e. `0.6A`)
+  - added `charging_rate` - outputs _power_ (i.e. `150.31kW`)
+  - added `charger_voltage` - outputs _voltage_ (i.e. `200V`)
+  - added `current_type` - outputs _direct_ or _alternating current_ value
 - **diagnostics**
- - added `engine_total_operating_time` - outputs _duration_ value (i.e. `8.1 weeks`)
- - added `odometer` - outputs _length_ value (i.e. `666.7km`)
+  - added `engine_total_operating_time` - outputs _duration_ value (i.e. `8.1 weeks`)
+  - added `odometer` - outputs _length_ value (i.e. `666.7km`)
 - **engine**
- - added `start_stop_state` - outputs _active state_
+  - added `start_stop_state` - outputs _active state_
 - **home charger**
- - added `charging_power` - outputs _power_ value (i.e. `150.3kW`)
+  - added `charging_power` - outputs _power_ value (i.e. `150.3kW`)
 - **honk horn flash light**
- - added `honk_time` - outputs _duration_ value (i.e. `3.0s`)
+  - added `honk_time` - outputs _duration_ value (i.e. `3.0s`)
 - **maintenance**
- - added `distance_to_next_service` - outputs _length_ value (i.e. `332.2km`)
- - added `time_to_next_service` - outputs _duration_ value (i.e. `5.2 weeks`)
- - added `time_to_exhaust_inspection` - outputs _duration_ value (i.e. `345.6 days`)
+  - added `distance_to_next_service` - outputs _length_ value (i.e. `332.2km`)
+  - added `time_to_next_service` - outputs _duration_ value (i.e. `5.2 weeks`)
+  - added `time_to_exhaust_inspection` - outputs _duration_ value (i.e. `345.6 days`)
 - **usage**
- - added `odometer_after_last_trip` - outputs _length_ value (i.e. `15_678.9km`)
+  - added `odometer_after_last_trip` - outputs _length_ value (i.e. `15_678.9km`)
 - **vehicle location**
- - added `precision` - outputs _length_ value (i.e. `100.0m`)
+  - added `precision` - outputs _length_ value (i.e. `100.0m`)
 - **vehicle information**
- - added `power` - outputs _power_ value (i.e. `250.0kW`)
+  - added `power` - outputs _power_ value (i.e. `250.0kW`)
 - **video handover**
- - added `starting_time` - outputs _duration_ value (i.e. `15.8s`)
+  - added `starting_time` - outputs _duration_ value (i.e. `15.8s`)
 
 ## Deprecations
 
@@ -97,29 +97,29 @@ Currently deprecated properties are (mainly) those that contained a _unit_ in th
 List of deprecated properties:
 
 - **charging**
- - deprecated `battery_current_ac` in favour of `battery_current` and `current_type`
- - deprecated `battery_current_dc` in favour of `battery_current` and `current_type`
- - deprecated `charger_voltage_ac` in favour of `charger_voltage ` and `current_type`
- - deprecated `charger_voltage_dc` in favour of `charger_voltage ` and `current_type`
- - deprecated `charging_rate_kw` in favour of `charging_rate`
+  - deprecated `battery_current_ac` in favour of `battery_current` and `current_type`
+  - deprecated `battery_current_dc` in favour of `battery_current` and `current_type`
+  - deprecated `charger_voltage_ac` in favour of `charger_voltage ` and `current_type`
+  - deprecated `charger_voltage_dc` in favour of `charger_voltage ` and `current_type`
+  - deprecated `charging_rate_kw` in favour of `charging_rate`
 - **diagnostics**
- - deprecated `engine_total_operating_hours` in favour of `engine_total_operating_time`
- - deprecated `mileage` in favour of `odometer`
- - deprecated `mileage_meters` in favour of `odometer`
+  - deprecated `engine_total_operating_hours` in favour of `engine_total_operating_time`
+  - deprecated `mileage` in favour of `odometer`
+  - deprecated `mileage_meters` in favour of `odometer`
 - **home charger**
- - deprecated `charging_power_kw` in favour of `charging_power`
+  - deprecated `charging_power_kw` in favour of `charging_power`
 - **honk horn flash lights**
- - deprecated `honk_seconds` in favour of `honk_time`
+  - deprecated `honk_seconds` in favour of `honk_time`
 - **maintenance**
- - deprecated `days_to_next_service` in favour of `time_to_next_service`
- - deprecated `kilometers_to_next_service` in favour to `distance_to_next_service`
- - deprecated `months_to_exhaust_inspection` in favour of `time_to_exhaust_inspection`
+  - deprecated `days_to_next_service` in favour of `time_to_next_service`
+  - deprecated `kilometers_to_next_service` in favour to `distance_to_next_service`
+  - deprecated `months_to_exhaust_inspection` in favour of `time_to_exhaust_inspection`
 - **usage**
- - deprecated `mileage_after_last_trip` in favour of `odometer_after_last_trip`
+  - deprecated `mileage_after_last_trip` in favour of `odometer_after_last_trip`
 - **vehicle information**
- - deprecated `power_in_kw` in favour of `power`
+  - deprecated `power_in_kw` in favour of `power`
 - **video handover**
- - deprecated `starting_second` in favour of `starting_time`
+  - deprecated `starting_second` in favour of `starting_time`
 
 ## Unit Component
 ### Component
@@ -156,8 +156,8 @@ The new unit component brings along some changes to _properties_ and _custom typ
 
 - added `unit_type` to express the type of _measurement_ the property outputs
 - additions to `examples`
- - added `unit_component` to define the _hex_ value of the property
- - added `unit` to define the expected _unit type_ of the property
+  - added `unit_component` to define the _hex_ value of the property
+  - added `unit` to define the expected _unit type_ of the property
 - changed properties with `unit_type`-field to be `type: double`
 - deprecated properties with a specific unit in the name
 
