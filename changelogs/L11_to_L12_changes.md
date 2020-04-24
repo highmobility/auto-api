@@ -11,7 +11,7 @@ Level 12 contains a number of updates to the protocol.
 - changes to fields in spec to foster consitency  
 - other minor changes  
 
-TOC:
+Changes from L11 are divided into these sub-sections:
 * [Spec Changes](#spec-changes)
   * [Renamed Fields](#renamed-fields)
   * [Misc Changes](#misc-changes)
