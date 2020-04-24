@@ -32,7 +32,6 @@ Some fields in the spec have been renamed for more consistency.
 
 - changed `hex` to `data_component` in properties _examples_ (for consistency with new field names)
 - changed `pretty_name` to `name_pretty` (for consistency with other `name_`-s)
-- changed `unit` to `unit_sign` (to "free up" the _unit_ name for new purposes)
 - changed `car_signature` to `vehicle_signature` (for semantic reasons)
 
 ### Misc Changes
