@@ -8,10 +8,10 @@ Level 12 contains a number of updates to the protocol, including new property co
 * [New Properties](#new-properties)
 * [Deprecations](#deprecations)
 * [Unit Component](#unit-component)
-  * [Component](#component)
+  * [Component](#component-unit)
   * [Spec Changes](#spec-changes)
 * [Availability Component](#availability-component)
-  * [Component](#component)
+  * [Component](#component-availability)
   * [Availability Getters](#availability-getters)
 
 ## Spec Changes
@@ -34,8 +34,8 @@ There are a number of other miscellaneous changes:
 - moved files and definitions around for better organisation
   - all _capabilities_ definitions (files) are now in `capabilities/` folder
   - other spec files are moved to `misc/` folder
-     - _property components_ are now defined in `property_components.yml`
-     - _version_ is now defined in `version.yml` with a simpler structure (removed `identification`)
+    - _property components_ are now defined in `property_components.yml`
+    - _version_ is now defined in `version.yml` with a simpler structure (removed `identification`)
 - changed references of _car_ to _vehicle_ to encompass a bigger range of machines
 
 ## Capabilities Changes
@@ -122,7 +122,7 @@ List of deprecated properties:
   - deprecated `starting_second` in favour of `starting_time`
 
 ## Unit Component
-### Component
+### Component<a name="component-unit"></a>
 
 AutoAPI needs to dynamically output the _unit type_ of a property (or a custom type).  
 
@@ -162,7 +162,7 @@ The new unit component brings along some changes to _properties_ and _custom typ
 - deprecated properties with a specific unit in the name
 
 ## Availability Component
-### Component
+### Component<a name="component-availability"></a>
 
 AutoAPI needs to support requesting and transmitting availability information for properties.  
 
