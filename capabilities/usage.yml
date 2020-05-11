@@ -188,7 +188,7 @@ properties:
     name_pretty: Mileage after last trip
     deprecated:
       new_name: odometer_after_last_trip
-      reason: 'mileage' is an incorrect term for this
+      reason: "'mileage' is an incorrect term for this"
     unit: length
     type: double
     size: 8

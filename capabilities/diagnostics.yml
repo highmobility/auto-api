@@ -23,7 +23,7 @@ properties:
     name_pretty: Mileage
     deprecated:
       new_name: odometer
-      reason: 'mileage' is an incorrect term for this
+      reason: "'mileage' is an incorrect term for this"
     unit: length
     type: double
     size: 8
@@ -439,7 +439,7 @@ properties:
     name_pretty: Mileage meters
     deprecated:
       new_name: odometer
-      reason: 'mileage' is an incorrect term for this
+      reason: "'mileage' is an incorrect term for this"
     unit: length
     type: double
     size: 8
