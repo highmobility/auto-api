@@ -136,7 +136,10 @@ List of deprecated properties:
 
 AutoAPI needs to dynamically output the _unit type_ of a property (or a custom type).  
 
-For this reason, a new **optional** _property component_ called **unit component** is introduced to the protocol.    
+For this reason, a new **optional** _property component_ called **unit component** is introduced to the protocol.  
+This means that the _unit type_ is defined for some properties and not for others.  
+Those properties that have the _unit type_ defiend, require the **unit component** to be transfered along with the _data component_ when transmitting values.  
+
 It's ID is `0x04` and it follows the same header-payload structure as other components.  
 Payload is 2 bytes referencing _measurement_ and _unit type_ from [unit_types.yml](https://github.com/highmobility/auto-api/blob/level12/misc/unit_types.yml).
 
