@@ -79,7 +79,7 @@ properties:
       - id: 0x08
         name: internal_oem_error
         name_pretty: Internal OEM error
-        description: API call to OEM returned an error.
+        description: API call to OEM returned an error
     examples:
       - data_component: '01'
         value: 'unauthorised'
