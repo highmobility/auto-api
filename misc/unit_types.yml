@@ -39,40 +39,6 @@ measurement_types:
       - name: revolutions_per_minute
         id: 0x02
 
-  - name: area
-    id: 0x04
-    unit_types:
-      - name: square_kilometers
-        id: 0x01
-      - name: square_meters
-        id: 0x02
-      - name: square_centimeters
-        id: 0x03
-      - name: square_millimeters
-        id: 0x04
-      - name: square_inches
-        id: 0x07
-      - name: square_feet
-        id: 0x08
-      - name: square_yards
-        id: 0x09
-      - name: square_miles
-        id: 0x0a
-
-  - name: concentration_mass
-    id: 0x05
-    unit_types:
-      - name: gramsPerLiter
-        id: 0x00
-      - name: milligramsPerDeciliter
-        id: 0x01
-
-  - name: dispersion
-    id: 0x06
-    unit_types:
-      - name: parts_per_million
-        id: 0x00
-
   - name: duration
     id: 0x07
     unit_types:
@@ -88,18 +54,6 @@ measurement_types:
         id: 0x04
       - name: months
         id: 0x05
-
-  - name: electric_charge
-    id: 0x08
-    unit_types:
-      - name: coulombs
-        id: 0x00
-      - name: kiloampereHours
-        id: 0x02
-      - name: ampereHours
-        id: 0x03
-      - name: milliampereHours
-        id: 0x04
 
   - name: electric_current
     id: 0x09
@@ -120,14 +74,6 @@ measurement_types:
         id: 0x02
       - name: millivolts
         id: 0x03
-
-  - name: electric_resistance
-    id: 0x0b
-    unit_types:
-      - name: kiloohms
-        id: 0x01
-      - name: ohms
-        id: 0x02
 
   - name: energy
     id: 0x0c
@@ -173,30 +119,6 @@ measurement_types:
       - name: miles_per_gallon
         id: 0x02
 
-  - name: information_storage
-    id: 0x10
-    unit_types:
-      - name: bytes
-        id: 0x00
-      - name: bits
-        id: 0x01
-      - name: nibbles
-        id: 0x02
-      - name: gigabytes
-        id: 0x08
-      - name: megabytes
-        id: 0x09
-      - name: kilobytes
-        id: 0x0a
-      - name: terabits
-        id: 0x0f
-      - name: gigabits
-        id: 0x10
-      - name: megabits
-        id: 0x11
-      - name: kilobits
-        id: 0x12
-
   - name: illuminance
     id: 0x11
     unit_types:
@@ -230,26 +152,6 @@ measurement_types:
         id: 0x0f
       - name: nautical_miles
         id: 0x11
-
-  - name: mass
-    id: 0x13
-    unit_types:
-      - name: kilograms
-        id: 0x00
-      - name: grams
-        id: 0x01
-      - name: milligrams
-        id: 0x04
-      - name: ounces
-        id: 0x08
-      - name: pounds
-        id: 0x09
-      - name: stones
-        id: 0x0a
-      - name: metric_tons
-        id: 0x0b
-      - name: short_tons
-        id: 0x0c
 
   - name: power
     id: 0x14
