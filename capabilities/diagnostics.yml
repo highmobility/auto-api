@@ -421,18 +421,18 @@ properties:
     examples:
       - data_component: '0200074331313136464100095244555f3231324652000750454e44494e47'
         values:
-          occurences: 2
+          occurrences: 2
           id: 'C1116FA'
           ecu_id: 'RDU_212FR'
           status: 'PENDING'
-        description: Trouble code 'C1116FA' with ECU-ID 'RDU_212FR' occured 2 times and is 'PENDING'
+        description: Trouble code 'C1116FA' with ECU-ID 'RDU_212FR' occurred 2 times and is 'PENDING'
       - data_component: '020007433136334146410006445452323132000750454e44494e47'
         values:
-          occurences: 2
+          occurrences: 2
           id: 'C163AFA'
           ecu_id: 'DTR212'
           status: 'PENDING'
-        description: Trouble code 'C163AFA' with ECU-ID 'DTR212' occured 2 times and is 'PENDING'
+        description: Trouble code 'C163AFA' with ECU-ID 'DTR212' occurred 2 times and is 'PENDING'
   - id: 0x1e
     name: mileage_meters
     name_cased: mileageMeters

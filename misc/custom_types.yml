@@ -1151,11 +1151,11 @@ types:
     name_pretty: Trouble code
     type: custom
     items:
-      - name: occurences
-        name_cased: occurences
+      - name: occurrences
+        name_cased: occurrences
         type: uinteger
         size: 1
-        description: Number of occurences
+        description: Number of occurrences
       - name: id
         name_cased: ID
         name_pretty: ID
