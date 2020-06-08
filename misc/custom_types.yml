@@ -446,7 +446,7 @@ types:
     name_cased: dashboardLight
     name_pretty: Dashboard light
     type: custom
-    size: 2
+    size: 3
     items:
       - name: name
         name_cased: name
@@ -455,121 +455,224 @@ types:
         enum_values:
           - id: 0x00
             name: high_beam
-            name_pretty: High beam, main beam (info only)
+            name_pretty: High beam, main beam
           - id: 0x01
             name: low_beam
-            name_pretty: Low beam, dipped beam (info only)
+            name_pretty: Low beam, dipped beam
           - id: 0x02
             name: hazard_warning
-            name_pretty: Hazard warning (info only)
+            name_pretty: Hazard warning
           - id: 0x03
             name: brake_failure
-            name_pretty: Brake failure/brake system malfunction (red only)
+            name_pretty: Brake failure/brake system malfunction
           - id: 0x04
             name: hatch_open
-            name_pretty: Hatch open (info only)
+            name_pretty: Hatch open
           - id: 0x05
             name: fuel_level
-            name_pretty: Fuel level (yellow only)
+            name_pretty: Fuel level
           - id: 0x06
             name: engine_coolant_temperature
-            name_pretty: Engine coolant temperature (red only)
+            name_pretty: Engine coolant temperature
           - id: 0x07
             name: battery_charging_condition
-            name_pretty: Battery charging condition (yellow or red)
+            name_pretty: Battery charging condition
           - id: 0x08
             name: engine_oil
-            name_pretty: Engine oil (yellow only)
+            name_pretty: Engine oil
           - id: 0x09
             name: position_lights
-            name_pretty: Position lights, side lights (info only)
+            name_pretty: Position lights, side lights
           - id: 0x0a
             name: front_fog_light
-            name_pretty: Front fog light (info only)
+            name_pretty: Front fog light
           - id: 0x0b
             name: rear_fog_light
-            name_pretty: Rear fog light (info only)
+            name_pretty: Rear fog light
           - id: 0x0c
             name: park_heating
-            name_pretty: Park Heating (info only)
+            name_pretty: Park Heating
           - id: 0x0d
             name: engine_indicator
-            name_pretty: Engine indicator (yellow only)
+            name_pretty: Engine indicator
           - id: 0x0e
             name: service_call
-            name_pretty: Service, call for maintenance (yellow only)
+            name_pretty: Service, call for maintenance
           - id: 0x0f
             name: transmission_fluid_temperature
-            name_pretty: Transmission fluid temperature (yellow or red)
+            name_pretty: Transmission fluid temperature
           - id: 0x10
             name: transmission_failure
-            name_pretty: Transmission failure/malfunction (red only)
+            name_pretty: Transmission failure/malfunction
           - id: 0x11
             name: anti_lock_brake_failure
-            name_pretty: Anti-lock brake system failure (yellow only)
+            name_pretty: Anti-lock brake system failure
           - id: 0x12
             name: worn_brake_linings
-            name_pretty: Worn brake linings (yellow only)
+            name_pretty: Worn brake linings
           - id: 0x13
             name: windscreen_washer_fluid
-            name_pretty: Windscreen washer fluid/windshield washer fluid (yellow only)
+            name_pretty: Windscreen washer fluid/windshield washer fluid
           - id: 0x14
             name: tire_failure
-            name_pretty: Tire failure/malfunction (yellow only)
+            name_pretty: Tire failure/malfunction
           - id: 0x15
             name: engine_oil_level
-            name_pretty: Engine oil level (yellow only)
+            name_pretty: Engine oil level
           - id: 0x16
             name: engine_coolant_level
-            name_pretty: Engine coolant level (yellow only)
+            name_pretty: Engine coolant level
           - id: 0x17
             name: steering_failure
-            name_pretty: Steering failure (yellow or red)
+            name_pretty: Steering failure
           - id: 0x18
             name: esc_indication
-            name_pretty: Electronic Speed Controller indiction (info only)
+            name_pretty: Electronic Speed Controller indiction
           - id: 0x19
             name: brake_lights
-            name_pretty: Brake lights (info only)
+            name_pretty: Brake lights
           - id: 0x1a
             name: adblue_level
-            name_pretty: AdBlue level (yellow or red)
+            name_pretty: AdBlue level
           - id: 0x1b
             name: fuel_filter_diff_pressure
-            name_pretty: Fuel filter differential pressure (yellow only)
+            name_pretty: Fuel filter differential pressure
           - id: 0x1c
             name: seat_belt
-            name_pretty: Seat belt (red only)
+            name_pretty: Seat belt
           - id: 0x1d
             name: advanced_braking
-            name_pretty: Advanced emergency braking system (yellow only)
+            name_pretty: Advanced emergency braking system
           - id: 0x1e
             name: acc
-            name_pretty: Autonomous Cruise Control (yellow only)
+            name_pretty: Autonomous/adaptive Cruise Control
           - id: 0x1f
             name: trailer_connected
-            name_pretty: Trailer connected (info only)
+            name_pretty: Trailer connected
           - id: 0x20
             name: airbag
-            name_pretty: Airbag (yellow only)
+            name_pretty: Airbag
           - id: 0x21
             name: esc_switched_off
-            name_pretty: ESC switched off (info only)
+            name_pretty: ESC switched off
           - id: 0x22
             name: lane_departure_warning_off
-            name_pretty: Lane departure warning switched off (info only)
+            name_pretty: Lane departure warning switched off
+          - id: 0x23
+            name: air_filter_minder
+          - id: 0x24
+            name: air_suspension_ride_control_fault
+          - id: 0x25
+            name: all_wheel_drive_disabled
+          - id: 0x26
+            name: anti_theft
+          - id: 0x27
+            name: ​blind_spot_detection
+          - id: 0x28
+            name: charge_system_fault
+          - id: 0x29
+            name: check_fuel_cap
+          - id: 0x2a
+            name: check_fuel_fill_inlet
+          - id: 0x2b
+            name: check_fuel_filter
+          - id: 0x2c
+            name: dc_temp_warning
+          - id: 0x2d
+            name: dc_warning_status
+          - id: 0x2e
+            name: diesel_engine_idle_shutdown
+          - id: 0x2f
+            name: diesel_engine_warning
+          - id: 0x30
+            name: diesel_exhaust_fluid_system_fault
+          - id: 0x31
+            name: diesel_exhaust_over_temp
+          - id: 0x32
+            name: diesel_exhaust_fluid_quality
+          - id: 0x33
+            name: diesel_filter_regeneration
+          - id: 0x34
+            name: diesel_particulate_filter
+          - id: 0x35
+            name: diesel_pre_heat
+          - id: 0x36
+            name: electric_trailer_brake_connection
+          - id: 0x37
+            name: ev_battery_cell_max_volt_warning
+          - id: 0x38
+            name: ev_battery_cell_min_volt_warning
+          - id: 0x39
+            name: ev_battery_charge_energy_storage_warning
+          - id: 0x3a
+            name: ev_battery_high_level_warning
+          - id: 0x3b
+            name: ev_battery_high_temperature_warning
+          - id: 0x3c
+            name: ev_battery_insulation_resist_warning
+          - id: 0x3d
+            name: ev_battery_jump_level_warning
+          - id: 0x3e
+            name: ev_battery_low_level_warning
+          - id: 0x3f
+            name: ev_battery_max_volt_veh_energy_warning
+          - id: 0x40
+            name: ev_battery_min_volt_veh_energy_warning
+          - id: 0x41
+            name: ev_battery_over_charge_warning
+          - id: 0x42
+            name: ev_battery_poor_cell_warning
+          - id: 0x43
+            name: ev_battery_temp_diff_warning
+          - id: 0x44
+            name: forward_collision_warning
+          - id: 0x45
+            name: fuel_door_open
+          - id: 0x46
+            name: hill_descent_control_fault
+          - id: 0x47
+            name: hill_start_assist_warning
+          - id: 0x48
+            name: hv_interlocking_status_warning
+          - id: 0x49
+            name: lighting_system_failure
+          - id: 0x4a
+            name: malfunction_indicator
+          - id: 0x4b
+            name: motor_controller_temp_warning
+          - id: 0x4c
+            name: park_aid_malfunction
+          - id: 0x4d
+            name: passive_entry_passive_start
+          - id: 0x4e
+            name: powertrain_malfunction
+          - id: 0x4f
+            name: restraints_indicator_warning
+          - id: 0x50
+            name: start_stop_engine_warning
+          - id: 0x51
+            name: traction_control_disabled
+          - id: 0x52
+            name: traction_control_active
+          - id: 0x53
+            name: traction_motor_temp_warning
+          - id: 0x54
+            name: tire_pressure_monitor_system_warning
+          - id: 0x55
+            name: water_in_fuel
       - name: state
         name_cased: state
+        type: types.active_state
+      - name: colour
+        name_cased: colour
         type: enum
         size: 1
         enum_values:
           - id: 0x00
-            name: inactive
-          - id: 0x01
             name: info
-          - id: 0x02
+          - id: 0x01
             name: yellow
-          - id: 0x03
+          - id: 0x02
             name: red
     # MARK: Departure Time
   - name: departure_time
