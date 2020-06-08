@@ -288,3 +288,43 @@ properties:
         value: 95632.0
         unit: kilometers
         description: Odometer is 95'632km after last trip
+  - id: 0x11
+    name: safety_driving_score
+    name_cased: safetyDrivingScore
+    name_pretty: Safety driving score
+    type: types.percentage
+    description: Safety driving score as percentage
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Safety driving score is evaluated at 70%
+  - id: 0x12
+    name: rapid_acceleration_grade
+    name_cased: rapidAccelerationGrade
+    name_pretty: Rapid acceleration grade
+    type: types.grade
+    description: Grade given for rapid acceleration over time
+    examples:
+      - data_component: '00'
+        value: 'excellent'
+        description: Rapid acceleration is graded as excellent
+  - id: 0x13
+    name: rapid_deceleration_grade
+    name_cased: rapidDecelerationGrade
+    name_pretty: Rapid deceleration grade
+    type: types.grade
+    description: Grade given for rapid deceleration over time
+    examples:
+      - data_component: '01'
+        value: 'normal'
+        description: Rapid deceleration is graded as normal
+  - id: 0x14
+    name: late_night_grade
+    name_cased: lateNightGrade
+    name_pretty: Late night grade
+    type: types.grade
+    description: Grade given for late night driving over time
+    examples:
+      - data_component: '00'
+        value: 'excellent'
+        description: Late night driving is graded as excellent

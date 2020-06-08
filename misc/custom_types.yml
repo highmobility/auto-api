@@ -100,7 +100,7 @@ types:
         name: ecoPlus
       - id: 0x05
         name: comfort
-    # MARK: EnabledState
+    # MARK: Enabled State
   - name: enabled_state
     name_cased: enabledState
     name_pretty: Enabled state
@@ -125,6 +125,19 @@ types:
         name: low
       - id: 0x01
         name: filled
+    # MARK: Grade
+  - name: grade
+    name_cased: grade
+    name_pretty: Grade
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: excellent
+      - id: 0x01
+        name: normal
+      - id: 0x02
+        name: warning
     # MARK: Location
   - name: location
     name_cased: location
