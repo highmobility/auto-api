@@ -32,12 +32,15 @@ measurement_types:
   - name: angular_velocity
     id: 0x03
     unit_types:
-      - name: degrees_per_second
-        id: 0x00
-      - name: radians_per_second
-        id: 0x01
       - name: revolutions_per_minute
+        id: 0x00
+        coefficient_linear: 1.0
+      - name: degrees_per_second
+        id: 0x01
+        coefficient_linear: 6.0
+      - name: radians_per_second
         id: 0x02
+        coefficient_linear: 0.10471975511966
 
   - name: duration
     id: 0x07
@@ -90,8 +93,10 @@ measurement_types:
     unit_types:
       - name: kwh_per_100_kilometers
         id: 0x00
+        coefficient_inverse: 1.0
       - name: miles_per_kwh
         id: 0x01
+        coefficient_inverse: 62.137119223733397
 
   - name: frequency
     id: 0x0e
@@ -212,10 +217,13 @@ measurement_types:
     unit_types:
       - name: newton_meters
         id: 0x00
+        coefficient_linear: 1.0
       - name: newton_millimeters
         id: 0x01
+        coefficient_linear: 0.001
       - name: pound_feet
         id: 0x02
+        coefficient_linear: 0.73756214927727
 
   - name: volume
     id: 0x19
