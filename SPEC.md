@@ -1,4 +1,4 @@
-# AutoAPI L11
+# AutoAPI L12
 
 
 The message types are unified into 2 types.
@@ -156,7 +156,7 @@ Keys available for *all* properties:
 * `id: integer` property identifier in hex
 * `name: string` name of the property in *snake_case*
 * `name_cased: string` name of the property in *camelCase*
-* `pretty_name: string` human-readable name in a capitalised and whitespaced way, i.e. *Charging Power kW*
+* `name_pretty: string` human-readable name in a capitalised and whitespaced way, i.e. *Charging Power kW*
 * `type: string` type of the property
 
 Other conditional keys:
@@ -179,25 +179,25 @@ properties:
   - id: 0x03
     name: model_name
     name_cased: modelName
-    pretty_name: Model name
+    name_pretty: Model name
     type: string
     description: The car model name bytes formatted in UTF-8
   - id: 0x07
     name: charger_voltage_dc
     name_cased: chargerVoltageDC
-    pretty_name: Charger voltage (DC)
+    name_pretty: Charger voltage (DC)
     type: float
     size: 4
     description: Charger voltage in 4-bytes per IEEE 754
   - id: 0x0b
     name: charge_port_state
     name_cased: chargePortState
-    pretty_name: Charge port state
+    name_pretty: Charge port state
     type: types.position
   - id: 0x11
     name: departure_times
     name_cased: departureTimes
-    pretty_name: Departure times
+    name_pretty: Departure times
     type: types.departure_time
     multiple: true
     name_singular: departure_time
@@ -247,7 +247,7 @@ Additional keys for `enum` types:
     * `id: integer` case value in hex
     * `name: string` case name in *snake_case*
     * can additionally have the following keys:  
-        * `pretty_name: string` case name capitalised and with whitespaces, i.e. *Plug-in Hybrid EV*
+        * `name_pretty: string` case name capitalised and with whitespaces, i.e. *Plug-in Hybrid EV*
         * `verb: string` case name when used in an action (not that imporant), i.e. to *lock* a vehicle or *deactivate* smth
         * `disabled_in_setter: bool` defines what values are disallowed to use in a *setter* (the *lib* should check the input when combining the bytes for a command)
 
@@ -256,7 +256,7 @@ Examples:
 ```yaml
   - name: active_state
     name_cased: activeState
-    pretty_name: Active state
+    name_pretty: Active state
     type: enum
     size: 1
     enum_values:
@@ -269,7 +269,7 @@ Examples:
 
   - name: network_security
     name_cased: networkSecurity
-    pretty_name: Network security
+    name_pretty: Network security
     type: enum
     size: 1
     enum_values:
@@ -277,19 +277,19 @@ Examples:
         name: none
       - id: 0x01
         name: wep
-        pretty_name: WEP
+        name_pretty: WEP
       - id: 0x02
         name: wpa
-        pretty_name: WPA/WPA2 Personal
+        name_pretty: WPA/WPA2 Personal
       - id: 0x03
         name: wpa2_personal
-        pretty_name: WPA2 Personal
+        name_pretty: WPA2 Personal
         
 properties:
   - id: 0x17
     name: charging_state
     name_cased: chargingState
-    pretty_name: Charging state
+    name_pretty: Charging state
     type: enum
     size: 1
     enum_values:
@@ -328,12 +328,12 @@ Examples:
 ```yaml
   - name: action_item
     name_cased: actionItem
-    pretty_name: Action item
+    name_pretty: Action item
     type: custom
     items:
       - name: id
         name_cased: id
-        pretty_name: ID
+        name_pretty: ID
         type: uinteger
         size: 1
       - name: name
@@ -343,7 +343,7 @@ Examples:
         
   - name: brake_torque_vectoring
     name_cased: brakeTorqueVectoring
-    pretty_name: Brake torque vectoring
+    name_pretty: Brake torque vectoring
     type: custom
     size: 2
     items:
@@ -356,7 +356,7 @@ Examples:
         
   - name: price_tariff
     name_cased: priceTariff
-    pretty_name: Price tariff
+    name_pretty: Price tariff
     type: custom
     items:
       - name: pricing_type
@@ -370,7 +370,7 @@ Examples:
             name: per_minute
           - id: 0x02
             name: per_kwh
-            pretty_name: Per kWh
+            name_pretty: Per kWh
       - name: price
         name_cased: price
         type: float
@@ -402,7 +402,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x01
     name: lock
     name_cased: lock
-    pretty_name: Lock
+    name_pretty: Lock
     type: types.lock_state
     examples:
       - hex: '00'
@@ -412,7 +412,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x07
     name: yaw_rate
     name_cased: yawRate
-    pretty_name: Yaw rate
+    name_pretty: Yaw rate
     type: float
     size: 4
     description: Yaw rate in degrees per second [°/s]
@@ -429,7 +429,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x02
     name: persons_detected
     name_cased: personsDetected
-    pretty_name: Persons detected
+    name_pretty: Persons detected
     type: types.person_detected
     multiple: true
     name_singular: person_detected
@@ -443,7 +443,7 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x01
     name: accelerations
     name_cased: accelerations
-    pretty_name: Accelerations
+    name_pretty: Accelerations
     type: types.acceleration
     multiple: true
     name_singular: acceleration
