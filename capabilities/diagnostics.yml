@@ -478,3 +478,31 @@ properties:
         value: 1500.65
         unit: hours
         description: The engine has operated 1'500.65h in total
+  - id: 0x21
+    name: tire_pressure_statuses
+    name_cased: tirePressureStatus
+    name_pretty: Tire pressure statuses
+    type: types.tire_pressure_status
+    multiple: true
+    name_singular: tire_pressure_status
+    examples:
+      - data_component: '0000'
+        values:
+          location: 'front_left'
+          status: 'normal'
+        description: Front left tire pressure is normal
+      - data_component: '0101'
+        values:
+          location: 'front_right'
+          pressure: 'low'
+        description: Front right tire pressure is low
+      - data_component: '0202'
+        values:
+          location: 'rear_right'
+          pressure: 'alert'
+        description: Rear right tire pressure status alert
+      - data_component: '0300'
+        values:
+          location: 'rear_left'
+          pressure: 'normal'
+        description: Rear left tire pressure is normal

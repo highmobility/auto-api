@@ -151,6 +151,25 @@ types:
         name: front
       - id: 0x01
         name: rear
+    # MARK: Location Wheel
+  - name: location_wheel
+    name_cased: locationWheel
+    name_pretty: Location wheel
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: front_left
+      - id: 0x01
+        name: front_right
+      - id: 0x02
+        name: rear_right
+      - id: 0x03
+        name: rear_left
+      - id: 0x04
+        name: rear_right_outer
+      - id: 0x05
+        name: rear_left_outer
     # MARK: Lock State
   - name: lock_state
     name_cased: lockState
@@ -1069,13 +1088,34 @@ types:
     items:
       - name: location
         name_cased: location
-        type: types.location
+        type: types.location_wheel
       - name: pressure
         name_cased: pressure
         unit: pressure
         type: double
         size: 8
         description: Tire pressure
+    # MARK: Tire Pressure Status
+  - name: tire_pressure_status
+    name_cased: tirePressureStatus
+    name_pretty: Tire pressure status
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: types.location_wheel
+      - name: status
+        name_cased: status
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: normal
+          - id: 0x01
+            name: low
+          - id: 0x02
+            name: alert
     # MARK: Tire Temperature
   - name: tire_temperature
     name_cased: tireTemperature
@@ -1085,7 +1125,7 @@ types:
     items:
       - name: location
         name_cased: location
-        type: types.location
+        type: types.location_wheel
       - name: temperature
         name_cased: temperature
         unit: temperature
@@ -1154,6 +1194,9 @@ types:
           - id: 0x04
             name: authorization_changed
             description: Sent when the authorization status changes.
+          - id: 0x05
+            name: tire_pressure_changed
+            description: Sent when the tire pressure changed to low or too high.
     # MARK: Wheel RPM
   - name: wheel_rpm
     name_cased: wheelRPM
@@ -1163,7 +1206,7 @@ types:
     items:
       - name: location
         name_cased: location
-        type: types.location
+        type: types.location_wheel
         description: Wheel location
       - name: rpm
         name_cased: RPM
