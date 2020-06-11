@@ -15,6 +15,7 @@ api:
 setters:
   - name: multi_command
     mandatory: [0x02]
+    description: Send mutliple commands at once.
 
 state: [0x01]
 

@@ -978,8 +978,8 @@ types:
             name_pretty: Per kWh
       - name: price
         name_cased: price
-        type: float
-        size: 4
+        type: double
+        size: 8
         description: The price
       - name: currency
         name_cased: currency
