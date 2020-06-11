@@ -121,15 +121,12 @@ properties:
     deprecated:
       new_name: power
       reason: removed the unit from the name
-    unit: power
-    type: double
-    size: 8
+    type: unit.power
+    size: 10
     description: The power of the vehicle
     examples:
-      - data_component: '406b800000000000'
-        unit_component: '1403'
-        value: 220.0
-        unit: kilowatts
+      - data_component: '1403406b800000000000'
+        value: kilowatts: 220.0
         description: Vehicle has 220.0kW of power
   - id: 0x0a
     name: number_of_doors
@@ -157,29 +154,23 @@ properties:
     name: engine_volume
     name_cased: engineVolume
     name_pretty: Engine volume
-    unit: volume
-    type: double
-    size: 8
+    type: unit.volume
+    size: 10
     description: The engine volume displacement
     examples:
-      - data_component: '4004000000000000'
-        unit_component: '1902'
-        value: 2.5
-        unit: liters
+      - data_component: '19024004000000000000'
+        value: liters: 2.5
         description: Engine volume is 2.5L
   - id: 0x0d
     name: engine_max_torque
     name_cased: engineMaxTorque
     name_pretty: Engine max torque
-    unit: torque
-    type: double
-    size: 8
+    type: unit.torque
+    size: 10
     description: The maximum engine torque
     examples:
-      - data_component: '406ea00000000000'
-        unit_component: '1800'
-        value: 245.0
-        unit: newton_meters
+      - data_component: '1800406ea00000000000'
+        value: newton_meters: 245.0
         description: Engine maximum torque is 245.0Nm
   - id: 0x0e
     name: gearbox
@@ -259,13 +250,10 @@ properties:
     name: power
     name_cased: power
     name_pretty: Power
-    unit: power
-    type: double
-    size: 8
+    type: unit.power
+    size: 10
     description: The power of the vehicle
     examples:
-      - data_component: '406b800000000000'
-        unit_component: '1403'
-        value: 220.0
-        unit: kilowatts
+      - data_component: '1403406b800000000000'
+        value: kilowatts: 220.0
         description: Vehicle has 220kW of power

@@ -115,13 +115,10 @@ properties:
     name: vehicle_speed
     name_cased: vehicleSpeed
     name_pretty: Vehicle speed
-    unit: speed
-    type: double
-    size: 8
+    type: unit.speed
+    size: 10
     description: The tachograph vehicle speed
     examples:
-      - data_component: '4054000000000000'
-        unit_component: '1601'
-        value: 80.0
-        unit: kilometers_per_hour
+      - data_component: '16014054000000000000'
+        value: kilometers_per_hour: 80.0
         description: Vehicle speed is 80.0km/h

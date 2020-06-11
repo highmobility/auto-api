@@ -57,15 +57,12 @@ properties:
     name: target_speed
     name_cased: targetSpeed
     name_pretty: Target speed
-    unit: speed
-    type: double
-    size: 8
+    type: unit.speed
+    size: 10
     description: The target speed
     examples:
-      - data_component: '404e800000000000'
-        unit_component: '1601'
-        value: 61.0
-        unit: kilometers_per_hour
+      - data_component: '1601404e800000000000'
+        value: kilometers_per_hour: 61.0
         description: The target speed is set to 61.0km/h
   - id: 0x04
     name: adaptive_cruise_control
@@ -80,13 +77,10 @@ properties:
     name: acc_target_speed
     name_cased: accTargetSpeed
     name_pretty: Adaptive Cruise Control (ACC) target speed
-    unit: speed
-    type: double
-    size: 8
+    type: unit.speed
+    size: 10
     description: The target speed of the Adaptive Cruise Control
     examples:
-      - data_component: '4050c00000000000'
-        unit_component: '1601'
-        value: 67.0
-        unit: kilometers_per_hour
+      - data_component: '16014050c00000000000'
+        value: kilometers_per_hour: 67.0
         description: The Adaptive Cruise Control target speed is set to 67.0km/h

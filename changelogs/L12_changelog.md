@@ -4,9 +4,9 @@ Level 12 contains a number of updates to the protocol.
 
 **These include**:  
 - new capability for static vehicle information (properties split from `vehicle_status`)  
-- new property component to dynamically transfer values in different units  
+- new type of value to dynamically transfer values in different units  
 - new property component to output availability information for a given datapoint  
-- new properties to go along with the _unit component_  
+- new properties to go along with the _unit type_  
 - new deprecation structure to ease the pain of future API changes  
 - changes to fields in spec to foster consitency  
 - other minor changes  
@@ -18,8 +18,8 @@ Changes from L11 are divided into these sub-sections:
 * [Capabilities Changes](#capabilities-changes)
 * [New Properties](#new-properties)
 * [Deprecations](#deprecations)
-* [Unit Component](#unit-component)
-  * [Component](#component-unit)
+* [Unit Type](#unit-type)
+  * [Type](#component-type)
   * [Spec Changes](#spec-changes)
 * [Availability Component](#availability-component)
   * [Component](#component-availability)
@@ -59,7 +59,7 @@ There are a number of other miscellaneous changes:
 ## New Properties
 
 There are a number of new properties.  
-A few are simply additive to the spec, some are from capabilities' changes and others are new because of the _unit component_ (see more [below](#unit-component)).
+A few are simply additive to the spec, some are from capabilities' changes and others are new because of the _unit type_ (see more [below](#unit-type)).
 
 - **capabilities**
   - added `webhooks` - outputs _webhook_ information
@@ -131,47 +131,54 @@ List of deprecated properties:
 - **video handover**
   - deprecated `starting_second` in favour of `starting_time`
 
-## Unit Component
-### Component<a name="component-unit"></a>
+## Unit Type
+### Type<a name="component-type"></a>
 
-AutoAPI needs to dynamically output the _unit type_ of a property (or a custom type).  
+AutoAPI needs to dynamically output the _unit type_ of a value.  
 
-For this reason, a new **optional** _property component_ called **unit component** is introduced to the protocol.  
-This means that the _unit type_ is defined for some properties and not for others.  
-Those properties that have the _unit type_ defiend, require the **unit component** to be transfered along with the _data component_ when transmitting values.  
+For this reason, a new sort of `type` is added to the protocol.  
+When a value expresses a _unit_, it's type will be defined as `type: unit.xxx`, where the _xxx_ is a reference to a _measurement type_.
 
-It's ID is `0x04` and it follows the same header-payload structure as other components.  
-Payload is 2 bytes referencing _measurement_ and _unit type_ from [unit_types.yml](https://github.com/highmobility/auto-api/blob/level12/misc/unit_types.yml).
+Value of _unit_ type will be **10 bytes** long.  
+First **2 bytes** denoting the _measurement type_ and _unit type_ referenced from [unit_types.yml](https://github.com/highmobility/auto-api/blob/level12/misc/unit_types.yml).  
+The remaining **8 bytes** will form a _double_ value.
 
-Component structure:
+Value's bytes structure:
 
 ```
 [
- 0x04,              - unit component ID
- 0x00, 0x02,        - payload size
  measurement_type,  - measurement_type ID from unit_types.yml
  unit_type          - unit_type ID from the measurement_type sub-values
+ ...                - remaining 8 bytes for a DOUBLE
 ]
 ```
 
-Example:
+Bytes example:
 
 ```
-0x04        - ID for unit component
-0x00, 0x02  - payload size is 2 bytes
-0x12,       - measurement type is 'length'
-0x0f        - unit type is 'scandinavian_miles'
+0x12,               - measurement type is 'length'
+0x07                - unit type is 'millimeters'
+0x4039666666666666  - 25.4
+```
+
+Spec example:
+
+```
+id: 0x08
+name: current_chassis_position
+...
+type: unit.length
+size: 10
+...
 ```
 
 ### Spec Changes
 
-The new unit component brings along some changes to _properties_ and _custom types_ spec.  
+The new unit type brings along some changes to _properties_ and _custom types_ spec.  
 
-- added `unit_type` to express the type of _measurement_ the property outputs
+- added new `type: unit.xxx` to express the type of _measurement_ the property outputs
 - additions to `examples`
-  - added `unit_component` to define the _hex_ value of the property
-  - added `unit` to define the expected _unit type_ of the property
-- changed properties with `unit_type`-field to be `type: double`
+  - values with a _unit_ are now expressed as `value: millimeters: 25.4`
 - deprecated properties with a specific unit in the name
 
 ## Availability Component
@@ -198,11 +205,11 @@ Example of _availability component_:
 
 ```
 [
- 0x05,                  - ID for availability component
- 0x00, 0x0a,            - payload size is 10 bytes
- 0x00,                  - update rate is 'trip_high' (data is updated with high frequency during a trip)
- 0x4050000000000000,    - rate limit frequency is 64.0 (unit type comes from unit component)
- 0x01                   - rate limit applies per 'vehicle'
+ 0x05,                      - ID for availability component
+ 0x00, 0x0a,                - payload size is 12 bytes
+ 0x00,                      - update rate is 'trip_high' (data is updated with high frequency during a trip)
+ 0x0e044050000000000000,    - rate limit frequency is 64.0Hz
+ 0x01                       - rate limit applies per 'vehicle'
 ]
 ```
 

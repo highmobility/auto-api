@@ -355,7 +355,7 @@ types:
     name_cased: acceleration
     name_pretty: Acceleration
     type: custom
-    size: 9
+    size: 11
     items:
       - name: direction
         name_cased: direction
@@ -373,9 +373,8 @@ types:
       - name: acceleration
         name_cased: acceleration
         name_pretty: Acceleration
-        unit: acceleration
-        type: double
-        size: 8
+        type: unit.acceleration
+        size: 10
         description: The accelaration
     # MARK: Action Item
   - name: action_item
@@ -420,9 +419,8 @@ types:
         description: Check Control Message identifier
       - name: remaining_time
         name_cased: remainingTime
-        unit: duration
-        type: double
-        size: 8
+        type: unit.duration
+        size: 10
         description: Remaining time of the message
       - name: text
         name_cased: text
@@ -853,16 +851,15 @@ types:
     name_cased: drivingModeEnergyConsumption
     name_pretty: Driving mode energy consumption
     type: custom
-    size: 9
+    size: 11
     items:
       - name: driving_mode
         name_cased: drivingMode
         type: types.driving_mode
       - name: consumption
         name_cased: consumption
-        unit: energy
-        type: double
-        size: 8
+        type: unit.energy
+        size: 10
         description: Energy consumption in the driving mode
     # MARK: HMKit Version
   - name: hmkit_version
@@ -1058,16 +1055,15 @@ types:
     name_cased: springRate
     name_pretty: Spring rate
     type: custom
-    size: 9
+    size: 11
     items:
       - name: axle
         name_cased: axle
         type: types.axle
       - name: spring_rate
         name_cased: springRate
-        unit: torque
-        type: double
-        size: 8
+        type: unit.torque
+        size: 10
         description: The suspension spring rate
     # MARK: Timer
   - name: timer
@@ -1097,16 +1093,15 @@ types:
     name_cased: tirePressure
     name_pretty: Tire pressure
     type: custom
-    size: 9
+    size: 11
     items:
       - name: location
         name_cased: location
         type: types.location_wheel
       - name: pressure
         name_cased: pressure
-        unit: pressure
-        type: double
-        size: 8
+        type: unit.pressure
+        size: 10
         description: Tire pressure
     # MARK: Tire Pressure Status
   - name: tire_pressure_status
@@ -1134,16 +1129,15 @@ types:
     name_cased: tireTemperature
     name_pretty: Tire temperature
     type: custom
-    size: 9
+    size: 11
     items:
       - name: location
         name_cased: location
         type: types.location_wheel
       - name: temperature
         name_cased: temperature
-        unit: temperature
-        type: double
-        size: 8
+        type: unit.temperature
+        size: 10
         description: Tire temperature
     # MARK: Trouble Code
   - name: trouble_code
@@ -1215,7 +1209,7 @@ types:
     name_cased: wheelRPM
     name_pretty: Wheel RPM
     type: custom
-    size: 9
+    size: 11
     items:
       - name: location
         name_cased: location
@@ -1224,9 +1218,8 @@ types:
       - name: rpm
         name_cased: RPM
         name_pretty: RPM
-        unit: angular_velocity
-        type: double
-        size: 8
+        type: unit.angular_velocity
+        size: 10
         description: The RPM measured at this wheel
     # MARK: Window Open Percentage
   - name: window_open_percentage

@@ -24,57 +24,45 @@ properties:
     deprecated:
       new_name: odometer
       reason: "'mileage' is an incorrect term for this"
-    unit: length
-    type: double
-    size: 8
+    type: unit.length
+    size: 10
     description: The vehicle mileage (odometer)
     examples:
-      - data_component: '41024f8000000000'
-        unit_component: '1201'
-        value: 150000.0
-        unit: kilometers
+      - data_component: '120141024f8000000000'
+        value: kilometers: 150000.0
         description: Odometer is showing 150'000.0km
   - id: 0x02
     name: engine_oil_temperature
     name_cased: engineOilTemperature
     name_pretty: Engine oil temperature
-    unit: temperature
-    type: double
-    size: 8
+    type: unit.temperature
+    size: 10
     description: Engine oil temperature
     examples:
-      - data_component: '4058e00000000000'
-        unit_component: '1701'
-        value: 99.5
-        unit: celsius
+      - data_component: '17014058e00000000000'
+        value: celsius: 99.5
         description: Engine oil temperature is 99.5°C
   - id: 0x03
     name: speed
     name_cased: speed
     name_pretty: Speed
-    unit: speed
-    type: double
-    size: 8
+    type: unit.speed
+    size: 10
     description: The vehicle speed
     examples:
-      - data_component: '404e000000000000'
-        unit_component: '1601'
-        value: 60.0
-        unit: kilometers_per_hour
+      - data_component: '1601404e000000000000'
+        value: kilometers_per_hour: 60.0
         description: Vehicle speed is 60.0km/h
   - id: 0x04
     name: engine_rpm
     name_cased: engineRPM
     name_pretty: Engine RPM
-    unit: angular_velocity
-    type: double
-    size: 8
+    type: unit.angular_velocity
+    size: 10
     description: Engine RPM (revolutions per minute)
     examples:
-      - data_component: '40a3880000000000'
-        unit_component: '0302'
-        value: 2500.0
-        unit: revolutions_per_minute
+      - data_component: '030240a3880000000000'
+        value: revolutions_per_minute: 2500.0
         description: Engine RPM is 2500.0
   - id: 0x05
     name: fuel_level
@@ -90,15 +78,12 @@ properties:
     name: estimated_range
     name_cased: estimatedRange
     name_pretty: Estimated range
-    unit: length
-    type: double
-    size: 8
+    type: unit.length
+    size: 10
     description: Estimated range (with combustion engine)
     examples:
-      - data_component: '4070900000000000'
-        unit_component: '1201'
-        value: 265.0
-        unit: kilometers
+      - data_component: '12014070900000000000'
+        value: kilometers: 265.0
         description: Estimated range is 256.0km
   - id: 0x09
     name: washer_fluid_level
@@ -113,71 +98,56 @@ properties:
     name: battery_voltage
     name_cased: batteryVoltage
     name_pretty: Battery voltage
-    unit: electric_potential_difference
-    type: double
-    size: 8
+    type: unit.electric_potential_difference
+    size: 10
     description: Battery voltage
     examples:
-      - data_component: '4028333333333333'
-        unit_component: '0a02'
-        value: 12.1
-        unit: volts
+      - data_component: '0a024028333333333333'
+        value: volts: 12.1
         description: Battery voltage is 12.1V
   - id: 0x0c
     name: adblue_level
     name_cased: adBlueLevel
     name_pretty: AdBlue level
-    unit: volume
-    type: double
-    size: 8
+    type: unit.volume
+    size: 10
     description: AdBlue level in liters
     examples:
-      - data_component: '3fe199999999999a'
-        unit_component: '1902'
-        value: 0.55
-        unit: liters
+      - data_component: '19023fe199999999999a'
+        value: liters: 0.55
         description: 0.55L of AdBlue remaining
   - id: 0x0d
     name: distance_since_reset
     name_cased: distanceSinceReset
     name_pretty: Distance since reset
-    unit: length
-    type: double
-    size: 8
+    type: unit.length
+    size: 10
     description: The distance driven since reset
     examples:
-      - data_component: '4097706666666666'
-        unit_component: '1201'
-        value: 1500.1
-        unit: kilometers
+      - data_component: '12014097706666666666'
+        value: kilometers: 1500.1
         description: 1'500.1km driven since reset
   - id: 0x0e
     name: distance_since_start
     name_cased: distanceSinceStart
     name_pretty: Distance since start
-    unit: length
-    type: double
-    size: 8
+    type: unit.length
+    size: 10
     description: The distance driven since trip start
     examples:
-      - data_component: '4028cccccccccccd'
-        unit_component: '1201'
-        value: 12.4
-        unit: kilometers
+      - data_component: '12014028cccccccccccd'
+        value: kilometers: 12.4
         description: 12.4km driven since the engine start
   - id: 0x0f
     name: fuel_volume
     name_cased: fuelVolume
     name_pretty: Fuel volume
-    unit: volume
-    type: double
-    size: 8
+    type: unit.volume
+    size: 10
     description: The fuel volume measured in liters
     examples:
-      - data_component: '4041c00000000000'
-        unit_component: '1902'
-        value: 35.5
-        unit: liters
+      - data_component: '19024041c00000000000'
+        value: liters: 35.5
         description: 35.5L of fuel remaining
   - id: 0x10
     name: anti_lock_braking
@@ -192,15 +162,12 @@ properties:
     name: engine_coolant_temperature
     name_cased: engineCoolantTemperature
     name_pretty: Engine coolant temperature
-    unit: temperature
-    type: double
-    size: 8
+    type: unit.temperature
+    size: 10
     description: Engine coolant temperature
     examples:
-      - data_component: '4034000000000000'
-        unit_component: '1701'
-        value: 20.0
-        unit: celsius
+      - data_component: '17014034000000000000'
+        value: celsius: 20.0
         description: Engine coolant temperature is 20°C
   - id: 0x12
     name: engine_total_operating_hours
@@ -209,29 +176,23 @@ properties:
     deprecated:
       new_name: engine_total_operating_time
       reason: removed the unit from the name
-    unit: duration
-    type: double
-    size: 8
+    type: unit.duration
+    size: 10
     description: The accumulated time of engine operation
     examples:
-      - data_component: '409772999999999a'
-        unit_component: '0700'
-        value: 1500.65
-        unit: hours
+      - data_component: '0700409772999999999a'
+        value: hours: 1500.65
         description: The engine has operated 1'500.65h in total
   - id: 0x13
     name: engine_total_fuel_consumption
     name_cased: engineTotalFuelConsumption
     name_pretty: Engine total fuel consumption
-    unit: volume
-    type: double
-    size: 8
+    type: unit.volume
+    size: 10
     description: The accumulated lifespan fuel consumption
     examples:
-      - data_component: '40daf0c000000000'
-        unit_component: '1902'
-        value: 27587.0
-        unit: liters
+      - data_component: '190240daf0c000000000'
+        value: liters: 27587.0
         description: The engine has consumend 27'587.0L of fuel over it's lifespan
   - id: 0x14
     name: brake_fluid_level
@@ -266,15 +227,12 @@ properties:
     name: wheel_based_speed
     name_cased: wheelBasedSpeed
     name_pretty: Wheel based speed
-    unit: speed
-    type: double
-    size: 8
+    type: unit.speed
+    size: 10
     description: The vehicle speed measured at the wheel base
     examples:
-      - data_component: '4050400000000000'
-        unit_component: '1601'
-        value: 65.0
-        unit: kilometers_per_hour
+      - data_component: '16014050400000000000'
+        value: kilometers_per_hour: 65.0
         description: Wheel based speed is 65.0km/h
   - id: 0x18
     name: battery_level
@@ -294,14 +252,12 @@ properties:
     multiple: true
     name_singular: check_control_message
     examples:
-      - data_component: '000140f9c78000000000000c436865636b20656e67696e650005416c657274'
-        unit_component: '0601'
+      - data_component: '0001060140f9c78000000000000c436865636b20656e67696e650005416c657274'
         values:
           id: 1
-          remaining_time: 105592.0
+          remaining_time: minutes: 105592.0
           text: 'Check engine'
           status: 'Alert'
-        unit: minutes
         description: 105'592 minutes remaining for Check Engine Alert control message with ID 1
   - id: 0x1a
     name: tire_pressures
@@ -311,33 +267,25 @@ properties:
     multiple: true
     name_singular: tire_pressure
     examples:
-      - data_component: '0040027ae147ae147b'
-        unit_component: '1506'
+      - data_component: '00150640027ae147ae147b'
         values:
           location: 'front_left'
-          pressure: 2.31
-        unit: bars
+          pressure: bars: 2.31
         description: Front left tire pressure is 2.31BAR
-      - data_component: '0140027ae147ae147b'
-        unit_component: '1506'
+      - data_component: '01150640027ae147ae147b'
         values:
           location: 'front_right'
-          pressure: 2.31
-        unit: bars
+          pressure: bars: 2.31
         description: Front right tire pressure is 2.31BAR
-      - data_component: '024001eb851eb851ec'
-        unit_component: '1506'
+      - data_component: '0215064001eb851eb851ec'
         values:
           location: 'rear_right'
-          pressure: 2.24
-        unit: bars
+          pressure: bars: 2.24
         description: Rear right tire pressure is 2.24BAR
-      - data_component: '034001eb851eb851ec'
-        unit_component: '1506'
+      - data_component: '0315064001eb851eb851ec'
         values:
           location: 'rear_left'
-          pressure: 2.24
-        unit: bars
+          pressure: bars: 2.24
         description: Rear left tire pressure is 2.24BAR
   - id: 0x1b
     name: tire_temperatures
@@ -347,33 +295,25 @@ properties:
     multiple: true
     name_singular: tire_temperature
     examples:
-      - data_component: '0040440ccccccccccd'
-        unit_component: '1701'
+      - data_component: '00170140440ccccccccccd'
         values:
           location: 'front_left'
-          temperature: 40.1
-        unit: celsius
+          temperature: celsius: 40.1
         description: Front left tire temperature is 40.1°C
-      - data_component: '01404419999999999a'
-        unit_component: '1701'
+      - data_component: '011701404419999999999a'
         values:
           location: 'front_right'
-          temperature: 40.2
-        unit: celsius
+          temperature: celsius: 40.2
         description: Front right tire temperature is 40.2°C
-      - data_component: '024044266666666666'
-        unit_component: '1701'
+      - data_component: '0217014044266666666666'
         values:
           location: 'rear_right'
-          temperature: 40.3
-        unit: celsius
+          temperature: celsius: 40.3
         description: Rear right tire temperature is 40.3°C
-      - data_component: '034044333333333333'
-        unit_component: '1701'
+      - data_component: '0317014044333333333333'
         values:
           location: 'rear_left'
-          temperature: 40.4
-        unit: celsius
+          temperature: celsius: 40.4
         description: Rear left tire temperature is 40.4°C
   - id: 0x1c
     name: wheel_rpms
@@ -383,33 +323,25 @@ properties:
     multiple: true
     name_singular: wheel_rpm
     examples:
-      - data_component: '004087080000000000'
-        unit_component: '0302'
+      - data_component: '0003024087080000000000'
         values:
           location: 'front_left'
-          rpm: 737.0
-        unit: revolutions_per_minute
+          rpm: revolutions_per_minute: 737.0
         description: Front left wheel is doing 737.0RPM
-      - data_component: '014087580000000000'
-        unit_component: '0302'
+      - data_component: '0103024087580000000000'
         values:
           location: 'front_right'
-          rpm: 747.0
-        unit: revolutions_per_minute
+          rpm: revolutions_per_minute: 747.0
         description: Front right wheel is doing 747.0RPM
-      - data_component: '024088480000000000'
-        unit_component: '0302'
+      - data_component: '0203024088480000000000'
         values:
           location: 'rear_right'
-          rpm: 777.0
-        unit: revolutions_per_minute
+          rpm: revolutions_per_minute: 777.0
         description: Rear right wheel is doing 777.0RPM
-      - data_component: '034088980000000000'
-        unit_component: '0302'
+      - data_component: '0303024088980000000000'
         values:
           location: 'rear_left'
-          rpm: 787.0
-        unit: revolutions_per_minute
+          rpm: revolutions_per_minute: 787.0
         description: Rear left wheel is doing 787.0RPM
   - id: 0x1d
     name: trouble_codes
@@ -440,43 +372,34 @@ properties:
     deprecated:
       new_name: odometer
       reason: "'mileage' is an incorrect term for this"
-    unit: length
-    type: double
-    size: 8
+    type: unit.length
+    size: 10
     description: The vehicle mileage (odometer) in meters
     examples:
-      - data_component: '41024f8800000000'
-        unit_component: '1201'
-        value: 150001.0
-        unit: kilometers
+      - data_component: '120141024f8800000000'
+        value: kilometers: 150001.0
         description: Odometer is showing 150'001km
   - id: 0x1f
     name: odometer
     name_cased: odometer
     name_pretty: Odometer
-    unit: length
-    type: double
-    size: 8
+    type: unit.length
+    size: 10
     description: The vehicle odometer value in a given units.
     examples:
-      - data_component: '401999999999999a'
-        unit_component: '1200'
-        value: 6.4
-        unit: megameters
+      - data_component: '1200401999999999999a'
+        value: megameters: 6.4
         description: Odometer is showing 6.4Mm – length of the Great Wall.
   - id: 0x20
     name: engine_total_operating_time
     name_cased: engineTotalOperatingTime
     name_pretty: Engine total operation time
-    unit: duration
-    type: double
-    size: 8
+    type: unit.duration
+    size: 10
     description: The accumulated time of engine operation
     examples:
-      - data_component: '409772999999999a'
-        unit_component: '0700'
-        value: 1500.65
-        unit: hours
+      - data_component: '0700409772999999999a'
+        value: hours: 1500.65
         description: The engine has operated 1'500.65h in total
   - id: 0x21
     name: tire_pressure_statuses

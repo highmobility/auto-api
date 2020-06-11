@@ -25,33 +25,25 @@ properties:
     type: types.acceleration
     multiple: true
     examples:
-      - data_component: '003feba5e353f7ced9'
-        unit_component: '0101'
+      - data_component: '0001013feba5e353f7ced9'
         values:
           direction: 'longitudinal'
-          g_force: 0.864
-        unit: gravity
+          acceleration: gravity: 0.864
         description: Longitudinal acceleration is 0.864g
-      - data_component: '01bfe8189374bc6a7f'
-        unit_component: '0101'
+      - data_component: '010101bfe8189374bc6a7f'
         values:
           direction: 'lateral'
-          g_force: -0.753
-        unit: gravity
+          acceleration: gravity: -0.753
         description: Lateral acceleration is -0.753g
-      - data_component: '023fe8189374bc6a7f'
-        unit_component: '0101'
+      - data_component: '0201013fe8189374bc6a7f'
         values:
           direction: 'front_lateral'
-          g_force: 0.753
-        unit: gravity
+          acceleration: gravity: 0.753
         description: Front lateral acceleration is 0.753g
-      - data_component: '03bfeba5e353f7ced9'
-        unit_component: '0101'
+      - data_component: '030101bfeba5e353f7ced9'
         values:
           direction: 'rear_lateral'
-          g_force: -0.864
-        unit: gravity
+          acceleration: gravity: -0.864
         description: Rear lateral acceleration is -0.864g
   - id: 0x02
     name: understeering
@@ -87,57 +79,45 @@ properties:
     name: steering_angle
     name_cased: steeringAngle
     name_pretty: Steering angle
-    unit: angle
-    type: double
-    size: 8
+    type: unit.angle
+    size: 10
     description: The steering angle, whereas 0.0 is straight ahead, positive number to the right and negative number to the left
     examples:
-      - data_component: '4024000000000000'
-        unit_component: '0200'
-        value: 10.0
-        unit: degrees
+      - data_component: '02004024000000000000'
+        value: degrees: 10.0
         description: Steering angle is 10° to right
   - id: 0x06
     name: brake_pressure
     name_cased: brakePressure
     name_pretty: Brake pressure
-    unit: pressure
-    type: double
-    size: 8
+    type: unit.pressure
+    size: 10
     description: Brake pressure
     examples:
-      - data_component: '4034000000000000'
-        unit_component: '1506'
-        value: 20.0
-        unit: bars
+      - data_component: '15064034000000000000'
+        value: bars: 20.0
         description: Brake pressure is 20.0bar
   - id: 0x07
     name: yaw_rate
     name_cased: yawRate
     name_pretty: Yaw rate
-    unit: angular_velocity
-    type: double
-    size: 8
+    type: unit.angular_velocity
+    size: 10
     description: Yaw turning rate
     examples:
-      - data_component: '401aa3d70a3d70a4'
-        unit_component: '0300'
-        value: 6.66
-        unit: degrees_per_second
+      - data_component: '0300401aa3d70a3d70a4'
+        value: degrees_per_second: 6.66
         description: Yaw rate is 6.66°/s
   - id: 0x08
     name: rear_suspension_steering
     name_cased: rearSuspensionSteering
     name_pretty: Rear suspension steering
-    unit: angle
-    type: double
-    size: 8
+    type: unit.angle
+    size: 10
     description: Rear suspension steering
     examples:
-      - data_component: '400a666666666666'
-        unit_component: '0200'
-        value: 3.3
-        unit: degrees
+      - data_component: '0200400a666666666666'
+        value: degrees: 3.3
         description: Rear suspension steering is +3°
   - id: 0x09
     name: electronic_stability_program

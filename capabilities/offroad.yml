@@ -21,15 +21,12 @@ properties:
     name: route_incline
     name_cased: routeIncline
     name_pretty: Route incline
-    unit: angle
-    type: double
-    size: 8
+    type: unit.angle
+    size: 10
     description: The route elevation incline
     examples:
-      - data_component: '4024333333333333'
-        unit_component: '0200'
-        value: 10.1
-        unit: degrees
+      - data_component: '02004024333333333333'
+        value: degrees: 10.1
         description: Route incline is 10°
   - id: 0x02
     name: wheel_suspension

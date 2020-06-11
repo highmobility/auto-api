@@ -33,41 +33,32 @@ properties:
     name: heading
     name_cased: heading
     name_pretty: Heading
-    unit: angle
-    type: double
-    size: 8
+    type: unit.angle
+    size: 10
     description: Heading angle
     examples:
-      - data_component: '402abd80c308feac'
-        unit_component: '0200'
-        value: 13.370123
-        unit: degrees
+      - data_component: '0200402abd80c308feac'
+        value: degrees: 13.370123
         description: Heading direction is 13.370123°
   - id: 0x06
     name: altitude
     name_cased: altitude
     name_pretty: Altitude
-    unit: length
-    type: double
-    size: 8
+    type: unit.length
+    size: 10
     description: Altitude above the WGS 84 reference ellipsoid
     examples:
-      - data_component: '4060b00000000000'
-        unit_component: '1204'
-        value: 133.5
-        unit: meters
+      - data_component: '12044060b00000000000'
+        value: meters: 133.5
         description: Vehicle altitude is 133.5m
   - id: 0x07
     name: precision
     name_cased: precision
     name_pretty: Precision
-    unit: length
-    type: double
-    size: 8
+    type: unit.length
+    size: 10
     examples:
-      - data_component: '407f400000000000'
-        unit_component: '1204'
-        value: 500.0
-        unit: meters
+      - data_component: '1204407f400000000000'
+        value: meters: 500.0
         description: Precision is 500m
 

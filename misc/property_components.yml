@@ -58,25 +58,6 @@ property_components:
         type: string
         description: Failure description
 
-  - id: 0x04
-    name: unit_type
-    name_cased: unitType
-    name_pretty: Unit type
-    type: custom
-    items:
-      - name: measurement_type
-        name_cased: measurementType
-        name_pretty: Measurement type
-        type: uinteger
-        size: 1
-        description: The type of measurement
-      - name: unit_type
-        name_cased: unitType
-        name_pretty: Unit type
-        type: uinteger
-        size: 1
-        description: The type of unit
-
   - id: 0x05
     name: availability
     name_cased: availability
@@ -111,9 +92,8 @@ property_components:
       - name: rate_limit
         name_cased: rateLimit
         name_pretty: Rate limit
-        unit: frequency
-        type: double
-        size: 8
+        type: unit.frequency
+        size: 10
         description: Frequency denoting the rate limit
       - name: applies_per
         name_cased: appliesPer

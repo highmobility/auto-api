@@ -95,15 +95,12 @@ properties:
     deprecated:
       new_name: charging_power
       reason: removed the unit from the name
-    unit: power
-    type: double
-    size: 8
+    type: unit.power
+    size: 10
     description: Charging power
     examples:
-      - data_component: '4027000000000000'
-        unit_component: '1403'
-        value: 11.5
-        unit: kilowatts
+      - data_component: '14034027000000000000'
+        value: kilowatts: 11.5
         description: Charging power is 11.5kW
   - id: 0x05
     name: solar_charging
@@ -173,43 +170,34 @@ properties:
     name: charge_current_dc
     name_cased: chargeCurrentDC
     name_pretty: Charge current (DC)
-    unit: electric_potential_difference
-    type: double
-    size: 8
+    type: unit.electric_potential_difference
+    size: 10
     description: The charge direct current
     examples:
-      - data_component: '3fe0000000000000'
-        unit_component: '0a02'
-        value: 0.5
-        unit: volts
+      - data_component: '0a023fe0000000000000'
+        value: volts: 0.5
         description: Charger direct current is 0.5V
   - id: 0x0f
     name: maximum_charge_current
     name_cased: maximumChargeCurrent
     name_pretty: Maximum charge current
-    unit: electric_potential_difference
-    type: double
-    size: 8
+    type: unit.electric_potential_difference
+    size: 10
     description: The maximum possible charge current
     examples:
-      - data_component: '3ff0000000000000'
-        unit_component: '0a02'
-        value: 1.0
-        unit: volts
+      - data_component: '0a023ff0000000000000'
+        value: volts: 1.0
         description: Maximum charger current is 1.0V
   - id: 0x10
     name: minimum_charge_current
     name_cased: minimumChargeCurrent
     name_pretty: Minimum charge current
-    unit: electric_potential_difference
-    type: double
-    size: 8
+    type: unit.electric_potential_difference
+    size: 10
     description: The minimal possible charge current
     examples:
-      - data_component: '3fb999999999999a'
-        unit_component: '0a02'
-        value: 0.1
-        unit: volts
+      - data_component: '0a023fb999999999999a'
+        value: volts: 0.1
         description: Minimum charger current is 0.1V
   - id: 0x11
     name: coordinates
@@ -252,13 +240,10 @@ properties:
     name: charging_power
     name_cased: chargingPower
     name_pretty: Charging power
-    unit: power
-    type: double
-    size: 8
+    type: unit.power
+    size: 10
     description: Charging power output from the charger
     examples:
-      - data_component: '4075e00000000000'
-        unit_component: '1403'
-        value: 350.0
-        unit: kilowatts
+      - data_component: '14034075e00000000000'
+        value: kilowatts: 350.0
         description: Charging power is 350.0kW
