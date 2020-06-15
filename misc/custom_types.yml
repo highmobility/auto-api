@@ -726,10 +726,12 @@ types:
       - name: distance
         name_cased: distance
         type: unit.length
+        size: 10
         description: Distance driven
       - name: time
         name_cased: time
         type: unit.duration
+        size: 10
         description: Duration of time for the given distance
     # MARK: Door Position
   - name: door_position
