@@ -717,6 +717,20 @@ types:
       - name: time
         name_cased: time
         type: types.time
+  - name: distance_over_time
+    name_cased: distanceOverTime
+    name_pretty: distance over time
+    type: custom
+    size: 20
+    items:
+      - name: distance
+        name_cased: distance
+        type: unit.length
+        description: Distance driven
+      - name: time
+        name_cased: time
+        type: unit.duration
+        description: Duration of time for the given distance
     # MARK: Door Position
   - name: door_position
     name_cased: doorPosition

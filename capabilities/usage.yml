@@ -304,3 +304,17 @@ properties:
       - data_component: '00'
         value: 'excellent'
         description: Late night driving is graded as excellent
+  - id: 0x15
+    name: distance_over_time
+    name_cased: distanceOverTime
+    name_pretty: Distance over time
+    type: types.distance_over_time
+    description: Distance driven over a given time period
+    examples:
+      - data_component: '1201409773851eb851ec07044024000000000000'
+        values:
+        distance:
+          kilometers: 1500.88
+        time:
+          weeks: 10.0
+
