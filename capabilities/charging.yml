@@ -46,7 +46,8 @@ properties:
     description: Estimated range
     examples:
       - data_component: '1201407b01999999999a'
-        value: kilometers: 432.1
+        value:
+          kilometers: 432.1
         description: 432.1km estimated range
   - id: 0x03
     name: battery_level
@@ -70,7 +71,8 @@ properties:
     description: Battery alternating current
     examples:
       - data_component: '0902bfe3333333333333'
-        value: amperes: -0.6
+        value:
+          amperes: -0.6
         description: Battery alternating current is -0.6A
   - id: 0x05
     name: battery_current_dc
@@ -84,7 +86,8 @@ properties:
     description: Battery direct current
     examples:
       - data_component: '0902bfe3333333333333'
-        value: amperes: -0.6
+        value:
+          amperes: -0.6
         description: Battery direct current is -0.6A
   - id: 0x06
     name: charger_voltage_ac
@@ -98,7 +101,8 @@ properties:
     description: Charger voltage for alternating current
     examples:
       - data_component: '0a024079000000000000'
-        value: volts: 400
+        value:
+          volts: 400
         description: Charger voltage is 400.0V for alternating current
   - id: 0x07
     name: charger_voltage_dc
@@ -112,7 +116,8 @@ properties:
     description: Charger voltage for direct current
     examples:
       - data_component: '0a0243c80000'
-        value: volts: 400
+        value:
+          volts: 400
         description: Charger voltage is 400.0V for direct current
   - id: 0x08
     name: charge_limit
@@ -133,7 +138,8 @@ properties:
     description: Time until charging completed
     examples:
       - data_component: '0701404e000000000000'
-        value: minutes: 60
+        value:
+          minutes: 60
         description: Time to complete charge is 60.0 minutes
   - id: 0x0a
     name: charging_rate_kw
@@ -147,7 +153,8 @@ properties:
     description: Charging rate
     examples:
       - data_component: '1403400c000000000000'
-        value: kilowatts: 3.5
+        value:
+          kilowatts: 3.5
         description: Charging rate is 3.5kW
   - id: 0x0b
     name: charge_port_state
@@ -185,7 +192,8 @@ properties:
     description: Maximum charging current
     examples:
       - data_component: '09024039000000000000'
-        value: amperes: 25.0
+        value:
+          amperes: 25.0
         description: Maximum charging current is 25.0A
   - id: 0x0f
     name: plug_type
@@ -276,7 +284,8 @@ properties:
     description: Battery temperature
     examples:
       - data_component: '17014043333333333333'
-        value: celsius: 38.4
+        value:
+          celsius: 38.4
         description: The battery temperature is 38.4°C
   - id: 0x15
     name: timers
@@ -354,7 +363,8 @@ properties:
     description: Charge rate when charging
     examples:
       - data_component: '14034062c00000000000'
-        value: kilowatts: 150.0
+        value:
+          kilowatts: 150.0
         description: Charging rate is 150.0kW
   - id: 0x19
     name: battery_current
@@ -365,7 +375,8 @@ properties:
     description: Battery current
     examples:
       - data_component: '0902bfe3333333333333'
-        value: amperes: -0.6
+        value:
+          amperes: -0.6
         description: Battery current is -0.6A
   - id: 0x1a
     name: charger_voltage
@@ -376,7 +387,8 @@ properties:
     description: Charger voltage
     examples:
       - data_component: '0a024079000000000000'
-        value: volts: 400
+        value:
+          volts: 400
         description: Charger voltage is 400.0V
   - id: 0x1b
     name: current_type

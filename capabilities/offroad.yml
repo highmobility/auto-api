@@ -26,7 +26,8 @@ properties:
     description: The route elevation incline
     examples:
       - data_component: '02004024333333333333'
-        value: degrees: 10.1
+        value:
+          degrees: 10.1
         description: Route incline is 10°
   - id: 0x02
     name: wheel_suspension

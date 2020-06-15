@@ -27,7 +27,8 @@ properties:
     description: Average weekly distance
     examples:
       - data_component: '12014084d4cccccccccd'
-        value: kilometers: 666.6
+        value:
+          kilometers: 666.6
         description: Average weekly distance is 666.6km
   - id: 0x02
     name: average_weekly_distance_long_run
@@ -38,7 +39,8 @@ properties:
     description: Average weekyl distance over long term
     examples:
       - data_component: '120140884d999999999a'
-        value: kilometers: 777.7
+        value:
+          kilometers: 777.7
         description: Average weekly distance, over long term, is 777.7km
   - id: 0x03
     name: acceleration_evaluation
@@ -109,32 +111,38 @@ properties:
       - data_component: '000b044034333333333333'
         values:
           driving_mode: 'regular'
-          consumption: kilowatt_hours: 20.2
+          consumption:
+            kilowatt_hours: 20.2
         description: Driving mode 'regular' consumed 20.2kWh of electric energy
       - data_component: '010b04404099999999999a'
         values:
           driving_mode: 'eco'
-          consumption: kilowatt_hours: 33.2
+          consumption:
+            kilowatt_hours: 33.2
         description: Driving mode 'eco' consumed 33.2kWh of electric energy
       - data_component: '020b04404b266666666666'
         values:
           driving_mode: 'sport'
-          consumption: kilowatt_hours: 54.3
+          consumption:
+            kilowatt_hours: 54.3
         description: Driving mode 'sport' consumed 54.3kWh of electric energy
       - data_component: '030b044050333333333333'
         values:
           driving_mode: 'sport_plus'
-          consumption: kilowatt_hours: 64.8
+          consumption:
+            kilowatt_hours: 64.8
         description: Driving mode 'sport_plus' consumed 64.8kWh of electric energy
       - data_component: '040b044032000000000000'
         values:
           driving_mode: 'ecoPlus'
-          consumption: kilowatt_hours: 18.0
+          consumption:
+            kilowatt_hours: 18.0
         description: Driving mode 'ecoPlus' consumed 18.0kWh of electric energy
       - data_component: '050b044040d9999999999a'
         values:
           driving_mode: 'comfort'
-          consumption: kilowatt_hours: 33.7
+          consumption:
+            kilowatt_hours: 33.7
         description: Driving mode 'comfort' consumed 33.7kWh of electric energy
   - id: 0x07
     name: last_trip_energy_consumption
@@ -145,7 +153,8 @@ properties:
     description: Energy consumption in the last trip
     examples:
       - data_component: '0c044059533333333333'
-        value: kilowatt_hours: 101.3
+        value:
+          kilowatt_hours: 101.3
         description: Last trip consumed 101.3kWh of electric energy
   - id: 0x08
     name: last_trip_fuel_consumption
@@ -156,7 +165,8 @@ properties:
     description: Fuel consumption in the last trip
     examples:
       - data_component: '19024036800000000000'
-        value: liters: 22.5
+        value:
+          liters: 22.5
         description: Last trip consumed 22.5L of fuel
   - id: 0x09
     name: mileage_after_last_trip
@@ -170,7 +180,8 @@ properties:
     description: Mileage after the last trip
     examples:
       - data_component: '120140f7590000000000'
-        value: kilometers: 95632.0
+        value:
+          kilometers: 95632.0
         description: Mileage is 95'632km after last trip
   - id: 0x0a
     name: last_trip_electric_portion
@@ -192,7 +203,8 @@ properties:
     description: Energy recuperation rate for last trip
     examples:
       - data_component: '0d004016b851eb851eb8'
-        value: kwh_per_100_kilometers: 5.68
+        value:
+          kwh_per_100_kilometers: 5.68
         description: 5.68kWh/100km of electric energy was recuperated during last trip
   - id: 0x0c
     name: last_trip_battery_remaining
@@ -225,7 +237,8 @@ properties:
     description: Average fuel consumption for current trip
     examples:
       - data_component: '0f00401a000000000000'
-        value: liters_per_100_kilometers: 6.5
+        value:
+          liters_per_100_kilometers: 6.5
         description: Average fuel consumption is 6.5L per 100km
   - id: 0x0f
     name: current_fuel_consumption
@@ -236,7 +249,8 @@ properties:
     description: Current fuel consumption
     examples:
       - data_component: '0f00401e000000000000'
-        value: liters_per_100_kilometers: 7.5
+        value:
+          liters_per_100_kilometers: 7.5
         description: Current fuel consumption is 7.5L per 100km
   - id: 0x10
     name: odometer_after_last_trip
@@ -247,7 +261,8 @@ properties:
     description: Odometer after the last trip
     examples:
       - data_component: '120140f7590000000000'
-        value: kilometers: 95632.0
+        value:
+          kilometers: 95632.0
         description: Odometer is 95'632km after last trip
   - id: 0x11
     name: safety_driving_score

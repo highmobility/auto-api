@@ -72,12 +72,14 @@ properties:
       - data_component: '0018014035000000000000'
         values:
           axle: 'front'
-          spring_rate: newton_millimeters: 21.0
+          spring_rate:
+            newton_millimeters: 21.0
         description: Front axle spring rate is 21.0N/mm
       - data_component: '0118014037000000000000'
         values:
           axle: 'rear'
-          spring_rate: newton_millimeters: 23.0
+          spring_rate:
+            newton_millimeters: 23.0
         description: Rear axle spring rate is 23.0N/mm
   - id: 0x06
     name: maximum_spring_rates
@@ -91,12 +93,14 @@ properties:
       - data_component: '0018014042800000000000'
         values:
           axle: 'front'
-          spring_rate: newton_millimeters: 37.0
+          spring_rate:
+            newton_millimeters: 37.0
         description: Front axle maximum spring rate is 37.0N/mm
       - data_component: '0118014043800000000000'
         values:
           axle: 'rear'
-          spring_rate: newton_millimeters: 39.0
+          spring_rate:
+            newton_millimeters: 39.0
         description: Rear axle maximum spring rate is 39.0N/mm
   - id: 0x07
     name: minimum_spring_rates
@@ -110,12 +114,14 @@ properties:
       - data_component: '0018014030000000000000'
         values:
           axle: 'front'
-          spring_rate: newton_millimeters: 16.0
+          spring_rate:
+            newton_millimeters: 16.0
         description: Front axle minimum spring rate is 16.0N/mm
       - data_component: '0118014032000000000000'
         values:
           axle: 'rear'
-          spring_rate: newton_millimeters: 18.0
+          spring_rate:
+            newton_millimeters: 18.0
         description: Rear axle minimum spring rate is 18.0N/mm
   - id: 0x08
     name: current_chassis_position
@@ -126,7 +132,8 @@ properties:
     description: The chassis position calculated from the lowest point
     examples:
       - data_component: '12074039666666666666'
-        value: millimeters: 25.4
+        value:
+          millimeters: 25.4
         description: Current chassis position is 25.4mm
   - id: 0x09
     name: maximum_chassis_position
@@ -137,7 +144,8 @@ properties:
     description: The maximum possible value for the chassis position
     examples:
       - data_component: '1207404bc00000000000'
-        value: millimeters: 55.5
+        value:
+          millimeters: 55.5
         description: Maximum chassis position is 55.5mm
   - id: 0x0a
     name: minimum_chassis_position
@@ -148,5 +156,6 @@ properties:
     description: The minimum possible value for the chassis position
     examples:
       - data_component: '1207c03c666666666666'
-        value: millimeters: -28.4
+        value:
+          millimeters: -28.4
         description: Minimum chassis position is -28.4mm

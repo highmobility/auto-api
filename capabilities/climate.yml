@@ -46,7 +46,8 @@ properties:
     description: The inside temperature
     examples:
       - data_component: '1701403319999999999a'
-        value: celsius: 19.1
+        value:
+          celsius: 19.1
         description: Inside temperature is 19.1°C
   - id: 0x02
     name: outside_temperature
@@ -57,7 +58,8 @@ properties:
     description: The outside temperature
     examples:
       - data_component: '17014028666666666666'
-        value: celsius: 12.2
+        value:
+          celsius: 12.2
         description: Outside temperature is 12.2°C
   - id: 0x03
     name: driver_temperature_setting
@@ -68,7 +70,8 @@ properties:
     description: The driver temperature setting
     examples:
       - data_component: '17014035800000000000'
-        value: celsius: 21.5
+        value:
+          celsius: 21.5
         description: Driver temperature setting is 21.5°C
   - id: 0x04
     name: passenger_temperature_setting
@@ -79,7 +82,8 @@ properties:
     description: The passenger temperature setting
     examples:
       - data_component: '17014035b33333333333'
-        value: celsius: 21.7
+        value:
+          celsius: 21.7
         description: Passenger temperature setting is 21.7°C
   - id: 0x05
     name: hvac_state
@@ -126,7 +130,8 @@ properties:
     description: The defrosting temperature setting
     examples:
       - data_component: '17014035333333333333'
-        value: celsius: 21.2
+        value:
+          celsius: 21.2
         description: Defrosting temperature setting is 21.2°C
   - id: 0x0b
     name: hvac_weekday_starting_times
@@ -201,5 +206,6 @@ properties:
     description: The rear temperature
     examples:
       - data_component: '1701403599999999999a'
-        value: celsius: 21.6
+        value:
+          celsius: 21.6
         description: Rear temperature setting is 21.6°C

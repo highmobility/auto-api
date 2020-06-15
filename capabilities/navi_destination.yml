@@ -76,7 +76,8 @@ properties:
     description: Remaining time until reaching the destination.
     examples:
       - data_component: '07004004cccccccccccd'
-        value: hours: 2.6
+        value:
+          hours: 2.6
         description: Remaining time to destination is 2.6h
   - id: 0x06
     name: distance_to_destination
@@ -87,5 +88,6 @@ properties:
     description: Remaining distance to reach the destination.
     examples:
       - data_component: '12014094e40000000000'
-        value: kilometers: 1337.0
+        value:
+          kilometers: 1337.0
         description: Remaining distance to destination is 1337.0km

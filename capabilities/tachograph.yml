@@ -120,5 +120,6 @@ properties:
     description: The tachograph vehicle speed
     examples:
       - data_component: '16014054000000000000'
-        value: kilometers_per_hour: 80.0
+        value:
+          kilometers_per_hour: 80.0
         description: Vehicle speed is 80.0km/h

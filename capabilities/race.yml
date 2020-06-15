@@ -28,22 +28,26 @@ properties:
       - data_component: '0001013feba5e353f7ced9'
         values:
           direction: 'longitudinal'
-          acceleration: gravity: 0.864
+          acceleration:
+            gravity: 0.864
         description: Longitudinal acceleration is 0.864g
       - data_component: '010101bfe8189374bc6a7f'
         values:
           direction: 'lateral'
-          acceleration: gravity: -0.753
+          acceleration:
+            gravity: -0.753
         description: Lateral acceleration is -0.753g
       - data_component: '0201013fe8189374bc6a7f'
         values:
           direction: 'front_lateral'
-          acceleration: gravity: 0.753
+          acceleration:
+            gravity: 0.753
         description: Front lateral acceleration is 0.753g
       - data_component: '030101bfeba5e353f7ced9'
         values:
           direction: 'rear_lateral'
-          acceleration: gravity: -0.864
+          acceleration:
+            gravity: -0.864
         description: Rear lateral acceleration is -0.864g
   - id: 0x02
     name: understeering
@@ -84,7 +88,8 @@ properties:
     description: The steering angle, whereas 0.0 is straight ahead, positive number to the right and negative number to the left
     examples:
       - data_component: '02004024000000000000'
-        value: degrees: 10.0
+        value:
+          degrees: 10.0
         description: Steering angle is 10° to right
   - id: 0x06
     name: brake_pressure
@@ -95,7 +100,8 @@ properties:
     description: Brake pressure
     examples:
       - data_component: '15064034000000000000'
-        value: bars: 20.0
+        value:
+          bars: 20.0
         description: Brake pressure is 20.0bar
   - id: 0x07
     name: yaw_rate
@@ -106,7 +112,8 @@ properties:
     description: Yaw turning rate
     examples:
       - data_component: '0300401aa3d70a3d70a4'
-        value: degrees_per_second: 6.66
+        value:
+          degrees_per_second: 6.66
         description: Yaw rate is 6.66°/s
   - id: 0x08
     name: rear_suspension_steering
@@ -117,7 +124,8 @@ properties:
     description: Rear suspension steering
     examples:
       - data_component: '0200400a666666666666'
-        value: degrees: 3.3
+        value:
+          degrees: 3.3
         description: Rear suspension steering is +3°
   - id: 0x09
     name: electronic_stability_program

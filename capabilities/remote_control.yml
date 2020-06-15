@@ -71,7 +71,8 @@ properties:
     description: Wheel base angle
     examples:
       - data_component: '02004049000000000000'
-        value: degrees: 50.0
+        value:
+          degrees: 50.0
         description: Angle is 50.0°
   - id: 0x03
     name: speed
@@ -82,5 +83,6 @@ properties:
     description: Target speed
     examples:
       - data_component: '16014014000000000000'
-        value: kilometers_per_hour: 5.0
+        value:
+          kilometers_per_hour: 5.0
         description: Speed is 5.0km/h

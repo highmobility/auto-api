@@ -41,7 +41,8 @@ properties:
     description: Start the video from the given time
     examples:
       - data_component: '07024008000000000000'
-        value: seconds: 3.0
+        value:
+          seconds: 3.0
         description: Start from 3.0s
   - id: 0x03
     name: screen
@@ -67,5 +68,6 @@ properties:
     description: Start the video from the given time
     examples:
       - data_component: '07024004000000000000'
-        value: seconds: 2.5
+        value:
+          seconds: 2.5
         description: Start from 2.5s

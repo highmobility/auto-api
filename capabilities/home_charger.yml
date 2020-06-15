@@ -100,7 +100,8 @@ properties:
     description: Charging power
     examples:
       - data_component: '14034027000000000000'
-        value: kilowatts: 11.5
+        value:
+          kilowatts: 11.5
         description: Charging power is 11.5kW
   - id: 0x05
     name: solar_charging
@@ -175,7 +176,8 @@ properties:
     description: The charge direct current
     examples:
       - data_component: '0a023fe0000000000000'
-        value: volts: 0.5
+        value:
+          volts: 0.5
         description: Charger direct current is 0.5V
   - id: 0x0f
     name: maximum_charge_current
@@ -186,7 +188,8 @@ properties:
     description: The maximum possible charge current
     examples:
       - data_component: '0a023ff0000000000000'
-        value: volts: 1.0
+        value:
+          volts: 1.0
         description: Maximum charger current is 1.0V
   - id: 0x10
     name: minimum_charge_current
@@ -197,7 +200,8 @@ properties:
     description: The minimal possible charge current
     examples:
       - data_component: '0a023fb999999999999a'
-        value: volts: 0.1
+        value:
+          volts: 0.1
         description: Minimum charger current is 0.1V
   - id: 0x11
     name: coordinates
@@ -245,5 +249,6 @@ properties:
     description: Charging power output from the charger
     examples:
       - data_component: '14034075e00000000000'
-        value: kilowatts: 350.0
+        value:
+          kilowatts: 350.0
         description: Charging power is 350.0kW

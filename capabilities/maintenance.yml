@@ -29,7 +29,8 @@ properties:
     description: Time until next servicing of the car
     examples:
       - data_component: '0703407f500000000000'
-        value: days: 501.0
+        value:
+          days: 501.0
         description: 501.0 days until next service
   - id: 0x02
     name: kilometers_to_next_service
@@ -43,7 +44,8 @@ properties:
     description: The distance until next servicing of the vehicle
     examples:
       - data_component: '120140acc20000000000'
-        value: kilometers: 3681.0
+        value:
+          kilometers: 3681.0
         description: 3'681km until next service
   - id: 0x03
     name: cbs_reports_count
@@ -68,7 +70,8 @@ properties:
     description: Time until exhaust inspection
     examples:
       - data_component: '07054014000000000000'
-        value: months: 5.0
+        value:
+          months: 5.0
         description: 5 months until exhaust inspection
   - id: 0x05
     name: teleservice_availability
@@ -98,7 +101,8 @@ properties:
     description: Distance threshold for service
     examples:
       - data_component: '120140b3880000000000'
-        value: kilometers: 5000.0
+        value:
+          kilometers: 5000.0
         description: Service distance threshold is 5000.0km
   - id: 0x07
     name: service_time_threshold
@@ -109,7 +113,8 @@ properties:
     description: Time threshold for service
     examples:
       - data_component: '07044010000000000000'
-        value: weeks: 4
+        value:
+          weeks: 4
         description: Service time threshold is 4 weeks
   - id: 0x08
     name: automatic_teleservice_call_date
@@ -181,7 +186,8 @@ properties:
     description: Time until next servicing of the vehicle
     examples:
       - data_component: '0703407f500000000000'
-        value: days: 501.0
+        value:
+          days: 501.0
         description: 501.0 days until next service
   - id: 0x0e
     name: distance_to_next_service
@@ -192,7 +198,8 @@ properties:
     description: The distance until next servicing of the vehicle
     examples:
       - data_component: '120140acc20000000000'
-        value: kilometers: 3681.0
+        value:
+          kilometers: 3681.0
         description: 3'681km until next service
   - id: 0x0f
     name: time_to_exhaust_inspection
@@ -203,5 +210,6 @@ properties:
     description: Time until exhaust inspection
     examples:
       - data_component: '07054014000000000000'
-        value: months: 5.0
+        value:
+          months: 5.0
         description: 5 months until exhaust inspection

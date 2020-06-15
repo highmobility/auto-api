@@ -57,7 +57,8 @@ properties:
     description: Time to honk the horn
     examples:
       - data_component: '07024008000000000000'
-        value: seconds: 3.0
+        value:
+          seconds: 3.0
         description: Honk the horn for 3.0s
   - id: 0x03
     name: flash_times
@@ -88,5 +89,6 @@ properties:
     description: Time to honk the horn
     examples:
       - data_component: '07024000000000000000'
-        value: seconds: 2.0
+        value:
+          seconds: 2.0
         description: Honk the horn for 2.0s
