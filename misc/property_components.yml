@@ -89,6 +89,9 @@ property_components:
           - id: 0x05
             name: not_available
             description: The property is not available for the vehicle.
+          - id: 0x06
+            name: on_change
+            description: The property data is update as soon as the vehicle updates it internally.
       - name: rate_limit
         name_cased: rateLimit
         name_pretty: Rate limit
