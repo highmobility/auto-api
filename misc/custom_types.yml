@@ -315,6 +315,29 @@ types:
         type: uinteger
         size: 1
         description: Value between 0 and 59
+    # MARK: Weekday
+  - name: weekday
+    name_cased: weekday
+    name_pretty: Weekday
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: monday
+      - id: 0x01
+        name: tuesday
+      - id: 0x02
+        name: wednesday
+      - id: 0x03
+        name: thursday
+      - id: 0x04
+        name: friday
+      - id: 0x05
+        name: saturday
+      - id: 0x06
+        name: sunday
+      - id: 0x07
+        name: automatic
     # MARK: Window Location
   - name: window_location
     name_cased: windowLocation
@@ -908,25 +931,7 @@ types:
     items:
       - name: weekday
         name_cased: weekday
-        type: enum
-        size: 1
-        enum_values:
-          - id: 0x00
-            name: monday
-          - id: 0x01
-            name: tuesday
-          - id: 0x02
-            name: wednesday
-          - id: 0x03
-            name: thursday
-          - id: 0x04
-            name: friday
-          - id: 0x05
-            name: saturday
-          - id: 0x06
-            name: sunday
-          - id: 0x07
-            name: automatic
+        type: types.weekday
       - name: time
         name_cased: time
         type: types.time

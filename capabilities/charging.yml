@@ -350,6 +350,21 @@ properties:
       - id: 0x05
         name: charging_error
         disabled_in_setter: true
+      - id: 0x06
+        name: cable_unplugged
+        disabled_in_setter: true
+      - id: 0x07
+        name: slow_charging
+        disabled_in_setter: true
+      - id: 0x08
+        name: fast_charging
+        disabled_in_setter: true
+      - id: 0x09
+        name: discharging
+        disabled_in_setter: true
+      - id: 0x0a
+        name: foreign_object_detected
+        disabled_in_setter: true
     examples:
       - data_component: '01'
         value: 'charging'
@@ -404,3 +419,119 @@ properties:
       - id: 0x01
         name: direct_current
         name_pretty: DC
+    examples:
+      - data_component: '00'
+        value: 'alternating_current'
+        description: Alternating current is used
+  - id: 0x1c
+    name: max_range
+    name_cased: maxRange
+    name_pretty: Max range
+    type: unit.length
+    size: 10
+    description: Maximum electric range with 100% of battery
+    examples:
+      - data_component: '12014081580000000000'
+        value:
+          kilometers: 555.0
+        description: Maximum electric range is 555.0km
+  - id: 0x1d
+    name: starter_battery_state
+    name_cased: starterBatteryState
+    name_pretty: Starter battery state
+    type: enum
+    size: 1
+    description: State of the starter battery
+    enum_values:
+      - id: 0x00
+        name: red
+        description: Battery charge is greater than 0%
+      - id: 0x01
+        name: yellow
+        description: Battery charge is greater than 40%
+      - id: 0x02
+        name: green
+        description: Battery charge is greater than 70%
+    examples:
+      - data_component: '02'
+        value: 'green'
+        description: Starter battery status is green
+  - id: 0x1e
+    name: smart_charging_status
+    name_cased: smartChargingStatus
+    name_pretty: Smart charging status
+    type: enum
+    size: 1
+    description: Status of optimized/intelligent charging
+    enum_values:
+      - id: 0x00
+        name: wallbox_is_active
+      - id: 0x01
+        name: scc_is_active
+        description: Smart Charge Communication is active
+      - id: 0x02
+        name: inactive
+    examples:
+      - data_component: '01'
+        value: 'scc_is_active'
+        description: Smart Charge Communication is active
+  - id: 0x1f
+    name: battery_level_at_departure
+    name_cased: batteryLevelAtDeparture
+    name_pretty: Battery level at departure
+    type: types.percentage
+    description: Battery charge level expected at time of departure
+    examples:
+      - data_component: '3feccccccccccccd'
+        value: 0.9
+        description: Battery level is expected to be 90% at time of departure
+  - id: 0x20
+    name: preconditioning_departure_status
+    name_cased: preconditioningDepratureStatus
+    name_pretty: Preconditioning departure status
+    type: types.active_state
+    description: Status of preconditioning at departure time
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Preconditioning is active for departure time
+  - id: 0x21
+    name: preconditioning_immediate_status
+    name_cased: preconditioningImmediateStatus
+    name_pretty: Preconditioning immediate status
+    type: types.active_state
+    description: Status of immediate preconditioning
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Immediate preconditioning is active
+  - id: 0x22
+    name: preconditioning_departure_enabled
+    name_cased: preconditioningDepratureEnabled
+    name_pretty: Preconditioning departure enabled
+    type: types.enabled_state
+    description: Preconditioning activation status at departure
+    examples:
+      - data_component: '01'
+        value: 'enabled'
+        description: Preconditioning is enabled for departure
+  - id: 0x23
+    name: preconditioning_error
+    name_cased: preconditioningError
+    name_pretty: Preconditioning error
+    type: enum
+    size: 1
+    description: Preconditioning error if one is encountered
+    enum_values:
+      - id: 0x00
+        name: no_change
+      - id: 0x01
+        name: not_possible_low
+        description: Preconditioning not possible because battery or fuel is low
+      - id: 0x02
+        name: not_possible_finished
+        description: Preconditioning not possible because charging is not finished
+      - id: 0x03
+        name: available_after_engine_restart
+      - id: 0x04
+        name: general_error

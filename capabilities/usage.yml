@@ -317,4 +317,77 @@ properties:
           kilometers: 1500.88
         time:
           weeks: 10.0
+        description: During the last 10.0 weeks the vehicle travelled 1500.88km
+  - id: 0x16
+    name: electric_consumption_since_start
+    name_cased: electricConsumptionSinceStart
+    name_pretty: Electric consumption since start
+    type: unit.energy_efficiency
+    size: 10
+    description: Electric energy consumed since the start of a trip
+    examples:
+      - data_component: '0d00402670a3d70a3d71'
+        value:
+          kwh_per_100_kilometers: 11.22
+        description: Consumed 11.22kWh/100km since the start of a trip
+  - id: 0x17
+    name: electric_consumption_since_reset
+    name_cased: electricConsumptionSinceReset
+    name_pretty: Electric consumption since reset
+    type: unit.energy_efficiency
+    size: 10
+    description: Electric energy consumed since a reset
+    examples:
+      - data_component: '0d004036547ae147ae14'
+        value:
+          kwh_per_100_kilometers: 22.33
+        description: Consumed 22.33kWh/100km since a reset
+  - id: 0x18
+    name: electric_distance_last_trip
+    name_cased: electricDistanceLastTrip
+    name_pretty: Electric distance last trip
+    type: unit.length
+    size: 10
+    description: Distance travelled with electricity in last trip
+    examples:
+      - data_component: '120440fb198000000000'
+        value:
+          meters: 111000.0
+        description: Vehicle travelled 111000.0m using electricity during the last trip
+  - id: 0x19
+    name: electric_distance_since_reset
+    name_cased: electricDistanceSinceReset
+    name_pretty: Electric distance since reset
+    type: unit.length
+    size: 10
+    description: Distance travelled with electricity since reset
+    examples:
+      - data_component: '1204410b198000000000'
+        value:
+          meters: 222000.0
+        description: Vehicle travelled 222000.0m using electricity since last reset
+  - id: 0x1a
+    name: electric_duration_last_trip
+    name_cased: electricDurationLastTrip
+    name_pretty: Electric duration last trip
+    type: unit.duration
+    size: 10
+    description: Duration of travelling using electricity during last trip
+    examples:
+      - data_component: '07014053400000000000'
+        value:
+          minutes: 77.0
+        description: Vehicle travelled 77.0min using electricity during last trip
+  - id: 0x1b
+    name: electric_duration_since_reset
+    name_cased: electricDurationSinceReset
+    name_pretty: Electric duration since reset
+    type: unit.duration
+    size: 10
+    description: Duration of travelling using electricity since reset
+    examples:
+      - data_component: '070144056000000000000'
+        value:
+          minutes: 88.0
+        description: Vehicle travelled 88.0min using electricity since last reset
 
