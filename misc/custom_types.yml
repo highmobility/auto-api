@@ -22,6 +22,19 @@ types:
       - id: 0x01
         name: active
         verb: activate
+    # MARK: Active Selected State
+  - name: active_selected_state
+    name_cased: activeSelectedState
+    name_pretty: Active selected state
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: inactive_selected
+      - id: 0x01
+        name: inactive_not_selected
+      - id: 0x02
+        name: active
     # MARK: Axle
   - name: axle
     name_cased: axle

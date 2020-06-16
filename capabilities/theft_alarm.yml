@@ -42,3 +42,128 @@ properties:
       - data_component: '01'
         value: 'armed'
         description: Theft alarm is armed
+  - id: 0x02
+    name: interior_protection_status
+    name_cased: interiorProtectionStatus
+    name_pretty: Interior protection status
+    type: types.active_selected_state
+    description: Interior protection sensor status
+    examples:
+      - data_component: '02'
+        value: 'active'
+        description: Interior protection sensor is active
+  - id: 0x03
+    name: tow_protection_status
+    name_cased: towProtectionStatus
+    name_pretty: Tow protection status
+    type: types.active_selected_state
+    description: Tow protection sensor status
+    examples:
+      - data_component: '02'
+        value: 'active'
+        description: Tow protection sensor is active
+  - id: 0x04
+    name: last_warning_reason
+    name_cased: lastWarningReason
+    name_pretty: Last warning reason
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: no_alarm
+      - id: 0x01
+        name: basis_alarm
+      - id: 0x02
+        name: door_front_left
+      - id: 0x03
+        name: door_front_right
+      - id: 0x04
+        name: door_rear_left
+      - id: 0x05
+        name: door_rear_right
+      - id: 0x06
+        name: hood
+      - id: 0x07
+        name: trunk
+      - id: 0x08
+        name: common_alm_in
+      - id: 0x09
+        name: panic
+      - id: 0x0a
+        name: glovebox
+      - id: 0x0b
+        name: center_box
+      - id: 0x0c
+        name: rear_box
+      - id: 0x0d
+        name: sensor_vta
+      - id: 0x0e
+        name: its
+      - id: 0x0f
+        name: its_slv
+      - id: 0x10
+        name: tps
+      - id: 0x11
+        name: horn
+      - id: 0x12
+        name: hold_com
+      - id: 0x13
+        name: remote
+      - id: 0x14
+        name: unknown
+    examples:
+      - data_component: '06'
+        value: 'hood'
+        description: Last warning is for the hood
+  - id: 0x05
+    name: last_event
+    name_cased: lastEvent
+    name_pretty: Last event
+    type: timestamp
+    description: Last event happening date
+    examples:
+      - data_component: '00000172bcd25b10'
+        value: '2020-06-16T11:10:02.000Z'
+        description: Last trip happened at 16. June 2020 at 11:10:02 GMT
+  - id: 0x06
+    name: last_event_level
+    name_cased: lastEventLevel
+    name_pretty: Last event level
+    type: enum
+    size: 1
+    description: Level of impact for the last event
+    enum_values:
+      - id: 0x00
+        name: low
+      - id: 0x01
+        name: medium
+      - id: 0x02
+        name: high
+  - id: 0x07
+    name: event_type
+    name_cased: eventType
+    name_pretty: Event type
+    type: enum
+    size: 1
+    description: Position of the last even relative to the vehicle
+    enum_values:
+      - id: 0x00
+        name: idle
+      - id: 0x01
+        name: front_left
+      - id: 0x02
+        name: front_middle
+      - id: 0x03
+        name: front_right
+      - id: 0x04
+        name: right
+      - id: 0x05
+        name: rear_right
+      - id: 0x06
+        name: rear_middle
+      - id: 0x07
+        name: rear_left
+      - id: 0x08
+        name: left
+      - id: 0x09
+        name: unknown
