@@ -139,6 +139,10 @@ properties:
         name: medium
       - id: 0x02
         name: high
+    examples:
+      - data_component: '00'
+        value: 'low'
+        description: Last event had a low impact
   - id: 0x07
     name: event_type
     name_cased: eventType
@@ -167,3 +171,7 @@ properties:
         name: left
       - id: 0x09
         name: unknown
+    examples:
+      - data_component: '05'
+        value: 'rear_right'
+        description: Last event happened to rear right position
