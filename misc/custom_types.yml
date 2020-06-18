@@ -726,6 +726,20 @@ types:
             name: tire_pressure_monitor_system_warning
           - id: 0x55
             name: water_in_fuel
+          - id: 0x56
+            name: tire_warning_front_right
+          - id: 0x57
+            name: tire_warning_front_left
+          - id: 0x58
+            name: tire_warning_rear_right
+          - id: 0x59
+            name: tire_warning_rear_left
+          - id: 0x5a
+            name: tire_warning_system_error
+          - id: 0x5b
+            name: battery_low_warning
+          - id: 0x5c
+            name: brake_fluid_warning
       - name: state
         name_cased: state
         type: types.active_state
