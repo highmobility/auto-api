@@ -319,24 +319,24 @@ properties:
           weeks: 10.0
         description: During the last 10.0 weeks the vehicle travelled 1500.88km
   - id: 0x16
-    name: electric_consumption_since_start
-    name_cased: electricConsumptionSinceStart
-    name_pretty: Electric consumption since start
+    name: electric_consumption_rate_since_start
+    name_cased: electricConsumptionRateSinceStart
+    name_pretty: Electric consumption rate since start
     type: unit.energy_efficiency
     size: 10
-    description: Electric energy consumed since the start of a trip
+    description: Electric energy consumption rate since the start of a trip
     examples:
       - data_component: '0d00402670a3d70a3d71'
         value:
           kwh_per_100_kilometers: 11.22
         description: Consumed 11.22kWh/100km since the start of a trip
   - id: 0x17
-    name: electric_consumption_since_reset
-    name_cased: electricConsumptionSinceReset
-    name_pretty: Electric consumption since reset
+    name: electric_consumption_rate_since_reset
+    name_cased: electricConsumptionRateSinceReset
+    name_pretty: Electric consumption rate since reset
     type: unit.energy_efficiency
     size: 10
-    description: Electric energy consumed since a reset
+    description: Electric energy consumption rate since a reset
     examples:
       - data_component: '0d004036547ae147ae14'
         value:
@@ -390,4 +390,141 @@ properties:
         value:
           minutes: 88.0
         description: Vehicle travelled 88.0min using electricity since last reset
-
+  - id: 0x1c
+    name: fuel_consumption_rate_last_trip
+    name_cased: fuelConsumptionRateLastTrip
+    name_pretty: Fuel consumption rate last trip
+    type: unit.fuel_efficiency
+    size: 10
+    description: Liquid fuel consumption rate during last trip
+    examples:
+      - data_component: '0f00401599999999999a'
+        value:
+          liters_per_100_kilometers: 5.4
+        description: Consumed 5.4 L/100km during last trip
+  - id: 0x1d
+    name: fuel_consumption_rate_since_reset
+    name_cased: fuelConsumptionRateSinceReset
+    name_pretty: Fuel consumption rate since reset
+    type: unit.fuel_efficiency
+    size: 10
+    description: Liquid fuel consumption rate since reset
+    examples:
+      - data_component: '0f004015333333333333
+        value:
+          liters_per_100_kilometers: 5.3
+        description: Consumed 5.3 L/100km since reset
+  - id: 0x1e
+    name: average_speed_last_trip
+    name_cased: averageSpeedLastTrip
+    name_pretty: Average speed last trip
+    type: unit.speed
+    size: 10
+    description: Average speed during last trip
+    examples:
+      - data_component: '1601404619999999999a'
+        value:
+          kilometers_per_hour: 44.2
+        description: Average speed was 44.2km/h during last trip
+  - id: 0x1f
+    name: average_speed_since_reset
+    name_cased: averageSpeedSinceReset
+    name_pretty: Average speed since reset
+    type: unit.speed
+    size: 10
+    description: Average speed since reset
+    examples:
+      - data_component: '1601404619999999999a'
+        value:
+          kilometers_per_hour: 44.2
+        description: Average speed was 44.2km/h since reset
+  - id: 0x20
+    name: fuel_distance_last_trip
+    name_cased: fuelDistanceLastTrip
+    name_pretty: Fuel distance last trip
+    type: unit.length
+    size: 10
+    description: Distance travelled with (liquid) fuel during last trip
+    examples:
+      - data_component: '120440fb198000000000'
+        value:
+          meters: 111000.0
+        description: Vehicle travelled 111000.0m using fuel during the last trip
+  - id: 0x21
+    name: fuel_distance_since_reset
+    name_cased: fuelDistanceSinceReset
+    name_pretty: Fuel distance since reset
+    type: unit.length
+    size: 10
+    description: Distance travelled with (liquid) fuel since reset
+    examples:
+      - data_component: '1204410b198000000000'
+        value:
+          meters: 222000.0
+        description: Vehicle travelled 222000.0m using fuel since last reset
+  - id: 0x22
+    name: driving_duration_last_trip
+    name_cased: drivingDurationLastTrip
+    name_pretty: Driving duration last trip
+    type: unit.duration
+    size: 10
+    description: Duration of last trip
+    examples:
+        - data_component: '07014053400000000000'
+          value:
+            minutes: 77.0
+          description: Vehicle travelled 77.0min during last trip
+    - id: 0x23
+      name: driving_duration_since_reset
+      name_cased: drivingDurationSinceReset
+      name_pretty: Driving duration since reset
+      type: unit.duration
+      size: 10
+      description: Duration of travelling since reset
+      examples:
+        - data_component: '070144056000000000000'
+          value:
+            minutes: 88.0
+          description: Vehicle travelled 88.0min since last reset
+  - id: 0x24
+    name: eco_score_total
+    name_cased: ecoScoreTotal
+    name_pretty: Eco-score total
+    type: types.percentage
+    description: Overall eco-score rating
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Total eco-score rating is 70%
+  - id: 0x25
+    name: eco_score_free_wheel
+    name_cased: ecoScoreFreeWheel
+    name_pretty: Eco-score free wheel
+    type: types.percentage
+    description: Eco-score rating for free-wheeling
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Eco-score free-wheeling rating is 70%
+  - id: 0x26
+    name: eco_score_constant
+    name_cased: ecoScoreConstant
+    name_pretty: Eco-score constant
+    type: types.percentage
+    description: Eco-score rating constant
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Eco-score constant is 70%
+  - id: 0x27
+    name: eco_score_bonus_range
+    name_cased: ecoScoreBonusRange
+    name_pretty: Eco-score bonus range
+    type: unit.length
+    size: 10
+    description: Eco-score bonus range
+    examples:
+      - data_component: '12013fe6666666666666'
+        value:
+          kilometers: 0.7
+        description: Eco-score bonus range is 0.7km

@@ -261,3 +261,29 @@ properties:
         value:
           kilowatts: 220.0
         description: Vehicle has 220kW of power
+  - id: 0x14
+    name: language
+    name_cased: language
+    name_pretty: Language
+    type: string
+    description: The language on headunit
+    examples:
+      - data_component: '00086573746f6e69616e'
+        value: 'estonian'
+        description: Headunit is in estonian language
+  - id: 0x15
+    name: timeformat
+    name_cased: timeformat
+    name_pretty: Timeformat
+    type: enum
+    size: 1
+    description: The timeformat on headunit
+    enum_values:
+      - id: 0x00
+        name: twelve_h
+      - id: 0x01
+        name: twenty_four_h
+    examples:
+      - data_component: '01'
+        value: 'twenty_four_h'
+        description: Headunit is using a 24h timeformat

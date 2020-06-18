@@ -213,3 +213,13 @@ properties:
         value:
           months: 5.0
         description: 5 months until exhaust inspection
+  - id: last_ecall
+    name: lastECall
+    name_pretty: Last eCall
+    type: timestamp
+    size: 8
+    description: Date-time of the last eCall
+    examples:
+      - data_component: '000001677c63d280'
+        value: '2018-12-05T03:22:56.000Z'
+        description: Last eCall happened at 5 December 2018 at 03:22:56 GMT

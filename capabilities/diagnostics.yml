@@ -459,3 +459,13 @@ properties:
           location: 'rear_left'
           pressure: 'normal'
         description: Rear left tire pressure is normal
+  - id: 0x22
+    name: brake_lining_wear_pre_warning
+    name_cased: brakeLiningWearPreWarning
+    name_pretty: Brake lining wear pre-warning
+    type: types.active_state
+    description: Status of brake lining wear pre-warning
+    examples:
+      - data_component: '00'
+        value: 'inactive'
+        description: Brake lining wear pre-warning is inactive

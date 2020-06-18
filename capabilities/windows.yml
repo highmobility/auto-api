@@ -56,7 +56,6 @@ properties:
           location: 'hatch'
           open_percentage: 0.18
         description: Hatch is 18% open
-
   - id: 0x03
     name: positions
     name_cased: positions

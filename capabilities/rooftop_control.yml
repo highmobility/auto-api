@@ -116,3 +116,21 @@ properties:
       - data_component: '01'
         value: 'open'
         description: Sunroof is open
+  - id: 0x06
+    name: sunroof_rain_event
+    name_cased: sunroofRainEvent
+    name_pretty: Sunroof rain event
+    type: enum
+    size: 1
+    description: Sunroof event happened in case of rain
+    enum_values:
+      - id: 0x00
+        name: no_event
+      - id: 0x01
+        name: in_stroke_position_because_of_rain
+      - id: 0x02
+        name: automatically_in_stroke_position
+    examples:
+      - data_component: '00'
+        value: 'no_event'
+        description: Sunroof had no rain event

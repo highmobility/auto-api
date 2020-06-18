@@ -151,3 +151,21 @@ properties:
           location: 'rear'
           state: 'active'
         description: Rear reading lights are active
+  - id: 0x0a
+    name: switch_position
+    name_cased: switchPosition
+    name_pretty: Switch position
+    type: enum
+    size: 1
+    description: Position of the rotary light switch
+    enum_values:
+      - id: 0x00
+        name: automatic
+      - id: 0x01
+        name: dipped_headlights
+      - id: 0x02
+        name: parking_light_right
+      - id: 0x03
+        name: parking_light_left
+      - id: 0x04
+        name: sidelights

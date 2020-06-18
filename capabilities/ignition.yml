@@ -40,3 +40,20 @@ properties:
       - data_component: '01'
         value: 'on'
         description: Accessories power is on
+  - id: 0x03
+    name: state
+    name_cased: state
+    name_pretty: State
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: lock
+      - id: 0x01
+        name: off
+      - id: 0x02
+        name: accessory
+      - id: 0x03
+        name: on
+      - id: 0x04
+        name: start
