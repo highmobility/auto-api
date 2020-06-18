@@ -1,0 +1,49 @@
+name: trips
+name_cased: trips
+name_pretty: Trips
+category: poi
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x6a
+
+api:
+  intro: 12
+  update: 12
+
+getters:
+  name: get_trips
+
+state: all
+
+properties:
+  - id: 0x01
+    name: trips
+    name_cased: trips
+    name_pretty: Trips
+    type: types.trip
+    multiple: true
+    examples:
+      - data_component: '00486172692053656c646f6e 546f20736176652068756d616e6b696e6400000172bcd2534000000172bd0a2c20536b616c69747a65722053747261c39f652036382c203130393937204265726c696e2c204765726d616e79536b616c69747a65722053747261c39f652036382c203130393937204265726c696e2c204765726d616e79404a40090b417ca2402ae122d948dc12404a40090b417ca2402ae122d948dc12120140c4820000000000120140c49780000000000f00401d5c28f5c28f5c'
+        value
+          type: 'single'
+          driver_name: 'Hari Seldon'
+          description: 'To save humankind'
+          start_time: '2020-06-16T11:10:00.000Z'
+          end_time: '2020-06-16T12:11:00.000Z'
+          start_address: 'Skalitzer Straße 68, 10997 Berlin, Germany'
+          end_address: 'Skalitzer Straße 68, 10997 Berlin, Germany'
+          start_coordinates:
+            latitude: 52.500276
+            longitude: 13.439719
+          end_coordinates:
+            latitude: 52.500276
+            longitude: 13.439719
+          start_odometer:
+            kilometers: 10500.0
+          end_odometer:
+            kilometers: 10543.0
+          average_fuel_consumption:
+            liters_per_100_kilometers: 7.34
+        description: This was a good trip with reasonable parameters

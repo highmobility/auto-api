@@ -1187,6 +1187,83 @@ types:
         type: unit.temperature
         size: 10
         description: Tire temperature
+    # MARK: Trip
+  - name: trip
+    name_cased: trip
+    name_pretty: Trip
+    type: custom
+    items:
+      - name: type
+        name_cased: type
+        name_pretty: Type
+        type: enum
+        size: 1
+        description: Type of the trip
+        enum_values:
+          - id: 0x00
+            name: single
+          - id: 0x01
+            name: multi
+      - name: driver_name
+        name_cased: driverName
+        name_pretty: Driver name
+        type: string
+        description: Name of the driver of the trip
+      - name: description
+        name_cased: description
+        name_pretty: Description
+        type: string
+        description: Description of the trip
+      - name: start_time
+        name_cased: startTime
+        name_pretty: Start time
+        type: timestamp
+        size: 8
+        description: Start time of the trip
+      - name: end_time
+        name_cased: endTime
+        name_pretty: End time
+        type: timestamp
+        size: 8
+        description: End time of the trip
+      - name: start_address
+        name_cased: startAddress
+        name_pretty: Start address
+        type: string
+        description: Start address of the trip
+      - name: end_address
+        name_cased: endAddress
+        name_pretty: End address
+        type: string
+        description: End address of the trip
+      - name: start_coordinates
+        name_cased: startCoordinates
+        name_pretty: Start coordinates
+        type: types.coordinates
+        description: Start coordinates of the trip
+      - name: end_coordinates
+        name_cased: endCoordinates
+        name_pretty: End coordinates
+        type: types.coordinates
+        description: End coordinates of the trip
+      - name: start_odometer
+        name_cased: startOdometer
+        name_pretty: Start odometer
+        type: unit.length
+        size: 10
+        description: Odometer reading at the start of the trip
+      - name: end_odometer
+        name_cased: endOdometer
+        name_pretty: End odometer
+        types: unit.length
+        size: 10
+        description: Odometer reading at the end of the trip
+      - name: average_fuel_consumption
+        name_cased: averageFuelConsumption
+        name_pretty: Average fuel consumption
+        type: unit.fuel_efficiency
+        size: 10
+        description: Average fuel consumption during the trip
     # MARK: Trouble Code
   - name: trouble_code
     name_cased: troubleCode
