@@ -469,3 +469,14 @@ properties:
       - data_component: '00'
         value: 'inactive'
         description: Brake lining wear pre-warning is inactive
+  - id: 0x23
+    name: engine_oil_life_remaining
+    name_cased: engineOilLifeRemaining
+    name_pretty: Engine oil life remaining
+    type: types.percentage
+    size: 8
+    description: Remaining life of engine oil which decreases over time
+    examples:
+      - data_component: '3fec28f5c28f5c29'
+        value: 0.88
+        description: Engine oil life remaining is 88% 
