@@ -151,6 +151,21 @@ types:
         name: normal
       - id: 0x02
         name: warning
+    # MARK: Key-Value
+  - name: key_value
+    name_cased: keyValue
+    name_pretty: Key-Value
+    type: custom
+    description: Key-value pairs like in a dictionary or hash
+    items:
+      - name: key
+        name_cased: key
+        type: string
+        description: Key for the value
+      - name: value
+        name_cased: value
+        type: string
+        description: Value for the key
     # MARK: Location
   - name: location
     name_cased: location
@@ -990,6 +1005,22 @@ types:
         name_cased: lockState
         type: types.lock_state
         description: Lock state for the door
+    # MARK: OEM Trouble Code Value
+  - name: oem_trouble_code_value
+    name_cased: oemTroubleCodeValue
+    name_pretty: OEM trouble code value
+    type: custom
+    description: OEM trouble code key-pair with identifier
+    items:
+      - name: id
+        name_cased: ID
+        name_pretty: ID
+        type: string
+        description: Identifier for the trouble code
+      - name: key_value
+        name_cased: keyValue
+        type: types.key_value
+        description: Key-value pair for the trouble codde
     # MARK: Person Detected
   - name: person_detected
     name_cased: personDetected
@@ -1289,6 +1320,22 @@ types:
         name_cased: status
         type: string
         description: Status
+      - name: system
+        name_cased: system
+        name_pretty: System
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: body
+          - id: 0x02
+            name: chassis
+          - id: 0x03
+            name: powertrain
+          - id: 0x04
+            name: network
     # MARK: Webhook
   - name: webhook
     name_cased: webhook

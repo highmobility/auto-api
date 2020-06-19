@@ -378,20 +378,22 @@ properties:
     multiple: true
     name_singular: trouble_code
     examples:
-      - data_component: '0200074331313136464100095244555f3231324652000750454e44494e47'
+      - data_component: '0200074331313136464100095244555f3231324652000750454e44494e4700'
         values:
           occurrences: 2
           id: 'C1116FA'
           ecu_id: 'RDU_212FR'
           status: 'PENDING'
+          system: 'unknown'
         description: Trouble code 'C1116FA' with ECU-ID 'RDU_212FR' occurred 2 times and is 'PENDING'
-      - data_component: '020007433136334146410006445452323132000750454e44494e47'
+      - data_component: '020007433136334146410006445452323132000750454e44494e4701'
         values:
           occurrences: 2
           id: 'C163AFA'
           ecu_id: 'DTR212'
           status: 'PENDING'
-        description: Trouble code 'C163AFA' with ECU-ID 'DTR212' occurred 2 times and is 'PENDING'
+          system: 'body'
+        description: Trouble code 'C163AFA' with ECU-ID 'DTR212' occurred 2 times in body-system and is 'PENDING'
   - id: 0x1e
     name: mileage_meters
     name_cased: mileageMeters
@@ -479,4 +481,25 @@ properties:
     examples:
       - data_component: '3fec28f5c28f5c29'
         value: 0.88
-        description: Engine oil life remaining is 88% 
+        description: Engine oil life remaining is 88%
+  - id: 0x24
+    name: oem_trouble_code_values
+    name_cased: oemTroubleCodeValues
+    name_pretty: OEM trouble code values
+    type: types.oem_trouble_code_value
+    multiple: true
+    description: Additional OEM trouble codes
+    examples:
+      - data_component: '3132334944736f6d655f6572726f72736f6d655f76616c7565'
+        values:
+          id: '123ID'
+          key_value:
+            key: 'some_error'
+            value: 'some_value'
+        description: Trouble code '123ID' has a value 'some_value' for a key 'some_error'
+      - data_component: '31423343696d706f7274616e745f6572726f7273797374656d206661756c74203332'
+        values:
+          id: '1B3C'
+          key_value:
+            key: 'important_error'
+            value: 'system fault 32'
