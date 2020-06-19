@@ -109,3 +109,120 @@ property_components:
             name: app
           - id: 0x01
             name: vehicle
+
+  - id: 0x06
+    name: vin
+    name_cased: vin
+    name_pretty: VIN
+    type: string
+    size: 17
+    description: The unique Vehicle Identification Number
+    examples:
+      - data_component: '4a46325348424443374348343531383639'
+        value: 'JF2SHBDC7CH451869'
+        description: VIN is 'JF2SHBDC7CH451869'
+
+  - id: 0x07
+    name: brand
+    name_cased: brand
+    name_pretty: Brand
+    type: enum
+    size: 1
+    description: The vehicle brand
+    enum_values:
+      - id: 0x00
+        name: unknown
+      - id: 0x01
+        name: abarth
+      - id: 0x02
+        name: alfaromeo
+        name_pretty: AlfaRomeo
+      - id: 0x03
+        name: alpine
+      - id: 0x04
+        name: audi
+      - id: 0x05
+        name: bmw
+        name_pretty: BMW
+      - id: 0x06
+        name: cadillac
+      - id: 0x07
+        name: chevrolet
+      - id: 0x08
+        name: chrysler
+      - id: 0x09
+        name: citroën
+      - id: 0x0a
+        name: cupra
+      - id: 0x0b
+        name: dacia
+      - id: 0x0c
+        name: dodge
+      - id: 0x0d
+        name: ds
+        name_pretty: DS
+      - id: 0x0e
+        name: fiat
+      - id: 0x0f
+        name: ford
+      - id: 0x10
+        name: honda
+      - id: 0x11
+        name: hyundai
+      - id: 0x12
+        name: iveco
+      - id: 0x13
+        name: jaguar
+      - id: 0x14
+        name: jeep
+      - id: 0x15
+        name: kia
+      - id: 0x16
+        name: lancia
+      - id: 0x17
+        name: land_rover
+        name_pretty: Land Rover
+      - id: 0x18
+        name: lexus
+      - id: 0x19
+        name: man
+        name_pretty: MAN
+      - id: 0x1a
+        name: mazda
+      - id: 0x1b
+        name: mercedes_benz
+        name_pretty: Mercedes-Benz
+      - id: 0x1c
+        name: mini
+      - id: 0x1d
+        name: mitsubishi
+      - id: 0x1e
+        name: nissan
+      - id: 0x1f
+        name: opel
+      - id: 0x20
+        name: peugeot
+      - id: 0x21
+        name: porsche
+      - id: 0x22
+        name: renault
+      - id: 0x23
+        name: seat
+      - id: 0x24
+        name: škoda
+      - id: 0x25
+        name: smart
+      - id: 0x26
+        name: subaru
+      - id: 0x27
+        name: toyota
+      - id: 0x28
+        name: volkswagen
+      - id: 0x29
+        name: volvo
+      - id: 0x2a
+        name: emulator
+    examples:
+      - data_component: '05'
+        value: 'bmw'
+        description: Vehicle brand is 'BMW'
