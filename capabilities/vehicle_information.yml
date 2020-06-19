@@ -10,7 +10,7 @@ identifier:
 
 api:
   intro: 12
-  update: 11
+  update: 12
 
 getters:
   name: get_vehicle_information

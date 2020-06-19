@@ -10,7 +10,7 @@ identifier:
 
 api:
   intro: 8
-  update: 11
+  update: 12
 
 disabled_in: [ble]
 
