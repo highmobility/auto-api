@@ -34,29 +34,32 @@ measurement_types:
     unit_types:
       - name: revolutions_per_minute
         id: 0x00
-        coefficient_linear: 1.0
+        conversion_linear: 1.0
       - name: degrees_per_second
         id: 0x01
-        coefficient_linear: 6.0
+        conversion_linear: 6.0
       - name: radians_per_second
         id: 0x02
-        coefficient_linear: 0.10471975511966
+        conversion_linear: 0.10471975511966
 
   - name: duration
     id: 0x07
     unit_types:
-      - name: hours
+      - name: seconds
         id: 0x00
       - name: minutes
         id: 0x01
-      - name: seconds
+      - name: hours
         id: 0x02
       - name: days
         id: 0x03
+        conversion_linear: 86400.0
       - name: weeks
         id: 0x04
+        conversion_linear: 604800.0
       - name: months
         id: 0x05
+        conversion_linear: 2629800.0
 
   - name: electric_current
     id: 0x09
@@ -93,10 +96,10 @@ measurement_types:
     unit_types:
       - name: kwh_per_100_kilometers
         id: 0x00
-        coefficient_inverse: 1.0
+        conversion_inverse: 1.0
       - name: miles_per_kwh
         id: 0x01
-        coefficient_inverse: 62.137119223733397
+        conversion_inverse: 62.137119223733397
 
   - name: frequency
     id: 0x0e
@@ -113,6 +116,7 @@ measurement_types:
         id: 0x05
       - name: beats_per_minute
         id: 0x08
+        conversion_inverse: 60.0
 
   - name: fuel_efficiency
     id: 0x0f
@@ -217,13 +221,13 @@ measurement_types:
     unit_types:
       - name: newton_meters
         id: 0x00
-        coefficient_linear: 1.0
+        conversion_linear: 1.0
       - name: newton_millimeters
         id: 0x01
-        coefficient_linear: 0.001
+        conversion_linear: 0.001
       - name: pound_feet
         id: 0x02
-        coefficient_linear: 0.73756214927727
+        conversion_linear: 0.73756214927727
 
   - name: volume
     id: 0x19
