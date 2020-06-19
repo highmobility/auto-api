@@ -19,6 +19,11 @@ setters:
     mandatory: [0x02]
     optional: [0x03, 0x04]
     description: Request historical states.
+  - name: get_trips
+    optional: [0x03, 0x04]
+    constants:
+    - property_id: 0x02
+      value: [0x00, 0x6a]
 
 state: [0x01]
 
