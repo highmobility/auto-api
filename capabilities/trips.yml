@@ -90,9 +90,9 @@ properties:
     type: string
     description: End address of the trip
     examples:
-    - data_component: '536b616c69747a65722053747261c39f652036382c203130393937204265726c696e2c204765726d616e79'
-      value: 'Skalitzer Straße 68, 10997 Berlin, Germany'
-      description: Trip ended at Skalitzer Straße 68, 10997 Berlin, Germany
+      - data_component: '536b616c69747a65722053747261c39f652036382c203130393937204265726c696e2c204765726d616e79'
+        value: 'Skalitzer Straße 68, 10997 Berlin, Germany'
+        description: Trip ended at Skalitzer Straße 68, 10997 Berlin, Germany
   - id: 0x08
     name: start_coordinates
     name_cased: startCoordinates
@@ -133,7 +133,7 @@ properties:
     name: end_odometer
     name_cased: endOdometer
     name_pretty: End odometer
-    types: unit.length
+    type: unit.length
     size: 10
     description: Odometer reading at the end of the trip
     examples:
@@ -190,7 +190,7 @@ properties:
         description: Country component value is 'Germany'
   - id: 0x0f
     name: end_address_components
-    name_cased: enddAddressComponents
+    name_cased: endAddressComponents
     name_pretty: End address components
     type: types.address_component
     multiple: true

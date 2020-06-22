@@ -313,10 +313,10 @@ properties:
     examples:
       - data_component: '1201409773851eb851ec07044024000000000000'
         values:
-        distance:
-          kilometers: 1500.88
-        time:
-          weeks: 10.0
+          distance:
+            kilometers: 1500.88
+          time:
+            weeks: 10.0
         description: During the last 10.0 weeks the vehicle travelled 1500.88km
   - id: 0x16
     name: electric_consumption_rate_since_start
@@ -410,7 +410,7 @@ properties:
     size: 10
     description: Liquid fuel consumption rate since reset
     examples:
-      - data_component: '0f004015333333333333
+      - data_component: '0f004015333333333333'
         value:
           liters_per_100_kilometers: 5.3
         description: Consumed 5.3 L/100km since reset
@@ -470,22 +470,22 @@ properties:
     size: 10
     description: Duration of last trip
     examples:
-        - data_component: '07014053400000000000'
-          value:
-            minutes: 77.0
-          description: Vehicle travelled 77.0min during last trip
-    - id: 0x23
-      name: driving_duration_since_reset
-      name_cased: drivingDurationSinceReset
-      name_pretty: Driving duration since reset
-      type: unit.duration
-      size: 10
-      description: Duration of travelling since reset
-      examples:
-        - data_component: '070144056000000000000'
-          value:
-            minutes: 88.0
-          description: Vehicle travelled 88.0min since last reset
+      - data_component: '07014053400000000000'
+        value:
+          minutes: 77.0
+        description: Vehicle travelled 77.0min during last trip
+  - id: 0x23
+    name: driving_duration_since_reset
+    name_cased: drivingDurationSinceReset
+    name_pretty: Driving duration since reset
+    type: unit.duration
+    size: 10
+    description: Duration of travelling since reset
+    examples:
+      - data_component: '070144056000000000000'
+        value:
+          minutes: 88.0
+        description: Vehicle travelled 88.0min since last reset
   - id: 0x24
     name: eco_score_total
     name_cased: ecoScoreTotal

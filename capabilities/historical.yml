@@ -22,8 +22,9 @@ setters:
   - name: get_trips
     optional: [0x03, 0x04]
     constants:
-    - property_id: 0x02
-      value: [0x00, 0x6a]
+      - property_id: 0x02
+        value: [0x00, 0x6a]
+    description: Request history of trips travelled with the vehicle.
 
 state: [0x01]
 
