@@ -503,3 +503,26 @@ properties:
           key_value:
             key: 'important_error'
             value: 'system fault 32'
+  - id: 0x25
+    name: diesel_exhaust_fluid_range
+    name_cased: dieselExhaustFluidRange
+    name_pretty: Diesel exhaust fluid range
+    type: unit.length
+    size: 10
+    description: Distance remaining until diesel exhaust fluid is empty
+    examples:
+      - data_component: '120140a1720000000000'
+        value:
+          kilometers: 2233.0
+        description: Diesel exhaust fluid is empty in 2233.0km
+  - id: 0x26
+    name: diesel_particulate_filter_soot_level
+    name_cased: dieselParticulateFilterSootLevel
+    name_pretty: Diesel particulate filter soot level
+    type: types.percentage
+    size: 8
+    description: Level of soot in diesel exhaust particulate filter
+    examples:
+      - data_component: '3fc47ae147ae147b'
+        value: 0.16
+        description: Diesel exhaust particulate filter soot level is 16%
