@@ -56,7 +56,7 @@ properties:
     size: 10
     description: Time to honk the horn
     examples:
-      - data_component: '07024008000000000000'
+      - data_component: '07004008000000000000'
         value:
           seconds: 3.0
         description: Honk the horn for 3.0s
