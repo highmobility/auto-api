@@ -125,7 +125,7 @@ properties:
     size: 10
     description: Odometer reading at the start of the trip
     examples:
-      - data_component: '120140c4820000000000'
+      - data_component: '120440c4820000000000'
         value:
           kilometers: 10500.0
         description: At the start of the trip the odometer was showing 10500.0km
@@ -137,7 +137,7 @@ properties:
     size: 10
     description: Odometer reading at the end of the trip
     examples:
-      - data_component: '120140c4978000000000'
+      - data_component: '120440c4978000000000'
         value:
           kilometers: 10543.0
         description: At the start of the trip the odometer was showing 10543.0km
@@ -161,7 +161,7 @@ properties:
     size: 10
     description: Distance of the trip
     examples:
-      - data_component: '12014045800000000000'
+      - data_component: '12044045800000000000'
         value:
           kilometers: 43.0
         description: Distance of trip was 43.0km

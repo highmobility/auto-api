@@ -49,7 +49,7 @@ properties:
     size: 10
     description: Altitude above the WGS 84 reference ellipsoid
     examples:
-      - data_component: '12044060b00000000000'
+      - data_component: '12004060b00000000000'
         value:
           meters: 133.5
         description: Vehicle altitude is 133.5m
@@ -60,7 +60,7 @@ properties:
     type: unit.length
     size: 10
     examples:
-      - data_component: '1204407f400000000000'
+      - data_component: '1200407f400000000000'
         value:
           meters: 500.0
         description: Precision is 500m

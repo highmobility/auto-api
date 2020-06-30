@@ -43,7 +43,7 @@ properties:
     size: 10
     description: The distance until next servicing of the vehicle
     examples:
-      - data_component: '120140acc20000000000'
+      - data_component: '120440acc20000000000'
         value:
           kilometers: 3681.0
         description: 3'681km until next service
@@ -100,7 +100,7 @@ properties:
     size: 10
     description: Distance threshold for service
     examples:
-      - data_component: '120140b3880000000000'
+      - data_component: '120440b3880000000000'
         value:
           kilometers: 5000.0
         description: Service distance threshold is 5000.0km
@@ -197,7 +197,7 @@ properties:
     size: 10
     description: The distance until next servicing of the vehicle
     examples:
-      - data_component: '120140acc20000000000'
+      - data_component: '120440acc20000000000'
         value:
           kilometers: 3681.0
         description: 3'681km until next service

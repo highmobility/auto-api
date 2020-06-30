@@ -99,7 +99,7 @@ properties:
     size: 10
     description: Charging power
     examples:
-      - data_component: '14034027000000000000'
+      - data_component: '14024027000000000000'
         value:
           kilowatts: 11.5
         description: Charging power is 11.5kW
@@ -175,7 +175,7 @@ properties:
     size: 10
     description: The charge direct current
     examples:
-      - data_component: '0a023fe0000000000000'
+      - data_component: '0a003fe0000000000000'
         value:
           volts: 0.5
         description: Charger direct current is 0.5V
@@ -187,7 +187,7 @@ properties:
     size: 10
     description: The maximum possible charge current
     examples:
-      - data_component: '0a023ff0000000000000'
+      - data_component: '0a003ff0000000000000'
         value:
           volts: 1.0
         description: Maximum charger current is 1.0V
@@ -199,7 +199,7 @@ properties:
     size: 10
     description: The minimal possible charge current
     examples:
-      - data_component: '0a023fb999999999999a'
+      - data_component: '0a003fb999999999999a'
         value:
           volts: 0.1
         description: Minimum charger current is 0.1V
@@ -248,7 +248,7 @@ properties:
     size: 10
     description: Charging power output from the charger
     examples:
-      - data_component: '14034075e00000000000'
+      - data_component: '14024075e00000000000'
         value:
           kilowatts: 350.0
         description: Charging power is 350.0kW

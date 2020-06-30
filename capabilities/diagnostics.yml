@@ -28,7 +28,7 @@ properties:
     size: 10
     description: The vehicle mileage (odometer)
     examples:
-      - data_component: '120141024f8000000000'
+      - data_component: '120441024f8000000000'
         value:
           kilometers: 150000.0
         description: Odometer is showing 150'000.0km
@@ -86,7 +86,7 @@ properties:
     size: 10
     description: Estimated range (with combustion engine)
     examples:
-      - data_component: '12014070900000000000'
+      - data_component: '12044070900000000000'
         value:
           kilometers: 265.0
         description: Estimated range is 256.0km
@@ -107,7 +107,7 @@ properties:
     size: 10
     description: Battery voltage
     examples:
-      - data_component: '0a024028333333333333'
+      - data_component: '0a004028333333333333'
         value:
           volts: 12.1
         description: Battery voltage is 12.1V
@@ -131,7 +131,7 @@ properties:
     size: 10
     description: The distance driven since reset
     examples:
-      - data_component: '12014097706666666666'
+      - data_component: '12044097706666666666'
         value:
           kilometers: 1500.1
         description: 1'500.1km driven since reset
@@ -143,7 +143,7 @@ properties:
     size: 10
     description: The distance driven since trip start
     examples:
-      - data_component: '12014028cccccccccccd'
+      - data_component: '12044028cccccccccccd'
         value:
           kilometers: 12.4
         description: 12.4km driven since the engine start
@@ -405,7 +405,7 @@ properties:
     size: 10
     description: The vehicle mileage (odometer) in meters
     examples:
-      - data_component: '120141024f8800000000'
+      - data_component: '120441024f8800000000'
         value:
           kilometers: 150001.0
         description: Odometer is showing 150'001km
@@ -417,7 +417,7 @@ properties:
     size: 10
     description: The vehicle odometer value in a given units.
     examples:
-      - data_component: '1200401999999999999a'
+      - data_component: '1205401999999999999a'
         value:
           megameters: 6.4
         description: Odometer is showing 6.4Mm – length of the Great Wall.
@@ -511,7 +511,7 @@ properties:
     size: 10
     description: Distance remaining until diesel exhaust fluid is empty
     examples:
-      - data_component: '120140a1720000000000'
+      - data_component: '120440a1720000000000'
         value:
           kilometers: 2233.0
         description: Diesel exhaust fluid is empty in 2233.0km

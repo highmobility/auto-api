@@ -114,7 +114,7 @@ properties:
     size: 10
     description: The power of the vehicle
     examples:
-      - data_component: '1403406b800000000000'
+      - data_component: '1402406b800000000000'
         value:
           kilowatts: 220.0
         description: Vehicle has 220.0kW of power
@@ -236,7 +236,7 @@ properties:
     size: 10
     description: The power of the vehicle
     examples:
-      - data_component: '1403406b800000000000'
+      - data_component: '1402406b800000000000'
         value:
           kilowatts: 220.0
         description: Vehicle has 220kW of power

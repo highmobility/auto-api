@@ -26,7 +26,7 @@ properties:
     size: 10
     description: Average weekly distance
     examples:
-      - data_component: '12014084d4cccccccccd'
+      - data_component: '12044084d4cccccccccd'
         value:
           kilometers: 666.6
         description: Average weekly distance is 666.6km
@@ -38,7 +38,7 @@ properties:
     size: 10
     description: Average weekyl distance over long term
     examples:
-      - data_component: '120140884d999999999a'
+      - data_component: '120440884d999999999a'
         value:
           kilometers: 777.7
         description: Average weekly distance, over long term, is 777.7km
@@ -179,7 +179,7 @@ properties:
     size: 10
     description: Mileage after the last trip
     examples:
-      - data_component: '120140f7590000000000'
+      - data_component: '120440f7590000000000'
         value:
           kilometers: 95632.0
         description: Mileage is 95'632km after last trip
@@ -260,7 +260,7 @@ properties:
     size: 10
     description: Odometer after the last trip
     examples:
-      - data_component: '120140f7590000000000'
+      - data_component: '120440f7590000000000'
         value:
           kilometers: 95632.0
         description: Odometer is 95'632km after last trip
@@ -311,7 +311,7 @@ properties:
     type: types.distance_over_time
     description: Distance driven over a given time period
     examples:
-      - data_component: '1201409773851eb851ec07044024000000000000'
+      - data_component: '1204409773851eb851ec07044024000000000000'
         values:
           distance:
             kilometers: 1500.88
@@ -350,7 +350,7 @@ properties:
     size: 10
     description: Distance travelled with electricity in last trip
     examples:
-      - data_component: '120440fb198000000000'
+      - data_component: '120040fb198000000000'
         value:
           meters: 111000.0
         description: Vehicle travelled 111000.0m using electricity during the last trip
@@ -362,7 +362,7 @@ properties:
     size: 10
     description: Distance travelled with electricity since reset
     examples:
-      - data_component: '1204410b198000000000'
+      - data_component: '1200410b198000000000'
         value:
           meters: 222000.0
         description: Vehicle travelled 222000.0m using electricity since last reset
@@ -446,7 +446,7 @@ properties:
     size: 10
     description: Distance travelled with (liquid) fuel during last trip
     examples:
-      - data_component: '120440fb198000000000'
+      - data_component: '120040fb198000000000'
         value:
           meters: 111000.0
         description: Vehicle travelled 111000.0m using fuel during the last trip
@@ -458,7 +458,7 @@ properties:
     size: 10
     description: Distance travelled with (liquid) fuel since reset
     examples:
-      - data_component: '1204410b198000000000'
+      - data_component: '1200410b198000000000'
         value:
           meters: 222000.0
         description: Vehicle travelled 222000.0m using fuel since last reset
@@ -524,7 +524,7 @@ properties:
     size: 10
     description: Eco-score bonus range
     examples:
-      - data_component: '12013fe6666666666666'
+      - data_component: '12043fe6666666666666'
         value:
           kilometers: 0.7
         description: Eco-score bonus range is 0.7km

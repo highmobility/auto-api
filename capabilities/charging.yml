@@ -45,7 +45,7 @@ properties:
     size: 10
     description: Estimated range
     examples:
-      - data_component: '1201407b01999999999a'
+      - data_component: '1204407b01999999999a'
         value:
           kilometers: 432.1
         description: 432.1km estimated range
@@ -70,7 +70,7 @@ properties:
     size: 10
     description: Battery alternating current
     examples:
-      - data_component: '0902bfe3333333333333'
+      - data_component: '0900bfe3333333333333'
         value:
           amperes: -0.6
         description: Battery alternating current is -0.6A
@@ -85,7 +85,7 @@ properties:
     size: 10
     description: Battery direct current
     examples:
-      - data_component: '0902bfe3333333333333'
+      - data_component: '0900bfe3333333333333'
         value:
           amperes: -0.6
         description: Battery direct current is -0.6A
@@ -100,7 +100,7 @@ properties:
     size: 10
     description: Charger voltage for alternating current
     examples:
-      - data_component: '0a024079000000000000'
+      - data_component: '0a004079000000000000'
         value:
           volts: 400
         description: Charger voltage is 400.0V for alternating current
@@ -115,7 +115,7 @@ properties:
     size: 10
     description: Charger voltage for direct current
     examples:
-      - data_component: '0a0243c80000'
+      - data_component: '0a004079000000000000'
         value:
           volts: 400
         description: Charger voltage is 400.0V for direct current
@@ -152,7 +152,7 @@ properties:
     size: 10
     description: Charging rate
     examples:
-      - data_component: '1403400c000000000000'
+      - data_component: '1402400c000000000000'
         value:
           kilowatts: 3.5
         description: Charging rate is 3.5kW
@@ -191,7 +191,7 @@ properties:
     size: 10
     description: Maximum charging current
     examples:
-      - data_component: '09024039000000000000'
+      - data_component: '09004039000000000000'
         value:
           amperes: 25.0
         description: Maximum charging current is 25.0A
@@ -377,7 +377,7 @@ properties:
     size: 10
     description: Charge rate when charging
     examples:
-      - data_component: '14034062c00000000000'
+      - data_component: '14024062c00000000000'
         value:
           kilowatts: 150.0
         description: Charging rate is 150.0kW
@@ -389,7 +389,7 @@ properties:
     size: 10
     description: Battery current
     examples:
-      - data_component: '0902bfe3333333333333'
+      - data_component: '0900bfe3333333333333'
         value:
           amperes: -0.6
         description: Battery current is -0.6A
@@ -401,7 +401,7 @@ properties:
     size: 10
     description: Charger voltage
     examples:
-      - data_component: '0a024079000000000000'
+      - data_component: '0a004079000000000000'
         value:
           volts: 400
         description: Charger voltage is 400.0V
@@ -431,7 +431,7 @@ properties:
     size: 10
     description: Maximum electric range with 100% of battery
     examples:
-      - data_component: '12014081580000000000'
+      - data_component: '12044081580000000000'
         value:
           kilometers: 555.0
         description: Maximum electric range is 555.0km

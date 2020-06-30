@@ -87,7 +87,7 @@ properties:
     size: 10
     description: Remaining distance to reach the destination.
     examples:
-      - data_component: '12014094e40000000000'
+      - data_component: '12044094e40000000000'
         value:
           kilometers: 1337.0
         description: Remaining distance to destination is 1337.0km

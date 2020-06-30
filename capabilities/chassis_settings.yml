@@ -131,7 +131,7 @@ properties:
     size: 10
     description: The chassis position calculated from the lowest point
     examples:
-      - data_component: '12074039666666666666'
+      - data_component: '12014039666666666666'
         value:
           millimeters: 25.4
         description: Current chassis position is 25.4mm
@@ -143,7 +143,7 @@ properties:
     size: 10
     description: The maximum possible value for the chassis position
     examples:
-      - data_component: '1207404bc00000000000'
+      - data_component: '1201404bc00000000000'
         value:
           millimeters: 55.5
         description: Maximum chassis position is 55.5mm
@@ -155,7 +155,7 @@ properties:
     size: 10
     description: The minimum possible value for the chassis position
     examples:
-      - data_component: '1207c03c666666666666'
+      - data_component: '1201c03c666666666666'
         value:
           millimeters: -28.4
         description: Minimum chassis position is -28.4mm
