@@ -75,7 +75,7 @@ properties:
     size: 10
     description: Remaining time until reaching the destination.
     examples:
-      - data_component: '07004004cccccccccccd'
+      - data_component: '07024004cccccccccccd'
         value:
           hours: 2.6
         description: Remaining time to destination is 2.6h

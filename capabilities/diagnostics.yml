@@ -64,7 +64,7 @@ properties:
     size: 10
     description: Engine RPM (revolutions per minute)
     examples:
-      - data_component: '030240a3880000000000'
+      - data_component: '030040a3880000000000'
         value:
           revolutions_per_minute: 2500.0
         description: Engine RPM is 2500.0
@@ -191,7 +191,7 @@ properties:
     size: 10
     description: The accumulated time of engine operation
     examples:
-      - data_component: '0700409772999999999a'
+      - data_component: '0702409772999999999a'
         value:
           hours: 1500.65
         description: The engine has operated 1'500.65h in total
@@ -429,7 +429,7 @@ properties:
     size: 10
     description: The accumulated time of engine operation
     examples:
-      - data_component: '0700409772999999999a'
+      - data_component: '0702409772999999999a'
         value:
           hours: 1500.65
         description: The engine has operated 1'500.65h in total
