@@ -111,7 +111,7 @@ properties:
     size: 10
     description: Yaw turning rate
     examples:
-      - data_component: '0300401aa3d70a3d70a4'
+      - data_component: '0301401aa3d70a3d70a4'
         value:
           degrees_per_second: 6.66
         description: Yaw rate is 6.66°/s
