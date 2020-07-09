@@ -734,7 +734,7 @@ types:
           - id: 0x26
             name: anti_theft
           - id: 0x27
-            name: ​blind_spot_detection
+            name: blind_spot_detection
           - id: 0x28
             name: charge_system_fault
           - id: 0x29
