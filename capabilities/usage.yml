@@ -386,7 +386,7 @@ properties:
     size: 10
     description: Duration of travelling using electricity since reset
     examples:
-      - data_component: '070144056000000000000'
+      - data_component: '07014056000000000000'
         value:
           minutes: 88.0
         description: Vehicle travelled 88.0min using electricity since last reset
@@ -482,7 +482,7 @@ properties:
     size: 10
     description: Duration of travelling since reset
     examples:
-      - data_component: '070144056000000000000'
+      - data_component: '07014056000000000000'
         value:
           minutes: 88.0
         description: Vehicle travelled 88.0min since last reset
