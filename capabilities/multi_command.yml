@@ -29,20 +29,28 @@ properties:
     name_singular: multi_state
     description: The incoming states
     examples:
-      - data_component: '0b002001060004010001000400050100020001'
+      - data_component: '0c0020010600040100010004000501000200010400050100020201a2000b0100800000173426608d0'
         values:
           doors:
+            lock_state: 'unlocked'
             positions:
-              location: 'front_left'
-              position: 'open'
-            locks_state: 'unlocked'
-        description: Doors capability - open front left door and unlock all locks
-      - data_component: '0b0023010a0010010008400c00000000000002000213030b000401000101'
+              - location: 'front_left'
+                position: 'open'
+              - location: 'rear_right'
+                position: 'open'
+            timestamp: '2020-07-12T09:40:50.000Z'
+        description: Doors capability - front left and rear right door is open while locks are unlocked, recorded at 12. July 2020 at 09:40:50 GMT
+      - data_component: '0b0023010b0004010001010c00040100010018000d01000a140240418000000000001c000d01000a12044081580000000000a2000b0100800000173426608d0'
         values:
           charging:
             charge_port_state: 'open'
-            charging_rate_kw: 3.5
-        description: Charging capability - open charging port and charge with 3.5kW
+            charge_mode: 'immediate'
+            charging_rate:
+              kilowatts: 35.0
+            max_range:
+              kilometers: 555.0
+            timestamp: '2020-07-12T09:40:50.000Z'
+        description: Charging capability - charging port is open, charge mode is immediate, charging rate is 35.0kW and max range is 555.0km, recorded at 12. July 2020 at 09:40:50 GMT
   - id: 0x02
     name: multi_commands
     name_cased: multiCommands
