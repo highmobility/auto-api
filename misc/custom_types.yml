@@ -483,7 +483,7 @@ types:
     name_cased: availability
     name_pretty: Availability
     type: custom
-    size: 10
+    size: 12
     items:
       - name: update_rate
         name_cased: updateRate

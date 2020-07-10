@@ -38,3 +38,11 @@ property_components:
     name_pretty: Availability
     type: types.availability
     size: 10
+    examples:
+      - data_component: '00  0e00 4050000000000000 01'
+        values:
+          update_rate: 'trip_high'
+          rate_limit:
+            hertz: 64.0
+          applies_per: 'vehicle'
+        description: Property is updated with a high frequency of 64.0Hz per vehicle.
