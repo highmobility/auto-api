@@ -40,7 +40,7 @@ properties:
     size: 10
     description: Start the video from the given time
     examples:
-      - data_component: '07024008000000000000'
+      - data_component: '07004008000000000000'
         value:
           seconds: 3.0
         description: Start from 3.0s
@@ -67,7 +67,7 @@ properties:
     size: 10
     description: Start the video from the given time
     examples:
-      - data_component: '07024004000000000000'
+      - data_component: '07004004000000000000'
         value:
           seconds: 2.5
         description: Start from 2.5s
