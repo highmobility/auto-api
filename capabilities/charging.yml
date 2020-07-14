@@ -487,7 +487,7 @@ properties:
         description: Battery level is expected to be 90% at time of departure
   - id: 0x20
     name: preconditioning_departure_status
-    name_cased: preconditioningDepratureStatus
+    name_cased: preconditioningDepartureStatus
     name_pretty: Preconditioning departure status
     type: types.active_state
     description: Status of preconditioning at departure time
@@ -507,7 +507,7 @@ properties:
         description: Immediate preconditioning is active
   - id: 0x22
     name: preconditioning_departure_enabled
-    name_cased: preconditioningDepratureEnabled
+    name_cased: preconditioningDepartureEnabled
     name_pretty: Preconditioning departure enabled
     type: types.enabled_state
     description: Preconditioning activation status at departure
