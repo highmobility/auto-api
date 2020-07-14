@@ -435,7 +435,7 @@ properties:
         description: The engine has operated 1'500.65h in total
   - id: 0x21
     name: tire_pressure_statuses
-    name_cased: tirePressureStatus
+    name_cased: tirePressureStatuses
     name_pretty: Tire pressure statuses
     type: types.tire_pressure_status
     multiple: true
