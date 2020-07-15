@@ -26,18 +26,18 @@ properties:
     type: types.capability_state
     multiple: true
     examples:
-      - data_component: '0c0020010600040100010004000501000200010400050100020201a2000b0100800000173426608d0'
+      - data_component: '0c0020010600040100010004000501000200010400050100020201a2000b010008000001598938e788'
         values:
           doors:
-            lock_state: 'unlocked'
+            locks_state: 'unlocked'
             positions:
               - location: 'front_left'
                 position: 'open'
               - location: 'rear_right'
                 position: 'open'
-            timestamp: '2020-07-12T09:40:50.000Z'
-        description: Doors capability - front left and rear right door is open while locks are unlocked, recorded at 12. July 2020 at 09:40:50 GMT
-      - data_component: '0b0023010b0004010001010c00040100010018000d01000a140240418000000000001c000d01000a12044081580000000000a2000b0100800000173426608d0'
+            timestamp: '2017-01-10T16:32:05.000Z'
+        description: Doors capability - front left and rear right door is open while locks are unlocked, recorded at 10. January 2017 at 16:32:05 GMT
+      - data_component: '0b0023010b0004010001010c00040100010018000d01000a140240418000000000001c000d01000a12044081580000000000a2000b010008000001598938e788'
         values:
           charging:
             charge_port_state: 'open'
@@ -46,5 +46,5 @@ properties:
               kilowatts: 35.0
             max_range:
               kilometers: 555.0
-            timestamp: '2020-07-12T09:40:50.000Z'
-        description: Charging capability - charging port is open, charge mode is immediate, charging rate is 35.0kW and max range is 555.0km, recorded at 12. July 2020 at 09:40:50 GMT
+            timestamp: '2017-01-10T16:32:05.000Z'
+        description: Charging capability - charging port is open, charge mode is immediate, charging rate is 35.0kW and max range is 555.0km, recorded at 10. January 2017 at 16:32:05 GMT
