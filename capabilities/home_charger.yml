@@ -171,38 +171,38 @@ properties:
     name: charge_current_dc
     name_cased: chargeCurrentDC
     name_pretty: Charge current (DC)
-    type: unit.electric_potential_difference
+    type: unit.electric_current
     size: 10
     description: The charge direct current
     examples:
-      - data_component: '0a003fe0000000000000'
+      - data_component: '09003fe0000000000000'
         value:
-          volts: 0.5
-        description: Charger direct current is 0.5V
+          amperes: 0.5
+        description: Charger direct current is 0.5A
   - id: 0x0f
     name: maximum_charge_current
     name_cased: maximumChargeCurrent
     name_pretty: Maximum charge current
-    type: unit.electric_potential_difference
+    type: unit.electric_current
     size: 10
     description: The maximum possible charge current
     examples:
-      - data_component: '0a003ff0000000000000'
+      - data_component: '09003ff0000000000000'
         value:
-          volts: 1.0
-        description: Maximum charger current is 1.0V
+          amperes: 1.0
+        description: Maximum charger current is 1.0A
   - id: 0x10
     name: minimum_charge_current
     name_cased: minimumChargeCurrent
     name_pretty: Minimum charge current
-    type: unit.electric_potential_difference
+    type: unit.electric_current
     size: 10
     description: The minimal possible charge current
     examples:
-      - data_component: '0a003fb999999999999a'
+      - data_component: '09003fb999999999999a'
         value:
-          volts: 0.1
-        description: Minimum charger current is 0.1V
+          amperes: 0.1
+        description: Minimum charger current is 0.1A
   - id: 0x11
     name: coordinates
     name_cased: coordinates
