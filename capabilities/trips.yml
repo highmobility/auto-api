@@ -173,17 +173,17 @@ properties:
     multiple: true
     description: Start address components
     examples:
-      - data_component: '05536b616c69747a65722053747261c39f65203638'
+      - data_component: '050014536b616c69747a65722053747261c39f65203638'
         value:
           type: 'street'
           value: 'Skalitzer Straße 68'
         description: Street component value is 'Skalitzer Straße 68'
-      - data_component: '004265726c696e'
+      - data_component: '0000064265726c696e'
         value:
           type: 'city'
           value: 'Berlin'
         description: City component value is 'Berlin'
-      - data_component: '014765726d616e79'
+      - data_component: '0100074765726d616e79'
         value:
           type: 'country'
           value: 'Germany'
@@ -196,17 +196,17 @@ properties:
     multiple: true
     description: End address components
     examples:
-      - data_component: '05536b616c69747a65722053747261c39f65203638'
+      - data_component: '050014536b616c69747a65722053747261c39f65203638'
         value:
           type: 'street'
           value: 'Skalitzer Straße 68'
         description: Street component value is 'Skalitzer Straße 68'
-      - data_component: '004265726c696e'
+      - data_component: '0000064265726c696e'
         value:
           type: 'city'
           value: 'Berlin'
         description: City component value is 'Berlin'
-      - data_component: '014765726d616e79'
+      - data_component: '0100074765726d616e79'
         value:
           type: 'country'
           value: 'Germany'
