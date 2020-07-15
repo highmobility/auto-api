@@ -40,7 +40,7 @@ properties:
       - data_component: '0c0020010600040100010004000501000200010400050100020201a2000b0100800000173426608d0'
         values:
           doors:
-            lock_state: 'unlocked'
+            locks_state: 'unlocked'
             positions:
               - location: 'front_left'
                 position: 'open'
