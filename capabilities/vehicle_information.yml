@@ -247,7 +247,7 @@ properties:
     type: string
     description: The language on headunit
     examples:
-      - data_component: '00086573746f6e69616e'
+      - data_component: '6573746f6e69616e'
         value: 'estonian'
         description: Headunit is in estonian language
   - id: 0x15

@@ -222,19 +222,19 @@ properties:
     multiple: true
     name_singular: price_tariff
     examples:
-      - data_component: '00409000000003455552'
+      - data_component: '0040120000000000000003455552'
         values:
           pricing_type: 'starting_fee'
           price: 4.5
           currency: 'EUR'
         description: Charger starting fee tariff is 4.5€
-      - data_component: '013e99999a0003455552'
+      - data_component: '013fd33333333333330003455552'
         values:
           pricing_type: 'per_minute'
           price: 0.3
           currency: 'EUR'
         description: Charger per minute fee tariff is 0.3€
-      - data_component: '023e99999a0006526970706c65'
+      - data_component: '023fd33333333333330006526970706c65'
         values:
           pricing_type: 'per_kwh'
           price: 0.3
