@@ -168,17 +168,17 @@ properties:
         value: 'authenticated'
         description: Is authenticated to the charger
   - id: 0x0e
-    name: charge_current_dc
-    name_cased: chargeCurrentDC
-    name_pretty: Charge current (DC)
+    name: charge_current
+    name_cased: chargeCurrent
+    name_pretty: Charge current
     type: unit.electric_current
     size: 10
-    description: The charge direct current
+    description: The charge current
     examples:
       - data_component: '09003fe0000000000000'
         value:
           amperes: 0.5
-        description: Charger direct current is 0.5A
+        description: Charger current is 0.5A
   - id: 0x0f
     name: maximum_charge_current
     name_cased: maximumChargeCurrent
