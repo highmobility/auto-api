@@ -306,6 +306,18 @@ properties:
           pressure:
             bars: 2.24
         description: Rear left tire pressure is 2.24BAR
+      - data_component: '0415064001eb851eb851ec'
+        values:
+          location: 'rear_right_outer'
+          pressure:
+            bars: 2.25
+        description: Rear right outer tire pressure is 2.25BAR
+      - data_component: '0515064001eb851eb851ec'
+        values:
+          location: 'rear_left_outer'
+          pressure:
+            bars: 2.25
+        description: Rear left outer tire pressure is 2.25BAR
   - id: 0x1b
     name: tire_temperatures
     name_cased: tireTemperatures
