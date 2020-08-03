@@ -236,3 +236,351 @@ properties:
           state: 'inactive'
           colour: 'info'
         description: Lane departure warning switched off is inactive
+      - data_component: '230000'
+        values:
+          name: 'air_filter_minder'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '240000'
+        values:
+          name: 'air_suspension_ride_control_fault'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '250000'
+        values:
+          name: 'all_wheel_drive_disabled'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '260000'
+        values:
+          name: 'anti_theft'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '270000'
+        values:
+          name: 'blind_spot_detection'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '280000'
+        values:
+          name: 'charge_system_fault'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '290000'
+        values:
+          name: 'check_fuel_cap'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '2a0000'
+        values:
+          name: 'check_fuel_fill_inlet'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '2b0000'
+        values:
+          name: 'check_fuel_filter'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '2c0000'
+        values:
+          name: 'dc_temp_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '2d0000'
+        values:
+          name: 'dc_warning_status'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '2e0000'
+        values:
+          name: 'diesel_engine_idle_shutdown'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '2f0000'
+        values:
+          name: 'diesel_engine_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '300000'
+        values:
+          name: 'diesel_exhaust_fluid_system_fault'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '310000'
+        values:
+          name: 'diesel_exhaust_over_temp'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '320000'
+        values:
+          name: 'diesel_exhaust_fluid_quality'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '330000'
+        values:
+          name: 'diesel_filter_regeneration'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '340000'
+        values:
+          name: 'diesel_particulate_filter'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '350000'
+        values:
+          name: 'diesel_pre_heat'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '360000'
+        values:
+          name: 'electric_trailer_brake_connection'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '370000'
+        values:
+          name: 'ev_battery_cell_max_volt_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '380000'
+        values:
+          name: 'ev_battery_cell_min_volt_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '390000'
+        values:
+          name: 'ev_battery_charge_energy_storage_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '3a0000'
+        values:
+          name: 'ev_battery_high_level_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '3b0000'
+        values:
+          name: 'ev_battery_high_temperature_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '3c0000'
+        values:
+          name: 'ev_battery_insulation_resist_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '3d0000'
+        values:
+          name: 'ev_battery_jump_level_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '3e0000'
+        values:
+          name: 'ev_battery_low_level_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '3f0000'
+        values:
+          name: 'ev_battery_max_volt_veh_energy_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '400000'
+        values:
+          name: 'ev_battery_min_volt_veh_energy_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '410000'
+        values:
+          name: 'ev_battery_over_charge_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '420000'
+        values:
+          name: 'ev_battery_poor_cell_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '430000'
+        values:
+          name: 'ev_battery_temp_diff_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '440000'
+        values:
+          name: 'forward_collision_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '450000'
+        values:
+          name: 'fuel_door_open'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '460000'
+        values:
+          name: 'hill_descent_control_fault'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '470000'
+        values:
+          name: 'hill_start_assist_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '480000'
+        values:
+          name: 'hv_interlocking_status_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '490000'
+        values:
+          name: 'lighting_system_failure'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '4a0000'
+        values:
+          name: 'malfunction_indicator'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '4b0000'
+        values:
+          name: 'motor_controller_temp_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '4c0000'
+        values:
+          name: 'park_aid_malfunction'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '4d0000'
+        values:
+          name: 'passive_entry_passive_start'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '4e0000'
+        values:
+          name: 'powertrain_malfunction'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '4f0000'
+        values:
+          name: 'restraints_indicator_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '500000'
+        values:
+          name: 'start_stop_engine_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '510000'
+        values:
+          name: 'traction_control_disabled'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '520000'
+        values:
+          name: 'traction_control_active'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '530000'
+        values:
+          name: 'traction_motor_temp_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '540000'
+        values:
+          name: 'tire_pressure_monitor_system_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '550000'
+        values:
+          name: 'water_in_fuel'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '560000'
+        values:
+          name: 'tire_warning_front_right'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '570000'
+        values:
+          name: 'tire_warning_front_left'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '580000'
+        values:
+          name: 'tire_warning_rear_right'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '590000'
+        values:
+          name: 'tire_warning_rear_left'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '5a0000'
+        values:
+          name: 'tire_warning_system_error'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '5b0000'
+        values:
+          name: 'battery_low_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
+      - data_component: '5c0000'
+        values:
+          name: 'brake_fluid_warning'
+          state: 'inactive'
+          colour: 'info'
+        description: TODO
