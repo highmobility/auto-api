@@ -306,6 +306,18 @@ properties:
           pressure:
             bars: 2.24
         description: Rear left tire pressure is 2.24BAR
+      - data_component: '0415064001eb851eb851ec'
+        values:
+          location: 'rear_right_outer'
+          pressure:
+            bars: 2.25
+        description: Rear right outer tire pressure is 2.25BAR
+      - data_component: '0515064001eb851eb851ec'
+        values:
+          location: 'rear_left_outer'
+          pressure:
+            bars: 2.25
+        description: Rear left outer tire pressure is 2.25BAR
   - id: 0x1b
     name: tire_temperatures
     name_cased: tireTemperatures
@@ -338,6 +350,18 @@ properties:
           temperature:
             celsius: 40.4
         description: Rear left tire temperature is 40.4°C
+      - data_component: '0417014044266666666666'
+        values:
+          location: 'rear_right_outer'
+          temperature:
+            celsius: 40.5
+        description: Rear right outer tire temperature is 40.5°C
+      - data_component: '0517014044333333333333'
+        values:
+          location: 'rear_left_outer'
+          temperature:
+            celsius: 40.6
+        description: Rear left outer tire temperature is 40.6°C
   - id: 0x1c
     name: wheel_rpms
     name_cased: wheelRPMs
@@ -370,6 +394,18 @@ properties:
           rpm:
             revolutions_per_minute: 787.0
         description: Rear left wheel is doing 787.0RPM
+      - data_component: '0403004088980000000000'
+        values:
+          location: 'rear_right_outer'
+          rpm:
+            revolutions_per_minute: 797.0
+        description: Rear right outer wheel is doing 797.0RPM
+      - data_component: '0503004088980000000000'
+        values:
+          location: 'rear_left_outer'
+          rpm:
+            revolutions_per_minute: 807.0
+        description: Rear left outer wheel is doing 807.0RPM
   - id: 0x1d
     name: trouble_codes
     name_cased: troubleCodes
