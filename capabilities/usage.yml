@@ -108,37 +108,37 @@ properties:
     type: types.driving_mode_energy_consumption
     multiple: true
     examples:
-      - data_component: '000b044034333333333333'
+      - data_component: '000c044034333333333333'
         values:
           driving_mode: 'regular'
           consumption:
             kilowatt_hours: 20.2
         description: Driving mode 'regular' consumed 20.2kWh of electric energy
-      - data_component: '010b04404099999999999a'
+      - data_component: '010c04404099999999999a'
         values:
           driving_mode: 'eco'
           consumption:
             kilowatt_hours: 33.2
         description: Driving mode 'eco' consumed 33.2kWh of electric energy
-      - data_component: '020b04404b266666666666'
+      - data_component: '020c04404b266666666666'
         values:
           driving_mode: 'sport'
           consumption:
             kilowatt_hours: 54.3
         description: Driving mode 'sport' consumed 54.3kWh of electric energy
-      - data_component: '030b044050333333333333'
+      - data_component: '030c044050333333333333'
         values:
           driving_mode: 'sport_plus'
           consumption:
             kilowatt_hours: 64.8
         description: Driving mode 'sport_plus' consumed 64.8kWh of electric energy
-      - data_component: '040b044032000000000000'
+      - data_component: '040c044032000000000000'
         values:
           driving_mode: 'ecoPlus'
           consumption:
             kilowatt_hours: 18.0
         description: Driving mode 'ecoPlus' consumed 18.0kWh of electric energy
-      - data_component: '050b044040d9999999999a'
+      - data_component: '050c044040d9999999999a'
         values:
           driving_mode: 'comfort'
           consumption:

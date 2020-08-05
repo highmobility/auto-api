@@ -116,11 +116,11 @@ properties:
           state: 'inactive'
           colour: 'info'
         description: Service call for maintenance is inactive
-      - data_component: '0f0100'
+      - data_component: '0f0102'
         values:
           name: 'transmission_fluid_temperature'
           state: 'active'
-          colour: 'info'
+          colour: 'red'
         description: Red light active for transmission fluid temperature
       - data_component: '100000'
         values:
