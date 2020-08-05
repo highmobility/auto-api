@@ -535,3 +535,7 @@ properties:
         name: available_after_engine_restart
       - id: 0x04
         name: general_error
+    examples:
+      - data_component: '01'
+        value: 'not_possible_low'
+        description: Preconditioning not possible because battery or fuel is low
