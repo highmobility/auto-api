@@ -57,3 +57,7 @@ properties:
         name: on
       - id: 0x04
         name: start
+    examples:
+      - data_component: '02'
+        value: 'accessory'
+        description: Ignition state is in accessory
