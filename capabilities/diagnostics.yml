@@ -539,6 +539,7 @@ properties:
           key_value:
             key: 'important_error'
             value: 'system fault 32'
+        description: Trouble code '1B3C' has a value 'system fault 32' for a key 'important_error'
   - id: 0x25
     name: diesel_exhaust_fluid_range
     name_cased: dieselExhaustFluidRange
