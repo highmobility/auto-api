@@ -156,7 +156,7 @@ A few are simply additive to the spec, some are from capabilities' changes and o
   - added `eco_score_free_wheel` - outputs eco-score rating for free-wheeling
   - added `eco_score_constant` - outputs eco-score constant
   - added `eco_score_bonus_range` - outputs eco-score bonus range
-- **vehicle information**
+- **vehicle information (new capa)**
   - added `power` - outputs _power_ value (i.e. `250.0kW`)
   - added `language` - outputs the language on headunit
   - added `timeformat` - outputs the timeformat on headunit
