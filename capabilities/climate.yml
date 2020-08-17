@@ -146,35 +146,35 @@ properties:
           weekday: 'monday'
           time:
             hour: 16
-            minute: 00
+            minute: 0
         description: HVAC is started on monday at 16:00
       - data_component: '011000'
         values:
           weekday: 'tuesday'
           time:
             hour: 16
-            minute: 00
+            minute: 0
         description: HVAC is started on tuesday at 16:00
       - data_component: '021000'
         values:
           weekday: 'wednesday'
           time:
             hour: 16
-            minute: 00
+            minute: 0
         description: HVAC is started on wednesday at 16:00
       - data_component: '031000'
         values:
           weekday: 'thursday'
           time:
             hour: 16
-            minute: 00
+            minute: 0
         description: HVAC is started on thursday at 16:00
       - data_component: '041000'
         values:
           weekday: 'friday'
           time:
             hour: 16
-            minute: 00
+            minute: 0
         description: HVAC is started on friday at 16:00
       - data_component: '05121e'
         values:
@@ -195,7 +195,7 @@ properties:
           weekday: 'automatic'
           time:
             hour: 16
-            minute: 00
+            minute: 0
         description: HVAC is automatic
   - id: 0x0c
     name: rear_temperature_setting
