@@ -66,15 +66,15 @@ Example:
 0x01,                   - data component ID
 0x00, 0x20,             - data component size is 32 bytes
 
-0x00, 0x05,             - 'id' item string size prefix is 5 bytes
+0x00, 0x05,             - 'id' item string-size prefix is 5 bytes
 0x3132334944,           - 'id' string value is '123ID'
 
-0x18,                   - 'key_value' item size prefix (because it's dynamic) is 24 bytes
+0x18,                   - 'key_value' item-size prefix (because it's dynamic) is 24 bytes
 
-0x00, 0x0a,             - 'key' item (in 'key_value' type) string size prefix is 10 bytes
+0x00, 0x0a,             - 'key' item (in 'key_value' type) string-size prefix is 10 bytes
 0x736f6d655f6572726f72, - 'key' string value is 'some_error'
 
-0x00, 0x0a,             - 'value' item (in 'key_value' type) string size prefix is 10 bytes
+0x00, 0x0a,             - 'value' item (in 'key_value' type) string-size prefix is 10 bytes
 0x736f6d655f76616c7565  - 'value' string value is 'some_value'
 ```
 
