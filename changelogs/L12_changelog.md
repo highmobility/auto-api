@@ -24,7 +24,7 @@ Changes from L11 are divided into these sub-sections:
 * [Updated Properties](#updated-properties)
 * [Unit Type](#unit-type)
   * [Type](#component-type)
-  * [Spec Changes](#spec-changes)
+  * [Spec Changes](#unit-type-spec-changes)
 * [Availability Component](#availability-component)
   * [Component](#component-availability)
   * [Availability Getters](#availability-getters)
@@ -52,6 +52,31 @@ There are a number of other miscellaneous changes:
     - _version_ is now defined in [`version.yml`](https://github.com/highmobility/auto-api/blob/level12/misc/version.yml) with a simpler structure (removed `identification: version`)
 - changed references of _car_ to _vehicle_ to encompass a bigger range of machines
 - _brand_ and _vin_ moved to _universal properties_
+
+> :warning: **Dynamic property subtypes**
+>
+> When a property contains a subtype that is dynamic (i.e. `key_value`), then the _subtype_ is **prefixed** with a _2 bytes_ denoting it's size. 
+
+Example:
+
+```
+0x24,                   - dianostics 'oem_trouble_code_values' property ID
+0x00, 0x23,             - property size is 35 bytes
+
+0x01,                   - data component ID
+0x00, 0x20,             - data component size is 32 bytes
+
+0x00, 0x05,             - 'id' item string size prefix is 5 bytes
+0x3132334944,           - 'id' string value is '123ID'
+
+0x18,                   - 'key_value' item size prefix (because it's dynamic) is 24 bytes
+
+0x00, 0x0a,             - 'key' item (in 'key_value' type) string size prefix is 10 bytes
+0x736f6d655f6572726f72, - 'key' string value is 'some_error'
+
+0x00, 0x0a,             - 'value' item (in 'key_value' type) string size prefix is 10 bytes
+0x736f6d655f76616c7565  - 'value' string value is 'some_value'
+```
 
 ## Capabilities Changes
 
@@ -281,7 +306,7 @@ size: 10
 ...
 ```
 
-### Spec Changes
+### Spec Changes<a name="unit-type-spec-changes"></a>
 
 The new unit type brings along some changes to _properties_ and _custom types_ spec.  
 
@@ -289,31 +314,6 @@ The new unit type brings along some changes to _properties_ and _custom types_ s
 - additions to `examples`
   - values with a _unit_ are now expressed as `value: millimeters: 25.4`
 - deprecated properties with a specific unit in the name
-
-> :warning: **Dynamic property subtypes**
->
-> When a property contains a subtype that is dynamic (i.e. `key_value`), then the _subtype_ is **prefixed** with a _2 bytes_ denoting it's size. 
-
-Example:
-
-```
-0x24,                   - dianostics 'oem_trouble_code_values' property ID
-0x00, 0x23,             - property size is 35 bytes
-
-0x01,                   - data component ID
-0x00, 0x20,             - data component size is 32 bytes
-
-0x00, 0x05,             - 'id' item string size prefix is 5 bytes
-0x3132334944,           - 'id' string value is '123ID'
-
-0x18,                   - 'key_value' item size prefix (because it's dynamic) is 24 bytes
-
-0x00, 0x0a,             - 'key' item (in 'key_value' type) string size prefix is 10 bytes
-0x736f6d655f6572726f72, - 'key' string value is 'some_error'
-
-0x00, 0x0a,             - 'value' item (in 'key_value' type) string size prefix is 10 bytes
-0x736f6d655f76616c7565  - 'value' string value is 'some_value'
-```
 
 ## Availability Component
 ### Component<a name="component-availability"></a>
