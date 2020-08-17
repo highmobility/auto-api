@@ -8,7 +8,7 @@ Level 12 contains a number of updates to the protocol.
 - new property component to output availability information for a given datapoint  
 - new properties to go along with the _unit type_  
 - new deprecation structure to ease the pain of future API changes  
-- changes to fields in spec to foster consitency  
+- changes to fields in spec to foster consistency  
 - other minor changes  
 
 Changes from L11 are divided into these sub-sections:
@@ -16,8 +16,12 @@ Changes from L11 are divided into these sub-sections:
   * [Renamed Fields](#renamed-fields)
   * [Misc Changes](#misc-changes)
 * [Capabilities Changes](#capabilities-changes)
-* [New Properties](#new-properties)
+* [New](#new)
+  * [Properties](#properties)
+  * [Custom Types](#custom-types)
+  * [Universal Properties](#universal-properties)
 * [Deprecations](#deprecations)
+* [Updated Properties](#updated-properties)
 * [Unit Type](#unit-type)
   * [Type](#component-type)
   * [Spec Changes](#spec-changes)
@@ -47,6 +51,7 @@ There are a number of other miscellaneous changes:
     - _property components_ are now defined in [`property_components.yml`](https://github.com/highmobility/auto-api/blob/level12/misc/property_components.yml)
     - _version_ is now defined in [`version.yml`](https://github.com/highmobility/auto-api/blob/level12/misc/version.yml) with a simpler structure (removed `identification: version`)
 - changed references of _car_ to _vehicle_ to encompass a bigger range of machines
+- _brand_ and _vin_ moved to _universal properties_
 
 ## Capabilities Changes
 
@@ -56,7 +61,8 @@ There are a number of other miscellaneous changes:
   - new capability `vehicle_information` that contains the _static_ properties
   - old capability `vehicle_status` stays to output `states` properties
 
-## New Properties
+## New
+### Properties
 
 There are a number of new properties.  
 A few are simply additive to the spec, some are from capabilities' changes and others are new because of the _unit type_ (see more [below](#unit-type)).
@@ -68,27 +74,123 @@ A few are simply additive to the spec, some are from capabilities' changes and o
   - added `charging_rate` - outputs _power_ (i.e. `150.31kW`)
   - added `charger_voltage` - outputs _voltage_ (i.e. `200V`)
   - added `current_type` - outputs _direct_ or _alternating current_ value
+  - added `max_range` - outputs maximum electric range
+  - added `starter_battery_state` - outputs state of the starter battery
+  - added `smart_charging_status` - outputs status of optimized/intelligent charging
+  - added `battery_level_at_departure` - outputs battery charge level expected at time of departure
+  - added `preconditioning_departure_status` - outputs status of preconditioning at departure time
+  - added `preconditioning_immediate_status` - outputs status of immediate preconditioning
+  - added `preconditioning_departure_enabled` - outputs preconditioning activation status at departure
+  - added `preconditioning_error` - outputs preconditioning error if one is encountered
 - **diagnostics**
   - added `engine_total_operating_time` - outputs _duration_ value (i.e. `8.1 weeks`)
   - added `odometer` - outputs _length_ value (i.e. `666.7km`)
+  - added `tire_pressure_statuses` - outputs tire pressures status'
+  - added `brake_lining_wear_pre_warning` - outputs status of brake lining wear pre-warning
+  - added `engine_oil_life_remaining` - outputs remaining life of engine oil which decreases over time
+  - added `oem_trouble_code_values` - outputs additional OEM trouble codes
+  - added `diesel_exhaust_fluid_range` - outputs distance remaining until diesel exhaust fluid is empty
+  - added `diesel_particulate_filter_soot_level` - outputs level of soot in diesel exhaust particulate filter
 - **engine**
   - added `start_stop_state` - outputs _active state_
 - **home charger**
   - added `charging_power` - outputs _power_ value (i.e. `150.3kW`)
 - **honk horn flash light**
   - added `honk_time` - outputs _duration_ value (i.e. `3.0s`)
+- **ignition**
+  - added `state` - outputs the ignition state
+- **lights**
+  - added `switch_position` - outputs position of the rotary light switch
 - **maintenance**
   - added `distance_to_next_service` - outputs _length_ value (i.e. `332.2km`)
   - added `time_to_next_service` - outputs _duration_ value (i.e. `5.2 weeks`)
   - added `time_to_exhaust_inspection` - outputs _duration_ value (i.e. `345.6 days`)
+  - added `last_ecall` - outputs date-time of the last eCall
+- **rooftop control**
+  - added `sunroof_rain_event` - outputs sunroof event happened in case of rain
+- **theft alarm**
+  - added `interior_protection_status` - outputs interior protection sensor status
+  - added `tow_protection_status` - outputs tow protection sensor status
+  - added `last_warning_reason` - outputs last warning reason
+  - added `last_event` - outputs last event happening date
+  - added `last_event_level` - outputs level of impact for the last event
+  - added `event_type` - outputs position of the last even relative to the vehicle
+- **trips (new capa)**
+  - added `type` - outputs type of the trip
+  - added `driver_name` - outputs driver name
+  - added `description` - outputs description of the trip
+  - added `start_time` - outputs start time of the trip
+  - added `end_time` - outputs end time of the trip
+  - added `start_address` - outputs start address of the trip
+  - added `end_address` - outputs end address of the trip
+  - added `start_coordinates` - outputs start coordinates of the trip
+  - added `end_coordinates` - outputs end coordinates of the trip
+  - added `start_odometer` - outputs odometer reading at the start of the trip
+  - added `end_odometer` - outputs odometer reading at the end of the trip
+  - added `average_fuel_consumption` - outputs average fuel consumption during the trip
+  - added `distance` - outputs distance of the trip
+  - added `start_address_components` - outputs start address components
+  - added `end_address_components` - outputs end address components
 - **usage**
   - added `odometer_after_last_trip` - outputs _length_ value (i.e. `15_678.9km`)
-- **vehicle location**
-  - added `precision` - outputs _length_ value (i.e. `100.0m`)
+  - added `safety_driving_score` - outputs safety driving score as percentage
+  - added `rapid_acceleration_grade` - outputs grade given for rapid acceleration over time
+  - added `rapid_deceleration_grade` - outputs grade given for rapid deceleration over time
+  - added `late_night_grade` - outputs grade given for late night driving over time
+  - added `distance_over_time` - outputs distance driven over a given time period
+  - added `electric_consumption_rate_since_start` - outputs electric energy consumption rate since the start of a trip
+  - added `electric_consumption_rate_since_reset` - outputs electric energy consumption rate since a reset
+  - added `electric_distance_last_trip` - outputs distance travelled with electricity in last trip
+  - added `electric_distance_since_reset` - outputs distance travelled with electricity since reset
+  - added `electric_duration_last_trip` - outputs duration of travelling using electricity during last trip
+  - added `electric_duration_since_reset` - outputs duration of travelling using electricity since reset
+  - added `fuel_consumption_rate_last_trip` - outputs liquid fuel consumption rate during last trip
+  - added `fuel_consumption_rate_since_reset` - outputs liquid fuel consumption rate since reset
+  - added `average_speed_last_trip` - outputs average speed during last trip
+  - added `average_speed_since_reset` - outputs average speed since reset
+  - added `fuel_distance_last_trip` - outputs distance travelled with (liquid) fuel during last trip
+  - added `fuel_distance_since_reset` - outputs distance travelled with (liquid) fuel since reset
+  - added `driving_duration_last_trip` - outputs duration of last trip
+  - added `driving_duration_since_reset` - outputs duration of travelling since reset
+  - added `eco_score_total` - outputs overall eco-score rating
+  - added `eco_score_free_wheel` - outputs eco-score rating for free-wheeling
+  - added `eco_score_constant` - outputs eco-score constant
+  - added `eco_score_bonus_range` - outputs eco-score bonus range
 - **vehicle information**
   - added `power` - outputs _power_ value (i.e. `250.0kW`)
+  - added `language` - outputs the language on headunit
+  - added `timeformat` - outputs the timeformat on headunit
+- **vehicle location**
+  - added `precision` - outputs _length_ value (i.e. `100.0m`)
 - **video handover**
   - added `starting_time` - outputs _duration_ value (i.e. `15.8s`)
+  
+### Custom Types
+
+- added `active_selected_state`
+- added `grade`
+- added `key_value`
+- added `location_wheel`
+- added `weekday`
+- added `address_component`
+- added `availability`
+- added `distance_over_time`
+- added `failure`
+- added `oem_trouble_code_value`
+- added `tire_pressure_status`
+- added `webhook`
+
+Also, L12 updated some values (i.e. enum added new enum values).
+
+- updated `dashboard_lights`
+- updated `trouble_code`
+
+### Universal Properties
+
+Two properties from _vehicle status_ are moved to _universal properties_ (meaning they can be transmitted with every property).  
+
+- added `vin` - outputs the VIN of the unique Vehicle Identification Number
+- added `brand` - outputs the vehicle brand
 
 ## Deprecations
 
@@ -130,6 +232,13 @@ List of deprecated properties:
   - deprecated `power_in_kw` in favour of `power`
 - **video handover**
   - deprecated `starting_second` in favour of `starting_time`
+  
+## Updated Properties
+
+Some properties have updated values (i.e. new enum values added).  
+
+- **charging**
+  - updated `status` - added new enum values
 
 ## Unit Type
 ### Type<a name="component-type"></a>
