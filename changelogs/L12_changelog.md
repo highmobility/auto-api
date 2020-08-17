@@ -55,7 +55,7 @@ There are a number of other miscellaneous changes:
 
 > :warning: **Dynamic property subtypes**
 >
-> When a property contains a subtype that is dynamic (i.e. `key_value`), then the _subtype_ is **prefixed** with a _2 bytes_ denoting it's size. 
+> When a property contains a subtype that is dynamic (i.e. `key_value`), then the _subtype_ is **prefixed** with _2 bytes_ denoting it's size. 
 
 Example:
 
