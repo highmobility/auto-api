@@ -60,7 +60,7 @@ There are a number of other miscellaneous changes:
 Example:
 
 ```
-0x24,                   - dianostics 'oem_trouble_code_values' property ID
+0x24,                   - diagnostics 'oem_trouble_code_values' property ID
 0x00, 0x24,             - property size is 36 bytes
 
 0x01,                   - data component ID
