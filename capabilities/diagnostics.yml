@@ -266,7 +266,7 @@ properties:
     multiple: true
     name_singular: check_control_message
     examples:
-      - data_component: '0001060140f9c78000000000000c436865636b20656e67696e650005416c657274'
+      - data_component: '0001070140f9c78000000000000c436865636b20656e67696e650005416c657274'
         values:
           id: 1
           remaining_time:
