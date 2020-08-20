@@ -533,7 +533,7 @@ properties:
             key: 'some_error'
             value: 'some_value'
         description: Trouble code '123ID' has a value 'some_value' for a key 'some_error'
-      - data_component: '0004314233430022000f696d706f7274616e745f6572726f72 000f73797374656d206661756c74203332'
+      - data_component: '0004314233430022000f696d706f7274616e745f6572726f72000f73797374656d206661756c74203332'
         values:
           id: '1B3C'
           key_value:
