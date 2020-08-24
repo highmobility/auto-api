@@ -37,7 +37,7 @@ properties:
                 position: 'open'
             timestamp: '2017-01-10T16:32:05.000Z'
         description: Doors capability - front left and rear right door is open while locks are unlocked, recorded at 10. January 2017 at 16:32:05 GMT
-      - data_component: '0b0023010b0004010001010c00040100010018000d01000a140240418000000000001c000d01000a12044081580000000000a2000b010008000001598938e788'
+      - data_component: '0c0023010b0004010001010c00040100010018000d01000a140240418000000000001c000d01000a12044081580000000000a2000b010008000001598938e788'
         values:
           charging:
             charge_port_state: 'open'
