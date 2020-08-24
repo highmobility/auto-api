@@ -60,7 +60,7 @@ properties:
     name_singular: multi_command
     description: The outgoing commands
     examples:
-      - data_component: '0c00200105000401000101'
+      - data_component: '0c00200106000401000101'
         values:
           doors:
             inside_locks_state: 'locked'
