@@ -563,3 +563,25 @@ properties:
       - data_component: '3fc47ae147ae147b'
         value: 0.16
         description: Diesel exhaust particulate filter soot level is 16%
+  - id: 0x27
+    name: confirmed_trouble_codes
+    name_cased: confirmedTroubleCodes
+    name_pretty: Confirmed trouble codes
+    type: types.confirmed_trouble_code
+    multiple: true
+    name_singular: confirmed_trouble_code
+    examples:
+      - data_component: '383031433130 3136 434153 414354495645'
+        values:
+          id: '801C10'
+          ecu_address: '16'
+          ecu_variant_name: 'CAS'
+          status: 'ACTIVE'
+        description: Confirmed trouble code '801C10' with ECU address '16' and variante name "CAS" is 'ACTIVE'
+      - data_component: '443532433434 3438 434153 414354495645'
+        values:
+          id: 'D52C44'
+          ecu_address: '48'
+          ecu_variant_name: 'CAS'
+          status: 'ACTIVE'
+        description: Confirmed trouble code 'D52C44' with ECU address '48' and variante name "CAS" is 'ACTIVE'

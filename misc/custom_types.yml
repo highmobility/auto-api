@@ -608,6 +608,31 @@ types:
         name_cased: description
         type: string
         description: Description
+    # MARK: Confirmed Trouble Code
+  - name: confirmed_trouble_code
+    name_cased: confirmedTroubleCode
+    name_pretty: Confirmed trouble code
+    type: custom
+    items:
+      - name: id
+        name_cased: ID
+        name_pretty: ID
+        type: string
+        description: Identifier
+      - name: ecu_address
+        name_cased: ecuAddress
+        name_pretty: ECU address
+        type: string
+        description: Electronic Control Unit address
+      - name: ecu_variant_name
+        name_cased: ecuVariantName
+        name_pretty: ECU variant name
+        type: string
+        description: Electronic Control Unit variant name
+      - name: status
+        name_cased: status
+        type: string
+        description: Status
     # MARK: Dashboard Light
   - name: dashboard_light
     name_cased: dashboardLight
