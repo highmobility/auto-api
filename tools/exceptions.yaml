@@ -165,10 +165,6 @@ definitions:
         type: string
         example: '64894233'
         description: 'The parking operator ticket ID, formatted in UTF-8'
-      operatorTicketID:
-        type: string
-        example: '64894233'
-        description: 'The parking operator ticket ID, formatted in UTF-8'
       ticketStartTime:
         type: string
         format: date-time
