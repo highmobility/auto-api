@@ -571,14 +571,14 @@ properties:
     multiple: true
     name_singular: confirmed_trouble_code
     examples:
-      - data_component: '3830314331303136434153414354495645'
+      - data_component: '00063830314331300002313600034341530006414354495645'
         values:
           id: '801C10'
           ecu_address: '16'
           ecu_variant_name: 'CAS'
           status: 'ACTIVE'
         description: Confirmed trouble code '801C10' with ECU address '16' and variante name "CAS" is 'ACTIVE'
-      - data_component: '4435324334343438434153414354495645'
+      - data_component: '00064435324334340002343800034341530006414354495645'
         values:
           id: 'D52C44'
           ecu_address: '48'
