@@ -1163,7 +1163,7 @@ types:
       - name: key_value
         name_cased: keyValue
         type: types.key_value
-        description: Key-value pair for the trouble codde
+        description: Key-value pair for the trouble code
     # MARK: Person Detected
   - name: person_detected
     name_cased: personDetected
