@@ -37,7 +37,7 @@ property_components:
     name_cased: availability
     name_pretty: Availability
     type: types.availability
-    size: 10
+    size: 12
     examples:
       - data_component: '000e003fe999999999999a01'
         values:
