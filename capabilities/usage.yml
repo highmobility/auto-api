@@ -223,7 +223,7 @@ properties:
     name_pretty: Last trip date
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch time
+    description: The last trip date
     examples:
       - data_component: '0000016682059d50'
         value: '2018-10-17T12:34:58.000Z'
