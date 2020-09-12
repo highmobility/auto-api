@@ -145,7 +145,7 @@ properties:
     name_pretty: Windscreen damage detection time
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch time
+    description: Windscreen damage detection date
     examples:
       - data_component: '000001598938e788'
         value: '2017-01-10T16:32:05.000Z'

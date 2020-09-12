@@ -172,7 +172,7 @@ properties:
     name_pretty: Brake fluid change date
     type: timestamp
     size: 8
-    description: Milliseconds since UNIX Epoch time
+    description: Brake fluid change date
     examples:
       - data_component: '000001677c63d280'
         value: '2018-12-05T03:22:56.000Z'

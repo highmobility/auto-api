@@ -321,14 +321,14 @@ The new unit type brings along some changes to _properties_ and _custom types_ s
 AutoAPI needs to support requesting and transmitting availability information for properties.  
 
 To enable this, another _property component_ called **availability component** is introduced in L12.  
-It's ID is `0x05` and payload is 10 bytes denoting the _update rate_ in relation to a trip, _rate limit_ and for what the rate limit applies to (i.e. `app` or `vehicle`).  
+It's ID is `0x05` and payload is 12 bytes denoting the _update rate_ in relation to a trip, _rate limit_ and for what the rate limit applies to (i.e. `app` or `vehicle`).  
 
 Component structure:  
 
 ```
 [
  0x05,              - availability component ID
- 0x00, 0x0a,        - payload size
+ 0x00, 0x0c,        - payload size
  update_rate,       - update rate enum value
  rate_limit,        - rate limit frequency value
  applies_per        - rate limit applies per value
@@ -340,7 +340,7 @@ Example of _availability component_:
 ```
 [
  0x05,                      - ID for availability component
- 0x00, 0x0a,                - payload size is 12 bytes
+ 0x00, 0x0c,                - payload size is 12 bytes
  0x00,                      - update rate is 'trip_high' (data is updated with high frequency during a trip)
  0x0e044050000000000000,    - rate limit frequency is 64.0Hz
  0x01                       - rate limit applies per 'vehicle'
