@@ -139,7 +139,7 @@ properties:
     examples:
       - data_component: '0701404e000000000000'
         value:
-          minutes: 60
+          minutes: 60.0
         description: Time to complete charge is 60.0 minutes
   - id: 0x0a
     name: charging_rate_kw

@@ -101,7 +101,7 @@ properties:
     description: Start coordinates of the trip
     examples:
       - data_component: '404a40090b417ca2402ae122d948dc12'
-        value:
+        values:
           latitude: 52.500276
           longitude: 13.439719
         description: Trip started from 52.500276:13.439719
@@ -113,7 +113,7 @@ properties:
     description: End coordinates of the trip
     examples:
       - data_component: '404a40090b417ca2402ae122d948dc12'
-        value:
+        values:
           latitude: 52.500276
           longitude: 13.439719
         description: Trip ended at 52.500276:13.439719
@@ -174,17 +174,17 @@ properties:
     description: Start address components
     examples:
       - data_component: '050014536b616c69747a65722053747261c39f65203638'
-        value:
+        values:
           type: 'street'
           value: 'Skalitzer Straße 68'
         description: Street component value is 'Skalitzer Straße 68'
       - data_component: '0000064265726c696e'
-        value:
+        values:
           type: 'city'
           value: 'Berlin'
         description: City component value is 'Berlin'
       - data_component: '0100074765726d616e79'
-        value:
+        values:
           type: 'country'
           value: 'Germany'
         description: Country component value is 'Germany'
@@ -197,17 +197,17 @@ properties:
     description: End address components
     examples:
       - data_component: '050014536b616c69747a65722053747261c39f65203638'
-        value:
+        values:
           type: 'street'
           value: 'Skalitzer Straße 68'
         description: Street component value is 'Skalitzer Straße 68'
       - data_component: '0000064265726c696e'
-        value:
+        values:
           type: 'city'
           value: 'Berlin'
         description: City component value is 'Berlin'
       - data_component: '0100074765726d616e79'
-        value:
+        values:
           type: 'country'
           value: 'Germany'
         description: Country component value is 'Germany'
