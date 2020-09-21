@@ -1309,7 +1309,7 @@ types:
         name_cased: date
         type: timestamp
         size: 8
-        description: Milliseconds since UNIX Epoch time
+        description: Timer date
     # MARK: Tire Pressure
   - name: tire_pressure
     name_cased: tirePressure
