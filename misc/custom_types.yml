@@ -893,6 +893,56 @@ types:
       - name: time
         name_cased: time
         type: types.time
+    # MARK: Diesel Exhaust Filter Status
+  - name: diesel_exhaust_filter_status
+    name_cased: dieselExhaustFilterStatus
+    name_pretty: Diesel exhaust filter status
+    type: custom
+    size: 3
+    items:
+      - name: status
+        name_cased: status
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: normal_operation
+          - id: 0x02
+            name: overloaded
+          - id: 0x03
+            name: at_limit
+          - id: 0x04
+            name: over_limit
+      - name: component
+        name_cased: component
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: exhaust_filter
+          - id: 0x02
+            name: diesel_particulate_filter
+          - id: 0x03
+            name: overboost_code_regulator
+          - id: 0x04
+            name: off_board_regeneration
+      - name: cleaning
+        name_cased: cleaning
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: in_progress
+          - id: 0x02
+            name: complete
+          - id: 0x03
+            name: interrupted
     # MARK: Distance Over Time
   - name: distance_over_time
     name_cased: distanceOverTime

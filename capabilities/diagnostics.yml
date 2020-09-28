@@ -585,3 +585,15 @@ properties:
           ecu_variant_name: 'CAS'
           status: 'ACTIVE'
         description: Confirmed trouble code 'D52C44' with ECU address '48' and variante name "CAS" is 'ACTIVE'
+  - id: 0x28
+    name: diesel_exhaust_filter_status
+    name_cased: dieselExhaustFilterStatus
+    name_pretty: Diesel exhaust filter status
+    type: types.diesel_exhaust_filter_status
+    examples:
+      - data_component: '010100'
+        values:
+          status: 'normal_operation'
+          component: 'exhaust_filter'
+          cleaning: 'unknown'
+        description: Diesel 'exhaust filter' is in 'normal operation' and not cleaning
