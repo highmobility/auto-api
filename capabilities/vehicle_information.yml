@@ -266,3 +266,23 @@ properties:
       - data_component: '01'
         value: 'twenty_four_h'
         description: Headunit is using a 24h timeformat
+  - id: 0x16
+    name: drive
+    name_cased: drive
+    name_pretty: Drive
+    type: enum
+    size: 1
+    description: Wheels driven by the engine
+    enum_values:
+      - id: 0x00
+        name: fwd
+        description: Front-wheel drive
+      - id: 0x01
+        name: rwd
+        description: Rear-wheel drive
+      - id: 0x02
+        name: four_wd
+        description: Four-wheel drive
+      - id: 0x03
+        name: awd
+        description: All-wheel drive
