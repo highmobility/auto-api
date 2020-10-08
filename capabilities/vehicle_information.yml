@@ -286,3 +286,7 @@ properties:
       - id: 0x03
         name: awd
         description: All-wheel drive
+    examples:
+      - data_component: '01'
+        value: 'rwd'
+        description: Vehicle has rear-wheel drive
