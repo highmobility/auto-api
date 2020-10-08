@@ -77,9 +77,9 @@ properties:
         name_pretty: Rate Limit
         description: Capability rate limit has been exceeded
       - id: 0x08
-        name: internal_oem_error
-        name_pretty: Internal OEM error
-        description: API call to OEM returned an error
+        name: oem_error
+        name_pretty: OEM error
+        description: API call to an OEM returned an error
     examples:
       - data_component: '01'
         value: 'unauthorised'

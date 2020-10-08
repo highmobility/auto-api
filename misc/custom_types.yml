@@ -1129,7 +1129,7 @@ types:
           - id: 0x05
             name: pending
           - id: 0x06
-            name: internal_oem_error
+            name: oem_error
       - name: description
         name_cased: description
         name_pretty: Description
