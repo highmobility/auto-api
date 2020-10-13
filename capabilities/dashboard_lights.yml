@@ -26,561 +26,468 @@ properties:
     multiple: true
     name_singular: dashboard_light
     examples:
-      - data_component: '000000'
+      - data_component: '0000'
         values:
           name: 'high_beam'
-          state: 'inactive'
-          colour: 'info'
-        description: High beam is inactive
-      - data_component: '010000'
+          state: 'off'
+        description: High beam is off
+      - data_component: '0100'
         values:
           name: 'low_beam'
-          state: 'inactive'
-          colour: 'info'
-        description: Low beam is inactive
-      - data_component: '020100'
+          state: 'off'
+        description: Low beam is off
+      - data_component: '0201'
         values:
           name: 'hazard_warning'
-          state: 'active'
-          colour: 'info'
-        description: Info light active for hazard warning
-      - data_component: '030000'
+          state: 'on'
+        description: Hazard warning is on
+      - data_component: '0300'
         values:
           name: 'brake_failure'
-          state: 'inactive'
-          colour: 'info'
-        description: Brake failure/brake system malfunction is inactive
-      - data_component: '040000'
+          state: 'off'
+        description: Brake failure/brake system malfunction is off
+      - data_component: '0400'
         values:
           name: 'hatch_open'
-          state: 'inactive'
-          colour: 'info'
-        description: Hatch open is inactive
-      - data_component: '050000'
+          state: 'off'
+        description: Hatch open is off
+      - data_component: '0500'
         values:
           name: 'fuel_level'
-          state: 'inactive'
-          colour: 'info'
-        description: Fuel level is inactive
-      - data_component: '060000'
+          state: 'off'
+        description: Fuel level is off
+      - data_component: '0600'
         values:
           name: 'engine_coolant_temperature'
-          state: 'inactive'
-          colour: 'info'
-        description: Engine coolant temperature is inactive
-      - data_component: '070000'
+          state: 'off'
+        description: Engine coolant temperature is off
+      - data_component: '0700'
         values:
           name: 'battery_charging_condition'
-          state: 'inactive'
-          colour: 'info'
-        description: Battery charging condition is inactive
-      - data_component: '080000'
+          state: 'off'
+        description: Battery charging condition is off
+      - data_component: '0800'
         values:
           name: 'engine_oil'
-          state: 'inactive'
-          colour: 'info'
-        description: Engine oil is inactive
-      - data_component: '090000'
+          state: 'off'
+        description: Engine oil is off
+      - data_component: '0900'
         values:
           name: 'position_lights'
-          state: 'inactive'
-          colour: 'info'
-        description: Position lights is inactive
-      - data_component: '0a0000'
+          state: 'off'
+        description: Position lights is off
+      - data_component: '0a00'
         values:
           name: 'front_fog_light'
-          state: 'inactive'
-          colour: 'info'
-        description: Front fog light is inactive
-      - data_component: '0b0000'
+          state: 'off'
+        description: Front fog light is off
+      - data_component: '0b00'
         values:
           name: 'rear_fog_light'
-          state: 'inactive'
-          colour: 'info'
-        description: Rear fog light is inactive
-      - data_component: '0c0000'
+          state: 'off'
+        description: Rear fog light is off
+      - data_component: '0c00'
         values:
           name: 'park_heating'
-          state: 'inactive'
-          colour: 'info'
-        description: Park heating is inactive
-      - data_component: '0d0000'
+          state: 'off'
+        description: Park heating is off
+      - data_component: '0d00'
         values:
           name: 'engine_indicator'
-          state: 'inactive'
-          colour: 'info'
-        description: Engine indicator is inactive
-      - data_component: '0e0000'
+          state: 'off'
+        description: Engine indicator is off
+      - data_component: '0e00'
         values:
           name: 'service_call'
-          state: 'inactive'
-          colour: 'info'
-        description: Service call for maintenance is inactive
-      - data_component: '0f0102'
+          state: 'off'
+        description: Service call for maintenance is off
+      - data_component: '0f01'
         values:
           name: 'transmission_fluid_temperature'
-          state: 'active'
-          colour: 'red'
-        description: Red light active for transmission fluid temperature
-      - data_component: '100000'
+          state: 'on'
+        description: Transmission fluid temperature is on
+      - data_component: '1000'
         values:
           name: 'transmission_failure'
-          state: 'inactive'
-          colour: 'info'
-        description: Transmission failure/malfunction is inactive
-      - data_component: '110000'
+          state: 'off'
+        description: Transmission failure/malfunction is off
+      - data_component: '1100'
         values:
           name: 'anti_lock_brake_failure'
-          state: 'inactive'
-          colour: 'info'
-        description: Anti-lock brake system failure is inactive
-      - data_component: '120000'
+          state: 'off'
+        description: Anti-lock brake system failure is off
+      - data_component: '1200'
         values:
           name: 'worn_brake_linings'
-          state: 'inactive'
-          colour: 'info'
-        description: Worn brake linings is inactive
-      - data_component: '130000'
+          state: 'off'
+        description: Worn brake linings is off
+      - data_component: '1300'
         values:
           name: 'windscreen_washer_fluid'
-          state: 'inactive'
-          colour: 'info'
-        description: Windscreen washer fluid/windshield washer fluid is inactive
-      - data_component: '140000'
+          state: 'off'
+        description: Windscreen washer fluid/windshield washer fluid is off
+      - data_component: '1400'
         values:
           name: 'tire_failure'
-          state: 'inactive'
-          colour: 'info'
-        description: Tire failure/malfunction is inactive
-      - data_component: '150100'
+          state: 'off'
+        description: Tire failure/malfunction is off
+      - data_component: '1501'
         values:
           name: 'engine_oil_level'
-          state: 'active'
-          colour: 'info'
-        description: Yellow light active for engine oil temperature
-      - data_component: '160000'
+          state: 'on'
+        description: Engine oil temperature is on
+      - data_component: '1600'
         values:
           name: 'engine_coolant_level'
-          state: 'inactive'
-          colour: 'info'
-        description: Engine coolant level is inactive
-      - data_component: '170000'
+          state: 'off'
+        description: Engine coolant level is off
+      - data_component: '1700'
         values:
           name: 'steering_failure'
-          state: 'inactive'
-          colour: 'info'
-        description: Steering failure is inactive
-      - data_component: '180000'
+          state: 'off'
+        description: Steering failure is off
+      - data_component: '1800'
         values:
           name: 'esc_indication'
-          state: 'inactive'
-          colour: 'info'
-        description: Electronic Speed Controller is inactive
-      - data_component: '190000'
+          state: 'off'
+        description: Electronic Speed Controller is off
+      - data_component: '1900'
         values:
           name: 'brake_lights'
-          state: 'inactive'
-          colour: 'info'
-        description: Brake lights is inactive
-      - data_component: '1a0000'
+          state: 'off'
+        description: Brake lights is off
+      - data_component: '1a00'
         values:
           name: 'adblue_level'
-          state: 'inactive'
-          colour: 'info'
-        description: AdBlue is inactive
-      - data_component: '1b0000'
+          state: 'off'
+        description: AdBlue is off
+      - data_component: '1b00'
         values:
           name: 'fuel_filter_diff_pressure'
-          state: 'inactive'
-          colour: 'info'
-        description: Fuel filter differential pressure is inactive
-      - data_component: '1c0000'
+          state: 'off'
+        description: Fuel filter differential pressure is off
+      - data_component: '1c00'
         values:
           name: 'seat_belt'
-          state: 'inactive'
-          colour: 'info'
-        description: Seat belt is inactive
-      - data_component: '1d0000'
+          state: 'off'
+        description: Seat belt is off
+      - data_component: '1d00'
         values:
           name: 'advanced_braking'
-          state: 'inactive'
-          colour: 'info'
-        description: Advanced emergency braking system is inactive
-      - data_component: '1e0000'
+          state: 'off'
+        description: Advanced emergency braking system is off
+      - data_component: '1e00'
         values:
           name: 'acc'
-          state: 'inactive'
-          colour: 'info'
-        description: Autonomous Cruise Control is inactive
-      - data_component: '1f0000'
+          state: 'off'
+        description: Autonomous Cruise Control is off
+      - data_component: '1f00'
         values:
           name: 'trailer_connected'
-          state: 'inactive'
-          colour: 'info'
-        description: Trailer connected is inactive
-      - data_component: '200000'
+          state: 'off'
+        description: Trailer connected is off
+      - data_component: '2000'
         values:
           name: 'airbag'
-          state: 'inactive'
-          colour: 'info'
-        description: Airbag is inactive
-      - data_component: '210000'
+          state: 'off'
+        description: Airbag is off
+      - data_component: '2100'
         values:
           name: 'esc_switched_off'
-          state: 'inactive'
-          colour: 'info'
-        description: ESC switched off is inactive
-      - data_component: '220000'
+          state: 'off'
+        description: ESC switched off is off
+      - data_component: '2200'
         values:
           name: 'lane_departure_warning_off'
-          state: 'inactive'
-          colour: 'info'
-        description: Lane departure warning switched off is inactive
-      - data_component: '230000'
+          state: 'off'
+        description: Lane departure warning switched off is off
+      - data_component: '2300'
         values:
           name: 'air_filter_minder'
-          state: 'inactive'
-          colour: 'info'
-        description: Air filter minder is inactive
-      - data_component: '240000'
+          state: 'off'
+        description: Air filter minder is off
+      - data_component: '2400'
         values:
           name: 'air_suspension_ride_control_fault'
-          state: 'inactive'
-          colour: 'info'
-        description: Air suspension ride control fault is inactive
-      - data_component: '250000'
+          state: 'off'
+        description: Air suspension ride control fault is off
+      - data_component: '2500'
         values:
           name: 'all_wheel_drive_disabled'
-          state: 'inactive'
-          colour: 'info'
-        description: All wheel drive disabled is inactive
-      - data_component: '260000'
+          state: 'off'
+        description: All wheel drive disabled is off
+      - data_component: '2600'
         values:
           name: 'anti_theft'
-          state: 'inactive'
-          colour: 'info'
-        description: Anti theft is inactive
-      - data_component: '270000'
+          state: 'off'
+        description: Anti theft is off
+      - data_component: '2700'
         values:
           name: 'blind_spot_detection'
-          state: 'inactive'
-          colour: 'info'
-        description: Blind spot detection is inactive
-      - data_component: '280000'
+          state: 'off'
+        description: Blind spot detection is off
+      - data_component: '2800'
         values:
           name: 'charge_system_fault'
-          state: 'inactive'
-          colour: 'info'
-        description: Charge system fault is inactive
-      - data_component: '290000'
+          state: 'off'
+        description: Charge system fault is off
+      - data_component: '2900'
         values:
           name: 'check_fuel_cap'
-          state: 'inactive'
-          colour: 'info'
-        description: Check fuel cap is inactive
-      - data_component: '2a0000'
+          state: 'off'
+        description: Check fuel cap is off
+      - data_component: '2a00'
         values:
           name: 'check_fuel_fill_inlet'
-          state: 'inactive'
-          colour: 'info'
-        description: Check fuel fill inlet is inactive
-      - data_component: '2b0000'
+          state: 'off'
+        description: Check fuel fill inlet is off
+      - data_component: '2b00'
         values:
           name: 'check_fuel_filter'
-          state: 'inactive'
-          colour: 'info'
-        description: Check fuel filter is inactive
-      - data_component: '2c0000'
+          state: 'off'
+        description: Check fuel filter is off
+      - data_component: '2c00'
         values:
           name: 'dc_temp_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: DC temperature warning is inactive
-      - data_component: '2d0000'
+          state: 'off'
+        description: DC temperature warning is off
+      - data_component: '2d00'
         values:
           name: 'dc_warning_status'
-          state: 'inactive'
-          colour: 'info'
-        description: DC warning status is inactive
-      - data_component: '2e0000'
+          state: 'off'
+        description: DC warning status is off
+      - data_component: '2e00'
         values:
           name: 'diesel_engine_idle_shutdown'
-          state: 'inactive'
-          colour: 'info'
-        description: Diesel engine idle shutdown is inactive
-      - data_component: '2f0000'
+          state: 'off'
+        description: Diesel engine idle shutdown is off
+      - data_component: '2f00'
         values:
           name: 'diesel_engine_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: Diesel engine warning is inactive
-      - data_component: '300000'
+          state: 'off'
+        description: Diesel engine warning is off
+      - data_component: '3000'
         values:
           name: 'diesel_exhaust_fluid_system_fault'
-          state: 'inactive'
-          colour: 'info'
-        description: Diesel exhaust fluid system fault is inactive
-      - data_component: '310000'
+          state: 'off'
+        description: Diesel exhaust fluid system fault is off
+      - data_component: '3100'
         values:
           name: 'diesel_exhaust_over_temp'
-          state: 'inactive'
-          colour: 'info'
-        description: Diesel exhaust over temperature is inactive
-      - data_component: '320000'
+          state: 'off'
+        description: Diesel exhaust over temperature is off
+      - data_component: '3200'
         values:
           name: 'diesel_exhaust_fluid_quality'
-          state: 'inactive'
-          colour: 'info'
-        description: Diesel exhaust fluid quality is inactive
-      - data_component: '330000'
+          state: 'off'
+        description: Diesel exhaust fluid quality is off
+      - data_component: '3300'
         values:
           name: 'diesel_filter_regeneration'
-          state: 'inactive'
-          colour: 'info'
-        description: Diesel filter regeneration is inactive
-      - data_component: '340000'
+          state: 'off'
+        description: Diesel filter regeneration is off
+      - data_component: '3400'
         values:
           name: 'diesel_particulate_filter'
-          state: 'inactive'
-          colour: 'info'
-        description: Diesel particulate filter is inactive
-      - data_component: '350000'
+          state: 'off'
+        description: Diesel particulate filter is off
+      - data_component: '3500'
         values:
           name: 'diesel_pre_heat'
-          state: 'inactive'
-          colour: 'info'
-        description: Diesel pre heat is inactive
-      - data_component: '360000'
+          state: 'off'
+        description: Diesel pre heat is off
+      - data_component: '3600'
         values:
           name: 'electric_trailer_brake_connection'
-          state: 'inactive'
-          colour: 'info'
-        description: Electric trailer brake connection is inactive
-      - data_component: '370000'
+          state: 'off'
+        description: Electric trailer brake connection is off
+      - data_component: '3700'
         values:
           name: 'ev_battery_cell_max_volt_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery cell max voltage warning is inactive
-      - data_component: '380000'
+          state: 'off'
+        description: EV battery cell max voltage warning is off
+      - data_component: '3800'
         values:
           name: 'ev_battery_cell_min_volt_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery cell min voltage warning is inactive
-      - data_component: '390000'
+          state: 'off'
+        description: EV battery cell min voltage warning is off
+      - data_component: '3900'
         values:
           name: 'ev_battery_charge_energy_storage_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery charge energy storage warning is inactive
-      - data_component: '3a0000'
+          state: 'off'
+        description: EV battery charge energy storage warning is off
+      - data_component: '3a00'
         values:
           name: 'ev_battery_high_level_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery high level warning is inactive
-      - data_component: '3b0000'
+          state: 'off'
+        description: EV battery high level warning is off
+      - data_component: '3b00'
         values:
           name: 'ev_battery_high_temperature_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery high temperature warning is inactive
-      - data_component: '3c0000'
+          state: 'off'
+        description: EV battery high temperature warning is off
+      - data_component: '3c00'
         values:
           name: 'ev_battery_insulation_resist_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery insulation resist warning is inactive
-      - data_component: '3d0000'
+          state: 'off'
+        description: EV battery insulation resist warning is off
+      - data_component: '3d00'
         values:
           name: 'ev_battery_jump_level_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery jump level warning is inactive
-      - data_component: '3e0000'
+          state: 'off'
+        description: EV battery jump level warning is off
+      - data_component: '3e00'
         values:
           name: 'ev_battery_low_level_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery low level warning is inactive
-      - data_component: '3f0000'
+          state: 'off'
+        description: EV battery low level warning is off
+      - data_component: '3f00'
         values:
           name: 'ev_battery_max_volt_veh_energy_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery max volt veh energy warning is inactive
-      - data_component: '400000'
+          state: 'off'
+        description: EV battery max volt veh energy warning is off
+      - data_component: '4000'
         values:
           name: 'ev_battery_min_volt_veh_energy_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery min volt veh energy warning is inactive
-      - data_component: '410000'
+          state: 'off'
+        description: EV battery min volt veh energy warning is off
+      - data_component: '4100'
         values:
           name: 'ev_battery_over_charge_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery over charge warning is inactive
-      - data_component: '420000'
+          state: 'off'
+        description: EV battery over charge warning is off
+      - data_component: '4200'
         values:
           name: 'ev_battery_poor_cell_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery poor cell warning is inactive
-      - data_component: '430000'
+          state: 'off'
+        description: EV battery poor cell warning is off
+      - data_component: '4300'
         values:
           name: 'ev_battery_temp_diff_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: EV battery temperature difference warning is inactive
-      - data_component: '440000'
+          state: 'off'
+        description: EV battery temperature difference warning is off
+      - data_component: '4400'
         values:
           name: 'forward_collision_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: Forward collision warning is inactive
-      - data_component: '450000'
+          state: 'off'
+        description: Forward collision warning is off
+      - data_component: '4500'
         values:
           name: 'fuel_door_open'
-          state: 'inactive'
-          colour: 'info'
-        description: Fuel doof open is inactive
-      - data_component: '460000'
+          state: 'off'
+        description: Fuel doof open is off
+      - data_component: '4600'
         values:
           name: 'hill_descent_control_fault'
-          state: 'inactive'
-          colour: 'info'
-        description: Hill descent control fault is inactive
-      - data_component: '470000'
+          state: 'off'
+        description: Hill descent control fault is off
+      - data_component: '4700'
         values:
           name: 'hill_start_assist_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: Hill start assist warning is inactive
-      - data_component: '480000'
+          state: 'off'
+        description: Hill start assist warning is off
+      - data_component: '4800'
         values:
           name: 'hv_interlocking_status_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: HV interlocking status warning is inactive
-      - data_component: '490000'
+          state: 'off'
+        description: HV interlocking status warning is off
+      - data_component: '4900'
         values:
           name: 'lighting_system_failure'
-          state: 'inactive'
-          colour: 'info'
-        description: Lighting system failure is inactive
-      - data_component: '4a0000'
+          state: 'off'
+        description: Lighting system failure is off
+      - data_component: '4a00'
         values:
           name: 'malfunction_indicator'
-          state: 'inactive'
-          colour: 'info'
-        description: Malfunction indicator is inactive
-      - data_component: '4b0000'
+          state: 'off'
+        description: Malfunction indicator is off
+      - data_component: '4b00'
         values:
           name: 'motor_controller_temp_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: Motor controller temperature warning is inactive
-      - data_component: '4c0000'
+          state: 'off'
+        description: Motor controller temperature warning is off
+      - data_component: '4c00'
         values:
           name: 'park_aid_malfunction'
-          state: 'inactive'
-          colour: 'info'
-        description: Park aid malfunction is inactive
-      - data_component: '4d0000'
+          state: 'off'
+        description: Park aid malfunction is off
+      - data_component: '4d00'
         values:
           name: 'passive_entry_passive_start'
-          state: 'inactive'
-          colour: 'info'
-        description: Passive entry passive start is inactive
-      - data_component: '4e0000'
+          state: 'off'
+        description: Passive entry passive start is off
+      - data_component: '4e00'
         values:
           name: 'powertrain_malfunction'
-          state: 'inactive'
-          colour: 'info'
-        description: Powertrain malfunction is inactive
-      - data_component: '4f0000'
+          state: 'off'
+        description: Powertrain malfunction is off
+      - data_component: '4f00'
         values:
           name: 'restraints_indicator_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: Restraints indicator warning is inactive
-      - data_component: '500000'
+          state: 'off'
+        description: Restraints indicator warning is off
+      - data_component: '5000'
         values:
           name: 'start_stop_engine_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: Start stop engine warning is inactive
-      - data_component: '510000'
+          state: 'off'
+        description: Start stop engine warning is off
+      - data_component: '5100'
         values:
           name: 'traction_control_disabled'
-          state: 'inactive'
-          colour: 'info'
-        description: Traction control disabled is inactive
-      - data_component: '520000'
+          state: 'off'
+        description: Traction control disabled is off
+      - data_component: '5200'
         values:
           name: 'traction_control_active'
-          state: 'inactive'
-          colour: 'info'
-        description: Traction control active is inactive
-      - data_component: '530000'
+          state: 'off'
+        description: Traction control active is off
+      - data_component: '5300'
         values:
           name: 'traction_motor_temp_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: Traction motor temperature warning is inactive
-      - data_component: '540000'
+          state: 'off'
+        description: Traction motor temperature warning is off
+      - data_component: '5400'
         values:
           name: 'tire_pressure_monitor_system_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: Tire pressure monitor system warning is inactive
-      - data_component: '550000'
+          state: 'off'
+        description: Tire pressure monitor system warning is off
+      - data_component: '5500'
         values:
           name: 'water_in_fuel'
-          state: 'inactive'
-          colour: 'info'
-        description: Water in fuel is inactive
-      - data_component: '560000'
+          state: 'off'
+        description: Water in fuel is off
+      - data_component: '5600'
         values:
           name: 'tire_warning_front_right'
-          state: 'inactive'
-          colour: 'info'
-        description: Tire warning front right is inactive
-      - data_component: '570000'
+          state: 'off'
+        description: Tire warning front right is off
+      - data_component: '5700'
         values:
           name: 'tire_warning_front_left'
-          state: 'inactive'
-          colour: 'info'
-        description: Tire warning front left is inactive
-      - data_component: '580000'
+          state: 'off'
+        description: Tire warning front left is off
+      - data_component: '5800'
         values:
           name: 'tire_warning_rear_right'
-          state: 'inactive'
-          colour: 'info'
-        description: Tire warning rear right is inactive
-      - data_component: '590000'
+          state: 'off'
+        description: Tire warning rear right is off
+      - data_component: '5900'
         values:
           name: 'tire_warning_rear_left'
-          state: 'inactive'
-          colour: 'info'
-        description: Tire warning rear left is inactive
-      - data_component: '5a0000'
+          state: 'off'
+        description: Tire warning rear left is off
+      - data_component: '5a00'
         values:
           name: 'tire_warning_system_error'
-          state: 'inactive'
-          colour: 'info'
-        description: Tire warning system error is inactive
-      - data_component: '5b0000'
+          state: 'off'
+        description: Tire warning system error is off
+      - data_component: '5b00'
         values:
           name: 'battery_low_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: Battery low warning is inactive
-      - data_component: '5c0000'
+          state: 'off'
+        description: Battery low warning is off
+      - data_component: '5c00'
         values:
           name: 'brake_fluid_warning'
-          state: 'inactive'
-          colour: 'info'
-        description: Brake fluid warning is inactive
+          state: 'off'
+        description: Brake fluid warning is off
