@@ -117,7 +117,7 @@ properties:
     name_pretty: AdBlue level
     type: unit.volume
     size: 10
-    description: AdBlue level in liters
+    description: AdBlue level
     examples:
       - data_component: '19023fe199999999999a'
         value:
