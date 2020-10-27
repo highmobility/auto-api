@@ -136,9 +136,15 @@ measurement_types:
       - name: gigahertz
         id: 0x05
         conversion_linear: 1.0e+9
-      - name: beats_per_minute
+      - name: times_per_minute
         id: 0x08
         conversion_linear: 60.0
+      - name: times_per_hour
+        id: 0x09
+        conversion_linear: 3600.0
+      - name: times_per_day
+        id: 0x0a
+        conversion_linear: 86400.0
 
   - name: fuel_efficiency
     id: 0x0f
