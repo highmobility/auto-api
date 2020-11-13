@@ -48,15 +48,15 @@ properties:
     size: 1
     enum_values:
       - id: 0x00
-        name: lock
+        name: 'lock'
       - id: 0x01
-        name: off
+        name: 'off'
       - id: 0x02
-        name: accessory
+        name: 'accessory'
       - id: 0x03
-        name: on
+        name: 'on'
       - id: 0x04
-        name: start
+        name: 'start'
     examples:
       - data_component: '02'
         value: 'accessory'
