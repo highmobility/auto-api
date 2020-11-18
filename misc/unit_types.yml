@@ -228,7 +228,7 @@ measurement_types:
   - name: pressure
     id: 0x15
     unit_types:
-      - name: newtons_per_meters_squared
+      - name: pascals
         id: 0x00
         conversion_linear: 1.0
       - name: kilopascals
