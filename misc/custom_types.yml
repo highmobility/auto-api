@@ -638,7 +638,7 @@ types:
     name_cased: dashboardLight
     name_pretty: Dashboard light
     type: custom
-    size: 3
+    size: 2
     items:
       - name: name
         name_cased: name

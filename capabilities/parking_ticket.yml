@@ -66,9 +66,9 @@ properties:
     type: string
     description: Operator ticket ID
     examples:
-      - data_component: '3634383934323333'
-        value: '64894233'
-        description: Operator ticket ID is '64894233'
+      - data_component: '36343839414234323333'
+        value: '6489AB4233'
+        description: Operator ticket ID is '6489AB4233'
   - id: 0x04
     name: ticket_start_time
     name_cased: ticketStartTime
