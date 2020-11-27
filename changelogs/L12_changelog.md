@@ -21,7 +21,6 @@ Changes from L11 are divided into these sub-sections:
   * [Custom Types](#custom-types)
   * [Universal Properties](#universal-properties)
 * [Deprecations](#deprecations)
-* [Updated Properties](#updated-properties)
 * [Unit Type](#unit-type)
   * [Type](#component-type)
   * [Spec Changes](#unit-type-spec-changes)
@@ -42,9 +41,11 @@ Some fields in the spec have been renamed for more consistency.
 
 There are a number of other miscellaneous changes:  
 
-- added `internal_oem_error` to _failure reason_
+- added `oem_error` to _failure reason_
   - in `failure_message` property `0x03`
   - in _failure component's_ `reason`
+- added new enum values to `status`
+  - in **charging** capability
 - moved files and definitions around for better organisation
   - all _capabilities_ definitions (files) are now in [`capabilities/`](https://github.com/highmobility/auto-api/tree/level12/capabilities) folder
   - other spec files are moved to [`misc/`](https://github.com/highmobility/auto-api/tree/level12/misc) folder
@@ -182,6 +183,7 @@ A few are simply additive to the spec, some are from capabilities' changes and o
   - added `eco_score_constant` - outputs eco-score constant
   - added `eco_score_bonus_range` - outputs eco-score bonus range
 - **vehicle information (new capa)**
+  - added `drive` - outputs the type of drive (i.e. `rwd`)
   - added `power` - outputs _power_ value (i.e. `250.0kW`)
   - added `language` - outputs the language on headunit
   - added `timeformat` - outputs the timeformat on headunit
@@ -257,13 +259,6 @@ List of deprecated properties:
   - deprecated `power_in_kw` in favour of `power`
 - **video handover**
   - deprecated `starting_second` in favour of `starting_time`
-  
-## Updated Properties
-
-Some properties have updated values (i.e. new enum values added).  
-
-- **charging**
-  - updated `status` - added new enum values
 
 ## Unit Type
 ### Type<a name="component-type"></a>
