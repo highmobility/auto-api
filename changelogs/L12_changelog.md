@@ -214,7 +214,7 @@ Also, L12 updated some values (i.e. enum added new enum values).
 
 ### Universal Properties
 
-Two properties from _vehicle status_ are moved to _universal properties_ (meaning they can be transmitted with every property).  
+Two properties from _vehicle status_ are moved to _universal properties_ (meaning they can be transmitted with every capability).  
 
 - added `vin` - outputs the VIN of the unique Vehicle Identification Number
 - added `brand` - outputs the vehicle brand
