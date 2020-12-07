@@ -115,14 +115,12 @@ properties:
     name: adblue_level
     name_cased: adBlueLevel
     name_pretty: AdBlue level
-    type: unit.volume
-    size: 10
-    description: AdBlue level
+    type: types.percentage
+    description: AdBlue level percentage between 0.0-1.0
     examples:
-      - data_component: '19023fe199999999999a'
-        value:
-          liters: 0.55
-        description: 0.55L of AdBlue remaining
+      - data_component: '3feccccccccccccd'
+        value: 0.9
+        description: AdBlue level is at 90%
   - id: 0x0d
     name: distance_since_reset
     name_cased: distanceSinceReset
