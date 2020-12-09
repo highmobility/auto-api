@@ -470,7 +470,8 @@ properties:
         name: scc_is_active
         description: Smart Charge Communication is active
       - id: 0x02
-        name: inactive
+        name: peak_setting_active
+        description: On/Off-peak setting is active (charges when electricity is cheaper)
     examples:
       - data_component: '01'
         value: 'scc_is_active'
