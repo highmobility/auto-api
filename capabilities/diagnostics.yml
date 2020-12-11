@@ -495,6 +495,16 @@ properties:
           location: 'rear_left'
           status: 'normal'
         description: Rear left tire pressure is normal
+      - data_component: '0400'
+        values:
+          location: 'rear_right_outer'
+          status: 'normal'
+        description: Rear right outer tire pressure is normal
+      - data_component: '0500'
+        values:
+          location: 'rear_left_outer'
+          status: 'normal'
+        description: Rear left outer tire pressure is normal
   - id: 0x22
     name: brake_lining_wear_pre_warning
     name_cased: brakeLiningWearPreWarning
@@ -589,9 +599,33 @@ properties:
     name_pretty: Diesel exhaust filter status
     type: types.diesel_exhaust_filter_status
     examples:
+      - data_component: '000100'
+        values:
+          status: 'unknown'
+          component: 'exhaust_filter'
+          cleaning: 'unknown'
+        description: Diesel 'exhaust filter' is in 'normal' status and not cleaning
       - data_component: '010100'
         values:
           status: 'normal_operation'
           component: 'exhaust_filter'
           cleaning: 'unknown'
-        description: Diesel 'exhaust filter' is in 'normal operation' and not cleaning
+        description: Diesel 'exhaust filter' is in 'normal operation' status and not cleaning
+      - data_component: '020100'
+        values:
+          status: 'overloaded'
+          component: 'exhaust_filter'
+          cleaning: 'unknown'
+        description: Diesel 'exhaust filter' is in 'overloaded' status and not cleaning
+      - data_component: '030100'
+        values:
+          status: 'at_limit'
+          component: 'exhaust_filter'
+          cleaning: 'unknown'
+        description: Diesel 'exhaust filter' is in 'at_limit' status and not cleaning
+      - data_component: '040100'
+        values:
+          status: 'over_limit'
+          component: 'exhaust_filter'
+          cleaning: 'unknown'
+        description: Diesel 'exhaust filter' is in 'over_limit' status and not cleaning

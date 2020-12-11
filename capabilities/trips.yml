@@ -173,11 +173,6 @@ properties:
     multiple: true
     description: Start address components
     examples:
-      - data_component: '050014536b616c69747a65722053747261c39f65203638'
-        values:
-          type: 'street'
-          value: 'Skalitzer Straße 68'
-        description: Street component value is 'Skalitzer Straße 68'
       - data_component: '0000064265726c696e'
         values:
           type: 'city'
@@ -188,6 +183,36 @@ properties:
           type: 'country'
           value: 'Germany'
         description: Country component value is 'Germany'
+      - data_component: '0200024445'
+        values:
+          type: 'country_short'
+          value: 'DE'
+        description: Country short component value is 'DE'
+      - data_component: '0300064265726c696e'
+        values:
+          type: 'district'
+          value: 'Berlin'
+        description: District component value is 'Berlin'
+      - data_component: '0400053130313137'
+        values:
+          type: 'postal_code'
+          value: '10117'
+        description: Postal code component value is '10117'
+      - data_component: '050014536b616c69747a65722053747261c39f65203638'
+        values:
+          type: 'street'
+          value: 'Skalitzer Straße 68'
+        description: Street component value is 'Skalitzer Straße 68'
+      - data_component: '06000b4272616e64656e62757267'
+        values:
+          type: 'state_province'
+          value: 'Brandenburg'
+        description: Country component value is 'Brandenburg'
+      - data_component: '0700074765726d616e79'
+        values:
+          type: 'other'
+          value: 'Germany'
+        description: Other component value is 'Germany'
   - id: 0x0f
     name: end_address_components
     name_cased: endAddressComponents
@@ -196,11 +221,6 @@ properties:
     multiple: true
     description: End address components
     examples:
-      - data_component: '050014536b616c69747a65722053747261c39f65203638'
-        values:
-          type: 'street'
-          value: 'Skalitzer Straße 68'
-        description: Street component value is 'Skalitzer Straße 68'
       - data_component: '0000064265726c696e'
         values:
           type: 'city'
@@ -211,3 +231,33 @@ properties:
           type: 'country'
           value: 'Germany'
         description: Country component value is 'Germany'
+      - data_component: '0200024445'
+        values:
+          type: 'country_short'
+          value: 'DE'
+        description: Country short component value is 'DE'
+      - data_component: '0300064265726c696e'
+        values:
+          type: 'district'
+          value: 'Berlin'
+        description: District component value is 'Berlin'
+      - data_component: '0400053130313137'
+        values:
+          type: 'postal_code'
+          value: '10117'
+        description: Postal code component value is '10117'
+      - data_component: '050014536b616c69747a65722053747261c39f65203638'
+        values:
+          type: 'street'
+          value: 'Skalitzer Straße 68'
+        description: Street component value is 'Skalitzer Straße 68'
+      - data_component: '06000b4272616e64656e62757267'
+        values:
+          type: 'state_province'
+          value: 'Brandenburg'
+        description: Country component value is 'Brandenburg'
+      - data_component: '0700074765726d616e79'
+        values:
+          type: 'other'
+          value: 'Germany'
+        description: Other component value is 'Germany'
