@@ -534,14 +534,14 @@ properties:
     multiple: true
     description: Additional OEM trouble codes
     examples:
-      - data_component: '000531323349440018000a736f6d655f6572726f72000a736f6d655f76616c7565'
+      - data_component: '00053132334944000a736f6d655f6572726f72000a736f6d655f76616c7565'
         values:
           id: '123ID'
           key_value:
             key: 'some_error'
             value: 'some_value'
         description: Trouble code '123ID' has a value 'some_value' for a key 'some_error'
-      - data_component: '0004314233430022000f696d706f7274616e745f6572726f72000f73797374656d206661756c74203332'
+      - data_component: '000431423343000f696d706f7274616e745f6572726f72000f73797374656d206661756c74203332'
         values:
           id: '1B3C'
           key_value:
