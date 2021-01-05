@@ -604,28 +604,28 @@ properties:
           status: 'unknown'
           component: 'exhaust_filter'
           cleaning: 'unknown'
-        description: Diesel 'exhaust filter' is in 'unknown' status and not cleaning
+        description: Diesel 'exhaust filter' is in 'unknown' status and unknown cleaning state
       - data_component: '010100'
         values:
           status: 'normal_operation'
           component: 'exhaust_filter'
           cleaning: 'unknown'
-        description: Diesel 'exhaust filter' is in 'normal operation' status and not cleaning
+        description: Diesel 'exhaust filter' is in 'normal operation' status unknown cleaning state
       - data_component: '020100'
         values:
           status: 'overloaded'
           component: 'exhaust_filter'
           cleaning: 'unknown'
-        description: Diesel 'exhaust filter' is in 'overloaded' status and not cleaning
+        description: Diesel 'exhaust filter' is in 'overloaded' status and unknown cleaning state
       - data_component: '030100'
         values:
           status: 'at_limit'
           component: 'exhaust_filter'
           cleaning: 'unknown'
-        description: Diesel 'exhaust filter' is in 'at_limit' status and not cleaning
+        description: Diesel 'exhaust filter' is in 'at_limit' status and unknown cleaning state
       - data_component: '040100'
         values:
           status: 'over_limit'
           component: 'exhaust_filter'
           cleaning: 'unknown'
-        description: Diesel 'exhaust filter' is in 'over_limit' status and not cleaning
+        description: Diesel 'exhaust filter' is in 'over_limit' status and unknown cleaning state
