@@ -1,9 +1,7 @@
 ---
 layout: home
-title: Auto API
+title: Auto API L12
 ---
-
-# AutoAPI L12
 
 The Auto API specification is an open source vehicle data model built for the purpose of providing a consistent data protocol for communication between cars and external 3rd party services.
 
