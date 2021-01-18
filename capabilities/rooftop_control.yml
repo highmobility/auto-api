@@ -1,0 +1,136 @@
+name: rooftop_control
+name_cased: rooftopControl
+name_pretty: Rooftop Control
+category: chassis
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x25
+
+api:
+  intro: 3
+  update: 12
+
+getters:
+  name: get_rooftop_state
+
+setters:
+  - name: control_rooftop
+    optional: [0x01, 0x02, 0x03, 0x04, 0x05]
+    description: Set the rooftop state.
+
+state: all
+
+properties:
+  - id: 0x01
+    name: dimming
+    name_cased: dimming
+    name_pretty: Dimming
+    type: types.percentage
+    description: 1.0 (100%) is opaque, 0.0 (0%) is transparent
+    examples:
+      - data_component: '3ff0000000000000'
+        value: 1.0
+        description: Rooftop is opaque (100%)
+  - id: 0x02
+    name: position
+    name_cased: position
+    name_pretty: Position
+    type: types.percentage
+    description: 1.0 (100%) is fully open, 0.0 (0%) is closed
+    examples:
+      - data_component: '3fe0000000000000'
+        value: 0.5
+        description: Rooftop is half-open (50%)
+  - id: 0x03
+    name: convertible_roof_state
+    name_cased: convertibleRoofState
+    name_pretty: Convertible roof state
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: open
+      - id: 0x02
+        name: emergency_locked
+        disabled_in_setter: true
+      - id: 0x03
+        name: closed_secured
+        disabled_in_setter: true
+      - id: 0x04
+        name: open_secured
+        disabled_in_setter: true
+      - id: 0x05
+        name: hard_top_mounted
+        disabled_in_setter: true
+      - id: 0x06
+        name: intermediate_position
+        disabled_in_setter: true
+      - id: 0x07
+        name: loading_position
+        disabled_in_setter: true
+      - id: 0x08
+        name: loading_position_immediate
+        disabled_in_setter: true
+    examples:
+      - data_component: '01'
+        value: 'open'
+        description: Convertible roof is open
+  - id: 0x04
+    name: sunroof_tilt_state
+    name_cased: sunroofTiltState
+    name_pretty: Sunroof tilt state
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: tilted
+      - id: 0x02
+        name: half_tilted
+    examples:
+      - data_component: '02'
+        value: 'half_tilted'
+        description: Sunroof is half-tilted
+  - id: 0x05
+    name: sunroof_state
+    name_cased: sunroofState
+    name_pretty: Sunroof state
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: open
+      - id: 0x02
+        name: intermediate
+    examples:
+      - data_component: '01'
+        value: 'open'
+        description: Sunroof is open
+  - id: 0x06
+    name: sunroof_rain_event
+    name_cased: sunroofRainEvent
+    name_pretty: Sunroof rain event
+    type: enum
+    size: 1
+    description: Sunroof event happened in case of rain
+    enum_values:
+      - id: 0x00
+        name: no_event
+      - id: 0x01
+        name: in_stroke_position_because_of_rain
+      - id: 0x02
+        name: automatically_in_stroke_position
+    examples:
+      - data_component: '00'
+        value: 'no_event'
+        description: Sunroof had no rain event

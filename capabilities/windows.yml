@@ -1,0 +1,91 @@
+name: windows
+name_cased: windows
+name_pretty: Windows
+category: chassis
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x45
+
+api:
+  intro: 2
+  update: 11
+
+getters:
+  name: get_windows
+
+setters:
+  - name: control_windows
+    optional: [0x02, 0x03]
+    description: Open or close the windows. Either one or all windows can be controlled with the same command.
+
+state: all
+
+properties:
+  - id: 0x02
+    name: open_percentages
+    name_cased: openPercentages
+    name_pretty: Open percentages
+    type: types.window_open_percentage
+    multiple: true
+    name_singular: open_percentage
+    examples:
+      - data_component: '003fc999999999999a'
+        values:
+          location: 'front_left'
+          open_percentage: 0.2
+        description: Front left window is 20% open
+      - data_component: '013fe0000000000000'
+        values:
+          location: 'front_right'
+          open_percentage: 0.5
+        description: Front right window is 50% open
+      - data_component: '023fe0000000000000'
+        values:
+          location: 'rear_right'
+          open_percentage: 0.5
+        description: Rear right window is 50% open
+      - data_component: '033fb999999999999a'
+        values:
+          location: 'rear_left'
+          open_percentage: 0.1
+        description: Rear left window is 10% open
+      - data_component: '043fc70a3d70a3d70a'
+        values:
+          location: 'hatch'
+          open_percentage: 0.18
+        description: Hatch is 18% open
+  - id: 0x03
+    name: positions
+    name_cased: positions
+    name_pretty: Positions
+    type: types.window_position
+    multiple: true
+    name_singular: position
+    examples:
+      - data_component: '0001'
+        values:
+          location: 'front_left'
+          position: 'open'
+        description: Front left window is open
+      - data_component: '0101'
+        values:
+          location: 'front_right'
+          position: 'open'
+        description: Front right window is open
+      - data_component: '0200'
+        values:
+          location: 'rear_right'
+          position: 'closed'
+        description: Rear right window is closed
+      - data_component: '0301'
+        values:
+          location: 'rear_left'
+          position: 'open'
+        description: Rear left window is open
+      - data_component: '0401'
+        values:
+          location: 'hatch'
+          position: 'open'
+        description: Hatch is open

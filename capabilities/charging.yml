@@ -1,0 +1,542 @@
+name: charging
+name_cased: charging
+name_pretty: Charging
+category: chassis
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x23
+
+api:
+  intro: 2
+  update: 12
+
+getters: {}
+
+setters:
+  - name: start_stop_charging
+    mandatory: [0x17]
+    description: Start or stop charging, which can only be controlled when the vehicle is plugged in.
+  - name: set_charge_limit
+    mandatory: [0x08]
+    description: Set the charge limit, to which point the vehicle will charge itself.
+  - name: open_close_charging_port
+    mandatory: [0x0b]
+    description: Open or close the charge port of the vehicle.
+  - name: set_charge_mode
+    mandatory: [0x0c]
+    description: Set the charge mode of the vehicle.
+  - name: set_charging_timers
+    mandatory: [0x15]
+    description: Set the charging timers of the vehicle. The command can include one of the different timer types or all.
+  - name: set_reduction_of_charging_current_times
+    mandatory: [0x13]
+    description: Set the reduction of charging times of the vehicle. The command can include different values for start and stop.
+
+state: all
+
+properties:
+  - id: 0x02
+    name: estimated_range
+    name_cased: estimatedRange
+    name_pretty: Estimated range
+    type: unit.length
+    size: 10
+    description: Estimated range
+    examples:
+      - data_component: '1204407b01999999999a'
+        value:
+          kilometers: 432.1
+        description: 432.1km estimated range
+  - id: 0x03
+    name: battery_level
+    name_cased: batteryLevel
+    name_pretty: Battery level
+    type: types.percentage
+    description: Battery level percentage between 0.0-1.0
+    examples:
+      - data_component: '3fe0000000000000'
+        value: 0.5
+        description: Battery level 50%
+  - id: 0x04
+    name: battery_current_ac
+    name_cased: batteryCurrentAC
+    name_pretty: Battery current (AC)
+    deprecated:
+      new_name: battery_current
+      reason: moved AC/DC distinction into a separate property
+    type: unit.electric_current
+    size: 10
+    description: Battery alternating current
+    examples:
+      - data_component: '0900bfe3333333333333'
+        value:
+          amperes: -0.6
+        description: Battery alternating current is -0.6A
+  - id: 0x05
+    name: battery_current_dc
+    name_cased: batteryCurrentDC
+    name_pretty: Battery current (DC)
+    deprecated:
+      new_name: battery_current
+      reason: moved AC/DC distinction into a separate property
+    type: unit.electric_current
+    size: 10
+    description: Battery direct current
+    examples:
+      - data_component: '0900bfe3333333333333'
+        value:
+          amperes: -0.6
+        description: Battery direct current is -0.6A
+  - id: 0x06
+    name: charger_voltage_ac
+    name_cased: chargerVoltageAC
+    name_pretty: Charger voltage (AC)
+    deprecated:
+      new_name: charger_voltage
+      reason: moved AC/DC distinction into a separate property
+    type: unit.electric_potential_difference
+    size: 10
+    description: Charger voltage for alternating current
+    examples:
+      - data_component: '0a004079000000000000'
+        value:
+          volts: 400
+        description: Charger voltage is 400.0V for alternating current
+  - id: 0x07
+    name: charger_voltage_dc
+    name_cased: chargerVoltageDC
+    name_pretty: Charger voltage (DC)
+    deprecated:
+      new_name: charger_voltage
+      reason: moved AC/DC distinction into a separate property
+    type: unit.electric_potential_difference
+    size: 10
+    description: Charger voltage for direct current
+    examples:
+      - data_component: '0a004079000000000000'
+        value:
+          volts: 400
+        description: Charger voltage is 400.0V for direct current
+  - id: 0x08
+    name: charge_limit
+    name_cased: chargeLimit
+    name_pretty: Charge limit
+    type: types.percentage
+    description: Charge limit percentage between 0.0-1.0
+    examples:
+      - data_component: '3feccccccccccccd'
+        value: 0.9
+        description: Charge limit is set to 90%
+  - id: 0x09
+    name: time_to_complete_charge
+    name_cased: timeToCompleteCharge
+    name_pretty: Time to complete charge
+    type: unit.duration
+    size: 10
+    description: Time until charging completed
+    examples:
+      - data_component: '0701404e000000000000'
+        value:
+          minutes: 60.0
+        description: Time to complete charge is 60.0 minutes
+  - id: 0x0a
+    name: charging_rate_kw
+    name_cased: chargingRateKW
+    name_pretty: Charging rate (kW)
+    deprecated:
+      new_name: charging_rate
+      reason: removed the unit from the name
+    type: unit.power
+    size: 10
+    description: Charging rate
+    examples:
+      - data_component: '1402400c000000000000'
+        value:
+          kilowatts: 3.5
+        description: Charging rate is 3.5kW
+  - id: 0x0b
+    name: charge_port_state
+    name_cased: chargePortState
+    name_pretty: Charge port state
+    type: types.position
+    examples:
+      - data_component: '01'
+        value: 'open'
+        description: Charge port is open
+  - id: 0x0c
+    name: charge_mode
+    name_cased: chargeMode
+    name_pretty: Charge mode
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: immediate
+      - id: 0x01
+        name: timer_based
+      - id: 0x02
+        name: inductive
+        disabled_in_setter: true
+    examples:
+      - data_component: '01'
+        value: 'timer_based'
+        description: Charging is 'timer based'
+  - id: 0x0e
+    name: max_charging_current
+    name_cased: maxChargingCurrent
+    name_pretty: Maximum charging current
+    type: unit.electric_current
+    size: 10
+    description: Maximum charging current
+    examples:
+      - data_component: '09004039000000000000'
+        value:
+          amperes: 25.0
+        description: Maximum charging current is 25.0A
+  - id: 0x0f
+    name: plug_type
+    name_cased: plugType
+    name_pretty: Plug type
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: type_1
+      - id: 0x01
+        name: type_2
+      - id: 0x02
+        name: ccs
+        name_pretty: Combined Charging System (CCS)
+      - id: 0x03
+        name: chademo
+        name_pretty: CHAdeMO
+    examples:
+      - data_component: '01'
+        value: 'type_2'
+        description: Electric plug type is 'Type 2'
+  - id: 0x10
+    name: charging_window_chosen
+    name_cased: chargingWindowChosen
+    name_pretty: Charging window chosen
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: not_chosen
+      - id: 0x01
+        name: chosen
+    examples:
+      - data_component: '00'
+        value: 'not_chosen'
+        description: Charging window is not chosen
+  - id: 0x11
+    name: departure_times
+    name_cased: departureTimes
+    name_pretty: Departure times
+    type: types.departure_time
+    multiple: true
+    name_singular: departure_time
+    examples:
+      - data_component: '011020'
+        values:
+          state: 'active'
+          time:
+            hour: 16
+            minute: 32
+        description: Departure time 16:32 is active
+      - data_component: '000b33'
+        values:
+          state: 'inactive'
+          time:
+            hour: 11
+            minute: 51
+        description: Departure time 11:51 is inactive
+  - id: 0x13
+    name: reduction_times
+    name_cased: reductionTimes
+    name_pretty: Reduction of charging times
+    type: types.reduction_time
+    multiple: true
+    name_singular: reduction_time
+    examples:
+      - data_component: '001121'
+        values:
+          start_stop: 'start'
+          time:
+            hour: 17
+            minute: 33
+        description: Start reduction of charging at 17:33
+      - data_component: '010c34'
+        values:
+          start_stop: 'stop'
+          time:
+            hour: 12
+            minute: 52
+        description: Stop reduction of charging current at 12:52
+  - id: 0x14
+    name: battery_temperature
+    name_cased: batteryTemperature
+    name_pretty: Battery temperature
+    type: unit.temperature
+    size: 10
+    description: Battery temperature
+    examples:
+      - data_component: '17014043333333333333'
+        value:
+          celsius: 38.4
+        description: The battery temperature is 38.4°C
+  - id: 0x15
+    name: timers
+    name_cased: timers
+    name_pretty: Timers
+    type: types.timer
+    multiple: true
+    name_singular: timer
+    examples:
+      - data_component: '00000001598938e788'
+        values:
+          timer_type: 'preferred_start_time'
+          date: '2017-01-10T16:32:05.000Z'
+        description: Preferred start time is 10 January 2017 at 16:32:05 UTC
+      - data_component: '0100000159893c9108'
+        values:
+          timer_type: 'preferred_end_time'
+          date: '2017-01-10T16:36:05.000Z'
+        description: Preferred end time is 10 January 2017 at 16:36:05 GMT
+      - data_component: '0200000159893c9108'
+        values:
+          timer_type: 'departure_date'
+          date: '2017-01-10T16:36:05.000Z'
+        description: Departure date is 10 January 2017 at 16:36:05 GMT
+  - id: 0x16
+    name: plugged_in
+    name_cased: pluggedIn
+    name_pretty: Plugged in
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: disconnected
+      - id: 0x01
+        name: plugged_in
+    examples:
+      - data_component: '01'
+        value: 'plugged_in'
+        description: The charger is plugged in
+  - id: 0x17
+    name: status
+    name_cased: status
+    name_pretty: Status
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: not_charging
+        verb: stop_charging
+      - id: 0x01
+        name: charging
+        verb: start_charging
+      - id: 0x02
+        name: charging_complete
+        disabled_in_setter: true
+      - id: 0x03
+        name: initialising
+        disabled_in_setter: true
+      - id: 0x04
+        name: charging_paused
+        disabled_in_setter: true
+      - id: 0x05
+        name: charging_error
+        disabled_in_setter: true
+      - id: 0x06
+        name: cable_unplugged
+        disabled_in_setter: true
+      - id: 0x07
+        name: slow_charging
+        disabled_in_setter: true
+      - id: 0x08
+        name: fast_charging
+        disabled_in_setter: true
+      - id: 0x09
+        name: discharging
+        disabled_in_setter: true
+      - id: 0x0a
+        name: foreign_object_detected
+        disabled_in_setter: true
+    examples:
+      - data_component: '01'
+        value: 'charging'
+        description: The vehicle is charging
+  - id: 0x18
+    name: charging_rate
+    name_cased: chargingRate
+    name_pretty: Charging rate
+    type: unit.power
+    size: 10
+    description: Charge rate when charging
+    examples:
+      - data_component: '14024062c00000000000'
+        value:
+          kilowatts: 150.0
+        description: Charging rate is 150.0kW
+  - id: 0x19
+    name: battery_current
+    name_cased: batteryCurrent
+    name_pretty: Battery current
+    type: unit.electric_current
+    size: 10
+    description: Battery current
+    examples:
+      - data_component: '0900bfe3333333333333'
+        value:
+          amperes: -0.6
+        description: Battery current is -0.6A
+  - id: 0x1a
+    name: charger_voltage
+    name_cased: chargerVoltage
+    name_pretty: Charger voltage
+    type: unit.electric_potential_difference
+    size: 10
+    description: Charger voltage
+    examples:
+      - data_component: '0a004079000000000000'
+        value:
+          volts: 400
+        description: Charger voltage is 400.0V
+  - id: 0x1b
+    name: current_type
+    name_cased: currentType
+    name_pretty: Current type
+    type: enum
+    size: 1
+    description: Type of current in use
+    enum_values:
+      - id: 0x00
+        name: alternating_current
+        name_pretty: AC
+      - id: 0x01
+        name: direct_current
+        name_pretty: DC
+    examples:
+      - data_component: '00'
+        value: 'alternating_current'
+        description: Alternating current is used
+  - id: 0x1c
+    name: max_range
+    name_cased: maxRange
+    name_pretty: Max range
+    type: unit.length
+    size: 10
+    description: Maximum electric range with 100% of battery
+    examples:
+      - data_component: '12044081580000000000'
+        value:
+          kilometers: 555.0
+        description: Maximum electric range is 555.0km
+  - id: 0x1d
+    name: starter_battery_state
+    name_cased: starterBatteryState
+    name_pretty: Starter battery state
+    type: enum
+    size: 1
+    description: State of the starter battery
+    enum_values:
+      - id: 0x00
+        name: red
+        description: Battery charge is greater than 0%
+      - id: 0x01
+        name: yellow
+        description: Battery charge is greater than 40%
+      - id: 0x02
+        name: green
+        description: Battery charge is greater than 70%
+    examples:
+      - data_component: '02'
+        value: 'green'
+        description: Starter battery status is green
+  - id: 0x1e
+    name: smart_charging_status
+    name_cased: smartChargingStatus
+    name_pretty: Smart charging status
+    type: enum
+    size: 1
+    description: Status of optimized/intelligent charging
+    enum_values:
+      - id: 0x00
+        name: wallbox_is_active
+      - id: 0x01
+        name: scc_is_active
+        description: Smart Charge Communication is active
+      - id: 0x02
+        name: peak_setting_active
+        description: On/Off-peak setting is active (charges when electricity is cheaper)
+    examples:
+      - data_component: '01'
+        value: 'scc_is_active'
+        description: Smart Charge Communication is active
+  - id: 0x1f
+    name: battery_level_at_departure
+    name_cased: batteryLevelAtDeparture
+    name_pretty: Battery level at departure
+    type: types.percentage
+    description: Battery charge level expected at time of departure
+    examples:
+      - data_component: '3feccccccccccccd'
+        value: 0.9
+        description: Battery level is expected to be 90% at time of departure
+  - id: 0x20
+    name: preconditioning_departure_status
+    name_cased: preconditioningDepartureStatus
+    name_pretty: Preconditioning departure status
+    type: types.active_state
+    description: Status of preconditioning at departure time
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Preconditioning is active for departure time
+  - id: 0x21
+    name: preconditioning_immediate_status
+    name_cased: preconditioningImmediateStatus
+    name_pretty: Preconditioning immediate status
+    type: types.active_state
+    description: Status of immediate preconditioning
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Immediate preconditioning is active
+  - id: 0x22
+    name: preconditioning_departure_enabled
+    name_cased: preconditioningDepartureEnabled
+    name_pretty: Preconditioning departure enabled
+    type: types.enabled_state
+    description: Preconditioning activation status at departure
+    examples:
+      - data_component: '01'
+        value: 'enabled'
+        description: Preconditioning is enabled for departure
+  - id: 0x23
+    name: preconditioning_error
+    name_cased: preconditioningError
+    name_pretty: Preconditioning error
+    type: enum
+    size: 1
+    description: Preconditioning error if one is encountered
+    enum_values:
+      - id: 0x00
+        name: no_change
+      - id: 0x01
+        name: not_possible_low
+        description: Preconditioning not possible because battery or fuel is low
+      - id: 0x02
+        name: not_possible_finished
+        description: Preconditioning not possible because charging is not finished
+      - id: 0x03
+        name: available_after_engine_restart
+      - id: 0x04
+        name: general_error
+    examples:
+      - data_component: '01'
+        value: 'not_possible_low'
+        description: Preconditioning not possible because battery or fuel is low

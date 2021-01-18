@@ -1,0 +1,85 @@
+name: seats
+name_cased: seats
+name_pretty: Seats
+category: chassis
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x56
+
+api:
+  intro: 5
+  update: 11
+
+getters: {}
+
+state: all
+
+properties:
+  - id: 0x02
+    name: persons_detected
+    name_cased: personsDetected
+    name_pretty: Persons detected
+    type: types.person_detected
+    multiple: true
+    name_singular: person_detected
+    examples:
+      - data_component: '0001'
+        values:
+          location: 'front_left'
+          detected: 'detected'
+        description: Person detected on the front-left seat
+      - data_component: '0100'
+        values:
+          location: 'front_right'
+          detected: 'not_detected'
+        description: No person detected on the front-right seat
+      - data_component: '0200'
+        values:
+          location: 'rear_right'
+          detected: 'not_detected'
+        description: No person detected on the rear-right seat
+      - data_component: '0300'
+        values:
+          location: 'rear_left'
+          detected: 'not_detected'
+        description: No person detected on the rear-left seat
+      - data_component: '0400'
+        values:
+          location: 'rear_center'
+          detected: 'not_detected'
+        description: No person detected on the rear-center seat
+  - id: 0x03
+    name: seatbelts_state
+    name_cased: seatbeltsState
+    name_pretty: Seatbelts state
+    type: types.seatbelt_state
+    multiple: true
+    name_singular: seatbelt_state
+    examples:
+      - data_component: '0001'
+        values:
+          location: 'front_left'
+          fastened_state: 'fastened'
+        description: Seatbelt fastened for the front-left seat
+      - data_component: '0100'
+        values:
+          location: 'front_right'
+          fastened_state: 'not_fastened'
+        description: Seatbelt not fastened for the front-right seat
+      - data_component: '0200'
+        values:
+          location: 'rear_right'
+          fastened_state: 'not_fastened'
+        description: Seatbelt not fastened for the rear-right seat
+      - data_component: '0300'
+        values:
+          location: 'rear_left'
+          fastened_state: 'not_fastened'
+        description: Seatbelt not fastened for the rear-left seat
+      - data_component: '0400'
+        values:
+          location: 'rear_center'
+          fastened_state: 'not_fastened'
+        description: Seatbelt not fastened for the rear-center seat

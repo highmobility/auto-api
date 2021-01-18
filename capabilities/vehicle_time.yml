@@ -1,0 +1,32 @@
+name: vehicle_time
+name_cased: vehicleTime
+name_pretty: Vehicle Time
+category: poi
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x50
+
+api:
+  intro: 5
+  update: 11
+
+getters:
+  name: get_vehicle_time
+
+state: all
+
+properties:
+  - id: 0x01
+    name: vehicle_time
+    name_cased: vehicleTime
+    name_pretty: Vehicle time
+    type: types.time
+    description: Vehicle time in a 24h format
+    examples:
+      - data_component: '1337'
+        values:
+          hour: 19
+          minute: 55
+        description: Vehicle time is 19:55

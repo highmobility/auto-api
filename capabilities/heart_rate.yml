@@ -1,0 +1,33 @@
+name: heart_rate
+name_cased: heartRate
+name_pretty: Heart Rate
+category: health
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x29
+
+api:
+  intro: 4
+  update: 12
+
+disabled_in: [web]
+
+setters:
+  - name: send_heart_rate
+    mandatory: [0x01]
+    description: Send the driver heart rate to the vehicle.
+
+properties:
+  - id: 0x01
+    name: heart_rate
+    name_cased: heartRate
+    name_pretty: Heart rate
+    type: unit.frequency
+    size: 10
+    examples:
+      - data_component: '0e084050000000000000'
+        value:
+          times_per_minute: 64.0
+        description: Heart rate is 64.0tpm (bpm)

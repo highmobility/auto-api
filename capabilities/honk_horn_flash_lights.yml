@@ -1,0 +1,94 @@
+name: honk_horn_flash_lights
+name_cased: honkHornFlashLights
+name_pretty: Honk Horn & Flash Lights
+category: chassis
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x26
+
+api:
+  intro: 2
+  update: 12
+
+getters:
+  name: get_flashers_state
+
+setters:
+  - name: honk_flash
+    optional: [0x05, 0x03]
+    description: Honk the horn and/or flash the blinker lights. This can be done simultaneously or just one action at the time. It is also possible to pass in how many times the lights should be flashed and how many seconds the horn should be honked.
+  - name: activate_deactivate_emergency_flasher
+    mandatory: [0x04]
+    description: This activates or deactivates the emergency flashers of the vehicle, typically the blinkers to alarm other drivers.
+
+state: [0x01]
+
+properties:
+  - id: 0x01
+    name: flashers
+    name_cased: flashers
+    name_pretty: Flashers
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: inactive
+      - id: 0x01
+        name: emergency_flasher_active
+      - id: 0x02
+        name: left_flasher_active
+      - id: 0x03
+        name: right_flasher_active
+    examples:
+      - data_component: '02'
+        value: 'left_flasher_active'
+        description: Left flasher is active
+  - id: 0x02
+    name: honk_seconds
+    name_cased: honkSeconds
+    name_pretty: Honk seconds
+    deprecated:
+      new_name: honk_time
+      reason: removed the unit from the name
+    type: unit.duration
+    size: 10
+    description: Time to honk the horn
+    examples:
+      - data_component: '07004008000000000000'
+        value:
+          seconds: 3.0
+        description: Honk the horn for 3.0s
+  - id: 0x03
+    name: flash_times
+    name_cased: flashTimes
+    name_pretty: Flash times
+    type: uinteger
+    size: 1
+    description: Number of times to flash the lights
+    examples:
+      - data_component: '05'
+        value: 5
+        description: Flash the lights 5 times
+  - id: 0x04
+    name: emergency_flashers_state
+    name_cased: emergencyFlashersState
+    name_pretty: Emergency flasher state
+    type: types.active_state
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Emergency flashers are active
+  - id: 0x05
+    name: honk_time
+    name_cased: honkTime
+    name_pretty: Honk time
+    type: unit.duration
+    size: 10
+    description: Time to honk the horn
+    examples:
+      - data_component: '07004000000000000000'
+        value:
+          seconds: 2.0
+        description: Honk the horn for 2.0s

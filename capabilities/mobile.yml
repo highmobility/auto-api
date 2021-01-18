@@ -1,0 +1,28 @@
+name: mobile
+name_cased: mobile
+name_pretty: Mobile
+category: headunit
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x66
+
+api:
+  intro: 8
+  update: 11
+
+getters: {}
+
+state: all
+    
+properties:
+  - id: 0x01
+    name: connection
+    name_cased: connection
+    name_pretty: Connection
+    type: types.connection_state
+    examples:
+      - data_component: '01'
+        value: 'connected'
+        description: A mobile phone is connected

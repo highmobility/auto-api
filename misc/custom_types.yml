@@ -1,0 +1,1535 @@
+#
+# custom_types.yml
+#
+#
+# Defines the 'custom' types used in AutoAPI.
+# Additionally defines commonly used 'enum' types.
+#
+
+
+types:
+  # MARK: Active State
+  - name: active_state
+    name_cased: activeState
+    name_pretty: Active state
+    type: enum
+    size: 1
+    controls: 'switch'
+    enum_values:
+      - id: 0x00
+        name: inactive
+        verb: deactivate
+      - id: 0x01
+        name: active
+        verb: activate
+    # MARK: Active Selected State
+  - name: active_selected_state
+    name_cased: activeSelectedState
+    name_pretty: Active selected state
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: inactive_selected
+      - id: 0x01
+        name: inactive_not_selected
+      - id: 0x02
+        name: active
+    # MARK: Axle
+  - name: axle
+    name_cased: axle
+    name_pretty: Axle
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: front
+      - id: 0x01
+        name: rear
+    # MARK: Capability State
+  - name: capability_state
+    name_cased: capabilityState
+    name_pretty: Capability state
+    type: bytes
+    description: The bytes of a Capability state
+    # MARK: Connection State
+  - name: connection_state
+    name_cased: connectionState
+    name_pretty: Connection state
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: disconnected
+      - id: 0x01
+        name: connected
+    # MARK: Coordinates
+  - name: coordinates
+    name_cased: coordinates
+    name_pretty: Coordinates
+    type: custom
+    size: 16
+    items:
+      - name: latitude
+        name_cased: latitude
+        validation: 'min:-90|max:90'
+        type: double
+        size: 8
+        description: Latitude
+      - name: longitude
+        name_cased: longitude
+        validation: 'min:-180|max:180'
+        type: double
+        size: 8
+        description: Longitude
+    # MARK: Detected
+  - name: detected
+    name_cased: detected
+    name_pretty: Detected
+    type: enum
+    size: 1
+    controls: 'switch'
+    enum_values:
+      - id: 0x00
+        name: not_detected
+      - id: 0x01
+        name: detected
+    # MARK: Driving Mode
+  - name: driving_mode
+    name_cased: drivingMode
+    name_pretty: Driving mode
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: regular
+      - id: 0x01
+        name: eco
+      - id: 0x02
+        name: sport
+      - id: 0x03
+        name: sport_plus
+      - id: 0x04
+        name: ecoPlus
+      - id: 0x05
+        name: comfort
+    # MARK: Enabled State
+  - name: enabled_state
+    name_cased: enabledState
+    name_pretty: Enabled state
+    type: enum
+    size: 1
+    controls: 'switch'
+    enum_values:
+      - id: 0x00
+        name: disabled
+        verb: disable
+      - id: 0x01
+        name: enabled
+        verb: enable
+    # MARK: Fluid Level
+  - name: fluid_level
+    name_cased: fluidLevel
+    name_pretty: Fluid level
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: low
+      - id: 0x01
+        name: filled
+    # MARK: Grade
+  - name: grade
+    name_cased: grade
+    name_pretty: Grade
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: excellent
+      - id: 0x01
+        name: normal
+      - id: 0x02
+        name: warning
+    # MARK: Key-Value
+  - name: key_value
+    name_cased: keyValue
+    name_pretty: Key-Value
+    type: custom
+    description: Key-value pairs like in a dictionary or hash
+    items:
+      - name: key
+        name_cased: key
+        type: string
+        description: Key for the value
+      - name: value
+        name_cased: value
+        type: string
+        description: Value for the key
+    # MARK: Location
+  - name: location
+    name_cased: location
+    name_pretty: Location
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: front_left
+      - id: 0x01
+        name: front_right
+      - id: 0x02
+        name: rear_right
+      - id: 0x03
+        name: rear_left
+    # MARK: Location Longitudinal
+  - name: location_longitudinal
+    name_cased: locationLongitudinal
+    name_pretty: Location longitudinal
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: front
+      - id: 0x01
+        name: rear
+    # MARK: Location Wheel
+  - name: location_wheel
+    name_cased: locationWheel
+    name_pretty: Location wheel
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: front_left
+      - id: 0x01
+        name: front_right
+      - id: 0x02
+        name: rear_right
+      - id: 0x03
+        name: rear_left
+      - id: 0x04
+        name: rear_right_outer
+      - id: 0x05
+        name: rear_left_outer
+    # MARK: Lock State
+  - name: lock_state
+    name_cased: lockState
+    name_pretty: Lock state
+    type: enum
+    size: 1
+    controls: 'switch'
+    enum_values:
+      - id: 0x00
+        name: unlocked
+        verb: unlock
+      - id: 0x01
+        name: locked
+        verb: lock
+    # MARK: Network Security
+  - name: network_security
+    name_cased: networkSecurity
+    name_pretty: Network security
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: none
+      - id: 0x01
+        name: wep
+        name_pretty: WEP
+      - id: 0x02
+        name: wpa
+        name_pretty: WPA/WPA2 Personal
+      - id: 0x03
+        name: wpa2_personal
+        name_pretty: WPA2 Personal
+    # MARK: On-Off State
+  - name: on_off_state
+    name_cased: onOffState
+    name_pretty: On-Off State
+    type: enum
+    size: 1
+    controls: 'switch'
+    enum_values:
+      - id: 0x00
+        name: 'off'
+      - id: 0x01
+        name: 'on'
+    # MARK: Percentage
+  - name: percentage
+    name_cased: percentage
+    name_pretty: Percentage
+    unit_sign: '%'
+    validation: 'min:0|max:1'
+    type: double
+    size: 8
+    description: Percentage value between 0.0 - 1.0 (0% - 100%)
+    # MARK: Position
+  - name: position
+    name_cased: position
+    name_pretty: Position
+    type: enum
+    size: 1
+    controls: 'switch'
+    enum_values:
+      - id: 0x00
+        name: closed
+        verb: close
+      - id: 0x01
+        name: open
+    # MARK: Seat Location
+  - name: seat_location
+    name_cased: seatLocation
+    name_pretty: Seat location
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: front_left
+      - id: 0x01
+        name: front_right
+      - id: 0x02
+        name: rear_right
+      - id: 0x03
+        name: rear_left
+      - id: 0x04
+        name: rear_center
+    # MARK: Start Stop
+  - name: start_stop
+    name_cased: startStop
+    name_pretty: Start-Stop
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: start
+      - id: 0x01
+        name: stop
+    # MARK: Supported Capability
+  - name: supported_capability
+    name_cased: supportedCapability
+    name_pretty: Supported capability
+    type: custom
+    items:
+      - name: capability_id
+        name_cased: capabilityID
+        name_pretty: Capability ID
+        type: uinteger
+        size: 2
+        description: The identifier of the supported capability
+      - name: supported_property_ids
+        name_cased: supportedPropertyIDs
+        name_pretty: Supported property IDs
+        type: bytes
+        description: Array of supported property identifiers
+    # MARK: Time
+  - name: time
+    name_cased: time
+    name_pretty: Time
+    type: custom
+    size: 2
+    items:
+      - name: hour
+        name_cased: hour
+        unit_sign: h
+        validation: 'min:0|max:23'
+        type: uinteger
+        size: 1
+        description: Value between 0 and 23
+      - name: minute
+        name_cased: minute
+        unit_sign: m
+        validation: 'min:0|max:59'
+        type: uinteger
+        size: 1
+        description: Value between 0 and 59
+    # MARK: Weekday
+  - name: weekday
+    name_cased: weekday
+    name_pretty: Weekday
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: monday
+      - id: 0x01
+        name: tuesday
+      - id: 0x02
+        name: wednesday
+      - id: 0x03
+        name: thursday
+      - id: 0x04
+        name: friday
+      - id: 0x05
+        name: saturday
+      - id: 0x06
+        name: sunday
+      - id: 0x07
+        name: automatic
+    # MARK: Window Location
+  - name: window_location
+    name_cased: windowLocation
+    name_pretty: Window location
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: front_left
+      - id: 0x01
+        name: front_right
+      - id: 0x02
+        name: rear_right
+      - id: 0x03
+        name: rear_left
+      - id: 0x04
+        name: hatch
+    # MARK: Zone
+  - name: zone
+    name_cased: zone
+    name_pretty: Zone
+    type: custom
+    size: 2
+    items:
+      - name: horizontal
+        name_cased: horizontal
+        type: uinteger
+        size: 1
+        description: Horizontal component of the matrix
+      - name: vertical
+        name_cased: vertical
+        type: uinteger
+        size: 1
+        description: Vertical component of the matrix
+
+    # MARK: Acceleration
+  - name: acceleration
+    name_cased: acceleration
+    name_pretty: Acceleration
+    type: custom
+    size: 11
+    items:
+      - name: direction
+        name_cased: direction
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: longitudinal
+          - id: 0x01
+            name: lateral
+          - id: 0x02
+            name: front_lateral
+          - id: 0x03
+            name: rear_lateral
+      - name: acceleration
+        name_cased: acceleration
+        name_pretty: Acceleration
+        type: unit.acceleration
+        size: 10
+        description: The accelaration
+    # MARK: Action Item
+  - name: action_item
+    name_cased: actionItem
+    name_pretty: Action item
+    type: custom
+    items:
+      - name: id
+        name_cased: id
+        name_pretty: ID
+        type: uinteger
+        size: 1
+        description: Action identifier
+      - name: name
+        name_cased: name
+        type: string
+        description: Name of the action
+    # MARK: Address Component
+  - name: address_component
+    name_cased: addressComponent
+    name_pretty: Address component
+    type: custom
+    description: A single component of the full address
+    items:
+      - name: type
+        name_cased: type
+        name_pretty: Type
+        type: enum
+        size: 1
+        description: Component type
+        enum_values:
+          - id: 0x00
+            name: city
+          - id: 0x01
+            name: country
+          - id: 0x02
+            name: country_short
+          - id: 0x03
+            name: district
+          - id: 0x04
+            name: postal_code
+          - id: 0x05
+            name: street
+          - id: 0x06
+            name: state_province
+          - id: 0x07
+            name: other
+      - name: value
+        name_cased: value
+        name_pretty: Value
+        type: string
+        description: Value for the component
+    # MARK: Availability
+  - name: availability
+    name_cased: availability
+    name_pretty: Availability
+    type: custom
+    size: 12
+    items:
+      - name: update_rate
+        name_cased: updateRate
+        name_pretty: Update rate
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: trip_high
+            description: The property data is updated with high frequency during a trip.
+          - id: 0x01
+            name: trip
+            description: The property data is updated regularly during a trip.
+          - id: 0x02
+            name: trip_start_end
+            description: The property data is updated at the start and end of each trip.
+          - id: 0x03
+            name: trip_end
+            description: The property data is updated by the end of each trip.
+          - id: 0x04
+            name: unknown
+            description: The property data is updated sporadically.
+          - id: 0x05
+            name: not_available
+            description: The property is not available for the vehicle.
+          - id: 0x06
+            name: on_change
+            description: The property data is update as soon as the vehicle updates it internally.
+      - name: rate_limit
+        name_cased: rateLimit
+        name_pretty: Rate limit
+        type: unit.frequency
+        size: 10
+        description: Frequency denoting the rate limit
+      - name: applies_per
+        name_cased: appliesPer
+        name_pretty: Applies per
+        type: enum
+        size: 1
+        description: Rate limit applies per
+        enum_values:
+          - id: 0x00
+            name: app
+          - id: 0x01
+            name: vehicle
+    # MARK: Brake Torque Vectoring
+  - name: brake_torque_vectoring
+    name_cased: brakeTorqueVectoring
+    name_pretty: Brake torque vectoring
+    type: custom
+    size: 2
+    items:
+      - name: axle
+        name_cased: axle
+        type: types.axle
+      - name: state
+        name_cased: state
+        type: types.active_state
+    # MARK: Check Control Message
+  - name: check_control_message
+    name_cased: checkControlMessage
+    name_pretty: Check control message
+    type: custom
+    items:
+      - name: id
+        name_cased: ID
+        name_pretty: ID
+        type: uinteger
+        size: 2
+        description: Check Control Message identifier
+      - name: remaining_time
+        name_cased: remainingTime
+        type: unit.duration
+        size: 10
+        description: Remaining time of the message
+      - name: text
+        name_cased: text
+        type: string
+        description: CCM text
+      - name: status
+        name_cased: status
+        type: string
+        description: CCM status
+    # MARK: Condition Based Service
+  - name: condition_based_service
+    name_cased: conditionBasedService
+    name_pretty: Condition based service
+    type: custom
+    items:
+      - name: year
+        name_cased: year
+        type: uinteger
+        size: 2
+        description: The year
+      - name: month
+        name_cased: month
+        type: uinteger
+        size: 1
+        description: Value between 1 and 12
+      - name: id
+        name_cased: id
+        name_pretty: ID
+        type: uinteger
+        size: 2
+        description: CBS identifier
+      - name: due_status
+        name_cased: dueStatus
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: ok
+          - id: 0x01
+            name: pending
+          - id: 0x02
+            name: overdue
+      - name: text
+        name_cased: text
+        type: string
+        description: CBS text
+      - name: description
+        name_cased: description
+        type: string
+        description: Description
+    # MARK: Confirmed Trouble Code
+  - name: confirmed_trouble_code
+    name_cased: confirmedTroubleCode
+    name_pretty: Confirmed trouble code
+    type: custom
+    items:
+      - name: id
+        name_cased: ID
+        name_pretty: ID
+        type: string
+        description: Identifier
+      - name: ecu_address
+        name_cased: ecuAddress
+        name_pretty: ECU address
+        type: string
+        description: Electronic Control Unit address
+      - name: ecu_variant_name
+        name_cased: ecuVariantName
+        name_pretty: ECU variant name
+        type: string
+        description: Electronic Control Unit variant name
+      - name: status
+        name_cased: status
+        type: string
+        description: Status
+    # MARK: Dashboard Light
+  - name: dashboard_light
+    name_cased: dashboardLight
+    name_pretty: Dashboard light
+    type: custom
+    size: 2
+    items:
+      - name: name
+        name_cased: name
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: high_beam
+            name_pretty: High beam, main beam
+          - id: 0x01
+            name: low_beam
+            name_pretty: Low beam, dipped beam
+          - id: 0x02
+            name: hazard_warning
+            name_pretty: Hazard warning
+          - id: 0x03
+            name: brake_failure
+            name_pretty: Brake failure/brake system malfunction
+          - id: 0x04
+            name: hatch_open
+            name_pretty: Hatch open
+          - id: 0x05
+            name: fuel_level
+            name_pretty: Fuel level
+          - id: 0x06
+            name: engine_coolant_temperature
+            name_pretty: Engine coolant temperature
+          - id: 0x07
+            name: battery_charging_condition
+            name_pretty: Battery charging condition
+          - id: 0x08
+            name: engine_oil
+            name_pretty: Engine oil
+          - id: 0x09
+            name: position_lights
+            name_pretty: Position lights, side lights
+          - id: 0x0a
+            name: front_fog_light
+            name_pretty: Front fog light
+          - id: 0x0b
+            name: rear_fog_light
+            name_pretty: Rear fog light
+          - id: 0x0c
+            name: park_heating
+            name_pretty: Park Heating
+          - id: 0x0d
+            name: engine_indicator
+            name_pretty: Engine indicator
+          - id: 0x0e
+            name: service_call
+            name_pretty: Service, call for maintenance
+          - id: 0x0f
+            name: transmission_fluid_temperature
+            name_pretty: Transmission fluid temperature
+          - id: 0x10
+            name: transmission_failure
+            name_pretty: Transmission failure/malfunction
+          - id: 0x11
+            name: anti_lock_brake_failure
+            name_pretty: Anti-lock brake system failure
+          - id: 0x12
+            name: worn_brake_linings
+            name_pretty: Worn brake linings
+          - id: 0x13
+            name: windscreen_washer_fluid
+            name_pretty: Windscreen washer fluid/windshield washer fluid
+          - id: 0x14
+            name: tire_failure
+            name_pretty: Tire failure/malfunction
+          - id: 0x15
+            name: engine_oil_level
+            name_pretty: Engine oil level
+          - id: 0x16
+            name: engine_coolant_level
+            name_pretty: Engine coolant level
+          - id: 0x17
+            name: steering_failure
+            name_pretty: Steering failure
+          - id: 0x18
+            name: esc_indication
+            name_pretty: Electronic Speed Controller indiction
+          - id: 0x19
+            name: brake_lights
+            name_pretty: Brake lights
+          - id: 0x1a
+            name: adblue_level
+            name_pretty: AdBlue level
+          - id: 0x1b
+            name: fuel_filter_diff_pressure
+            name_pretty: Fuel filter differential pressure
+          - id: 0x1c
+            name: seat_belt
+            name_pretty: Seat belt
+          - id: 0x1d
+            name: advanced_braking
+            name_pretty: Advanced emergency braking system
+          - id: 0x1e
+            name: acc
+            name_pretty: Autonomous/adaptive Cruise Control
+          - id: 0x1f
+            name: trailer_connected
+            name_pretty: Trailer connected
+          - id: 0x20
+            name: airbag
+            name_pretty: Airbag
+          - id: 0x21
+            name: esc_switched_off
+            name_pretty: ESC switched off
+          - id: 0x22
+            name: lane_departure_warning_off
+            name_pretty: Lane departure warning switched off
+          - id: 0x23
+            name: air_filter_minder
+          - id: 0x24
+            name: air_suspension_ride_control_fault
+          - id: 0x25
+            name: all_wheel_drive_disabled
+          - id: 0x26
+            name: anti_theft
+          - id: 0x27
+            name: blind_spot_detection
+          - id: 0x28
+            name: charge_system_fault
+          - id: 0x29
+            name: check_fuel_cap
+          - id: 0x2a
+            name: check_fuel_fill_inlet
+          - id: 0x2b
+            name: check_fuel_filter
+          - id: 0x2c
+            name: dc_temp_warning
+          - id: 0x2d
+            name: dc_warning_status
+          - id: 0x2e
+            name: diesel_engine_idle_shutdown
+          - id: 0x2f
+            name: diesel_engine_warning
+          - id: 0x30
+            name: diesel_exhaust_fluid_system_fault
+          - id: 0x31
+            name: diesel_exhaust_over_temp
+          - id: 0x32
+            name: diesel_exhaust_fluid_quality
+          - id: 0x33
+            name: diesel_filter_regeneration
+          - id: 0x34
+            name: diesel_particulate_filter
+          - id: 0x35
+            name: diesel_pre_heat
+          - id: 0x36
+            name: electric_trailer_brake_connection
+          - id: 0x37
+            name: ev_battery_cell_max_volt_warning
+          - id: 0x38
+            name: ev_battery_cell_min_volt_warning
+          - id: 0x39
+            name: ev_battery_charge_energy_storage_warning
+          - id: 0x3a
+            name: ev_battery_high_level_warning
+          - id: 0x3b
+            name: ev_battery_high_temperature_warning
+          - id: 0x3c
+            name: ev_battery_insulation_resist_warning
+          - id: 0x3d
+            name: ev_battery_jump_level_warning
+          - id: 0x3e
+            name: ev_battery_low_level_warning
+          - id: 0x3f
+            name: ev_battery_max_volt_veh_energy_warning
+          - id: 0x40
+            name: ev_battery_min_volt_veh_energy_warning
+          - id: 0x41
+            name: ev_battery_over_charge_warning
+          - id: 0x42
+            name: ev_battery_poor_cell_warning
+          - id: 0x43
+            name: ev_battery_temp_diff_warning
+          - id: 0x44
+            name: forward_collision_warning
+          - id: 0x45
+            name: fuel_door_open
+          - id: 0x46
+            name: hill_descent_control_fault
+          - id: 0x47
+            name: hill_start_assist_warning
+          - id: 0x48
+            name: hv_interlocking_status_warning
+          - id: 0x49
+            name: lighting_system_failure
+          - id: 0x4a
+            name: malfunction_indicator
+          - id: 0x4b
+            name: motor_controller_temp_warning
+          - id: 0x4c
+            name: park_aid_malfunction
+          - id: 0x4d
+            name: passive_entry_passive_start
+          - id: 0x4e
+            name: powertrain_malfunction
+          - id: 0x4f
+            name: restraints_indicator_warning
+          - id: 0x50
+            name: start_stop_engine_warning
+          - id: 0x51
+            name: traction_control_disabled
+          - id: 0x52
+            name: traction_control_active
+          - id: 0x53
+            name: traction_motor_temp_warning
+          - id: 0x54
+            name: tire_pressure_monitor_system_warning
+          - id: 0x55
+            name: water_in_fuel
+          - id: 0x56
+            name: tire_warning_front_right
+          - id: 0x57
+            name: tire_warning_front_left
+          - id: 0x58
+            name: tire_warning_rear_right
+          - id: 0x59
+            name: tire_warning_rear_left
+          - id: 0x5a
+            name: tire_warning_system_error
+          - id: 0x5b
+            name: battery_low_warning
+          - id: 0x5c
+            name: brake_fluid_warning
+      - name: state
+        name_cased: state
+        type: types.on_off_state
+    # MARK: Departure Time
+  - name: departure_time
+    name_cased: departureTime
+    name_pretty: Departure time
+    type: custom
+    size: 3
+    items:
+      - name: state
+        name_cased: state
+        type: types.active_state
+      - name: time
+        name_cased: time
+        type: types.time
+    # MARK: Diesel Exhaust Filter Status
+  - name: diesel_exhaust_filter_status
+    name_cased: dieselExhaustFilterStatus
+    name_pretty: Diesel exhaust filter status
+    type: custom
+    size: 3
+    items:
+      - name: status
+        name_cased: status
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: normal_operation
+          - id: 0x02
+            name: overloaded
+          - id: 0x03
+            name: at_limit
+          - id: 0x04
+            name: over_limit
+      - name: component
+        name_cased: component
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: exhaust_filter
+          - id: 0x02
+            name: diesel_particulate_filter
+          - id: 0x03
+            name: overboost_code_regulator
+          - id: 0x04
+            name: off_board_regeneration
+      - name: cleaning
+        name_cased: cleaning
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: in_progress
+          - id: 0x02
+            name: complete
+          - id: 0x03
+            name: interrupted
+    # MARK: Distance Over Time
+  - name: distance_over_time
+    name_cased: distanceOverTime
+    name_pretty: distance over time
+    type: custom
+    size: 20
+    items:
+      - name: distance
+        name_cased: distance
+        type: unit.length
+        size: 10
+        description: Distance driven
+      - name: time
+        name_cased: time
+        type: unit.duration
+        size: 10
+        description: Duration of time for the given distance
+    # MARK: Door Position
+  - name: door_position
+    name_cased: doorPosition
+    name_pretty: Door position
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: front_left
+          - id: 0x01
+            name: front_right
+          - id: 0x02
+            name: rear_right
+          - id: 0x03
+            name: rear_left
+          - id: 0x05
+            name: all
+      - name: position
+        name_cased: position
+        type: types.position
+    # MARK: Driver Card
+  - name: driver_card_present
+    name_cased: driverCardPresent
+    name_pretty: Driver card present
+    type: custom
+    size: 2
+    items:
+      - name: driver_number
+        name_cased: driverNumber
+        type: uinteger
+        size: 1
+        description: The driver number
+      - name: card_present
+        name_cased: cardPresent
+        type: enum
+        size: 1
+        controls: 'switch'
+        enum_values:
+          - id: 0x00
+            name: not_present
+          - id: 0x01
+            name: present
+    # MARK: Driver Time State
+  - name: driver_time_state
+    name_cased: driverTimeState
+    name_pretty: Driver time state
+    type: custom
+    size: 2
+    items:
+      - name: driver_number
+        name_cased: driverNumber
+        type: uinteger
+        size: 1
+        description: The driver number
+      - name: time_state
+        name_cased: timeState
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: normal
+          - id: 0x01
+            name: fifteen_min_before_four
+            name_cased: 15minBefore4
+            name_pretty: '15 minutes before 4½ hours'
+          - id: 0x02
+            name: four_reached
+            name_cased: 4Reached
+            name_pretty: '4½ hours reached'
+          - id: 0x03
+            name: fifteen_min_before_nine
+            name_cased: 15minBefore9
+            name_pretty: '15 minutes before 9 hours'
+          - id: 0x04
+            name: nine_reached
+            name_cased: 9Reached
+            name_pretty: '9 hours reached'
+          - id: 0x05
+            name: fifteen_min_before_sixteen
+            name_cased: 15minBefore16
+            name_pretty: '15 minutes before 16 hours'
+          - id: 0x06
+            name: sixteen_reached
+            name_cased: 16Reached
+            name_pretty: '16 hours reached'
+    # MARK: Driver Working State
+  - name: driver_working_state
+    name_cased: driverWorkingState
+    name_pretty: Driving working state
+    type: custom
+    size: 2
+    items:
+      - name: driver_number
+        name_cased: driverNumber
+        type: uinteger
+        size: 1
+        description: The driver number
+      - name: working_state
+        name_cased: workingState
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: resting
+          - id: 0x01
+            name: driver_available
+          - id: 0x02
+            name: working
+          - id: 0x03
+            name: driving
+    # MARK: Driving Mode Activation Period
+  - name: driving_mode_activation_period
+    name_cased: drivingModeActivationPeriod
+    name_pretty: Driving mode activation period
+    type: custom
+    size: 9
+    items:
+      - name: driving_mode
+        name_cased: drivingMode
+        type: types.driving_mode
+      - name: period
+        name_cased: period
+        type: types.percentage
+        description: Percentage of the period used for a driving mode
+    # MARK: Driving Mode Energy Consumption
+  - name: driving_mode_energy_consumption
+    name_cased: drivingModeEnergyConsumption
+    name_pretty: Driving mode energy consumption
+    type: custom
+    size: 11
+    items:
+      - name: driving_mode
+        name_cased: drivingMode
+        type: types.driving_mode
+      - name: consumption
+        name_cased: consumption
+        type: unit.energy
+        size: 10
+        description: Energy consumption in the driving mode
+    # MARK: Failure
+  - name: failure
+    name_cased: failure
+    name_pretty: Failure
+    type: custom
+    items:
+      - name: reason
+        name_cased: reason
+        name_pretty: Reason
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: rate_limit
+          - id: 0x01
+            name: execution_timeout
+          - id: 0x02
+            name: format_error
+          - id: 0x03
+            name: unauthorised
+          - id: 0x04
+            name: unknown
+          - id: 0x05
+            name: pending
+          - id: 0x06
+            name: oem_error
+      - name: description
+        name_cased: description
+        name_pretty: Description
+        type: string
+        description: Failure description
+    # MARK: HMKit Version
+  - name: hmkit_version
+    name_cased: HMKitVersion
+    name_pretty: HMKit version
+    type: custom
+    size: 3
+    items:
+      - name: major
+        name_cased: major
+        type: uinteger
+        size: 1
+        description: HMKit version major number
+      - name: minor
+        name_cased: minor
+        type: uinteger
+        size: 1
+        description: HMKit version minor number
+      - name: patch
+        name_cased: patch
+        type: uinteger
+        size: 1
+        description: HMKit version patch number
+    # MARK: HVAC Weekday Starting Time
+  - name: hvac_weekday_starting_time
+    name_cased: HVACWeekdayStartingTime
+    name_pretty: HVAC weekday starting time
+    type: custom
+    size: 3
+    items:
+      - name: weekday
+        name_cased: weekday
+        type: types.weekday
+      - name: time
+        name_cased: time
+        type: types.time
+    # MARK: Light
+  - name: light
+    name_cased: light
+    name_pretty: Light
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: types.location_longitudinal
+      - name: state
+        name_cased: state
+        type: types.active_state
+    # MARK: Lock
+  - name: lock
+    name_cased: lock
+    name_pretty: Lock
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: types.location
+        description: Door location
+      - name: lock_state
+        name_cased: lockState
+        type: types.lock_state
+        description: Lock state for the door
+    # MARK: OEM Trouble Code Value
+  - name: oem_trouble_code_value
+    name_cased: oemTroubleCodeValue
+    name_pretty: OEM trouble code value
+    type: custom
+    description: OEM trouble code key-pair with identifier
+    items:
+      - name: id
+        name_cased: ID
+        name_pretty: ID
+        type: string
+        description: Identifier for the trouble code
+      - name: key_value
+        name_cased: keyValue
+        type: types.key_value
+        description: Key-value pair for the trouble code
+    # MARK: Person Detected
+  - name: person_detected
+    name_cased: personDetected
+    name_pretty: Person detected
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: types.seat_location
+      - name: detected
+        name_cased: detected
+        type: types.detected
+    # MARK: Price Tariff
+  - name: price_tariff
+    name_cased: priceTariff
+    name_pretty: Price tariff
+    type: custom
+    items:
+      - name: pricing_type
+        name_cased: pricingType
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: starting_fee
+          - id: 0x01
+            name: per_minute
+          - id: 0x02
+            name: per_kwh
+            name_pretty: Per kWh
+      - name: price
+        name_cased: price
+        type: double
+        size: 8
+        description: The price
+      - name: currency
+        name_cased: currency
+        type: string
+        description: The currency alphabetic code per ISO 4217 or crypto currency symbol
+    # MARK: Reading Lamp
+  - name: reading_lamp
+    name_cased: readingLamp
+    name_pretty: Reading lamp
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: types.location
+      - name: state
+        name_cased: state
+        type: types.active_state
+    # MARK: Reduction Time
+  - name: reduction_time
+    name_cased: reductionTime
+    name_pretty: Reduction time
+    type: custom
+    size: 3
+    items:
+      - name: start_stop
+        name_cased: startStop
+        type: types.start_stop
+      - name: time
+        name_cased: time
+        type: types.time
+    # MARK: RGB Colour
+  - name: rgb_colour
+    name_cased: RGBColour
+    name_pretty: RGB colour
+    type: custom
+    size: 3
+    items:
+      - name: red
+        name_cased: red
+        type: uinteger
+        size: 1
+        description: The red component of RGB
+      - name: green
+        name_cased: green
+        type: uinteger
+        size: 1
+        description: The green component of RGB
+      - name: blue
+        name_cased: blue
+        type: uinteger
+        size: 1
+        description: The blue component of RGB
+    # MARK: Seatbelt State
+  - name: seatbelt_state
+    name_cased: seatbeltState
+    name_pretty: Seatbelt state
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: types.seat_location
+      - name: fastened_state
+        name_cased: fastenedState
+        type: enum
+        size: 1
+        controls: 'switch'
+        enum_values:
+          - id: 0x00
+            name: not_fastened
+          - id: 0x01
+            name: fastened
+    # MARK: Spring Rate
+  - name: spring_rate
+    name_cased: springRate
+    name_pretty: Spring rate
+    type: custom
+    size: 11
+    items:
+      - name: axle
+        name_cased: axle
+        type: types.axle
+      - name: spring_rate
+        name_cased: springRate
+        type: unit.torque
+        size: 10
+        description: The suspension spring rate
+    # MARK: Timer
+  - name: timer
+    name_cased: timer
+    name_pretty: Timer
+    type: custom
+    size: 9
+    items:
+      - name: timer_type
+        name_cased: timerType
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: preferred_start_time
+          - id: 0x01
+            name: preferred_end_time
+          - id: 0x02
+            name: departure_date
+      - name: date
+        name_cased: date
+        type: timestamp
+        size: 8
+        description: Timer date
+    # MARK: Tire Pressure
+  - name: tire_pressure
+    name_cased: tirePressure
+    name_pretty: Tire pressure
+    type: custom
+    size: 11
+    items:
+      - name: location
+        name_cased: location
+        type: types.location_wheel
+      - name: pressure
+        name_cased: pressure
+        type: unit.pressure
+        size: 10
+        description: Tire pressure
+    # MARK: Tire Pressure Status
+  - name: tire_pressure_status
+    name_cased: tirePressureStatus
+    name_pretty: Tire pressure status
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: types.location_wheel
+      - name: status
+        name_cased: status
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: normal
+          - id: 0x01
+            name: low
+          - id: 0x02
+            name: alert
+    # MARK: Tire Temperature
+  - name: tire_temperature
+    name_cased: tireTemperature
+    name_pretty: Tire temperature
+    type: custom
+    size: 11
+    items:
+      - name: location
+        name_cased: location
+        type: types.location_wheel
+      - name: temperature
+        name_cased: temperature
+        type: unit.temperature
+        size: 10
+        description: Tire temperature
+    # MARK: Trouble Code
+  - name: trouble_code
+    name_cased: troubleCode
+    name_pretty: Trouble code
+    type: custom
+    items:
+      - name: occurrences
+        name_cased: occurrences
+        type: uinteger
+        size: 1
+        description: Number of occurrences
+      - name: id
+        name_cased: ID
+        name_pretty: ID
+        type: string
+        description: Identifier
+      - name: ecu_id
+        name_cased: ecuID
+        name_pretty: ECU ID
+        type: string
+        description: Electronic Control Unit identifier
+      - name: status
+        name_cased: status
+        type: string
+        description: Status
+      - name: system
+        name_cased: system
+        name_pretty: System
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: body
+          - id: 0x02
+            name: chassis
+          - id: 0x03
+            name: powertrain
+          - id: 0x04
+            name: network
+    # MARK: Webhook
+  - name: webhook
+    name_cased: webhook
+    name_pretty: Webhook
+    type: custom
+    size: 2
+    items:
+      - name: available
+        name_cased: available
+        type: enum
+        size: 1
+        description: If the specified webhook is available.
+        enum_values:
+          - id: 0x00
+            name: unavailable
+          - id: 0x01
+            name: available
+      - name: event
+        name_cased: event
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: ping
+            description: Sent every time when the webhook is configured or changed.
+          - id: 0x01
+            name: trip_started
+            description: Sent every time a vehicle starts a trip.
+          - id: 0x02
+            name: trip_ended
+            description: Sent when a vehicle ends a trip.
+          - id: 0x03
+            name: vehicle_location_changed
+            description: Sent when the vehicle location changes.
+          - id: 0x04
+            name: authorization_changed
+            description: Sent when the authorization status changes.
+          - id: 0x05
+            name: tire_pressure_changed
+            description: Sent when the tire pressure changed to low or too high.
+    # MARK: Wheel RPM
+  - name: wheel_rpm
+    name_cased: wheelRPM
+    name_pretty: Wheel RPM
+    type: custom
+    size: 11
+    items:
+      - name: location
+        name_cased: location
+        type: types.location_wheel
+        description: Wheel location
+      - name: rpm
+        name_cased: RPM
+        name_pretty: RPM
+        type: unit.angular_velocity
+        size: 10
+        description: The RPM measured at this wheel
+    # MARK: Window Open Percentage
+  - name: window_open_percentage
+    name_cased: windowOpenPercentage
+    name_pretty: Window open percentage
+    type: custom
+    size: 9
+    items:
+      - name: location
+        name_cased: location
+        type: types.window_location
+      - name: open_percentage
+        name_cased: openPercentage
+        type: types.percentage
+    # MARK: Window Position
+  - name: window_position
+    name_cased: windowPosition
+    name_pretty: Window position
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: types.window_location
+      - name: position
+        name_cased: position
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: closed
+          - id: 0x01
+            name: open
+          - id: 0x02
+            name: intermediate
+            disabled_in_setter: true

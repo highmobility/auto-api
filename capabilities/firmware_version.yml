@@ -1,0 +1,53 @@
+name: firmware_version
+name_cased: firmwareVersion
+name_pretty: Firmware Version
+category: api_structure
+authorization: false
+
+identifier:
+  msb: 0x00
+  lsb: 0x03
+
+api:
+  intro: 4
+  update: 11
+
+getters:
+  name: get_firmware_version
+
+state: all
+
+properties:
+  - id: 0x01
+    name: hmkit_version
+    name_cased: hmKitVersion
+    name_pretty: HMKit version
+    type: types.hmkit_version
+    description: HMKit version
+    examples:
+      - data_component: '010f21'
+        values:
+          major: 1
+          minor: 15
+          patch: 33
+        description: HMKit version is 1.15.33
+  - id: 0x02
+    name: hmkit_build_name
+    name_cased: hmKitBuildName
+    name_pretty: HMKit build name
+    type: string
+    description: HMKit version build name
+    examples:
+      - data_component: '6274737461636b2d75617274'
+        value: 'btstack-uart'
+        description: Build name is 'btstack-uart'
+  - id: 0x03
+    name: application_version
+    name_cased: applicationVersion
+    name_pretty: Application version
+    type: string
+    description: Application version
+    examples:
+      - data_component: '76312e352d70726f64'
+        value: 'v1.5-prod'
+        description: Application version is 'v1.5-prod'

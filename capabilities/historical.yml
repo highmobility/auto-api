@@ -1,0 +1,94 @@
+name: historical
+name_cased: historical
+name_pretty: Historical
+category: api_structure
+authorization: false
+
+identifier:
+  msb: 0x00
+  lsb: 0x12
+
+api:
+  intro: 8
+  update: 12
+
+disabled_in: [ble]
+
+setters:
+  - name: request_states
+    mandatory: [0x02]
+    optional: [0x03, 0x04]
+    description: Request historical states.
+  - name: get_trips
+    optional: [0x03, 0x04]
+    constants:
+      - property_id: 0x02
+        value: [0x00, 0x6a]
+    description: Request history of trips travelled with the vehicle.
+
+state: [0x01]
+
+properties:
+  - id: 0x01
+    name: states
+    name_cased: states
+    name_pretty: States
+    type: types.capability_state
+    multiple: true
+    name_singular: state
+    examples:
+      - data_component: '0c0020010600040100010004000501000200010400050100020201a2000b010008000001598938e788'
+        values:
+          doors:
+            locks_state: 'unlocked'
+            positions:
+              - location: 'front_left'
+                position: 'open'
+              - location: 'rear_right'
+                position: 'open'
+            timestamp: '2017-01-10T16:32:05.000Z'
+        description: Doors capability - front left and rear right door is open while locks are unlocked, recorded at 10. January 2017 at 16:32:05 GMT
+      - data_component: '0c0023010b0004010001010c00040100010018000d01000a140240418000000000001c000d01000a12044081580000000000a2000b010008000001598938e788'
+        values:
+          charging:
+            charge_port_state: 'open'
+            charge_mode: 'immediate'
+            charging_rate:
+              kilowatts: 35.0
+            max_range:
+              kilometers: 555.0
+            timestamp: '2017-01-10T16:32:05.000Z'
+        description: Charging capability - charging port is open, charge mode is immediate, charging rate is 35.0kW and max range is 555.0km, recorded at 10. January 2017 at 16:32:05 GMT
+  - id: 0x02
+    name: capability_id
+    name_cased: capabilityID
+    name_pretty: Capability ID
+    type: uinteger
+    size: 2
+    description: The identifier of the Capability
+    examples:
+      - data_component: '0060'
+        value: 0x0060
+        description: Home Charger capability identifier
+  - id: 0x03
+    name: start_date
+    name_cased: startDate
+    name_pretty: Start date
+    type: timestamp
+    size: 8
+    description: Start date for historical data query
+    examples:
+      - data_component: '0000016da6524300'
+        value: '2019-10-07T13:04:32.000Z'
+        description: Start date is 7. October 2019 at 13:04:32 GMT
+  - id: 0x04
+    name: end_date
+    name_cased: endDate
+    name_pretty: End date
+    type: timestamp
+    size: 8
+    description: End date for historical data query
+    examples:
+      - data_component: '0000016d71e2c4f0'
+        value: '2019-09-27T08:42:30.000Z'
+        description: End date is 27. September 2019 at 08:42:30 GMT

@@ -1,0 +1,30 @@
+name: browser
+name_cased: browser
+name_pretty: Browser
+category: headunit
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x49
+
+api:
+  intro: 4
+  update: 11
+
+setters:
+  - name: load_url
+    mandatory: [0x01]
+    description: Load a URL in the headunit browser. A URL shortener can be used in other cases. Note that for the vehicle emulator the URL has to be for a secure site (HTTPS).
+
+properties:
+  - id: 0x01
+    name: url
+    type: string
+    name_cased: url
+    name_pretty: URL
+    description: The URL
+    examples:
+      - data_component: '68747470733a2f2f61626f75742e686967682d6d6f62696c6974792e636f6d'
+        value: 'https://about.high-mobility.com'
+        description: URL is "https://about.high-mobility.com"

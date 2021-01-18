@@ -1,0 +1,93 @@
+name: navi_destination
+name_cased: naviDestination
+name_pretty: Navi Destination
+category: poi
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x31
+
+api:
+  intro: 4
+  update: 12
+
+getters:
+  name: get_navi_destination
+
+setters:
+  - name: set_navi_destination
+    mandatory: [0x01]
+    optional: [0x02]
+    description: Set the navigation destination. This will be forwarded to the navigation system of the vehicle.
+
+state: all
+
+properties:
+  - id: 0x01
+    name: coordinates
+    name_cased: coordinates
+    name_pretty: Coordinates
+    type: types.coordinates
+    examples:
+      - data_component: '404a428f9f44d445402acf562174c4ce'
+        values:
+          latitude: 52.520008
+          longitude: 13.404954
+        description: Coordinates are 52.520008:13.404954
+  - id: 0x02
+    name: destination_name
+    name_cased: destinationName
+    name_pretty: Destination name
+    type: string
+    description: Destination name
+    examples:
+      - data_component: '4265726c696e'
+        value: 'Berlin'
+        description: Destination name is 'Berlin'
+  - id: 0x03
+    name: data_slots_free
+    name_cased: dataSlotsFree
+    name_pretty: Data slots free
+    type: uinteger
+    size: 1
+    description: Remaining number of POI data slots available.
+    examples:
+      - data_component: '0e'
+        value: 14
+        description: 14 available POI data slots
+  - id: 0x04
+    name: data_slots_max
+    name_cased: dataSlotsMax
+    name_pretty: Data slots max
+    type: uinteger
+    size: 1
+    description: Maximum number of POI data slots.
+    examples:
+      - data_component: '1e'
+        value: 30
+        description: Maximum number of POI data slots is 30
+  - id: 0x05
+    name: arrival_duration
+    name_cased: arrivalDuration
+    name_pretty: Arrival duration
+    type: unit.duration
+    size: 10
+    description: Remaining time until reaching the destination.
+    examples:
+      - data_component: '07024004cccccccccccd'
+        value:
+          hours: 2.6
+        description: Remaining time to destination is 2.6h
+  - id: 0x06
+    name: distance_to_destination
+    name_cased: distanceToDestination
+    name_pretty: Distance to destination
+    type: unit.length
+    size: 10
+    description: Remaining distance to reach the destination.
+    examples:
+      - data_component: '12044094e40000000000'
+        value:
+          kilometers: 1337.0
+        description: Remaining distance to destination is 1337.0km

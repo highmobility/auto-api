@@ -1,0 +1,292 @@
+name: vehicle_information
+name_cased: vehicleInformation
+name_pretty: Vehicle Information
+category: api_structure
+authorization: false
+
+identifier:
+  msb: 0x00
+  lsb: 0x14
+
+api:
+  intro: 12
+  update: 12
+
+getters:
+  name: get_vehicle_information
+
+state: all
+
+properties:
+  - id: 0x02
+    name: powertrain
+    name_cased: powertrain
+    name_pretty: Powertrain
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: unknown
+      - id: 0x01
+        name: all_electric
+      - id: 0x02
+        name: combustion_engine
+      - id: 0x03
+        name: phev
+        name_pretty: Plug-in Hybrid EV
+      - id: 0x04
+        name: hydrogen
+      - id: 0x05
+        name: hydrogen_hybrid
+    examples:
+      - data_component: '01'
+        value: 'all_electric'
+        description: Powertrain is all electric
+  - id: 0x03
+    name: model_name
+    name_cased: modelName
+    name_pretty: Model name
+    type: string
+    description: The vehicle model name
+    examples:
+      - data_component: '547970652058'
+        value: 'Type X'
+        description: Model name is 'Type X'
+  - id: 0x04
+    name: name
+    name_cased: name
+    name_pretty: Name
+    type: string
+    description: The vehicle name (nickname)
+    examples:
+      - data_component: '537065656479'
+        value: 'Speedy'
+        description: Name of the vehicle is 'Speedy'
+  - id: 0x05
+    name: license_plate
+    name_cased: licensePlate
+    name_pretty: Licence plate
+    type: string
+    description: The license plate number
+    examples:
+      - data_component: '414243313233'
+        value: 'ABC123'
+        description: Licence plate number is 'ABC123'
+  - id: 0x06
+    name: sales_designation
+    name_cased: salesDesignation
+    name_pretty: Sales designation
+    type: string
+    description: The sales designation of the model
+    examples:
+      - data_component: '5061636b6167652b'
+        value: 'Package+'
+        description: Sales designation is 'Package+'
+  - id: 0x07
+    name: model_year
+    name_cased: modelYear
+    name_pretty: Model year
+    type: uinteger
+    size: 2
+    description: The vehicle model manufacturing year number
+    examples:
+      - data_component: '07e3'
+        value: 2019
+        description: Vehicle manufacturing year is 2019
+  - id: 0x08
+    name: colour_name
+    name_cased: colourName
+    name_pretty: Colour name
+    type: string
+    description: The colour name
+    examples:
+      - data_component: '4573746f72696c20426c6175'
+        value: 'Estoril Blau'
+        description: Colour is named 'Estoril Blau'
+  - id: 0x09
+    name: power_in_kw
+    name_cased: powerInKW
+    name_pretty: Power in kW
+    deprecated:
+      new_name: power
+      reason: removed the unit from the name
+    type: unit.power
+    size: 10
+    description: The power of the vehicle
+    examples:
+      - data_component: '1402406b800000000000'
+        value:
+          kilowatts: 220.0
+        description: Vehicle has 220.0kW of power
+  - id: 0x0a
+    name: number_of_doors
+    name_cased: numberOfDoors
+    name_pretty: Number of doors
+    type: uinteger
+    size: 1
+    description: The number of doors
+    examples:
+      - data_component: '05'
+        value: 5
+        description: Vehicle has 5 doors
+  - id: 0x0b
+    name: number_of_seats
+    name_cased: numberOfSeats
+    name_pretty: Number of seats
+    type: uinteger
+    size: 1
+    description: The number of seats
+    examples:
+      - data_component: '05'
+        value: 5
+        description: Vehicle has 5 seats
+  - id: 0x0c
+    name: engine_volume
+    name_cased: engineVolume
+    name_pretty: Engine volume
+    type: unit.volume
+    size: 10
+    description: The engine volume displacement
+    examples:
+      - data_component: '19024004000000000000'
+        value:
+          liters: 2.5
+        description: Engine volume is 2.5L
+  - id: 0x0d
+    name: engine_max_torque
+    name_cased: engineMaxTorque
+    name_pretty: Engine max torque
+    type: unit.torque
+    size: 10
+    description: The maximum engine torque
+    examples:
+      - data_component: '1800406ea00000000000'
+        value:
+          newton_meters: 245.0
+        description: Engine maximum torque is 245.0Nm
+  - id: 0x0e
+    name: gearbox
+    name_cased: gearbox
+    name_pretty: Gearbox
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: manual
+      - id: 0x01
+        name: automatic
+      - id: 0x02
+        name: semi_automatic
+    examples:
+      - data_component: '01'
+        value: 'automatic'
+        description: Vehicle has an automatic gearbox
+  - id: 0x0f
+    name: display_unit
+    name_cased: displayUnit
+    name_pretty: Display unit
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: km
+      - id: 0x01
+        name: miles
+    examples:
+      - data_component: '00'
+        value: 'km'
+        description: Vehicle displays values in kilometers
+  - id: 0x10
+    name: driver_seat_location
+    name_cased: driverSeatLocation
+    name_pretty: Driver seat location
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: left
+      - id: 0x01
+        name: right
+      - id: 0x02
+        name: center
+    examples:
+      - data_component: '00'
+        value: 'left'
+        description: Driver seat is located on the left
+  - id: 0x11
+    name: equipments
+    name_cased: equipments
+    name_pretty: Equipments
+    type: string
+    multiple: true
+    name_singular: equipment
+    description: Names of equipment the vehicle is equipped with
+    examples:
+      - data_component: '5061726b696e672073656e736f7273'
+        value: 'Parking sensors'
+        description: Parking sensors are equipped (installed)
+      - data_component: '4175746f6d6174696320776970657273'
+        value: 'Automatic wipers'
+        description: Automatic wipers are equipped (installed)
+  - id: 0x13
+    name: power
+    name_cased: power
+    name_pretty: Power
+    type: unit.power
+    size: 10
+    description: The power of the vehicle
+    examples:
+      - data_component: '1402406b800000000000'
+        value:
+          kilowatts: 220.0
+        description: Vehicle has 220kW of power
+  - id: 0x14
+    name: language
+    name_cased: language
+    name_pretty: Language
+    type: string
+    description: The language on headunit
+    examples:
+      - data_component: '6573746f6e69616e'
+        value: 'estonian'
+        description: Headunit is in estonian language
+  - id: 0x15
+    name: timeformat
+    name_cased: timeformat
+    name_pretty: Timeformat
+    type: enum
+    size: 1
+    description: The timeformat on headunit
+    enum_values:
+      - id: 0x00
+        name: twelve_h
+      - id: 0x01
+        name: twenty_four_h
+    examples:
+      - data_component: '01'
+        value: 'twenty_four_h'
+        description: Headunit is using a 24h timeformat
+  - id: 0x16
+    name: drive
+    name_cased: drive
+    name_pretty: Drive
+    type: enum
+    size: 1
+    description: Wheels driven by the engine
+    enum_values:
+      - id: 0x00
+        name: fwd
+        description: Front-wheel drive
+      - id: 0x01
+        name: rwd
+        description: Rear-wheel drive
+      - id: 0x02
+        name: four_wd
+        description: Four-wheel drive
+      - id: 0x03
+        name: awd
+        description: All-wheel drive
+    examples:
+      - data_component: '01'
+        value: 'rwd'
+        description: Vehicle has rear-wheel drive

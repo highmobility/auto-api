@@ -1,0 +1,88 @@
+name: remote_control
+name_cased: remoteControl
+name_pretty: Remote Control
+category: parking
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x27
+
+api:
+  intro: 2
+  update: 12
+
+disabled_in: [web]
+
+getters:
+  name: get_control_state
+  skip_properties_getter: true
+
+setters:
+  - name: control_command
+    optional: [0x02, 0x03]
+    description: To be sent every time the controls for the vehicle wants to be changed or once a second if the controls remain the same. If the vehicle does not receive the command every second it will stop the control mode.
+  - name: start_control
+    constants:
+      - property_id: 0x01
+        value: [0x02]
+    description: Attempt to start the control mode of the vehicle.
+  - name: stop_control
+    constants:
+      - property_id: 0x01
+        value: [0x05]
+    description: Attempt to stop the control mode of the vehicle.
+
+state: [0x01, 0x02]
+
+properties:
+  - id: 0x01
+    name: control_mode
+    name_cased: controlMode
+    name_pretty: Control mode
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: unavailable
+      - id: 0x01
+        name: available
+      - id: 0x02
+        name: started
+        verb: start
+      - id: 0x03
+        name: failed_to_start
+      - id: 0x04
+        name: aborted
+        verb: abort
+      - id: 0x05
+        name: ended
+        verb: stop
+    examples:
+      - data_component: '02'
+        value: 'started'
+        description: Remote control is started
+  - id: 0x02
+    name: angle
+    name_cased: angle
+    name_pretty: Angle
+    type: unit.angle
+    size: 10
+    description: Wheel base angle
+    examples:
+      - data_component: '02004049000000000000'
+        value:
+          degrees: 50.0
+        description: Angle is 50.0°
+  - id: 0x03
+    name: speed
+    name_cased: speed
+    name_pretty: Speed
+    type: unit.speed
+    size: 10
+    description: Target speed
+    examples:
+      - data_component: '16014014000000000000'
+        value:
+          kilometers_per_hour: 5.0
+        description: Speed is 5.0km/h

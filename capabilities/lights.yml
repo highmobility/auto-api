@@ -1,0 +1,175 @@
+name: lights
+name_cased: lights
+name_pretty: Lights
+category: chassis
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x36
+
+api:
+  intro: 3
+  update: 12
+
+getters: {}
+
+setters:
+  - name: control_lights
+    optional: [0x01, 0x02, 0x04, 0x07, 0x08, 0x09]
+    description: Set the lights state.
+
+state: all
+
+properties:
+  - id: 0x01
+    name: front_exterior_light
+    name_cased: frontExteriorLight
+    name_pretty: Front exterior light
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: inactive
+        verb: deactivate
+      - id: 0x01
+        name: active
+        verb: activate
+      - id: 0x02
+        name: active_with_full_beam
+        verb: activate_with_full_beam
+      - id: 0x03
+        name: drl
+        verb: activate_drl
+        name_pretty: Daylight Running Lamps
+      - id: 0x04
+        name: automatic
+    examples:
+      - data_component: '02'
+        value: 'active_with_full_beam'
+        description: Front exterior lights are active with full beam
+  - id: 0x02
+    name: rear_exterior_light
+    name_cased: rearExteriorLight
+    name_pretty: Rear exterior light
+    type: types.active_state
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Rear exterior lights are active
+  - id: 0x04
+    name: ambient_light_colour
+    name_cased: ambientLightColour
+    name_pretty: Ambient light colour
+    type: types.rgb_colour
+    examples:
+      - data_component: 'ff0000'
+        values:
+          red: 255
+          green: 0
+          blue: 0
+        description: Ambient light is red
+  - id: 0x05
+    name: reverse_light
+    name_cased: reverseLight
+    name_pretty: Reverse light
+    type: types.active_state
+    examples:
+      - data_component: '00'
+        value: 'inactive'
+        description: Reverse light is inactive
+  - id: 0x06
+    name: emergency_brake_light
+    name_cased: emergencyBrakeLight
+    name_pretty: Emergency brake light
+    type: types.active_state
+    examples:
+      - data_component: '00'
+        value: 'inactive'
+        description: Emergency brake light is inactive
+  - id: 0x07
+    name: fog_lights
+    name_cased: fogLights
+    name_pretty: Fog lights
+    type: types.light
+    multiple: true
+    name_singular: fog_light
+    examples:
+      - data_component: '0000'
+        values:
+          location: 'front'
+          state: 'inactive'
+        description: Front fog lights are inactive
+      - data_component: '0101'
+        values:
+          location: 'rear'
+          state: 'active'
+        description: Rear fog lights are active
+  - id: 0x08
+    name: reading_lamps
+    name_cased: readingLamps
+    name_pretty: Reading lamps
+    type: types.reading_lamp
+    multiple: true
+    name_singular: reading_lamp
+    examples:
+      - data_component: '0001'
+        values:
+          location: 'front_left'
+          state: 'active'
+        description: Front left reading lamp is active
+      - data_component: '0101'
+        values:
+          location: 'front_right'
+          state: 'active'
+        description: Front right reading lamp is active
+      - data_component: '0200'
+        values:
+          location: 'rear_right'
+          state: 'inactive'
+        description: Rear right reading lamp is inactive
+      - data_component: '0300'
+        values:
+          location: 'rear_left'
+          state: 'inactive'
+        description: Rear left reading lamp is inactive
+  - id: 0x09
+    name: interior_lights
+    name_cased: interiorLights
+    name_pretty: Interior lights
+    type: types.light
+    multiple: true
+    name_singular: interior_light
+    examples:
+      - data_component: '0000'
+        values:
+          location: 'front'
+          state: 'inactive'
+        description: Front interior lights are inactive
+      - data_component: '0101'
+        values:
+          location: 'rear'
+          state: 'active'
+        description: Rear reading lights are active
+  - id: 0x0a
+    name: switch_position
+    name_cased: switchPosition
+    name_pretty: Switch position
+    type: enum
+    size: 1
+    description: Position of the rotary light switch
+    enum_values:
+      - id: 0x00
+        name: automatic
+      - id: 0x01
+        name: dipped_headlights
+      - id: 0x02
+        name: parking_light_right
+      - id: 0x03
+        name: parking_light_left
+      - id: 0x04
+        name: sidelights
+    examples:
+      - data_component: '02'
+        value: 'parking_light_right'
+        description: Rotary light switch position parking light right

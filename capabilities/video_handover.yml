@@ -1,0 +1,73 @@
+name: video_handover
+name_cased: videoHandover
+name_pretty: Video Handover
+category: headunit
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x43
+
+api:
+  intro: 4
+  update: 12
+
+setters:
+  - name: video_handover
+    mandatory: [0x01]
+    optional: [0x04, 0x03]
+    description: Hand over a video from smart device to vehicle headunit to be shown in the vehicle display. The emulator supports HTML5 video player formats .mp4 and .webm.
+
+properties:
+  - id: 0x01
+    name: url
+    name_cased: url
+    name_pretty: URL
+    type: string
+    description: URL string
+    examples:
+      - data_component: '68747470733a2f2f6269742e6c792f326f6259374735'
+        value: 'https://bit.ly/2obY7G5'
+        description: Video URL is 'https://bit.ly/2obY7G5'
+  - id: 0x02
+    name: starting_second
+    name_cased: startingSecond
+    name_pretty: Starting second
+    deprecated:
+      new_name: starting_time
+      reason: removed the unit from the name
+    type: unit.duration
+    size: 10
+    description: Start the video from the given time
+    examples:
+      - data_component: '07004008000000000000'
+        value:
+          seconds: 3.0
+        description: Start from 3.0s
+  - id: 0x03
+    name: screen
+    name_cased: screen
+    name_pretty: Screen
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: front
+      - id: 0x01
+        name: rear
+    examples:
+      - data_component: '01'
+        value: 'rear'
+        description: Play the video on the rear screen
+  - id: 0x04
+    name: starting_time
+    name_cased: startingTime
+    name_pretty: Starting time
+    type: unit.duration
+    size: 10
+    description: Start the video from the given time
+    examples:
+      - data_component: '07004004000000000000'
+        value:
+          seconds: 2.5
+        description: Start from 2.5s

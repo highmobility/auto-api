@@ -1,0 +1,57 @@
+name: capabilities
+name_cased: capabilities
+name_pretty: Capabilities
+category: api_structure
+authorization: false
+
+identifier:
+  msb: 0x00
+  lsb: 0x10
+
+api:
+  intro: 2
+  update: 12
+
+getters:
+  name: get_capabilities
+
+state: all
+
+properties:
+  - id: 0x01
+    name: capabilities
+    name_cased: capabilities
+    name_pretty: Capabilities
+    type: types.supported_capability
+    multiple: true
+    name_singular: capability
+    examples:
+      - data_component: '002000050203040506'
+        values:
+          capability_id: 0x0020
+          supported_property_ids: [0x02, 0x03, 0x04, 0x05, 0x06]
+        description: Doors supports inside locks, locks, positions, inside locks state and locks state properties
+      - data_component: '00230003020811'
+        values:
+          capability_id: 0x0023
+          supported_property_ids: [0x02, 0x08, 0x11]
+        description: Charging supports estimated range, charge limit and departure times properties
+  - id: 0x02
+    name: webhooks
+    name_cased: webhooks
+    name_pretty: Webhooks
+    type: types.webhook
+    multiple: true
+    examples:
+      - data_component: '0101'
+        values:
+          available: 'available'
+          event: 'trip_started'
+        description: Webhook 'trip_started' is available to use.
+      - data_component: '0102'
+        values:
+          available: 'available'
+          event: 'trip_ended'
+        description: Webhook 'trip_ended' is available to use.
+
+

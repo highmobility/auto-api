@@ -1,0 +1,48 @@
+#
+# property_components.yml
+#
+#
+# Defines some of the property components.
+# One property can have many components (i.e. data, timestamp)
+#
+# [id, size_msb, size_lsb, component_data...]
+#
+
+
+property_components:
+
+  - id: 0x01
+    name: data
+    name_cased: data
+    name_pretty: Data
+    type: bytes
+    description: The main component used to transmit values
+
+  - id: 0x02
+    name: timestamp
+    name_cased: timestamp
+    name_pretty: Timestamp
+    type: timestamp
+    description: The timestamp (when the data was created) of the property
+
+  - id: 0x03
+    name: failure
+    name_cased: failure
+    name_pretty: Failure
+    type: types.failure
+    description: Information about why retrieving a property failed
+
+  - id: 0x05
+    name: availability
+    name_cased: availability
+    name_pretty: Availability
+    type: types.availability
+    size: 12
+    examples:
+      - data_component: '000e003fe999999999999a01'
+        values:
+          update_rate: 'trip_high'
+          rate_limit:
+            hertz: 0.8
+          applies_per: 'vehicle'
+        description: Property is updated with a high frequency of 0.8Hz per vehicle.

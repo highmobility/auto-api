@@ -1,0 +1,34 @@
+name: valet_mode
+name_cased: valetMode
+name_pretty: Valet Mode
+category: parking
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x28
+
+api:
+  intro: 3
+  update: 11
+
+getters:
+  name: get_valet_mode
+
+setters:
+  - name: activate_deactivate_valet_mode
+    mandatory: [0x01]
+    description: Activate or deactivate valet mode.
+
+state: all
+
+properties:
+  - id: 0x01
+    name: status
+    name_cased: status
+    name_pretty: Status
+    type: types.active_state
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Valet mode is active

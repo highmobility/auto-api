@@ -1,0 +1,72 @@
+name: multi_command
+name_cased: multiCommand
+name_pretty: Multi Command
+category: api_structure
+authorization: false
+
+identifier:
+  msb: 0x00
+  lsb: 0x13
+
+api:
+  intro: 8
+  update: 11
+
+setters:
+  - name: multi_command
+    mandatory: [0x02]
+    description: Send mutliple commands at once.
+
+state: [0x01]
+
+properties:
+  - id: 0x01
+    name: multi_states
+    name_cased: multiStates
+    name_pretty: Multi-states
+    type: types.capability_state
+    multiple: true
+    name_singular: multi_state
+    description: The incoming states
+    examples:
+      - data_component: '0c0020010600040100010004000501000200010400050100020201a2000b010008000001598938e788'
+        values:
+          doors:
+            locks_state: 'unlocked'
+            positions:
+              - location: 'front_left'
+                position: 'open'
+              - location: 'rear_right'
+                position: 'open'
+            timestamp: '2017-01-10T16:32:05.000Z'
+        description: Doors capability - front left and rear right door is open while locks are unlocked, recorded at 10. January 2017 at 16:32:05 GMT
+      - data_component: '0c0023010b0004010001010c00040100010018000d01000a140240418000000000001c000d01000a12044081580000000000a2000b010008000001598938e788'
+        values:
+          charging:
+            charge_port_state: 'open'
+            charge_mode: 'immediate'
+            charging_rate:
+              kilowatts: 35.0
+            max_range:
+              kilometers: 555.0
+            timestamp: '2017-01-10T16:32:05.000Z'
+        description: Charging capability - charging port is open, charge mode is immediate, charging rate is 35.0kW and max range is 555.0km, recorded at 10. January 2017 at 16:32:05 GMT
+  - id: 0x02
+    name: multi_commands
+    name_cased: multiCommands
+    name_pretty: Multi-commands
+    type: types.capability_state
+    multiple: true
+    name_singular: multi_command
+    description: The outgoing commands
+    examples:
+      - data_component: '0c00200106000401000101'
+        values:
+          doors:
+            inside_locks_state: 'locked'
+        description: Lock inside door locks
+      - data_component: '0c00350101000401000100'
+        values:
+          ignition:
+            status: 'off'
+        description: Turn ignition off

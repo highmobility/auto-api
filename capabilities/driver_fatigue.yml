@@ -1,0 +1,40 @@
+name: driver_fatigue
+name_cased: driverFatigue
+name_pretty: Driver Fatigue
+category: health
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x41
+
+api:
+  intro: 4
+  update: 11
+
+disabled_in: [web]
+
+getters: {}
+
+state: all
+
+properties:
+  - id: 0x01
+    name: detected_fatigue_level
+    name_cased: detectedFatigueLevel
+    name_pretty: Detected fatigue level
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: light
+      - id: 0x01
+        name: pause_recommended
+      - id: 0x02
+        name: action_needed
+      - id: 0x03
+        name: car_ready_to_take_over
+    examples:
+      - data_component: '01'
+        value: 'pause_recommended'
+        description: Driver is recommended to take a pause

@@ -1,0 +1,88 @@
+name: cruise_control
+name_cased: cruiseControl
+name_pretty: Cruise Control
+category: chassis
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x62
+
+api:
+  intro: 7
+  update: 12
+
+disabled_in: [web]
+
+getters: {}
+
+setters:
+  - name: activate_deactivate_cruise_control
+    mandatory: [0x01]
+    optional: [0x03]
+    description: Activate or deactivate cruise control.
+
+state: all
+
+properties:
+  - id: 0x01
+    name: cruise_control
+    name_cased: cruiseControl
+    name_pretty: Cruise control
+    type: types.active_state
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Cruise control is active
+  - id: 0x02
+    name: limiter
+    name_cased: limiter
+    name_pretty: Limiter
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: not_set
+      - id: 0x01
+        name: higher_speed_requested
+      - id: 0x02
+        name: lower_speed_requested
+      - id: 0x03
+        name: speed_fixed
+    examples:
+      - data_component: '01'
+        value: 'higher_speed_requested'
+        description: Higher speed requested by the limiter
+  - id: 0x03
+    name: target_speed
+    name_cased: targetSpeed
+    name_pretty: Target speed
+    type: unit.speed
+    size: 10
+    description: The target speed
+    examples:
+      - data_component: '1601404e800000000000'
+        value:
+          kilometers_per_hour: 61.0
+        description: The target speed is set to 61.0km/h
+  - id: 0x04
+    name: adaptive_cruise_control
+    name_cased: adaptiveCruiseControl
+    name_pretty: Adaptive Cruise Control
+    type: types.active_state
+    examples:
+      - data_component: '00'
+        value: 'inactive'
+        description: Adaptive Cruise Control is inactive
+  - id: 0x05
+    name: acc_target_speed
+    name_cased: accTargetSpeed
+    name_pretty: Adaptive Cruise Control (ACC) target speed
+    type: unit.speed
+    size: 10
+    description: The target speed of the Adaptive Cruise Control
+    examples:
+      - data_component: '16014050c00000000000'
+        value:
+          kilometers_per_hour: 67.0
+        description: The Adaptive Cruise Control target speed is set to 67.0km/h

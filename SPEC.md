@@ -1,15 +1,19 @@
-# AutoAPI L11
+# AutoAPI L12
 
 
-The message types are unified into 2 types.
+The message types are unified into 3 types.
 
 * Get commands use `0x00`  
 * Set commands use `0x01`  
+* Availability commands use `0x02`  
 
 Get commands allow a *state* to be queried (requested) from a connected device.  
 
 Set commands allow *setting* of values, but also are used to transfer the *state* to the other device.  
 It should be thought of as one device setting the data in the other one. What the receiving device then does with this data is up to the client / vehicle to decide.
+
+Availability commands allow retrieval of _availability_ information for properties: rate limit and update rate.  
+The response is sent over `0x01` just like "regular" data, but with the properties _availability_ component populated.
 
 The `.yml` spec files define the following *values* and *syntax* for each capability.  
 
@@ -114,6 +118,41 @@ Binary format:
 [0x00, 0x23, 0x01] + [0x0c, 0x00, 0x04, 0x01, 0x00, 0x01, 0x00] > set_charge_mode in Charging
 ```
 
+## availability
+
+If a capability defines _getters_, it also enables the usage of availability getters (exept for _Fundamental_ capabilities, i.e. _Vehicle Information_).  
+Availability getters are generated using the same "logic" as regular getters, including the properties-specific getter.
+
+Examples:
+
+```yaml
+// Generate both getters (for ALL properties and specific ones)
+getters: {}
+
+// Generate only ALL-propertie getter with a name "getVehicleLocationAvailability"
+getters:
+    name: get_vehicle_location
+    skip_properties_getter: true
+
+// Generate both getters named "getParkingTicketAvailability" and "getParkingTicketPropertiesAvailability"
+getters:
+    name: get_parking_ticket
+```
+
+Binary format:
+
+```
+> gets (requests) ALL the state-properties' availability in a capability
+[cap.msb, cap.lsb, 0x02]
+
+> gets (requests) SPECIFIC state-properties' availability in a capability
+[cap.msb, cap.lsb, 0x02] + property_IDs
+
+> examples
+[0x00, 0x23, 0x02]                > get all Charging state-properties' availability
+[0x00, 0x23, 0x02] + [0x03, 0x0c] > get battery_level's and charge_mode's availability in Charging
+```
+
 ## state
 
 If not defined in a capability – there is **no state** for that capability.  
@@ -141,22 +180,22 @@ state: all
 state: [0x01, 0x02]
 ```
 
-
 ## properties
 
 **Required** for every capability.  
 Properties are used to transmit pieces of information.  
 
-Each property can be either a **base** type or a **custom** type.  
+Each property can be a **base** type, a **unit type** or a **custom** type.  
 *Base* types are defined in the *types section* below.  
-*Custom* types are referenced from `custom_types.yml` in *capability* files with the syntax: `type: types.[name_of_custom_type]`  
+*Unit* types are referenced from `unit_types.yml` in *capability* and *custom_types* files with the syntax: `type: unit.[name_of_measurement]`.    
+*Custom* types are referenced from `custom_types.yml` in *capability* files with the syntax: `type: types.[name_of_custom_type]`.  
 
 Keys available for *all* properties:
 
 * `id: integer` property identifier in hex
 * `name: string` name of the property in *snake_case*
 * `name_cased: string` name of the property in *camelCase*
-* `pretty_name: string` human-readable name in a capitalised and whitespaced way, i.e. *Charging Power kW*
+* `name_pretty: string` human-readable name in a capitalised and whitespaced way, i.e. *Charging Power kW*
 * `type: string` type of the property
 
 Other conditional keys:
@@ -179,25 +218,25 @@ properties:
   - id: 0x03
     name: model_name
     name_cased: modelName
-    pretty_name: Model name
+    name_pretty: Model name
     type: string
     description: The car model name bytes formatted in UTF-8
-  - id: 0x07
-    name: charger_voltage_dc
-    name_cased: chargerVoltageDC
-    pretty_name: Charger voltage (DC)
-    type: float
-    size: 4
-    description: Charger voltage in 4-bytes per IEEE 754
   - id: 0x0b
     name: charge_port_state
     name_cased: chargePortState
-    pretty_name: Charge port state
+    name_pretty: Charge port state
     type: types.position
+  - id: 0x1a
+    name: charger_voltage
+    name_cased: chargerVoltage
+    name_pretty: Charger voltage
+    type: unit.electric_potential_difference
+    size: 10
+    description: Charger voltage
   - id: 0x11
     name: departure_times
     name_cased: departureTimes
-    pretty_name: Departure times
+    name_pretty: Departure times
     type: types.departure_time
     multiple: true
     name_singular: departure_time
@@ -215,6 +254,7 @@ Binary format:
     0x01 - data component
     0x02 - timestamp component
     0x03 - failure component
+    0x05 - availability component
 
 > example
     0x0c        - property ID (Charging's charge_mode)
@@ -231,7 +271,6 @@ Types follow the same pattern as *properties* - they all have the same *4 keys* 
 **Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double`, `string`, `bytes` and `timestamp`.
 
 Types `string` and `bytes` can be considered *dynamic* by (usually) appearing without `size: x`.  
-An example of the opposite would be *vehicleStatus.vin*
 
 The `timestamp` type can be considered like an _alias_ to `uinteger` of
 size 8.  
@@ -247,7 +286,7 @@ Additional keys for `enum` types:
     * `id: integer` case value in hex
     * `name: string` case name in *snake_case*
     * can additionally have the following keys:  
-        * `pretty_name: string` case name capitalised and with whitespaces, i.e. *Plug-in Hybrid EV*
+        * `name_pretty: string` case name capitalised and with whitespaces, i.e. *Plug-in Hybrid EV*
         * `verb: string` case name when used in an action (not that imporant), i.e. to *lock* a vehicle or *deactivate* smth
         * `disabled_in_setter: bool` defines what values are disallowed to use in a *setter* (the *lib* should check the input when combining the bytes for a command)
 
@@ -256,7 +295,7 @@ Examples:
 ```yaml
   - name: active_state
     name_cased: activeState
-    pretty_name: Active state
+    name_pretty: Active state
     type: enum
     size: 1
     enum_values:
@@ -269,7 +308,7 @@ Examples:
 
   - name: network_security
     name_cased: networkSecurity
-    pretty_name: Network security
+    name_pretty: Network security
     type: enum
     size: 1
     enum_values:
@@ -277,19 +316,19 @@ Examples:
         name: none
       - id: 0x01
         name: wep
-        pretty_name: WEP
+        name_pretty: WEP
       - id: 0x02
         name: wpa
-        pretty_name: WPA/WPA2 Personal
+        name_pretty: WPA/WPA2 Personal
       - id: 0x03
         name: wpa2_personal
-        pretty_name: WPA2 Personal
+        name_pretty: WPA2 Personal
         
 properties:
   - id: 0x17
     name: charging_state
     name_cased: chargingState
-    pretty_name: Charging state
+    name_pretty: Charging state
     type: enum
     size: 1
     enum_values:
@@ -317,6 +356,8 @@ properties:
 **Custom** types are either commonly used types or ones with multiple pieces of information ordered in a specific byte sequence.  
 Commonly used types are some `enum`-s and i.e. `timestamp`. Custom types are usually defined as `type: custom` and are *singular*.
 
+If a custom type contains a _sub-type_ that is itself with a **dynanmic** size, then the sub-type's bytes will be prefixed with 2 bytes denoting it's size (similar to string or bytes).  
+
 Additional keys for `custom` types:  
 
 * `items: []` *every* custom type has an ordered array of *items* that make up the type
@@ -328,12 +369,12 @@ Examples:
 ```yaml
   - name: action_item
     name_cased: actionItem
-    pretty_name: Action item
+    name_pretty: Action item
     type: custom
     items:
       - name: id
         name_cased: id
-        pretty_name: ID
+        name_pretty: ID
         type: uinteger
         size: 1
       - name: name
@@ -343,7 +384,7 @@ Examples:
         
   - name: brake_torque_vectoring
     name_cased: brakeTorqueVectoring
-    pretty_name: Brake torque vectoring
+    name_pretty: Brake torque vectoring
     type: custom
     size: 2
     items:
@@ -356,7 +397,7 @@ Examples:
         
   - name: price_tariff
     name_cased: priceTariff
-    pretty_name: Price tariff
+    name_pretty: Price tariff
     type: custom
     items:
       - name: pricing_type
@@ -370,7 +411,7 @@ Examples:
             name: per_minute
           - id: 0x02
             name: per_kwh
-            pretty_name: Per kWh
+            name_pretty: Per kWh
       - name: price
         name_cased: price
         type: float
@@ -382,6 +423,51 @@ Examples:
         description: The currency alphabetic code per ISO 4217 or crypto currency symbol
 ```
 
+
+**Unit** types are used with datapoints that express a real-world measurable value.  
+Each datapoint with a unit defines in the spec what type of _measurement_ it is (i.e. volume, power, length). The data is then transmitted in _any_ of the units corresponding to the measurement type.  
+
+The transmitted value is 10 bytes long, with the first 2 expressing the measurement type and the specific unit type, the remaining 8 bytes express the _double_-value of the unit.
+
+Examples:
+
+```yaml
+  - id: 0x09
+    name: time_to_complete_charge
+    name_cased: timeToCompleteCharge
+    name_pretty: Time to complete charge
+    type: unit.duration
+    size: 10
+    description: Time until charging completed
+  - id: 0x1c
+    name: max_range
+    name_cased: maxRange
+    name_pretty: Max range
+    type: unit.length
+    size: 10
+    description: Maximum electric range with 100% of battery
+```
+
+Binary format:
+
+```
+[measurement_type_id, unit_type_id] + double_value_bytes
+
+duration example:
+[
+ 0x07,                                              - measurement type is 'duration'
+ 0x02,                                              - unit type is 'hours'
+ 0x40, 0x19, 0x99, 0x99, 0x99, 0x99, 0x99, 0x9a     - value is 6.4
+]
+
+length example:
+[
+ 0x12,                                              - measurement type is 'length'
+ 0x04,                                              - unit type is 'kilometers'
+ 0x40, 0x7f, 0x40, 0x00, 0x00, 0x00, 0x00, 0x00     - value is 500.0
+]
+```
+
 ## examples
 
 Every property has an array of examples (currently 1-2 for a given one).  
@@ -389,37 +475,38 @@ The examples are under the key `examples` and can also be used to generate *test
 
 Examples contain 3 parts:  
 
-* `hex` has the hexadecimal value for the `data component` of the property
+* `data_component` has the hexadecimal value for the `data component` of the property
 * `value(s)` contains the *parsed* value(s) of the hex
 * `description` describes what the data represents (mostly used in doc-examples)
 
 The *values* part has 2 mutually exclusive keys: `value` or `values`.  
 
-`value` is used when the property has a "simple" type that only has a single value (i.e. an *integer*, *string*, *enum*).
+`value` is used when the property has a "simple" type that only has a single value (i.e. an *integer*, *string*, *enum*) or a *unit*.
 
 
 ```yaml
   - id: 0x01
     name: lock
     name_cased: lock
-    pretty_name: Lock
+    name_pretty: Lock
     type: types.lock_state
     examples:
-      - hex: '00'
+      - data_component: '00'
         value: 'unlocked'
         description: Trunk is unlocked
 
-  - id: 0x07
-    name: yaw_rate
-    name_cased: yawRate
-    pretty_name: Yaw rate
-    type: float
-    size: 4
-    description: Yaw rate in degrees per second [°/s]
+  - id: 0x18
+    name: charging_rate
+    name_cased: chargingRate
+    name_pretty: Charging rate
+    type: unit.power
+    size: 10
+    description: Charge rate when charging
     examples:
-      - hex: '40d51eb8'
-        value: 6.66
-        description: Yaw rate is 6.66 °/s
+      - data_component: '14024062c00000000000'
+        value:
+          kilowatts: 150.0
+        description: Charging rate is 150.0kW
 ```
 
 `values` is used for properties with *custom types* that contain more than 1 piece of distinct information (i.e. *time* with it's *hour* and *minute*).  
@@ -429,12 +516,12 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x02
     name: persons_detected
     name_cased: personsDetected
-    pretty_name: Persons detected
+    name_pretty: Persons detected
     type: types.person_detected
     multiple: true
     name_singular: person_detected
     examples:
-      - hex: '0001'
+      - data_component: '0001'
         values:
           location: 'front_left'
           detected: 'detected'
@@ -443,16 +530,17 @@ The *values* part has 2 mutually exclusive keys: `value` or `values`.
   - id: 0x01
     name: accelerations
     name_cased: accelerations
-    pretty_name: Accelerations
+    name_pretty: Accelerations
+    name_singular: acceleration
     type: types.acceleration
     multiple: true
-    name_singular: acceleration
     examples:
-      - hex: '003f5d2f1b'
+      - data_component: '0001013feba5e353f7ced9'
         values:
           direction: 'longitudinal'
-          g_force: 0.864
-        description: Longitudinal acceleration is 0.864 g
+          acceleration:
+            gravity: 0.864
+        description: Longitudinal acceleration is 0.864g
 ```
 
 

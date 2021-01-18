@@ -1,0 +1,50 @@
+name: vehicle_status
+name_cased: vehicleStatus
+name_pretty: Vehicle Status
+category: api_structure
+authorization: false
+
+identifier:
+  msb: 0x00
+  lsb: 0x11
+
+api:
+  intro: 2
+  update: 12
+
+getters:
+  name: get_vehicle_status
+
+state: all
+
+properties:
+  - id: 0x99
+    name: states
+    name_cased: states
+    name_pretty: States
+    name_singular: state
+    type: types.capability_state
+    multiple: true
+    examples:
+      - data_component: '0c0020010600040100010004000501000200010400050100020201a2000b010008000001598938e788'
+        values:
+          doors:
+            locks_state: 'unlocked'
+            positions:
+              - location: 'front_left'
+                position: 'open'
+              - location: 'rear_right'
+                position: 'open'
+            timestamp: '2017-01-10T16:32:05.000Z'
+        description: Doors capability - front left and rear right door is open while locks are unlocked, recorded at 10. January 2017 at 16:32:05 GMT
+      - data_component: '0c0023010b0004010001010c00040100010018000d01000a140240418000000000001c000d01000a12044081580000000000a2000b010008000001598938e788'
+        values:
+          charging:
+            charge_port_state: 'open'
+            charge_mode: 'immediate'
+            charging_rate:
+              kilowatts: 35.0
+            max_range:
+              kilometers: 555.0
+            timestamp: '2017-01-10T16:32:05.000Z'
+        description: Charging capability - charging port is open, charge mode is immediate, charging rate is 35.0kW and max range is 555.0km, recorded at 10. January 2017 at 16:32:05 GMT

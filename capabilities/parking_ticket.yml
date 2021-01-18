@@ -1,0 +1,93 @@
+name: parking_ticket
+name_cased: parkingTicket
+name_pretty: Parking Ticket
+category: parking
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x47
+
+api:
+  intro: 4
+  update: 11
+
+getters:
+  name: get_parking_ticket
+
+setters:
+  - name: start_parking
+    mandatory: [0x03, 0x04]
+    optional: [0x02, 0x05]
+    constants:
+      - property_id: 0x01
+        value: [0x01]
+    description: Start parking. This clears the last parking ticket information and starts a new one. The end time can be left unset depending on the operator.
+  - name: end_parking
+    constants:
+      - property_id: 0x01
+        value: [0x00]
+    description: End parking. This updates the parking ticket information. If no end date was set, the current time is set as the ending time.
+
+state: all
+
+properties:
+  - id: 0x01
+    name: status
+    name_cased: status
+    name_pretty: Status
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: ended
+        verb: end
+      - id: 0x01
+        name: started
+        verb: start
+    examples:
+      - data_component: '00'
+        value: 'ended'
+        description: Parking ticket has ended
+  - id: 0x02
+    name: operator_name
+    name_cased: operatorName
+    name_pretty: Operator name
+    type: string
+    description: Operator name
+    examples:
+      - data_component: '4265726c696e205061726b696e67'
+        value: 'Berlin Parking'
+        description: Operator name is 'Berlin Parking'
+  - id: 0x03
+    name: operator_ticket_id
+    name_cased: operatorTicketID
+    name_pretty: Operator ticket ID
+    type: string
+    description: Operator ticket ID
+    examples:
+      - data_component: '36343839414234323333'
+        value: '6489AB4233'
+        description: Operator ticket ID is '6489AB4233'
+  - id: 0x04
+    name: ticket_start_time
+    name_cased: ticketStartTime
+    name_pretty: Ticket start time
+    type: timestamp
+    size: 8
+    description: Parking ticket start time
+    examples:
+      - data_component: '0000015989dfca30'
+        value: '2017-01-10T19:34:22.000Z'
+        description: Parking ticket started at 10 January 2017 at 19:34:22 GMT
+  - id: 0x05
+    name: ticket_end_time
+    name_cased: ticketEndTime
+    name_pretty: Ticket end time
+    type: timestamp
+    size: 8
+    description: Parking ticket end time
+    examples:
+      - data_component: '0000016dab1a8528'
+        value: '2019-10-08T11:21:45.000Z'
+        description: Parking ticket ended at 8. October 2019 at 11:21:45 GMT

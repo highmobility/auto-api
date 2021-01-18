@@ -1,0 +1,530 @@
+name: usage
+name_cased: usage
+name_pretty: Usage
+category: diagnostics
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x68
+
+api:
+  intro: 8
+  update: 12
+
+getters:
+  name: get_usage
+
+state: all
+
+properties:
+  - id: 0x01
+    name: average_weekly_distance
+    name_cased: averageWeeklyDistance
+    name_pretty: Average weekly distance
+    type: unit.length
+    size: 10
+    description: Average weekly distance
+    examples:
+      - data_component: '12044084d4cccccccccd'
+        value:
+          kilometers: 666.6
+        description: Average weekly distance is 666.6km
+  - id: 0x02
+    name: average_weekly_distance_long_run
+    name_cased: averageWeeklyDistanceLongRun
+    name_pretty: Average weekly distance long run
+    type: unit.length
+    size: 10
+    description: Average weekyl distance over long term
+    examples:
+      - data_component: '120440884d999999999a'
+        value:
+          kilometers: 777.7
+        description: Average weekly distance, over long term, is 777.7km
+  - id: 0x03
+    name: acceleration_evaluation
+    name_cased: accelerationEvaluation
+    name_pretty: Acceleration evaluation
+    type: types.percentage
+    description: Acceleration evaluation percentage
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Acceleration is evaluated at 70%
+  - id: 0x04
+    name: driving_style_evaluation
+    name_cased: drivingStyleEvaluation
+    name_pretty: Driving style evaluation
+    type: types.percentage
+    description: Driving style evaluation percentage
+    examples:
+      - data_component: '3fec28f5c28f5c29'
+        value: 0.88
+        description: Driving style is evaluated at 88%
+  - id: 0x05
+    name: driving_modes_activation_periods
+    name_cased: drivingModesActivationPeriods
+    name_pretty: Driving modes activation periods
+    type: types.driving_mode_activation_period
+    multiple: true
+    name_singular: driving_modes_activation_period
+    examples:
+      - data_component: '003fc999999999999a'
+        values:
+          driving_mode: 'regular'
+          period: 0.2
+        description: Driving mode 'regular' is engaged 20% of the time
+      - data_component: '013fd3333333333333'
+        values:
+          driving_mode: 'eco'
+          period: 0.3
+        description: Driving mode 'eco' is engaged 30% of the time
+      - data_component: '023fb999999999999a'
+        values:
+          driving_mode: 'sport'
+          period: 0.1
+        description: Driving mode 'eco' is engaged 10% of the time
+      - data_component: '033fb999999999999a'
+        values:
+          driving_mode: 'sport_plus'
+          period: 0.1
+        description: Driving mode 'eco' is engaged 1% of the time
+      - data_component: '043fd3333333333333'
+        values:
+          driving_mode: 'ecoPlus'
+          period: 0.3
+        description: Driving mode 'eco' is engaged 30% of the time
+      - data_component: '050000000000000000'
+        values:
+          driving_mode: 'comfort'
+          period: 0.0
+        description: Driving mode 'eco' is engaged 0% of the time
+  - id: 0x06
+    name: driving_modes_energy_consumptions
+    name_cased: drivingModesEnergyConsumptions
+    name_pretty: Driving modes energy consumptions
+    name_singular: driving_mode_energy_consumption
+    type: types.driving_mode_energy_consumption
+    multiple: true
+    examples:
+      - data_component: '000c044034333333333333'
+        values:
+          driving_mode: 'regular'
+          consumption:
+            kilowatt_hours: 20.2
+        description: Driving mode 'regular' consumed 20.2kWh of electric energy
+      - data_component: '010c04404099999999999a'
+        values:
+          driving_mode: 'eco'
+          consumption:
+            kilowatt_hours: 33.2
+        description: Driving mode 'eco' consumed 33.2kWh of electric energy
+      - data_component: '020c04404b266666666666'
+        values:
+          driving_mode: 'sport'
+          consumption:
+            kilowatt_hours: 54.3
+        description: Driving mode 'sport' consumed 54.3kWh of electric energy
+      - data_component: '030c044050333333333333'
+        values:
+          driving_mode: 'sport_plus'
+          consumption:
+            kilowatt_hours: 64.8
+        description: Driving mode 'sport_plus' consumed 64.8kWh of electric energy
+      - data_component: '040c044032000000000000'
+        values:
+          driving_mode: 'ecoPlus'
+          consumption:
+            kilowatt_hours: 18.0
+        description: Driving mode 'ecoPlus' consumed 18.0kWh of electric energy
+      - data_component: '050c044040d9999999999a'
+        values:
+          driving_mode: 'comfort'
+          consumption:
+            kilowatt_hours: 33.7
+        description: Driving mode 'comfort' consumed 33.7kWh of electric energy
+  - id: 0x07
+    name: last_trip_energy_consumption
+    name_cased: lastTripEnergyConsumption
+    name_pretty: Last trip energy consumption
+    type: unit.energy
+    size: 10
+    description: Energy consumption in the last trip
+    examples:
+      - data_component: '0c044059533333333333'
+        value:
+          kilowatt_hours: 101.3
+        description: Last trip consumed 101.3kWh of electric energy
+  - id: 0x08
+    name: last_trip_fuel_consumption
+    name_cased: lastTripFuelConsumption
+    name_pretty: Last trip fuel consumption
+    type: unit.volume
+    size: 10
+    description: Fuel consumption in the last trip
+    examples:
+      - data_component: '19024036800000000000'
+        value:
+          liters: 22.5
+        description: Last trip consumed 22.5L of fuel
+  - id: 0x09
+    name: mileage_after_last_trip
+    name_cased: mileageAfterLastTrip
+    name_pretty: Mileage after last trip
+    deprecated:
+      new_name: odometer_after_last_trip
+      reason: "'mileage' is an incorrect term for this"
+    type: unit.length
+    size: 10
+    description: Mileage after the last trip
+    examples:
+      - data_component: '120440f7590000000000'
+        value:
+          kilometers: 95632.0
+        description: Mileage is 95'632km after last trip
+  - id: 0x0a
+    name: last_trip_electric_portion
+    name_cased: lastTripElectricPortion
+    name_pretty: Last trip electric portion
+    type: types.percentage
+    size: 8
+    description: Portion of the last trip used in electric mode
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Electric postion of the last trip is 70%
+  - id: 0x0b
+    name: last_trip_average_energy_recuperation
+    name_cased: lastTripAverageEnergyRecuperation
+    name_pretty: Last trip average energy recuperation
+    type: unit.energy_efficiency
+    size: 10
+    description: Energy recuperation rate for last trip
+    examples:
+      - data_component: '0d004016b851eb851eb8'
+        value:
+          kwh_per_100_kilometers: 5.68
+        description: 5.68kWh/100km of electric energy was recuperated during last trip
+  - id: 0x0c
+    name: last_trip_battery_remaining
+    name_cased: lastTripBatteryRemaining
+    name_pretty: Last trip battery remaining
+    type: types.percentage
+    size: 8
+    description: Battery % remaining after last trip
+    examples:
+      - data_component: '3fe0000000000000'
+        value: 0.5
+        description: Battery is at 50% after last trip
+  - id: 0x0d
+    name: last_trip_date
+    name_cased: lastTripDate
+    name_pretty: Last trip date
+    type: timestamp
+    size: 8
+    description: The last trip date
+    examples:
+      - data_component: '0000016682059d50'
+        value: '2018-10-17T12:34:58.000Z'
+        description: Last trip happened at 17 October 2018 at 12:34:58 UTC
+  - id: 0x0e
+    name: average_fuel_consumption
+    name_cased: averageFuelConsumption
+    name_pretty: Average fuel consumption
+    type: unit.fuel_efficiency
+    size: 10
+    description: Average fuel consumption for current trip
+    examples:
+      - data_component: '0f00401a000000000000'
+        value:
+          liters_per_100_kilometers: 6.5
+        description: Average fuel consumption is 6.5L per 100km
+  - id: 0x0f
+    name: current_fuel_consumption
+    name_cased: currentFuelConsumption
+    name_pretty: Current fuel consumption
+    type: unit.fuel_efficiency
+    size: 10
+    description: Current fuel consumption
+    examples:
+      - data_component: '0f00401e000000000000'
+        value:
+          liters_per_100_kilometers: 7.5
+        description: Current fuel consumption is 7.5L per 100km
+  - id: 0x10
+    name: odometer_after_last_trip
+    name_cased: odometerAfterLastTrip
+    name_pretty: Odometer after last trip
+    type: unit.length
+    size: 10
+    description: Odometer after the last trip
+    examples:
+      - data_component: '120440f7590000000000'
+        value:
+          kilometers: 95632.0
+        description: Odometer is 95'632km after last trip
+  - id: 0x11
+    name: safety_driving_score
+    name_cased: safetyDrivingScore
+    name_pretty: Safety driving score
+    type: types.percentage
+    description: Safety driving score as percentage
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Safety driving score is evaluated at 70%
+  - id: 0x12
+    name: rapid_acceleration_grade
+    name_cased: rapidAccelerationGrade
+    name_pretty: Rapid acceleration grade
+    type: types.grade
+    description: Grade given for rapid acceleration over time
+    examples:
+      - data_component: '00'
+        value: 'excellent'
+        description: Rapid acceleration is graded as excellent
+  - id: 0x13
+    name: rapid_deceleration_grade
+    name_cased: rapidDecelerationGrade
+    name_pretty: Rapid deceleration grade
+    type: types.grade
+    description: Grade given for rapid deceleration over time
+    examples:
+      - data_component: '01'
+        value: 'normal'
+        description: Rapid deceleration is graded as normal
+  - id: 0x14
+    name: late_night_grade
+    name_cased: lateNightGrade
+    name_pretty: Late night grade
+    type: types.grade
+    description: Grade given for late night driving over time
+    examples:
+      - data_component: '00'
+        value: 'excellent'
+        description: Late night driving is graded as excellent
+  - id: 0x15
+    name: distance_over_time
+    name_cased: distanceOverTime
+    name_pretty: Distance over time
+    type: types.distance_over_time
+    description: Distance driven over a given time period
+    examples:
+      - data_component: '1204409773851eb851ec07044024000000000000'
+        values:
+          distance:
+            kilometers: 1500.88
+          time:
+            weeks: 10.0
+        description: During the last 10.0 weeks the vehicle travelled 1500.88km
+  - id: 0x16
+    name: electric_consumption_rate_since_start
+    name_cased: electricConsumptionRateSinceStart
+    name_pretty: Electric consumption rate since start
+    type: unit.energy_efficiency
+    size: 10
+    description: Electric energy consumption rate since the start of a trip
+    examples:
+      - data_component: '0d00402670a3d70a3d71'
+        value:
+          kwh_per_100_kilometers: 11.22
+        description: Consumed 11.22kWh/100km since the start of a trip
+  - id: 0x17
+    name: electric_consumption_rate_since_reset
+    name_cased: electricConsumptionRateSinceReset
+    name_pretty: Electric consumption rate since reset
+    type: unit.energy_efficiency
+    size: 10
+    description: Electric energy consumption rate since a reset
+    examples:
+      - data_component: '0d004036547ae147ae14'
+        value:
+          kwh_per_100_kilometers: 22.33
+        description: Consumed 22.33kWh/100km since a reset
+  - id: 0x18
+    name: electric_distance_last_trip
+    name_cased: electricDistanceLastTrip
+    name_pretty: Electric distance last trip
+    type: unit.length
+    size: 10
+    description: Distance travelled with electricity in last trip
+    examples:
+      - data_component: '120040fb198000000000'
+        value:
+          meters: 111000.0
+        description: Vehicle travelled 111000.0m using electricity during the last trip
+  - id: 0x19
+    name: electric_distance_since_reset
+    name_cased: electricDistanceSinceReset
+    name_pretty: Electric distance since reset
+    type: unit.length
+    size: 10
+    description: Distance travelled with electricity since reset
+    examples:
+      - data_component: '1200410b198000000000'
+        value:
+          meters: 222000.0
+        description: Vehicle travelled 222000.0m using electricity since last reset
+  - id: 0x1a
+    name: electric_duration_last_trip
+    name_cased: electricDurationLastTrip
+    name_pretty: Electric duration last trip
+    type: unit.duration
+    size: 10
+    description: Duration of travelling using electricity during last trip
+    examples:
+      - data_component: '07014053400000000000'
+        value:
+          minutes: 77.0
+        description: Vehicle travelled 77.0min using electricity during last trip
+  - id: 0x1b
+    name: electric_duration_since_reset
+    name_cased: electricDurationSinceReset
+    name_pretty: Electric duration since reset
+    type: unit.duration
+    size: 10
+    description: Duration of travelling using electricity since reset
+    examples:
+      - data_component: '07014056000000000000'
+        value:
+          minutes: 88.0
+        description: Vehicle travelled 88.0min using electricity since last reset
+  - id: 0x1c
+    name: fuel_consumption_rate_last_trip
+    name_cased: fuelConsumptionRateLastTrip
+    name_pretty: Fuel consumption rate last trip
+    type: unit.fuel_efficiency
+    size: 10
+    description: Liquid fuel consumption rate during last trip
+    examples:
+      - data_component: '0f00401599999999999a'
+        value:
+          liters_per_100_kilometers: 5.4
+        description: Consumed 5.4 L/100km during last trip
+  - id: 0x1d
+    name: fuel_consumption_rate_since_reset
+    name_cased: fuelConsumptionRateSinceReset
+    name_pretty: Fuel consumption rate since reset
+    type: unit.fuel_efficiency
+    size: 10
+    description: Liquid fuel consumption rate since reset
+    examples:
+      - data_component: '0f004015333333333333'
+        value:
+          liters_per_100_kilometers: 5.3
+        description: Consumed 5.3 L/100km since reset
+  - id: 0x1e
+    name: average_speed_last_trip
+    name_cased: averageSpeedLastTrip
+    name_pretty: Average speed last trip
+    type: unit.speed
+    size: 10
+    description: Average speed during last trip
+    examples:
+      - data_component: '1601404619999999999a'
+        value:
+          kilometers_per_hour: 44.2
+        description: Average speed was 44.2km/h during last trip
+  - id: 0x1f
+    name: average_speed_since_reset
+    name_cased: averageSpeedSinceReset
+    name_pretty: Average speed since reset
+    type: unit.speed
+    size: 10
+    description: Average speed since reset
+    examples:
+      - data_component: '1601404619999999999a'
+        value:
+          kilometers_per_hour: 44.2
+        description: Average speed was 44.2km/h since reset
+  - id: 0x20
+    name: fuel_distance_last_trip
+    name_cased: fuelDistanceLastTrip
+    name_pretty: Fuel distance last trip
+    type: unit.length
+    size: 10
+    description: Distance travelled with (liquid) fuel during last trip
+    examples:
+      - data_component: '120040fb198000000000'
+        value:
+          meters: 111000.0
+        description: Vehicle travelled 111000.0m using fuel during the last trip
+  - id: 0x21
+    name: fuel_distance_since_reset
+    name_cased: fuelDistanceSinceReset
+    name_pretty: Fuel distance since reset
+    type: unit.length
+    size: 10
+    description: Distance travelled with (liquid) fuel since reset
+    examples:
+      - data_component: '1200410b198000000000'
+        value:
+          meters: 222000.0
+        description: Vehicle travelled 222000.0m using fuel since last reset
+  - id: 0x22
+    name: driving_duration_last_trip
+    name_cased: drivingDurationLastTrip
+    name_pretty: Driving duration last trip
+    type: unit.duration
+    size: 10
+    description: Duration of last trip
+    examples:
+      - data_component: '07014053400000000000'
+        value:
+          minutes: 77.0
+        description: Vehicle travelled 77.0min during last trip
+  - id: 0x23
+    name: driving_duration_since_reset
+    name_cased: drivingDurationSinceReset
+    name_pretty: Driving duration since reset
+    type: unit.duration
+    size: 10
+    description: Duration of travelling since reset
+    examples:
+      - data_component: '07014056000000000000'
+        value:
+          minutes: 88.0
+        description: Vehicle travelled 88.0min since last reset
+  - id: 0x24
+    name: eco_score_total
+    name_cased: ecoScoreTotal
+    name_pretty: Eco-score total
+    type: types.percentage
+    description: Overall eco-score rating
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Total eco-score rating is 70%
+  - id: 0x25
+    name: eco_score_free_wheel
+    name_cased: ecoScoreFreeWheel
+    name_pretty: Eco-score free wheel
+    type: types.percentage
+    description: Eco-score rating for free-wheeling
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Eco-score free-wheeling rating is 70%
+  - id: 0x26
+    name: eco_score_constant
+    name_cased: ecoScoreConstant
+    name_pretty: Eco-score constant
+    type: types.percentage
+    description: Eco-score rating constant
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Eco-score constant is 70%
+  - id: 0x27
+    name: eco_score_bonus_range
+    name_cased: ecoScoreBonusRange
+    name_pretty: Eco-score bonus range
+    type: unit.length
+    size: 10
+    description: Eco-score bonus range
+    examples:
+      - data_component: '12043fe6666666666666'
+        value:
+          kilometers: 0.7
+        description: Eco-score bonus range is 0.7km

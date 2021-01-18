@@ -1,0 +1,341 @@
+#
+# unit_types.yml
+#
+#
+# Defines the different measurement types along with their (sub) unit types.
+# Used in a "unit type" property component with ID 0x04.
+#
+# [0x04, 0x00, 0x02, measurement_type_id, unit_type_id]
+#
+
+
+measurement_types:
+
+  - name: acceleration
+    id: 0x01
+    unit_types:
+      - name: meters_per_second_squared
+        id: 0x00
+        conversion_linear: 1.0
+      - name: gravity
+        id: 0x01
+        conversion_linear: 9.81
+
+  - name: angle
+    id: 0x02
+    unit_types:
+      - name: degrees
+        id: 0x00
+        conversion_linear: 1.0
+      - name: radians
+        id: 0x03
+        conversion_linear: 57.295780
+      - name: revolutions
+        id: 0x05
+        conversion_linear: 360.000000
+
+  - name: angular_velocity
+    id: 0x03
+    unit_types:
+      - name: revolutions_per_minute
+        id: 0x00
+        conversion_linear: 1.0
+      - name: degrees_per_second
+        id: 0x01
+        conversion_linear: 6.0
+      - name: radians_per_second
+        id: 0x02
+        conversion_linear: 9.549296585514
+
+  - name: duration
+    id: 0x07
+    unit_types:
+      - name: seconds
+        id: 0x00
+        conversion_linear: 1.0
+      - name: minutes
+        id: 0x01
+        conversion_linear: 60.0
+      - name: hours
+        id: 0x02
+        conversion_linear: 3600.0
+      - name: days
+        id: 0x03
+        conversion_linear: 86400.0
+      - name: weeks
+        id: 0x04
+        conversion_linear: 604800.0
+      - name: months
+        id: 0x05
+        conversion_linear: 2629800.0
+
+  - name: electric_current
+    id: 0x09
+    unit_types:
+      - name: amperes
+        id: 0x00
+        conversion_linear: 1.0
+      - name: milliamperes
+        id: 0x01
+        conversion_linear: 0.001
+      - name: kiloamperes
+        id: 0x02
+        conversion_linear: 1000.0
+
+  - name: electric_potential_difference
+    id: 0x0a
+    unit_types:
+      - name: volts
+        id: 0x00
+        conversion_linear: 1.0
+      - name: millivolts
+        id: 0x01
+        conversion_linear: 0.001
+      - name: kilovolts
+        id: 0x02
+        conversion_linear: 1000.0
+
+  - name: energy
+    id: 0x0c
+    unit_types:
+      - name: joules
+        id: 0x00
+        conversion_linear: 1.0
+      - name: kilojoules
+        id: 0x01
+        conversion_linear: 1000.0
+      - name: kilowatt_hours
+        id: 0x04
+        conversion_linear: 3600000.0
+
+  - name: energy_efficiency
+    id: 0x0d
+    unit_types:
+      - name: kwh_per_100_kilometers
+        id: 0x00
+        conversion_inverse: 1.0
+      - name: miles_per_kwh
+        id: 0x01
+        conversion_inverse: 62.137119223733397
+
+  - name: frequency
+    id: 0x0e
+    unit_types:
+      - name: hertz
+        id: 0x00
+        conversion_linear: 1.0
+      - name: millihertz
+        id: 0x01
+        conversion_linear: 0.001
+      - name: kilohertz
+        id: 0x03
+        conversion_linear: 1.0e+3
+      - name: megahertz
+        id: 0x04
+        conversion_linear: 1.0e+6
+      - name: gigahertz
+        id: 0x05
+        conversion_linear: 1.0e+9
+      - name: times_per_minute
+        id: 0x08
+        conversion_linear: 60.0
+      - name: times_per_hour
+        id: 0x09
+        conversion_linear: 3600.0
+      - name: times_per_day
+        id: 0x0a
+        conversion_linear: 86400.0
+
+  - name: fuel_efficiency
+    id: 0x0f
+    unit_types:
+      - name: liters_per_100_kilometers
+        id: 0x00
+        conversion_inverse: 1.0
+      - name: miles_per_imperial_gallon
+        id: 0x01
+        conversion_inverse: 282.4809363
+      - name: miles_per_gallon
+        id: 0x02
+        conversion_inverse: 235.2145833
+
+  - name: illuminance
+    id: 0x11
+    unit_types:
+      - name: lux
+        id: 0x00
+        conversion_linear: 1.0
+
+  - name: length
+    id: 0x12
+    unit_types:
+      - name: meters
+        id: 0x00
+        conversion_linear: 1.0
+      - name: millimeters
+        id: 0x01
+        conversion_linear: 1.0e-3
+      - name: centimeters
+        id: 0x02
+        conversion_linear: 1.0e-2
+      - name: decimeters
+        id: 0x03
+        conversion_linear: 1.0e-1
+      - name: kilometers
+        id: 0x04
+        conversion_linear: 1.0e+3
+      - name: megameters
+        id: 0x05
+        conversion_linear: 1.0e+6
+      - name: inches
+        id: 0x0b
+        conversion_linear: 0.0254
+      - name: feet
+        id: 0x0c
+        conversion_linear: 0.3048
+      - name: yards
+        id: 0x0d
+        conversion_linear: 0.9144
+      - name: miles
+        id: 0x0e
+        conversion_linear: 1609.344
+      - name: scandinavian_miles
+        id: 0x0f
+        conversion_linear: 1.0e+4
+      - name: nautical_miles
+        id: 0x11
+        conversion_linear: 1852.0
+
+  - name: power
+    id: 0x14
+    unit_types:
+      - name: watts
+        id: 0x00
+        conversion_linear: 1.0
+      - name: milliwatts
+        id: 0x01
+        conversion_linear: 1.0e-3
+      - name: kilowatts
+        id: 0x02
+        conversion_linear: 1.0e+3
+      - name: megawatts
+        id: 0x03
+        conversion_linear: 1.0e+6
+      - name: horsepower
+        id: 0x0a
+        conversion_linear: 745.7
+
+  - name: pressure
+    id: 0x15
+    unit_types:
+      - name: pascals
+        id: 0x00
+        conversion_linear: 1.0
+      - name: kilopascals
+        id: 0x03
+        conversion_linear: 1.0e+3
+      - name: inches_of_mercury
+        id: 0x05
+        conversion_linear: 3386.39
+      - name: bars
+        id: 0x06
+        conversion_linear: 1.0e+5
+      - name: millibars
+        id: 0x07
+        conversion_linear: 1.0e+2
+      - name: millimeters_of_mercury
+        id: 0x08
+        conversion_linear: 133.322
+      - name: pounds_force_per_square_inch
+        id: 0x09
+        conversion_linear: 6894.76
+
+  - name: speed
+    id: 0x16
+    unit_types:
+      - name: meters_per_second
+        id: 0x00
+        conversion_linear: 1.0
+      - name: kilometers_per_hour
+        id: 0x01
+        conversion_linear: 0.27777777777778
+      - name: miles_per_hour
+        id: 0x02
+        conversion_linear: 0.44704
+      - name: knots
+        id: 0x03
+        conversion_linear: 0.51444444444
+
+  - name: temperature
+    id: 0x17
+    unit_types:
+      - name: kelvin
+        id: 0x00
+        conversion_linear: 1.0
+      - name: celsius
+        id: 0x01
+        conversion_linear: 1.0
+        conversion_constant: 273.15
+      - name: fahrenheit
+        id: 0x02
+        conversion_linear: 0.555556
+        conversion_constant: 255.372222
+
+  - name: torque
+    id: 0x18
+    unit_types:
+      - name: newton_meters
+        id: 0x00
+        conversion_linear: 1.0
+      - name: newton_millimeters
+        id: 0x01
+        conversion_linear: 1.0e-3
+      - name: pound_feet
+        id: 0x02
+        conversion_linear: 0.73756214927727
+
+  - name: volume
+    id: 0x19
+    unit_types:
+      - name: liters
+        id: 0x02
+        conversion_linear: 1.0
+      - name: milliliters
+        id: 0x03
+        conversion_linear: 1.0e-3
+      - name: centiliters
+        id: 0x04
+        conversion_linear: 1.0e-2
+      - name: deciliters
+        id: 0x05
+        conversion_linear: 1.0e-1
+      - name: cubic_millimeters
+        id: 0x0a
+        conversion_linear: 1.0e-6
+      - name: cubic_centimeters
+        id: 0x09
+        conversion_linear: 1.0e-3
+      - name: cubic_decimeters
+        id: 0x08
+        conversion_linear: 1.0
+      - name: cubic_meters
+        id: 0x07
+        conversion_linear: 1.0e+3
+      - name: cubic_inches
+        id: 0x0b
+        conversion_linear: 0.016387064
+      - name: cubic_feet
+        id: 0x0c
+        conversion_linear: 28.316846592
+      - name: fluid_ounces
+        id: 0x13
+        conversion_linear: 0.0295735296875
+      - name: gallons
+        id: 0x17
+        conversion_linear: 3.785411784
+      - name: imperial_fluid_ounces
+        id: 0x1a
+        conversion_linear: 0.0284130625
+      - name: imperial_gallons
+        id: 0x1d
+        conversion_linear: 4.54609

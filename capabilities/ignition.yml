@@ -1,0 +1,63 @@
+name: ignition
+name_cased: ignition
+name_pretty: Ignition
+category: digital_key
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x35
+
+api:
+  intro: 3
+  update: 12
+
+getters: {}
+
+setters:
+  - name: turn_ignition_on_off
+    mandatory: [0x01]
+    description: Attempt to turn the vehicle engine ignition on or off. When the engine ignition is on, it is possible for the driver to turn on the engine and drive the vehicle.
+
+state: all
+
+properties:
+  - id: 0x01
+    name: status
+    name_cased: status
+    name_pretty: Status
+    type: types.on_off_state
+    examples:
+      - data_component: '00'
+        value: 'off'
+        description: Ignition is off
+  - id: 0x02
+    name: accessories_status
+    name_cased: accessoriesStatus
+    name_pretty: Accessories status
+    type: types.on_off_state
+    examples:
+      - data_component: '01'
+        value: 'on'
+        description: Accessories power is on
+  - id: 0x03
+    name: state
+    name_cased: state
+    name_pretty: State
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: 'lock'
+      - id: 0x01
+        name: 'off'
+      - id: 0x02
+        name: 'accessory'
+      - id: 0x03
+        name: 'on'
+      - id: 0x04
+        name: 'start'
+    examples:
+      - data_component: '02'
+        value: 'accessory'
+        description: Ignition state is in accessory

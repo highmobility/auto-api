@@ -1,0 +1,152 @@
+name: windscreen
+name_cased: windscreen
+name_pretty: Windscreen
+category: chassis
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x42
+
+api:
+  intro: 4
+  update: 11
+
+getters: {}
+
+setters:
+  - name: set_windscreen_damage
+    mandatory: [0x03]
+    optional: [0x05]
+    description: Set the windscreen damage. This is for instance used to reset the glass damage or correct it. Damage confidence percentage is automatically set to either 0% or 100%.
+  - name: set_windscreen_replacement_needed
+    mandatory: [0x06]
+    description: Set if the windscreen needs replacement.
+  - name: control_wipers
+    mandatory: [0x01]
+    optional: [0x02]
+    description: Control the wipers.
+
+state: all
+
+properties:
+  - id: 0x01
+    name: wipers_status
+    name_cased: wipersStatus
+    name_pretty: Wipers status
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: inactive
+        verb: deactivate
+      - id: 0x01
+        name: active
+        verb: activate
+      - id: 0x02
+        name: automatic
+    examples:
+      - data_component: '02'
+        value: 'automatic'
+        description: Windscreen wipers are set to automatic mode
+  - id: 0x02
+    name: wipers_intensity
+    name_cased: wipersIntensity
+    name_pretty: Wipers intensity
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: level_0
+        name_pretty: Level 0, inactive
+      - id: 0x01
+        name: level_1
+      - id: 0x02
+        name: level_2
+      - id: 0x03
+        name: level_3
+    examples:
+      - data_component: '03'
+        value: 'level_3'
+        description: Wipers are on highest intensity, indicating heavy rain
+  - id: 0x03
+    name: windscreen_damage
+    name_cased: windscreenDamage
+    name_pretty: Windscreen damage
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: no_impact_detected
+      - id: 0x01
+        name: impact_but_no_damage_detected
+      - id: 0x02
+        name: damage_smaller_than_1_inch
+      - id: 0x03
+        name: damage_larger_than_1_inch
+    examples:
+      - data_component: '01'
+        value: 'impact_but_no_damage_detected'
+        description: Windscreen detected an impact, but no damage
+  - id: 0x04
+    name: windscreen_zone_matrix
+    name_cased: windscreenZoneMatrix
+    name_pretty: Windscreen zone matrix
+    type: types.zone
+    description: Representing the size of the matrix, seen from the inside of the vehicle
+    examples:
+      - data_component: '0403'
+        values:
+          horizontal: 4
+          vertical: 3
+        description: Windscreen is divided into a matrix 4 columns horizontally by 3 rows vertically
+  - id: 0x05
+    name: windscreen_damage_zone
+    name_cased: windscreenDamageZone
+    name_pretty: Windscreen damage zone
+    type: types.zone
+    description: Representing the position in the zone, seen from the inside of the vehicle (1-based index)
+    examples:
+      - data_component: '0102'
+        values:
+          horizontal: 1
+          vertical: 2
+        description: Damage is detected in the 1st column from left and the 2nd row from the top
+  - id: 0x06
+    name: windscreen_needs_replacement
+    name_cased: windscreenNeedsReplacement
+    name_pretty: Windscreen needs replacement
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: unknown
+      - id: 0x01
+        name: no_replacement_needed
+      - id: 0x02
+        name: replacement_needed
+    examples:
+      - data_component: '01'
+        value: 'no_replacement_needed'
+        description: Windscreen does not need replacement
+  - id: 0x07
+    name: windscreen_damage_confidence
+    name_cased: windscreenDamageConfidence
+    name_pretty: Windscreen damage confidence
+    type: types.percentage
+    description: Confidence of damage detection, 0% if no impact detected
+    examples:
+      - data_component: '3fee666666666666'
+        value: 0.95
+        description: Damage detected with 95% confidence
+  - id: 0x08
+    name: windscreen_damage_detection_time
+    name_cased: windscreenDamageDetectionTime
+    name_pretty: Windscreen damage detection time
+    type: timestamp
+    size: 8
+    description: Windscreen damage detection date
+    examples:
+      - data_component: '000001598938e788'
+        value: '2017-01-10T16:32:05.000Z'
+        description: Windscreen damage detected at 10 January 2017 at 16:32:05 UTC
