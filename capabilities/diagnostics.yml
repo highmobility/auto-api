@@ -449,12 +449,12 @@ properties:
     name_pretty: Odometer
     type: unit.length
     size: 10
-    description: The vehicle odometer value in a given units.
+    description: The vehicle odometer value in a given units
     examples:
-      - data_component: '1205401999999999999a'
+      - data_component: '120440a0040000000000'
         value:
-          megameters: 6.4
-        description: Odometer is showing 6.4Mm – length of the Great Wall.
+          kilometers: 2050.0
+        description: Odometer is showing 2050.0km
   - id: 0x20
     name: engine_total_operating_time
     name_cased: engineTotalOperatingTime
