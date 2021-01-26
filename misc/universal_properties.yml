@@ -150,7 +150,8 @@ universal_properties:
       - id: 0x28
         name: volkswagen
       - id: 0x29
-        name: volvo
+        name: volvo_cars
+        name_pretty: Volvo Cars
       - id: 0x2a
         name: emulator
     examples:
