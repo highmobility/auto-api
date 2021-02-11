@@ -124,7 +124,7 @@ properties:
     examples:
       - data_component: '00000172bcd25b10'
         value: '2020-06-16T11:10:02.000Z'
-        description: Last trip happened at 16. June 2020 at 11:10:02 GMT
+        description: Last event happened at 16. June 2020 at 11:10:02 GMT
   - id: 0x06
     name: last_event_level
     name_cased: lastEventLevel
