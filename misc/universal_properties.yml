@@ -82,7 +82,8 @@ universal_properties:
       - id: 0x08
         name: chrysler
       - id: 0x09
-        name: citroën
+        name: citroen
+        name_pretty: Citroën
       - id: 0x0a
         name: cupra
       - id: 0x0b
@@ -140,7 +141,8 @@ universal_properties:
       - id: 0x23
         name: seat
       - id: 0x24
-        name: škoda
+        name: skoda
+        name_pretty: Škoda
       - id: 0x25
         name: smart
       - id: 0x26
