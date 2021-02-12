@@ -1,0 +1,83 @@
+name: crash
+name_cased: crash
+name_pretty: Crash
+category: diagnostics
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x6b
+
+api:
+  intro: 13
+  update: 13
+
+state: all
+
+properties:
+  - id: 0x01
+    name: incidents
+    name_cased: incidents
+    name_pretty: Incidents
+    name_singular: incident
+    type: types.crash_incident
+    multiple: true
+    examples:
+      - data_component: '000101'
+        values:
+          location: 'front'
+          severity: 'high'
+          repairs: 'needed'
+        description: High severity front crash incident needs repairs
+      - data_component: '010201'
+        values:
+          location: 'lateral'
+          severity: 'medium'
+          repairs: 'needed'
+        description: Medium severity lateral crash incident needs repairs
+      - data_component: '020302'
+        values:
+          location: 'rear'
+          severity: 'low'
+          repairs: 'not_needed'
+        description: Low severity rear crash incident does not need repairs
+  - id: 0x02
+    name: type
+    name_cased: type
+    name_pretty: Type
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: pedestrian
+      - id: 0x01
+        name: non_pedestrian
+    examples:
+      - data_component: '01'
+        value: 'non_pedestrian'
+        description: Crash type is non-pedestrian (i.e. a another vehicle)
+  - id: 0x03
+    name: tipped_state
+    name_cased: tippedState
+    name_pretty: Tipped state
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: tipped_over
+      - id: 0x01
+        name: not_tipped
+    examples:
+      - data_component: '01'
+        value: 'not_tipped'
+        description: Crash did not tip over the vehicle
+  - id: 0x04
+    name: automatic_ecall
+    name_cased: automaticECall
+    name_pretty: Automatic eCall
+    type: types.enabled_state
+    description: Automatic emergency call enabled state
+    examples:
+      - data_component: '01'
+        value: 'enabled'
+        description: Automatic eCall is enabled

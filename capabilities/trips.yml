@@ -10,7 +10,7 @@ identifier:
 
 api:
   intro: 12
-  update: 12
+  update: 13
 
 state: all
 
@@ -27,6 +27,8 @@ properties:
         name: single
       - id: 0x01
         name: multi
+      - id: 0x02
+        name: eco
     examples:
       - data_component: '00'
         value: 'single'
@@ -261,3 +263,68 @@ properties:
           type: 'other'
           value: 'Germany'
         description: Other component value is 'Germany'
+  - id: 0x10
+    name: event
+    name_cased: event
+    name_pretty: Event
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: harsh_braking
+      - id: 0x01
+        name: harsh_acceleration
+      - id: 0x02
+        name: sharp_turn
+      - id: 0x03
+        name: over_rpm
+        name_pretty: Over RPM
+      - id: 0x04
+        name: overspeed
+      - id: 0x05
+        name: idling_engine_on
+    examples:
+      - data_component: '01'
+        value: 'harsh_acceleration'
+        description: Driving event of harsh acceleration encountered
+  - id: 0x11
+    name: eco_level
+    name_cased: ecoLevel
+    name_pretty: Eco level
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: high
+      - id: 0x01
+        name: medium
+    examples:
+      - data_component: '00'
+        value: 'high'
+        description: Eco driving level is high
+  - id: 0x12
+    name: thresholds
+    name_cased: thresholds
+    name_pretty: Thresholds
+    name_singluar: Threshold
+    type: types.eco_driving_threshold
+    multiple: true
+    description: Eco driving thresholds
+    examples:
+      - data_component: '000000000000000000'
+        values:
+          type: '0'
+          value: 0.0
+        description: Eco driving 0-threshold is set at 0.0
+  - id: 0x13
+    name: total_fuel_consumption
+    name_cased: totalFuelConsumption
+    name_pretty: Total fuel consumption
+    type: unit.volume
+    size: 10
+    description: Total fuel consumption during the trip
+    examples:
+      - data_component: '19024037666666666666'
+        value:
+          liters: 23.4
+        description: Total fuel consumption during the trip was 23.4 l

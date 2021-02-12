@@ -10,7 +10,7 @@ identifier:
 
 api:
   intro: 2
-  update: 12
+  update: 13
 
 getters:
   name: get_vehicle_location
@@ -64,4 +64,32 @@ properties:
         value:
           meters: 500.0
         description: Precision is 500m
-
+  - id: 0x08
+    name: gps_source
+    name_cased: gpsSource
+    name_pretty: GPS source
+    type: enum
+    size: 11
+    description: Type of GPS source
+    enum_values:
+      - id: 0x00
+        name: dead_reckoning
+      - id: 0x01
+        name: real
+      - id: 0x02
+        name: none
+    examples:
+      - data_component: '01'
+        value: 'real'
+        description: The GPS signal is from a real source
+  - id: 0x09
+    name: gps_signal_strength
+    name_cased: gpsSignalStrength
+    name_pretty: GPS signal strength
+    type: types.percentage
+    size: 8
+    description: GPS signal strength percentage between 0.0-1.0
+    examples:
+      - data_component: '3fe999999999999a'
+        value: 0.8
+        description: GPS signal strength is 80%

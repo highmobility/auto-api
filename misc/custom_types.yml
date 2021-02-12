@@ -866,9 +866,254 @@ types:
             name: battery_low_warning
           - id: 0x5c
             name: brake_fluid_warning
+          - id: 0x5d
+            name: active_hood_fault
+          - id: 0x5e
+            name: active_spoiler_fault
+          - id: 0x5f
+            name: adjust_tire_pressure
+          - id: 0x60
+            name: steering_lock_alert
+          - id: 0x61
+            name: anti_pollution_failure_engine_start_impossible
+          - id: 0x62
+            name: anti_pollution_system_failure
+          - id: 0x63
+            name: anti_reverse_system_failing
+          - id: 0x64
+            name: auto_parking_brake
+          - id: 0x65
+            name: automatic_braking_deactive
+          - id: 0x66
+            name: automatic_braking_system_fault
+          - id: 0x67
+            name: automatic_lights_settings_failure
+          - id: 0x68
+            name: keyfob_battery_alarm
+          - id: 0x69
+            name: trunk_open
+          - id: 0x6a
+            name: check_reversing_lamp
+          - id: 0x6b
+            name: crossing_line_system_alert_failure
+          - id: 0x6c
+            name: dipped_beam_headlamps_front_left_failure
+          - id: 0x6d
+            name: dipped_beam_headlamps_front_right_failure
+          - id: 0x6e
+            name: directional_headlamps_failure
+          - id: 0x6f
+            name: directional_light_failure
+          - id: 0x70
+            name: dsg_failing
+          - id: 0x71
+            name: electric_mode_not_available
+          - id: 0x72
+            name: electronic_lock_failure
+          - id: 0x73
+            name: engine_control_system_failure
+          - id: 0x74
+            name: engine_oil_pressure_alert
+          - id: 0x75
+            name: esp_failure
+          - id: 0x76
+            name: excessive_oil_temperatur
+          - id: 0x77
+            name: tire_front_left_flat
+          - id: 0x78
+            name: tire_front_right_flat
+          - id: 0x79
+            name: tire_rear_left_flat
+          - id: 0x7a
+            name: tire_rear_right_flat
+          - id: 0x7b
+            name: fog_light_front_left_failure
+          - id: 0x7c
+            name: fog_light_front_right_failure
+          - id: 0x7d
+            name: fog_light_rear_left_failure
+          - id: 0x7e
+            name: fog_light_rear_right_failure
+          - id: 0x7f
+            name: fog_light_front_fault
+          - id: 0x80
+            name: door_front_left_open
+          - id: 0x81
+            name: door_front_left_open_high_speed
+          - id: 0x82
+            name: tire_front_left_not_monitored
+          - id: 0x83
+            name: door_front_right_open
+          - id: 0x84
+            name: door_front_right_open_high_speed
+          - id: 0x85
+            name: tire_front_right_not_monitored
+          - id: 0x86
+            name: headlights_left_failure
+          - id: 0x87
+            name: headlights_right_failure
+          - id: 0x88
+            name: hybrid_system_fault
+          - id: 0x89
+            name: hybrid_system_fault_repaired_vehicle
+          - id: 0x8a
+            name: hydraulic_pressure_or_brake_fuild_insufficient
+          - id: 0x8b
+            name: lane_departure_fault
+          - id: 0x8c
+            name: limited_visibility_aids_camera
+          - id: 0x8d
+            name: tire_pressure_low
+          - id: 0x8e
+            name: maintenance_date_exceeded
+          - id: 0x8f
+            name: maintenance_odometer_exceeded
+          - id: 0x90
+            name: other_failing_system
+          - id: 0x91
+            name: parking_brake_control_failing
+          - id: 0x92
+            name: parking_space_measuring_system_failure
+          - id: 0x93
+            name: place_gear_to_parking
+          - id: 0x94
+            name: power_steering_assitance_failure
+          - id: 0x95
+            name: power_steering_failure
+          - id: 0x96
+            name: preheating_deactivated_battery_too_low
+          - id: 0x97
+            name: preheating_deactivated_fuel_level_too_low
+          - id: 0x98
+            name: preheating_deactivated_battery_set_the_clock
+          - id: 0x99
+            name: fog_light_rear_fault
+          - id: 0x9a
+            name: door_rear_left_open
+          - id: 0x9b
+            name: door_rear_left_open_high_speed
+          - id: 0x9c
+            name: tire_rear_left_not_monitored
+          - id: 0x9d
+            name: door_rear_right_open
+          - id: 0x9e
+            name: door_rear_right_open_high_speed
+          - id: 0x9f
+            name: tire_rear_right_not_monitored
+          - id: 0xa0
+            name: screen_rear_open
+          - id: 0xa1
+            name: retractable_roof_mechanism_fault
+          - id: 0xa2
+            name: reverse_light_left_failure
+          - id: 0xa3
+            name: reverse_light_right_failure
+          - id: 0xa4
+            name: risk_of_ice
+          - id: 0xa5
+            name: roof_operation_impossible_apply_parking_break
+          - id: 0xa6
+            name: roof_operation_impossible_apply_start_engine
+          - id: 0xa7
+            name: roof_operation_impossible_temperature_too_high
+          - id: 0xa8
+            name: seatbelt_passenger_front_right_unbuckled
+          - id: 0xa9
+            name: seatbelt_passenger_rear_left_unbuckled
+          - id: 0xaa
+            name: seatbelt_passenger_rear_center_unbuckled
+          - id: 0xab
+            name: seatbelt_passenger_rear_right_unbuckled
+          - id: 0xac
+            name: battery_secondary_low
+          - id: 0xad
+            name: shock_sensor_failing
+          - id: 0xae
+            name: side_lights_front_left_failure
+          - id: 0xaf
+            name: side_lights_front_right_failure
+          - id: 0xb0
+            name: side_lights_rear_left_failure
+          - id: 0xb1
+            name: side_lights_rear_right_failure
+          - id: 0xb2
+            name: spare_wheel_fitter_driving_aids_deactivated
+          - id: 0xb3
+            name: speed_control_failure
+          - id: 0xb4
+            name: stop_light_left_failure
+          - id: 0xb5
+            name: stop_light_right_failure
+          - id: 0xb6
+            name: suspension_failure
+          - id: 0xb7
+            name: suspension_failure_reduce_speed
+          - id: 0xb8
+            name: suspension_fault_limited_to_90kmh
+          - id: 0xb9
+            name: tire_pressure_sensor_failure
+          - id: 0xba
+            name: trunk_open_high_speed
+          - id: 0xbb
+            name: trunk_window_open
+          - id: 0xbc
+            name: turn_signal_front_left_failure
+          - id: 0xbd
+            name: turn_signal_front_right_failure
+          - id: 0xbe
+            name: turn_signal_rear_left_failure
+          - id: 0xbf
+            name: turn_signal_rear_right_failure
+          - id: 0xc0
+            name: tire_under_inflation
+          - id: 0xc1
+            name: wheel_pressure_fault
       - name: state
         name_cased: state
         type: types.on_off_state
+    # MARK: Crash Incident
+  - name: crash_incident
+    name_cased: crashIncident
+    name_pretty: Crash incident
+    type: custom
+    size: 3
+    items:
+      - name: location
+        name_cased: location
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: front
+          - id: 0x01
+            name: lateral
+          - id: 0x02
+            name: rear
+      - name: severity
+        name_cased: severity
+        name_pretty: Severity
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: very_high
+          - id: 0x01
+            name: high
+          - id: 0x02
+            name: medium
+          - id: 0x03
+            name: low
+      - name: repairs
+        name_cased: repairs
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: needed
+          - id: 0x02
+            name: not_needed
     # MARK: Departure Time
   - name: departure_time
     name_cased: departureTime
@@ -1093,6 +1338,26 @@ types:
         type: unit.energy
         size: 10
         description: Energy consumption in the driving mode
+    # MARK: EcoDriving Threshold
+  - name: eco_driving_threshold
+    name_cased: ecoDrivingThreshold
+    name_pretty: Eco driving threshold
+    type: custom
+    size: 9
+    items:
+      - name: type
+        name_cased: type
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: 0
+          - id: 0x01
+            name: 1
+      - name: value
+        name_cased: value
+        type: double
+        size: 8
     # MARK: Failure
   - name: failure
     name_cased: failure
