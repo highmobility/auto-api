@@ -638,3 +638,15 @@ properties:
       - data_component: '01'
         value: 'active'
         description: Blind spot monitoring is active
+  - id: 0x2a
+    name: engine_total_idle_operating_time
+    name_cased: engineTotalIdleOperatingTime
+    name_pretty: Engine total idle operation time
+    type: unit.duration
+    size: 10
+    description: The accumulated time of engine operation
+    examples:
+      - data_component: '0702406ab1eb851eb852'
+        value:
+          hours: 213.56
+        description: The engine has operated 213.56h in idle

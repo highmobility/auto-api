@@ -328,3 +328,27 @@ properties:
         value:
           liters: 23.4
         description: Total fuel consumption during the trip was 23.4 l
+  - id: 0x14
+    name: total_idle_fuel_consumption
+    name_cased: totalIdleFuelConsumption
+    name_pretty: Total idle fuel consumption
+    type: unit.volume
+    size: 10
+    description: Fuel consumed while idle since the last ignition on.
+    examples:
+      - data_component: '19024004000000000000'
+        value:
+          liters: 2.5
+        description: Since the last ignition the vehicle has consumed 2.5 l while ideling.
+  - id: 0x15
+    name: maximum_speed
+    name_cased: maximumSpeed
+    name_pretty: Maximum speed
+    type: unit.speed
+    size: 10
+    description: Maximum speed recorded since the last igntion on.
+    examples:
+      - data_component: '16014050d33333333333'
+        value:
+          kilometers_per_hour: 67.3
+        description: Maximum speed since last ignition on is 67.3km/h

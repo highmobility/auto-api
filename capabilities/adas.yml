@@ -1,0 +1,83 @@
+name: adas
+name_cased: adas
+name_pretty: ADAS
+category: chassis
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x6c
+
+api:
+  intro: 13
+  update: 13
+
+state: all
+
+properties:
+  - id: 0x01
+    name: status
+    name_cased: status
+    name_pretty: Status
+    type: types.on_off_state
+    description: Indicates whether the driver assistance system is active or not.
+    examples:
+      - data_component: '01'
+        value: 'on'
+        description: ADAS is on
+  - id: 0x02
+    name: alertness_system_status
+    name_cased: alertnessSystemStatus
+    name_pretty: Alertness system status
+    type: types.active_state
+    description: Indicates if the driver alertness warning is active or inactive.
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Driver alertness warning system is active.
+  - id: 0x03
+    name: forward_collision_warning_system_state
+    name_cased: forwardCollisionWarningSystemState
+    name_pretty: Forward collision warning system state
+    type: types.active_state
+    description: Indicates whether the forward collision warning system is active or inactive.
+    examples:
+      - data_component: '01
+        value: 'active'
+        description: Forward collision warning system is active.
+  - id: 0x04
+    name: blind_spot_warning_system_state
+    name_cased: blindSpotWarningSystemState
+    name_pretty: Blind spot warning system state
+    type: types.active_state
+    description: Indicates whether the blind spot warning system is active or inactive.
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Blind spot warning system is active.
+  - id: 0x05
+    name: blind_spot_warning_system_coverage
+    name_cased: blind_spot_warning_system_coverage
+    name_pretty: Blind spot warning system coverage
+    type: enum
+    size: 1
+    description: Blind spot warning system coverage.
+    enum_values:
+      - id: 0x00
+        name: regular
+      - id: 0x01
+        name: trailer
+    examples:
+      - data_component: '00'
+        value: 'regular'
+        description: Blind spot warning system coverage is regular.
+  - id: 0x06
+    name: rear_cross_warning_system_state
+    name_cased: rearCrossWarningSystemState
+    name_pretty: Rear cross warning system state
+    type: types.active_state
+    description: Indicates whether the rear cross warning system is active or inactive.
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Rear cross warning system is active.

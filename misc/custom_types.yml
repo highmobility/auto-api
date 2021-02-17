@@ -294,7 +294,7 @@ types:
         name: rear_left
       - id: 0x04
         name: rear_center
-    # MARK: Start Stop
+    # MARK: Start-Stop
   - name: start_stop
     name_cased: startStop
     name_pretty: Start-Stop
@@ -1746,6 +1746,34 @@ types:
           - id: 0x05
             name: tire_pressure_changed
             description: Sent when the tire pressure changed to low or too high.
+          - id: 0x06
+            name: harsh_acceleration_started
+            description: Sent when the vehicle’s acceleration rate exceeds the configurable limit for hard acceleration for a duration exceeding the configurable time duration limit.
+          - id: 0x07
+            name: harsh_acceleration_stopped
+            description: Sent when the vehicle’s acceleration rate stopped exceeding the configurable limit for hard acceleration for a duration exceeding the configurable time duration limit.
+          - id: 0x08
+            name: harsh_acceleration_pedal_position
+            description: Sent when the vehicle’s acceleration pedal position exceeds the configurable limit for hard acceleration for a duration exceeding the configurable time duration limit.
+          - id: 0x09
+            name: harsh_braking_started
+            description: Indicates if the vehicle’s deceleration rate exceeds the configurable limit for harsh braking for a duration exceeding the configurable time limit.
+          - id: 0x0a
+            name: harsh_braking_stopped
+            description: Indicates if the vehicle’s deceleration rate stopped exceeding the configurable limit for harsh braking for a duration exceeding the configurable time limit.
+          - id: 0x0b
+            name: harsh_cornering_started
+            description: Indicates if the vehicle’s lateral acceleration rate exceeds the configurable limit for harsh cornering for a duration exceeding the configurable time duration limit.
+          - id: 0x0c
+            name: harsh_cornering_stopped
+            description: Indicates if the vehicle’s lateral acceleration rate stopped exceeding the configurable limit for harsh cornering for a duration exceeding the configurable time duration limit.
+          - id: 0x0d
+            name: seat_belt_buckled
+            description: Indicates a seat belt is buckled while the vehicle is moving.
+          - id: 0x0e
+            name: seat_belt_unbuckled
+            description: description: Indicates a seat belt is unbuckled while the vehicle is moving.
+
     # MARK: Wheel RPM
   - name: wheel_rpm
     name_cased: wheelRPM
