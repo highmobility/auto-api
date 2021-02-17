@@ -10,7 +10,7 @@ identifier:
 
 api:
   intro: 11
-  update: 11
+  update: 13
 
 getters: {}
 
@@ -34,3 +34,24 @@ properties:
       - data_component: '01'
         value: 'open'
         description: Hood is open
+  - id: 0x02
+    name: lock
+    name_cased: lock
+    name_pretty: Lock
+    type: types.lock_state
+    description: Includes the lock state of the hood.
+    examples:
+      - data_component: '01'
+        value: 'locked'
+        description: The hood is locked.
+  - id: 0x03
+    name: lock_safety
+    name_cased: lockSafety
+    name_pretty: Lock safety
+    type: types.lock_safety
+    description: Indicates the safe-state of the hood.
+    examples:
+      - data_component: '00'
+        value: 'safe'
+        description: Trunk lock is safely locked.
+

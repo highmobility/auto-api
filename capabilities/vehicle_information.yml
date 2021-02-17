@@ -10,7 +10,7 @@ identifier:
 
 api:
   intro: 12
-  update: 12
+  update: 13
 
 getters:
   name: get_vehicle_information
@@ -22,22 +22,8 @@ properties:
     name: powertrain
     name_cased: powertrain
     name_pretty: Powertrain
-    type: enum
-    size: 1
-    enum_values:
-      - id: 0x00
-        name: unknown
-      - id: 0x01
-        name: all_electric
-      - id: 0x02
-        name: combustion_engine
-      - id: 0x03
-        name: phev
-        name_pretty: Plug-in Hybrid EV
-      - id: 0x04
-        name: hydrogen
-      - id: 0x05
-        name: hydrogen_hybrid
+    type: types.engine_type
+    description: Type of the (primary) powertrain
     examples:
       - data_component: '01'
         value: 'all_electric'
@@ -290,3 +276,12 @@ properties:
       - data_component: '01'
         value: 'rwd'
         description: Vehicle has rear-wheel drive
+  - id: 0x17
+    name: powertrain_secondary
+    name_cased: powertrainSecondary
+    name_pretty: Powertrain secondary
+    type: types.engine_type
+    examples:
+      - data_component: '06'
+        value: 'petrol'
+        description: Secondary powertrain`s type is petrol.

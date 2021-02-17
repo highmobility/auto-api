@@ -10,7 +10,7 @@ identifier:
 
 api:
   intro: 3
-  update: 12
+  update: 13
 
 getters: {}
 
@@ -224,3 +224,27 @@ properties:
       - data_component: '000001677c63d280'
         value: '2018-12-05T03:22:56.000Z'
         description: Last eCall happened at 5 December 2018 at 03:22:56 GMT
+  - id: 0x11
+    name: distance_to_next_oil_service
+    name_cased: distanceToNextOilService
+    name_pretty: Distance to next oil service
+    type: unit.length
+    size: 10
+    description: Indicates the remaining distance until the next oil service; if this limit was exceeded, this value indicates the distance that has been driven since then.
+    examples:
+      - data_component: '120440806ccccccccccd'
+        value:
+          kilometers: 525.6
+        description: Distance to the next oil service is 525.6km
+  - id: 0x12
+    name: time_to_next_oil_service
+    name_cased: timeToNextService
+    name_pretty: Time to next oil service
+    type: unit.duration
+    size: 10
+    description: Indicates the time remaining until the next oil service; if this limit was exceeded, this value indicates the time that has passed since then.
+    examples:
+      - data_component: '07034050b33333333333'
+        value:
+          days: 66.8
+        description: Time to the next oil service is 66.8 days

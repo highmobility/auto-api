@@ -127,6 +127,42 @@ types:
       - id: 0x01
         name: enabled
         verb: enable
+    # MARK: Engine Type
+  - name: engine_type
+    name_cased: engineType
+    name_pretty: Engine type
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: unknown
+      - id: 0x01
+        name: all_electric
+      - id: 0x02
+        name: combustion_engine
+      - id: 0x03
+        name: phev
+        name_pretty: Plug-in Hybrid EV
+      - id: 0x04
+        name: hydrogen
+      - id: 0x05
+        name: hydrogen_hybrid
+      - id: 0x06
+        name: petrol
+      - id: 0x07
+        name: electric
+      - id: 0x08
+        name: gas
+      - id: 0x09
+        name: diesel
+      - id: 0x0a
+        name: gasoline
+      - id: 0x0b
+        name: cng
+        name_pretty: Compressed natural gas
+      - id: 0x0c
+        name: lpg
+        name_pretty: Liquefied petroleum gas
     # MARK: Fluid Level
   - name: fluid_level
     name_cased: fluidLevel
@@ -211,6 +247,8 @@ types:
         name: rear_right_outer
       - id: 0x05
         name: rear_left_outer
+      - id: 0x06
+        name: spare
     # MARK: Lock State
   - name: lock_state
     name_cased: lockState
@@ -225,6 +263,18 @@ types:
       - id: 0x01
         name: locked
         verb: lock
+    # MARK: Lock Safety
+  - name: lock_safety
+    name_cased: lockSafety
+    name_pretty: Lock safety
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: safe
+        description: The lock is double-locked (also from inside the vehicle)
+      - id: 0x01
+        name: unsafe
     # MARK: Network Security
   - name: network_security
     name_cased: networkSecurity
@@ -1068,6 +1118,10 @@ types:
             name: tire_under_inflation
           - id: 0xc1
             name: wheel_pressure_fault
+          - id: 0xc2
+            name: oil_change_warning
+          - id: 0xc3
+            name: inspection_warning
       - name: state
         name_cased: state
         type: types.on_off_state

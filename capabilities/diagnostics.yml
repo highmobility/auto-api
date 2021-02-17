@@ -316,6 +316,12 @@ properties:
           pressure:
             bars: 2.25
         description: Rear left outer tire pressure is 2.25BAR
+      - data_component: '0615064002000000000000'
+        values:
+          location: 'spare'
+          pressure:
+            bars: 2.25
+        description: Spare tire pressure is 2.25BAR
   - id: 0x1b
     name: tire_temperatures
     name_cased: tireTemperatures
@@ -360,6 +366,12 @@ properties:
           temperature:
             celsius: 40.6
         description: Rear left outer tire temperature is 40.6°C
+      - data_component: '0617014024666666666666'
+        values:
+          location: 'spare'
+          temperature:
+            celsius: 10.2
+        description: Spare tire temperature is 10.2°C
   - id: 0x1c
     name: wheel_rpms
     name_cased: wheelRPMs
@@ -404,6 +416,12 @@ properties:
           rpm:
             revolutions_per_minute: 807.0
         description: Rear left outer wheel is doing 807.0RPM
+      - data_component: '0603000000000000000000'
+        values:
+          location: 'spare'
+          rpm:
+            revolutions_per_minute: 0.0
+        description: Spare wheel is doing 0.0RPM
   - id: 0x1d
     name: trouble_codes
     name_cased: troubleCodes
@@ -505,6 +523,11 @@ properties:
           location: 'rear_left_outer'
           status: 'normal'
         description: Rear left outer tire pressure is normal
+      - data_component: '0600'
+        values:
+          location: 'spare'
+          status: 'normal'
+        description: Spare tire pressure is normal
   - id: 0x22
     name: brake_lining_wear_pre_warning
     name_cased: brakeLiningWearPreWarning
@@ -650,3 +673,151 @@ properties:
         value:
           hours: 213.56
         description: The engine has operated 213.56h in idle
+  - id: 0x2b
+    name: engine_oil_amount
+    name: engineOilAmount
+    name_pretty: Engine oil amount
+    type: unit.volume
+    size: 10
+    description: The current estimated oil tank liquid fill.
+    examples:
+      - data_component: '1902400c000000000000'
+        value:
+          liters: 3.5
+        description: Engine oil tank is filled by 3.5 l
+  - id: 0x2c
+    name: engine_oil_level
+    name_cased: engineOilLevel
+    name_pretty: Engine oil level
+    type: types.percentage
+    description: The current estimated oil tank liquid fill in percentage.
+    examples:
+      - data_component: '3fe999999999999a'
+        value: 0.8
+        description: Engile oil level is at 80%
+  - id: 0x2d
+    name: estimated_secondary_powertrain_range
+    name_cased: estimatedSecondaryPowertrainRange
+    name_pretty: Estimated secondary powertrain range
+    type: unit.length
+    size: 10
+    description: Estimated secondary powertrain range
+    examples:
+      - data_component: '12044070900000000000'
+        value:
+          kilometers: 265.0
+        description: Estimated secondary powertrain`s range is 256.0km
+  - id: 0x2e
+    name: fuel_level_accuracy
+    name_cased: fuelLevelAccuracy
+    name_pretty: Fuel level accuracy
+    type: enum
+    size: 1
+    description: This value includes the information, if the fuel level has been calculated or measured.
+    enum_values:
+      - id: 0x00
+        name: measured
+      - id: 0x01
+        name: calculated
+  - id: 0x2f
+    name: tire_pressures_targets
+    name_cased: tirePressuresTargets
+    name_pretty: Tire pressures targets
+    name_singular: tire_pressure_target
+    type: types.tire_pressure
+    multiple: true
+    description: Target tire pressures for the vehicle.
+    examples:
+      - data_component: '00150640027ae147ae147b'
+        values:
+          location: 'front_left'
+          pressure:
+            bars: 2.31
+        description: Front left tire pressure target is 2.31BAR
+      - data_component: '01150640027ae147ae147b'
+        values:
+          location: 'front_right'
+          pressure:
+            bars: 2.31
+        description: Front right tire pressure target is 2.31BAR
+      - data_component: '0215064001eb851eb851ec'
+        values:
+          location: 'rear_right'
+          pressure:
+            bars: 2.24
+        description: Rear right tire pressure target is 2.24BAR
+      - data_component: '0315064001eb851eb851ec'
+        values:
+          location: 'rear_left'
+          pressure:
+            bars: 2.24
+        description: Rear left tire pressure target is 2.24BAR
+      - data_component: '0415064002000000000000'
+        values:
+          location: 'rear_right_outer'
+          pressure:
+            bars: 2.25
+        description: Rear right outer tire target pressure is 2.25BAR
+      - data_component: '0515064002000000000000'
+        values:
+          location: 'rear_left_outer'
+          pressure:
+            bars: 2.25
+        description: Rear left outer tire target pressure is 2.25BAR
+      - data_component: '0615064002000000000000'
+        values:
+          location: 'spare'
+          pressure:
+            bars: 2.25
+        description: Spear tire target pressure is 2.25BAR
+  - id: 0x30
+    name: tire_pressures_differences
+    name_cased: tirePressuresDifferences
+    name_pretty: Tire pressures differences
+    name_singular: tire_pressure_difference
+    type: types.tire_pressure
+    multiple: true
+    description: Tire pressures difference from the target pressure.
+    examples:
+      - data_component: '0015063fb999999999999a'
+        values:
+          location: 'front_left'
+          pressure:
+            bars: 0.1
+        description: Front left tire pressure difference is 0.1BAR
+      - data_component: '0115063fb999999999999a'
+        values:
+          location: 'front_right'
+          pressure:
+            bars: 0.1
+        description: Front right tire pressure difference is 0.1BAR
+      - data_component: '0215063fb999999999999a'
+        values:
+          location: 'rear_right'
+          pressure:
+            bars: 0.1
+        description: Rear right tire pressure difference is 0.1BAR
+      - data_component: '0315063fb999999999999a'
+        values:
+          location: 'rear_left'
+          pressure:
+            bars: 0.1
+        description: Rear left tire pressure difference is 0.1BAR
+      - data_component: '0415063fb999999999999a'
+        values:
+          location: 'rear_right_outer'
+          pressure:
+            bars: 0.1
+        description: Rear right outer tire pressure difference is 0.1BAR
+      - data_component: '0515063fb999999999999a'
+        values:
+          location: 'rear_left_outer'
+          pressure:
+            bars: 0.1
+        description: Rear left outer tire pressure difference is 0.1BAR
+      - data_component: '0615063fb999999999999a'
+        values:
+          location: 'spare'
+          pressure:
+            bars: 0.1
+        description: Spare tire pressure difference is 0.1BAR
