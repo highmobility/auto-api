@@ -491,3 +491,71 @@ properties:
           name: 'brake_fluid_warning'
           state: 'off'
         description: Brake fluid warning is off
+  - id: 0x02
+    name: bulb_failures
+    name_cased: bulbFailures
+    name_pretty: Bulb failures
+    name_singular: bulb_failure
+    type: enum
+    size: 1
+    multiple: true
+    description: Vehicle light bulb failure
+    enum_values:
+      - id: 0x00
+        name: turn_signal_left
+        description: Any left turn signal
+      - id: 0x01
+        name: turn_signal_right
+        description: Any right turn signal
+      - id: 0x02
+        name: low_beam
+        description: Any low beam
+      - id: 0x03
+        name: low_beam_left
+      - id: 0x04
+        name: low_beam_right
+      - id: 0x05
+        name: high_beam
+        description: Any high beam
+      - id: 0x06
+        name: high_beam_left
+      - id: 0x07
+        name: high_beam_right
+      - id: 0x08
+        name: fog_light_front
+        description: Any front fog light
+      - id: 0x09
+        name: fog_light_rear
+        description: Any rear fog light
+      - id: 0x0a
+        name: stop
+        description: Any stop light
+      - id: 0x0b
+        name: position
+        description: Any position light
+      - id: 0x0c
+        name: day_running
+        description: Any day light running light
+      - id: 0x0d
+        name: trailer_turn
+        description: Any trailer turn light
+      - id: 0x0e
+        name: trailer_turn_left
+        description: Any left trailer turn signal
+      - id: 0x0f
+        name: trailer_turn_right
+        description: Any right trailer turn signal
+      - id: 0x10
+        name: trailer_stop
+        description: Any trailer stop light
+      - id: 0x11
+        name: trailer_electrical_failure
+      - id: 0x12
+        name: multiple
+    examples:
+      - data_component: '01'
+        value: 'turn_signal_right'
+        description: Right turn signal`s bulb has failed.
+      - data_component: '05'
+        value: 'high_beam'
+        description: A high beam has failed.
