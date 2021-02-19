@@ -10,7 +10,7 @@ identifier:
 
 api:
   intro: 8
-  update: 12
+  update: 13
 
 getters:
   name: get_usage
@@ -528,3 +528,23 @@ properties:
         value:
           kilometers: 0.7
         description: Eco-score bonus range is 0.7km
+  - id: 0x28
+    name: trip_meters
+    name_cased: tripMeters
+    name_pretty: Trip meters
+    name_singular: trip_meter
+    type: types.trip_meter
+    multiple: true
+    examples:
+      - data_component: '011204407c833333333333'
+        values:
+          id: 1
+          distance:
+            kilometers: 456.2
+        description: Trip meter 1`s distance is 456.2km
+      - data_component: '02120440a372999999999a'
+        values:
+          id: 2
+          distance:
+            kilometers: 2489.3
+        description: Trip meter 2`s distance is 2489.3km
