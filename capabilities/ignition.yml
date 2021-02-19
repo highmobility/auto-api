@@ -26,6 +26,9 @@ properties:
     name: status
     name_cased: status
     name_pretty: Status
+    deprecated:
+      new_name: state
+      reason: combined with 'accessories_status'
     type: types.on_off_state
     examples:
       - data_component: '00'
@@ -35,6 +38,9 @@ properties:
     name: accessories_status
     name_cased: accessoriesStatus
     name_pretty: Accessories status
+    deprecated:
+      new_name: state
+      reason: combined with 'status'
     type: types.on_off_state
     examples:
       - data_component: '01'
