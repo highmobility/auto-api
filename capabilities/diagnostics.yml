@@ -815,9 +815,67 @@ properties:
           pressure:
             bars: 0.1
         description: Rear left outer tire pressure difference is 0.1BAR
-      - data_component: '0615063fb999999999999a'
+      - data_component: 'log0615063fb999999999999a'
         values:
           location: 'spare'
           pressure:
             bars: 0.1
         description: Spare tire pressure difference is 0.1BAR
+  - id: 0x31
+    name: backup_battery_remaining_time
+    name_cased: backupBatteryRemainingTime
+    name_pretty: Backup battery remaining time
+    type: unit.duration
+    size: 10
+    description: Remaining time the backup battery can work.
+    examples:
+      - data_component: '0701402e000000000000'
+        value:
+          minutes: 15.0
+        description: The backup battery has 15min remaining.
+  - id: 0x32
+    name: engine_coolant_fluid_level
+    name_cased: engineCoolantFluidLevel
+    name_pretty: Engine coolant fluid level
+    type: types.fluid_level
+    description: Engine coolant fluid level
+    examples:
+      - data_component: '04'
+        value: 'high'
+        description: Engine coolant level is high
+  - id: 0x33
+    name: engine_oil_fluid_level
+    name_cased: engineOilFluidLevel
+    name_pretty: Engine oil fluid level
+    type: types.fluid_level
+    description: Engine oil fluid level
+    examples:
+      - data_component: '03'
+        value: 'normal'
+        description: Engile oil level is at normal
+  - id: 0x34
+    name: engine_oil_pressure_level
+    name_cased: engineOilPressureLevel
+    name_pretty: Engine oil pressure level
+    type: enum
+    size: 1
+    description: Engine oil pressure level
+    enum_values:
+      - id: 0x00
+        name: low
+      - id: 0x01
+        name: normal
+      - id: 0x02
+        name: high
+      - id: 0x03
+        name: low_soft
+      - id: 0x04
+        name: low_hard
+      - id: 0x05
+        name: no_sensor
+      - id: 0x06
+        name: system_fault
+    examples:
+      - data_component: '01'
+        value: 'normal'
+        description: Engine oil pressure is normal
