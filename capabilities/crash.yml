@@ -81,3 +81,38 @@ properties:
       - data_component: '01'
         value: 'enabled'
         description: Automatic eCall is enabled
+  - id: 0x05
+    name: severity
+    name_cased: severity
+    name_pretty: Severity
+    type: uinteger
+    size: 1
+    description: Severity of the crash (from 0 to 7 - very high severity)
+    examples:
+      - data_component: '02'
+        value: 2
+        description: Crash severity is 2
+  - id: 0x06
+    name: impact_zone
+    name_cased: impactZone
+    name_pretty: Impact zone
+    type: enum
+    size: 1
+    description: Impact zone of the crash
+    enum_values:
+      - id: 0x00
+        name: predestrian_protection
+      - id: 0x01
+        name: rollover
+      - id: 0x02
+        name: rear_passenger_side
+      - id: 0x03
+        name: rear_driver_side
+      - id: 0x04
+        name: side_passeger_side
+      - id: 0x05
+        name: side_driver_side
+      - id: 0x06
+        name: front_passenger_side
+      - id: 0x07
+        name: front_driver_side
