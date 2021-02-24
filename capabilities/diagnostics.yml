@@ -879,3 +879,15 @@ properties:
       - data_component: '01'
         value: 'normal'
         description: Engine oil pressure is normal
+  - id: 0x35
+    name: engine_time_to_next_service
+    name_cased: engineTimeToNextService
+    name_pretty: Engine time to next service
+    type: unit.duration
+    size: 10
+    description: Engine time until next service of the vehicle
+    examples:
+      - data_component: '0702407f500000000000'
+        value:
+          hours: 501.0
+        description: 501.0 engine hours until next service

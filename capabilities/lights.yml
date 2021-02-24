@@ -173,3 +173,23 @@ properties:
       - data_component: '02'
         value: 'parking_light_right'
         description: Rotary light switch position parking light right
+  - id: 0x0b
+    name: parking_light_status
+    name_cased: parkingLightStatus
+    name_pretty: Parking light status
+    type: enum
+    size: 1
+    description: Indicates the status of the parking light.
+    enum_values:
+      - id: 0x00
+        name: 'off'
+      - id: 0x01
+        name: left
+      - id: 0x02
+        name: right
+      - id: 0x03
+        name: both
+    examples:
+      - data_component: '03'
+        value: 'both'
+        description: Both parking lights are on.

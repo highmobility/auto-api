@@ -1627,16 +1627,19 @@ types:
         name_cased: keyValue
         type: types.key_value
         description: Key-value pair for the trouble code
-    # MARK: Park Assist Muted
-  - name: park_assist_muted
-    name_cased: parkAssistMuted
-    name_pretty: Park assist muted
+    # MARK: Park Assist
+  - name: park_assist
+    name_cased: parkAssist
+    name_pretty: Park assist
     type: custom
-    size: 2
+    size: 3
     items:
       - name: location
         name_cased: location
         type: types.location_longitudinal
+      - name: alarm
+        name_cased: alarm
+        type: types.active_state
       - name: muted
         name: muted
         type: types.muted
