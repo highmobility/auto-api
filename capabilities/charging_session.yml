@@ -38,25 +38,25 @@ properties:
           provider: "Free Wifi and Charging Provider"
         description: Matching public charging point from 'Free Wifi and Charging Provider' is located at Harju 6, 10130 Tallinn
   - id: 0x02
-    name: displayed_soc
-    name_cased: displayedSOC
-    name_pretty: Displayed SOC
-    type: integer
-    size: 4
+    name: displayed_state_of_charge
+    name_cased: displayedStateOfCharge
+    name_pretty: Displayed state of charge
+    type: types.percentage
+    description: Displayed state of charge to the driver
     examples:
-      - data_component: '0000001d'
-        value: 29
-        description: Displayed SOC is 29
+      - data_component: '3fd28f5c28f5c28f'
+        value: 0.29
+        description: Displayed state of charge is 29.0%
   - id: 0x03
-    name: displayed_start_soc
-    name_cased: displayedStartSOC
-    name_pretty: Displayed start SOC
-    type: integer
-    size: 4
+    name: displayed_start_state_of_charge
+    name_cased: displayedStartStateOfCharge
+    name_pretty: Displayed start state of charge
+    type: percentage
+    description: Displayed state of charge at start to the driver
     examples:
-      - data_component: '0000000c'
-        value: 12
-        description: Displayed start SOC is 12
+      - data_component: '3fbeb851eb851eb8'
+        value: 0.12
+        description: Displayed start state of charge is 12.0%
   - id: 0x04
     name: business_errors
     name_cased: businessErrors

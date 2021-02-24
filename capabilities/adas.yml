@@ -81,3 +81,59 @@ properties:
       - data_component: '01'
         value: 'active'
         description: Rear cross warning system is active.
+  - id: 0x07
+    name: automated_parking_brake
+    name_cased: automatedParkingBrake
+    name_pretty: Automated parking brake
+    type: types.active_state
+    description: Automatic brake state
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Automated parking brake is active.
+  - id: 0x08
+    name: lane_keep_assist
+    name_cased: laneKeepAssist
+    name_pretty: Lane keep assist
+    type: types.active_state
+    description: Lane keep assist state
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Lane keep assist is active
+  - id: 0x09
+    name: park_assists_muted
+    name_cased: parkAssistsMuted
+    name_pretty: Park assists muted
+    name_singluar: park_assist_muted
+    type: types.park_assist_muted
+    description: If the driver has muted or not park assists
+    examples:
+      - data_component: '0000'
+        values:
+          location: 'front'
+          muted: 'not_muted'
+        description: Front park assist is not muted.
+      - data_component: '0100'
+        values:
+          location: 'rear'
+          muted: 'not_muted'
+        description: Rear park assist is not muted.
+  - id: 0x0a
+    name: lane_keep_assists_states
+    name_cased: laneKeepAssistsStates
+    name_pretty: Lane keep assists states
+    name_singluar: lane_keep_assist_state
+    type: types.lane_keep_assist_state
+    description: Lane keeping assist state denoting when the vehicle is actively controlling the wheels
+    examples:
+      - data_component: '0000'
+        values:
+          location: 'left'
+          state: 'inactive'
+        description: Left lane keeping assist is not actively controlling the wheels.
+      - data_component: '0100'
+        values:
+          location: 'right'
+          state: 'inactive'
+        description: Right lane keeping assist is not actively controlling the wheels.

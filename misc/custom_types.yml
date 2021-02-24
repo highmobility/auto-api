@@ -283,6 +283,17 @@ types:
         description: The lock is double-locked (also from inside the vehicle)
       - id: 0x01
         name: unsafe
+    # MARK: Muted
+  - name: muted
+    name_cased: muted
+    name_pretty: Muted
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: not_muted
+      - id: 0x01
+        name: muted
     # MARK: Network Security
   - name: network_security
     name_cased: networkSecurity
@@ -1553,6 +1564,25 @@ types:
       - name: time
         name_cased: time
         type: types.time
+    # MARK: Lane Keep Assist State
+  - name: lane_keep_assist_state
+    name_cased: laneKeepAssistState
+    name_pretty: Lane keep assist state
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: left
+          - id: 0x01
+            name: right
+      - name: state
+        name_cased: state
+        type: types.active_state
     # MARK: Light
   - name: light
     name_cased: light
@@ -1597,6 +1627,19 @@ types:
         name_cased: keyValue
         type: types.key_value
         description: Key-value pair for the trouble code
+    # MARK: Park Assist Muted
+  - name: park_assist_muted
+    name_cased: parkAssistMuted
+    name_pretty: Park assist muted
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: types.location_longitudinal
+      - name: muted
+        name: muted
+        type: types.muted
     # MARK: Person Detected
   - name: person_detected
     name_cased: personDetected
