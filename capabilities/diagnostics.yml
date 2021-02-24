@@ -652,15 +652,6 @@ properties:
           component: 'exhaust_filter'
           cleaning: 'unknown'
         description: Diesel 'exhaust filter' is in 'over_limit' status and unknown cleaning state
-  - id: 0x29
-    name: blind_spot_monitoring
-    name_cased: blindSpotMonitoring
-    name_pretty: Blind spot monitoring
-    type: types.active_state
-    examples:
-      - data_component: '01'
-        value: 'active'
-        description: Blind spot monitoring is active
   - id: 0x2a
     name: engine_total_idle_operating_time
     name_cased: engineTotalIdleOperatingTime
