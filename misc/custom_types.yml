@@ -600,6 +600,73 @@ types:
       - name: state
         name_cased: state
         type: types.active_state
+    # MARK: Charging Cost
+  - name: charging_cost
+    name_cased: chargingCost
+    name_pretty: Charging cost
+    type: custom
+    description: Charging cost information
+    items:
+      - name: currency
+        name_cased: currency
+        type: string
+        description: Currency ISO code
+      - name: calculated_charging_cost
+        name_cased: calculatedChargingCost
+        type: float
+        size: 4
+        description: Calculated charging cost
+      - name: calculated_savings
+        name_cased: calculatedSavings
+        type: float
+        size: 4
+        description: Calculated savings from charging
+      - name: simulated_immediate_charging_cost
+        name_cased: simulatedImmediateChargingCost
+        type: float
+        size: 4
+        description: Simulated charging costs
+    # MARK: Charging Location
+  - name: charging_location
+    name_cased: chargingLocation
+    name_pretty: Charging location
+    type: custom
+    description: Charging location address
+    items:
+      - name: municipality
+        name_cased: municipality
+        type: string
+        description: Municipality component of the address
+      - name: formatted_address
+        name_cased: formattedAddress
+        type: string
+        description: Full formatted address
+      - name: street_address
+        name_cased: streetAddress
+        type: string
+        description: Streed address component
+    # MARK: Charging Point
+  - name: charging_point
+    name_cased: chargingPoint
+    name_pretty: Charging point
+    type: custom
+    items:
+      - name: city
+        name_cased: city
+        type: string
+        description: City the charging point is in.
+      - name: postal_code
+        name_cased: postalCode
+        type: string
+        description: Postal code the charging point is at.
+      - name: street
+        name_cased: street
+        type: string
+        description: Street address the chargin point is at.
+      - name: provider
+        name_cased: provider
+        type: string
+        description: The provider name of the charging point.
     # MARK: Check Control Message
   - name: check_control_message
     name_cased: checkControlMessage
@@ -691,6 +758,49 @@ types:
         name_cased: status
         type: string
         description: Status
+    # MARK: Crash Incident
+  - name: crash_incident
+    name_cased: crashIncident
+    name_pretty: Crash incident
+    type: custom
+    size: 3
+    items:
+      - name: location
+        name_cased: location
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: front
+          - id: 0x01
+            name: lateral
+          - id: 0x02
+            name: rear
+      - name: severity
+        name_cased: severity
+        name_pretty: Severity
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: very_high
+          - id: 0x01
+            name: high
+          - id: 0x02
+            name: medium
+          - id: 0x03
+            name: low
+      - name: repairs
+        name_cased: repairs
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: needed
+          - id: 0x02
+            name: not_needed
     # MARK: Dashboard Light
   - name: dashboard_light
     name_cased: dashboardLight
@@ -1133,49 +1243,6 @@ types:
       - name: state
         name_cased: state
         type: types.on_off_state
-    # MARK: Crash Incident
-  - name: crash_incident
-    name_cased: crashIncident
-    name_pretty: Crash incident
-    type: custom
-    size: 3
-    items:
-      - name: location
-        name_cased: location
-        type: enum
-        size: 1
-        enum_values:
-          - id: 0x00
-            name: front
-          - id: 0x01
-            name: lateral
-          - id: 0x02
-            name: rear
-      - name: severity
-        name_cased: severity
-        name_pretty: Severity
-        type: enum
-        size: 1
-        enum_values:
-          - id: 0x00
-            name: very_high
-          - id: 0x01
-            name: high
-          - id: 0x02
-            name: medium
-          - id: 0x03
-            name: low
-      - name: repairs
-        name_cased: repairs
-        type: enum
-        size: 1
-        enum_values:
-          - id: 0x00
-            name: unknown
-          - id: 0x01
-            name: needed
-          - id: 0x02
-            name: not_needed
     # MARK: Departure Time
   - name: departure_time
     name_cased: departureTime

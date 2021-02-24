@@ -1,0 +1,190 @@
+name: charging_session
+name_cased: chargingSession
+name_pretty: Charging session
+category: chassis
+authorization: true
+
+identifier:
+  msb: 0x00
+  lsb: 0x6d
+
+api:
+  intro: 13
+  update: 13
+
+state: all
+
+properties:
+  - id: 0x01
+    name: public_charging_points
+    name_cased: publicChargingPoints
+    name_pretty: Public charging points
+    type: types.charging_point
+    multiple: true
+    description: Matching public charging points.
+    examples:
+      - data_component: '00064265726C696e000531303939370014536b616c69747a65722053747261c39f6520363800284869676820456e65726779204c6f7720507269636573204368617267696e672050726f7669646572'
+        values:
+          city: 'Berlin'
+          postal_code: '10997'
+          street: 'Skalitzer Straße 68'
+          provider: 'High Energy Low Prices Charging Provider'
+        description: Matching public charging point from 'High Energy Low Prices Charging Provider' is located at Skalitzer Straße 60, 10997 Berlin
+      - data_component: '000754616c6c696e6e0005313031333000074861726a752036001f46726565205769666920616e64204368617267696e672050726f7669646572'
+        values:
+          city: 'Tallinn'
+          postal_code: '10130'
+          street: 'Harju 6'
+          provider: "Free Wifi and Charging Provider"
+        description: Matching public charging point from 'Free Wifi and Charging Provider' is located at Harju 6, 10130 Tallinn
+  - id: 0x02
+    name: displayed_soc
+    name_cased: displayedSOC
+    name_pretty: Displayed SOC
+    type: integer
+    size: 4
+    examples:
+      - data_component: '0000001d'
+        value: 29
+        description: Displayed SOC is 29
+  - id: 0x03
+    name: displayed_start_soc
+    name_cased: displayedStartSOC
+    name_pretty: Displayed start SOC
+    type: integer
+    size: 4
+    examples:
+      - data_component: '0000000c'
+        value: 12
+        description: Displayed start SOC is 12
+  - id: 0x04
+    name: business_errors
+    name_cased: businessErrors
+    name_pretty: Business errors
+    name_singular: business_error
+    type: string
+    multiple: true
+    examples:
+      - data_component: '506c6561736520636865636b20746865206368617267696e672073746174696f6e'
+        value: 'Please check the charging station'
+        description: Business error states 'Please check the charging station'
+      - data_component: '5265706561742074686520706c75672d696e'
+        value: 'Repeat the plug-in'
+        description: Business error states 'Repeat the plug-in'
+  - id: 0x05
+    name: time_zone
+    name_cased: timeZone
+    name_pretty: Time zone
+    type: string
+    description: Time zone of the charging session
+    examples:
+      - data_component: '4575726f70652f4265726c696e'
+        value: 'Europe/Berlin'
+        description: Charging session`s time zone is Europe - Berlin
+  - id: 0x06
+    name: start_time
+    name_cased: startTime
+    name_pretty: Start time
+    type: timestamp
+    size: 8
+    description: Start time of the charging session
+    examples:
+      - data_component: '00000177d367a8d0'
+        value: '2021-02-24T10:38:42.000Z'
+        description: Charging session started on 24. February 2021 at 10:38:42 CET
+  - id: 0x07
+    name: end_time
+    name_cased: endTime
+    name_pretty: End time
+    type: timestamp
+    size: 8
+    description: End time of the charging session
+    examples:
+      - data_component: '00000177d39e9750'
+        value: '2021-02-24T11:38:42.000Z'
+        description: Charging session ended on 24. February 2021 at 11:38:42 CET
+  - id: 0x08
+    name: total_charging_duration
+    name_cased: totalChargingDuration
+    name_pretty: Total charging duration
+    type: unit.duration
+    size: 10
+    description: Total time charging was active during the session
+    examples:
+      - data_component: '070040c11e8000000000'
+        value:
+          seconds: 8765.0
+        description: Total time the charging was active was 8765.0s in the session
+  - id: 0x09
+    name: calculated_energy_charged
+    name_cased: calculatedEnergyCharged
+    name_pretty: Calculated energy charged
+    type: unit.energy
+    size: 10
+    description: Calculated amount of energy charged during the session
+    examples:
+      - data_component: '0c04400c89374bc6a7f0'
+        value:
+          kilowatt_hours: 3.567
+        description: Calculated amount of energy charged was 3.567Kwh during the session
+  - id: 0x0a
+    name: energy_charged
+    name_cased: energyCharged
+    name_pretty: Energy charged
+    type: unit.energy
+    size: 10
+    description: Energy charged during the session
+    examples:
+      - data_component: '0c044002c28f5c28f5c3'
+        value:
+          kilowatt_hours: 2.345
+        description: Energy charged in the last session was 2.345Kwh
+  - id: 0x0b
+    name: preconditioning_state
+    name_cased: preconditioningState
+    name_pretty: Preconditioning state
+    type: types.active_state
+    description: Preconditioning is active or not
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Preconditioning is active
+  - id: 0x0c
+    name: odometer
+    name_cased: odometer
+    name_pretty: Odometer
+    type: unit.length
+    size: 10
+    description: The vehicle odometer value in a given units
+    examples:
+      - data_component: '120440a0040000000000'
+        value:
+          kilometers: 2050.0
+        description: Odometer is showing 2050.0km
+  - id: 0x0d
+    name: charging_cost
+    name_cased: chargingCost
+    name_pretty: Charging cost
+    type: types.charging_cost
+    description: Charging cost information
+    examples:
+      - data_component: '00034555524011a7563f1134054011a756'
+        values:
+          currency: 'EUR'
+          calculated_charging_cost: 2.2758383109
+          calculated_savings: 0.5672
+          simulated_immediate_charging_cost: 2.2758383109
+        description: Charging costs are shown in 'EUR' with calculated costs of 2.2758383109, calculated savings 0.5672 and simulated charging cost of 2.2758383109
+  - id: 0x0e
+    name: location
+    name_cased: location
+    name_pretty: Location
+    type: types.charging_location
+    description: Charging location address
+    examples:
+      - data_component: '00064265726c696e002b536b616c69747a65722053747261c39f652036382c203130393937204265726c696e2c204765726d616e790014536b616c69747a65722053747261c39f65203638'
+        values:
+          municipality: 'Berlin'
+          formatted_address: 'Skalitzer Straße 68, 10997 Berlin, Germany'
+          street_address: 'Skalitzer Straße 68'
+        description: Charging location was 'Skalitzer Straße 68, 10997 Berlin, Germany'

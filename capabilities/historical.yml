@@ -25,6 +25,12 @@ setters:
       - property_id: 0x02
         value: [0x00, 0x6a]
     description: Request history of trips travelled with the vehicle.
+  - name: get_charging_sessions
+    optional: [0x03, 0x04]
+    constants:
+      - property_id: 0x02
+        value: [0x00, 0x6d]
+    description: Request history of charging sessions for the vehicle.
 
 state: [0x01]
 
