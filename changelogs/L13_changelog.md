@@ -101,7 +101,7 @@ New properties (along with some new _custom types_) are added to the pre-existin
   - `lock_safety`
 - _usage_
   - `trip_meters`
--  *vehicle_information*
+- *vehicle_information*
   - `powertrain_secondary`
 - *vehicle_location*
   - `gps_signal_strength`
