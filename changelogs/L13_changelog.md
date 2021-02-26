@@ -58,9 +58,9 @@ Besides `.brand`'s (universal property) change for a few names (for compiler/gen
 List of updated enums (in custom types):
 
 - `dashboard_lights` (a ton of new values)
-- `location_wheel`
-- `fluid_level`
 - `failure.reason`
+- `fluid_level`
+- `location_wheel`
 
 
 ## Properties
@@ -70,18 +70,18 @@ New properties (along with some new _custom types_) are added to the pre-existin
 - *dashboard_lights*
   - `bulb_failures`
 - _diagnostics_
- - `backup_battery_remaining_time`
- - `engine_coolant_fluid_level`
- - `engine_oil_amount`
- - `engine_oil_fluid_level`
- - `engine_oil_level`
- - `engine_oil_pressure_level`
- - `engine_time_to_next_service`
- - `engine_total_idle_operating_time`
- - `estimated_secondary_powertrain_range`
- - `fuel_level_accuracy`
- - `tire_pressures_targets`
- - `tire_pressures_differences`
+  - `backup_battery_remaining_time`
+  - `engine_coolant_fluid_level`
+  - `engine_oil_amount`
+  - `engine_oil_fluid_level`
+  - `engine_oil_level`
+  - `engine_oil_pressure_level`
+  - `engine_time_to_next_service`
+  - `engine_total_idle_operating_time`
+  - `estimated_secondary_powertrain_range`
+  - `fuel_level_accuracy`
+  - `tire_pressures_targets`
+  - `tire_pressures_differences`
 - _hood_
   - `lock`
   - `lock_safety`
