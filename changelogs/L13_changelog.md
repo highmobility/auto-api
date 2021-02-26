@@ -9,11 +9,14 @@ Meaning there is no need to update generators and other tools built on the proto
 - deprecations  
 - new capabilities  
 - new properties  
+- new types  
 - renamings  
 - updates to enums  
 
 Changes from L12 are divided into these sub-sections:
 * [Capabilities](#capabilities)
+* [Custom Types](#custom-types)
+* [Enums](#enums)
 * [Properties](#properties)
 * [Misc](#misc)
 
@@ -25,6 +28,39 @@ New capabilities, along with new properties (and their respective types), are in
 - _adas_
 - *charging_session*
 - _crash_
+
+
+## Custom Types
+
+The update brings a bunch of new (custom) types to the spec.  
+Some are added to existing capabilities, while many come with _new_ capabilities.  
+
+List of new _custom types_:
+
+- `charging_cost`
+- `crash_incident`
+- `charging_location`
+- `charging_point`
+- `eco_driving_threshold`
+- `engine_type`
+- `lane_keep_assist_state`
+- `lock_safety`
+- `muted`
+- `park_assist`
+- `trip_meter`
+
+
+## Enums
+
+Some enums have gained new values.  
+Besides `.brand`'s (universal property) change for a few names (for compiler/generator sanity), all the updates are additive.
+
+List of updated enums (in custom types):
+
+- `dashboard_lights` (a ton of new values)
+- `location_wheel`
+- `fluid_level`
+- `failure.reason`
 
 
 ## Properties
@@ -65,6 +101,8 @@ New properties (along with some new _custom types_) are added to the pre-existin
   - `lock_safety`
 - _usage_
   - `trip_meters`
+-  *vehicle_information*
+  - `powertrain_secondary`
 - *vehicle_location*
   - `gps_signal_strength`
   - `gps_source`
@@ -77,9 +115,6 @@ Currently the file contains only 1 type, so it would be referenced as `events.ev
 
 Other changes are:
 
-- additional `dashboard_lights` names (a lot of)
-- additions to non-dashboard pre-existing _enums_
-- changes to a few `.brand` (universal property) enum names (for compiler sanity)
 - new setter in `historical` called `get_charging_sessions`
   - only "entry point" for requesting `charging_session` data
 - removed `diagnostics.blind_spot_monitoring` in favour of `adas` properties
@@ -89,3 +124,4 @@ Other changes are:
 - _ignition_
   - `accessories_status` in favour of `state`
   - `status` in favour of `state`
+
