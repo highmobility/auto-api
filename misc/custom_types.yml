@@ -1524,6 +1524,8 @@ types:
             name: pending
           - id: 0x06
             name: oem_error
+          - id: 0x07
+            name: privacy_mode_active
       - name: description
         name_cased: description
         name_pretty: Description

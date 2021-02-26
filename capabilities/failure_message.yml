@@ -80,6 +80,10 @@ properties:
         name: oem_error
         name_pretty: OEM error
         description: API call to an OEM returned an error
+      - id: 0x09
+        name: privacy_mode_active
+        name_pretty: Privacy mode active
+        description: Privacy mode is turned on, meaning vehicle location and other "private" data is not transmitted by the vehicle.
     examples:
       - data_component: '01'
         value: 'unauthorised'
