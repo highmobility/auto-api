@@ -1,4 +1,4 @@
-# AutoAPI L12
+# AutoAPI L13
 
 
 The message types are unified into 3 types.
@@ -270,12 +270,15 @@ Types follow the same pattern as *properties* - they all have the same *4 keys* 
 
 **Base** types are simple types like `integer`, `uinteger`, `enum`, `float`, `double`, `string`, `bytes` and `timestamp`.
 
+**Referenced** types are referenced from another file with the following syntax: `[ref_name].[ref-ed_type]`  
+- `events.[type]` are from _misc/events.yml_  
+- `types.[type]` are from *misc/custom_types.yml*  
+- `unit.[type]` are from *misc/unit_types.yml*
+
 Types `string` and `bytes` can be considered *dynamic* by (usually) appearing without `size: x`.  
 
 The `timestamp` type can be considered like an _alias_ to `uinteger` of
-size 8.  
-Its purpose is to allow developers to use the built-in
-_DateTime_ data type where it exists.
+size 8 and it represents the _number of seconds from UNIX epoch_. Its purpose is to allow developers to use the built-in _DateTime_ data type where it exists.
 
 Among these simple types, the `enum` is different to others.  
 All enum types are actually a *1-byte size uinteger* values that **can** be used inside *single-type* properties too.  

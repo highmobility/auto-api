@@ -57,7 +57,7 @@ Besides `.brand`'s (universal property) change for a few names (for compiler/gen
 
 List of updated enums (in custom types):
 
-- `dashboard_lights` (a ton of new values)
+- `dashboard_lights.name` (a ton of new values)
 - `failure.reason`
 - `fluid_level`
 - `location_wheel`
