@@ -882,3 +882,24 @@ properties:
         value:
           hours: 501.0
         description: 501.0 engine hours until next service
+  - id: 0x36
+    name: low_voltage_battery_charge_level
+    name_cased: lowVoltageBatteryChargeLevel
+    name_pretty: Low voltage battery charge level
+    type: enum
+    size: 1
+    description: Indicates if the charge level of the low voltage battery is too low to use other systems
+    enum_values:
+      - id: 0x00
+        name: ok
+        description: Charge level is ok and no other systems are deactivated
+      - id: 0x01
+        name: deactivation_level_1
+        description: High voltage users are cut off from low voltage management
+      - id: 0x02
+        name: deactivation_level_2
+        description: Infotainment cut off, from that point on no data will be sent to vehicle backend
+      - id: 0x03
+        name: deactivation_level_3
+        description: Wake up blocked, vehicle cannot be woken up externally
+

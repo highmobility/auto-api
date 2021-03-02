@@ -38,8 +38,9 @@ properties:
     name: start_stop_state
     name_cased: startStopState
     name_pretty: Start stop state
-    type: types.active_state
+    type: types.on_off_state
+    description: Indicates wheter the start-stop system is currently on or not
     examples:
       - data_component: '01'
-        value: 'active'
-        description: Automatic engine start-stop system is active
+        value: 'on'
+        description: Automatic engine start-stop system is currently on
