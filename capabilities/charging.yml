@@ -373,6 +373,7 @@ properties:
     name: charging_rate
     name_cased: chargingRate
     name_pretty: Charging rate
+    added: 0x0c
     type: unit.power
     size: 10
     description: Charge rate when charging
@@ -385,6 +386,7 @@ properties:
     name: battery_current
     name_cased: batteryCurrent
     name_pretty: Battery current
+    added: 0x0c
     type: unit.electric_current
     size: 10
     description: Battery current
@@ -397,6 +399,7 @@ properties:
     name: charger_voltage
     name_cased: chargerVoltage
     name_pretty: Charger voltage
+    added: 0x0c
     type: unit.electric_potential_difference
     size: 10
     description: Charger voltage
@@ -409,6 +412,7 @@ properties:
     name: current_type
     name_cased: currentType
     name_pretty: Current type
+    added: 0x0c
     type: enum
     size: 1
     description: Type of current in use
@@ -427,6 +431,7 @@ properties:
     name: max_range
     name_cased: maxRange
     name_pretty: Max range
+    added: 0x0c
     type: unit.length
     size: 10
     description: Maximum electric range with 100% of battery
@@ -439,6 +444,7 @@ properties:
     name: starter_battery_state
     name_cased: starterBatteryState
     name_pretty: Starter battery state
+    added: 0x0c
     type: enum
     size: 1
     description: State of the starter battery
@@ -460,6 +466,7 @@ properties:
     name: smart_charging_status
     name_cased: smartChargingStatus
     name_pretty: Smart charging status
+    added: 0x0c
     type: enum
     size: 1
     description: Status of optimized/intelligent charging
@@ -480,6 +487,7 @@ properties:
     name: battery_level_at_departure
     name_cased: batteryLevelAtDeparture
     name_pretty: Battery level at departure
+    added: 0x0c
     type: types.percentage
     description: Battery charge level expected at time of departure
     examples:
@@ -490,6 +498,7 @@ properties:
     name: preconditioning_departure_status
     name_cased: preconditioningDepartureStatus
     name_pretty: Preconditioning departure status
+    added: 0x0c
     type: types.active_state
     description: Status of preconditioning at departure time
     examples:
@@ -500,6 +509,7 @@ properties:
     name: preconditioning_immediate_status
     name_cased: preconditioningImmediateStatus
     name_pretty: Preconditioning immediate status
+    added: 0x0c
     type: types.active_state
     description: Status of immediate preconditioning
     examples:
@@ -510,6 +520,7 @@ properties:
     name: preconditioning_departure_enabled
     name_cased: preconditioningDepartureEnabled
     name_pretty: Preconditioning departure enabled
+    added: 0x0c
     type: types.enabled_state
     description: Preconditioning activation status at departure
     examples:
@@ -520,6 +531,7 @@ properties:
     name: preconditioning_error
     name_cased: preconditioningError
     name_pretty: Preconditioning error
+    added: 0x0c
     type: enum
     size: 1
     description: Preconditioning error if one is encountered

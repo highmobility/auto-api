@@ -19,6 +19,7 @@ properties:
     name: public_charging_points
     name_cased: publicChargingPoints
     name_pretty: Public charging points
+    added: 0x0d
     type: types.charging_point
     multiple: true
     description: Matching public charging points.
@@ -41,6 +42,7 @@ properties:
     name: displayed_state_of_charge
     name_cased: displayedStateOfCharge
     name_pretty: Displayed state of charge
+    added: 0x0d
     type: types.percentage
     description: Displayed state of charge to the driver
     examples:
@@ -51,6 +53,7 @@ properties:
     name: displayed_start_state_of_charge
     name_cased: displayedStartStateOfCharge
     name_pretty: Displayed start state of charge
+    added: 0x0d
     type: percentage
     description: Displayed state of charge at start to the driver
     examples:
@@ -62,6 +65,7 @@ properties:
     name_cased: businessErrors
     name_pretty: Business errors
     name_singular: business_error
+    added: 0x0d
     type: string
     multiple: true
     examples:
@@ -75,6 +79,7 @@ properties:
     name: time_zone
     name_cased: timeZone
     name_pretty: Time zone
+    added: 0x0d
     type: string
     description: Time zone of the charging session
     examples:
@@ -85,6 +90,7 @@ properties:
     name: start_time
     name_cased: startTime
     name_pretty: Start time
+    added: 0x0d
     type: timestamp
     size: 8
     description: Start time of the charging session
@@ -96,6 +102,7 @@ properties:
     name: end_time
     name_cased: endTime
     name_pretty: End time
+    added: 0x0d
     type: timestamp
     size: 8
     description: End time of the charging session
@@ -107,6 +114,7 @@ properties:
     name: total_charging_duration
     name_cased: totalChargingDuration
     name_pretty: Total charging duration
+    added: 0x0d
     type: unit.duration
     size: 10
     description: Total time charging was active during the session
@@ -119,6 +127,7 @@ properties:
     name: calculated_energy_charged
     name_cased: calculatedEnergyCharged
     name_pretty: Calculated energy charged
+    added: 0x0d
     type: unit.energy
     size: 10
     description: Calculated amount of energy charged during the session
@@ -131,6 +140,7 @@ properties:
     name: energy_charged
     name_cased: energyCharged
     name_pretty: Energy charged
+    added: 0x0d
     type: unit.energy
     size: 10
     description: Energy charged during the session
@@ -143,6 +153,7 @@ properties:
     name: preconditioning_state
     name_cased: preconditioningState
     name_pretty: Preconditioning state
+    added: 0x0d
     type: types.active_state
     description: Preconditioning is active or not
     examples:
@@ -153,6 +164,7 @@ properties:
     name: odometer
     name_cased: odometer
     name_pretty: Odometer
+    added: 0x0d
     type: unit.length
     size: 10
     description: The vehicle odometer value in a given units
@@ -165,6 +177,7 @@ properties:
     name: charging_cost
     name_cased: chargingCost
     name_pretty: Charging cost
+    added: 0x0d
     type: types.charging_cost
     description: Charging cost information
     examples:
@@ -179,6 +192,7 @@ properties:
     name: location
     name_cased: location
     name_pretty: Location
+    added: 0x0d
     type: types.charging_location
     description: Charging location address
     examples:

@@ -120,6 +120,7 @@ properties:
     name: sunroof_rain_event
     name_cased: sunroofRainEvent
     name_pretty: Sunroof rain event
+    added: 0x0c
     type: enum
     size: 1
     description: Sunroof event happened in case of rain

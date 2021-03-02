@@ -19,6 +19,7 @@ properties:
     name: status
     name_cased: status
     name_pretty: Status
+    added: 0x0d
     type: types.on_off_state
     description: Indicates whether the driver assistance system is active or not.
     examples:
@@ -29,6 +30,7 @@ properties:
     name: alertness_system_status
     name_cased: alertnessSystemStatus
     name_pretty: Alertness system status
+    added: 0x0d
     type: types.active_state
     description: Indicates if the driver alertness warning is active or inactive.
     examples:
@@ -39,6 +41,7 @@ properties:
     name: forward_collision_warning_system
     name_cased: forwardCollisionWarningSystem
     name_pretty: Forward collision warning system
+    added: 0x0d
     type: types.active_state
     description: Indicates whether the forward collision warning system is active or inactive.
     examples:
@@ -49,6 +52,7 @@ properties:
     name: blind_spot_warning_state
     name_cased: blindSpotWarningState
     name_pretty: Blind spot warning state
+    added: 0x0d
     type: types.active_state
     description: Indicates whether the blind spot warning system is active or not.
     examples:
@@ -59,6 +63,7 @@ properties:
     name: blind_spot_warning_system_coverage
     name_cased: blind_spot_warning_system_coverage
     name_pretty: Blind spot warning system coverage
+    added: 0x0d
     type: enum
     size: 1
     description: Blind spot warning system coverage.
@@ -75,6 +80,7 @@ properties:
     name: rear_cross_warning_system
     name_cased: rearCrossWarningSystem
     name_pretty: Rear cross warning system
+    added: 0x0d
     type: types.active_state
     description: Indicates whether the rear cross warning system is active or not.
     examples:
@@ -85,6 +91,7 @@ properties:
     name: automated_parking_brake
     name_cased: automatedParkingBrake
     name_pretty: Automated parking brake
+    added: 0x0d
     type: types.active_state
     description: Automatic brake state
     examples:
@@ -95,6 +102,7 @@ properties:
     name: lane_keep_assist_system
     name_cased: laneKeepAssistSystem
     name_pretty: Lane keep assist system
+    added: 0x0d
     type: types.on_off_state
     description: Indicates if the lane keep assist system is turned on or not.
     examples:
@@ -106,6 +114,7 @@ properties:
     name_cased: laneKeepAssistsStates
     name_pretty: Lane keep assists states
     name_singluar: lane_keep_assist_state
+    added: 0x0d
     type: types.lane_keep_assist_state
     description: Lane keeping assist state indicating the vehicle is actively controlling the wheels.
     examples:
@@ -124,6 +133,7 @@ properties:
     name_cased: parkAssists
     name_pretty: Park assists
     name_singluar: park_assist
+    added: 0x0d
     type: types.park_assist
     description: If the alarm is active and the driver has muted or not park assists.
     examples:
@@ -143,6 +153,7 @@ properties:
     name: blind_spot_warning_system
     name_cased: blindSpotWarningSystem
     name_pretty: Blind spot warning system
+    added: 0x0d
     type: types.on_off_state
     description: Indicates whether the blind spot warning system is turned on or not.
     examples:

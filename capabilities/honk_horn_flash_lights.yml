@@ -84,6 +84,7 @@ properties:
     name: honk_time
     name_cased: honkTime
     name_pretty: Honk time
+    added: 0x0c
     type: unit.duration
     size: 10
     description: Time to honk the horn

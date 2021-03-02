@@ -63,6 +63,7 @@ properties:
     name: starting_time
     name_cased: startingTime
     name_pretty: Starting time
+    added: 0x0c
     type: unit.duration
     size: 10
     description: Start the video from the given time

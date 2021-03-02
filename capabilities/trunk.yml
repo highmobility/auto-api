@@ -44,6 +44,7 @@ properties:
     name: lock_safety
     name_cased: lockSafety
     name_pretty: Lock safety
+    added: 0x0d
     type: types.lock_safety
     description: Indicates the safe-state of the trunk.
     examples:

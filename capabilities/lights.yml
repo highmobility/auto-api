@@ -155,6 +155,7 @@ properties:
     name: switch_position
     name_cased: switchPosition
     name_pretty: Switch position
+    added: 0x0c
     type: enum
     size: 1
     description: Position of the rotary light switch
@@ -177,6 +178,7 @@ properties:
     name: parking_light_status
     name_cased: parkingLightStatus
     name_pretty: Parking light status
+    added: 0x0d
     type: enum
     size: 1
     description: Indicates the status of the parking light.

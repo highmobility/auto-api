@@ -256,6 +256,7 @@ properties:
     name: odometer_after_last_trip
     name_cased: odometerAfterLastTrip
     name_pretty: Odometer after last trip
+    added: 0x0c
     type: unit.length
     size: 10
     description: Odometer after the last trip
@@ -268,6 +269,7 @@ properties:
     name: safety_driving_score
     name_cased: safetyDrivingScore
     name_pretty: Safety driving score
+    added: 0x0c
     type: types.percentage
     description: Safety driving score as percentage
     examples:
@@ -278,6 +280,7 @@ properties:
     name: rapid_acceleration_grade
     name_cased: rapidAccelerationGrade
     name_pretty: Rapid acceleration grade
+    added: 0x0c
     type: types.grade
     description: Grade given for rapid acceleration over time
     examples:
@@ -288,6 +291,7 @@ properties:
     name: rapid_deceleration_grade
     name_cased: rapidDecelerationGrade
     name_pretty: Rapid deceleration grade
+    added: 0x0c
     type: types.grade
     description: Grade given for rapid deceleration over time
     examples:
@@ -298,6 +302,7 @@ properties:
     name: late_night_grade
     name_cased: lateNightGrade
     name_pretty: Late night grade
+    added: 0x0c
     type: types.grade
     description: Grade given for late night driving over time
     examples:
@@ -308,6 +313,7 @@ properties:
     name: distance_over_time
     name_cased: distanceOverTime
     name_pretty: Distance over time
+    added: 0x0c
     type: types.distance_over_time
     description: Distance driven over a given time period
     examples:
@@ -322,6 +328,7 @@ properties:
     name: electric_consumption_rate_since_start
     name_cased: electricConsumptionRateSinceStart
     name_pretty: Electric consumption rate since start
+    added: 0x0c
     type: unit.energy_efficiency
     size: 10
     description: Electric energy consumption rate since the start of a trip
@@ -334,6 +341,7 @@ properties:
     name: electric_consumption_rate_since_reset
     name_cased: electricConsumptionRateSinceReset
     name_pretty: Electric consumption rate since reset
+    added: 0x0c
     type: unit.energy_efficiency
     size: 10
     description: Electric energy consumption rate since a reset
@@ -346,6 +354,7 @@ properties:
     name: electric_distance_last_trip
     name_cased: electricDistanceLastTrip
     name_pretty: Electric distance last trip
+    added: 0x0c
     type: unit.length
     size: 10
     description: Distance travelled with electricity in last trip
@@ -358,6 +367,7 @@ properties:
     name: electric_distance_since_reset
     name_cased: electricDistanceSinceReset
     name_pretty: Electric distance since reset
+    added: 0x0c
     type: unit.length
     size: 10
     description: Distance travelled with electricity since reset
@@ -370,6 +380,7 @@ properties:
     name: electric_duration_last_trip
     name_cased: electricDurationLastTrip
     name_pretty: Electric duration last trip
+    added: 0x0c
     type: unit.duration
     size: 10
     description: Duration of travelling using electricity during last trip
@@ -382,6 +393,7 @@ properties:
     name: electric_duration_since_reset
     name_cased: electricDurationSinceReset
     name_pretty: Electric duration since reset
+    added: 0x0c
     type: unit.duration
     size: 10
     description: Duration of travelling using electricity since reset
@@ -394,6 +406,7 @@ properties:
     name: fuel_consumption_rate_last_trip
     name_cased: fuelConsumptionRateLastTrip
     name_pretty: Fuel consumption rate last trip
+    added: 0x0c
     type: unit.fuel_efficiency
     size: 10
     description: Liquid fuel consumption rate during last trip
@@ -406,6 +419,7 @@ properties:
     name: fuel_consumption_rate_since_reset
     name_cased: fuelConsumptionRateSinceReset
     name_pretty: Fuel consumption rate since reset
+    added: 0x0c
     type: unit.fuel_efficiency
     size: 10
     description: Liquid fuel consumption rate since reset
@@ -418,6 +432,7 @@ properties:
     name: average_speed_last_trip
     name_cased: averageSpeedLastTrip
     name_pretty: Average speed last trip
+    added: 0x0c
     type: unit.speed
     size: 10
     description: Average speed during last trip
@@ -430,6 +445,7 @@ properties:
     name: average_speed_since_reset
     name_cased: averageSpeedSinceReset
     name_pretty: Average speed since reset
+    added: 0x0c
     type: unit.speed
     size: 10
     description: Average speed since reset
@@ -442,6 +458,7 @@ properties:
     name: fuel_distance_last_trip
     name_cased: fuelDistanceLastTrip
     name_pretty: Fuel distance last trip
+    added: 0x0c
     type: unit.length
     size: 10
     description: Distance travelled with (liquid) fuel during last trip
@@ -454,6 +471,7 @@ properties:
     name: fuel_distance_since_reset
     name_cased: fuelDistanceSinceReset
     name_pretty: Fuel distance since reset
+    added: 0x0c
     type: unit.length
     size: 10
     description: Distance travelled with (liquid) fuel since reset
@@ -466,6 +484,7 @@ properties:
     name: driving_duration_last_trip
     name_cased: drivingDurationLastTrip
     name_pretty: Driving duration last trip
+    added: 0x0c
     type: unit.duration
     size: 10
     description: Duration of last trip
@@ -478,6 +497,7 @@ properties:
     name: driving_duration_since_reset
     name_cased: drivingDurationSinceReset
     name_pretty: Driving duration since reset
+    added: 0x0c
     type: unit.duration
     size: 10
     description: Duration of travelling since reset
@@ -490,6 +510,7 @@ properties:
     name: eco_score_total
     name_cased: ecoScoreTotal
     name_pretty: Eco-score total
+    added: 0x0c
     type: types.percentage
     description: Overall eco-score rating
     examples:
@@ -500,6 +521,7 @@ properties:
     name: eco_score_free_wheel
     name_cased: ecoScoreFreeWheel
     name_pretty: Eco-score free wheel
+    added: 0x0c
     type: types.percentage
     description: Eco-score rating for free-wheeling
     examples:
@@ -510,6 +532,7 @@ properties:
     name: eco_score_constant
     name_cased: ecoScoreConstant
     name_pretty: Eco-score constant
+    added: 0x0c
     type: types.percentage
     description: Eco-score rating constant
     examples:
@@ -520,6 +543,7 @@ properties:
     name: eco_score_bonus_range
     name_cased: ecoScoreBonusRange
     name_pretty: Eco-score bonus range
+    added: 0x0c
     type: unit.length
     size: 10
     description: Eco-score bonus range
@@ -533,6 +557,7 @@ properties:
     name_cased: tripMeters
     name_pretty: Trip meters
     name_singular: trip_meter
+    added: 0x0d
     type: types.trip_meter
     multiple: true
     examples:

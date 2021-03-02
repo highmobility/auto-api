@@ -50,6 +50,7 @@ properties:
     name: state
     name_cased: state
     name_pretty: State
+    added: 0x0c
     type: enum
     size: 1
     enum_values:

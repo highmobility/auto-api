@@ -205,6 +205,7 @@ properties:
     name: time_to_exhaust_inspection
     name_cased: timeToExhaustInspection
     name_pretty: Time to exhaust inspection
+    added: 0x0c
     type: unit.duration
     size: 10
     description: Time until exhaust inspection
@@ -217,6 +218,7 @@ properties:
     name: last_ecall
     name_cased: lastECall
     name_pretty: Last eCall
+    added: 0x0c
     type: timestamp
     size: 8
     description: Date-time of the last eCall
@@ -228,6 +230,8 @@ properties:
     name: distance_to_next_oil_service
     name_cased: distanceToNextOilService
     name_pretty: Distance to next oil service
+    added: 0x0c
+    added: 0x0d
     type: unit.length
     size: 10
     description: Indicates the remaining distance until the next oil service; if this limit was exceeded, this value indicates the distance that has been driven since then.
@@ -240,6 +244,8 @@ properties:
     name: time_to_next_oil_service
     name_cased: timeToNextService
     name_pretty: Time to next oil service
+    added: 0x0c
+    added: 0x0d
     type: unit.duration
     size: 10
     description: Indicates the time remaining until the next oil service; if this limit was exceeded, this value indicates the time that has passed since then.

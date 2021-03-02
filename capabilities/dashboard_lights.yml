@@ -496,6 +496,7 @@ properties:
     name_cased: bulbFailures
     name_pretty: Bulb failures
     name_singular: bulb_failure
+    added: 0x0d
     type: enum
     size: 1
     multiple: true

@@ -19,6 +19,7 @@ properties:
     name: type
     name_cased: type
     name_pretty: Type
+    added: 0x0c
     type: enum
     size: 1
     description: Type of the trip
@@ -37,6 +38,7 @@ properties:
     name: driver_name
     name_cased: driverName
     name_pretty: Driver name
+    added: 0x0c
     type: string
     description: Name of the driver of the trip
     examples:
@@ -47,6 +49,7 @@ properties:
     name: description
     name_cased: description
     name_pretty: Description
+    added: 0x0c
     type: string
     description: Description of the trip
     examples:
@@ -57,6 +60,7 @@ properties:
     name: start_time
     name_cased: startTime
     name_pretty: Start time
+    added: 0x0c
     type: timestamp
     size: 8
     description: Start time of the trip
@@ -68,6 +72,7 @@ properties:
     name: end_time
     name_cased: endTime
     name_pretty: End time
+    added: 0x0c
     type: timestamp
     size: 8
     description: End time of the trip
@@ -79,6 +84,7 @@ properties:
     name: start_address
     name_cased: startAddress
     name_pretty: Start address
+    added: 0x0c
     type: string
     description: Start address of the trip
     examples:
@@ -89,6 +95,7 @@ properties:
     name: end_address
     name_cased: endAddress
     name_pretty: End address
+    added: 0x0c
     type: string
     description: End address of the trip
     examples:
@@ -99,6 +106,7 @@ properties:
     name: start_coordinates
     name_cased: startCoordinates
     name_pretty: Start coordinates
+    added: 0x0c
     type: types.coordinates
     description: Start coordinates of the trip
     examples:
@@ -111,6 +119,7 @@ properties:
     name: end_coordinates
     name_cased: endCoordinates
     name_pretty: End coordinates
+    added: 0x0c
     type: types.coordinates
     description: End coordinates of the trip
     examples:
@@ -123,6 +132,7 @@ properties:
     name: start_odometer
     name_cased: startOdometer
     name_pretty: Start odometer
+    added: 0x0c
     type: unit.length
     size: 10
     description: Odometer reading at the start of the trip
@@ -135,6 +145,7 @@ properties:
     name: end_odometer
     name_cased: endOdometer
     name_pretty: End odometer
+    added: 0x0c
     type: unit.length
     size: 10
     description: Odometer reading at the end of the trip
@@ -147,6 +158,7 @@ properties:
     name: average_fuel_consumption
     name_cased: averageFuelConsumption
     name_pretty: Average fuel consumption
+    added: 0x0c
     type: unit.fuel_efficiency
     size: 10
     description: Average fuel consumption during the trip
@@ -159,6 +171,7 @@ properties:
     name: distance
     name_cased: distance
     name_pretty: Distance
+    added: 0x0c
     type: unit.length
     size: 10
     description: Distance of the trip
@@ -171,6 +184,8 @@ properties:
     name: start_address_components
     name_cased: startAddressComponents
     name_pretty: Start address components
+    name_singluar: start_address_component
+    added: 0x0c
     type: types.address_component
     multiple: true
     description: Start address components
@@ -219,6 +234,8 @@ properties:
     name: end_address_components
     name_cased: endAddressComponents
     name_pretty: End address components
+    name_singluar: end_address_component
+    added: 0x0c
     type: types.address_component
     multiple: true
     description: End address components
@@ -267,6 +284,7 @@ properties:
     name: event
     name_cased: event
     name_pretty: Event
+    added: 0x0d
     type: enum
     size: 1
     enum_values:
@@ -291,6 +309,7 @@ properties:
     name: eco_level
     name_cased: ecoLevel
     name_pretty: Eco level
+    added: 0x0d
     type: enum
     size: 1
     enum_values:
@@ -307,6 +326,7 @@ properties:
     name_cased: thresholds
     name_pretty: Thresholds
     name_singluar: Threshold
+    added: 0x0d
     type: types.eco_driving_threshold
     multiple: true
     description: Eco driving thresholds
@@ -320,6 +340,7 @@ properties:
     name: total_fuel_consumption
     name_cased: totalFuelConsumption
     name_pretty: Total fuel consumption
+    added: 0x0d
     type: unit.volume
     size: 10
     description: Total fuel consumption during the trip
@@ -332,6 +353,7 @@ properties:
     name: total_idle_fuel_consumption
     name_cased: totalIdleFuelConsumption
     name_pretty: Total idle fuel consumption
+    added: 0x0d
     type: unit.volume
     size: 10
     description: Fuel consumed while idle since the last ignition on.
@@ -344,6 +366,7 @@ properties:
     name: maximum_speed
     name_cased: maximumSpeed
     name_pretty: Maximum speed
+    added: 0x0d
     type: unit.speed
     size: 10
     description: Maximum speed recorded since the last igntion on.

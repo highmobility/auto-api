@@ -465,6 +465,7 @@ properties:
     name: odometer
     name_cased: odometer
     name_pretty: Odometer
+    added: 0x0c
     type: unit.length
     size: 10
     description: The vehicle odometer value in a given units
@@ -477,6 +478,7 @@ properties:
     name: engine_total_operating_time
     name_cased: engineTotalOperatingTime
     name_pretty: Engine total operation time
+    added: 0x0c
     type: unit.duration
     size: 10
     description: The accumulated time of engine operation
@@ -489,9 +491,10 @@ properties:
     name: tire_pressure_statuses
     name_cased: tirePressureStatuses
     name_pretty: Tire pressure statuses
+    name_singular: tire_pressure_status
+    added: 0x0c
     type: types.tire_pressure_status
     multiple: true
-    name_singular: tire_pressure_status
     examples:
       - data_component: '0000'
         values:
@@ -532,6 +535,7 @@ properties:
     name: brake_lining_wear_pre_warning
     name_cased: brakeLiningWearPreWarning
     name_pretty: Brake lining wear pre-warning
+    added: 0x0c
     type: types.active_state
     description: Status of brake lining wear pre-warning
     examples:
@@ -542,6 +546,7 @@ properties:
     name: engine_oil_life_remaining
     name_cased: engineOilLifeRemaining
     name_pretty: Engine oil life remaining
+    added: 0x0c
     type: types.percentage
     size: 8
     description: Remaining life of engine oil which decreases over time
@@ -553,6 +558,8 @@ properties:
     name: oem_trouble_code_values
     name_cased: oemTroubleCodeValues
     name_pretty: OEM trouble code values
+    name_singular: engine_trouble_code_value
+    added: 0x0c
     type: types.oem_trouble_code_value
     multiple: true
     description: Additional OEM trouble codes
@@ -575,6 +582,7 @@ properties:
     name: diesel_exhaust_fluid_range
     name_cased: dieselExhaustFluidRange
     name_pretty: Diesel exhaust fluid range
+    added: 0x0c
     type: unit.length
     size: 10
     description: Distance remaining until diesel exhaust fluid is empty
@@ -587,6 +595,7 @@ properties:
     name: diesel_particulate_filter_soot_level
     name_cased: dieselParticulateFilterSootLevel
     name_pretty: Diesel particulate filter soot level
+    added: 0x0c
     type: types.percentage
     size: 8
     description: Level of soot in diesel exhaust particulate filter
@@ -598,9 +607,10 @@ properties:
     name: confirmed_trouble_codes
     name_cased: confirmedTroubleCodes
     name_pretty: Confirmed trouble codes
+    name_singular: confirmed_trouble_code
+    added: 0x0c
     type: types.confirmed_trouble_code
     multiple: true
-    name_singular: confirmed_trouble_code
     examples:
       - data_component: '00063830314331300002313600034341530006414354495645'
         values:
@@ -620,6 +630,7 @@ properties:
     name: diesel_exhaust_filter_status
     name_cased: dieselExhaustFilterStatus
     name_pretty: Diesel exhaust filter status
+    added: 0x0c
     type: types.diesel_exhaust_filter_status
     examples:
       - data_component: '000100'
@@ -656,6 +667,7 @@ properties:
     name: engine_total_idle_operating_time
     name_cased: engineTotalIdleOperatingTime
     name_pretty: Engine total idle operation time
+    added: 0x0d
     type: unit.duration
     size: 10
     description: The accumulated time of engine operation
@@ -668,6 +680,7 @@ properties:
     name: engine_oil_amount
     name: engineOilAmount
     name_pretty: Engine oil amount
+    added: 0x0d
     type: unit.volume
     size: 10
     description: The current estimated oil tank liquid fill.
@@ -680,6 +693,7 @@ properties:
     name: engine_oil_level
     name_cased: engineOilLevel
     name_pretty: Engine oil level
+    added: 0x0d
     type: types.percentage
     description: The current estimated oil tank liquid fill in percentage.
     examples:
@@ -690,6 +704,7 @@ properties:
     name: estimated_secondary_powertrain_range
     name_cased: estimatedSecondaryPowertrainRange
     name_pretty: Estimated secondary powertrain range
+    added: 0x0d
     type: unit.length
     size: 10
     description: Estimated secondary powertrain range
@@ -702,6 +717,7 @@ properties:
     name: fuel_level_accuracy
     name_cased: fuelLevelAccuracy
     name_pretty: Fuel level accuracy
+    added: 0x0d
     type: enum
     size: 1
     description: This value includes the information, if the fuel level has been calculated or measured.
@@ -715,6 +731,7 @@ properties:
     name_cased: tirePressuresTargets
     name_pretty: Tire pressures targets
     name_singular: tire_pressure_target
+    added: 0x0d
     type: types.tire_pressure
     multiple: true
     description: Target tire pressures for the vehicle.
@@ -766,6 +783,7 @@ properties:
     name_cased: tirePressuresDifferences
     name_pretty: Tire pressures differences
     name_singular: tire_pressure_difference
+    added: 0x0d
     type: types.tire_pressure
     multiple: true
     description: Tire pressures difference from the target pressure.
@@ -816,6 +834,7 @@ properties:
     name: backup_battery_remaining_time
     name_cased: backupBatteryRemainingTime
     name_pretty: Backup battery remaining time
+    added: 0x0d
     type: unit.duration
     size: 10
     description: Remaining time the backup battery can work.
@@ -828,6 +847,7 @@ properties:
     name: engine_coolant_fluid_level
     name_cased: engineCoolantFluidLevel
     name_pretty: Engine coolant fluid level
+    added: 0x0d
     type: types.fluid_level
     description: Engine coolant fluid level
     examples:
@@ -838,6 +858,7 @@ properties:
     name: engine_oil_fluid_level
     name_cased: engineOilFluidLevel
     name_pretty: Engine oil fluid level
+    added: 0x0d
     type: types.fluid_level
     description: Engine oil fluid level
     examples:
@@ -848,6 +869,7 @@ properties:
     name: engine_oil_pressure_level
     name_cased: engineOilPressureLevel
     name_pretty: Engine oil pressure level
+    added: 0x0d
     type: enum
     size: 1
     description: Engine oil pressure level
@@ -874,6 +896,7 @@ properties:
     name: engine_time_to_next_service
     name_cased: engineTimeToNextService
     name_pretty: Engine time to next service
+    added: 0x0d
     type: unit.duration
     size: 10
     description: Engine time until next service of the vehicle
@@ -886,6 +909,7 @@ properties:
     name: low_voltage_battery_charge_level
     name_cased: lowVoltageBatteryChargeLevel
     name_pretty: Low voltage battery charge level
+    added: 0x0d
     type: enum
     size: 1
     description: Indicates if the charge level of the low voltage battery is too low to use other systems
@@ -902,4 +926,7 @@ properties:
       - id: 0x03
         name: deactivation_level_3
         description: Wake up blocked, vehicle cannot be woken up externally
-
+    examples:
+      - data_component: '00'
+        value: 'ok'
+        description: Low voltage battery charge level is ok

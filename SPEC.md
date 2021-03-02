@@ -198,7 +198,7 @@ Keys available for *all* properties:
 * `name_pretty: string` human-readable name in a capitalised and whitespaced way, i.e. *Charging Power kW*
 * `type: string` type of the property
 
-Other conditional keys:
+Other optional keys:
 
 * `size: integer` size of the property's *data component*
     * *only* present for *simple properties* (base-type) *and*
@@ -208,6 +208,7 @@ Other conditional keys:
     * If multiple is present, there is also the `name_singular` value that represents the name's singular form
 * `description: string` an explanation of the property (what it does, means or represents)
 * `enum_values: []` a property can also be an `enum` – enums are explained in the *types section*
+* `added: [version]` indicating the AutoAPI _level_ in which the property was introduced
 
 All single-`string` & `uinteger`-bytes properties derive their bytes count from the size of the property's *data component size*.
 

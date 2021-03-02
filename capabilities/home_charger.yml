@@ -244,6 +244,7 @@ properties:
     name: charging_power
     name_cased: chargingPower
     name_pretty: Charging power
+    added: 0x0c
     type: unit.power
     size: 10
     description: Charging power output from the charger

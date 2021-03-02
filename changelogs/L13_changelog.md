@@ -9,6 +9,7 @@ Meaning there is no need to update generators and other tools built on the proto
 - deprecations  
 - new capabilities  
 - new properties  
+- new property field  
 - new types  
 - renamings  
 - updates to enums  
@@ -80,6 +81,7 @@ New properties (along with some new _custom types_) are added to the pre-existin
   - `engine_total_idle_operating_time`
   - `estimated_secondary_powertrain_range`
   - `fuel_level_accuracy`
+  - `low_voltage_battery_charge_level`
   - `tire_pressures_targets`
   - `tire_pressures_differences`
 - _hood_
@@ -118,6 +120,9 @@ Other changes are:
 - new setter in `historical` called `get_charging_sessions`
   - only "entry point" for requesting `charging_session` data
 - removed `diagnostics.blind_spot_monitoring` in favour of `adas` properties
+- new property (optional) field `added: [version]`
+  - indicates _AutoAPI Level_ (version) in which the property was introduced (added)
+  - is only added to "newer" properties (latest levels)
 
 *Deprecated* properties:
 

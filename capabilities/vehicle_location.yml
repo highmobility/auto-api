@@ -57,6 +57,7 @@ properties:
     name: precision
     name_cased: precision
     name_pretty: Precision
+    added: 0x0c
     type: unit.length
     size: 10
     examples:
@@ -68,6 +69,7 @@ properties:
     name: gps_source
     name_cased: gpsSource
     name_pretty: GPS source
+    added: 0x0d
     type: enum
     size: 11
     description: Type of GPS source
@@ -86,6 +88,7 @@ properties:
     name: gps_signal_strength
     name_cased: gpsSignalStrength
     name_pretty: GPS signal strength
+    added: 0x0d
     type: types.percentage
     size: 8
     description: GPS signal strength percentage between 0.0-1.0

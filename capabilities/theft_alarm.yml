@@ -46,6 +46,7 @@ properties:
     name: interior_protection_status
     name_cased: interiorProtectionStatus
     name_pretty: Interior protection status
+    added: 0x0c
     type: types.active_selected_state
     description: Interior protection sensor status
     examples:
@@ -56,6 +57,7 @@ properties:
     name: tow_protection_status
     name_cased: towProtectionStatus
     name_pretty: Tow protection status
+    added: 0x0c
     type: types.active_selected_state
     description: Tow protection sensor status
     examples:
@@ -66,6 +68,7 @@ properties:
     name: last_warning_reason
     name_cased: lastWarningReason
     name_pretty: Last warning reason
+    added: 0x0c
     type: enum
     size: 1
     enum_values:
@@ -119,6 +122,7 @@ properties:
     name: last_event
     name_cased: lastEvent
     name_pretty: Last event
+    added: 0x0c
     type: timestamp
     description: Last event happening date
     examples:
@@ -129,6 +133,7 @@ properties:
     name: last_event_level
     name_cased: lastEventLevel
     name_pretty: Last event level
+    added: 0x0c
     type: enum
     size: 1
     description: Level of impact for the last event
@@ -147,6 +152,7 @@ properties:
     name: event_type
     name_cased: eventType
     name_pretty: Event type
+    added: 0x0c
     type: enum
     size: 1
     description: Position of the last even relative to the vehicle
