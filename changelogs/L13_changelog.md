@@ -84,6 +84,8 @@ New properties (along with some new _custom types_) are added to the pre-existin
   - `low_voltage_battery_charge_level`
   - `tire_pressures_targets`
   - `tire_pressures_differences`
+- _engine_
+  - `start_stop_enabled`
 - _hood_
   - `lock`
   - `lock_safety`
@@ -117,12 +119,13 @@ Currently the file contains only 1 type, so it would be referenced as `events.ev
 
 Other changes are:
 
+- changed _engine_'s `activate_deactivate_start_stop` setter to `enable_disable_start_stop` (uses a new property too)
 - new setter in `historical` called `get_charging_sessions`
   - only "entry point" for requesting `charging_session` data
-- removed `diagnostics.blind_spot_monitoring` in favour of `adas` properties
 - new property (optional) field `added: [version]`
   - indicates _AutoAPI Level_ (version) in which the property was introduced (added)
   - is only added to "newer" properties (latest levels)
+- removed `diagnostics.blind_spot_monitoring` in favour of `adas` properties
 
 *Deprecated* properties:
 

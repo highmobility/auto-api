@@ -18,8 +18,8 @@ setters:
   - name: turn_engine_on_off
     mandatory: [0x01]
     description: Attempt to turn the vehicle engine on or off.
-  - name: activate_deactivate_start_stop
-    mandatory: [0x02]
+  - name: enable_disable_start_stop
+    mandatory: [0x03]
     description: Activate or deactivate the Start-Stop system of the engine. When activated, this will automatically shut down and restart the internal combustion engine when the vehicle is stopped.
 
 state: all
@@ -37,10 +37,22 @@ properties:
   - id: 0x02
     name: start_stop_state
     name_cased: startStopState
-    name_pretty: Start stop state
+    name_pretty: Start-stop state
     type: types.active_state
     description: Indicates wheter the start-stop system is currently active or not
     examples:
       - data_component: '01'
         value: 'active'
         description: Automatic engine start-stop system is currently active
+  - id: 0x03
+    name: start_stop_enabled
+    name_cased: startStopEnabled
+    name_pretty: Start-stop enabled
+    added: 0x0d
+    type: types.enabled_state
+    size: 1
+    description: Indicates if the automatic start-stop system is enabled or not
+    examples:
+      - data_component: '01'
+        value: 'enabled'
+        description: Automatic start-stop system is enabled
