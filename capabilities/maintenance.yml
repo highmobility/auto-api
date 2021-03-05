@@ -230,7 +230,6 @@ properties:
     name: distance_to_next_oil_service
     name_cased: distanceToNextOilService
     name_pretty: Distance to next oil service
-    added: 0x0c
     added: 0x0d
     type: unit.length
     size: 10
@@ -244,7 +243,6 @@ properties:
     name: time_to_next_oil_service
     name_cased: timeToNextService
     name_pretty: Time to next oil service
-    added: 0x0c
     added: 0x0d
     type: unit.duration
     size: 10

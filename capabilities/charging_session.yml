@@ -54,7 +54,7 @@ properties:
     name_cased: displayedStartStateOfCharge
     name_pretty: Displayed start state of charge
     added: 0x0d
-    type: percentage
+    type: types.percentage
     description: Displayed state of charge at start to the driver
     examples:
       - data_component: '3fbeb851eb851eb8'

@@ -16,7 +16,7 @@ getters: {}
 
 setters:
   - name: turn_ignition_on_off
-    mandatory: [0x01]
+    mandatory: [0x03]
     description: Attempt to turn the vehicle engine ignition on or off. When the engine ignition is on, it is possible for the driver to turn on the engine and drive the vehicle.
 
 state: all

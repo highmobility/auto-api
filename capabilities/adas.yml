@@ -12,6 +12,8 @@ api:
   intro: 13
   update: 13
 
+getters: {}
+
 state: all
 
 properties:
@@ -45,7 +47,7 @@ properties:
     type: types.active_state
     description: Indicates whether the forward collision warning system is active or inactive.
     examples:
-      - data_component: '01
+      - data_component: '01'
         value: 'active'
         description: Forward collision warning system is active.
   - id: 0x04

@@ -156,7 +156,7 @@ properties:
       - data_component: '19024041c00000000000'
         value:
           liters: 35.5
-        description: 35.5L of fuel remaining
+        description: 35.5 L of fuel remaining
   - id: 0x10
     name: anti_lock_braking
     name_cased: antiLockBraking
@@ -204,7 +204,7 @@ properties:
       - data_component: '190240daf0c000000000'
         value:
           liters: 27587.0
-        description: The engine has consumend 27'587.0L of fuel over it's lifespan
+        description: The engine has consumend 27'587.0 L of fuel over it's lifespan
   - id: 0x14
     name: brake_fluid_level
     name_cased: brakeFluidLevel
@@ -678,7 +678,7 @@ properties:
         description: The engine has operated 213.56h in idle
   - id: 0x2b
     name: engine_oil_amount
-    name: engineOilAmount
+    name_cased: engineOilAmount
     name_pretty: Engine oil amount
     added: 0x0d
     type: unit.volume

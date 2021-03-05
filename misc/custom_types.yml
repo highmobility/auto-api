@@ -1643,7 +1643,7 @@ types:
         name_cased: alarm
         type: types.active_state
       - name: muted
-        name: muted
+        name_cased: muted
         type: types.muted
     # MARK: Person Detected
   - name: person_detected

@@ -148,7 +148,7 @@ properties:
       - data_component: '19024004000000000000'
         value:
           liters: 2.5
-        description: Engine volume is 2.5L
+        description: Engine volume is 2.5 L
   - id: 0x0d
     name: engine_max_torque
     name_cased: engineMaxTorque
