@@ -1096,7 +1096,7 @@ types:
           - id: 0x75
             name: esp_failure
           - id: 0x76
-            name: excessive_oil_temperatur
+            name: excessive_oil_temperature
           - id: 0x77
             name: tire_front_left_flat
           - id: 0x78
@@ -1491,9 +1491,9 @@ types:
         size: 1
         enum_values:
           - id: 0x00
-            name: 0
+            name: zero
           - id: 0x01
-            name: 1
+            name: one
       - name: value
         name_cased: value
         type: double
