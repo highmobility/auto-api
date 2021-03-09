@@ -16,57 +16,57 @@ events:
     size: 1
     description: Triggered event
     enum_values:
-          - id: 0x00
-            name: ping
-            description: Sent every time when the webhook is configured or changed.
-          - id: 0x01
-            name: trip_started
-            description: Sent every time a vehicle starts a trip.
-          - id: 0x02
-            name: trip_ended
-            description: Sent when a vehicle ends a trip.
-          - id: 0x03
-            name: vehicle_location_changed
-            description: Sent when the vehicle location changes.
-          - id: 0x04
-            name: authorization_changed
-            description: Sent when the authorization status changes.
-          - id: 0x05
-            name: tire_pressure_changed
-            description: Sent when the tire pressure changed to low or too high.
-          - id: 0x06
-            name: harsh_acceleration_triggered
-            description: Sent when the vehicle’s acceleration rate exceeds the configurable limit for hard acceleration for a duration exceeding the configurable time duration limit.
-          - id: 0x07
-            name: harsh_acceleration_pedal_position_triggered
-            description: Sent when the vehicle’s acceleration pedal position exceeds the configurable limit for hard acceleration for a duration exceeding the configurable time duration limit.
-          - id: 0x08
-            name: harsh_braking_triggered
-            description: Indicates if the vehicle’s deceleration rate exceeds the configurable limit for harsh braking for a duration exceeding the configurable time limit.
-          - id: 0x09
-            name: harsh_cornering_triggered
-            description: Indicates if the vehicle’s lateral acceleration rate exceeds the configurable limit for harsh cornering for a duration exceeding the configurable time duration limit.
-          - id: 0x0a
-            name: seat_belt_triggered
-            description: Indicates a seat belt is buckled while the vehicle is moving.
-          - id: 0x0b
-            name: maintenance_changed
-            description: Triggered when the property "condition_based_services" in Diagnostics capability changes.
-          - id: 0x0c
-            name: dashboard_lights_changed
-            description: Triggered when the warning/malfunction indicator lights change.
-          - id: 0x0d
-            name: ignition_changed
-            description: Triggered when the ignition state changes, e.g. at the beginning and the end of a trip.
-          - id: 0x0e
-            name: accident_reported
-            description: Triggered when accident assistance call is triggered, either manually by the driver or automatically by the vehicle.
-          - id: 0x0f
-            name: emergency_reported
-            description: Triggered when intelligent emergency call is triggered.
-          - id: 0x10
-            name: breakdown_reported
-            description: Triggered when the driver calls the roadside assistance service.
-          - id: 0x11
-            name: battery_guard_warning
-            description: Triggered when the 12V battery runs low
+      - id: 0x00
+        name: ping
+        description: Sent every time when the webhook is configured or changed.
+      - id: 0x01
+        name: trip_started
+        description: Sent every time a vehicle starts a trip.
+      - id: 0x02
+        name: trip_ended
+        description: Sent when a vehicle ends a trip.
+      - id: 0x03
+        name: vehicle_location_changed
+        description: Sent when the vehicle location changes.
+      - id: 0x04
+        name: authorization_changed
+        description: Sent when the authorization status changes.
+      - id: 0x05
+        name: tire_pressure_changed
+        description: Sent when the tire pressure changed to low or too high.
+      - id: 0x06
+        name: harsh_acceleration_triggered
+        description: Sent when the vehicle’s acceleration rate exceeds the configurable limit for hard acceleration for a duration exceeding the configurable time duration limit.
+      - id: 0x07
+        name: harsh_acceleration_pedal_position_triggered
+        description: Sent when the vehicle’s acceleration pedal position exceeds the configurable limit for hard acceleration for a duration exceeding the configurable time duration limit.
+      - id: 0x08
+        name: harsh_braking_triggered
+        description: Indicates if the vehicle’s deceleration rate exceeds the configurable limit for harsh braking for a duration exceeding the configurable time limit.
+      - id: 0x09
+        name: harsh_cornering_triggered
+        description: Indicates if the vehicle’s lateral acceleration rate exceeds the configurable limit for harsh cornering for a duration exceeding the configurable time duration limit.
+      - id: 0x0a
+        name: seat_belt_triggered
+        description: Indicates a seat belt is buckled while the vehicle is moving.
+      - id: 0x0b
+        name: maintenance_changed
+        description: Triggered when the property "condition_based_services" in Diagnostics capability changes.
+      - id: 0x0c
+        name: dashboard_lights_changed
+        description: Triggered when the warning/malfunction indicator lights change.
+      - id: 0x0d
+        name: ignition_changed
+        description: Triggered when the ignition state changes, e.g. at the beginning and the end of a trip.
+      - id: 0x0e
+        name: accident_reported
+        description: Triggered when accident assistance call is triggered, either manually by the driver or automatically by the vehicle.
+      - id: 0x0f
+        name: emergency_reported
+        description: Triggered when intelligent emergency call is triggered.
+      - id: 0x10
+        name: breakdown_reported
+        description: Triggered when the driver calls the roadside assistance service.
+      - id: 0x11
+        name: battery_guard_warning
+        description: Triggered when the 12V battery runs low
