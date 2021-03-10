@@ -118,6 +118,7 @@ properties:
     name_singluar: lane_keep_assist_state
     added: 0x0d
     type: types.lane_keep_assist_state
+    multiple: true
     description: Lane keeping assist state indicating the vehicle is actively controlling the wheels.
     examples:
       - data_component: '0000'
@@ -125,7 +126,7 @@ properties:
           location: 'left'
           state: 'inactive'
         description: Left lane keeping assist is not actively controlling the wheels.
-      - data_component: '0110'
+      - data_component: '0101'
         values:
           location: 'right'
           state: 'active'
@@ -137,6 +138,7 @@ properties:
     name_singluar: park_assist
     added: 0x0d
     type: types.park_assist
+    multiple: true
     description: If the alarm is active and the driver has muted or not park assists.
     examples:
       - data_component: '000000'

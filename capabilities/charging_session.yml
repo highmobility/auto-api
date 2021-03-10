@@ -95,9 +95,9 @@ properties:
     size: 8
     description: Start time of the charging session
     examples:
-      - data_component: '00000177d367a8d0'
-        value: '2021-02-24T10:38:42.000Z'
-        description: Charging session started on 24. February 2021 at 10:38:42 CET
+      - data_component: '000001781bcbb94d'
+        value: '2021-03-10T11:00:39.373Z'
+        description: Charging session started on 10. March 2021 at 10:57:57 CET
   - id: 0x07
     name: end_time
     name_cased: endTime
@@ -107,9 +107,9 @@ properties:
     size: 8
     description: End time of the charging session
     examples:
-      - data_component: '00000177d39e9750'
-        value: '2021-02-24T11:38:42.000Z'
-        description: Charging session ended on 24. February 2021 at 11:38:42 CET
+      - data_component: '000001781bc9fd3e'
+        value: '2021-03-10T10:58:45.694Z'
+        description: Charging session ended on 10. March 2021 at 10:58:45 CET
   - id: 0x08
     name: total_charging_duration
     name_cased: totalChargingDuration

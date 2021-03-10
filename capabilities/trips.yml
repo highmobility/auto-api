@@ -333,9 +333,9 @@ properties:
     examples:
       - data_component: '000000000000000000'
         values:
-          type: '0'
+          type: 'zero'
           value: 0.0
-        description: Eco driving 0-threshold is set at 0.0
+        description: Eco driving zero-threshold is set at 0.0
   - id: 0x13
     name: total_fuel_consumption
     name_cased: totalFuelConsumption

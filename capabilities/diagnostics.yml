@@ -632,6 +632,7 @@ properties:
     name_pretty: Diesel exhaust filter status
     added: 0x0c
     type: types.diesel_exhaust_filter_status
+    multiple: true
     examples:
       - data_component: '000100'
         values:
@@ -824,7 +825,7 @@ properties:
           pressure:
             bars: 0.1
         description: Rear left outer tire pressure difference is 0.1BAR
-      - data_component: 'log0615063fb999999999999a'
+      - data_component: '0615063fb999999999999a'
         values:
           location: 'spare'
           pressure:
