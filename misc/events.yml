@@ -70,3 +70,6 @@ events:
       - id: 0x11
         name: battery_guard_warning
         description: Triggered when the 12V battery runs low
+      - id: 0x12
+        name: engine_changed
+        description: Triggered when the engine state changes.
