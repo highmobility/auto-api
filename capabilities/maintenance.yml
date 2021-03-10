@@ -241,7 +241,7 @@ properties:
         description: Distance to the next oil service is 525.6km
   - id: 0x12
     name: time_to_next_oil_service
-    name_cased: timeToNextService
+    name_cased: timeToNextOilService
     name_pretty: Time to next oil service
     added: 0x0d
     type: unit.duration

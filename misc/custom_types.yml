@@ -195,6 +195,23 @@ types:
         name: normal
       - id: 0x02
         name: warning
+    # MARK: Ignition State
+  - name: ignition_state
+    name_cased: ignitionState
+    name_pretty: Ignition state
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: 'lock'
+      - id: 0x01
+        name: 'off'
+      - id: 0x02
+        name: 'accessory'
+      - id: 0x03
+        name: 'on'
+      - id: 0x04
+        name: 'start'
     # MARK: Key-Value
   - name: key_value
     name_cased: keyValue
