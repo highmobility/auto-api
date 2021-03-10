@@ -124,3 +124,7 @@ properties:
         name: front_passenger_side
       - id: 0x07
         name: front_driver_side
+    examples:
+      - data_component: '07'
+        value: 'front_driver_side'
+        description:  Impact zone is front driver side
