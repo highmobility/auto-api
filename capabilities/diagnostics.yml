@@ -727,6 +727,10 @@ properties:
         name: measured
       - id: 0x01
         name: calculated
+    examples:
+      - data_component: '00'
+        value: 'measured'
+        description:  Fuel level has been measured
   - id: 0x2f
     name: tire_pressures_targets
     name_cased: tirePressuresTargets
