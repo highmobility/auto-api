@@ -1,5 +1,5 @@
 name: adas
-name_cased: adas
+name_cased: ADAS
 name_pretty: ADAS
 category: chassis
 authorization: true
@@ -63,7 +63,7 @@ properties:
         description: Blind spot warning is active.
   - id: 0x05
     name: blind_spot_warning_system_coverage
-    name_cased: blind_spot_warning_system_coverage
+    name_cased: blindSpotWarningSystemCoverage
     name_pretty: Blind spot warning system coverage
     added: 0x0d
     type: enum
