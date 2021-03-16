@@ -75,4 +75,4 @@ events:
         description: Triggered when the engine state changes.
       - id: 0x13
         name: fleet_clearance_changed
-        description: Triggered when the vehicle fleet has changed.
+        description: Triggered when the vehicle fleet clearance has changed.
