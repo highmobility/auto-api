@@ -104,6 +104,9 @@ measurement_types:
       - name: kilojoules
         id: 0x01
         conversion_linear: 1000.0
+      - name: watt_hours
+        id: 0x03
+        conversion_linear: 3600.0
       - name: kilowatt_hours
         id: 0x04
         conversion_linear: 3600000.0

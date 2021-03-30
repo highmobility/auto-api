@@ -291,9 +291,9 @@ properties:
     name: timers
     name_cased: timers
     name_pretty: Timers
+    name_singular: timer
     type: types.timer
     multiple: true
-    name_singular: timer
     examples:
       - data_component: '00000001598938e788'
         values:
@@ -552,3 +552,16 @@ properties:
       - data_component: '01'
         value: 'not_possible_low'
         description: Preconditioning not possible because battery or fuel is low
+  - id: 0x24
+    name: battery_capacity
+    name_cased: batteryCapacity
+    name_pretty: Battery capacity
+    added: 0x0d
+    type: unit.energy
+    size: 10
+    description: Indicates the battery capacity
+    examples:
+      - data_component: '0c044051800000000000'
+        value:
+          kilowatt_hours: 70.0
+        description: Battery capacity is 70.0Kwh
