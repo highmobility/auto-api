@@ -65,7 +65,7 @@ properties:
           doors:
             locks_state: 'locked'
         description: Lock inside door locks
-      - data_component: '0c00350101000401000100'
+      - data_component: '0c00350103000401000101'
         values:
           ignition:
             status: 'off'
