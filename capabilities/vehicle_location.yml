@@ -71,7 +71,7 @@ properties:
     name_pretty: GPS source
     added: 0x0d
     type: enum
-    size: 11
+    size: 1
     description: Type of GPS source
     enum_values:
       - id: 0x00
