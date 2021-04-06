@@ -491,6 +491,521 @@ properties:
           name: 'brake_fluid_warning'
           state: 'off'
         description: Brake fluid warning is off
+      - data_component: '5d00'
+        values:
+          name: 'active_hood_fault'
+          state: 'off'
+        description: Active hood fault is off
+      - data_component: '5e00'
+        values:
+          name: 'active_spoiler_fault'
+          state: 'off'
+        description: Active spoiler fault is off
+      - data_component: '5f00'
+        values:
+          name: 'adjust_tire_pressure'
+          state: 'off'
+        description: Adjust tire pressure is off
+      - data_component: '6000'
+        values:
+          name: 'steering_lock_alert'
+          state: 'off'
+        description: Steering lock alert is off
+      - data_component: '6100'
+        values:
+          name: 'anti_pollution_failure_engine_start_impossible'
+          state: 'off'
+        description: Anti pollution failure engine start impossible is off
+      - data_component: '6200'
+        values:
+          name: 'anti_pollution_system_failure'
+          state: 'off'
+        description: Anti pollution system failure is off
+      - data_component: '6300'
+        values:
+          name: 'anti_reverse_system_failing'
+          state: 'off'
+        description: Anti reverse system failing is off
+      - data_component: '6400'
+        values:
+          name: 'auto_parking_brake'
+          state: 'off'
+        description: Auto parking brake is off
+      - data_component: '6500'
+        values:
+          name: 'automatic_braking_deactive'
+          state: 'off'
+        description: Automatic braking deactive is off
+      - data_component: '6600'
+        values:
+          name: 'automatic_braking_system_fault'
+          state: 'off'
+        description: Automatic braking system fault is off
+      - data_component: '6700'
+        values:
+          name: 'automatic_lights_settings_failure'
+          state: 'off'
+        description: Automatic lights settings failure is off
+      - data_component: '6800'
+        values:
+          name: 'keyfob_battery_alarm'
+          state: 'off'
+        description: Keyfob battery alarm is off
+      - data_component: '6900'
+        values:
+          name: 'trunk_open'
+          state: 'off'
+        description: Trunk open is off
+      - data_component: '6a00'
+        values:
+          name: 'check_reversing_lamp'
+          state: 'off'
+        description: Check reversing lamp is off
+      - data_component: '6b00'
+        values:
+          name: 'crossing_line_system_alert_failure'
+          state: 'off'
+        description: Crossing line system alert failure is off
+      - data_component: '6c00'
+        values:
+          name: 'dipped_beam_headlamps_front_left_failure'
+          state: 'off'
+        description: Dipped beam headlamps front left failure is off
+      - data_component: '6d00'
+        values:
+          name: 'dipped_beam_headlamps_front_right_failure'
+          state: 'off'
+        description: Dipped beam headlamps front right failure is off
+      - data_component: '6e00'
+        values:
+          name: 'directional_headlamps_failure'
+          state: 'off'
+        description: Directional headlamps failure is off
+      - data_component: '6f00'
+        values:
+          name: 'directional_light_failure'
+          state: 'off'
+        description: Directional light failure is off
+      - data_component: '7000'
+        values:
+          name: 'dsg_failing'
+          state: 'off'
+        description: Dsg failing is off
+      - data_component: '7100'
+        values:
+          name: 'electric_mode_not_available'
+          state: 'off'
+        description: Electric mode not available is off
+      - data_component: '7200'
+        values:
+          name: 'electronic_lock_failure'
+          state: 'off'
+        description: Electronic lock failure is off
+      - data_component: '7300'
+        values:
+          name: 'engine_control_system_failure'
+          state: 'off'
+        description: Engine control system failure is off
+      - data_component: '7400'
+        values:
+          name: 'engine_oil_pressure_alert'
+          state: 'off'
+        description: Engine oil pressure alert is off
+      - data_component: '7500'
+        values:
+          name: 'esp_failure'
+          state: 'off'
+        description: Esp failure is off
+      - data_component: '7600'
+        values:
+          name: 'excessive_oil_temperature'
+          state: 'off'
+        description: Excessive oil temperature is off
+      - data_component: '7700'
+        values:
+          name: 'tire_front_left_flat'
+          state: 'off'
+        description: Tire front left flat is off
+      - data_component: '7800'
+        values:
+          name: 'tire_front_right_flat'
+          state: 'off'
+        description: Tire front right flat is off
+      - data_component: '7900'
+        values:
+          name: 'tire_rear_left_flat'
+          state: 'off'
+        description: Tire rear left flat is off
+      - data_component: '7a00'
+        values:
+          name: 'tire_rear_right_flat'
+          state: 'off'
+        description: Tire rear right flat is off
+      - data_component: '7b00'
+        values:
+          name: 'fog_light_front_left_failure'
+          state: 'off'
+        description: Fog light front left failure is off
+      - data_component: '7c00'
+        values:
+          name: 'fog_light_front_right_failure'
+          state: 'off'
+        description: Fog light front right failure is off
+      - data_component: '7d00'
+        values:
+          name: 'fog_light_rear_left_failure'
+          state: 'off'
+        description: Fog light rear left failure is off
+      - data_component: '7e00'
+        values:
+          name: 'fog_light_rear_right_failure'
+          state: 'off'
+        description: Fog light rear right failure is off
+      - data_component: '7f00'
+        values:
+          name: 'fog_light_front_fault'
+          state: 'off'
+        description: Fog light front fault is off
+      - data_component: '8000'
+        values:
+          name: 'door_front_left_open'
+          state: 'off'
+        description: Door front left open is off
+      - data_component: '8100'
+        values:
+          name: 'door_front_left_open_high_speed'
+          state: 'off'
+        description: Door front left open high speed is off
+      - data_component: '8200'
+        values:
+          name: 'tire_front_left_not_monitored'
+          state: 'off'
+        description: Tire front left not monitored is off
+      - data_component: '8300'
+        values:
+          name: 'door_front_right_open'
+          state: 'off'
+        description: Door front right open is off
+      - data_component: '8400'
+        values:
+          name: 'door_front_right_open_high_speed'
+          state: 'off'
+        description: Door front right open high speed is off
+      - data_component: '8500'
+        values:
+          name: 'tire_front_right_not_monitored'
+          state: 'off'
+        description: Tire front right not monitored is off
+      - data_component: '8600'
+        values:
+          name: 'headlights_left_failure'
+          state: 'off'
+        description: Headlights left failure is off
+      - data_component: '8700'
+        values:
+          name: 'headlights_right_failure'
+          state: 'off'
+        description: Headlights right failure is off
+      - data_component: '8800'
+        values:
+          name: 'hybrid_system_fault'
+          state: 'off'
+        description: Hybrid system fault is off
+      - data_component: '8900'
+        values:
+          name: 'hybrid_system_fault_repaired_vehicle'
+          state: 'off'
+        description: Hybrid system fault repaired vehicle is off
+      - data_component: '8a00'
+        values:
+          name: 'hydraulic_pressure_or_brake_fuild_insufficient'
+          state: 'off'
+        description: Hydraulic pressure or brake fuild insufficient is off
+      - data_component: '8b00'
+        values:
+          name: 'lane_departure_fault'
+          state: 'off'
+        description: Lane departure fault is off
+      - data_component: '8c00'
+        values:
+          name: 'limited_visibility_aids_camera'
+          state: 'off'
+        description: Limited visibility aids camera is off
+      - data_component: '8d00'
+        values:
+          name: 'tire_pressure_low'
+          state: 'off'
+        description: Tire pressure low is off
+      - data_component: '8e00'
+        values:
+          name: 'maintenance_date_exceeded'
+          state: 'off'
+        description: Maintenance date exceeded is off
+      - data_component: '8f00'
+        values:
+          name: 'maintenance_odometer_exceeded'
+          state: 'off'
+        description: Maintenance odometer exceeded is off
+      - data_component: '9000'
+        values:
+          name: 'other_failing_system'
+          state: 'off'
+        description: Other failing system is off
+      - data_component: '9100'
+        values:
+          name: 'parking_brake_control_failing'
+          state: 'off'
+        description: Parking brake control failing is off
+      - data_component: '9200'
+        values:
+          name: 'parking_space_measuring_system_failure'
+          state: 'off'
+        description: Parking space measuring system failure is off
+      - data_component: '9300'
+        values:
+          name: 'place_gear_to_parking'
+          state: 'off'
+        description: Place gear to parking is off
+      - data_component: '9400'
+        values:
+          name: 'power_steering_assitance_failure'
+          state: 'off'
+        description: Power steering assitance failure is off
+      - data_component: '9500'
+        values:
+          name: 'power_steering_failure'
+          state: 'off'
+        description: Power steering failure is off
+      - data_component: '9600'
+        values:
+          name: 'preheating_deactivated_battery_too_low'
+          state: 'off'
+        description: Preheating deactivated battery too low is off
+      - data_component: '9700'
+        values:
+          name: 'preheating_deactivated_fuel_level_too_low'
+          state: 'off'
+        description: Preheating deactivated fuel level too low is off
+      - data_component: '9800'
+        values:
+          name: 'preheating_deactivated_battery_set_the_clock'
+          state: 'off'
+        description: Preheating deactivated battery set the clock is off
+      - data_component: '9900'
+        values:
+          name: 'fog_light_rear_fault'
+          state: 'off'
+        description: Fog light rear fault is off
+      - data_component: '9a00'
+        values:
+          name: 'door_rear_left_open'
+          state: 'off'
+        description: Door rear left open is off
+      - data_component: '9b00'
+        values:
+          name: 'door_rear_left_open_high_speed'
+          state: 'off'
+        description: Door rear left open high speed is off
+      - data_component: '9c00'
+        values:
+          name: 'tire_rear_left_not_monitored'
+          state: 'off'
+        description: Tire rear left not monitored is off
+      - data_component: '9d00'
+        values:
+          name: 'door_rear_right_open'
+          state: 'off'
+        description: Door rear right open is off
+      - data_component: '9e00'
+        values:
+          name: 'door_rear_right_open_high_speed'
+          state: 'off'
+        description: Door rear right open high speed is off
+      - data_component: '9f00'
+        values:
+          name: 'tire_rear_right_not_monitored'
+          state: 'off'
+        description: Tire rear right not monitored is off
+      - data_component: 'a000'
+        values:
+          name: 'screen_rear_open'
+          state: 'off'
+        description: Screen rear open is off
+      - data_component: 'a100'
+        values:
+          name: 'retractable_roof_mechanism_fault'
+          state: 'off'
+        description: Retractable roof mechanism fault is off
+      - data_component: 'a200'
+        values:
+          name: 'reverse_light_left_failure'
+          state: 'off'
+        description: Reverse light left failure is off
+      - data_component: 'a300'
+        values:
+          name: 'reverse_light_right_failure'
+          state: 'off'
+        description: Reverse light right failure is off
+      - data_component: 'a400'
+        values:
+          name: 'risk_of_ice'
+          state: 'off'
+        description: Risk of ice is off
+      - data_component: 'a500'
+        values:
+          name: 'roof_operation_impossible_apply_parking_break'
+          state: 'off'
+        description: Roof operation impossible apply parking break is off
+      - data_component: 'a600'
+        values:
+          name: 'roof_operation_impossible_apply_start_engine'
+          state: 'off'
+        description: Roof operation impossible apply start engine is off
+      - data_component: 'a700'
+        values:
+          name: 'roof_operation_impossible_temperature_too_high'
+          state: 'off'
+        description: Roof operation impossible temperature too high is off
+      - data_component: 'a800'
+        values:
+          name: 'seatbelt_passenger_front_right_unbuckled'
+          state: 'off'
+        description: Seatbelt passenger front right unbuckled is off
+      - data_component: 'a900'
+        values:
+          name: 'seatbelt_passenger_rear_left_unbuckled'
+          state: 'off'
+        description: Seatbelt passenger rear left unbuckled is off
+      - data_component: 'aa00'
+        values:
+          name: 'seatbelt_passenger_rear_center_unbuckled'
+          state: 'off'
+        description: Seatbelt passenger rear center unbuckled is off
+      - data_component: 'ab00'
+        values:
+          name: 'seatbelt_passenger_rear_right_unbuckled'
+          state: 'off'
+        description: Seatbelt passenger rear right unbuckled is off
+      - data_component: 'ac00'
+        values:
+          name: 'battery_secondary_low'
+          state: 'off'
+        description: Battery secondary low is off
+      - data_component: 'ad00'
+        values:
+          name: 'shock_sensor_failing'
+          state: 'off'
+        description: Shock sensor failing is off
+      - data_component: 'ae00'
+        values:
+          name: 'side_lights_front_left_failure'
+          state: 'off'
+        description: Side lights front left failure is off
+      - data_component: 'af00'
+        values:
+          name: 'side_lights_front_right_failure'
+          state: 'off'
+        description: Side lights front right failure is off
+      - data_component: 'b000'
+        values:
+          name: 'side_lights_rear_left_failure'
+          state: 'off'
+        description: Side lights rear left failure is off
+      - data_component: 'b100'
+        values:
+          name: 'side_lights_rear_right_failure'
+          state: 'off'
+        description: Side lights rear right failure is off
+      - data_component: 'b200'
+        values:
+          name: 'spare_wheel_fitter_driving_aids_deactivated'
+          state: 'off'
+        description: Spare wheel fitter driving aids deactivated is off
+      - data_component: 'b300'
+        values:
+          name: 'speed_control_failure'
+          state: 'off'
+        description: Speed control failure is off
+      - data_component: 'b400'
+        values:
+          name: 'stop_light_left_failure'
+          state: 'off'
+        description: Stop light left failure is off
+      - data_component: 'b500'
+        values:
+          name: 'stop_light_right_failure'
+          state: 'off'
+        description: Stop light right failure is off
+      - data_component: 'b600'
+        values:
+          name: 'suspension_failure'
+          state: 'off'
+        description: Suspension failure is off
+      - data_component: 'b700'
+        values:
+          name: 'suspension_failure_reduce_speed'
+          state: 'off'
+        description: Suspension failure reduce speed is off
+      - data_component: 'b800'
+        values:
+          name: 'suspension_fault_limited_to_90kmh'
+          state: 'off'
+        description: Suspension fault limited to 90kmh is off
+      - data_component: 'b900'
+        values:
+          name: 'tire_pressure_sensor_failure'
+          state: 'off'
+        description: Tire pressure sensor failure is off
+      - data_component: 'ba00'
+        values:
+          name: 'trunk_open_high_speed'
+          state: 'off'
+        description: Trunk open high speed is off
+      - data_component: 'bb00'
+        values:
+          name: 'trunk_window_open'
+          state: 'off'
+        description: Trunk window open is off
+      - data_component: 'bc00'
+        values:
+          name: 'turn_signal_front_left_failure'
+          state: 'off'
+        description: Turn signal front left failure is off
+      - data_component: 'bd00'
+        values:
+          name: 'turn_signal_front_right_failure'
+          state: 'off'
+        description: Turn signal front right failure is off
+      - data_component: 'be00'
+        values:
+          name: 'turn_signal_rear_left_failure'
+          state: 'off'
+        description: Turn signal rear left failure is off
+      - data_component: 'bf00'
+        values:
+          name: 'turn_signal_rear_right_failure'
+          state: 'off'
+        description: Turn signal rear right failure is off
+      - data_component: 'c000'
+        values:
+          name: 'tire_under_inflation'
+          state: 'off'
+        description: Tire under inflation is off
+      - data_component: 'c100'
+        values:
+          name: 'wheel_pressure_fault'
+          state: 'off'
+        description: Wheel pressure fault is off
+      - data_component: 'c200'
+        values:
+          name: 'oil_change_warning'
+          state: 'off'
+        description: Oil change warning is off
+      - data_component: 'c300'
+        values:
+          name: 'inspection_warning'
+          state: 'off'
+        description: Inspection warning is off
   - id: 0x02
     name: bulb_failures
     name_cased: bulbFailures
