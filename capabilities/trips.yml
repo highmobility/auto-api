@@ -336,6 +336,11 @@ properties:
           type: 'zero'
           value: 0.0
         description: Eco driving zero-threshold is set at 0.0
+      - data_component: '010000000000000000'
+        values:
+          type: 'one'
+          value: 0.0
+        description: Eco driving one-threshold is set at 0.0
   - id: 0x13
     name: total_fuel_consumption
     name_cased: totalFuelConsumption
