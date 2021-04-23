@@ -181,7 +181,7 @@ properties:
     type: types.charging_cost
     description: Charging cost information
     examples:
-      - data_component: '00034555524011a7563f1134054011a756'
+      - data_component: '0003455552400234eab76265223fe226809d495183400234eab7626522'
         values:
           currency: 'EUR'
           calculated_charging_cost: 2.2758383109
