@@ -641,18 +641,18 @@ types:
         description: Currency ISO code
       - name: calculated_charging_cost
         name_cased: calculatedChargingCost
-        type: float
-        size: 4
+        type: double
+        size: 8
         description: Calculated charging cost
       - name: calculated_savings
         name_cased: calculatedSavings
-        type: float
-        size: 4
+        type: double
+        size: 8
         description: Calculated savings from charging
       - name: simulated_immediate_charging_cost
         name_cased: simulatedImmediateChargingCost
-        type: float
-        size: 4
+        type: double
+        size: 8
         description: Simulated charging costs
     # MARK: Charging Location
   - name: charging_location
