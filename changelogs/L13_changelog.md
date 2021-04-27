@@ -68,6 +68,8 @@ List of updated enums (in custom types):
 
 New properties (along with some new _custom types_) are added to the pre-existing capabilities:
 
+- _charging_
+  - `battery_capacity`
 - *dashboard_lights*
   - `bulb_failures`
 - _diagnostics_
@@ -126,6 +128,7 @@ Other changes are:
   - indicates _AutoAPI Level_ (version) in which the property was introduced (added)
   - is only added to "newer" properties (latest levels)
 - removed `diagnostics.blind_spot_monitoring` in favour of `adas` properties
+- changed `diagnostics.diesel_exhaust_filter_status` to be `multiple`
 
 *Deprecated* properties:
 
