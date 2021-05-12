@@ -1,5 +1,5 @@
 # AutoAPI
-
+![Auto API](https://github.com/highmobility/auto-api/blob/master/assets/autoapi-header.png?raw=true)
 The Auto API specification is an open source vehicle data model built for the purpose of providing a consistent data protocol for communication between cars and external 3rd party services.  
 
 
