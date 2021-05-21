@@ -51,7 +51,7 @@ events:
         description: Indicates a seat belt is buckled while the vehicle is moving.
       - id: 0x0b
         name: maintenance_changed
-        description: Triggered when the property "condition_based_services" in Diagnostics capability changes.
+        description: Triggered when the property "condition_based_services" in Maintenance capability changes.
       - id: 0x0c
         name: dashboard_lights_changed
         description: Triggered when the warning/malfunction indicator lights change.
