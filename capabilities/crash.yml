@@ -106,6 +106,7 @@ properties:
     added: 0x0d
     type: enum
     size: 1
+    multiple: true
     description: Impact zone of the crash
     enum_values:
       - id: 0x00
@@ -125,6 +126,12 @@ properties:
       - id: 0x07
         name: front_driver_side
     examples:
+      - data_component: '03'
+        value: 'rear_driver_side'
+        description:  Impact zone is rear driver side
+      - data_component: '05'
+        value: 'side_driver_side'
+        description:  Impact zone is side driver side
       - data_component: '07'
         value: 'front_driver_side'
         description:  Impact zone is front driver side
