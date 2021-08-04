@@ -204,8 +204,10 @@ properties:
     enum_values:
       - id: 0x00
         name: type_1
+        name_pretty: Connector type SAE J1772
       - id: 0x01
         name: type_2
+        name_pretty: IEC 62196 Type 2 connector
       - id: 0x02
         name: ccs
         name_pretty: Combined Charging System (CCS)

@@ -672,7 +672,7 @@ types:
       - name: street_address
         name_cased: streetAddress
         type: string
-        description: Streed address component
+        description: Street address component
     # MARK: Charging Point
   - name: charging_point
     name_cased: chargingPoint
