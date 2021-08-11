@@ -110,7 +110,7 @@ properties:
     description: Impact zone of the crash
     enum_values:
       - id: 0x00
-        name: predestrian_protection
+        name: pedestrian_protection
       - id: 0x01
         name: rollover
       - id: 0x02
