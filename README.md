@@ -58,8 +58,6 @@ Please find more info about the properties in the [spec](https://github.com/high
 
 ## Getting started
 
-Get started by reading the [AutoAPI guide](https://high-mobility.com/learn/tutorials/getting-started/auto-api-guide/) in high-mobility.com.  
-
 Check out the [spec](https://github.com/highmobility/auto-api/tree/master/SPEC.md) for more details on the structure and logic, or some libs generatated on this spec: [iOS](https://github.com/highmobility/auto-api-swift), [Android](https://github.com/highmobility/hm-java-auto-api), [Elixir](https://github.com/highmobility/hm-auto-api-elixir).  
 
 
