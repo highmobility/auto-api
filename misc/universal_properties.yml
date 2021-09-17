@@ -12,6 +12,7 @@ universal_properties:
     name_cased: nonce
     name_pretty: Nonce
     type: bytes
+    multiple: false
     size: 9
     examples:
       - data_component: '0123456789abcdef01'
@@ -23,6 +24,7 @@ universal_properties:
     name_cased: vehicleSignature
     name_pretty: Vehicle signature
     type: bytes
+    multiple: false    
     size: 64
     examples:
       - data_component: '0123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef010123456789abcdef0102'
@@ -34,6 +36,7 @@ universal_properties:
     name_cased: timestamp
     name_pretty: Timestamp
     type: timestamp
+    multiple: false    
     size: 8
     description: Milliseconds since UNIX Epoch time
     examples:
@@ -46,6 +49,7 @@ universal_properties:
     name_cased: vin
     name_pretty: VIN
     type: string
+    multiple: false    
     size: 17
     description: The unique Vehicle Identification Number
     examples:
@@ -58,6 +62,7 @@ universal_properties:
     name_cased: brand
     name_pretty: Brand
     type: enum
+    multiple: false    
     size: 1
     description: The vehicle brand
     enum_values:
