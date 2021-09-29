@@ -117,7 +117,7 @@ properties:
       - id: 0x03
         name: rear_driver_side
       - id: 0x04
-        name: side_passeger_side
+        name: side_passenger_side
       - id: 0x05
         name: side_driver_side
       - id: 0x06
