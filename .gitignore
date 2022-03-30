@@ -1,3 +1,6 @@
 
+*.csv
+*.schema.json
+
 # Mac stuff
 *.icloud

@@ -1,0 +1,19 @@
+name: universal
+name_cased: universal
+name_pretty: Universal
+category: api_structure
+authorization: false
+
+identifier:
+  msb: 0x00
+  lsb: 0x15
+
+api:
+  intro: 13
+  update: 13
+
+getters:
+  name: get_universal_properties
+
+
+properties: []
