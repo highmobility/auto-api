@@ -59,7 +59,7 @@ properties:
     examples:
       - data_component: '01'
         value: 'non_pedestrian'
-        description: Crash type is non-pedestrian (i.e. a another vehicle)
+        description: Crash type is non-pedestrian (i.e. another vehicle)
   - id: 0x03
     name: tipped_state
     name_cased: tippedState
@@ -135,3 +135,22 @@ properties:
       - data_component: '07'
         value: 'front_driver_side'
         description:  Impact zone is front driver side
+  - id: 0x07
+    name: status
+    name_cased: status
+    name_pretty: Status
+    added: 0x0d
+    type: enum
+    size: 1
+    description: The system effect an inpact had on the vehicle.
+    enum_values:
+      - id: 0x00
+        name: normal
+      - id: 0x01
+        name: restraints_engaged
+      - id: 0x02
+        name: airbag_triggered
+    examples:
+      - data_component: '00'
+        value: 'normal'
+        description: Impact effect on the vehicle was 'normal'.
