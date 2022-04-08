@@ -92,9 +92,9 @@ properties:
         description: Driving mode 'eco' is engaged 1% of the time
       - data_component: '043fd3333333333333'
         values:
-          driving_mode: 'ecoPlus'
+          driving_mode: 'eco_plus'
           period: 0.3
-        description: Driving mode 'eco' is engaged 30% of the time
+        description: Driving mode 'eco_plus' is engaged 30% of the time
       - data_component: '050000000000000000'
         values:
           driving_mode: 'comfort'
@@ -134,10 +134,10 @@ properties:
         description: Driving mode 'sport_plus' consumed 64.8kWh of electric energy
       - data_component: '040c044032000000000000'
         values:
-          driving_mode: 'ecoPlus'
+          driving_mode: 'eco_plus'
           consumption:
             kilowatt_hours: 18.0
-        description: Driving mode 'ecoPlus' consumed 18.0kWh of electric energy
+        description: Driving mode 'eco_plus' consumed 18.0kWh of electric energy
       - data_component: '050c044040d9999999999a'
         values:
           driving_mode: 'comfort'
@@ -573,3 +573,39 @@ properties:
           distance:
             kilometers: 2489.3
         description: Trip meter 2`s distance is 2489.3km
+  - id: 0x29
+    name: electric_consumption_average
+    name_cased: electricConsumptionAverage
+    name_pretty: Electric consumption average
+    added: 0x0d
+    type: unit.energy_efficiency
+    size: 10
+    description: Average electric energy consumption calculated based on the last 20km
+    examples:
+      - data_component: '0d00402670a3d70a3d71'
+        value:
+          kwh_per_100_kilometers: 11.22
+        description: Average consumption is 11.22kWh/100km
+  - id: 0x2a
+    name: braking_evaluation
+    name_cased: brakingEvaluation
+    name_pretty: Braking evaluation
+    type: types.percentage
+    description: Braking evaluation percentage
+    examples:
+      - data_component: '3fe6666666666666'
+        value: 0.7
+        description: Braking is evaluated at 70%
+  - id: 0x2b
+    name: average_speed
+    name_cased: averageSpeed
+    name_pretty: Average speed
+    added: 0x0d
+    type: unit.speed
+    size: 10
+    description: Average speed at data collection.
+    examples:
+      - data_component: '16014053600000000000'
+        value:
+          kilometers_per_hour: 77.5
+        description: Average speed is 77.5km/h.

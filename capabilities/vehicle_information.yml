@@ -306,3 +306,135 @@ properties:
       - data_component: '06'
         value: 'petrol'
         description: Secondary powertrain`s type is petrol.
+  - id: 0x18
+    name: fuel_tank_capacity
+    name_cased: fuelTankCapacity
+    name_pretty: Fuel tank capacity
+    added: 0x0d
+    type: unit.volume
+    size: 10
+    description: The fuel tank capacity measured in liters
+    examples:
+      - data_component: '19024054000000000000'
+        value:
+          liters: 80.0
+        description: 80.0 L of fuel remaining
+  - id: 0x19
+    name: build_date
+    name_cased: buildDate
+    name_pretty: Build date
+    added: 0x0d
+    type: timestamp
+    size: 8
+    description: Build (construction) date of the vehicle.
+    examples:
+      - data_component: '0000017fdfd0f9e8'
+        value: '2022-03-31T11:51:29.000Z'
+        description: The vehicle was built at 31 March 2022 at 11:51:29 GMT
+  - id: 0x1a
+    name: country_code
+    name_cased: countryCode
+    name_pretty: Country code
+    added: 0x0d
+    type: string
+    description: The country code of the vehicle.
+    examples:
+      - data_component: '4445'
+        value: 'DE'
+        description: Vehicle country code is 'DE'
+  - id: 0x1b
+    name: model_key
+    name_cased: modelKey
+    name_pretty: Model key
+    added: 0x0d
+    type: string
+    description: The model key of the vehicle.
+    examples:
+      - data_component: '433332'
+        value: 'C32'
+        description: Vehicle model key is 'C32'
+  - id: 0x1c
+    name: data_quality
+    name_cased: dataQuality
+    name_pretty: Data quality
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Evaluation of the timeliness of the available vehicle data.
+    enum_values:
+      - id: 0x00
+        name: no_data
+        description: No data available
+      - id: 0x01
+        name: up_to_date
+        description: Data transmitted within the last 48h
+      - id: 0x02
+        name: almost_up_to_date
+        description: Data transmitted within the last 7 days, but not within the last 48h
+      - id: 0x03
+        name: out_of_date
+        description: No data transferred within the last 7 days
+    examples:
+      - data_component: '01'
+        value: 'up_to_date'
+        description: Data quality is up-to-date.
+  - id: 0x1d
+    name: extra_equipment_codes
+    name_cased: extraEquipmentCodes
+    name_pretty: Extra equipment codes
+    added: 0x0d
+    type: string
+    multiple: true
+    name_singular: extra_equipment_code
+    description: Codes of the extra equipment the vehicle has
+    examples:
+      - data_component: '434f4445313233'
+        value: 'CODE123'
+        description: Vehicle has extra equipment with a code 'CODE123'
+      - data_component: '455150363636'
+        value: 'EQP666'
+        description: Vehicle has extra equipment with a code 'EQP666'
+  - id: 0x1e
+    name: series
+    name_cased: series
+    name_pretty: Series
+    added: 0x0d
+    type: string
+    description: "The vehicle model's series"
+    examples:
+      - data_component: '4134'
+        value: 'A4'
+        description: "Vehicle model's series is 'A4'"
+  - id: 0x1f
+    name: last_data_transfer_date
+    name_cased: lastDataTransferDate
+    name_pretty: Last data transfer date
+    added: 0x0d
+    type: timestamp
+    size: 8
+    description: The last trip date
+    examples:
+      - data_component: '0000016682059d50'
+        value: '2018-10-17T12:34:58.000Z'
+        description: Last trip happened at 17 October 2018 at 12:34:58 UTC
+  - id: 0x20
+    name: time_zone
+    name_cased: timeZone
+    name_pretty: Time zone
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Time zone setting in the vehicle.
+    enum_values:
+      - id: 0x00
+        name: wintertime
+      - id: 0x01
+        name: summertime
+      - id: 0x02
+        name: utc
+      - id: 0x03
+        name: manual
+    examples:
+      - data_component: '01'
+        value: 'summertime'
+        description: Time zone is set to 'summertime'.

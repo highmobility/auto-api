@@ -179,6 +179,8 @@ properties:
       - id: 0x02
         name: inductive
         disabled_in_setter: true
+      - id: 0x03
+        name: conductive
     examples:
       - data_component: '01'
         value: 'timer_based'
@@ -566,4 +568,296 @@ properties:
       - data_component: '0c044051800000000000'
         value:
           kilowatt_hours: 70.0
-        description: Battery capacity is 70.0Kwh
+        description: Battery capacity is 70.0kWh
+  - id: 0x25
+    name: auxiliary_power
+    name_cased: auxiliaryPower
+    name_pretty: Auxiliary power
+    added: 0x0d
+    type: unit.power
+    size: 10
+    description: Auxiliary power used for predictions.
+    examples:
+      - data_component: '1402405e000000000000'
+        value:
+           kilowatts: 120.0
+        description: Auxiliary power is 120.0kW.
+  - id: 0x26
+    name: charging_complete_lock
+    name_cased: chargingCompleteLock
+    name_pretty: Charging complete lock
+    added: 0x0d
+    type: types.active_state
+    description: Locking status of the charging plug after charging complete.
+    examples:
+      - data_component: '00'
+        value: 'inactive'
+        description: Charging complete lock status is 'inactive'.
+  - id: 0x27
+    name: battery_max_available
+    name_cased: batteryMaxAvailable
+    name_pretty: Battery max available
+    added: 0x0d
+    type: unit.energy
+    size: 10
+    description: Maximum energy content of the high-voltage battery.
+    examples:
+      - data_component: '0c044058c00000000000'
+        value:
+          kilowatt_hours: 99.0
+        description: Maximum available battery capacity is 99.0kWh
+  - id: 0x28
+    name: charging_end_reason
+    name_cased: chargingEndReason
+    name_pretty: Charging end reason
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Reason for ending a charging process.
+    enum_values:
+      - id: 0x00
+        name: unknown
+      - id: 0x01
+        name: goal_reached
+      - id: 0x02
+        name: requested_by_driver
+      - id: 0x03
+        name: connector_removed
+      - id: 0x04
+        name: powergrid_failed
+      - id: 0x05
+        name: hv_system_failure
+        name_pretty: High-Voltage system failure
+      - id: 0x06
+        name: charging_station_failure
+      - id: 0x07
+        name: parking_lock_failed
+      - id: 0x08
+        name: no_parking_lock
+      - id: 0x09
+        name: signal_invalid
+    examples:
+      - data_component: '01'
+        value: 'goal_reached'
+        description: Charging ended because 'goal_reached'.
+  - id: 0x29
+    name: charging_phases
+    name_cased: chargingPhases
+    name_pretty: Charging phases
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Charging process count of the high-voltage battery (phases).
+    enum_values
+      - id: 0x00
+        name: no_charging
+      - id: 0x01
+        name: one
+      - id: 0x02
+        name: two
+      - id: 0x03
+        name: three
+    examples:
+      - data_component: '01'
+        value: 'one'
+        description: Charging has 'one' phase.
+  - id: 0x2a
+    name: battery_energy
+    name_cased: batteryEnergy
+    name_pretty: Battery energy
+    added: 0x0d
+    type: unit.energy
+    size: 10
+    description: Energy content of the high-voltage battery.
+    examples:
+      - data_component: '0c04405de00000000000'
+        value:
+          kilowatt_hours: 119.5
+        description: Current energy content of the high-voltage battery is 119.5kWh.
+  - id: 0x2b
+    name: battery_energy_chargable
+    name_cased: batteryEnergyChargable
+    name_pretty: Battery energy chargable
+    added: 0x0d
+    type: unit.energy
+    size: 10
+    description: Energy required until high-voltage battery is fully charged.
+    examples:
+      - data_component: '0c04403ec00000000000'
+        value:
+          kilowatt_hours: 30.75
+        description: Energy required to fully charge the battery is 30.75kWh.
+  - id: 0x2c
+    name: charging_single_immediate
+    name_cased: chargingSingleImmediate
+    name_pretty: Charging single immediate
+    added: 0x0d
+    type: types.active_state
+    description: Single instant charging function status.
+    examples:
+      - data_component: '01'
+        value: 'active''
+        description: Single instant charging function is 'active'.
+  - id: 0x2d
+    name: charging_time_display
+    name_cased: chargingTimeDisplay
+    name_pretty: Charging time display
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Charging time displayed in the vehicle.
+    enum_values:
+      - id: 0x00
+        name: no_display
+      - id: 0x01
+        name: display_duration
+      - id: 0x02
+        name: no_display_duration
+    examples:
+      - data_component: '01'
+        value: 'display_charging_duration'
+        description: Charging duration is displayed in the vehicle.
+  - id: 0x2e
+    name: departure_time_display
+    name_cased: departureTimeDisplay
+    name_pretty: Departure time display
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Departure time displayed in the vehicle.
+    enum_values:
+      - id: 0x00
+        name: no_display
+      - id: 0x01
+        name: reachable
+      - id: 0x02
+        name: not_reachable
+    examples:
+      - data_component: '01'
+        value: 'reachable'
+        description: Departure time display is showing 'reachable'.
+  - id: 0x2f
+    name: restriction
+    name_cased: restriction
+    name_pretty: Restriction
+    added: 0x0d
+    type: types.charging_restriction
+    description: Charging limit and state
+    examples:
+      - data_component: '0100'
+        value:
+          active: 'active'
+          limit: 'max'
+        description: Charging restriction is 'active' and set to 'max'.
+  - id: 0x30
+    name: limit_status
+    name_cased: limitStatus
+    name_pretty: Limit status
+    added: 0x0d
+    type: types.active_state
+    description: Indicates whether charging limit is active.
+    examples:
+      - data_component: '00'
+        value: 'inactive'
+        description: Charging limit is 'inactive'.
+  - id: 0x31
+    name: current_limit
+    name_cased: currentLimit
+    name_pretty: Current limit
+    added: 0x0d
+    type: unit.electric_current
+    size: 10
+    description: Limit for the charging current.
+    examples:
+      - data_component: '09004059000000000000'
+        value:
+          amperes: 100.0
+        description: Charging current limit is 100.0A.
+  - id: 0x32
+    name: smart_charging_option
+    name_cased: smartChargingOption
+    name_pretty: Smart charging option
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Smart charging option being used to charge with.
+    enum_values:
+      - id: 0x00
+        name: price_optimized
+      - id: 0x01
+        name: renewable_energy
+      - id: 0x02
+        name: co2_optimized
+        name_pretty: CO2 optimized
+    examples:
+      - data_component: '01'
+        value: 'renewable_energy'
+        description: Smart charging option is set to 'renewable_energy'.
+  - id: 0x33
+    name: plug_lock_status
+    name_cased: plugLockStatus
+    name_pretty: Plug lock status
+    added: 0x0d
+    type: types.lock_state
+    description: Locking status of charging plug.
+    examples:
+      - data_component: '00'
+        value: 'unlocked'
+        description: Charging plug is 'unlocked'.
+  - id: 0x34
+    name: flap_lock_status
+    name_cased: flapLockStatus
+    name_pretty: Flap lock status
+    added: 0x0d
+    type: types.lock_state
+    description: Locking status of charging flap.
+    examples:
+      - data_component: '01'
+        value: 'locked'
+        description: Charging flap is 'locked'.
+  - id: 0x35
+    name: acoustic_limit
+    name_cased: acousticLimit
+    name_pretty: Acoustic limit
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Acoustic limitation of charging process.
+    enum_values:
+      - id: 0x00
+        name: no_action
+      - id: 0x01
+        name: automatic
+      - id: 0x02
+        name: unlimited
+      - id: 0x03
+        name: limited
+    examples:
+      - data_component: '01'
+        value: 'automatic'
+        description: Charging process acoustic limitation is 'automatic'.
+  - id: 0x36
+    name: min_charging_current
+    name_cased: minChargingCurrent
+    name_pretty: Minimum charging current
+    type: unit.electric_current
+    size: 10
+    description: Minimum charging current.
+    examples:
+      - data_component: '09004014000000000000'
+        value:
+          amperes: 5.0
+        description: Minimum charging current is 5.0A.
+  - id: 0x37
+    name: estimated_range_target
+    name_cased: estimatedRangeTarget
+    name_pretty: Estimated range target
+    added: 0x0d
+    type: unit.length
+    size: 10
+    description: Remaining electric range depending on target charging status.
+    examples:
+      - data_component: '12044072c00000000000'
+        value:
+          kilometers: 300.0
+        description: Remaining electric range target is 300.0km.

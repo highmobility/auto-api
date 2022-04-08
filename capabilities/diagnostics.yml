@@ -935,3 +935,14 @@ properties:
       - data_component: '00'
         value: 'ok'
         description: Low voltage battery charge level is ok
+  - id: 0x37
+    name: engine_oil_service_status
+    name_cased: engineOilServiceStatus
+    name_pretty: Engine oil service-status
+    added: 0x0d
+    type: types.service_status
+    description: Engine oil service status
+    examples:
+      - data_component: '00'
+        value: 'ok'
+        description: Engine oil service status is 'ok'

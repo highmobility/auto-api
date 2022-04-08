@@ -110,7 +110,7 @@ types:
       - id: 0x03
         name: sport_plus
       - id: 0x04
-        name: ecoPlus
+        name: eco_plus
       - id: 0x05
         name: comfort
     # MARK: Enabled State
@@ -163,6 +163,8 @@ types:
       - id: 0x0c
         name: lpg
         name_pretty: Liquefied petroleum gas
+      - id: 0x0d
+        name: hybrid
     # MARK: Fluid Level
   - name: fluid_level
     name_cased: fluidLevel
@@ -380,6 +382,19 @@ types:
         name: rear_left
       - id: 0x04
         name: rear_center
+    # MARK: Service-Status
+  - name: service_status
+    name_cased: service_status
+    name_pretty: Service-Status
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: ok
+      - id: 0x01
+        name: warning
+      - id: 0x02
+        name: critical
     # MARK: Start-Stop
   - name: start_stop
     name_cased: startStop
@@ -615,6 +630,45 @@ types:
             name: app
           - id: 0x01
             name: vehicle
+    # MARK: Brake Service Due Date
+  - name: brake_service_due_date
+    name_cased: brakeServiceDueDate
+    name_pretty: Brake service due date
+    type: custom
+    size: 9
+    items:
+      - name: axle
+        name_cased: axle
+        type: types.axle
+      - name: due_date
+        name_cased: dueDate
+        type: timestamp
+    # MARK: Brake Service Remaining Distance
+  - name: brake_service_remaining_distance
+    name_cased: brakeServiceRemainingDistance
+    name_pretty: Brake service remaining distance
+    type: custom
+    size: 11
+    items:
+      - name: axle
+        name_cased: axle
+        type: types.axle
+      - name: distance
+        name_cased: distance
+        type: unit.length
+    # MARK: Brake Service Status
+  - name: brake_service_status
+    name_cased: brakeServiceStatus
+    name_pretty: Brake service status
+    type: custom
+    size: 2
+    items:
+      - name: axle
+        name_cased: axle
+        type: types.axle
+      - name: status
+        name_cased: status
+        type: types.service_status
     # MARK: Brake Torque Vectoring
   - name: brake_torque_vectoring
     name_cased: brakeTorqueVectoring
@@ -695,6 +749,28 @@ types:
         name_cased: provider
         type: string
         description: The provider name of the charging point.
+    # MARK: Charging Restriction
+  - name: charging_restriction
+    name_cased: chargingRestriction
+    name_pretty: Charging restriction
+    type: custom
+    size: 2
+    items:
+      - name: active
+        name_cased: active
+        type: types.active_state
+        description: Indicates whether the charging current used to charge the vehicle is limited.
+      - name: limit
+        name_cased: limit
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: max
+          - id: 0x01
+            name: reduced
+          - id: 0x02
+            name: min
     # MARK: Check Control Message
   - name: check_control_message
     name_cased: checkControlMessage

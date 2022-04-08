@@ -252,3 +252,243 @@ properties:
         value:
           days: 66.8
         description: Time to the next oil service is 66.8 days
+  - id: 0x13
+    name: brake_fluid_remaining_distance
+    name_cased: brakeFluidRemainingDistance
+    name_pretty: Brake fluid remaining distance
+    added: 0x0d
+    type: unit.length
+    size: 10
+    description: Indicates the remaining distance for brake fluid.
+    examples:
+      - data_component: '12044097710000000000'
+        value:
+          kilometers: 1500.25
+        description: Brake fluid remaining distance is 1500.25km
+  - id: 0x14
+    name: brake_fluid_status
+    name_cased: brakeFluidStatus
+    name_pretty: Brake fluid status
+    added: 0x0d
+    type: types.service_status
+    description: "Brake fluid's service status."
+    examples:
+      - data_component: '00'
+        value: 'ok'
+        description: Brake fluid status is 'ok'
+  - id: 0x15
+    name: brake_fluid_change_date
+    name_cased: brakeFluidChangeDate
+    name_pretty: Brake fluid change date
+    type: timestamp
+    size: 8
+    description: Brake fluid change date.
+    examples:
+      - data_component: '000001677c63d280'
+        value: '2018-12-05T03:22:56.000Z'
+        description: Brake fluid change date is at 5 December 2018 at 03:22:56 GMT
+  - id: 0x16
+    name: brakes_service_due_dates
+    name_cased: brakesServiceDueDates
+    name_pretty: Brakes service due dates
+    name_singular: brake_service_due_date
+    added: 0x0d
+    type: types.brake_service_due_date
+    multiple: true
+    description: Brakes servicing due dates.
+    examples:
+      - data_component: '010000017fda4373c0'
+        values:
+          axle: 'front'
+          due_date: '2022-03-30T09:58:48.000Z'
+        description: Front brake has a service date at 30 March 2022 at 09:58:48 GMT
+      - data_component: '010000017fda4373c0'
+        values:
+          axle: 'rear'
+          due_date: '2022-03-30T09:58:48.000Z'
+        description: Rear brake has a service date at 30 March 2022 at 09:58:48 GMT
+  - id: 0x17
+    name: brakes_service_remaining_distances
+    name_cased: brakesServiceRemainingDistances
+    name_pretty: Brakes service remaining distances
+    name_singular: brake_service_remaining_distance
+    added: 0x0d
+    type: types.brake_service_remaining_distance
+    multiple: true
+    description: Brakes servicing remaining distances.
+    examples:
+      - data_component: '0012044097710000000000'
+        values:
+          axle: 'front'
+          distance:
+            kilometers: 1500.25
+        description: "Front brake's remaining distance to service is 1500.25km"
+      - data_component: '0112044097710000000000'
+        values:
+          axle: 'rear'
+          distance:
+            kilometers: 1500.25
+        description: "Rear brake's remaining distance to service is 1500.25km"
+  - id: 0x18
+    name: brakes_service_statuses
+    name_cased: brakesServiceStatuses
+    name_pretty: Brakes service statuses
+    name_singular: brake_service_status
+    added: 0x0d
+    type: types.brake_service_status
+    multiple: true
+    description: Brakes servicing statuses.
+    examples:
+      - data_component: '0000'
+        values:
+          axle: 'front'
+          status: 'ok'
+        description: "Front brake's service status is 'ok'"
+      - data_component: '0100'
+        values:
+          axle: 'rear'
+          status: 'ok'
+        description: "Rear brake's service status is 'ok'"
+  - id: 0x19
+    name: drive_in_inspection_date
+    name_cased: driveInInspectionDate
+    name_pretty: Drive-in inspection date
+    added: 0x0d
+    type: timestamp
+    size: 8
+    description: Next drive-in inspection date.
+    examples:
+      - data_component: '0000017ff961a380'
+        value: '2022-04-05T11:00:00.000Z'
+        description: Next drive-in inspection date is at 5 April 2022 at 11:00:00 GMT
+  - id: 0x1a
+    name: drive_in_inspection_status
+    name_cased: driveInInspectionStatus
+    name_pretty: Drive-in inspection status
+    added: 0x0d
+    type: type.service_status
+    description: Drive-in inspection service status.
+    examples:
+      - data_component: '00'
+        value: 'ok'
+        description: Drive-in inspection service status is 'ok'
+  - id: 0x1b
+    name: next_oil_service_date
+    name_cased: nextOilServiceDate
+    name_pretty: Next oil service date
+    added: 0x0d
+    type: timestamp
+    size: 8
+    description: Next oil service date.
+    examples:
+      - data_component: '0000017fdabd2800'
+        value: '2022-03-30T12:11:44.000Z'
+        description: Next oil service is at 30 March 2022 at 12:11:44 GMT
+  - id: 0x1c
+    name: next_inspection_distance_to
+    name_cased: nextInspectionDistanceTo
+    name_pretty: Next inspection distance to
+    added: 0x0d
+    type: unit.length
+    size: 10
+    description: Distance until the next inspection.
+    examples:
+      - data_component: '12044097710000000000'
+        value:
+          kilometers: 1500.25
+        description: Distance until the next inspection is 1500.25km
+  - id: 0x1d
+    name: legal_inspection_date
+    name_cased: legalInspectionDate
+    name_pretty: Legal inspection date
+    added: 0x0d
+    type: timestamp
+    size: 8
+    description: Next legally required inspection date
+    examples:
+      - data_component: '0000017fdabd2800'
+        value: '2022-03-30T12:11:44.000Z'
+        description: Next legally required inspection date is at 30 March 2022 at 12:11:44 GMT
+  - id: 0x1e
+    name: service_status
+    name_cased: serviceStatus
+    name_pretty: Service-status
+    added: 0x0d
+    type: types.service_status
+    description: "Consolidated status regarding service requirements. OK: no current service requirement, WARNING: at least one service has reported requirement, CRITICAL: at least one service is overdue."
+    examples:
+      - data_component: '00'
+        value: 'ok'
+        description: No current service requirements.
+  - id: 0x1f
+    name: service_date
+    name_cased: serviceDate
+    name_pretty: Service date
+    added: 0x0d
+    type: timestamp
+    size: 8
+    description: Date of the earliest service. If this service is overdue, the date is in the past.
+    examples:
+      - data_component: '0000017fdabd2800'
+        value: '2022-03-30T12:11:44.000Z'
+        description: Date of the earliest service is at 30 March 2022 at 12:11:44 GMT
+  - id: 0x20
+    name: inspection_status
+    name_cased: inspectionStatus
+    name_pretty: Inspection status
+    added: 0x0d
+    type: types.service_status
+    description: Vehicle inspection service status.
+    examples:
+      - data_component: '00'
+        value: 'ok'
+        description: Vehicle inspection service status is 'ok'.
+  - id: 0x21
+    name: drive_in_inspection_distance_to
+    name_cased: driveInInspectionDistanceTo
+    name_pretty: Drive-in inspection distance to
+    added: 0x0d
+    type: unit.length
+    size: 10
+    description: The distance until next drive-in inspection of the vehicle
+    examples:
+      - data_component: '120440acc20000000000'
+        value:
+          kilometers: 3681.0
+        description: "3'681km until next drive-in inspection"
+  - id: 0x22
+    name: vehicle_check_date
+    name_cased: vehicleCheckDate
+    name_pretty: Vehicle check date
+    added: 0x0d
+    type: timestamp
+    size: 8
+    description: Vehicle check date (usually after a predetermined distance).
+    examples:
+      - data_component: '0000017fe45286dd'
+        value: '2022-04-01T08:51:28Z'
+        description: Vehicle check is on 1. April 2022 at 11:51:28 EEST.
+  - id: 0x23
+    name: vehicle_check_status
+    name_cased: vehicleCheckStatus
+    name_pretty: Vehicle check status
+    added: 0x0d
+    type: types.service_status
+    description: Vehicle check service status.
+    examples:
+      - data_component: '00'
+        value: 'ok'
+        description: Vehicle check service status is 'ok'.
+  - id: 0x24
+    name: vehicle_check_distance_to
+    name_cased: vehicleCheckDistanceTo
+    name_pretty: Vehicle check distance to
+    added: 0x0d
+    type: unit.length
+    size: 10
+    description: The distance until next vehicle check.
+    examples:
+      - data_component: '1204409519999999999a'
+        value:
+           kilometers: 1350.4
+        description: The distance to next vehicle check is 1350.4km.

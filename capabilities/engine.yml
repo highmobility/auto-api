@@ -56,3 +56,88 @@ properties:
       - data_component: '01'
         value: 'enabled'
         description: Automatic start-stop system is enabled
+  - id: 0x04
+    name: preconditioning_enabled
+    name_cased: preconditioningEnabled
+    name_pretty: Pre-conditioning enabled
+    added: 0x0d
+    type: types.enabled_state
+    description: Use of the engine pre-conditioning is enabled.
+    examples:
+      - data_component: '01'
+        value: 'enabled'
+        description: Use of engine pre-conditioning is 'enabled'.
+  - id: 0x05
+    name: preconditioning_active
+    name_cased: preconditioningActive
+    name_pretty: Pre-conditioning active
+    added: 0x0d
+    type: types.active_state
+    description: Pre-conditioning is running.
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Pre-conditioning is 'active'.
+  - id: 0x06
+    name: preconditioning_remaining_time
+    name_cased: preconditioningRemainingTime
+    name_pretty: Pre-conditioning remaining time
+    added: 0x0d
+    type: unit.duration
+    size: 10
+    description: Remaining time of pre-conditioning.
+    examples:
+      - data_component: '0701402f000000000000'
+        value:
+          minutes: 15.5
+        description: Pre-conditioning remaining time is 15.5min.
+  - id: 0x07
+    name: preconditioning_error
+    name_cased: preconditioningError
+    name_pretty: Pre-conditioning error
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Reason for not carrying out pre-conditioning.
+    enum_values:
+      - id: 0x00
+        name: low_fuel
+      - id: 0x01
+        name: low_battery
+      - id: 0x02
+        name: quota_exceeded
+      - id: 0x03
+        name: heater_failure
+      - id: 0x04
+        name: component_failure
+      - id: 0x05
+        name: open_or_unlocked
+      - id: 0x06
+        name: ok
+    examples:
+      - data_component: '00'
+        value: 'low_fuel'
+        description: Pre-conditioning error is 'low_fuel'.
+  - id: 0x08
+    name: preconditioning_status
+    name_cased: preconditioningStatus
+    name_pretty: Pre-conditioning status
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Status of the pre-conditioning system.
+    enum_values:
+      - id: 0x00
+        name: standby
+      - id: 0x01
+        name: heating
+      - id: 0x02
+        name: cooling
+      - id: 0x03
+        name: ventilation
+      - id: 0x04
+        name: inactive
+    examples:
+      - data_component: '00'
+        value: 'standby'
+        description: Pre-conditioning status is 'standby'.
