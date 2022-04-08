@@ -76,3 +76,6 @@ events:
       - id: 0x13
         name: fleet_clearance_changed
         description: Triggered when the vehicle fleet clearance has changed.
+      - id: 0x14
+        name: excessive_idling_triggered
+        description: Indicates if the vehicle remains idling for duration longer than the configurable excessive idle limit.
