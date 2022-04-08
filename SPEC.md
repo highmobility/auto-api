@@ -560,6 +560,18 @@ identifier:
     lsb: 0x35
 ```
 
+### capability usage
+
+"Helper" (or "meta") capabilities can not be combined with other similar "type" capabilites.  
+That means they can only be used _separately_.
+
+List of these "special" capabilities:  
+- Capabilities
+- Historical
+- Multi Command
+- Vehicle Information
+- Vehicle Status
+
 ### capability version
 
 And *API version* is defined so:  
@@ -585,13 +597,12 @@ disabled_in: [ble, web]
 ### identification
 
 Lastly, every command is prefixed with *1 byte* for protocol version.
-This can be found at `misc > misc.yml > identification`.
+This can be found at `misc > version.yml > version`.
 
 Currently for *AutoAPI L11* it is:
 
 ```yaml
-identification:
-  version: 0x0b
+version: 0x0d
 ```
 
 Binary format:
@@ -607,14 +618,14 @@ Examples:
 
 ```yaml
 [
-  0x0b,       # Protocol Versions is Level 11
+  0x0d,       # Protocol Versions is Level 13
   
   0x00, 0x23, # Message Identifier for Charging
   0x00        # Command Type for Get Charging State
 ]
 
 [
-  0x0b,       # Protocol Versions is Level 11
+  0x0d,       # Protocol Versions is Level 13
   
   0x00, 0x23, # Message Identifier for Open Close Charging Port
   0x01,       # Command Type for Open Close Charging Port
