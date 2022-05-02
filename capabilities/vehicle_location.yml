@@ -96,3 +96,16 @@ properties:
       - data_component: '3fe999999999999a'
         value: 0.8
         description: GPS signal strength is 80%
+  - id: 0x0a
+    name: fuzzy_coordinates
+    name_cased: fuzzyCoordinates
+    name_pretty: Fuzzy coordinates
+    added: 0x0d
+    type: types.coordinates
+    description: Fuzzy coordinates for the vehicle location.
+    examples:
+      - data_component: '404a428f5c28f5c3402acf4f0d844d01'
+        value:
+          latitude: 52.5200
+          longitude: 13.4049
+        description: Vehicle fuzzy coordinates are 52.5200:13.4049
