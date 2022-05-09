@@ -894,6 +894,8 @@ types:
             name: medium
           - id: 0x03
             name: low
+          - id: 0x04
+            name: unknown
       - name: repairs
         name_cased: repairs
         type: enum
