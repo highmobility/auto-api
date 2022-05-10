@@ -384,7 +384,7 @@ types:
         name: rear_center
     # MARK: Service-Status
   - name: service_status
-    name_cased: service_status
+    name_cased: serviceStatus
     name_pretty: Service-Status
     type: enum
     size: 1

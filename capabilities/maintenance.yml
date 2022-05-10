@@ -366,7 +366,7 @@ properties:
     name_cased: driveInInspectionStatus
     name_pretty: Drive-in inspection status
     added: 0x0d
-    type: type.service_status
+    type: types.service_status
     description: Drive-in inspection service status.
     examples:
       - data_component: '00'

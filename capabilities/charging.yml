@@ -648,7 +648,7 @@ properties:
     type: enum
     size: 1
     description: Charging process count of the high-voltage battery (phases).
-    enum_values
+    enum_values:
       - id: 0x00
         name: no_charging
       - id: 0x01
@@ -696,7 +696,7 @@ properties:
     description: Single instant charging function status.
     examples:
       - data_component: '01'
-        value: 'active''
+        value: 'active'
         description: Single instant charging function is 'active'.
   - id: 0x2d
     name: charging_time_display
