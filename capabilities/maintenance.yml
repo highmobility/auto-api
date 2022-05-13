@@ -276,17 +276,6 @@ properties:
       - data_component: '00'
         value: 'ok'
         description: Brake fluid status is 'ok'
-  - id: 0x15
-    name: brake_fluid_change_date
-    name_cased: brakeFluidChangeDate
-    name_pretty: Brake fluid change date
-    type: timestamp
-    size: 8
-    description: Brake fluid change date.
-    examples:
-      - data_component: '000001677c63d280'
-        value: '2018-12-05T03:22:56.000Z'
-        description: Brake fluid change date is at 5 December 2018 at 03:22:56 GMT
   - id: 0x16
     name: brakes_service_due_dates
     name_cased: brakesServiceDueDates
