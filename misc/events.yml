@@ -34,18 +34,6 @@ events:
       - id: 0x05
         name: tire_pressure_changed
         description: Sent when the tire pressure changed to low or too high.
-      - id: 0x06
-        name: harsh_acceleration_triggered
-        description: Sent when the vehicle’s acceleration rate exceeds the configurable limit for hard acceleration for a duration exceeding the configurable time duration limit.
-      - id: 0x07
-        name: harsh_acceleration_pedal_position_triggered
-        description: Sent when the vehicle’s acceleration pedal position exceeds the configurable limit for hard acceleration for a duration exceeding the configurable time duration limit.
-      - id: 0x08
-        name: harsh_braking_triggered
-        description: Indicates if the vehicle’s deceleration rate exceeds the configurable limit for harsh braking for a duration exceeding the configurable time limit.
-      - id: 0x09
-        name: harsh_cornering_triggered
-        description: Indicates if the vehicle’s lateral acceleration rate exceeds the configurable limit for harsh cornering for a duration exceeding the configurable time duration limit.
       - id: 0x0a
         name: seat_belt_triggered
         description: Indicates a seat belt is buckled while the vehicle is moving.
