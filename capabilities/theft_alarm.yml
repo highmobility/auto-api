@@ -75,7 +75,7 @@ properties:
       - id: 0x00
         name: no_alarm
       - id: 0x01
-        name: basis_alarm
+        name: basic_alarm
       - id: 0x02
         name: door_front_left
       - id: 0x03
@@ -114,6 +114,8 @@ properties:
         name: remote
       - id: 0x14
         name: unknown
+      - id: 0x15
+        name: siren
     examples:
       - data_component: '06'
         value: 'hood'
@@ -181,3 +183,27 @@ properties:
       - data_component: '05'
         value: 'rear_right'
         description: Last event happened to rear right position
+  - id: 0x08
+    name: interior_protection_triggered
+    name_cased: interiorProtectionTriggered
+    name_pretty: Interior protection triggered
+    added: 0x0d
+    type: types.triggered
+    size: 1
+    description: Indicates whether the interior protection sensors are triggered.
+    examples:
+      - data_component: '00'
+        value: 'not_triggered'
+        description: Interior protection sensors are not triggered.
+  - id: 0x09
+    name: tow_protection_triggered
+    name_cased: towProtectionTriggered
+    name_pretty: Tow protection triggered
+    added: 0x0d
+    type: types.triggered
+    size: 1
+    description: Indicates whether the tow protection sensors are triggered.
+    examples:
+      - data_component: '00'
+        value: 'not_triggered'
+        description: Tow protection sensors are not triggered.

@@ -141,3 +141,14 @@ properties:
       - data_component: '00'
         value: 'standby'
         description: Pre-conditioning status is 'standby'.
+  - id: 0x09
+    name: limp_mode
+    name_cased: limpMode
+    name_pretty: Limp mode
+    added: 0x0d
+    type: types.active_state
+    description: Indicates wheter the engine is in fail-safe mode.
+    examples:
+      - data_component: '00'
+        value: 'inactive'
+        description: Engine fail-safe mode is inactive.

@@ -444,6 +444,17 @@ types:
         type: uinteger
         size: 1
         description: Value between 0 and 59
+    # MARK: Triggered
+  - name: triggered
+    name_cased: triggered
+    name_pretty: Triggered
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: not_triggered
+      - id: 0x01
+        name: triggered
     # MARK: Weekday
   - name: weekday
     name_cased: weekday
@@ -1648,19 +1659,6 @@ types:
         type: uinteger
         size: 1
         description: HMKit version patch number
-    # MARK: HVAC Weekday Starting Time
-  - name: hvac_weekday_starting_time
-    name_cased: HVACWeekdayStartingTime
-    name_pretty: HVAC weekday starting time
-    type: custom
-    size: 3
-    items:
-      - name: weekday
-        name_cased: weekday
-        type: types.weekday
-      - name: time
-        name_cased: time
-        type: types.time
     # MARK: Lane Keep Assist State
   - name: lane_keep_assist_state
     name_cased: laneKeepAssistState
@@ -1922,6 +1920,10 @@ types:
             name: low
           - id: 0x02
             name: alert
+          - id: 0x03
+            name: soft
+          - id: 0x04
+            name: deflation
     # MARK: Tire Temperature
   - name: tire_temperature
     name_cased: tireTemperature
@@ -2015,6 +2017,19 @@ types:
       - name: event
         name_cased: event
         type: events.event
+    # MARK: Weekday Time
+  - name: weekday_time
+    name_cased: weekdayTime
+    name_pretty: Weekday time
+    type: custom
+    size: 3
+    items:
+      - name: weekday
+        name_cased: weekday
+        type: types.weekday
+      - name: time
+        name_cased: time
+        type: types.time
     # MARK: Wheel RPM
   - name: wheel_rpm
     name_cased: wheelRPM
