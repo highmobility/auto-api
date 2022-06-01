@@ -663,9 +663,11 @@ types:
     items:
       - name: axle
         name_cased: axle
+        size: 1
         type: types.axle
       - name: distance
         name_cased: distance
+        size: 10
         type: unit.length
     # MARK: Brake Service Status
   - name: brake_service_status
