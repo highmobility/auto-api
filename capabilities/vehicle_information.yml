@@ -438,3 +438,16 @@ properties:
       - data_component: '01'
         value: 'summertime'
         description: Time zone is set to 'summertime'.
+  - id: 0x21
+    name: vehicle_mass
+    name_cased: vehicleMass
+    name_pretty: Vehicle mass
+    added: 0x0d
+    type: unit.mass
+    size: 10
+    description: Vehicle mass.
+    examples:
+      - data_component: '130040998c0000000000'
+        value:
+          kilogram: 1635.0
+        description: Vehicle mass is 1635.0kg

@@ -110,6 +110,9 @@ measurement_types:
       - name: kilowatt_hours
         id: 0x04
         conversion_linear: 3600000.0
+      - name: ampere_hours
+        id: 0x05
+        conversion_linear: 3.6
 
   - name: energy_efficiency
     id: 0x0d
@@ -208,6 +211,58 @@ measurement_types:
       - name: nautical_miles
         id: 0x11
         conversion_linear: 1852.0
+
+  - name: mass
+    id: 0x13
+    unit_types:
+      - name: kilograms
+        id: 0x00
+        conversion_linear: 1.0
+      - name: grams
+        id: 0x01
+        conversion_linear: 1.0e-3
+      - name: decigrams
+        id: 0x02
+        conversion_linear: 1.0e-4
+      - name: centigrams
+        id: 0x03
+        conversion_linear: 1.0e-5
+      - name: milligrams
+        id: 0x04
+        conversion_linear: 1.0e-6
+      - name: micrograms
+        id: 0x05
+        conversion_linear: 1.0e-9
+      - name: nanograms
+        id: 0x06
+        conversion_linear: 1.0e-12
+      - name: picograms
+        id: 0x07
+        conversion_linear: 1.0e-15
+      - name: ounces
+        id: 0x08
+        conversion_linear: 0.0283495
+      - name: pounds
+        id: 0x09
+        conversion_linear: 0.453592
+      - name: stones
+        id: 0x0a
+        conversion_linear: 0.157473
+      - name: metricTons
+        id: 0x0b
+        conversion_linear: 1.0e3
+      - name: shortTons
+        id: 0x0c
+        conversion_linear: 907.185
+      - name: carats
+        id: 0x0d
+        conversion_linear: 0.0002
+      - name: ouncesTroy
+        id: 0x0e
+        conversion_linear: 0.03110348
+      - name: slugs
+        id: 0x0f
+        conversion_linear: 14.5939
 
   - name: power
     id: 0x14

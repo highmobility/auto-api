@@ -609,3 +609,16 @@ properties:
         value:
           kilometers_per_hour: 77.5
         description: Average speed is 77.5km/h.
+  - id: 0x2c
+    name: recuperation_power
+    name_cased: recuperationPower
+    name_pretty: Recuperation power
+    added: 0x0d
+    type: unit.power
+    size: 10
+    description: Recuperation energy of the drivetrain.
+    examples:
+      - data_component: '140040a1f80000000000'
+        value:
+          watts: 2300.0
+        description: Recuperation energy is 2300.0W.

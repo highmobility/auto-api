@@ -209,3 +209,28 @@ properties:
         value:
           celsius: 21.6
         description: Rear temperature setting is 21.6°C
+  - id: 0x0d
+    name: humidity
+    name_cased: humidity
+    name_pretty: Humidity
+    added: 0x0d
+    type: types.percentage
+    description: Measured relative humidity between 0.0 - 1.0.
+    examples:
+      - data_component: '3fe22d0e56041893'
+        value: 0.568
+        description: Measured relative humidity is 0.568%.
+  - id: 0x0e
+    name: air_conditioner_compressor_power
+    name_cased: airConditionerCompressorPower
+    name_pretty: Air conditioner compressor power
+    added: 0x0d
+    type: unit.power
+    size: 10
+    description: Electric air conditioner compressor power.
+    examples:
+      - data_component: '14023fe999999999999a'
+        value:
+          kilowatts: 0.8
+        description: Air conditioner compressor is using/producing 0.8kW of power.
+

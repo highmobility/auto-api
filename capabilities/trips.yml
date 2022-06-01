@@ -380,3 +380,28 @@ properties:
         value:
           kilometers_per_hour: 67.3
         description: Maximum speed since last ignition on is 67.3km/h
+  - id: 0x16
+    name: road_type
+    name_cased: roadType
+    name_pretty: Road type
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Type of road travelled on.
+    enum_values:
+      - id: 0x00
+        name: private_or_gravel
+      - id: 0x01
+        name: local
+      - id: 0x02
+        name: county
+      - id: 0x03
+        name: rural
+      - id: 0x04
+        name: federal_highway
+      - id: 0x05
+        name: highway
+    examples:
+      - data_component: '01'
+        value: 'local'
+        description: Road was of local type.

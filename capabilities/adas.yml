@@ -164,3 +164,14 @@ properties:
       - data_component: '01'
         value: 'on'
         description: Blind spot warning system is turned on.
+  - id: 0x0c
+    name: launch_control
+    name_cased: launchControl
+    name_pretty: Launch control
+    added: 0x0d
+    type: types.active_state
+    description: State of launch control activation.
+    examples:
+      - data_component: '01'
+        value: 'active''
+        description: Launch control is active.

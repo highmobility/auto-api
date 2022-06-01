@@ -252,3 +252,35 @@ properties:
       - data_component: '01'
         value: 'moving'
         description: Vehicle is moving
+  - id: 0x13
+    name: drivetrain_state
+    name_cased: drivetrainState
+    name_pretty: Drivetrain state
+    added: 0x0d
+    type: enum
+    size: 1
+    description: State of the drivetrain for starts.
+    enum_values:
+      - id: 0x00
+        name: inactive
+      - id: 0x01
+        name: race_start_preparation
+      - id: 0x02
+        name: race_start
+      - id: 0x03
+        name: start
+      - id: 0x04
+        name: comfort_start
+      - id: 0x05
+        name: start_idle_run_control
+      - id: 0x06
+        name: ready_for_overpressing
+      - id: 0x07
+        name: low_speed_mode
+      - id: 0x08
+        name: e_launch
+    examples:
+      - data_component: '02'
+        value: 'race_start'
+        description: Drivetrain is in `race_start` state.
+
