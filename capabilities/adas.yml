@@ -173,5 +173,5 @@ properties:
     description: State of launch control activation.
     examples:
       - data_component: '01'
-        value: 'active''
+        value: 'active'
         description: Launch control is active.

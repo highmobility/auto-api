@@ -1047,3 +1047,16 @@ properties:
       - data_component: '00'
         value: 'no_colour'
         description: State of battery LED is no colour.
+  - id: 0x41
+    name: battery_cooling_temperature
+    name_cased: batteryCoolingTemperature
+    name_pretty: Battery cooling temperature
+    added: 0x0d
+    type: unit.temperature
+    size: 10
+    description: Battery cooling temperature.
+    examples:
+      - data_component: '1701404fb33333333333'
+        value:
+          celsius: 63.4
+        description: Battery cooling temperature is 63.4C.
