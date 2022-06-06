@@ -248,16 +248,16 @@ measurement_types:
       - name: stones
         id: 0x0a
         conversion_linear: 0.157473
-      - name: metricTons
+      - name: metric_tons
         id: 0x0b
         conversion_linear: 1.0e3
-      - name: shortTons
+      - name: short_tons
         id: 0x0c
         conversion_linear: 907.185
       - name: carats
         id: 0x0d
         conversion_linear: 0.0002
-      - name: ouncesTroy
+      - name: ounces_troy
         id: 0x0e
         conversion_linear: 0.03110348
       - name: slugs
