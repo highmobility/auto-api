@@ -931,6 +931,9 @@ properties:
     name: battery_tempretature_extremes
     name_cased: batteryTempretatureExtremes
     name_pretty: Battery tempretature extremes
+    deprecated:
+      new_name: battery_temperature_extremes
+      reason: fixed the name typo
     added: 0x0d
     type: types.temperature_extreme
     description: Current highest-lowest temperature inside the battery.
@@ -1006,6 +1009,8 @@ properties:
         name: error
       - id: 0x06
         name: initialising
+      - id: 0x07
+        name: conditioning
     examples:
       - data_component: '01'
         value: 'active'
@@ -1060,3 +1065,17 @@ properties:
         value:
           celsius: 63.4
         description: Battery cooling temperature is 63.4C.
+  - id: 0x42
+    name: battery_temperature_extremes
+    name_cased: batteryTemperatureExtremes
+    name_pretty: Battery temperature extremes
+    added: 0x0c
+    type: types.temperature_extreme
+    description: Current highest-lowest temperature inside the battery.
+    examples:
+      - data_component: '0017014055400000000000'
+        values:
+          extreme: 'highest'
+          temperature:
+            celsius: 85.0
+        description: Battery highest temperature is 85.0C.
