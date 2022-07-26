@@ -401,6 +401,10 @@ properties:
         name: federal_highway
       - id: 0x05
         name: highway
+      - id: 0x06
+        name: country
+      - id: 0x07
+        name: national
     examples:
       - data_component: '01'
         value: 'local'
