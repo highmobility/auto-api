@@ -375,6 +375,9 @@ properties:
       - id: 0x0a
         name: foreign_object_detected
         disabled_in_setter: true
+      - id: 0x0b
+        name: conditioning
+        disabled_in_setter: true
     examples:
       - data_component: '01'
         value: 'charging'
