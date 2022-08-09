@@ -449,5 +449,5 @@ properties:
     examples:
       - data_component: '130040998c0000000000'
         value:
-          kilogram: 1635.0
+          kilograms: 1635.0
         description: Vehicle mass is 1635.0kg
