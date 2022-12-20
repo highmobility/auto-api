@@ -286,7 +286,7 @@ properties:
     multiple: true
     description: Brakes servicing due dates.
     examples:
-      - data_component: '010000017fda4373c0'
+      - data_component: '000000017fda4373c0'
         values:
           axle: 'front'
           due_date: '2022-03-30T09:58:48.000Z'
@@ -455,7 +455,7 @@ properties:
     description: Vehicle check date (usually after a predetermined distance).
     examples:
       - data_component: '0000017fe45286dd'
-        value: '2022-04-01T08:51:28Z'
+        value: '2022-04-01T08:51:28.093Z'
         description: Vehicle check is on 1. April 2022 at 11:51:28 EEST.
   - id: 0x23
     name: vehicle_check_status

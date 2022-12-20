@@ -112,7 +112,7 @@ measurement_types:
         conversion_linear: 3600000.0
       - name: ampere_hours
         id: 0x05
-        conversion_linear: 3.6
+        conversion_linear: 3600.0
 
   - name: energy_efficiency
     id: 0x0d

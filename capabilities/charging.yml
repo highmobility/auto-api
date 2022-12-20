@@ -375,6 +375,9 @@ properties:
       - id: 0x0a
         name: foreign_object_detected
         disabled_in_setter: true
+      - id: 0x0b
+        name: conditioning
+        disabled_in_setter: true
     examples:
       - data_component: '01'
         value: 'charging'
@@ -727,7 +730,7 @@ properties:
         name: no_display_duration
     examples:
       - data_component: '01'
-        value: 'display_charging_duration'
+        value: 'display_duration'
         description: Charging duration is displayed in the vehicle.
   - id: 0x2e
     name: departure_time_display
@@ -757,7 +760,7 @@ properties:
     description: Charging limit and state
     examples:
       - data_component: '0100'
-        value:
+        values:
           active: 'active'
           limit: 'max'
         description: Charging restriction is 'active' and set to 'max'.
@@ -971,7 +974,7 @@ properties:
         name: circulation_requirement
     examples:
       - data_component: '00'
-        value: 'high_cooling_demand'
+        value: 'high_cooling'
         description: Battery temperature control system demands high cooling.
   - id: 0x3e
     name: charging_current
