@@ -1129,18 +1129,3 @@ properties:
       - data_component: '04'
         value: 'quick'
         description: Battery charge type is quick.
-
-  - id: 0x45
-    name: electric_engine_failure
-    name_cased: electricEngineFailure
-    name_pretty: Electric engine failure
-    added: 0x0d
-    type: enum
-    size: 1
-    description: Warning about major electric engine failure.
-    enum_values:
-      - id: 0x00
-        name: no_et_alert
-      - id: 0x01
-        name: et_alert
-

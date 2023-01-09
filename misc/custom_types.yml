@@ -113,12 +113,6 @@ types:
         name: eco_plus
       - id: 0x05
         name: comfort
-      - id: 0x06
-        name: personal
-      - id: 0x07
-        name: race
-      - id: 0x07
-        name: snow
     # MARK: Driving Mode PHEV
   - name: driving_mode_phev
     name_cased: drivingModePHEV
@@ -403,25 +397,10 @@ types:
         name: front_right
       - id: 0x02
         name: rear_right
-        description: Second row right seat.
       - id: 0x03
         name: rear_left
-        description: Second row left seat.
       - id: 0x04
         name: rear_center
-        description: Second row center seat.
-      - id: 0x05
-        name: third_row_left
-        description: Third row left seat.
-      - id: 0x06
-        name: third_row_right
-        description: Third row right seat.
-      - id: 0x07
-        name: third_row_center
-        description: Third row center seat.
-      - id: 0x08
-        name: front_center
-        description: Front center seat.
     # MARK: Service-Status
   - name: service_status
     name_cased: serviceStatus
@@ -573,8 +552,6 @@ types:
             name: front_lateral
           - id: 0x03
             name: rear_lateral
-          - id: 0x04
-            name: vertical
       - name: acceleration
         name_cased: acceleration
         name_pretty: Acceleration
@@ -1941,8 +1918,6 @@ types:
             name: not_fastened
           - id: 0x01
             name: fastened
-          - id: 0x02
-            name: not_monitored
     # MARK: Spring Rate
   - name: spring_rate
     name_cased: springRate
