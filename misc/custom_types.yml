@@ -113,6 +113,31 @@ types:
         name: eco_plus
       - id: 0x05
         name: comfort
+      - id: 0x06
+        name: personal
+      - id: 0x07
+        name: race
+      - id: 0x07
+        name: snow
+    # MARK: Driving Mode PHEV
+  - name: driving_mode_phev
+    name_cased: drivingModePHEV
+    name_pretty: Driving mode PHEV
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: not_in_traction
+      - id: 0x01
+        name: in_charge
+      - id: 0x02
+        name: full_electric
+      - id: 0x03
+        name: hybrid_serial
+      - id: 0x04
+        name: thermic
+      - id: 0x05
+        name: hybrid_parallel
     # MARK: Enabled State
   - name: enabled_state
     name_cased: enabledState
@@ -378,10 +403,25 @@ types:
         name: front_right
       - id: 0x02
         name: rear_right
+        description: Second row right seat.
       - id: 0x03
         name: rear_left
+        description: Second row left seat.
       - id: 0x04
         name: rear_center
+        description: Second row center seat.
+      - id: 0x05
+        name: third_row_left
+        description: Third row left seat.
+      - id: 0x06
+        name: third_row_right
+        description: Third row right seat.
+      - id: 0x07
+        name: third_row_center
+        description: Third row center seat.
+      - id: 0x08
+        name: front_center
+        description: Front center seat.
     # MARK: Service-Status
   - name: service_status
     name_cased: serviceStatus
@@ -533,12 +573,33 @@ types:
             name: front_lateral
           - id: 0x03
             name: rear_lateral
+          - id: 0x04
+            name: vertical
       - name: acceleration
         name_cased: acceleration
         name_pretty: Acceleration
         type: unit.acceleration
         size: 10
         description: The accelaration
+    # MARK: Accelerator Duration
+  - name: accelerator_duration
+    name_cased: acceleratorDuration
+    name_pretty: Accelerator duration
+    type: custom
+    size: 18
+    items:
+      - name: pedal_position_threshold
+        name_cased: pedalPositionThreshold
+        name_pretty: Pedal position threshold
+        type: unit.percent
+        size: 8
+        description: The accelerator pedal position threshold percentage
+      - name: duration
+        name_cased: duration
+        name_pretty: Duration
+        type: unit.duration
+        size: 10
+        description: The duration of the accelerator pedal position
     # MARK: Action Item
   - name: action_item
     name_cased: actionItem
@@ -1359,6 +1420,11 @@ types:
             name: oil_change_warning
           - id: 0xc3
             name: inspection_warning
+          - id: 0xc4
+            name: diesel_oil_filter_water_presence
+            name_pretty: Diesel oil filter has water in it
+          - id: 0xc5
+            name: engine_drag_torque_control_failure
       - name: state
         name_cased: state
         type: types.on_off_state
@@ -1828,6 +1894,33 @@ types:
         type: uinteger
         size: 1
         description: The blue component of RGB
+    # MARK: Seatbelt Reminder
+  - name: seatbelt_reminder
+    name_cased: seatbeltReminder
+    name_pretty: Seatbelt reminder
+    type: custom
+    size: 2
+    items:
+      - name: location
+        name_cased: location
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: driver
+          - id: 0x01
+            name: passenger
+      - name: warning
+        name_cased: state
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: none
+          - id: 0x01
+            name: warning_level_1
+          - id: 0x02
+            name: warning_level_2
     # MARK: Seatbelt State
   - name: seatbelt_state
     name_cased: seatbeltState
@@ -1848,6 +1941,8 @@ types:
             name: not_fastened
           - id: 0x01
             name: fastened
+          - id: 0x02
+            name: not_monitored
     # MARK: Spring Rate
   - name: spring_rate
     name_cased: springRate

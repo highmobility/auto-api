@@ -599,7 +599,7 @@ disabled_in: [ble, web]
 Lastly, every command is prefixed with *1 byte* for protocol version.
 This can be found at `misc > version.yml > version`.
 
-Currently for *AutoAPI L11* it is:
+Currently for *AutoAPI L13* it is:
 
 ```yaml
 version: 0x0d

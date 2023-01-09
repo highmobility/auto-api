@@ -301,6 +301,8 @@ properties:
         name: overspeed
       - id: 0x05
         name: idling_engine_on
+      - id: 0x06
+        name: emergency_braking
     examples:
       - data_component: '01'
         value: 'harsh_acceleration'
@@ -409,3 +411,16 @@ properties:
       - data_component: '01'
         value: 'local'
         description: Road was of local type.
+
+  - id: 0x17
+    name: brakings_count
+    name_cased: brakingsCount
+    name_pretty: Brakings count
+    added: 0x0d
+    type: uinteger
+    size: 2
+    description: Number of times the brakes were applied during the trip.
+    examples:
+      - data_component: '00a1'
+        value: 161
+        description: Brakes were applied 161 times during the trip.

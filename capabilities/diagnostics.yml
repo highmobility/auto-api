@@ -946,3 +946,15 @@ properties:
       - data_component: '00'
         value: 'ok'
         description: Engine oil service status is 'ok'
+
+  - id: 0x38
+    name: passenger_airbag_status
+    name_cased: passengerAirbagStatus
+    name_pretty: Passenger airbag status
+    added: 0x0d
+    type: types.active_state
+    description: Passenger airbag is activated or not
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Passenger airbag is `active`

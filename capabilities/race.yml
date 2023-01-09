@@ -284,3 +284,49 @@ properties:
         value: 'race_start'
         description: Drivetrain is in `race_start` state.
 
+  - id: 0x14
+    name: esp_status
+    name_cased: espStatus
+    name_pretty: ESP status
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Electronic Stability Program (or -Control, ESC) status.
+    enum_values:
+      - id: 0x00
+        name: operational
+        description: ESP operational (or vehicle not equipped)
+      - id: 0x01
+        name: failure
+      - id: 0x02
+        name: deactivated
+      - id: 0x03
+        name: failure_not_programmed
+        description: ESP not programmed
+      - id: 0x04
+        name: regulating_without_malfunction
+      - id: 0x05
+        name: regulating_with_malfunction
+      - id: 0x07
+        name: calibration
+        description: ESP in calibration (diagnostic mode)
+    examples:
+      - data_component: '04'
+        value: 'regulating_without_malfunction'
+        description: ESP status is 'regulating_without_malfunction'.
+
+  - id: 0x15
+    name: accelerator_durations
+    name_cased: acceleratorDurations
+    name_pretty: Accelerator durations
+    name_singluar: accelerator_duration
+    added: 0x0d
+    type: types.accelerator_duration
+    multiple: true
+    description: Duration during which the accelerator pedal has been pressed more than the given percentage.
+    examples:
+      - data_component: '3fe0000000000000 07004093480000000000'
+        values:
+          pedal_position_threshold: 0.5
+          duration: 1234.0
+        description: Accelerator pedal has been pressed more than 50% for 1234 seconds.

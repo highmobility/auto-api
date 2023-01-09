@@ -451,3 +451,14 @@ properties:
         value:
           kilograms: 1635.0
         description: Vehicle mass is 1635.0kg
+  - id: 0x22
+    name: data_collection
+    name_cased: dataCollection
+    name_pretty: Data collection
+    added: 0x0d
+    type: types.active_state
+    description: Data collection is activated or not.
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Data collection is 'active'.
