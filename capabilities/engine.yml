@@ -152,28 +152,3 @@ properties:
       - data_component: '00'
         value: 'inactive'
         description: Engine fail-safe mode is inactive.
-  - id: 0x0a
-    name: running_status
-    name_cased: runningStatus
-    name_pretty: Running status
-    added: 0x0d
-    type: enum
-    size: 1
-    description: More detailed running status of the vehicle engine.
-    enum_values:
-      - id: 0x00
-        name: vehicle_asleep
-      - id: 0x01
-        name: vehicle_awake
-      - id: 0x02
-        name: stopped
-      - id: 0x03
-        name: ignition_on
-      - id: 0x04
-        name: starting_in_progress
-      - id: 0x05
-        name: running
-    examples:
-      - data_component: '05'
-        value: 'running'
-        description: Vehicle engine is 'running'.
