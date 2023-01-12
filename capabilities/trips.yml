@@ -413,9 +413,9 @@ properties:
         description: Road was of local type.
 
   - id: 0x17
-    name: brakings_count
-    name_cased: brakingsCount
-    name_pretty: Brakings count
+    name: braking_count
+    name_cased: brakingCount
+    name_pretty: Braking count
     added: 0x0d
     type: uinteger
     size: 2
