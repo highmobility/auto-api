@@ -568,7 +568,7 @@ types:
       - name: pedal_position_threshold
         name_cased: pedalPositionThreshold
         name_pretty: Pedal position threshold
-        type: unit.percent
+        type: types.percentage
         size: 8
         description: The accelerator pedal position threshold percentage
       - name: duration
@@ -1871,33 +1871,6 @@ types:
         type: uinteger
         size: 1
         description: The blue component of RGB
-    # MARK: Seatbelt Reminder
-  - name: seatbelt_reminder
-    name_cased: seatbeltReminder
-    name_pretty: Seatbelt reminder
-    type: custom
-    size: 2
-    items:
-      - name: location
-        name_cased: location
-        type: enum
-        size: 1
-        enum_values:
-          - id: 0x00
-            name: driver
-          - id: 0x01
-            name: passenger
-      - name: warning
-        name_cased: state
-        type: enum
-        size: 1
-        enum_values:
-          - id: 0x00
-            name: none
-          - id: 0x01
-            name: warning_level_1
-          - id: 0x02
-            name: warning_level_2
     # MARK: Seatbelt State
   - name: seatbelt_state
     name_cased: seatbeltState

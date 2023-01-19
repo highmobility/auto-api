@@ -294,8 +294,9 @@ properties:
     multiple: true
     description: Duration during which the accelerator pedal has been pressed more than the given percentage.
     examples:
-      - data_component: '3fe0000000000000 07004093480000000000'
+      - data_component: '3fe000000000000007004093480000000000'
         values:
           pedal_position_threshold: 0.5
-          duration: 1234.0
+          duration: 
+            seconds: 1234.0
         description: Accelerator pedal has been pressed more than 50% for 1234 seconds.
