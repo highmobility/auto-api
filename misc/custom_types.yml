@@ -401,6 +401,10 @@ types:
         name: rear_left
       - id: 0x04
         name: rear_center
+      - id: 0x05
+        name: driver
+      - id: 0x06
+        name: passenger
     # MARK: Service-Status
   - name: service_status
     name_cased: serviceStatus
