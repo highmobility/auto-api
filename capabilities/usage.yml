@@ -622,3 +622,27 @@ properties:
         value:
           watts: 2300.0
         description: Recuperation energy is 2300.0W.
+  - id: 0x2d
+    name: acceleration_durations
+    name_cased: accelerationDurations
+    name_pretty: Acceleration durations
+    name_single: acceleration_duration
+    added: 0x0d
+    type: types.acceleration_duration
+    multiple: true
+    description: Durations of normal or other accelerations.
+    examples:
+      - data_component: '000007064093480000000000'
+        values:
+          direction: longitudinal
+          type: normal
+          duration:
+            milliseconds: 1234.0
+        description: Normal longitudinal acceleration lasted 1234.0ms.
+      - data_component: '010107064093480000000000'
+        values:
+          direction: lateral
+          type: positive_outlier
+          duration:
+            milliseconds: 1234.0
+        description: Positive outlier lateral acceleration lasted 1234.0ms.

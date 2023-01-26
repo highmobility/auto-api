@@ -562,6 +562,39 @@ types:
         type: unit.acceleration
         size: 10
         description: The accelaration
+    # MARK: Aceeleration Duration
+  - name: acceleration_duration
+    name_cased: accelerationDuration
+    name_pretty: Acceleration duration
+    type: custom
+    size: 12
+    items:
+      - name: direction
+        name_cased: direction
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: longitudinal
+          - id: 0x01
+            name: lateral
+      - name: type
+        name_cased: type
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: regular
+          - id: 0x01
+            name: positive_outlier
+          - id: 0x02
+            name: negative_outlier
+      - name: duration
+        name_cased: duration
+        name_pretty: Duration
+        type: unit.duration
+        size: 10
+        description: The duration of the acceleration
     # MARK: Accelerator Duration
   - name: accelerator_duration
     name_cased: acceleratorDuration

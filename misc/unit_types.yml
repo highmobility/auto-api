@@ -68,6 +68,9 @@ measurement_types:
       - name: months
         id: 0x05
         conversion_linear: 2629800.0
+      - name: milliseconds
+        id: 0x06
+        conversion_linear: 0.001
 
   - name: electric_current
     id: 0x09
