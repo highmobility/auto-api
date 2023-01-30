@@ -411,7 +411,6 @@ properties:
       - data_component: '01'
         value: 'local'
         description: Road was of local type.
-
   - id: 0x17
     name: braking_count
     name_cased: brakingCount

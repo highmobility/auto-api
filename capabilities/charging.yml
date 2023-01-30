@@ -1085,7 +1085,6 @@ properties:
           temperature:
             celsius: 85.0
         description: Battery highest temperature is 85.0C.
-
   - id: 0x43
     name: driving_mode_phev
     name_cased: drivingModePHEV
@@ -1097,7 +1096,6 @@ properties:
       - data_component: '05'
         value: 'hybrid_parallel'
         description: Driving mode for PHEV is hybrid parallel.
-
   - id: 0x44
     name: battery_charge_type
     name_cased: batteryChargeType

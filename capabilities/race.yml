@@ -283,7 +283,6 @@ properties:
       - data_component: '02'
         value: 'race_start'
         description: Drivetrain is in `race_start` state.
-
   - id: 0x14
     name: accelerator_durations
     name_cased: acceleratorDurations
