@@ -378,6 +378,9 @@ properties:
       - id: 0x0b
         name: conditioning
         disabled_in_setter: true
+      - id: 0x0c
+        name: flap_open
+        disabled_in_setter: true
     examples:
       - data_component: '01'
         value: 'charging'
@@ -1082,3 +1085,45 @@ properties:
           temperature:
             celsius: 85.0
         description: Battery highest temperature is 85.0C.
+  - id: 0x43
+    name: driving_mode_phev
+    name_cased: drivingModePHEV
+    name_pretty: Driving mode PHEV
+    added: 0x0d
+    type: types.driving_mode_phev
+    description: Indicates the current driving mode for Plug-In Hybrid Vehicle.
+    examples:
+      - data_component: '05'
+        value: 'hybrid_parallel'
+        description: Driving mode for PHEV is hybrid parallel.
+  - id: 0x44
+    name: battery_charge_type
+    name_cased: batteryChargeType
+    name_pretty: Battery charge type
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Battery charge type.
+    enum_values:
+      - id: 0x00
+        name: no_charge
+      - id: 0x01
+        name: normal
+      - id: 0x02
+        name: accelerated
+      - id: 0x03
+        name: fast
+      - id: 0x04
+        name: quick
+      - id: 0x05
+        name: ultra_fast
+      - id: 0x06
+        name: not_used
+      - id: 0x07
+        name: vehicle_to_home
+      - id: 0x08
+        name: vehicle_to_grid
+    examples:
+      - data_component: '04'
+        value: 'quick'
+        description: Battery charge type is quick.
