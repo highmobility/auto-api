@@ -635,7 +635,7 @@ properties:
       - data_component: '000007064093480000000000'
         values:
           direction: longitudinal
-          type: normal
+          type: regular
           duration:
             milliseconds: 1234.0
         description: Normal longitudinal acceleration lasted 1234.0ms.
