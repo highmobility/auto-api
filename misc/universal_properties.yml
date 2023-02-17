@@ -155,7 +155,7 @@ universal_properties:
         name: volvo_cars
         name_pretty: Volvo Cars
       - id: 0x2a
-        name: emulator
+        name: sandbox
     examples:
       - data_component: '05'
         value: 'bmw'
