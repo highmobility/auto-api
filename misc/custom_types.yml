@@ -561,8 +561,8 @@ types:
         name_pretty: Acceleration
         type: unit.acceleration
         size: 10
-        description: The accelaration
-    # MARK: Aceeleration Duration
+        description: The acceleration
+    # MARK: Acceleration Duration
   - name: acceleration_duration
     name_cased: accelerationDuration
     name_pretty: Acceleration duration
@@ -1319,7 +1319,7 @@ types:
           - id: 0x89
             name: hybrid_system_fault_repaired_vehicle
           - id: 0x8a
-            name: hydraulic_pressure_or_brake_fuild_insufficient
+            name: hydraulic_pressure_or_brake_fluid_insufficient
           - id: 0x8b
             name: lane_departure_fault
           - id: 0x8c
@@ -1339,7 +1339,7 @@ types:
           - id: 0x93
             name: place_gear_to_parking
           - id: 0x94
-            name: power_steering_assitance_failure
+            name: power_steering_assistance_failure
           - id: 0x95
             name: power_steering_failure
           - id: 0x96
