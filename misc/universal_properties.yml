@@ -156,6 +156,9 @@ universal_properties:
         name_pretty: Volvo Cars
       - id: 0x2a
         name: sandbox
+      - id: 0x2b
+        name: tesla
+        name_pretty: Tesla
     examples:
       - data_component: '05'
         value: 'bmw'
