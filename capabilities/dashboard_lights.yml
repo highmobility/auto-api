@@ -718,7 +718,7 @@ properties:
         description: Hybrid system fault repaired vehicle is off
       - data_component: '8a00'
         values:
-          name: 'hydraulic_pressure_or_brake_fuild_insufficient'
+          name: 'hydraulic_pressure_or_brake_fluid_insufficient'
           state: 'off'
         description: Hydraulic pressure or brake fuild insufficient is off
       - data_component: '8b00'
@@ -768,7 +768,7 @@ properties:
         description: Place gear to parking is off
       - data_component: '9400'
         values:
-          name: 'power_steering_assitance_failure'
+          name: 'power_steering_assistance_failure'
           state: 'off'
         description: Power steering assitance failure is off
       - data_component: '9500'
