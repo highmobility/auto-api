@@ -646,3 +646,14 @@ properties:
           duration:
             milliseconds: 1234.0
         description: Positive outlier lateral acceleration lasted 1234.0ms.
+  - id: 0x2e
+    name: last_trip_battery_regenerated
+    name_cased: lastTripBatteryRegenerated
+    name_pretty: Last trip battery regenerated
+    type: types.percentage
+    description: Estimated electrical charge (in %) that was recovered through 
+regeneration during a trip.
+    examples:
+      - data_component: '3fc1eb851eb851ec'
+        value: 0.14
+        description: Battery recovered 14% of charge through regeneration.

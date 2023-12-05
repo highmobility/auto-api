@@ -1131,6 +1131,7 @@ properties:
     name: distance_to_complete_charge
     name_cased: distanceToCompleteCharge
     name_pretty: Distance to complete charge
+    added: 0x0d
     type: unit.length
     size: 10
     description: Distance until charging completed
@@ -1139,3 +1140,155 @@ properties:
         value:
           kilometers: 120.5
         description: Distance to complete charge is 120.5 kilometers.
+
+  - id: 0x46
+    name: battery_charge_transfer_event
+    name_cased: batteryChargeTransferEvent
+    name_pretty: Battery charge transfer event
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Indicates that the high-voltage battery lost state of charge due to an energy transfer to the 12V battery.
+    enum_values:
+      - id: 0x00
+        name: low_voltage_battery_service_required
+      - id: 0x01
+        name: low_voltage_battery_high_usage
+      - id: 0x02
+        name: vehicle_service_required
+    examples:
+      - data_component: '00'
+        value: 'low_voltage_battery_service_required'
+        description: Battery charge transfer event happened because low-voltage battery needs service.
+
+  - id: 0x47
+    name: station_status
+    name_cased: stationStatus
+    name_pretty: Station status
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Status of the charging station.
+    enum_values:
+      - id: 0x00
+        name: not_compatible
+      - id: 0x01
+        name: not_detected
+      - id: 0x02
+        name: digital_communication_established
+      - id: 0x03
+        name: digital_communication_ended
+      - id: 0x04
+        name: station_ready
+    examples:
+      - data_component: '04'
+        value: 'station_ready'
+        description: Charging station is ready.
+
+  - id: 0x48
+    name: station_power_type
+    name_cased: stationPowerType
+    name_pretty: Station power type
+    added: 0x0d
+    type: enum
+    size: 1
+    description: The power type of the connected charging station.
+    enum_values:
+      - id: 0x00
+        name: ac_basic
+      - id: 0x01
+        name: ac_smart
+      - id: 0x02
+        name: dc_fast
+      - id: 0x03
+        name: wireless
+    examples:
+      - data_component: '01'
+        value: 'ac_smart'
+        description: The connected charging station is an AC smart charger.
+
+  - id: 0x49
+    name: station_displayed_status
+    name_cased: stationDisplayedStatus
+    name_pretty: Station displayed status
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Status shown on the display of the charging station.
+    enum_values:
+      - id: 0x00
+        name: not_plugged_in
+      - id: 0x01
+        name: fault
+      - id: 0x02
+        name: station_not_compatible
+      - id: 0x03
+        name: station_not_detected
+      - id: 0x04
+        name: in_progress
+      - id: 0x05
+        name: scheduled
+      - id: 0x06
+        name: paused
+      - id: 0x07
+        name: stopped
+      - id: 0x09
+        name: completed
+      - id: 0x0a
+        name: discharging
+      - id: 0x08
+        name: not_ready
+    examples:
+      - data_component: '04'
+        value: 'in_progress'
+        description: Charging station display shows 'in_progress'.
+
+  - id: 0x4a
+    name: battery_performance_status
+    name_cased: batteryPerformanceStatus
+    name_pretty: Battery performance status
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Performance status of the xEV battery.
+    enum_values:
+      - id: 0x00
+        name: normal
+      - id: 0x01
+        name: caution
+      - id: 0x02
+        name: reduced
+      - id: 0x03
+        name: severly_reduced
+    examples:
+      - data_component: '00'
+        value: 'normal'
+        description: Battery performance status is 'normal'.
+
+  - id: 0x4b
+    name: hybrid_operating_mode
+    name_cased: hybridOperatingMode
+    name_pretty: Hybrid operating mode
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Operating mode of the hybrid vehicle.
+    enum_values:
+      - id: 0x00
+        name: auto_charge_deplete
+      - id: 0x01
+        name: auto_charge_sustain
+      - id: 0x02
+        name: forced_charge_sustain
+      - id: 0x03
+        name: forced_electric
+      - id: 0x04
+        name: forced_non_electric
+      - id: 0x05
+        name: temporary_charge_sustain
+      - id: 0x06
+        name: prioritize_charge_generation
+    examples:
+      - data_component: '01'
+        value: 'auto_charge_sustain'
+        description: Hybrid vehicle is in 'auto_charge_sustain' mode.

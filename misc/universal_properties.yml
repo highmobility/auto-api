@@ -159,6 +159,8 @@ universal_properties:
       - id: 0x2b
         name: tesla
         name_pretty: Tesla
+      - id: 0x2c
+        name: maserati
     examples:
       - data_component: '05'
         value: 'bmw'
