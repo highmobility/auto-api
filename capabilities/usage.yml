@@ -651,8 +651,7 @@ properties:
     name_cased: lastTripBatteryRegenerated
     name_pretty: Last trip battery regenerated
     type: types.percentage
-    description: Estimated electrical charge (in %) that was recovered through 
-regeneration during a trip.
+    description: Estimated electrical charge (in %) that was recovered through regeneration during a trip.
     examples:
       - data_component: '3fc1eb851eb851ec'
         value: 0.14
