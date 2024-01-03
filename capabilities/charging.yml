@@ -1292,3 +1292,17 @@ properties:
       - data_component: '01'
         value: 'auto_charge_sustain'
         description: Hybrid vehicle is in 'auto_charge_sustain' mode.
+
+  - id: 0x4c
+    name: charger_power
+    name_cased: chargerPower
+    name_pretty: Charger power
+    added: 0x0d
+    type: unit.power
+    size: 10
+    description: Power of the charger.
+    examples:
+      - data_component: '1402405e000000000000'
+        value:
+          kilowatts: 120.0
+        description: Charger power is 120.0kW.
