@@ -958,7 +958,7 @@ properties:
         value: 'active'
         description: Passenger airbag is `active`
 
-  - id: 0x2d
+  - id: 0x39
     name: estimated_primary_powertrain_range
     name_cased: estimatedPrimaryPowertrainRange
     name_pretty: Estimated primary powertrain range
