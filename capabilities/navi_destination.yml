@@ -91,3 +91,26 @@ properties:
         value:
           kilometers: 1337.0
         description: Remaining distance to destination is 1337.0km
+
+  - id: 0x07
+    name: battery_consumption_to_destination
+    name_cased: batteryConsumptionToDestination
+    name_pretty: Battery consumption to destination
+    type: types.percentage
+    description: Required battery charge level to proceed to the next destination.
+    examples:
+      - data_component: '3fcd70a3d70a3d71'
+        value: 0.23
+        description: Required battery charge level to proceed to the next destination is 23%.
+
+  - id: 0x08
+    name: charging_time_for_destination
+    name_cased: chargingTimeForDestination
+    name_pretty: Charging time for destination
+    type: unit.duration
+    description: Required charging time to reach the next destination.
+    examples:
+      - data_component: '0701404b800000000000'
+        value:
+          minutes: 55.0
+        description: Required charging time to reach the next destination is 55.0min.

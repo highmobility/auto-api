@@ -381,6 +381,9 @@ properties:
       - id: 0x0c
         name: flap_open
         disabled_in_setter: true
+      - id: 0x0d
+        name: ready_for_charging
+        disabled_in_setter: true
     examples:
       - data_component: '01'
         value: 'charging'
@@ -598,7 +601,7 @@ properties:
     examples:
       - data_component: '1402405e000000000000'
         value:
-           kilowatts: 120.0
+          kilowatts: 120.0
         description: Auxiliary power is 120.0kW.
   - id: 0x26
     name: charging_complete_lock
@@ -1054,6 +1057,8 @@ properties:
         name: initialising
       - id: 0x0b
         name: error
+      - id: 0x0c
+        name: blue
     examples:
       - data_component: '00'
         value: 'no_colour'
@@ -1180,6 +1185,8 @@ properties:
         name: digital_communication_ended
       - id: 0x04
         name: station_ready
+      - id: 0x05
+        name: active
     examples:
       - data_component: '04'
         value: 'station_ready'
@@ -1306,3 +1313,81 @@ properties:
         value:
           kilowatts: 120.0
         description: Charger power is 120.0kW.
+
+  - id: 0x4d
+    name: conserving_charge
+    name_cased: conservingCharge
+    name_pretty: Conserving charge
+    added: 0x0d
+    type: types.active_state
+    description: Indicates if the vehicle is conserving charge.
+    examples:
+      - data_component: '01'
+        value: 'active'
+        description: Vehicle is conserving charge.
+
+  - id: 0x4e
+    name: charging_rate_distance
+    name_cased: chargingRateDistance
+    name_pretty: Charging rate distance
+    added: 0x0d
+    type: types.distance_over_time
+    description: Range increase per time unit during ongoing charging process based on the average energy comsumption for driving.
+    examples:
+      - data_component: '12044062c0000000000007023ff0000000000000'
+        values:
+          distance:
+            kilometers: 150.0
+          time:
+            hours: 1.0
+        description: Range increases by 150.0km in 1.0h.
+
+  - id: 0x4f
+    name: charging_scenario
+    name_cased: chargingScenario
+    name_pretty: Charging scenario
+    added: 0x0d
+    type: enum
+    size: 1
+    description: Charging scenario.
+    enum_values:
+      - id: 0x00
+        name: 'off'
+      - id: 0x01
+        name: charging_to_departure_time_finished
+      - id: 0x02
+        name: immediately_charging_finished
+      - id: 0x03
+        name: optimised_charging_finished
+      - id: 0x04
+        name: charging_to_departure_time_active
+      - id: 0x05
+        name: immediately_charging_active
+      - id: 0x06
+        name: optimised_charging_active
+      - id: 0x07
+        name: charging_to_departure_time_waiting
+      - id: 0x08
+        name: optimised_charging_waiting
+      - id: 0x09
+        name: no_grid_voltage
+      - id: 0x0a
+        name: error_lock
+      - id: 0x0b
+        name: error_charging_system
+      - id: 0x0c
+        name: initialization_charging_communication
+      - id: 0x0d
+        name: immediately_optimised_charging_active
+      - id: 0x0e
+        name: immediately_optimised_charging_finished
+      - id: 0x0f
+        name: emergency_charging
+      - id: 0x10
+        name: charging_interrupt_by_user
+      - id: 0x11
+        name: plug_releasable
+    examples:
+      - data_component: '01'
+        value: 'charging_to_departure_time_finished'
+        description: Charging scenario is 'charging_to_departure_time_finished'.

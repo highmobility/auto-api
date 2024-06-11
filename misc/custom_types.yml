@@ -6,7 +6,6 @@
 # Additionally defines commonly used 'enum' types.
 #
 
-
 types:
   # MARK: Active State
   - name: active_state
@@ -1666,6 +1665,27 @@ types:
         type: unit.energy
         size: 10
         description: Energy consumption in the driving mode
+    # MARK: Dynamic Warning
+  - name: dynamic_warning
+    name_cased: dynamicWarning
+    name_pretty: Dynamic warning
+    type: custom
+    items:
+      - name: category
+        name_cased: category
+        name_pretty: Category
+        type: string
+        description: Category of the warning
+      - name: id
+        name_cased: id
+        name_pretty: ID
+        type: string
+        description: Identifier of the warning
+      - name: description
+        name_cased: description
+        name_pretty: Description
+        type: string
+        description: Description of the warning
     # MARK: EcoDriving Threshold
   - name: eco_driving_threshold
     name_cased: ecoDrivingThreshold

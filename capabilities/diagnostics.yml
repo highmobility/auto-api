@@ -730,7 +730,7 @@ properties:
     examples:
       - data_component: '00'
         value: 'measured'
-        description:  Fuel level has been measured
+        description: Fuel level has been measured
   - id: 0x2f
     name: tire_pressures_targets
     name_cased: tirePressuresTargets
@@ -957,3 +957,17 @@ properties:
       - data_component: '01'
         value: 'active'
         description: Passenger airbag is `active`
+
+  - id: 0x39
+    name: estimated_primary_powertrain_range
+    name_cased: estimatedPrimaryPowertrainRange
+    name_pretty: Estimated primary powertrain range
+    added: 0x0d
+    type: unit.length
+    size: 10
+    description: Estimated primary powertrain range
+    examples:
+      - data_component: '12044070900000000000'
+        value:
+          kilometers: 265.0
+        description: Estimated primary powertrain`s range is 256.0km
