@@ -447,5 +447,5 @@ properties:
     examples:
       - data_component: '0701405ec00000000000'
         value:
-          hours: 123.0
+          minutes: 123.0
         description: Duration of trip was 123.0 minutes.
