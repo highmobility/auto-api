@@ -971,3 +971,41 @@ properties:
         value:
           kilometers: 265.0
         description: Estimated primary powertrain`s range is 256.0km
+
+  - id: 0x3a
+    name: estimated_mixed_powertrain_range
+    name_cased: estimatedMixedPowertrainRange
+    name_pretty: Estimated mixed powertrain range
+    added: 0x0d
+    type: unit.length
+    size: 10
+    description: Estimated distance the vehicle can travel with the current fuel level
+    examples:
+      - data_component: '12044070900000000000'
+        value:
+          kilometers: 265.0
+        description: Estimated mixed powertrain range is 256.0km
+
+  - id: 0x3b
+    name: primary_energy_level
+    name_cased: primaryEnergyLevel
+    name_pretty: Primary energy level
+    added: 0x0d
+    type: types.percentage
+    description: Primary energy percentage between 0.0-1.0
+    examples:
+      - data_component: '3fe999999999999a'
+        value: 0.8
+        description: Primary energy level is at 80%
+
+  - id: 0x3c
+    name: secondary_energy_level
+    name_cased: secondaryEnergyLevel
+    name_pretty: Secondary energy level
+    added: 0x0d
+    type: types.percentage
+    description: Secondary energy percentage between 0.0-1.0
+    examples:
+      - data_component: '3fe999999999999a'
+        value: 0.8
+        description: Secondary energy level is at 80%
