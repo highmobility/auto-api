@@ -26,982 +26,982 @@ properties:
     multiple: true
     name_singular: dashboard_light
     examples:
-      - data_component: '0000'
+      - data_component: '000000'
         values:
           name: 'high_beam'
           state: 'off'
         description: High beam is off
-      - data_component: '0100'
+      - data_component: '000100'
         values:
           name: 'low_beam'
           state: 'off'
         description: Low beam is off
-      - data_component: '0201'
+      - data_component: '000201'
         values:
           name: 'hazard_warning'
           state: 'on'
         description: Hazard warning is on
-      - data_component: '0300'
+      - data_component: '000300'
         values:
           name: 'brake_failure'
           state: 'off'
         description: Brake failure/brake system malfunction is off
-      - data_component: '0400'
+      - data_component: '000400'
         values:
           name: 'hatch_open'
           state: 'off'
         description: Hatch open is off
-      - data_component: '0500'
+      - data_component: '000500'
         values:
           name: 'fuel_level'
           state: 'off'
         description: Fuel level is off
-      - data_component: '0600'
+      - data_component: '000600'
         values:
           name: 'engine_coolant_temperature'
           state: 'off'
         description: Engine coolant temperature is off
-      - data_component: '0700'
+      - data_component: '000700'
         values:
           name: 'battery_charging_condition'
           state: 'off'
         description: Battery charging condition is off
-      - data_component: '0800'
+      - data_component: '000800'
         values:
           name: 'engine_oil'
           state: 'off'
         description: Engine oil is off
-      - data_component: '0900'
+      - data_component: '000900'
         values:
           name: 'position_lights'
           state: 'off'
         description: Position lights is off
-      - data_component: '0a00'
+      - data_component: '000a00'
         values:
           name: 'front_fog_light'
           state: 'off'
         description: Front fog light is off
-      - data_component: '0b00'
+      - data_component: '000b00'
         values:
           name: 'rear_fog_light'
           state: 'off'
         description: Rear fog light is off
-      - data_component: '0c00'
+      - data_component: '000c00'
         values:
           name: 'park_heating'
           state: 'off'
         description: Park heating is off
-      - data_component: '0d00'
+      - data_component: '000d00'
         values:
           name: 'engine_indicator'
           state: 'off'
         description: Engine indicator is off
-      - data_component: '0e00'
+      - data_component: '000e00'
         values:
           name: 'service_call'
           state: 'off'
         description: Service call for maintenance is off
-      - data_component: '0f01'
+      - data_component: '000f01'
         values:
           name: 'transmission_fluid_temperature'
           state: 'on'
         description: Transmission fluid temperature is on
-      - data_component: '1000'
+      - data_component: '001000'
         values:
           name: 'transmission_failure'
           state: 'off'
         description: Transmission failure/malfunction is off
-      - data_component: '1100'
+      - data_component: '001100'
         values:
           name: 'anti_lock_brake_failure'
           state: 'off'
         description: Anti-lock brake system failure is off
-      - data_component: '1200'
+      - data_component: '001200'
         values:
           name: 'worn_brake_linings'
           state: 'off'
         description: Worn brake linings is off
-      - data_component: '1300'
+      - data_component: '001300'
         values:
           name: 'windscreen_washer_fluid'
           state: 'off'
         description: Windscreen washer fluid/windshield washer fluid is off
-      - data_component: '1400'
+      - data_component: '001400'
         values:
           name: 'tire_failure'
           state: 'off'
         description: Tire failure/malfunction is off
-      - data_component: '1501'
+      - data_component: '001501'
         values:
           name: 'engine_oil_level'
           state: 'on'
         description: Engine oil temperature is on
-      - data_component: '1600'
+      - data_component: '001600'
         values:
           name: 'engine_coolant_level'
           state: 'off'
         description: Engine coolant level is off
-      - data_component: '1700'
+      - data_component: '001700'
         values:
           name: 'steering_failure'
           state: 'off'
         description: Steering failure is off
-      - data_component: '1800'
+      - data_component: '001800'
         values:
           name: 'esc_indication'
           state: 'off'
         description: Electronic Speed Controller is off
-      - data_component: '1900'
+      - data_component: '001900'
         values:
           name: 'brake_lights'
           state: 'off'
         description: Brake lights is off
-      - data_component: '1a00'
+      - data_component: '001a00'
         values:
           name: 'adblue_level'
           state: 'off'
         description: AdBlue is off
-      - data_component: '1b00'
+      - data_component: '001b00'
         values:
           name: 'fuel_filter_diff_pressure'
           state: 'off'
         description: Fuel filter differential pressure is off
-      - data_component: '1c00'
+      - data_component: '001c00'
         values:
           name: 'seat_belt'
           state: 'off'
         description: Seat belt is off
-      - data_component: '1d00'
+      - data_component: '001d00'
         values:
           name: 'advanced_braking'
           state: 'off'
         description: Advanced emergency braking system is off
-      - data_component: '1e00'
+      - data_component: '001e00'
         values:
           name: 'acc'
           state: 'off'
         description: Autonomous Cruise Control is off
-      - data_component: '1f00'
+      - data_component: '001f00'
         values:
           name: 'trailer_connected'
           state: 'off'
         description: Trailer connected is off
-      - data_component: '2000'
+      - data_component: '002000'
         values:
           name: 'airbag'
           state: 'off'
         description: Airbag is off
-      - data_component: '2100'
+      - data_component: '002100'
         values:
           name: 'esc_switched_off'
           state: 'off'
         description: ESC switched off is off
-      - data_component: '2200'
+      - data_component: '002200'
         values:
           name: 'lane_departure_warning_off'
           state: 'off'
         description: Lane departure warning switched off is off
-      - data_component: '2300'
+      - data_component: '002300'
         values:
           name: 'air_filter_minder'
           state: 'off'
         description: Air filter minder is off
-      - data_component: '2400'
+      - data_component: '002400'
         values:
           name: 'air_suspension_ride_control_fault'
           state: 'off'
         description: Air suspension ride control fault is off
-      - data_component: '2500'
+      - data_component: '002500'
         values:
           name: 'all_wheel_drive_disabled'
           state: 'off'
         description: All wheel drive disabled is off
-      - data_component: '2600'
+      - data_component: '002600'
         values:
           name: 'anti_theft'
           state: 'off'
         description: Anti theft is off
-      - data_component: '2700'
+      - data_component: '002700'
         values:
           name: 'blind_spot_detection'
           state: 'off'
         description: Blind spot detection is off
-      - data_component: '2800'
+      - data_component: '002800'
         values:
           name: 'charge_system_fault'
           state: 'off'
         description: Charge system fault is off
-      - data_component: '2900'
+      - data_component: '002900'
         values:
           name: 'check_fuel_cap'
           state: 'off'
         description: Check fuel cap is off
-      - data_component: '2a00'
+      - data_component: '002a00'
         values:
           name: 'check_fuel_fill_inlet'
           state: 'off'
         description: Check fuel fill inlet is off
-      - data_component: '2b00'
+      - data_component: '002b00'
         values:
           name: 'check_fuel_filter'
           state: 'off'
         description: Check fuel filter is off
-      - data_component: '2c00'
+      - data_component: '002c00'
         values:
           name: 'dc_temp_warning'
           state: 'off'
         description: DC temperature warning is off
-      - data_component: '2d00'
+      - data_component: '002d00'
         values:
           name: 'dc_warning_status'
           state: 'off'
         description: DC warning status is off
-      - data_component: '2e00'
+      - data_component: '002e00'
         values:
           name: 'diesel_engine_idle_shutdown'
           state: 'off'
         description: Diesel engine idle shutdown is off
-      - data_component: '2f00'
+      - data_component: '002f00'
         values:
           name: 'diesel_engine_warning'
           state: 'off'
         description: Diesel engine warning is off
-      - data_component: '3000'
+      - data_component: '003000'
         values:
           name: 'diesel_exhaust_fluid_system_fault'
           state: 'off'
         description: Diesel exhaust fluid system fault is off
-      - data_component: '3100'
+      - data_component: '003100'
         values:
           name: 'diesel_exhaust_over_temp'
           state: 'off'
         description: Diesel exhaust over temperature is off
-      - data_component: '3200'
+      - data_component: '003200'
         values:
           name: 'diesel_exhaust_fluid_quality'
           state: 'off'
         description: Diesel exhaust fluid quality is off
-      - data_component: '3300'
+      - data_component: '003300'
         values:
           name: 'diesel_filter_regeneration'
           state: 'off'
         description: Diesel filter regeneration is off
-      - data_component: '3400'
+      - data_component: '003400'
         values:
           name: 'diesel_particulate_filter'
           state: 'off'
         description: Diesel particulate filter is off
-      - data_component: '3500'
+      - data_component: '003500'
         values:
           name: 'diesel_pre_heat'
           state: 'off'
         description: Diesel pre heat is off
-      - data_component: '3600'
+      - data_component: '003600'
         values:
           name: 'electric_trailer_brake_connection'
           state: 'off'
         description: Electric trailer brake connection is off
-      - data_component: '3700'
+      - data_component: '003700'
         values:
           name: 'ev_battery_cell_max_volt_warning'
           state: 'off'
         description: EV battery cell max voltage warning is off
-      - data_component: '3800'
+      - data_component: '003800'
         values:
           name: 'ev_battery_cell_min_volt_warning'
           state: 'off'
         description: EV battery cell min voltage warning is off
-      - data_component: '3900'
+      - data_component: '003900'
         values:
           name: 'ev_battery_charge_energy_storage_warning'
           state: 'off'
         description: EV battery charge energy storage warning is off
-      - data_component: '3a00'
+      - data_component: '003a00'
         values:
           name: 'ev_battery_high_level_warning'
           state: 'off'
         description: EV battery high level warning is off
-      - data_component: '3b00'
+      - data_component: '003b00'
         values:
           name: 'ev_battery_high_temperature_warning'
           state: 'off'
         description: EV battery high temperature warning is off
-      - data_component: '3c00'
+      - data_component: '003c00'
         values:
           name: 'ev_battery_insulation_resist_warning'
           state: 'off'
         description: EV battery insulation resist warning is off
-      - data_component: '3d00'
+      - data_component: '003d00'
         values:
           name: 'ev_battery_jump_level_warning'
           state: 'off'
         description: EV battery jump level warning is off
-      - data_component: '3e00'
+      - data_component: '003e00'
         values:
           name: 'ev_battery_low_level_warning'
           state: 'off'
         description: EV battery low level warning is off
-      - data_component: '3f00'
+      - data_component: '003f00'
         values:
           name: 'ev_battery_max_volt_veh_energy_warning'
           state: 'off'
         description: EV battery max volt veh energy warning is off
-      - data_component: '4000'
+      - data_component: '004000'
         values:
           name: 'ev_battery_min_volt_veh_energy_warning'
           state: 'off'
         description: EV battery min volt veh energy warning is off
-      - data_component: '4100'
+      - data_component: '004100'
         values:
           name: 'ev_battery_over_charge_warning'
           state: 'off'
         description: EV battery over charge warning is off
-      - data_component: '4200'
+      - data_component: '004200'
         values:
           name: 'ev_battery_poor_cell_warning'
           state: 'off'
         description: EV battery poor cell warning is off
-      - data_component: '4300'
+      - data_component: '004300'
         values:
           name: 'ev_battery_temp_diff_warning'
           state: 'off'
         description: EV battery temperature difference warning is off
-      - data_component: '4400'
+      - data_component: '004400'
         values:
           name: 'forward_collision_warning'
           state: 'off'
         description: Forward collision warning is off
-      - data_component: '4500'
+      - data_component: '004500'
         values:
           name: 'fuel_door_open'
           state: 'off'
         description: Fuel doof open is off
-      - data_component: '4600'
+      - data_component: '004600'
         values:
           name: 'hill_descent_control_fault'
           state: 'off'
         description: Hill descent control fault is off
-      - data_component: '4700'
+      - data_component: '004700'
         values:
           name: 'hill_start_assist_warning'
           state: 'off'
         description: Hill start assist warning is off
-      - data_component: '4800'
+      - data_component: '004800'
         values:
           name: 'hv_interlocking_status_warning'
           state: 'off'
         description: HV interlocking status warning is off
-      - data_component: '4900'
+      - data_component: '004900'
         values:
           name: 'lighting_system_failure'
           state: 'off'
         description: Lighting system failure is off
-      - data_component: '4a00'
+      - data_component: '004a00'
         values:
           name: 'malfunction_indicator'
           state: 'off'
         description: Malfunction indicator is off
-      - data_component: '4b00'
+      - data_component: '004b00'
         values:
           name: 'motor_controller_temp_warning'
           state: 'off'
         description: Motor controller temperature warning is off
-      - data_component: '4c00'
+      - data_component: '004c00'
         values:
           name: 'park_aid_malfunction'
           state: 'off'
         description: Park aid malfunction is off
-      - data_component: '4d00'
+      - data_component: '004d00'
         values:
           name: 'passive_entry_passive_start'
           state: 'off'
         description: Passive entry passive start is off
-      - data_component: '4e00'
+      - data_component: '004e00'
         values:
           name: 'powertrain_malfunction'
           state: 'off'
         description: Powertrain malfunction is off
-      - data_component: '4f00'
+      - data_component: '004f00'
         values:
           name: 'restraints_indicator_warning'
           state: 'off'
         description: Restraints indicator warning is off
-      - data_component: '5000'
+      - data_component: '005000'
         values:
           name: 'start_stop_engine_warning'
           state: 'off'
         description: Start stop engine warning is off
-      - data_component: '5100'
+      - data_component: '005100'
         values:
           name: 'traction_control_disabled'
           state: 'off'
         description: Traction control disabled is off
-      - data_component: '5200'
+      - data_component: '005200'
         values:
           name: 'traction_control_active'
           state: 'off'
         description: Traction control active is off
-      - data_component: '5300'
+      - data_component: '005300'
         values:
           name: 'traction_motor_temp_warning'
           state: 'off'
         description: Traction motor temperature warning is off
-      - data_component: '5400'
+      - data_component: '005400'
         values:
           name: 'tire_pressure_monitor_system_warning'
           state: 'off'
         description: Tire pressure monitor system warning is off
-      - data_component: '5500'
+      - data_component: '005500'
         values:
           name: 'water_in_fuel'
           state: 'off'
         description: Water in fuel is off
-      - data_component: '5600'
+      - data_component: '005600'
         values:
           name: 'tire_warning_front_right'
           state: 'off'
         description: Tire warning front right is off
-      - data_component: '5700'
+      - data_component: '005700'
         values:
           name: 'tire_warning_front_left'
           state: 'off'
         description: Tire warning front left is off
-      - data_component: '5800'
+      - data_component: '005800'
         values:
           name: 'tire_warning_rear_right'
           state: 'off'
         description: Tire warning rear right is off
-      - data_component: '5900'
+      - data_component: '005900'
         values:
           name: 'tire_warning_rear_left'
           state: 'off'
         description: Tire warning rear left is off
-      - data_component: '5a00'
+      - data_component: '005a00'
         values:
           name: 'tire_warning_system_error'
           state: 'off'
         description: Tire warning system error is off
-      - data_component: '5b00'
+      - data_component: '005b00'
         values:
           name: 'battery_low_warning'
           state: 'off'
         description: Battery low warning is off
-      - data_component: '5c00'
+      - data_component: '005c00'
         values:
           name: 'brake_fluid_warning'
           state: 'off'
         description: Brake fluid warning is off
-      - data_component: '5d00'
+      - data_component: '005d00'
         values:
           name: 'active_hood_fault'
           state: 'off'
         description: Active hood fault is off
-      - data_component: '5e00'
+      - data_component: '005e00'
         values:
           name: 'active_spoiler_fault'
           state: 'off'
         description: Active spoiler fault is off
-      - data_component: '5f00'
+      - data_component: '005f00'
         values:
           name: 'adjust_tire_pressure'
           state: 'off'
         description: Adjust tire pressure is off
-      - data_component: '6000'
+      - data_component: '006000'
         values:
           name: 'steering_lock_alert'
           state: 'off'
         description: Steering lock alert is off
-      - data_component: '6100'
+      - data_component: '006100'
         values:
           name: 'anti_pollution_failure_engine_start_impossible'
           state: 'off'
         description: Anti pollution failure engine start impossible is off
-      - data_component: '6200'
+      - data_component: '006200'
         values:
           name: 'anti_pollution_system_failure'
           state: 'off'
         description: Anti pollution system failure is off
-      - data_component: '6300'
+      - data_component: '006300'
         values:
           name: 'anti_reverse_system_failing'
           state: 'off'
         description: Anti reverse system failing is off
-      - data_component: '6400'
+      - data_component: '006400'
         values:
           name: 'auto_parking_brake'
           state: 'off'
         description: Auto parking brake is off
-      - data_component: '6500'
+      - data_component: '006500'
         values:
           name: 'automatic_braking_deactive'
           state: 'off'
         description: Automatic braking deactive is off
-      - data_component: '6600'
+      - data_component: '006600'
         values:
           name: 'automatic_braking_system_fault'
           state: 'off'
         description: Automatic braking system fault is off
-      - data_component: '6700'
+      - data_component: '006700'
         values:
           name: 'automatic_lights_settings_failure'
           state: 'off'
         description: Automatic lights settings failure is off
-      - data_component: '6800'
+      - data_component: '006800'
         values:
           name: 'keyfob_battery_alarm'
           state: 'off'
         description: Keyfob battery alarm is off
-      - data_component: '6900'
+      - data_component: '006900'
         values:
           name: 'trunk_open'
           state: 'off'
         description: Trunk open is off
-      - data_component: '6a00'
+      - data_component: '006a00'
         values:
           name: 'check_reversing_lamp'
           state: 'off'
         description: Check reversing lamp is off
-      - data_component: '6b00'
+      - data_component: '006b00'
         values:
           name: 'crossing_line_system_alert_failure'
           state: 'off'
         description: Crossing line system alert failure is off
-      - data_component: '6c00'
+      - data_component: '006c00'
         values:
           name: 'dipped_beam_headlamps_front_left_failure'
           state: 'off'
         description: Dipped beam headlamps front left failure is off
-      - data_component: '6d00'
+      - data_component: '006d00'
         values:
           name: 'dipped_beam_headlamps_front_right_failure'
           state: 'off'
         description: Dipped beam headlamps front right failure is off
-      - data_component: '6e00'
+      - data_component: '006e00'
         values:
           name: 'directional_headlamps_failure'
           state: 'off'
         description: Directional headlamps failure is off
-      - data_component: '6f00'
+      - data_component: '006f00'
         values:
           name: 'directional_light_failure'
           state: 'off'
         description: Directional light failure is off
-      - data_component: '7000'
+      - data_component: '007000'
         values:
           name: 'dsg_failing'
           state: 'off'
         description: Dsg failing is off
-      - data_component: '7100'
+      - data_component: '007100'
         values:
           name: 'electric_mode_not_available'
           state: 'off'
         description: Electric mode not available is off
-      - data_component: '7200'
+      - data_component: '007200'
         values:
           name: 'electronic_lock_failure'
           state: 'off'
         description: Electronic lock failure is off
-      - data_component: '7300'
+      - data_component: '007300'
         values:
           name: 'engine_control_system_failure'
           state: 'off'
         description: Engine control system failure is off
-      - data_component: '7400'
+      - data_component: '007400'
         values:
           name: 'engine_oil_pressure_alert'
           state: 'off'
         description: Engine oil pressure alert is off
-      - data_component: '7500'
+      - data_component: '007500'
         values:
           name: 'esp_failure'
           state: 'off'
         description: Esp failure is off
-      - data_component: '7600'
+      - data_component: '007600'
         values:
           name: 'excessive_oil_temperature'
           state: 'off'
         description: Excessive oil temperature is off
-      - data_component: '7700'
+      - data_component: '007700'
         values:
           name: 'tire_front_left_flat'
           state: 'off'
         description: Tire front left flat is off
-      - data_component: '7800'
+      - data_component: '007800'
         values:
           name: 'tire_front_right_flat'
           state: 'off'
         description: Tire front right flat is off
-      - data_component: '7900'
+      - data_component: '007900'
         values:
           name: 'tire_rear_left_flat'
           state: 'off'
         description: Tire rear left flat is off
-      - data_component: '7a00'
+      - data_component: '007a00'
         values:
           name: 'tire_rear_right_flat'
           state: 'off'
         description: Tire rear right flat is off
-      - data_component: '7b00'
+      - data_component: '007b00'
         values:
           name: 'fog_light_front_left_failure'
           state: 'off'
         description: Fog light front left failure is off
-      - data_component: '7c00'
+      - data_component: '007c00'
         values:
           name: 'fog_light_front_right_failure'
           state: 'off'
         description: Fog light front right failure is off
-      - data_component: '7d00'
+      - data_component: '007d00'
         values:
           name: 'fog_light_rear_left_failure'
           state: 'off'
         description: Fog light rear left failure is off
-      - data_component: '7e00'
+      - data_component: '007e00'
         values:
           name: 'fog_light_rear_right_failure'
           state: 'off'
         description: Fog light rear right failure is off
-      - data_component: '7f00'
+      - data_component: '007f00'
         values:
           name: 'fog_light_front_fault'
           state: 'off'
         description: Fog light front fault is off
-      - data_component: '8000'
+      - data_component: '008000'
         values:
           name: 'door_front_left_open'
           state: 'off'
         description: Door front left open is off
-      - data_component: '8100'
+      - data_component: '008100'
         values:
           name: 'door_front_left_open_high_speed'
           state: 'off'
         description: Door front left open high speed is off
-      - data_component: '8200'
+      - data_component: '008200'
         values:
           name: 'tire_front_left_not_monitored'
           state: 'off'
         description: Tire front left not monitored is off
-      - data_component: '8300'
+      - data_component: '008300'
         values:
           name: 'door_front_right_open'
           state: 'off'
         description: Door front right open is off
-      - data_component: '8400'
+      - data_component: '008400'
         values:
           name: 'door_front_right_open_high_speed'
           state: 'off'
         description: Door front right open high speed is off
-      - data_component: '8500'
+      - data_component: '008500'
         values:
           name: 'tire_front_right_not_monitored'
           state: 'off'
         description: Tire front right not monitored is off
-      - data_component: '8600'
+      - data_component: '008600'
         values:
           name: 'headlights_left_failure'
           state: 'off'
         description: Headlights left failure is off
-      - data_component: '8700'
+      - data_component: '008700'
         values:
           name: 'headlights_right_failure'
           state: 'off'
         description: Headlights right failure is off
-      - data_component: '8800'
+      - data_component: '008800'
         values:
           name: 'hybrid_system_fault'
           state: 'off'
         description: Hybrid system fault is off
-      - data_component: '8900'
+      - data_component: '008900'
         values:
           name: 'hybrid_system_fault_repaired_vehicle'
           state: 'off'
         description: Hybrid system fault repaired vehicle is off
-      - data_component: '8a00'
+      - data_component: '008a00'
         values:
           name: 'hydraulic_pressure_or_brake_fluid_insufficient'
           state: 'off'
         description: Hydraulic pressure or brake fuild insufficient is off
-      - data_component: '8b00'
+      - data_component: '008b00'
         values:
           name: 'lane_departure_fault'
           state: 'off'
         description: Lane departure fault is off
-      - data_component: '8c00'
+      - data_component: '008c00'
         values:
           name: 'limited_visibility_aids_camera'
           state: 'off'
         description: Limited visibility aids camera is off
-      - data_component: '8d00'
+      - data_component: '008d00'
         values:
           name: 'tire_pressure_low'
           state: 'off'
         description: Tire pressure low is off
-      - data_component: '8e00'
+      - data_component: '008e00'
         values:
           name: 'maintenance_date_exceeded'
           state: 'off'
         description: Maintenance date exceeded is off
-      - data_component: '8f00'
+      - data_component: '008f00'
         values:
           name: 'maintenance_odometer_exceeded'
           state: 'off'
         description: Maintenance odometer exceeded is off
-      - data_component: '9000'
+      - data_component: '009000'
         values:
           name: 'other_failing_system'
           state: 'off'
         description: Other failing system is off
-      - data_component: '9100'
+      - data_component: '009100'
         values:
           name: 'parking_brake_control_failing'
           state: 'off'
         description: Parking brake control failing is off
-      - data_component: '9200'
+      - data_component: '009200'
         values:
           name: 'parking_space_measuring_system_failure'
           state: 'off'
         description: Parking space measuring system failure is off
-      - data_component: '9300'
+      - data_component: '009300'
         values:
           name: 'place_gear_to_parking'
           state: 'off'
         description: Place gear to parking is off
-      - data_component: '9400'
+      - data_component: '009400'
         values:
           name: 'power_steering_assistance_failure'
           state: 'off'
         description: Power steering assitance failure is off
-      - data_component: '9500'
+      - data_component: '009500'
         values:
           name: 'power_steering_failure'
           state: 'off'
         description: Power steering failure is off
-      - data_component: '9600'
+      - data_component: '009600'
         values:
           name: 'preheating_deactivated_battery_too_low'
           state: 'off'
         description: Preheating deactivated battery too low is off
-      - data_component: '9700'
+      - data_component: '009700'
         values:
           name: 'preheating_deactivated_fuel_level_too_low'
           state: 'off'
         description: Preheating deactivated fuel level too low is off
-      - data_component: '9800'
+      - data_component: '009800'
         values:
           name: 'preheating_deactivated_battery_set_the_clock'
           state: 'off'
         description: Preheating deactivated battery set the clock is off
-      - data_component: '9900'
+      - data_component: '009900'
         values:
           name: 'fog_light_rear_fault'
           state: 'off'
         description: Fog light rear fault is off
-      - data_component: '9a00'
+      - data_component: '009a00'
         values:
           name: 'door_rear_left_open'
           state: 'off'
         description: Door rear left open is off
-      - data_component: '9b00'
+      - data_component: '009b00'
         values:
           name: 'door_rear_left_open_high_speed'
           state: 'off'
         description: Door rear left open high speed is off
-      - data_component: '9c00'
+      - data_component: '009c00'
         values:
           name: 'tire_rear_left_not_monitored'
           state: 'off'
         description: Tire rear left not monitored is off
-      - data_component: '9d00'
+      - data_component: '009d00'
         values:
           name: 'door_rear_right_open'
           state: 'off'
         description: Door rear right open is off
-      - data_component: '9e00'
+      - data_component: '009e00'
         values:
           name: 'door_rear_right_open_high_speed'
           state: 'off'
         description: Door rear right open high speed is off
-      - data_component: '9f00'
+      - data_component: '009f00'
         values:
           name: 'tire_rear_right_not_monitored'
           state: 'off'
         description: Tire rear right not monitored is off
-      - data_component: 'a000'
+      - data_component: '00a000'
         values:
           name: 'screen_rear_open'
           state: 'off'
         description: Screen rear open is off
-      - data_component: 'a100'
+      - data_component: '00a100'
         values:
           name: 'retractable_roof_mechanism_fault'
           state: 'off'
         description: Retractable roof mechanism fault is off
-      - data_component: 'a200'
+      - data_component: '00a200'
         values:
           name: 'reverse_light_left_failure'
           state: 'off'
         description: Reverse light left failure is off
-      - data_component: 'a300'
+      - data_component: '00a300'
         values:
           name: 'reverse_light_right_failure'
           state: 'off'
         description: Reverse light right failure is off
-      - data_component: 'a400'
+      - data_component: '00a400'
         values:
           name: 'risk_of_ice'
           state: 'off'
         description: Risk of ice is off
-      - data_component: 'a500'
+      - data_component: '00a500'
         values:
           name: 'roof_operation_impossible_apply_parking_break'
           state: 'off'
         description: Roof operation impossible apply parking break is off
-      - data_component: 'a600'
+      - data_component: '00a600'
         values:
           name: 'roof_operation_impossible_apply_start_engine'
           state: 'off'
         description: Roof operation impossible apply start engine is off
-      - data_component: 'a700'
+      - data_component: '00a700'
         values:
           name: 'roof_operation_impossible_temperature_too_high'
           state: 'off'
         description: Roof operation impossible temperature too high is off
-      - data_component: 'a800'
+      - data_component: '00a800'
         values:
           name: 'seatbelt_passenger_front_right_unbuckled'
           state: 'off'
         description: Seatbelt passenger front right unbuckled is off
-      - data_component: 'a900'
+      - data_component: '00a900'
         values:
           name: 'seatbelt_passenger_rear_left_unbuckled'
           state: 'off'
         description: Seatbelt passenger rear left unbuckled is off
-      - data_component: 'aa00'
+      - data_component: '00aa00'
         values:
           name: 'seatbelt_passenger_rear_center_unbuckled'
           state: 'off'
         description: Seatbelt passenger rear center unbuckled is off
-      - data_component: 'ab00'
+      - data_component: '00ab00'
         values:
           name: 'seatbelt_passenger_rear_right_unbuckled'
           state: 'off'
         description: Seatbelt passenger rear right unbuckled is off
-      - data_component: 'ac00'
+      - data_component: '00ac00'
         values:
           name: 'battery_secondary_low'
           state: 'off'
         description: Battery secondary low is off
-      - data_component: 'ad00'
+      - data_component: '00ad00'
         values:
           name: 'shock_sensor_failing'
           state: 'off'
         description: Shock sensor failing is off
-      - data_component: 'ae00'
+      - data_component: '00ae00'
         values:
           name: 'side_lights_front_left_failure'
           state: 'off'
         description: Side lights front left failure is off
-      - data_component: 'af00'
+      - data_component: '00af00'
         values:
           name: 'side_lights_front_right_failure'
           state: 'off'
         description: Side lights front right failure is off
-      - data_component: 'b000'
+      - data_component: '00b000'
         values:
           name: 'side_lights_rear_left_failure'
           state: 'off'
         description: Side lights rear left failure is off
-      - data_component: 'b100'
+      - data_component: '00b100'
         values:
           name: 'side_lights_rear_right_failure'
           state: 'off'
         description: Side lights rear right failure is off
-      - data_component: 'b200'
+      - data_component: '00b200'
         values:
           name: 'spare_wheel_fitter_driving_aids_deactivated'
           state: 'off'
         description: Spare wheel fitter driving aids deactivated is off
-      - data_component: 'b300'
+      - data_component: '00b300'
         values:
           name: 'speed_control_failure'
           state: 'off'
         description: Speed control failure is off
-      - data_component: 'b400'
+      - data_component: '00b400'
         values:
           name: 'stop_light_left_failure'
           state: 'off'
         description: Stop light left failure is off
-      - data_component: 'b500'
+      - data_component: '00b500'
         values:
           name: 'stop_light_right_failure'
           state: 'off'
         description: Stop light right failure is off
-      - data_component: 'b600'
+      - data_component: '00b600'
         values:
           name: 'suspension_failure'
           state: 'off'
         description: Suspension failure is off
-      - data_component: 'b700'
+      - data_component: '00b700'
         values:
           name: 'suspension_failure_reduce_speed'
           state: 'off'
         description: Suspension failure reduce speed is off
-      - data_component: 'b800'
+      - data_component: '00b800'
         values:
           name: 'suspension_fault_limited_to_90kmh'
           state: 'off'
         description: Suspension fault limited to 90kmh is off
-      - data_component: 'b900'
+      - data_component: '00b900'
         values:
           name: 'tire_pressure_sensor_failure'
           state: 'off'
         description: Tire pressure sensor failure is off
-      - data_component: 'ba00'
+      - data_component: '00ba00'
         values:
           name: 'trunk_open_high_speed'
           state: 'off'
         description: Trunk open high speed is off
-      - data_component: 'bb00'
+      - data_component: '00bb00'
         values:
           name: 'trunk_window_open'
           state: 'off'
         description: Trunk window open is off
-      - data_component: 'bc00'
+      - data_component: '00bc00'
         values:
           name: 'turn_signal_front_left_failure'
           state: 'off'
         description: Turn signal front left failure is off
-      - data_component: 'bd00'
+      - data_component: '00bd00'
         values:
           name: 'turn_signal_front_right_failure'
           state: 'off'
         description: Turn signal front right failure is off
-      - data_component: 'be00'
+      - data_component: '00be00'
         values:
           name: 'turn_signal_rear_left_failure'
           state: 'off'
         description: Turn signal rear left failure is off
-      - data_component: 'bf00'
+      - data_component: '00bf00'
         values:
           name: 'turn_signal_rear_right_failure'
           state: 'off'
         description: Turn signal rear right failure is off
-      - data_component: 'c000'
+      - data_component: '00c000'
         values:
           name: 'tire_under_inflation'
           state: 'off'
         description: Tire under inflation is off
-      - data_component: 'c100'
+      - data_component: '00c100'
         values:
           name: 'wheel_pressure_fault'
           state: 'off'
         description: Wheel pressure fault is off
-      - data_component: 'c200'
+      - data_component: '00c200'
         values:
           name: 'oil_change_warning'
           state: 'off'
         description: Oil change warning is off
-      - data_component: 'c300'
+      - data_component: '00c300'
         values:
           name: 'inspection_warning'
           state: 'off'
