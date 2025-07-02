@@ -1391,3 +1391,15 @@ properties:
       - data_component: '01'
         value: 'charging_to_departure_time_finished'
         description: Charging scenario is 'charging_to_departure_time_finished'.
+
+  - id: 0x50
+    name: state_of_health
+    name_cased: stateOfHealth
+    name_pretty: State of health
+    added: 0x0d
+    type: types.percentage
+    description: State of health of the high-voltage battery (can be greater than 1.0 due to production variance).
+    examples:
+      - data_component: '3feccccccccccccd'
+        value: 0.9
+        description: State of health of the high-voltage battery is 90%.
