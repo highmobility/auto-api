@@ -366,7 +366,7 @@ types:
     name_cased: percentage
     name_pretty: Percentage
     unit_sign: '%'
-    validation: 'min:0|max:1'
+    validation: 'min:0|max:2'
     type: double
     size: 8
     description: Percentage value between 0.0 - 1.0 (0% - 100%)
