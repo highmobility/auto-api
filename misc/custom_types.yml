@@ -1960,6 +1960,41 @@ types:
             name: not_fastened
           - id: 0x01
             name: fastened
+
+    # MARK: Service Warning
+  - name: service_warning
+    name_cased: serviceWarning
+    name_pretty: Service warning
+    type: custom
+    size: 2
+    items:
+      - name: due
+        name_cased: due
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: no_service_required
+          - id: 0x01
+            name: almost
+          - id: 0x02
+            name: due
+          - id: 0x03
+            name: overdue
+      - name: reason
+        name_cased: reason
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: regular_maintenance
+          - id: 0x02
+            name: engine_hours
+          - id: 0x03
+            name: distance_driven
+
     # MARK: Spring Rate
   - name: spring_rate
     name_cased: springRate
