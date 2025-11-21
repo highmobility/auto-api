@@ -404,7 +404,7 @@ properties:
     name_pretty: Service-status
     added: 0x0d
     type: types.service_status
-    description: "Consolidated status regarding service requirements. OK: no current service requirement, WARNING: at least one service has reported requirement, CRITICAL: at least one service is overdue."
+    description: 'Consolidated status regarding service requirements. OK: no current service requirement, WARNING: at least one service has reported requirement, CRITICAL: at least one service is overdue.'
     examples:
       - data_component: '00'
         value: 'ok'
@@ -479,5 +479,29 @@ properties:
     examples:
       - data_component: '1204409519999999999a'
         value:
-           kilometers: 1350.4
+          kilometers: 1350.4
         description: The distance to next vehicle check is 1350.4km.
+
+  - id: 0x25
+    name: service_warning
+    name_cased: serviceWarning
+    name_pretty: Service warning
+    added: 0x0d
+    type: types.service_warning
+    description: Represents the type of service required and how soon it must be performed.
+    examples:
+      - data_component: '0000'
+        values:
+          due: 'no_service_required'
+          reason: 'unknown'
+        description: No service is required at this time.
+      - data_component: '0200'
+        values:
+          due: 'due'
+          reason: 'unknown'
+        description: Unknown service is due.
+      - data_component: '0103'
+        values:
+          due: 'almost'
+          reason: 'distance_driven'
+        description: Service is almost due because of distance driven.
