@@ -1438,6 +1438,18 @@ types:
             name_pretty: Diesel oil filter has water in it
           - id: 0xc5
             name: engine_drag_torque_control_failure
+          - id: 0xc6
+            name: high_beam_left_failure
+          - id: 0xc7
+            name: high_beam_right_failure
+          - id: 0xc8
+            name: daytime_running_light_left_failure
+          - id: 0xc9
+            name: daytime_running_light_right_failure
+          - id: 0xca
+            name: side_mark_lights_failure
+          - id: 0xcb
+            name: licence_plate_light_failure
       - name: state
         name_cased: state
         type: types.on_off_state
