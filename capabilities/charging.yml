@@ -442,6 +442,9 @@ properties:
       - id: 0x01
         name: direct_current
         name_pretty: DC
+      - id: 0x02
+        name: wireless
+        name_pretty: Wireless
     examples:
       - data_component: '00'
         value: 'alternating_current'
@@ -1187,6 +1190,12 @@ properties:
         name: station_ready
       - id: 0x05
         name: active
+      - id: 0x06
+        name: initialising
+      - id: 0x07
+        name: fault
+      - id: 0x08
+        name: inactive
     examples:
       - data_component: '04'
         value: 'station_ready'
