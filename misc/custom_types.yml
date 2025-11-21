@@ -1438,6 +1438,18 @@ types:
             name_pretty: Diesel oil filter has water in it
           - id: 0xc5
             name: engine_drag_torque_control_failure
+          - id: 0xc6
+            name: high_beam_left_failure
+          - id: 0xc7
+            name: high_beam_right_failure
+          - id: 0xc8
+            name: daytime_running_light_left_failure
+          - id: 0xc9
+            name: daytime_running_light_right_failure
+          - id: 0xca
+            name: side_mark_lights_failure
+          - id: 0xcb
+            name: licence_plate_light_failure
       - name: state
         name_cased: state
         type: types.on_off_state
@@ -1706,6 +1718,57 @@ types:
         name_cased: value
         type: double
         size: 8
+
+    # MARK: Energy Consumption
+  - name: energy_consumption
+    name_cased: energyConsumption
+    name_pretty: Energy consumption
+    type: custom
+    size: 11
+    items:
+      - name: category
+        name_cased: category
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: other
+          - id: 0x01
+            name: driving
+          - id: 0x02
+            name: climate
+          - id: 0x03
+            name: battery
+      - name: consumption
+        name_cased: consumption
+        type: unit.energy
+        size: 10
+        description: Energy consumption in the given category
+
+    # MARK: Energy Consumption Percentage
+  - name: energy_consumption_percentage
+    name_cased: energyConsumptionPercentage
+    name_pretty: Energy consumption percentage
+    type: custom
+    size: 9
+    items:
+      - name: category
+        name_cased: category
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: other
+          - id: 0x01
+            name: driving
+          - id: 0x02
+            name: climate
+          - id: 0x03
+            name: battery
+      - name: percentage
+        name_cased: percentage
+        type: types.percentage
+
     # MARK: Failure
   - name: failure
     name_cased: failure
@@ -1948,6 +2011,41 @@ types:
             name: not_fastened
           - id: 0x01
             name: fastened
+
+    # MARK: Service Warning
+  - name: service_warning
+    name_cased: serviceWarning
+    name_pretty: Service warning
+    type: custom
+    size: 2
+    items:
+      - name: due
+        name_cased: due
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: no_service_required
+          - id: 0x01
+            name: almost
+          - id: 0x02
+            name: due
+          - id: 0x03
+            name: overdue
+      - name: reason
+        name_cased: reason
+        type: enum
+        size: 1
+        enum_values:
+          - id: 0x00
+            name: unknown
+          - id: 0x01
+            name: regular_maintenance
+          - id: 0x02
+            name: engine_hours
+          - id: 0x03
+            name: distance_driven
+
     # MARK: Spring Rate
   - name: spring_rate
     name_cased: springRate

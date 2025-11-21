@@ -656,3 +656,143 @@ properties:
       - data_component: '3fc1eb851eb851ec'
         value: 0.14
         description: Battery recovered 14% of charge through regeneration.
+
+  - id: 0x2f
+    name: energy_consumption_last_trip
+    name_cased: energyConsumptionLastTrip
+    name_pretty: Energy consumption last trip
+    added: 0x0d
+    type: types.energy_consumption
+    multiple: true
+    description: Energy consumption spread across different categories for the last trip automatically detected.
+    examples:
+      - data_component: '010c0340c5eb8000000000'
+        values:
+          category: driving
+          consumption:
+            watt_hours: 11223.0
+        description: Driving consumed 11223.0Wh of energy during the last trip.
+      - data_component: '020c03407c800000000000'
+        values:
+          category: climate
+          consumption:
+            watt_hours: 456.0
+        description: Climate control consumed 456.0Wh of energy during the last trip.
+
+  - id: 0x30
+    name: energy_consumption_since_reset
+    name_cased: energyConsumptionSinceReset
+    name_pretty: Energy consumption since reset
+    added: 0x0d
+    type: types.energy_consumption
+    multiple: true
+    description: Energy consumption spread across different categories since the last reset.
+    examples:
+      - data_component: '010c0340c5eb8000000000'
+        values:
+          category: driving
+          consumption:
+            watt_hours: 11223.0
+        description: Driving consumed 11223.0Wh of energy since the last reset.
+      - data_component: '020c03407c800000000000'
+        values:
+          category: climate
+          consumption:
+            watt_hours: 456.0
+        description: Climate control consumed 456.0Wh of energy since the last reset.
+
+  - id: 0x31
+    name: energy_consumption_since_charging
+    name_cased: energyConsumptionSinceCharging
+    name_pretty: Energy consumption since charging
+    added: 0x0d
+    type: types.energy_consumption
+    multiple: true
+    description: Energy consumption spread across different categories since the last charging session.
+    examples:
+      - data_component: '010c0340c5eb8000000000'
+        values:
+          category: driving
+          consumption:
+            watt_hours: 11223.0
+        description: Driving consumed 11223.0Wh of energy since the last charging session.
+      - data_component: '020c03407c800000000000'
+        values:
+          category: climate
+          consumption:
+            watt_hours: 456.0
+        description: Climate control consumed 456.0Wh of energy since the last charging session.
+
+  - id: 0x32
+    name: energy_consumption_percentages_last_trip
+    name_cased: energyConsumptionPercentagesLastTrip
+    name_pretty: Energy consumption percentages last trip
+    added: 0x0d
+    type: types.energy_consumption_percentage
+    multiple: true
+    description: Energy consumption percentages spread across different categories for the last trip automatically detected.
+    examples:
+      - data_component: '013fea8f5c28f5c28f'
+        values:
+          category: driving
+          percentage: 0.83
+        description: Driving accounted for 83% of energy consumption during the last trip.
+      - data_component: '023fbc28f5c28f5c29'
+        values:
+          category: climate
+          percentage: 0.11
+        description: Climate control accounted for 11% of energy consumption during the last trip.
+
+  - id: 0x33
+    name: energy_consumption_percentages_since_reset
+    name_cased: energyConsumptionPercentagesSinceReset
+    name_pretty: Energy consumption percentages since reset
+    added: 0x0d
+    type: types.energy_consumption_percentage
+    multiple: true
+    description: Energy consumption percentages spread across different categories since the last reset.
+    examples:
+      - data_component: '013fea8f5c28f5c28f'
+        values:
+          category: driving
+          percentage: 0.83
+        description: Driving accounted for 83% of energy consumption since the last reset.
+      - data_component: '023fbc28f5c28f5c29'
+        values:
+          category: climate
+          percentage: 0.11
+        description: Climate control accounted for 11% of energy consumption since the last reset.
+
+  - id: 0x34
+    name: energy_consumption_percentages_since_charging
+    name_cased: energyConsumptionPercentagesSinceCharging
+    name_pretty: Energy consumption percentages since charging
+    added: 0x0d
+    type: types.energy_consumption_percentage
+    multiple: true
+    description: Energy consumption percentages spread across different categories since the last charging session.
+    examples:
+      - data_component: '013fea8f5c28f5c28f'
+        values:
+          category: driving
+          percentage: 0.83
+        description: Driving accounted for 83% of energy consumption since the last charging session.
+      - data_component: '023fbc28f5c28f5c29'
+        values:
+          category: climate
+          percentage: 0.11
+        description: Climate control accounted for 11% of energy consumption since the last charging session.
+
+  - id: 0x35
+    name: average_speed_since_charging
+    name_cased: averageSpeedSinceCharging
+    name_pretty: Average speed since charging
+    added: 0x0c
+    type: unit.speed
+    size: 10
+    description: Average speed since the last charging session.
+    examples:
+      - data_component: '1601404619999999999a'
+        value:
+          kilometers_per_hour: 44.2
+        description: Average speed was 44.2km/h since the last charging session.
