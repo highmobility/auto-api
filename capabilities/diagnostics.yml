@@ -1009,3 +1009,16 @@ properties:
       - data_component: '3fe999999999999a'
         value: 0.8
         description: Secondary energy level is at 80%
+
+  - id: 0x3d
+    name: distance_since_charging
+    name_cased: distanceSinceCharging
+    name_pretty: Distance since charging
+    type: unit.length
+    size: 10
+    description: The distance driven since the last charging session
+    examples:
+      - data_component: '12044028cccccccccccd'
+        value:
+          kilometers: 12.4
+        description: 12.4km driven since the last charging session
