@@ -505,3 +505,44 @@ properties:
           due: 'almost'
           reason: 'distance_driven'
         description: Service is almost due because of distance driven.
+
+  - id: 0x26
+    name: last_service_date
+    name_cased: lastServiceDate
+    name_pretty: Last service date
+    added: 0x0d
+    type: timestamp
+    size: 8
+    description: Date of the last service performed on the vehicle.
+    examples:
+      - data_component: '0000017fe45286dd'
+        value: '2022-04-01T08:51:28.093Z'
+        description: Last service was on 1. April 2022 at 11:51:28 EEST.
+
+  - id: 0x27
+    name: last_service_distance
+    name_cased: lastServiceDistance
+    name_pretty: Last service distance
+    added: 0x0d
+    type: unit.length
+    size: 10
+    description: Distance reading at the time of the last service.
+    examples:
+      - data_component: '120440f7590000000000'
+        value:
+          kilometers: 95632.0
+        description: Distance reading at last service was 95'632km.
+
+  - id: 0x28
+    name: next_inspection_distance
+    name_cased: nextInspectionDistance
+    name_pretty: Next inspection distance
+    added: 0x0d
+    type: unit.length
+    size: 10
+    description: Distance reading at which the next inspection is due.
+    examples:
+      - data_component: '120440e86a0000000000'
+        value:
+          kilometers: 50000.0
+        description: Next inspection is due at 50'000km.

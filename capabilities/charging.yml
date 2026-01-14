@@ -1412,3 +1412,16 @@ properties:
       - data_component: '3feccccccccccccd'
         value: 0.9
         description: State of health of the high-voltage battery is 90%.
+
+  - id: 0x51
+    name: distance_since_charging
+    name_cased: distanceSinceCharging
+    name_pretty: Distance since charging
+    type: unit.length
+    size: 10
+    description: The distance driven since the last charging session
+    examples:
+      - data_component: '12044028cccccccccccd'
+        value:
+          kilometers: 12.4
+        description: 12.4km driven since the last charging session

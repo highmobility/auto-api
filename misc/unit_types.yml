@@ -8,9 +8,7 @@
 # [0x04, 0x00, 0x02, measurement_type_id, unit_type_id]
 #
 
-
 measurement_types:
-
   - name: acceleration
     id: 0x01
     unit_types:
@@ -126,6 +124,15 @@ measurement_types:
       - name: miles_per_kwh
         id: 0x01
         conversion_inverse: 62.137119223733397
+      - name: kilometers_per_kwh
+        id: 0x02
+        conversion_inverse: 100.0
+      - name: miles_per_gallon_equivalent
+        id: 0x03
+        conversion_inverse: 2094.331603
+      - name: miles_per_imperial_gallon_equivalent
+        id: 0x04
+        conversion_inverse: 2515.187
 
   - name: frequency
     id: 0x0e
@@ -167,6 +174,9 @@ measurement_types:
       - name: miles_per_gallon
         id: 0x02
         conversion_inverse: 235.2145833
+      - name: kilometers_per_liter
+        id: 0x03
+        conversion_inverse: 100.0
 
   - name: illuminance
     id: 0x11
