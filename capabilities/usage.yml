@@ -406,6 +406,9 @@ properties:
     name: fuel_consumption_rate_last_trip
     name_cased: fuelConsumptionRateLastTrip
     name_pretty: Fuel consumption rate last trip
+    deprecated:
+      new_name: fuel_consumption_rate_since_start
+      reason: changed the name to harmonize with electric consumption rate property
     added: 0x0c
     type: unit.fuel_efficiency
     size: 10
@@ -796,3 +799,17 @@ properties:
         value:
           kilometers_per_hour: 44.2
         description: Average speed was 44.2km/h since the last charging session.
+
+  - id: 0x36
+    name: fuel_consumption_rate_since_start
+    name_cased: fuelConsumptionRateSinceStart
+    name_pretty: Fuel consumption rate since start
+    added: 0x0c
+    type: unit.fuel_efficiency
+    size: 10
+    description: Liquid fuel consumption rate since start
+    examples:
+      - data_component: '0f00401599999999999a'
+        value:
+          liters_per_100_kilometers: 5.4
+        description: Consumed 5.4 L/100km since start
