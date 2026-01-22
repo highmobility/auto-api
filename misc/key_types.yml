@@ -1,0 +1,23 @@
+#
+# key_types.yml
+#
+#
+# Defines the key types used in AutoAPI.
+# 
+# Referred to as 'keys.<name>'
+
+keys:
+  - name: location
+    name_cased: location
+    name_pretty: Location
+    type: enum
+    size: 1
+    enum_values:
+      - id: 0x00
+        name: front_left
+      - id: 0x01
+        name: front_right
+      - id: 0x02
+        name: rear_right
+      - id: 0x03
+        name: rear_left

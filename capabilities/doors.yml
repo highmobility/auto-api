@@ -55,10 +55,24 @@ properties:
     name: locks
     name_cased: locks
     name_pretty: Locks
+    # Type for the value. In L14 all map types will lose the key from the object.
+    # Also in L14, this would denote the type of the map VALUES
     type: types.lock
+    # This would become false in L14, unless the values inside the map are multiple
     multiple: true
     name_singular: lock
     description: Lock states for the given doors
+    # Denotes a map type. Safely ignored in L13
+    map: true
+    # The name we use for the key.
+    # In L13, this denotes the key to be considered exlusive in the value object
+    # In L14, maybe we need that somewhere. or we'll just ignore it ¯\_(ツ)_/¯
+    key_name: location
+    # Which values the map key has. For L14 use only.
+    # This could be either a pointer to a type in custom_type, 
+    # or maybe we could put these in another file? Like map_keys.yaml,
+    # and then this would be keys.location
+    key_type: types.location # or keys.location
     examples:
       - data_component: '0000'
         values:
