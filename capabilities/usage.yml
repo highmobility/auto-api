@@ -813,3 +813,16 @@ properties:
         value:
           liters_per_100_kilometers: 5.4
         description: Consumed 5.4 L/100km since start
+  - id: 0x37
+    name: energy_consumption_rate_since_recharge
+    name_cased: energyConsumptionRateSinceRecharge
+    name_pretty: Energy consumption rate since recharge
+    added: 0x0c
+    type: unit.energy_efficiency
+    size: 10
+    description: Average electric energy consumption calculated since recharge
+    examples:
+      - data_component: '0d00402670a3d70a3d71'
+        value:
+          kwh_per_100_kilometers: 11.22
+        description: Average consumption is 11.22kWh/100km
