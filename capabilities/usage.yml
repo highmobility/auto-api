@@ -813,3 +813,31 @@ properties:
         value:
           liters_per_100_kilometers: 5.4
         description: Consumed 5.4 L/100km since start
+
+  - id: 0x37
+    name: fuel_consumption_rate_since_refuel
+    name_cased: fuelConsumptionRateSinceRefuel
+    name_pretty: Fuel consumption rate since refuel
+    added: 0x0d
+    type: unit.fuel_efficiency
+    size: 10
+    description: Liquid fuel consumption rate since last refuel
+    examples:
+      - data_component: '0f00401599999999999a'
+        value:
+          liters_per_100_kilometers: 5.4
+        description: Consumed 5.4 L/100km since last refuel
+
+  - id: 0x38
+    name: energy_consumption_rate_since_charging
+    name_cased: energyConsumptionRateSinceCharging
+    name_pretty: Energy consumption rate since charging
+    added: 0x0d
+    type: unit.energy_efficiency
+    size: 10
+    description: Electric energy consumption rate since the last charging session
+    examples:
+      - data_component: '0d00402670a3d70a3d71'
+        value:
+          kwh_per_100_kilometers: 11.22
+        description: Consumed 11.22kWh/100km since the last charging session
