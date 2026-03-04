@@ -841,3 +841,17 @@ properties:
         value:
           kwh_per_100_kilometers: 11.22
         description: Consumed 11.22kWh/100km since the last charging session
+
+  - id: 0x39
+    name: fuel_consumption_volume
+    name_cased: fuelConsumptionVolume
+    name_pretty: Fuel consumption volume
+    added: 0x0d
+    type: unit.volume
+    size: 10
+    description: Current fuel consumption of internal combustion engine
+    examples:
+      - data_component: '190a4059000000000000'
+        value:
+          cubic_millimeters: 100.0
+        description: Current fuel consumption is 100.0 mm3
