@@ -1425,3 +1425,17 @@ properties:
         value:
           kilometers: 12.4
         description: 12.4km driven since the last charging session
+
+  - id: 0x52
+    name: charging_voltage
+    name_cased: chargingVoltage
+    name_pretty: Charging voltage
+    added: 0x0d
+    type: unit.electric_potential_difference
+    size: 10
+    description: Charging electric voltage.
+    examples:
+      - data_component: '0a004079000000000000'
+        value:
+          volts: 400.0
+        description: Charging voltage is 400.0V.
